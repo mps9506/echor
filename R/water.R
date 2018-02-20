@@ -78,15 +78,17 @@ echoGetEffluent <- function(...) {
   request <- GET(getURL, accept_json())
   print(paste("# Status message:", http_status(request)))
 
-  contentJSON <- content(request) #Download JSON as text
+  info <- content(request, as = "text")
+  return(info)
 
-  info <- fromJSON(contentJSON,simplifyDataFrame = FALSE) #read as a JSON
+  ## test <- jsonlite::fromJSON("https://ofmpub.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=tx0119407&parameter_code=50050&output=JSON")
+
+  ## info <- fromJSON(contentJSON,simplifyDataFrame = FALSE) #read as a JSON
 
   ### build the output
   ### need to map each outfall
-  return(contentJSON)
-  ## plantInfoColumns <- names(info[["Results"]][2:14])
-
-  ## nOutfalls <- purrr::map(info[["Results"]]["PermFeatures"], length)
+  ## plantInfoColumns <- names(info[["Results"]][2:16])
+  ## df1 <- purrr::map_df(info, safe_extract, plantInfoColumns)
+  ## return(df1)
 
 }
