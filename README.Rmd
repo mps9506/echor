@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 # echor
 
-The goal of echor is to ...
+Coming soon ...
 
 ## Example
 
