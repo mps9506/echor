@@ -4,6 +4,9 @@ echor
 
 Coming soon …
 
+Download data from pollutant discharge and emissions data from EPA ECHO.
+Provides data in a tidy format.
+
 Example
 -------
 
