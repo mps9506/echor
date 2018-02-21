@@ -1,4 +1,7 @@
 
+
+# Handle dots -------------------------------------------------------------
+
 readEchoGetDots <- function(...){
 
   if(length(list(...)) == 0){
@@ -24,15 +27,13 @@ convertLists <- function(...){
 }
 
 
-#' Internal function to safely map a dataframe from a nested list with NULL values
-#'
-#' @param l
-#' @param wut
-#'
+# data wrangling ----------------------------------------------------------
 
+## handle NULLs
 safe_extract <- function(l, wut) {
   res <- l[wut]
   null_here <- purrr::map_lgl(res, is.null)
   res[null_here] <- NA
   res
 }
+
