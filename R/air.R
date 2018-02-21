@@ -2,20 +2,30 @@
 # echoAirGetFacilityInfo --------------------------------------------------
 
 #' Downloads permitted air discharger information from EPA ECHO
-#'
+#' @import httr
+#' @import jsonlite
 #' @param ... see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @param output character string specifying output format. One of "JSON" or "GEOJSON"
 #'
-#' @return
+#' @return dataframe or geojson suitable for plotting
 #' @export
 #'
 #' @examples\dontrun{
 #' ## Not run:
 #' ## Retrieve table of facilities by bounding box
-#' echoAirGetFacilityInfo(xmin = "-96.407563", ymin = "30.554395", xmax = "-96.25947", ymax = "30.751984", output = "JSON")
+#' echoAirGetFacilityInfo(xmin = "-96.407563",
+#' ymin = "30.554395",
+#' xmax = "-96.25947",
+#' ymax = "30.751984",
+#' output = "JSON")
 #'
 #' ## Retrieve a geojson by bounding box
-#' spatialdata <- echoAirGetFacilityInfo(xmin = "-96.407563", ymin = "30.554395", xmax = "-96.25947", ymax = "30.751984", output = "GEOJSON")
+#' spatialdata <- echoAirGetFacilityInfo(xmin = "-96.407563",
+#' ymin = "30.554395",
+#' xmax = "-96.25947",
+#' ymax = "30.751984",
+#' output = "GEOJSON")
+#'
 #' leaflet() %>%
 #'     addTiles() %>%
 #'     addGeoJSON(geojson = spatialdata)
@@ -84,9 +94,13 @@ echoAirGetFacilityInfo <- function(..., output) {
 
 #' Download EPA ECHO emissions inventory report data
 #'
+#' @import httr
+#' @import jsonlite
+#' @import tibble
+#' @import dplyr
 #' @param ...
 #'
-#' @return
+#' @return dataframe
 #' @export
 #'
 #' @examples \dontrun{
