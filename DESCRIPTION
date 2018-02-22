@@ -20,4 +20,5 @@ Imports:
   tibble,
   tidyr
 Suggests:
-  leaflet
+  leaflet,
+  testthat
