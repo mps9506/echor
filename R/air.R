@@ -122,7 +122,7 @@ echoGetCAAPR <- function(...) {
   info <- content(request)
 
   ## Emissions data is provided in wide format
-  pollutant <- map_df(info[["Results"]][["CAAPollRpt"]][["Pollutants"]],safe_extract,
+  pollutant <- purrr::map_df(info[["Results"]][["CAAPollRpt"]][["Pollutants"]],safe_extract,
                       c("Pollutant", "UnitsOfMeasure", "Year1", "Year2",
                         "Year3", "Year4", "Year5", "Year6", "Year7",
                         "Year8", "Year9", "Year10", "Program"))
@@ -132,16 +132,16 @@ echoGetCAAPR <- function(...) {
   ## Year1 <- TRI_year_01... etc Note: Certainly a better way to do this.
   pollutant <- pollutant %>%
     mutate(Year = case_when(
-      Year == "TRI_year_01" ~ info[["Results"]][["TRI_year_01"]],
-      Year == "TRI_year_02" ~ info[["Results"]][["TRI_year_02"]],
-      Year == "TRI_year_03" ~ info[["Results"]][["TRI_year_03"]],
-      Year == "TRI_year_04" ~ info[["Results"]][["TRI_year_04"]],
-      Year == "TRI_year_05" ~ info[["Results"]][["TRI_year_05"]],
-      Year == "TRI_year_06" ~ info[["Results"]][["TRI_year_06"]],
-      Year == "TRI_year_07" ~ info[["Results"]][["TRI_year_07"]],
-      Year == "TRI_year_08" ~ info[["Results"]][["TRI_year_08"]],
-      Year == "TRI_year_09" ~ info[["Results"]][["TRI_year_09"]],
-      Year == "TRI_year_10" ~ info[["Results"]][["TRI_year_10"]]
+      Year == "Year1" ~ info[["Results"]][["TRI_year_01"]],
+      Year == "Year2" ~ info[["Results"]][["TRI_year_02"]],
+      Year == "Year3" ~ info[["Results"]][["TRI_year_03"]],
+      Year == "Year4" ~ info[["Results"]][["TRI_year_04"]],
+      Year == "Year5" ~ info[["Results"]][["TRI_year_05"]],
+      Year == "Year6" ~ info[["Results"]][["TRI_year_06"]],
+      Year == "Year7" ~ info[["Results"]][["TRI_year_07"]],
+      Year == "Year8" ~ info[["Results"]][["TRI_year_08"]],
+      Year == "Year9" ~ info[["Results"]][["TRI_year_09"]],
+      Year == "Year10" ~ info[["Results"]][["TRI_year_10"]]
     ))
 
   ## build output dataframe
@@ -154,13 +154,13 @@ echoGetCAAPR <- function(...) {
     Zip = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Zip"]],
     County = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["County"]],
     Region = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Region"]],
-    Latitude = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Latitude"]],
-    Longitude = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Longitude"]],
-    Pollutant = pollutant$Pollutant,
-    UnitsOfMeasure = pollutant$UnitsOfMeasure,
-    Program = pollutant$Program,
-    Year = pollutant$Year,
-    Discharge = pollutant$Discharge
+    Latitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Latitude"]]),
+    Longitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Longitude"]]),
+    Pollutant = as.factor(pollutant$Pollutant),
+    UnitsOfMeasure = as.factor(pollutant$UnitsOfMeasure),
+    Program = as.factor(pollutant$Program),
+    Year = as.integer(pollutant$Year),
+    Discharge = as.numeric(gsub(",", "", pollutant$Discharge)) #handle commas
     )
 
   return(buildOutput)
