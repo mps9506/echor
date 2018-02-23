@@ -20,5 +20,6 @@ Imports:
   tibble,
   tidyr
 Suggests:
-  leaflet,
-  httptest
+  here,
+  httptest,
+  leaflet
