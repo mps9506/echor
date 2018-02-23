@@ -4,10 +4,14 @@
 \alias{echoGetEffluent}
 \title{Downloads EPA ECHO DMR records}
 \usage{
-echoGetEffluent(...)
+echoGetEffluent(p_id, verbose = FALSE, ...)
 }
 \arguments{
-\item{...}{}
+\item{p_id}{character string specify the identifier for the service. Required.}
+
+\item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
+
+\item{...}{Further arguments passed on as query parameters sent to EPA's ECHO API.}
 }
 \value{
 dataframe
@@ -18,6 +22,6 @@ Downloads EPA ECHO DMR records
 \examples{
 \dontrun{
 ## Retrieve single DMR for flow
-echoGetEffluent(p_id = "tx0119407", parameter_code = "50050")
+echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
 }
 }

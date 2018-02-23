@@ -4,38 +4,38 @@
 \alias{echoWaterGetFacilityInfo}
 \title{Downloads EPA ECHO water facility data}
 \usage{
-echoWaterGetFacilityInfo(..., output)
+echoWaterGetFacilityInfo(output, verbose = FALSE, ...)
 }
 \arguments{
-\item{\dots}{see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
+\item{output}{character string specifying output format. \code{output = 'JSON'} or \code{output = 'GEOJSON'}}
 
-\item{output}{character string specifying output format. One of "JSON" or "GEOJSON"}
+\item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
+
+\item{\dots}{see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
 }
 \value{
 The output will be a tibble of facility details
-
-A data frame, the number of variables will depend on the reporting requirements of the retrived plants
 }
 \description{
-\code{echoWaterGetFacilityInfo()} downloads specified permitted water discharger facility information
+Returns a tibble or geojson with specified permitted water discharger facility information
 using EPA's ECHO API (\url{https://echo.epa.gov/tools/web-services/facility-search-water}), \code{\link[httr]{GET}}, and \code{jsonlite}.
 }
 \examples{
 \dontrun{
 ## Not run:
 ## Retrieve table of facilities by bounding box
-echoWaterGetFacilityInfo(xmin = "-96.407563",
-ymin = "30.554395",
-xmax = "-96.25947",
-ymax = "30.751984",
-output = "JSON")
+echoWaterGetFacilityInfo(xmin = '-96.407563',
+ymin = '30.554395',
+xmax = '-96.25947',
+ymax = '30.751984',
+output = 'JSON')
 
 ## Retrieve a geojson by bounding box
-spatialdata <- echoWaterGetFacilityInfo(xmin = "-96.407563",
-ymin = "30.554395",
-xmax = "-96.25947",
-ymax = "30.751984",
-output = "GEOJSON")
+spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
+ymin = '30.554395',
+xmax = '-96.25947',
+ymax = '30.751984',
+output = 'GEOJSON')
 
 leaflet() \%>\%
     addTiles() \%>\%
