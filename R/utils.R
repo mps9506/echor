@@ -4,9 +4,7 @@
 
 readEchoGetDots <- function(...) {
     
-    if (length(list(...)) == 0) {
-        stop("No arguments supplied")
-    }
+    # if (length(list(...)) == 0) { stop('No arguments supplied') }
     
     matchReturn <- convertLists(...)
     
