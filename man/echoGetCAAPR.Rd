@@ -4,9 +4,13 @@
 \alias{echoGetCAAPR}
 \title{Download EPA ECHO emissions inventory report data}
 \usage{
-echoGetCAAPR(...)
+echoGetCAAPR(p_id, verbose = FALSE, ...)
 }
 \arguments{
+\item{p_id}{character string specify the identifier for the service. Required.}
+
+\item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
+
 \item{...}{Additional arguments}
 }
 \value{

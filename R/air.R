@@ -4,8 +4,9 @@
 #' Downloads permitted air discharger information from EPA ECHO
 #' @import httr
 #' @import jsonlite
+#' @param output character string specifying output format. \code{output = 'JSON'} or \code{output = 'GEOJSON'}
+#' @param verbose Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE
 #' @param ... see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
-#' @param output character string specifying output format. One of 'JSON' or 'GEOJSON'
 #'
 #' @return dataframe or geojson suitable for plotting
 #' @export
@@ -30,29 +31,34 @@
 #'     addTiles() %>%
 #'     addGeoJSON(geojson = spatialdata)
 #' }
-echoAirGetFacilityInfo <- function(..., output) {
-
+echoAirGetFacilityInfo <- function(output = "JSON", verbose = FALSE, ...) {
+    if (length(list(...)) == 0) {
+        stop("No valid arguments supplied")
+    }
     ## returns a list of arguments supplied by user
     valuesList <- readEchoGetDots(...)
 
     if (output == "JSON") {
 
-        ## build the request URL statement
-        baseURL <- "https://ofmpub.epa.gov/echo/air_rest_services.get_facility_info?"
-        appendURL <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
-        getURL <- paste0(baseURL, appendURL)
+      ## generate the intial query
+      queryDots <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")  # probably should write a function for this
+
+      ## build the request URL statement
+      path <- "echo/air_rest_services.get_facility_info"
+      query <- paste("output=JSON", queryDots, sep = "&")
+      getURL <- requestURL(path = path, query = query)
+
 
         ## Make the request
         request <- GET(getURL, accept_json())
 
         ## Print status message, need to make this optional
-        print(paste("# Status message:", http_status(request)))
+        if (verbose) {
+          message("Request URL:", getURL)
+          message(http_status(request))
+        }
 
-        ## Download JSON as text
-        contentJSON <- content(request, as = "text")
-
-        ## Read JSON into R
-        info <- fromJSON(contentJSON, simplifyDataFrame = FALSE)
+        info <- content(request)
 
         ## build the output
         len <- purrr::map(info[["Results"]][["Facilities"]], length)  # return a list of lengths
@@ -65,6 +71,7 @@ echoAirGetFacilityInfo <- function(..., output) {
         ## create the output dataframe
         buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]], safe_extract,
             cNames)
+        return(buildOutput)
     }
 
     if (output == "GEOJSON") {
@@ -82,10 +89,12 @@ echoAirGetFacilityInfo <- function(..., output) {
 
         ## Download GeoJSON as text
         buildOutput <- content(request, as = "text")
+        return(buildOutput)
 
     }
-
-    return(buildOutput)
+    else {
+      stop("output argument = ", output, ", when it should be either JSON or GEOJSON")
+    }
 
 }
 
@@ -99,6 +108,8 @@ echoAirGetFacilityInfo <- function(..., output) {
 #' @import jsonlite
 #' @import tibble
 #' @import dplyr
+#' @param p_id character string specify the identifier for the service. Required.
+#' @param verbose Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE
 #' @param ... Additional arguments
 #'
 #' @return dataframe
@@ -108,17 +119,38 @@ echoAirGetFacilityInfo <- function(..., output) {
 #' echoGetCAAPR(p_id = '110000350174')
 #' }
 #'
-echoGetCAAPR <- function(...) {
+echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
+
+    # check that p_id is a character
+    if (!is.character(p_id)) {
+        stop("p_id must be a character")
+    }
+
+
+    ## should check if character and return error if not
+    p_id = paste0("p_id=", p_id)
+
     ## returns a list of arguments supplied by user
     valuesList <- readEchoGetDots(...)
 
+    ## check if user includes an output argument in dots if included, strip it out
+    valuesList <- ifelse(is.na(valuesList["output"]), valuesList, exclude(valuesList,
+        "output"))  ## return the values list minus output argument
+
+    ## generate the intial query
+    queryDots <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
+
     ## build the request URL statement
-    baseURL <- "https://ofmpub.epa.gov/echo/caa_poll_rpt_rest_services.get_caapr?"
-    appendURL <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
-    getURL <- paste0(baseURL, appendURL, "&output=json")
+    path <- "echo/caa_poll_rpt_rest_services.get_caapr"
+    query <- paste(p_id, queryDots, "output=JSON", sep = "&")
+    getURL <- requestURL(path = path, query = query)
 
     request <- GET(getURL, accept_json())
-    print(paste("# Status message:", http_status(request)))  ## make this optional
+
+    if (verbose) {
+        message("Request URL:", getURL)
+        message(http_status(request))
+    }
 
     info <- content(request)
 

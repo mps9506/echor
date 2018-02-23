@@ -4,12 +4,14 @@
 \alias{echoAirGetFacilityInfo}
 \title{Downloads permitted air discharger information from EPA ECHO}
 \usage{
-echoAirGetFacilityInfo(..., output)
+echoAirGetFacilityInfo(output = "JSON", verbose = FALSE, ...)
 }
 \arguments{
-\item{...}{see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
+\item{output}{character string specifying output format. \code{output = 'JSON'} or \code{output = 'GEOJSON'}}
 
-\item{output}{character string specifying output format. One of 'JSON' or 'GEOJSON'}
+\item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
+
+\item{...}{see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
 }
 \value{
 dataframe or geojson suitable for plotting
