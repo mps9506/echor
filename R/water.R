@@ -5,23 +5,30 @@
 #'
 #' \code{echoWaterGetFacilityInfo()} downloads specified permitted water discharger facility information
 #' using EPA's ECHO API (\url{https://echo.epa.gov/tools/web-services/facility-search-water}), \code{\link[httr]{GET}}, and \code{jsonlite}.
-#'
 #' @param \dots see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @param output character string specifying output format. One of "JSON" or "GEOJSON"
 #' @return The output will be a tibble of facility details
 #' @import httr
 #' @import jsonlite
-#' @import tibble
 #' @return A data frame, the number of variables will depend on the reporting requirements of the retrived plants
 #'
 #' @export
 #' @examples \dontrun{
 #' ## Not run:
 #' ## Retrieve table of facilities by bounding box
-#' echoWaterGetFacilityInfo(xmin = "-96.407563", ymin = "30.554395", xmax = "-96.25947", ymax = "30.751984", output = "JSON")
+#' echoWaterGetFacilityInfo(xmin = "-96.407563",
+#' ymin = "30.554395",
+#' xmax = "-96.25947",
+#' ymax = "30.751984",
+#' output = "JSON")
 #'
 #' ## Retrieve a geojson by bounding box
-#' spatialdata <- echoWaterGetFacilityInfo(xmin = "-96.407563", ymin = "30.554395", xmax = "-96.25947", ymax = "30.751984", output = "GEOJSON")
+#' spatialdata <- echoWaterGetFacilityInfo(xmin = "-96.407563",
+#' ymin = "30.554395",
+#' xmax = "-96.25947",
+#' ymax = "30.751984",
+#' output = "GEOJSON")
+#'
 #' leaflet() %>%
 #'     addTiles() %>%
 #'     addGeoJSON(geojson = spatialdata)
@@ -90,10 +97,12 @@ echoWaterGetFacilityInfo <- function(..., output) {
 
 
 #' Downloads EPA ECHO DMR records
-#'
+#' @import httr
+#' @import jsonlite
+#' @import tibble
 #' @param ...
 #'
-#' @return
+#' @return dataframe
 #' @export
 #'
 #' @examples \dontrun{
