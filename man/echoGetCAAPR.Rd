@@ -7,7 +7,7 @@
 echoGetCAAPR(...)
 }
 \arguments{
-\item{...}{}
+\item{...}{Additional arguments}
 }
 \value{
 dataframe
@@ -17,7 +17,7 @@ Download EPA ECHO emissions inventory report data
 }
 \examples{
 \dontrun{
-echoGetCAAPR(p_id = "110000350174")
+echoGetCAAPR(p_id = '110000350174')
 }
 
 }

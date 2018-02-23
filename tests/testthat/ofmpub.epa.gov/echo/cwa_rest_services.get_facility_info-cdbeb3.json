@@ -1,7 +1,7 @@
 {
 "Results":{
 "Message":"Success",
-"QueryID":"331",
+"QueryID":"29",
 "QueryRows":"1",
 "IndianCountryRows":"0",
 "SVRows":"0",
@@ -19,6 +19,10 @@
 "ServiceBaseURL":"https://ofmpub.epa.gov/echo/cwa_rest_services.get_facility_info",
 "QueryParameters":[
 {
+"QP":"output",
+"QV":"JSON"
+}
+,{
 "QP":"p_pid",
 "QV":"ALR040033"
 }
