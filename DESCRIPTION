@@ -4,9 +4,10 @@ Title: Access EPA ECHO Data
 Version: 0.1.0
 Author: Michael Schramm
 Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
-Description: An R interface to EPA ECHO APIs. ECHO provides information 
-    about EPA permitted facilities, discharges,
-    and other reporting info associated with permitted entities. <https://echo.epa.gov/>
+Description: An R interface to EPA ECHO APIs. ECHO provides information
+    about EPA permitted facilities, discharges, and other reporting info 
+    associated with permitted entities. Data are obtained from 
+    <https://echo.epa.gov/>. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
