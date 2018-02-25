@@ -159,7 +159,7 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
         safe_extract, c("Pollutant", "UnitsOfMeasure", "Year1", "Year2", "Year3",
             "Year4", "Year5", "Year6", "Year7", "Year8", "Year9", "Year10", "Program"))
     ## Change emissions data from wide to narrow
-    pollutant <- tidyr::gather(pollutant, Year, Discharge, Year1:Year10)
+    pollutant <- tidyr::gather_(pollutant, "Year", "Discharge", "Year1":"Year10")
 
     ## Year1 <- TRI_year_01... etc Note: Certainly a better way to do this.
     pollutant <- pollutant %>% mutate(Year = case_when(Year == "Year1" ~ info[["Results"]][["TRI_year_01"]],
