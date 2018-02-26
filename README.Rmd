@@ -12,19 +12,86 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-"
 )
+
+library(tidyverse)
+library(hrbrthemes)
+library(echor)
+extrafont::loadfonts()
 ```
 
 # echor
 
 Coming soon ...
 
-Download data from pollutant discharge and emissions data from EPA ECHO.
-Provides data in a tidy format.
+## Overview
+
+The goal of echor is to download dishcarge and emission data from the EPA ECHO database in a tidy format.
+
+## Installation
+
+```{r Installation, eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+devtools::install_github("mps9506/echor")
+
+```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+### Download information about facilities with an NPDES permit
 
-```{r example}
-## basic example code
+We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: [get_cwa_rest_services_get_facility_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
+
+```{r example1, echo=TRUE, eval=FALSE}
+library(tidyverse)
+library(echor)
+df <- echoWaterGetFacilityInfo(output = "df", xmin = '-96.407563',
+                               ymin = '30.554395', xmax = '-96.25947',
+                               ymax = '30.751984')
+
+head(df)
 ```
+
+```{r}
+df <- echoWaterGetFacilityInfo(output = "df", xmin = '-96.407563',
+                               ymin = '30.554395', xmax = '-96.25947',
+                               ymax = '30.751984')
+knitr::kable(head(df), format = 'markdown')
+```
+
+This can be retrieved as a geojson and plotted as well:
+```{r example2}
+library(ggmap)
+library(sf)
+library(ggrepel)
+
+df <- echoWaterGetFacilityInfo(output = "sp", 
+                               xmin = '-96.407563', 
+                               ymin = '30.554395', 
+                               xmax = '-96.25947', 
+                               ymax = '30.751984')
+
+collegestation <- get_map(location = c(lon = -96.3395,
+                                       lat = 30.6127), 
+                          zoom = 13, maptype = "toner")
+
+##to make labels, need to map the coords using purrr::map() and use geom_text :(
+## can't help but think there is an easier way to do this
+
+df <- df %>%
+  mutate(
+    coords = map(geometry, st_coordinates),
+    coords_x = map_dbl(coords, 1),
+    coords_y = map_dbl(coords, 2)
+  )
+
+ggmap(collegestation, extent = "device") + 
+  geom_sf(data = df, inherit.aes = FALSE, color = "dodgerblue") +
+  geom_text_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
+                  size = 2, color = "dodgerblue") +
+  theme_ipsum_rc() +
+  labs(x = "Longitude", y = "Latitude", 
+       title = "NPDES permits near Texas A&M",
+       caption = "Source: EPA ECHO database")
+
+```
+
