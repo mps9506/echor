@@ -51,7 +51,7 @@ df <- echoWaterGetFacilityInfo(output = "df", xmin = '-96.407563',
 head(df)
 ```
 
-```{r}
+```{r include=FALSE}
 df <- echoWaterGetFacilityInfo(output = "df", xmin = '-96.407563',
                                ymin = '30.554395', xmax = '-96.25947',
                                ymax = '30.751984')
@@ -59,22 +59,22 @@ knitr::kable(head(df), format = 'markdown')
 ```
 
 This can be retrieved as a geojson and plotted as well:
-```{r example2}
+```{r example2, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(ggmap)
 library(sf)
 library(ggrepel)
 
 df <- echoWaterGetFacilityInfo(output = "sp", 
-                               xmin = '-96.407563', 
-                               ymin = '30.554395', 
-                               xmax = '-96.25947', 
-                               ymax = '30.751984')
+                               xmin = '-96.387509', 
+                               ymin = '30.583572', 
+                               xmax = '-96.281422', 
+                               ymax = '30.640008')
 
-collegestation <- get_map(location = c(lon = -96.3395,
-                                       lat = 30.6127), 
-                          zoom = 13, maptype = "toner")
+collegestation <- get_map(location = c(-96.387509, 30.583572,
+                                       -96.281422, 30.640008), 
+                          zoom = 14, maptype = "toner")
 
-##to make labels, need to map the coords using purrr::map() and use geom_text :(
+##to make labels, need to map the coords and use geom_text :(
 ## can't help but think there is an easier way to do this
 
 df <- df %>%
@@ -84,10 +84,13 @@ df <- df %>%
     coords_y = map_dbl(coords, 2)
   )
 
-ggmap(collegestation, extent = "device") + 
-  geom_sf(data = df, inherit.aes = FALSE, color = "dodgerblue") +
-  geom_text_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
-                  size = 2, color = "dodgerblue") +
+ggmap(collegestation) + 
+  geom_sf(data = df, inherit.aes = FALSE, shape = 21, 
+          color = "darkred", fill = "darkred", 
+          size = 2, alpha = 0.25) +
+  geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
+                   point.padding = .5, min.segment.length = 0.1,
+                   size = 2, color = "dodgerblue") +
   theme_ipsum_rc() +
   labs(x = "Longitude", y = "Latitude", 
        title = "NPDES permits near Texas A&M",
