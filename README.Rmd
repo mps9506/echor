@@ -6,7 +6,7 @@ output:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -41,28 +41,30 @@ devtools::install_github("mps9506/echor")
 
 We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: [get_cwa_rest_services_get_facility_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
 
-```{r example1, echo=TRUE, eval=FALSE}
+```{r example1, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(echor)
-df <- echoWaterGetFacilityInfo(output = "df", xmin = '-96.407563',
-                               ymin = '30.554395', xmax = '-96.25947',
-                               ymax = '30.751984')
+
+## echo*GetFacilityInfo() will return a dataframe or simple features (sf) dataframe.
+
+df <- echoWaterGetFacilityInfo(output = "df", 
+                               xmin = '-96.387509', 
+                               ymin = '30.583572', 
+                               xmax = '-96.281422', 
+                               ymax = '30.640008')
 
 head(df)
 ```
 
-```{r include=FALSE}
-df <- echoWaterGetFacilityInfo(output = "df", xmin = '-96.407563',
-                               ymin = '30.554395', xmax = '-96.25947',
-                               ymax = '30.751984')
-knitr::kable(head(df), format = 'markdown')
-```
-
-This can be retrieved as a geojson and plotted as well:
+When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
 ```{r example2, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(ggmap)
 library(sf)
 library(ggrepel)
+## This example requires the development version of ggplot with support
+## for geom_sf()
+## and uses theme_ipsum_rc() from library(hrbrthemes)
+
 
 df <- echoWaterGetFacilityInfo(output = "sp", 
                                xmin = '-96.387509', 

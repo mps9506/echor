@@ -1,17 +1,4 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-    ## -- Attaching packages --------------------------------------------------------------------------------- tidyverse 1.2.1 --
-
-    ## v ggplot2 2.2.1.9000     v purrr   0.2.4     
-    ## v tibble  1.4.2          v dplyr   0.7.4     
-    ## v tidyr   0.7.2          v stringr 1.2.0     
-    ## v readr   1.1.1          v forcats 0.2.0
-
-    ## -- Conflicts ------------------------------------------------------------------------------------ tidyverse_conflicts() --
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
-
-    ## More than one version of regular/bold/italic found for Roboto Condensed. Skipping setup for this font.
-
 echor
 =====
 
@@ -40,19 +27,45 @@ We can look up plants by permit id, bounding box, and numerous other parameters.
 ``` r
 library(tidyverse)
 library(echor)
-df <- echoWaterGetFacilityInfo(output = "df", xmin = '-96.407563',
-                               ymin = '30.554395', xmax = '-96.25947',
-                               ymax = '30.751984')
+
+## echo*GetFacilityInfo() will return a dataframe or simple features (sf) dataframe.
+
+df <- echoWaterGetFacilityInfo(output = "df", 
+                               xmin = '-96.387509', 
+                               ymin = '30.583572', 
+                               xmax = '-96.281422', 
+                               ymax = '30.640008')
 
 head(df)
+#> # A tibble: 6 x 25
+#>   ObjectId CWPName   SourceID CWPStreet  CWPCity CWPState CWPStateDistrict
+#>   <chr>    <chr>     <chr>    <chr>      <chr>   <chr>    <lgl>           
+#> 1 1        BOSSIER ~ LAG8301~ 3228 BARK~ BENTON  LA       NA              
+#> 2 2        BROADSTO~ TXR10F5~ NW OF ATL~ BRYAN   TX       NA              
+#> 3 3        BROADSTO~ TXR10F5~ NW OF ATL~ BRYAN   TX       NA              
+#> 4 4        CITY OF ~ TXR0400~ WITHIN CI~ COLLEG~ TX       NA              
+#> 5 5        HEAT TRA~ TX01065~ 0.25MI SW~ COLLEG~ TX       NA              
+#> 6 6        HOLLEMAN~ TXR10F4~ NW OF HOL~ COLLEG~ TX       NA              
+#> # ... with 18 more variables: CWPZip <chr>,
+#> #   MasterExternalPermitNmbr <chr>, CWPCounty <chr>, CWPEPARegion <chr>,
+#> #   FacFederalAgencyCode <lgl>, FacLong <chr>,
+#> #   CWPFacilityTypeIndicator <chr>, BioReportingObligations2017 <lgl>,
+#> #   StormWaterArea <lgl>, SpeciesCriticalHabitalFlag <lgl>,
+#> #   SwpppUrl <lgl>, ExposedActivity <lgl>, AssociatedPollutant <lgl>,
+#> #   TypeOfMonitoring <lgl>, TypeOfWater <lgl>, EjscreenFlagUs <chr>,
+#> #   PctileProximityNPDESUs <chr>, PctileProximityNplUs <chr>
 ```
 
-This can be retrieved as a geojson and plotted as well:
+When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
 
 ``` r
 library(ggmap)
 library(sf)
 library(ggrepel)
+## This example requires the development version of ggplot with support
+## for geom_sf()
+## and uses theme_ipsum_rc() from library(hrbrthemes)
+
 
 df <- echoWaterGetFacilityInfo(output = "sp", 
                                xmin = '-96.387509', 
