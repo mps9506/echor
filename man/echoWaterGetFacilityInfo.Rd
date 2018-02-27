@@ -4,10 +4,10 @@
 \alias{echoWaterGetFacilityInfo}
 \title{Downloads EPA ECHO water facility data}
 \usage{
-echoWaterGetFacilityInfo(output, verbose = FALSE, ...)
+echoWaterGetFacilityInfo(output = "df", verbose = FALSE, ...)
 }
 \arguments{
-\item{output}{character string specifying output format. \code{output = 'JSON'} or \code{output = 'GEOJSON'}}
+\item{output}{character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sp'} for a spatial dataframe}
 
 \item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
 
@@ -28,18 +28,15 @@ echoWaterGetFacilityInfo(xmin = '-96.407563',
 ymin = '30.554395',
 xmax = '-96.25947',
 ymax = '30.751984',
-output = 'JSON')
+output = 'df')
 
 ## Retrieve a geojson by bounding box
 spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
 ymin = '30.554395',
 xmax = '-96.25947',
 ymax = '30.751984',
-output = 'GEOJSON')
+output = 'sp')
 
-leaflet() \%>\%
-    addTiles() \%>\%
-    addGeoJSON(geojson = spatialdata)
 }
 
 }

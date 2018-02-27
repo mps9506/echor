@@ -3,26 +3,26 @@
 # Handle dots -------------------------------------------------------------
 
 readEchoGetDots <- function(...) {
-    
+
     # if (length(list(...)) == 0) { stop('No arguments supplied') }
-    
+
     matchReturn <- convertLists(...)
-    
+
     if (anyNA(unlist(matchReturn))) {
         stop("NA's are not allowed in query")
     }
-    
-    values <- sapply(matchReturn, function(x) as.character(paste(eval(x), collapse = ",", 
+
+    values <- sapply(matchReturn, function(x) as.character(paste(eval(x), collapse = ",",
         sep = "")))
     values
 }
 
 
 convertLists <- function(...) {
-    matchReturn <- c(do.call("c", list(...)[sapply(list(...), class) == "list"]), 
+    matchReturn <- c(do.call("c", list(...)[sapply(list(...), class) == "list"]),
         list(...)[sapply(list(...), class) != "list"])
     return(matchReturn)
-    
+
 }
 
 exclude <- function(list, names) {
@@ -48,8 +48,20 @@ safe_extract <- function(l, wut) {
 
 ## builds the request URLs
 requestURL <- function(path, query) {
-    
-    urlBuildList <- structure(list(scheme = "https", hostname = "ofmpub.epa.gov", 
+
+    urlBuildList <- structure(list(scheme = "https", hostname = "ofmpub.epa.gov",
         port = NULL, path = path, query = query), class = "url")
     return(build_url(urlBuildList))
+}
+
+
+# Convert to sf -----------------------------------------------------------
+
+## reads geojson in and produce the sf dataframe
+convertSF <- function(x, ...) {
+
+  t <- tempfile("spoutput", fileext = ".geojson")
+  write(x, t)
+  output <- sf::read_sf(t)
+  return(output)
 }

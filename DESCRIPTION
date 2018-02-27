@@ -18,6 +18,7 @@ Imports:
   jsonlite,
   lubridate,
   purrr,
+  sf,
   tibble,
   tidyr
 Suggests:

@@ -4,11 +4,12 @@
 #' Downloads permitted air discharger information from EPA ECHO
 #' @import httr
 #' @import jsonlite
-#' @param output character string specifying output format. \code{output = 'JSON'} or \code{output = 'GEOJSON'}
+#' @importFrom sf read_sf
+#' @param output character string specifying output format. \code{output = 'df'} or \code{output = 'sp'}
 #' @param verbose Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE
 #' @param ... see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #'
-#' @return dataframe or geojson suitable for plotting
+#' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
 #' @examples\dontrun{
@@ -18,27 +19,24 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
-#' output = 'JSON')
+#' output = 'df')
 #'
 #' ## Retrieve a geojson by bounding box
 #' spatialdata <- echoAirGetFacilityInfo(xmin = '-96.407563',
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
-#' output = 'GEOJSON')
+#' output = 'sf')
 #'
-#' leaflet() %>%
-#'     addTiles() %>%
-#'     addGeoJSON(geojson = spatialdata)
 #' }
-echoAirGetFacilityInfo <- function(output = "JSON", verbose = FALSE, ...) {
+echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     if (length(list(...)) == 0) {
         stop("No valid arguments supplied")
     }
     ## returns a list of arguments supplied by user
     valuesList <- readEchoGetDots(...)
 
-    if (output == "JSON") {
+    if (output == "df") {
 
       ## generate the intial query
       queryDots <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")  # probably should write a function for this
@@ -74,7 +72,7 @@ echoAirGetFacilityInfo <- function(output = "JSON", verbose = FALSE, ...) {
         return(buildOutput)
     }
 
-    if (output == "GEOJSON") {
+    if (output == "sp") {
 
         ## build the request URL statement
         baseURL <- "https://ofmpub.epa.gov/echo/air_rest_services.get_facility_info?output=GEOJSON&"
@@ -89,11 +87,15 @@ echoAirGetFacilityInfo <- function(output = "JSON", verbose = FALSE, ...) {
 
         ## Download GeoJSON as text
         buildOutput <- content(request, as = "text")
+
+        ## Convert to sf dataframe
+        buildOutput <- convertSF(buildOutput)
+
         return(buildOutput)
 
     }
     else {
-      stop("output argument = ", output, ", when it should be either JSON or GEOJSON")
+      stop("output argument = ", output, ", when it should be either 'df' or 'sp'")
     }
 
 }

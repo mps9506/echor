@@ -6,12 +6,13 @@
 #'
 #' Returns a tibble or geojson with specified permitted water discharger facility information
 #' using EPA's ECHO API (\url{https://echo.epa.gov/tools/web-services/facility-search-water}), \code{\link[httr]{GET}}, and \code{jsonlite}.
-#' @param output character string specifying output format. \code{output = 'JSON'} or \code{output = 'GEOJSON'}
+#' @param output character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sp'} for a spatial dataframe
 #' @param verbose Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE
 #' @param \dots see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @return The output will be a tibble of facility details
 #' @import httr
 #' @import jsonlite
+#' @importFrom sf read_sf
 #'
 #' @export
 #' @examples \dontrun{
@@ -21,28 +22,25 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
-#' output = 'JSON')
+#' output = 'df')
 #'
 #' ## Retrieve a geojson by bounding box
 #' spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
-#' output = 'GEOJSON')
+#' output = 'sp')
 #'
-#' leaflet() %>%
-#'     addTiles() %>%
-#'     addGeoJSON(geojson = spatialdata)
 #' }
 #'
-echoWaterGetFacilityInfo <- function(output, verbose = FALSE, ...) {
+echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     if (length(list(...)) == 0) {
         stop("No valid arguments supplied")
     }
     ## returns a list of arguments supplied by user
     valuesList <- readEchoGetDots(...)
 
-    if (output == "JSON") {
+    if (output == "df") {
 
         ## generate the intial query
         queryDots <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")  # probably should write a function for this
@@ -79,7 +77,7 @@ echoWaterGetFacilityInfo <- function(output, verbose = FALSE, ...) {
         return(buildOutput)
     }
 
-    if (output == "GEOJSON") {
+    if (output == "sp") {
 
         ## build the request URL statement
         baseURL <- "https://ofmpub.epa.gov/echo/cwa_rest_services.get_facility_info?output=GEOJSON&"
@@ -97,9 +95,13 @@ echoWaterGetFacilityInfo <- function(output, verbose = FALSE, ...) {
 
         ## Download GeoJSON as text
         buildOutput <- content(request, as = "text")
+
+        ## Convert to sf dataframe
+        buildOutput <- convertSF(buildOutput)
+
         return(buildOutput)
     } else {
-        stop("output argument = ", output, ", when it should be either JSON or GEOJSON")
+        stop("output argument = ", output, ", when it should be either 'df' or 'sp'")
     }
 
 }

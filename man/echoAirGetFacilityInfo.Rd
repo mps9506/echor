@@ -4,17 +4,17 @@
 \alias{echoAirGetFacilityInfo}
 \title{Downloads permitted air discharger information from EPA ECHO}
 \usage{
-echoAirGetFacilityInfo(output = "JSON", verbose = FALSE, ...)
+echoAirGetFacilityInfo(output = "df", verbose = FALSE, ...)
 }
 \arguments{
-\item{output}{character string specifying output format. \code{output = 'JSON'} or \code{output = 'GEOJSON'}}
+\item{output}{character string specifying output format. \code{output = 'df'} or \code{output = 'sp'}}
 
 \item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
 
 \item{...}{see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
 }
 \value{
-dataframe or geojson suitable for plotting
+dataframe or sf dataframe suitable for plotting
 }
 \description{
 Downloads permitted air discharger information from EPA ECHO
@@ -27,17 +27,14 @@ echoAirGetFacilityInfo(xmin = '-96.407563',
 ymin = '30.554395',
 xmax = '-96.25947',
 ymax = '30.751984',
-output = 'JSON')
+output = 'df')
 
 ## Retrieve a geojson by bounding box
 spatialdata <- echoAirGetFacilityInfo(xmin = '-96.407563',
 ymin = '30.554395',
 xmax = '-96.25947',
 ymax = '30.751984',
-output = 'GEOJSON')
+output = 'sf')
 
-leaflet() \%>\%
-    addTiles() \%>\%
-    addGeoJSON(geojson = spatialdata)
 }
 }
