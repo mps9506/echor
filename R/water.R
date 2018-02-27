@@ -96,10 +96,8 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
         ## Download GeoJSON as text
         buildOutput <- content(request, as = "text")
 
-        ## Convert to sp dataframe
-        t <- tempfile("spoutput", fileext = ".geojson")
-        write(buildOutput, t)
-        buildOutput <- sf::read_sf(t)
+        ## Convert to sf dataframe
+        buildOutput <- convertSF(buildOutput)
 
         return(buildOutput)
     } else {
