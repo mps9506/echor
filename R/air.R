@@ -1,13 +1,16 @@
 
 # echoAirGetFacilityInfo --------------------------------------------------
 
-#' Downloads permitted air discharger information from EPA ECHO
+#' Downloads EPA ECHO permitted air emitter information
+#'
+#' Returns a dataframe or simplefeature dataframe of permitted facilities returned by the query.
+#' Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info}
 #' @import httr
 #' @import jsonlite
 #' @importFrom sf read_sf
-#' @param output character string specifying output format. \code{output = 'df'} or \code{output = 'sp'}
+#' @param output character string specifying output format. \code{output = 'df'} or \code{output = 'sf'}
 #' @param verbose Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE
-#' @param ... see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
+#' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #'
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
@@ -36,16 +39,18 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## returns a list of arguments supplied by user
     valuesList <- readEchoGetDots(...)
 
-    if (output == "df") {
+    ## check if user includes an output argument in dots if included, strip it out
+    valuesList <- exclude(valuesList, "output")
 
-      ## generate the intial query
-      queryDots <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")  # probably should write a function for this
+    ## generate query the will be pasted into GET URL
+    queryDots <- queryList(valuesList)
+
+    if (output == "df") {
 
       ## build the request URL statement
       path <- "echo/air_rest_services.get_facility_info"
       query <- paste("output=JSON", queryDots, sep = "&")
       getURL <- requestURL(path = path, query = query)
-
 
         ## Make the request
         request <- GET(getURL, accept_json())
@@ -72,12 +77,12 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
         return(buildOutput)
     }
 
-    if (output == "sp") {
+    if (output == "sf") {
 
         ## build the request URL statement
-        baseURL <- "https://ofmpub.epa.gov/echo/air_rest_services.get_facility_info?output=GEOJSON&"
-        appendURL <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
-        getURL <- paste0(baseURL, appendURL)
+        path <- "echo/air_rest_services.get_facility_info"
+        query <- paste("output=GEOJSON", queryDots, sep = "&")
+        getURL <- requestURL(path = path, query = query)
 
         ## Make the request
         request <- GET(getURL, accept_json())
@@ -95,7 +100,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
     }
     else {
-      stop("output argument = ", output, ", when it should be either 'df' or 'sp'")
+      stop("output argument = ", output, ", when it should be either 'df' or 'sf'")
     }
 
 }
@@ -136,8 +141,7 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
     valuesList <- readEchoGetDots(...)
 
     ## check if user includes an output argument in dots if included, strip it out
-    valuesList <- ifelse(is.na(valuesList["output"]), valuesList, exclude(valuesList,
-        "output"))  ## return the values list minus output argument
+    valuesList <- exclude(valuesList, "output")
 
     ## generate the intial query
     queryDots <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")

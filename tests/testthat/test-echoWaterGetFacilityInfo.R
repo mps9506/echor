@@ -1,4 +1,4 @@
-context("test-watergetfacilityInfo")
+context("test-echoWatergetfacilityInfo")
 
 library(httptest)
 library(here)
@@ -6,13 +6,13 @@ library(here)
 .mockPaths(here("tests/testthat/"))
 
 
-#capture_requests({
+# capture_requests({
 #   echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "df")
 #   })
 
 
 with_mock_api({
-  test_that("waterGetFacilityInfo works", {
+  test_that("echoWaterGetFacilityInfo works", {
     x <- echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "df")
     expect_equal(is.data.frame(x), TRUE)
     })

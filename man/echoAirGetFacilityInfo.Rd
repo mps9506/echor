@@ -2,22 +2,23 @@
 % Please edit documentation in R/air.R
 \name{echoAirGetFacilityInfo}
 \alias{echoAirGetFacilityInfo}
-\title{Downloads permitted air discharger information from EPA ECHO}
+\title{Downloads EPA ECHO permitted air emitter information}
 \usage{
 echoAirGetFacilityInfo(output = "df", verbose = FALSE, ...)
 }
 \arguments{
-\item{output}{character string specifying output format. \code{output = 'df'} or \code{output = 'sp'}}
+\item{output}{character string specifying output format. \code{output = 'df'} or \code{output = 'sf'}}
 
 \item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
 
-\item{...}{see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
+\item{...}{Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
 }
 \value{
 dataframe or sf dataframe suitable for plotting
 }
 \description{
-Downloads permitted air discharger information from EPA ECHO
+Returns a dataframe or simplefeature dataframe of permitted facilities returned by the query.
+Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info}
 }
 \examples{
 \dontrun{

@@ -2,23 +2,23 @@
 % Please edit documentation in R/water.R
 \name{echoWaterGetFacilityInfo}
 \alias{echoWaterGetFacilityInfo}
-\title{Downloads EPA ECHO water facility data}
+\title{Downloads EPA ECHO water facility information}
 \usage{
 echoWaterGetFacilityInfo(output = "df", verbose = FALSE, ...)
 }
 \arguments{
-\item{output}{character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sp'} for a spatial dataframe}
+\item{output}{Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://cran.r-project.org/web/packages/sf/vignettes/sf1.html}) for more information about simple features.}
 
 \item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
 
-\item{\dots}{see \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
+\item{\dots}{Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
 }
 \value{
-The output will be a tibble of facility details
+dataframe or simple feature
 }
 \description{
-Returns a tibble or geojson with specified permitted water discharger facility information
-using EPA's ECHO API (\url{https://echo.epa.gov/tools/web-services/facility-search-water}), \code{\link[httr]{GET}}, and \code{jsonlite}.
+Returns a dataframe or simplefeature dataframe of permitted facilities returned by the query.
+Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-water}.
 }
 \examples{
 \dontrun{
@@ -35,7 +35,7 @@ spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
 ymin = '30.554395',
 xmax = '-96.25947',
 ymax = '30.751984',
-output = 'sp')
+output = 'sf')
 
 }
 
