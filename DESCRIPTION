@@ -21,7 +21,8 @@ Imports:
   sf,
   tibble,
   tidyr
-Suggests:
-  here,
-  httptest,
-  leaflet
+Suggests: 
+    here,
+    httptest,
+    leaflet,
+    covr

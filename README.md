@@ -2,6 +2,11 @@
 echor
 =====
 
+[![Travis build
+status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
+[![Coverage
+status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
+
 Coming soon …
 
 Overview
@@ -72,7 +77,7 @@ library(ggrepel)
 ## and uses theme_ipsum_rc() from library(hrbrthemes)
 
 
-df <- echoWaterGetFacilityInfo(output = "sp", 
+df <- echoWaterGetFacilityInfo(output = "sf", 
                                xmin = '-96.387509', 
                                ymin = '30.583572', 
                                xmax = '-96.281422', 

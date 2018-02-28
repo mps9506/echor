@@ -83,7 +83,7 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     if (output == "sf") {
 
         ## build the request URL statement
-        path <- "echo/cwa_rest_services.get_facility_info?"
+        path <- "echo/cwa_rest_services.get_facility_info"
         query <- paste("output=GEOJSON", queryDots, sep = "&")
         getURL <- requestURL(path = path, query = query)
 
@@ -101,7 +101,6 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
         ## Convert to sf dataframe
         buildOutput <- convertSF(buildOutput)
-
         return(buildOutput)
     } else {
         stop("output argument = ", output, ", when it should be either 'df' or 'sf'")
