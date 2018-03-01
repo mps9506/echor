@@ -12,7 +12,6 @@
 #' @return dataframe or simple feature
 #' @import httr
 #' @import jsonlite
-#' @importFrom sf read_sf
 #'
 #' @export
 #' @examples \dontrun{

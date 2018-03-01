@@ -74,12 +74,13 @@ requestURL <- function(path, query) {
 #' @param x character vector, of geojson format
 #'
 #' @return simple features dataframe
+#' @importFrom sf read_sf
 #' @keywords internal
 #' @noRd
 convertSF <- function(x) {
 
   t <- tempfile("spoutput", fileext = ".geojson")
   write(x, t)
-  output <- sf::read_sf(t)
+  output <- read_sf(t)
   return(output)
 }
