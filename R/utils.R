@@ -4,8 +4,6 @@
 
 readEchoGetDots <- function(...) {
 
-    # if (length(list(...)) == 0) { stop('No arguments supplied') }
-
     matchReturn <- convertLists(...)
 
     if (anyNA(unlist(matchReturn))) {
@@ -23,6 +21,10 @@ convertLists <- function(...) {
         list(...)[sapply(list(...), class) != "list"])
     return(matchReturn)
 
+}
+
+queryList <- function(valuesList) {
+  paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
 }
 
 exclude <- function(list, names) {
@@ -47,6 +49,15 @@ safe_extract <- function(l, wut) {
 # request urls --------------------------------------------------------------
 
 ## builds the request URLs
+
+#' Construct URL used in the httr call
+#'
+#' @param path Character vector, specifies API path to ECHO's webservices
+#' @param query Character vector, specifies the parameters sent in the GET request
+#'
+#' @return URL used in the httr call
+#' @keywords internal
+#' @noRd
 requestURL <- function(path, query) {
 
     urlBuildList <- structure(list(scheme = "https", hostname = "ofmpub.epa.gov",
@@ -58,10 +69,18 @@ requestURL <- function(path, query) {
 # Convert to sf -----------------------------------------------------------
 
 ## reads geojson in and produce the sf dataframe
-convertSF <- function(x, ...) {
+#' Convert from geojson string to sf dataframe
+#'
+#' @param x character vector, of geojson format
+#'
+#' @return simple features dataframe
+#' @importFrom sf read_sf
+#' @keywords internal
+#' @noRd
+convertSF <- function(x) {
 
   t <- tempfile("spoutput", fileext = ".geojson")
   write(x, t)
-  output <- sf::read_sf(t)
+  output <- read_sf(t)
   return(output)
 }

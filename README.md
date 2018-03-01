@@ -2,12 +2,18 @@
 echor
 =====
 
-Coming soon ...
+[![Travis build
+status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
+[![Coverage
+status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
+
+Coming soon …
 
 Overview
 --------
 
-The goal of echor is to download dishcarge and emission data from the EPA ECHO database in a tidy format.
+The goal of echor is to download dishcarge and emission data from the
+EPA ECHO database in a tidy format.
 
 Installation
 ------------
@@ -17,12 +23,15 @@ Installation
 devtools::install_github("mps9506/echor")
 ```
 
-Example
--------
+Examples
+--------
 
 ### Download information about facilities with an NPDES permit
 
-We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: [get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
+We can look up plants by permit id, bounding box, and numerous other
+parameters. I plan on providing documentation of available parameters.
+However, arguments can be looked up here:
+[get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
 
 ``` r
 library(tidyverse)
@@ -56,7 +65,8 @@ head(df)
 #> #   PctileProximityNPDESUs <chr>, PctileProximityNplUs <chr>
 ```
 
-When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
+When returned as sf dataframes, the data is suitable for immediate
+spatial plotting or analysis:
 
 ``` r
 library(ggmap)
@@ -67,7 +77,7 @@ library(ggrepel)
 ## and uses theme_ipsum_rc() from library(hrbrthemes)
 
 
-df <- echoWaterGetFacilityInfo(output = "sp", 
+df <- echoWaterGetFacilityInfo(output = "sf", 
                                xmin = '-96.387509', 
                                ymin = '30.583572', 
                                xmax = '-96.281422', 
@@ -101,3 +111,27 @@ ggmap(collegestation) +
 ```
 
 ![](man/figures/README-example2-1.png)
+
+### Download discharge/emissions data
+
+Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes
+of permitted water discharger Discharge Monitoring Report (DMR) or
+permitted emitters Clean Air Act annual emissions reports.
+
+``` r
+df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
+
+df <- df %>%
+  filter(!is.na(DMRValueNmbr) & ValueTypeCode == "C1")
+
+ggplot(df) +
+  geom_line(aes(MonitoringPeriodEndDate, DMRValueNmbr)) +
+  theme_ipsum_rc(grid = "Y") +
+  labs(x = "Monitoring period date",
+       y = "Dissolved oxygen concentration (mg/l)",
+       title = "Reported minimum dissolved oxygen concentration",
+       subtitle = "NPDES ID = TX119407",
+       caption = "Source: EPA ECHO")
+```
+
+![](man/figures/README-unnamed-chunk-2-1.png)

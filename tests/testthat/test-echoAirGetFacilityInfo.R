@@ -14,7 +14,7 @@ library(here)
 # })
 
 with_mock_api({
-  test_that("waterGetFacilityInfo works", {
+  test_that("echoAirGetFacilityInfo works", {
     x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "df")
     expect_equal(is.data.frame(x), TRUE)
   })

@@ -2,22 +2,22 @@
 % Please edit documentation in R/water.R
 \name{echoGetEffluent}
 \alias{echoGetEffluent}
-\title{Downloads EPA ECHO DMR records}
+\title{Downloads EPA ECHO DMR records of dischargers with NPDES permits}
 \usage{
 echoGetEffluent(p_id, verbose = FALSE, ...)
 }
 \arguments{
-\item{p_id}{character string specify the identifier for the service. Required.}
+\item{p_id}{Character string specify the identifier for the service. Required.}
 
-\item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
+\item{verbose}{Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE}
 
-\item{...}{Further arguments passed on as query parameters sent to EPA's ECHO API.}
+\item{...}{Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}}
 }
 \value{
 dataframe
 }
 \description{
-Downloads EPA ECHO DMR records
+Downloads EPA ECHO DMR records of dischargers with NPDES permits
 }
 \examples{
 \dontrun{
