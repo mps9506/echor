@@ -2,18 +2,12 @@
 echor
 =====
 
-[![Travis build
-status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
-[![Coverage
-status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
-
-Coming soon …
+[![Travis build status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor) [![Coverage status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
 
 Overview
 --------
 
-The goal of echor is to download dishcarge and emission data from the
-EPA ECHO database in a tidy format.
+echor downloads discharge and emission data for EPA permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
 
 Installation
 ------------
@@ -23,15 +17,17 @@ Installation
 devtools::install_github("mps9506/echor")
 ```
 
+Usage
+-----
+
+Coming soon.
+
 Examples
 --------
 
 ### Download information about facilities with an NPDES permit
 
-We can look up plants by permit id, bounding box, and numerous other
-parameters. I plan on providing documentation of available parameters.
-However, arguments can be looked up here:
-[get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
+We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: [get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
 
 ``` r
 library(tidyverse)
@@ -58,15 +54,15 @@ head(df)
 #> # ... with 18 more variables: CWPZip <chr>,
 #> #   MasterExternalPermitNmbr <chr>, CWPCounty <chr>, CWPEPARegion <chr>,
 #> #   FacFederalAgencyCode <lgl>, FacLong <chr>,
-#> #   CWPFacilityTypeIndicator <chr>, BioReportingObligations2017 <lgl>,
-#> #   StormWaterArea <lgl>, SpeciesCriticalHabitalFlag <lgl>,
-#> #   SwpppUrl <lgl>, ExposedActivity <lgl>, AssociatedPollutant <lgl>,
-#> #   TypeOfMonitoring <lgl>, TypeOfWater <lgl>, EjscreenFlagUs <chr>,
-#> #   PctileProximityNPDESUs <chr>, PctileProximityNplUs <chr>
+#> #   CWPFacilityTypeIndicator <chr>, ReceivingMs4Name <lgl>,
+#> #   SpeciesCriticalHabitalFlag <lgl>, ExposedActivity <lgl>,
+#> #   AssociatedPollutant <lgl>, ControlMeasure <lgl>,
+#> #   ControlMeasureSchedule <lgl>, EjscreenFlagUs <chr>,
+#> #   Over80CountUs <chr>, PctilePctpre1960Us <chr>,
+#> #   PctileProximityRmpUs <chr>, PctileProximityTsdfUs <chr>
 ```
 
-When returned as sf dataframes, the data is suitable for immediate
-spatial plotting or analysis:
+When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
 
 ``` r
 library(ggmap)
@@ -114,12 +110,10 @@ ggmap(collegestation) +
 
 ### Download discharge/emissions data
 
-Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes
-of permitted water discharger Discharge Monitoring Report (DMR) or
-permitted emitters Clean Air Act annual emissions reports.
+Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes of permitted water discharger Discharge Monitoring Report (DMR) or permitted emitters Clean Air Act annual emissions reports.
 
 ``` r
-df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
+df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '00300')
 
 df <- df %>%
   filter(!is.na(DMRValueNmbr) & ValueTypeCode == "C1")
