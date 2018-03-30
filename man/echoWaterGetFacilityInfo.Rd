@@ -14,7 +14,7 @@ echoWaterGetFacilityInfo(output = "df", verbose = FALSE, ...)
 \item{\dots}{Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
 }
 \value{
-dataframe or simple feature
+returns a dataframe or simple features dataframe
 }
 \description{
 Returns a dataframe or simplefeature dataframe of permitted facilities returned by the query.

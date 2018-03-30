@@ -14,7 +14,7 @@ echoGetEffluent(p_id, verbose = FALSE, ...)
 \item{...}{Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}}
 }
 \value{
-dataframe
+Returns a dataframe.
 }
 \description{
 Downloads EPA ECHO DMR records of dischargers with NPDES permits

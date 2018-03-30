@@ -9,7 +9,7 @@
 #' @param output Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://cran.r-project.org/web/packages/sf/vignettes/sf1.html}) for more information about simple features.
 #' @param verbose Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE
 #' @param \dots Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
-#' @return dataframe or simple feature
+#' @return returns a dataframe or simple features dataframe
 #' @import httr
 #' @import jsonlite
 #'
@@ -118,7 +118,7 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 #' @param p_id Character string specify the identifier for the service. Required.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}
-#' @return dataframe
+#' @return Returns a dataframe.
 #' @export
 #'
 #' @examples \dontrun{
@@ -210,4 +210,72 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 
     return(output)
 
+}
+
+
+
+# echoWaterGetParams ------------------------------------------------------
+
+#' Search parameter codes for Clean Water Act permits on EPA ECHO
+#'
+#' Returns a dataframe of parameter codes and descriptions.
+#' @import httr
+#' @import jsonlite
+#' @import tibble
+#' @importFrom utils URLencode
+#'
+#' @param term Character string specifying the parameter search term. Partial or complete search phrase or word.
+#' @param code Character string specifying the parameter search code value.
+#' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
+#'
+#' @return Returns a dataframe.
+#' @export
+#' @examples \dontrun{
+#' ## Retrieve parameter codes for dissolved oxygen
+#' echoWaterGetParams(term = "Oxygen, dissolved")
+#'
+#' echoWaterGetParams(code = "00300")
+#' }
+echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
+
+  path <- "echo/rest_lookups.cwa_parameters"
+
+  # check if both arguments are null, return error if true
+  if(is.null(term)) {
+    if(is.null(code)) {
+      stop("No valid arguments provided")
+    }
+    else{
+      ## build the request URL statement using code argument
+      code = paste0("search_code=", code)
+      query <- paste("output=JSON", code, sep = "&")
+      getURL <- requestURL(path = path, query = query)
+    }
+  }
+  else{
+    # check if both arguments are assigned, return error if true
+    if(!is.null(code)) {
+      stop("Please specify only a single argument")
+    }
+    else{
+      ## build the request URL statement for term argument
+      term <- URLencode(term, reserved = TRUE)
+      term <- paste0("search_term=", term)
+      query <- paste("output=JSON", term, sep = "&")
+      getURL <- requestURL(path = path, query = query)
+    }
+  }
+
+  request <- GET(getURL, accept_json())
+
+  if (verbose) {
+    message("Request URL:", getURL)
+    message(http_status(request))
+  }
+
+  info <- content(request)
+
+  buildOutput <- purrr::map_df(info[["Results"]][["LuValues"]], safe_extract, c("ValueCode", "ValueDescription"))
+
+  return(buildOutput)
 }
