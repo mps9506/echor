@@ -222,6 +222,7 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 #' @import httr
 #' @import jsonlite
 #' @import tibble
+#' @importFrom utils URLencode
 #'
 #' @param term Character string specifying the parameter search term. Partial or complete search phrase or word.
 #' @param code Character string specifying the parameter search code value.
@@ -258,8 +259,8 @@ echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
     }
     else{
       ## build the request URL statement for term argument
-      term = URLencode(term, reserved = TRUE)
-      term = paste0("search_term=", term)
+      term <- URLencode(term, reserved = TRUE)
+      term <- paste0("search_term=", term)
       query <- paste("output=JSON", term, sep = "&")
       getURL <- requestURL(path = path, query = query)
     }
