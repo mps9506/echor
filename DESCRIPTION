@@ -22,6 +22,9 @@ Imports:
   tibble,
   tidyr,
   utils
-Suggests: 
+Suggests:
     here,
-    httptest
+    httptest,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
