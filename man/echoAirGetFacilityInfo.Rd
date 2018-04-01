@@ -7,7 +7,7 @@
 echoAirGetFacilityInfo(output = "df", verbose = FALSE, ...)
 }
 \arguments{
-\item{output}{character string specifying output format. \code{output = 'df'} or \code{output = 'sf'}}
+\item{output}{Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.}
 
 \item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
 
