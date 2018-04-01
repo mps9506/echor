@@ -24,7 +24,7 @@ convertLists <- function(...) {
 }
 
 queryList <- function(valuesList) {
-  paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
+  paste(paste(names(valuesList), utils::URLencode(valuesList, reserved = TRUE), sep = "="), collapse = "&")
 }
 
 exclude <- function(list, names) {
