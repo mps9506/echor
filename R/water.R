@@ -6,7 +6,7 @@
 #'
 #' Returns a dataframe or simplefeature dataframe of permitted facilities returned by the query.
 #' Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-water}.
-#' @param output Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://cran.r-project.org/web/packages/sf/vignettes/sf1.html}) for more information about simple features.
+#' @param output Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.
 #' @param verbose Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE
 #' @param \dots Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @return returns a dataframe or simple features dataframe
