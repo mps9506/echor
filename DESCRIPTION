@@ -23,6 +23,9 @@ Imports:
   tidyr,
   utils
 Suggests:
+    ggplot2,
+    ggmap,
+    ggrepel,
     here,
     httptest,
     knitr,
