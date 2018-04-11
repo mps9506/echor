@@ -1,0 +1,269 @@
+---
+title: "Introduction to echor"
+author: "Michael Schramm"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to echor}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  fig.asp = 1 / 1.6,
+  out.width = "75%",
+  fig.width = 5,
+  fig.retina = NULL,
+  dpi = 96,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## echor introduction
+
+`echor` is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). `echor` uses the [ECHO API](https://echo.epa.gov/) to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilites as volume or concentration of pollutants during reporting time periods (typically anually for air emissions and monthly or quarterly for water discharges).
+
+ECHO provides data for:
+
+* Stationary sources permitted under the Clean Air Act, including data from the National Emissions Inventory, Greenhouse Gas Reporting Program, Toxics Release Inventory, and Clean Air Markets Division Acid Rain Program and Clean Air Interstate Rule.
+* Public drinking water systems permitted under the Safe Drinking Water Act, including data from the Safe Drinking Water Information System.
+* Hazardous Waste Handlers permitted under the Resource Conservation and Recovery Act, with data drawn from the RCRAInfo data system.
+* Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA's ICIS-NPDES system and possibly waterbody information from EPA's ATTAINS data system.
+
+`echor` currently provides functions to retrieve air emissions and wastewater discharge data. Later releases will include functions to download drinking water supply and hazardous waste info from ECHO. 
+
+See https://echo.epa.gov/tools/web-services for information about ECHO web services and API functions.
+
+## Getting started
+
+This vignette docuemnts a few key functions to get started. 
+
+The two main functions used to retrieve air emissions permit and facility data are: `echoAirGetFacilityInfo` and `echoGetCAAPR`. `echoAirGetFacilityInfo` returns a dataframe or simple features geospatial dataframe with information about permittee that match the query. `echoGetCAAPR` returns a dataframe with the emissions inventory report of the queried facility.
+
+The two main functions used to retrieve data about facilities with permits to discharge into water bodies are `echoWaterGetFacilityInfo` and `echoGetEffluent`. `echoWaterGetFacilityInfo` returns a dataframe or simple features geospatial dataframe with information about permitees that match the query. `echoGetEffluent` returns a dataframe with reported discharges from the queried facilities.
+
+### Air facility and emissions searches
+
+Find facilities with a permit to emit air pollutants under the Clean Air Act:
+
+```{r}
+library(echor)
+
+## Retrieve information about facilities within a geographic location
+df <- echoAirGetFacilityInfo(output = "df",
+                               xmin = '-96.387509',
+                               ymin = '30.583572',
+                               xmax = '-96.281422',
+                               ymax = '30.640008')
+knitr::kable(head(df))
+```
+
+There are over 100 arguments that can be passed to `echoAirGetFacilityInfo()` to filter permitted facilites. They are documented here: https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info. Each argument should be passeed to ECHO as `echoAirGetFaclityInfo(parameter = "value")`. `echor` will URL encode strings automatically. Please note that any date argument needs to be entered as "mm/dd/yyyy".
+
+The most useful arguments are listed below:
+```{}
+p_fn  string  Facility Name Filter.
+              One or more case-insesitive facility names.
+              Provide multiple values as comma-delimited list
+              ex:
+              p_fn = "Aggie Cleaners, City of Bryan, TEXAS A&M UNIVERSITY COLLEGE STATION CAMPUS"
+              
+p_sa  string  Facility Street Address
+              ex:
+              p_sa = "WELLBORN ROAD & UNIVERSITY DR"
+              
+p_ct  string  Facility City
+              Provide a single case-insensitive city name
+              ex:
+              p_ct = "College Station"
+              
+p_co  string  Facility County
+              Provide a single county name, in combination with a state value
+              provided through p_st
+              ex:
+              p_co = "Brazos", p_st = "Texas"
+              
+p_fips  string  FIPS Code
+                Single 5-character Federal Information Processing Standards (FIPS) 
+                state+county value
+                
+p_st  string  Facility State or State Equivalent Filter
+              Provide one or more USPS postal abbreviations
+              ex:
+              p_st = "TX, NC"
+              
+p_zip string  Facility 5-Digit Zip Code
+              Provide one or more 5-digit postal zip codes
+              ex:
+              p_zip = "77843, 77845"
+              
+xmin  string  Minimum longitude value in decimal degrees
+
+ymin  string  Minimum latitude value in decimal degrees
+
+xmax  string  Maximum longitude value in decimal degrees
+
+ymax  string  Maximum latitude value in decimal degrees
+```
+
+Download emissions inventory report data:
+```{r}
+df <- echoGetCAAPR(p_id = '110000350174')
+knitr::kable(head(df))
+```
+
+There are only two valid arguments for `echoGetCAAPR`.
+```{}
+p_id  string  EPA Facility Registry Service's REGISTRY_ID.
+
+p_units string  Units of measurement. Defaults is 'lbs'.
+                Enter "TPWE" for toxic weighted pounds equivalents.
+```
+
+### Water facility and discharge searches
+
+Find facilites with NPDES permits to discharge wastewater:
+```{r}
+df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395', 
+                               xmax = '-96.25947',  ymax = '30.751984', 
+                               output = 'df')
+```
+
+```{r echo=FALSE}
+knitr::kable(head(df))
+```
+
+Again, there are a ton of possible arguments to query ECHO with. All arguments are described here: 
+https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info
+
+Commonly used arguments are provided below:
+```{}
+p_fn  string  Facility Name Filter.
+              One or more case-insesitive facility names.
+              Provide multiple values as comma-delimited list
+              ex:
+              p_fn = "Aggie Cleaners, City of Bryan, TEXAS A&M UNIVERSITY COLLEGE STATION CAMPUS"
+              
+p_sa  string  Facility Street Address
+              ex:
+              p_sa = "WELLBORN ROAD & UNIVERSITY DR"
+              
+p_ct  string  Facility City
+              Provide a single case-insensitive city name
+              ex:
+              p_ct = "College Station"
+              
+p_co  string  Facility County
+              Provide a single county name, in combination with a state value
+              provided through p_st
+              ex:
+              p_co = "Brazos", p_st = "Texas"
+              
+p_fips  string  FIPS Code
+                Single 5-character Federal Information Processing Standards (FIPS) 
+                state+county value
+                
+p_st  string  Facility State or State Equivalent Filter
+              Provide one or more USPS postal abbreviations
+              ex:
+              p_st = "TX, NC"
+              
+p_zip string  Facility 5-Digit Zip Code
+              Provide one or more 5-digit postal zip codes
+              ex:
+              p_zip = "77843, 77845"
+              
+xmin  string  Minimum longitude value in decimal degrees
+
+ymin  string  Minimum latitude value in decimal degrees
+
+xmax  string  Maximum longitude value in decimal degrees
+
+ymax  string  Maximum latitude value in decimal degrees
+
+p_huc string  2-,4,6-,or 8-digit watershed code.
+              May contain comma-seperated values
+              
+```
+
+
+Download discharge monitoring reports from ECHO from specified facilities:
+```{r}
+df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
+```
+
+```{r echo=FALSE}
+knitr::kable(head(df))
+```
+
+This function only retrieves from a single facility per call. The following arguments are available from ECHO:
+```{}
+p_id  string  EPA Facility Registry Service's REGISTRY_ID.
+
+outfall string  Three-character code identifying the point of discharge.
+
+parameter_code  string  Five-digit numeric code identifying the parameter.
+
+start_date  string  Start date of interest. Must be entered as "mm/dd/yyyy"
+
+end_date  string  End date of interest. Must be entered as "mm/dd/yyyy"
+```
+
+Parameters codes can be searched using `echoWaterGetParams`.
+```{r}
+echoWaterGetParams(term = "Oxygen, dissolved")
+```
+
+Available arguments include:
+```{}
+term string partial or complete search phrase or word
+
+code  string  partial or complete code value
+```
+
+You can only enter either term or code arguments.
+
+### Spatial data
+`echor` can also return spatial data frames known as simple features (https://r-spatial.github.io/sf/), to facilitate creation of maps. Both `echoAirGetFacilityInfo` and `echoWaterGetFacilityInfo` include arguments to return simple feature dataframes.
+
+Using `sf`, `ggmap`, and the current development version of `ggplot2` (`devtools::install_github("tidyverse/ggplot2")`), we can quickly create a map of downloaded data.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(ggplot2)
+library(ggmap)
+library(dplyr)
+library(purrr)
+library(sf)
+library(ggrepel)
+## This example requires the development version of ggplot with support
+## for geom_sf()
+df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395',
+                                        xmax = '-96.25947', ymax = '30.751984',
+                                        output = 'sf')
+## Download a basemap
+collegestation <- get_map(location = c(-96.387509, 30.583572,
+                                       -96.281422, 30.640008), 
+                          zoom = 14, maptype = "toner")
+
+## Need some coordinates to create labels
+df <- df %>%
+  mutate(
+    coords = map(geometry, st_coordinates),
+    coords_x = map_dbl(coords, 1),
+    coords_y = map_dbl(coords, 2)
+  )
+
+ggmap(collegestation) + 
+  geom_sf(data = df, inherit.aes = FALSE, shape = 21, 
+          color = "darkred", fill = "darkred", 
+          size = 2, alpha = 0.25) +
+  geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
+                   point.padding = .5, min.segment.length = 0.1,
+                   size = 2, color = "dodgerblue") +
+  labs(x = "Longitude", y = "Latitude", 
+       title = "NPDES permits near Texas A&M",
+       caption = "Source: EPA ECHO database")
+```
+
