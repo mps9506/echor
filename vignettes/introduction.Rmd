@@ -230,24 +230,29 @@ You can only enter either term or code arguments.
 
 Using `sf`, `ggmap`, and the current development version of `ggplot2` (`devtools::install_github("tidyverse/ggplot2")`), we can quickly create a map of downloaded data.
 
-```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+## Sample code only,
+## This example requires the development
+## version of ggplot2 with support for
+## geom_sf()
+
 library(ggplot2)
 library(ggmap)
 library(dplyr)
 library(purrr)
 library(sf)
 library(ggrepel)
-## This example requires the development version of ggplot with support
-## for geom_sf()
+
+## Download data as a simple feature
 df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395',
                                         xmax = '-96.25947', ymax = '30.751984',
                                         output = 'sf')
-## Download a basemap
+## Download a basemap with gg_map
 collegestation <- get_map(location = c(-96.387509, 30.583572,
                                        -96.281422, 30.640008), 
                           zoom = 14, maptype = "toner")
 
-## Need some coordinates to create labels
+## Use coordinates to create label locations
 df <- df %>%
   mutate(
     coords = map(geometry, st_coordinates),
@@ -255,6 +260,7 @@ df <- df %>%
     coords_y = map_dbl(coords, 2)
   )
 
+## Make the map
 ggmap(collegestation) + 
   geom_sf(data = df, inherit.aes = FALSE, shape = 21, 
           color = "darkred", fill = "darkred", 
