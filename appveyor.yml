@@ -15,6 +15,27 @@ cache:
 
 # Adapt as necessary starting from here
 
+
+environment:
+
+  matrix:
+    - R_VERSION: devel
+      R_ARCH: x64
+      PKGTYPE: source
+
+    - R_VERSION: devel
+      PKGTYPE: source
+
+    - R_VERSION: release
+      R_ARCH: x64
+
+    - R_VERSION: release
+
+    - R_VERSION: oldrel
+      R_ARCH: x64
+
+    - R_VERSION: oldrel
+
 build_script:
   - travis-tool.sh install_deps
 
