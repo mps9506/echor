@@ -4,7 +4,7 @@ Title: Access EPA ECHO Data
 Version: 0.1.0
 Author: Michael Schramm
 Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
-Description: An R interface to EPA ECHO APIs. ECHO provides information
+Description: An R interface to EPA ECHO API. ECHO provides information
     about EPA permitted facilities, discharges, and other reporting info 
     associated with permitted entities. Data are obtained from 
     <https://echo.epa.gov/>. 
@@ -20,9 +20,14 @@ Imports:
   purrr,
   sf,
   tibble,
-  tidyr
-Suggests: 
+  tidyr,
+  utils
+Suggests:
+    ggplot2,
+    ggmap,
+    ggrepel,
     here,
     httptest,
-    leaflet,
-    covr
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

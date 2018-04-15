@@ -24,6 +24,7 @@ convertLists <- function(...) {
 }
 
 queryList <- function(valuesList) {
+  valuesList <- sapply(valuesList, function(x) utils::URLencode(x, reserved=TRUE))
   paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
 }
 

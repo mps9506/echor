@@ -7,7 +7,7 @@
 echoWaterGetFacilityInfo(output = "df", verbose = FALSE, ...)
 }
 \arguments{
-\item{output}{Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://cran.r-project.org/web/packages/sf/vignettes/sf1.html}) for more information about simple features.}
+\item{output}{Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.}
 
 \item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
 

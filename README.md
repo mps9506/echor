@@ -7,7 +7,7 @@ echor
 Overview
 --------
 
-echor downloads discharge and emission data for EPA permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
+echor downloads wastwater discharge and air emission data for EPA permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
 
 Installation
 ------------
