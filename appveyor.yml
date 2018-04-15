@@ -19,11 +19,11 @@ environment:
   global:
    USE_RTOOLS: true
 
-  matrix:
-  - R_VERSION: devel
-    PKGTYPE: source
-
-  - R_VERSION: release
+#  matrix:
+#  - R_VERSION: devel
+#    PKGTYPE: source
+#
+#  - R_VERSION: release
 
 build_script:
   - travis-tool.sh install_deps
