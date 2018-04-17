@@ -28,6 +28,7 @@ Suggests:
     ggrepel,
     here,
     httptest,
+    kableExtra,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
