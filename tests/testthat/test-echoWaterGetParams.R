@@ -22,5 +22,7 @@ with_mock_api({
     expect_error(echoWaterGetParams(term = "Oxygen, dissolved", code = "00300"))
 
     expect_error(echoWaterGetParams())
+
+    expect_message(echoWaterGetParams(code = "00300", verbose = TRUE))
   })
 })
