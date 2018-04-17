@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^README-.*\.png$
+^LICENSE$
 ^LICENSE\.md$
 ^\.travis\.yml$
 ^codecov\.yml$
