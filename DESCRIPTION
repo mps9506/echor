@@ -2,7 +2,7 @@ Package: echor
 Type: Package
 Title: Access EPA ECHO Data
 Version: 0.1.0
-Author: Michael Schramm
+Authors@R: person("Michael", "Schramm", role = c("aut", "cre"), email = "michael.schramm@ag.tamu.edu")
 Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
 Description: An R interface to EPA ECHO API. ECHO provides information
     about EPA permitted facilities, discharges, and other reporting info 
