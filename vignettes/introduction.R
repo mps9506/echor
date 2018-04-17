@@ -8,6 +8,13 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+library(httptest)
+library(here)
+library(kableExtra)
+
+path <- here::here("vignettes/data")
+
+httptest::start_vignette(path = path)
 
 ## ------------------------------------------------------------------------
 library(echor)
@@ -18,11 +25,19 @@ df <- echoAirGetFacilityInfo(output = "df",
                                ymin = '30.583572',
                                xmax = '-96.281422',
                                ymax = '30.640008')
-knitr::kable(head(df))
+
+## ----echo=FALSE, message=FALSE, warning=FALSE----------------------------
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
 
 ## ------------------------------------------------------------------------
 df <- echoGetCAAPR(p_id = '110000350174')
-knitr::kable(head(df))
+
+## ----echo=FALSE----------------------------------------------------------
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
 
 ## ------------------------------------------------------------------------
 df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395', 
@@ -30,13 +45,17 @@ df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395',
                                output = 'df')
 
 ## ----echo=FALSE----------------------------------------------------------
-knitr::kable(head(df))
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
 
 ## ------------------------------------------------------------------------
 df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
 
 ## ----echo=FALSE----------------------------------------------------------
-knitr::kable(head(df))
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
 
 ## ------------------------------------------------------------------------
 echoWaterGetParams(term = "Oxygen, dissolved")
@@ -82,4 +101,7 @@ echoWaterGetParams(term = "Oxygen, dissolved")
 #    labs(x = "Longitude", y = "Latitude",
 #         title = "NPDES permits near Texas A&M",
 #         caption = "Source: EPA ECHO database")
+
+## ----include = FALSE-----------------------------------------------------
+httptest::end_vignette()
 

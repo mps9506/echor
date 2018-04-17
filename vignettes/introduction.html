@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michael Schramm" />
 
-<meta name="date" content="2018-04-14" />
+<meta name="date" content="2018-04-17" />
 
 <title>Introduction to echor</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Introduction to echor</h1>
 <h4 class="author"><em>Michael Schramm</em></h4>
-<h4 class="date"><em>2018-04-14</em></h4>
+<h4 class="date"><em>2018-04-17</em></h4>
 
 
 
@@ -102,455 +102,1310 @@ df &lt;-<span class="st"> </span><span class="kw">echoAirGetFacilityInfo</span>(
                                <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>,
                                <span class="dt">ymin =</span> <span class="st">'30.583572'</span>,
                                <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>,
-                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)
-knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(df))</code></pre></div>
-<table>
+                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">ObjectId</th>
-<th align="left">AIRName</th>
-<th align="left">SourceID</th>
-<th align="left">AIRStreet</th>
-<th align="left">AIRCity</th>
-<th align="left">AIRState</th>
-<th align="left">LocalControlRegionCode</th>
-<th align="left">AIRZip</th>
-<th align="left">RegistryID</th>
-<th align="left">AIRCounty</th>
-<th align="left">AIREPARegion</th>
-<th align="left">FacFederalAgencyCode</th>
-<th align="left">FacFederalAgencyName</th>
-<th align="left">FacDerivedHuc</th>
-<th align="left">FacFIPSCode</th>
-<th align="left">FacIndianCntryFlg</th>
-<th align="left">AIRIndianCntryFlg</th>
-<th align="left">FacIndianSpatialFlg</th>
-<th align="left">FacDerivedTRIbes</th>
-<th align="left">FacUsMexBorderFlg</th>
-<th align="left">FacSICCodes</th>
-<th align="left">AIRNAICS</th>
-<th align="left">FacLat</th>
-<th align="left">FacLong</th>
-<th align="left">AIRPrograms</th>
-<th align="left">AIRMacts</th>
-<th align="left">AIRStatus</th>
-<th align="left">AIRUniverse</th>
-<th align="left">FacDerivedWBD</th>
-<th align="left">FacDerivedWBDName</th>
-<th align="left">ChesapeakeBayFlag</th>
-<th align="left">AIRIDs</th>
-<th align="left">CWAIDs</th>
-<th align="left">RCRAIDs</th>
-<th align="left">RmpIDs</th>
-<th align="left">SDWAIDs</th>
-<th align="left">TRIIDs</th>
-<th align="left">GHGIDs</th>
-<th align="left">EisIDs</th>
-<th align="left">CamdIDs</th>
-<th align="left">AIRCurrComplStatus</th>
-<th align="left">AIRCurrHpv</th>
-<th align="left">AIRMnthsInHpv</th>
-<th align="left">AIRQtrsInHpv</th>
-<th align="left">AIRQtrsWithViol</th>
-<th align="left">AIRPollRecentViol</th>
-<th align="left">AIRRecentViolCnt</th>
-<th align="left">AIRLastViolDate</th>
-<th align="left">AIREvalCnt</th>
-<th align="left">AIRDaysLastEval</th>
-<th align="left">AIRLastEvalDate</th>
-<th align="left">AIRLastEvalDateEPA</th>
-<th align="left">AIRLastEvalDateState</th>
-<th align="left">LastDatePce</th>
-<th align="left">LastDatePceEPA</th>
-<th align="left">LastDatePceSta</th>
-<th align="left">AIRLastStckTestDate</th>
-<th align="left">AIRLastStckTestResults</th>
-<th align="left">FacNaaFlag</th>
-<th align="left">FacTRIReporter</th>
-<th align="left">FacTRIAIRReleases</th>
+<tr>
+<th style="text-align:left;">
+ObjectId
+</th>
+<th style="text-align:left;">
+AIRName
+</th>
+<th style="text-align:left;">
+SourceID
+</th>
+<th style="text-align:left;">
+AIRStreet
+</th>
+<th style="text-align:left;">
+AIRCity
+</th>
+<th style="text-align:left;">
+AIRState
+</th>
+<th style="text-align:left;">
+LocalControlRegionCode
+</th>
+<th style="text-align:left;">
+AIRZip
+</th>
+<th style="text-align:left;">
+RegistryID
+</th>
+<th style="text-align:left;">
+AIRCounty
+</th>
+<th style="text-align:left;">
+AIREPARegion
+</th>
+<th style="text-align:left;">
+FacFederalAgencyCode
+</th>
+<th style="text-align:left;">
+FacFederalAgencyName
+</th>
+<th style="text-align:left;">
+FacDerivedHuc
+</th>
+<th style="text-align:left;">
+FacFIPSCode
+</th>
+<th style="text-align:left;">
+FacIndianCntryFlg
+</th>
+<th style="text-align:left;">
+AIRIndianCntryFlg
+</th>
+<th style="text-align:left;">
+FacIndianSpatialFlg
+</th>
+<th style="text-align:left;">
+FacDerivedTRIbes
+</th>
+<th style="text-align:left;">
+FacUsMexBorderFlg
+</th>
+<th style="text-align:left;">
+FacSICCodes
+</th>
+<th style="text-align:left;">
+AIRNAICS
+</th>
+<th style="text-align:left;">
+FacLat
+</th>
+<th style="text-align:left;">
+FacLong
+</th>
+<th style="text-align:left;">
+AIRPrograms
+</th>
+<th style="text-align:left;">
+AIRMacts
+</th>
+<th style="text-align:left;">
+AIRStatus
+</th>
+<th style="text-align:left;">
+AIRUniverse
+</th>
+<th style="text-align:left;">
+FacDerivedWBD
+</th>
+<th style="text-align:left;">
+FacDerivedWBDName
+</th>
+<th style="text-align:left;">
+ChesapeakeBayFlag
+</th>
+<th style="text-align:left;">
+AIRIDs
+</th>
+<th style="text-align:left;">
+CWAIDs
+</th>
+<th style="text-align:left;">
+RCRAIDs
+</th>
+<th style="text-align:left;">
+RmpIDs
+</th>
+<th style="text-align:left;">
+SDWAIDs
+</th>
+<th style="text-align:left;">
+TRIIDs
+</th>
+<th style="text-align:left;">
+GHGIDs
+</th>
+<th style="text-align:left;">
+EisIDs
+</th>
+<th style="text-align:left;">
+CamdIDs
+</th>
+<th style="text-align:left;">
+AIRCurrComplStatus
+</th>
+<th style="text-align:left;">
+AIRCurrHpv
+</th>
+<th style="text-align:left;">
+AIRMnthsInHpv
+</th>
+<th style="text-align:left;">
+AIRQtrsInHpv
+</th>
+<th style="text-align:left;">
+AIRQtrsWithViol
+</th>
+<th style="text-align:left;">
+AIRPollRecentViol
+</th>
+<th style="text-align:left;">
+AIRRecentViolCnt
+</th>
+<th style="text-align:left;">
+AIRLastViolDate
+</th>
+<th style="text-align:left;">
+AIREvalCnt
+</th>
+<th style="text-align:left;">
+AIRDaysLastEval
+</th>
+<th style="text-align:left;">
+AIRLastEvalDate
+</th>
+<th style="text-align:left;">
+AIRLastEvalDateEPA
+</th>
+<th style="text-align:left;">
+AIRLastEvalDateState
+</th>
+<th style="text-align:left;">
+LastDatePce
+</th>
+<th style="text-align:left;">
+LastDatePceEPA
+</th>
+<th style="text-align:left;">
+LastDatePceSta
+</th>
+<th style="text-align:left;">
+AIRLastStckTestDate
+</th>
+<th style="text-align:left;">
+AIRLastStckTestResults
+</th>
+<th style="text-align:left;">
+FacNaaFlag
+</th>
+<th style="text-align:left;">
+FacTRIReporter
+</th>
+<th style="text-align:left;">
+FacTRIAIRReleases
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">1</td>
-<td align="left">AGGIE CLEANERS</td>
-<td align="left">06000000480416E020</td>
-<td align="left">111 COLLEGE MAIN</td>
-<td align="left">COLLEGE STATION</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">778401221</td>
-<td align="left">110001873786</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">12070101</td>
-<td align="left">48041</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">N</td>
-<td align="left">7216</td>
-<td align="left">999999</td>
-<td align="left">30.61869</td>
-<td align="left">-96.34588</td>
-<td align="left">MACT</td>
-<td align="left">M</td>
-<td align="left">Operating</td>
-<td align="left">Minor Emissions</td>
-<td align="left">120701030702</td>
-<td align="left">Bee Creek-Carters Creek</td>
-<td align="left">NA</td>
-<td align="left">06000000480416E020</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">No Viol</td>
-<td align="left">No</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">7718</td>
-<td align="left">02/19/1997</td>
-<td align="left">02/19/1997</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+AGGIE CLEANERS
+</td>
+<td style="text-align:left;">
+06000000480416E020
+</td>
+<td style="text-align:left;">
+111 COLLEGE MAIN
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+778401221
+</td>
+<td style="text-align:left;">
+110001873786
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+12070101
+</td>
+<td style="text-align:left;">
+48041
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+7216
+</td>
+<td style="text-align:left;">
+999999
+</td>
+<td style="text-align:left;">
+30.61869
+</td>
+<td style="text-align:left;">
+-96.34588
+</td>
+<td style="text-align:left;">
+MACT
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Operating
+</td>
+<td style="text-align:left;">
+Minor Emissions
+</td>
+<td style="text-align:left;">
+120701030702
+</td>
+<td style="text-align:left;">
+Bee Creek-Carters Creek
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+06000000480416E020
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No Viol
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+7725
+</td>
+<td style="text-align:left;">
+02/19/1997
+</td>
+<td style="text-align:left;">
+02/19/1997
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">2</td>
-<td align="left">ALL SEASONS 1 HR CLEANERS</td>
-<td align="left">06000000480416E015</td>
-<td align="left">2501 TEXAS AVENUE SOUTH #D100</td>
-<td align="left">COLLEGE STATION</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77840</td>
-<td align="left">110001873731</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">12070103</td>
-<td align="left">48041</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">N</td>
-<td align="left">7216</td>
-<td align="left">999999</td>
-<td align="left">30.60704</td>
-<td align="left">-96.30875</td>
-<td align="left">MACT</td>
-<td align="left">M</td>
-<td align="left">Operating</td>
-<td align="left">Minor Emissions</td>
-<td align="left">120701030702</td>
-<td align="left">Bee Creek-Carters Creek</td>
-<td align="left">NA</td>
-<td align="left">06000000480416E015</td>
-<td align="left">NA</td>
-<td align="left">TXD981611270</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">No Viol</td>
-<td align="left">No</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">7718</td>
-<td align="left">02/19/1997</td>
-<td align="left">02/19/1997</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+ALL SEASONS 1 HR CLEANERS
+</td>
+<td style="text-align:left;">
+06000000480416E015
+</td>
+<td style="text-align:left;">
+2501 TEXAS AVENUE SOUTH #D100
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77840
+</td>
+<td style="text-align:left;">
+110001873731
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+12070103
+</td>
+<td style="text-align:left;">
+48041
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+7216
+</td>
+<td style="text-align:left;">
+999999
+</td>
+<td style="text-align:left;">
+30.60704
+</td>
+<td style="text-align:left;">
+-96.30875
+</td>
+<td style="text-align:left;">
+MACT
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Operating
+</td>
+<td style="text-align:left;">
+Minor Emissions
+</td>
+<td style="text-align:left;">
+120701030702
+</td>
+<td style="text-align:left;">
+Bee Creek-Carters Creek
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+06000000480416E015
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+TXD981611270
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No Viol
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+7725
+</td>
+<td style="text-align:left;">
+02/19/1997
+</td>
+<td style="text-align:left;">
+02/19/1997
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">3</td>
-<td align="left">BLUEBONNET PAVING</td>
-<td align="left">TX0000004877700147</td>
-<td align="left">HWY. 60, WEST OF</td>
-<td align="left">COLLEGE STATION</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77840</td>
-<td align="left">110007194044</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">48777</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">2951</td>
-<td align="left">999999</td>
-<td align="left">30.613371</td>
-<td align="left">-96.320977</td>
-<td align="left">NSPS</td>
-<td align="left">NA</td>
-<td align="left">Operating</td>
-<td align="left">Minor Emissions</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">TX0000004877700147</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">No Viol</td>
-<td align="left">No</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+BLUEBONNET PAVING
+</td>
+<td style="text-align:left;">
+TX0000004877700147
+</td>
+<td style="text-align:left;">
+HWY. 60, WEST OF
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77840
+</td>
+<td style="text-align:left;">
+110007194044
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+48777
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+2951
+</td>
+<td style="text-align:left;">
+999999
+</td>
+<td style="text-align:left;">
+30.613371
+</td>
+<td style="text-align:left;">
+-96.320977
+</td>
+<td style="text-align:left;">
+NSPS
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Operating
+</td>
+<td style="text-align:left;">
+Minor Emissions
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+TX0000004877700147
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No Viol
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">4</td>
-<td align="left">BRYAN CERAMICS PLANT</td>
-<td align="left">TX0000004804100027</td>
-<td align="left">1500 INDEPENDENCE AVE</td>
-<td align="left">BRYAN</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77803</td>
-<td align="left">110007200830</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">48041</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">325188</td>
-<td align="left">30.637595</td>
-<td align="left">-96.362352</td>
-<td align="left">SIP, TVP</td>
-<td align="left">NA</td>
-<td align="left">Operating</td>
-<td align="left">Major Emissions</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">TX0000004804100027</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">No Viol</td>
-<td align="left">No</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">2</td>
-<td align="left">474</td>
-<td align="left">12/20/2016</td>
-<td align="left">NA</td>
-<td align="left">12/20/2016</td>
-<td align="left">01/17/2013</td>
-<td align="left">NA</td>
-<td align="left">01/17/2013</td>
-<td align="left">03/12/2012</td>
-<td align="left">Pass</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+BRYAN CERAMICS PLANT
+</td>
+<td style="text-align:left;">
+TX0000004804100027
+</td>
+<td style="text-align:left;">
+1500 INDEPENDENCE AVE
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77803
+</td>
+<td style="text-align:left;">
+110007200830
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+48041
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+325188
+</td>
+<td style="text-align:left;">
+30.637595
+</td>
+<td style="text-align:left;">
+-96.362352
+</td>
+<td style="text-align:left;">
+SIP, TVP
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Operating
+</td>
+<td style="text-align:left;">
+Major Emissions
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+TX0000004804100027
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No Viol
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+481
+</td>
+<td style="text-align:left;">
+12/20/2016
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+12/20/2016
+</td>
+<td style="text-align:left;">
+01/17/2013
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+01/17/2013
+</td>
+<td style="text-align:left;">
+03/12/2012
+</td>
+<td style="text-align:left;">
+Pass
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">5</td>
-<td align="left">BRYAN CLEANERS &amp; LAUNDRY</td>
-<td align="left">06000000480416E012</td>
-<td align="left">1803 HOLLEMAN DRIVE</td>
-<td align="left">COLLEGE STATION</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77840</td>
-<td align="left">110001873713</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">12070103</td>
-<td align="left">48041</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">N</td>
-<td align="left">7216</td>
-<td align="left">999999</td>
-<td align="left">30.61225</td>
-<td align="left">-96.317503</td>
-<td align="left">MACT</td>
-<td align="left">M</td>
-<td align="left">Operating</td>
-<td align="left">Minor Emissions</td>
-<td align="left">120701030702</td>
-<td align="left">Bee Creek-Carters Creek</td>
-<td align="left">NA</td>
-<td align="left">06000000480416E012</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">No Viol</td>
-<td align="left">No</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">7718</td>
-<td align="left">02/19/1997</td>
-<td align="left">02/19/1997</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+BRYAN CLEANERS &amp; LAUNDRY
+</td>
+<td style="text-align:left;">
+06000000480416E012
+</td>
+<td style="text-align:left;">
+1803 HOLLEMAN DRIVE
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77840
+</td>
+<td style="text-align:left;">
+110001873713
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+12070103
+</td>
+<td style="text-align:left;">
+48041
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+7216
+</td>
+<td style="text-align:left;">
+999999
+</td>
+<td style="text-align:left;">
+30.61225
+</td>
+<td style="text-align:left;">
+-96.317503
+</td>
+<td style="text-align:left;">
+MACT
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Operating
+</td>
+<td style="text-align:left;">
+Minor Emissions
+</td>
+<td style="text-align:left;">
+120701030702
+</td>
+<td style="text-align:left;">
+Bee Creek-Carters Creek
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+06000000480416E012
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No Viol
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+7725
+</td>
+<td style="text-align:left;">
+02/19/1997
+</td>
+<td style="text-align:left;">
+02/19/1997
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">6</td>
-<td align="left">CITY OF BRYAN</td>
-<td align="left">TX0000004804100026</td>
-<td align="left">1.5 MI W OF <span class="citation">@FM</span> 1687 &amp; FM 2818</td>
-<td align="left">BRYAN</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77801</td>
-<td align="left">110007194142</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">48041</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">4953</td>
-<td align="left">999999</td>
-<td align="left">30.637595</td>
-<td align="left">-96.362352</td>
-<td align="left">SIP</td>
-<td align="left">NA</td>
-<td align="left">Operating</td>
-<td align="left">Minor Emissions</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">TX0000004804100026</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">No Viol</td>
-<td align="left">No</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">0</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+CITY OF BRYAN
+</td>
+<td style="text-align:left;">
+TX0000004804100026
+</td>
+<td style="text-align:left;">
+1.5 MI W OF <span class="citation">@FM</span> 1687 &amp; FM 2818
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77801
+</td>
+<td style="text-align:left;">
+110007194142
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+48041
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+4953
+</td>
+<td style="text-align:left;">
+999999
+</td>
+<td style="text-align:left;">
+30.637595
+</td>
+<td style="text-align:left;">
+-96.362352
+</td>
+<td style="text-align:left;">
+SIP
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Operating
+</td>
+<td style="text-align:left;">
+Minor Emissions
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+TX0000004804100026
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No Viol
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>There are over 100 arguments that can be passed to <code>echoAirGetFacilityInfo()</code> to filter permitted facilites. They are documented here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. Each argument should be passeed to ECHO as <code>echoAirGetFaclityInfo(parameter = &quot;value&quot;)</code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
 <p>The most useful arguments are listed below:</p>
 <pre><code>p_fn  string  Facility Name Filter.
@@ -596,133 +1451,344 @@ xmax  string  Maximum longitude value in decimal degrees
 
 ymax  string  Maximum latitude value in decimal degrees</code></pre>
 <p>Download emissions inventory report data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">echoGetCAAPR</span>(<span class="dt">p_id =</span> <span class="st">'110000350174'</span>)
-knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(df))</code></pre></div>
-<table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">echoGetCAAPR</span>(<span class="dt">p_id =</span> <span class="st">'110000350174'</span>)</code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">Name</th>
-<th align="left">SourceID</th>
-<th align="left">Street</th>
-<th align="left">City</th>
-<th align="left">State</th>
-<th align="left">Zip</th>
-<th align="left">County</th>
-<th align="left">Region</th>
-<th align="right">Latitude</th>
-<th align="right">Longitude</th>
-<th align="left">Pollutant</th>
-<th align="left">UnitsOfMeasure</th>
-<th align="left">Program</th>
-<th align="right">Year</th>
-<th align="right">Discharge</th>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+SourceID
+</th>
+<th style="text-align:left;">
+Street
+</th>
+<th style="text-align:left;">
+City
+</th>
+<th style="text-align:left;">
+State
+</th>
+<th style="text-align:left;">
+Zip
+</th>
+<th style="text-align:left;">
+County
+</th>
+<th style="text-align:left;">
+Region
+</th>
+<th style="text-align:right;">
+Latitude
+</th>
+<th style="text-align:right;">
+Longitude
+</th>
+<th style="text-align:left;">
+Pollutant
+</th>
+<th style="text-align:left;">
+UnitsOfMeasure
+</th>
+<th style="text-align:left;">
+Program
+</th>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:right;">
+Discharge
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">CP&amp;L - SUTTON PLANT</td>
-<td align="left">110000350174</td>
-<td align="left">801 SUTTON STEAM PLANT ROAD</td>
-<td align="left">WILMINGTON</td>
-<td align="left">NC</td>
-<td align="left">28401</td>
-<td align="left">NEW HANOVER</td>
-<td align="left">04</td>
-<td align="right">34.28332</td>
-<td align="right">-77.98523</td>
-<td align="left">2,4-Dinitrotoluene</td>
-<td align="left">Pounds</td>
-<td align="left">NEI</td>
-<td align="right">2007</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+2,4-Dinitrotoluene
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">CP&amp;L - SUTTON PLANT</td>
-<td align="left">110000350174</td>
-<td align="left">801 SUTTON STEAM PLANT ROAD</td>
-<td align="left">WILMINGTON</td>
-<td align="left">NC</td>
-<td align="left">28401</td>
-<td align="left">NEW HANOVER</td>
-<td align="left">04</td>
-<td align="right">34.28332</td>
-<td align="right">-77.98523</td>
-<td align="left">2-Chloroacetophenone</td>
-<td align="left">Pounds</td>
-<td align="left">NEI</td>
-<td align="right">2007</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+2-Chloroacetophenone
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">CP&amp;L - SUTTON PLANT</td>
-<td align="left">110000350174</td>
-<td align="left">801 SUTTON STEAM PLANT ROAD</td>
-<td align="left">WILMINGTON</td>
-<td align="left">NC</td>
-<td align="left">28401</td>
-<td align="left">NEW HANOVER</td>
-<td align="left">04</td>
-<td align="right">34.28332</td>
-<td align="right">-77.98523</td>
-<td align="left">Acenaphthene</td>
-<td align="left">Pounds</td>
-<td align="left">NEI</td>
-<td align="right">2007</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+Acenaphthene
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">CP&amp;L - SUTTON PLANT</td>
-<td align="left">110000350174</td>
-<td align="left">801 SUTTON STEAM PLANT ROAD</td>
-<td align="left">WILMINGTON</td>
-<td align="left">NC</td>
-<td align="left">28401</td>
-<td align="left">NEW HANOVER</td>
-<td align="left">04</td>
-<td align="right">34.28332</td>
-<td align="right">-77.98523</td>
-<td align="left">Acetaldehyde</td>
-<td align="left">Pounds</td>
-<td align="left">NEI</td>
-<td align="right">2007</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+Acetaldehyde
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">CP&amp;L - SUTTON PLANT</td>
-<td align="left">110000350174</td>
-<td align="left">801 SUTTON STEAM PLANT ROAD</td>
-<td align="left">WILMINGTON</td>
-<td align="left">NC</td>
-<td align="left">28401</td>
-<td align="left">NEW HANOVER</td>
-<td align="left">04</td>
-<td align="right">34.28332</td>
-<td align="right">-77.98523</td>
-<td align="left">Acetophenone</td>
-<td align="left">Pounds</td>
-<td align="left">NEI</td>
-<td align="right">2007</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+Acetophenone
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">CP&amp;L - SUTTON PLANT</td>
-<td align="left">110000350174</td>
-<td align="left">801 SUTTON STEAM PLANT ROAD</td>
-<td align="left">WILMINGTON</td>
-<td align="left">NC</td>
-<td align="left">28401</td>
-<td align="left">NEW HANOVER</td>
-<td align="left">04</td>
-<td align="right">34.28332</td>
-<td align="right">-77.98523</td>
-<td align="left">Allyl chloride</td>
-<td align="left">Pounds</td>
-<td align="left">NEI</td>
-<td align="right">2007</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+Allyl chloride
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>There are only two valid arguments for <code>echoGetCAAPR</code>.</p>
 <pre><code>p_id  string  EPA Facility Registry Service's REGISTRY_ID.
 
@@ -735,201 +1801,553 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>, 
                                <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>,  <span class="dt">ymax =</span> <span class="st">'30.751984'</span>, 
                                <span class="dt">output =</span> <span class="st">'df'</span>)</code></pre></div>
-<table>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">ObjectId</th>
-<th align="left">CWPName</th>
-<th align="left">SourceID</th>
-<th align="left">CWPStreet</th>
-<th align="left">CWPCity</th>
-<th align="left">CWPState</th>
-<th align="left">CWPStateDistrict</th>
-<th align="left">CWPZip</th>
-<th align="left">MasterExternalPermitNmbr</th>
-<th align="left">CWPCounty</th>
-<th align="left">CWPEPARegion</th>
-<th align="left">FacFederalAgencyCode</th>
-<th align="left">FacLong</th>
-<th align="left">CWPFacilityTypeIndicator</th>
-<th align="left">ReceivingMs4Name</th>
-<th align="left">SpeciesCriticalHabitalFlag</th>
-<th align="left">ExposedActivity</th>
-<th align="left">AssociatedPollutant</th>
-<th align="left">ControlMeasure</th>
-<th align="left">ControlMeasureSchedule</th>
-<th align="left">EjscreenFlagUs</th>
-<th align="left">Over80CountUs</th>
-<th align="left">PctilePctpre1960Us</th>
-<th align="left">PctileProximityRmpUs</th>
-<th align="left">PctileProximityTsdfUs</th>
+<tr>
+<th style="text-align:left;">
+ObjectId
+</th>
+<th style="text-align:left;">
+CWPName
+</th>
+<th style="text-align:left;">
+SourceID
+</th>
+<th style="text-align:left;">
+CWPStreet
+</th>
+<th style="text-align:left;">
+CWPCity
+</th>
+<th style="text-align:left;">
+CWPState
+</th>
+<th style="text-align:left;">
+CWPStateDistrict
+</th>
+<th style="text-align:left;">
+CWPZip
+</th>
+<th style="text-align:left;">
+MasterExternalPermitNmbr
+</th>
+<th style="text-align:left;">
+CWPCounty
+</th>
+<th style="text-align:left;">
+CWPEPARegion
+</th>
+<th style="text-align:left;">
+FacFederalAgencyCode
+</th>
+<th style="text-align:left;">
+FacLong
+</th>
+<th style="text-align:left;">
+CWPFacilityTypeIndicator
+</th>
+<th style="text-align:left;">
+ReceivingMs4Name
+</th>
+<th style="text-align:left;">
+SpeciesCriticalHabitalFlag
+</th>
+<th style="text-align:left;">
+ExposedActivity
+</th>
+<th style="text-align:left;">
+AssociatedPollutant
+</th>
+<th style="text-align:left;">
+ControlMeasure
+</th>
+<th style="text-align:left;">
+ControlMeasureSchedule
+</th>
+<th style="text-align:left;">
+EjscreenFlagUs
+</th>
+<th style="text-align:left;">
+Over80CountUs
+</th>
+<th style="text-align:left;">
+PctilePctpre1960Us
+</th>
+<th style="text-align:left;">
+PctileProximityRmpUs
+</th>
+<th style="text-align:left;">
+PctileProximityTsdfUs
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">1</td>
-<td align="left">AGGIE ACRES WWTP</td>
-<td align="left">TX0132187</td>
-<td align="left">800 FT SE OF N DOWLING RD APPROX 600 FT SW OF WALN</td>
-<td align="left">COLLEGE STATION</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77845</td>
-<td align="left">NA</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">-96.291099</td>
-<td align="left">NON-POTW</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+AGGIE ACRES WWTP
+</td>
+<td style="text-align:left;">
+TX0132187
+</td>
+<td style="text-align:left;">
+800 FT SE OF N DOWLING RD APPROX 600 FT SW OF WALN
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77845
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+-96.291099
+</td>
+<td style="text-align:left;">
+NON-POTW
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">2</td>
-<td align="left">AGRIVEST SWINE FEEDLOT</td>
-<td align="left">TX0121240</td>
-<td align="left">SWISHER COUNTY</td>
-<td align="left">BRYAN</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">00000</td>
-<td align="left">NA</td>
-<td align="left">Swisher</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">-96.36552</td>
-<td align="left">NON-POTW</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+AGRIVEST SWINE FEEDLOT
+</td>
+<td style="text-align:left;">
+TX0121240
+</td>
+<td style="text-align:left;">
+SWISHER COUNTY
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+00000
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Swisher
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+-96.36552
+</td>
+<td style="text-align:left;">
+NON-POTW
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">3</td>
-<td align="left">ATKINS STREET POWER STATION</td>
-<td align="left">TX0027952</td>
-<td align="left">601 ATKINS STREET</td>
-<td align="left">BRYAN</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77801</td>
-<td align="left">NA</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">-96.37165</td>
-<td align="left">NON-POTW</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">Y</td>
-<td align="left">4</td>
-<td align="left">82.2</td>
-<td align="left">82.4</td>
-<td align="left">70.4</td>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+ATKINS STREET POWER STATION
+</td>
+<td style="text-align:left;">
+TX0027952
+</td>
+<td style="text-align:left;">
+601 ATKINS STREET
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77801
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+-96.37165
+</td>
+<td style="text-align:left;">
+NON-POTW
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Y
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+82.2
+</td>
+<td style="text-align:left;">
+82.4
+</td>
+<td style="text-align:left;">
+70.4
+</td>
 </tr>
-<tr class="even">
-<td align="left">4</td>
-<td align="left">ATOFINA CHEMICALS, INC.</td>
-<td align="left">TX0108863</td>
-<td align="left">SW OF THE MO PACIFIC RR &amp;</td>
-<td align="left">BRYAN</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">77801</td>
-<td align="left">NA</td>
-<td align="left">Brazos</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">-96.3732</td>
-<td align="left">NON-POTW</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">Y</td>
-<td align="left">4</td>
-<td align="left">82.2</td>
-<td align="left">82.4</td>
-<td align="left">70.4</td>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+ATOFINA CHEMICALS, INC.
+</td>
+<td style="text-align:left;">
+TX0108863
+</td>
+<td style="text-align:left;">
+SW OF THE MO PACIFIC RR &amp;
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77801
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Brazos
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+-96.37303
+</td>
+<td style="text-align:left;">
+NON-POTW
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Y
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+82.2
+</td>
+<td style="text-align:left;">
+82.4
+</td>
+<td style="text-align:left;">
+70.4
+</td>
 </tr>
-<tr class="odd">
-<td align="left">5</td>
-<td align="left">BARTLETT 1</td>
-<td align="left">TX0120421</td>
-<td align="left">SWISHER COUNTY</td>
-<td align="left">AMARILLO</td>
-<td align="left">TX</td>
-<td align="left">NA</td>
-<td align="left">00000</td>
-<td align="left">NA</td>
-<td align="left">Swisher</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">-96.36552</td>
-<td align="left">NON-POTW</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">N</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+BARTLETT 1
+</td>
+<td style="text-align:left;">
+TX0120421
+</td>
+<td style="text-align:left;">
+SWISHER COUNTY
+</td>
+<td style="text-align:left;">
+AMARILLO
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+00000
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Swisher
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+-96.36552
+</td>
+<td style="text-align:left;">
+NON-POTW
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">6</td>
-<td align="left">BOSSIER PARISH RESOURCE CENTER</td>
-<td align="left">LAG830191</td>
-<td align="left">3228 BARKDALE BLVD</td>
-<td align="left">BENTON</td>
-<td align="left">LA</td>
-<td align="left">NA</td>
-<td align="left">71111</td>
-<td align="left">LAG830000</td>
-<td align="left">Bossier</td>
-<td align="left">06</td>
-<td align="left">NA</td>
-<td align="left">-96.28182</td>
-<td align="left">NON-POTW</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">N</td>
-<td align="left">0</td>
-<td align="left">62.7</td>
-<td align="left">38.2</td>
-<td align="left">43.6</td>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+BOSSIER PARISH RESOURCE CENTER
+</td>
+<td style="text-align:left;">
+LAG830191
+</td>
+<td style="text-align:left;">
+3228 BARKDALE BLVD
+</td>
+<td style="text-align:left;">
+BENTON
+</td>
+<td style="text-align:left;">
+LA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+71111
+</td>
+<td style="text-align:left;">
+LAG830000
+</td>
+<td style="text-align:left;">
+Bossier
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+-96.28182
+</td>
+<td style="text-align:left;">
+NON-POTW
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+62.7
+</td>
+<td style="text-align:left;">
+38.2
+</td>
+<td style="text-align:left;">
+43.6
+</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Again, there are a ton of possible arguments to query ECHO with. All arguments are described here: <a href="https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info</a></p>
 <p>Commonly used arguments are provided below:</p>
 <pre><code>p_fn  string  Facility Name Filter.
@@ -980,292 +2398,826 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
               </code></pre>
 <p>Download discharge monitoring reports from ECHO from specified facilities:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">echoGetEffluent</span>(<span class="dt">p_id =</span> <span class="st">'tx0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'50050'</span>)</code></pre></div>
-<table>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">Name</th>
-<th align="left">Outfall</th>
-<th align="left">ID</th>
-<th align="left">RegistryID</th>
-<th align="left">Location</th>
-<th align="left">City</th>
-<th align="left">State</th>
-<th align="left">Zip</th>
-<th align="left">Status</th>
-<th align="left">LimitBeginDate</th>
-<th align="left">LimitEndDate</th>
-<th align="right">LimitValueNmbr</th>
-<th align="left">LimitUnitCode</th>
-<th align="left">LimitUnitDesc</th>
-<th align="left">StdUnitCode</th>
-<th align="left">StdUnitDesc</th>
-<th align="left">LimitValueStdUnit</th>
-<th align="left">StatisticalBaseCode</th>
-<th align="left">StatisticalBaseDesc</th>
-<th align="left">StatisticalBaseTypeCode</th>
-<th align="left">StatisticalBaseTypeDesc</th>
-<th align="left">DMREventId</th>
-<th align="left">MonitoringPeriodEndDate</th>
-<th align="left">DMRFormValueId</th>
-<th align="left">ValueTypeCode</th>
-<th align="left">ValueTypeDesc</th>
-<th align="left">DMRValueId</th>
-<th align="right">DMRValueNmbr</th>
-<th align="left">DMRUnitCode</th>
-<th align="left">DMRUnitDesc</th>
-<th align="right">DMRValueStdUnits</th>
-<th align="left">DMRQualifierCode</th>
-<th align="left">ValueReceivedDate</th>
-<th align="right">DaysLate</th>
-<th align="left">NODICode</th>
-<th align="left">NODEDesc</th>
-<th align="left">ExceedancePct</th>
-<th align="left">NPDESViolations</th>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Outfall
+</th>
+<th style="text-align:left;">
+ID
+</th>
+<th style="text-align:left;">
+RegistryID
+</th>
+<th style="text-align:left;">
+Location
+</th>
+<th style="text-align:left;">
+City
+</th>
+<th style="text-align:left;">
+State
+</th>
+<th style="text-align:left;">
+Zip
+</th>
+<th style="text-align:left;">
+Status
+</th>
+<th style="text-align:left;">
+LimitBeginDate
+</th>
+<th style="text-align:left;">
+LimitEndDate
+</th>
+<th style="text-align:right;">
+LimitValueNmbr
+</th>
+<th style="text-align:left;">
+LimitUnitCode
+</th>
+<th style="text-align:left;">
+LimitUnitDesc
+</th>
+<th style="text-align:left;">
+StdUnitCode
+</th>
+<th style="text-align:left;">
+StdUnitDesc
+</th>
+<th style="text-align:left;">
+LimitValueStdUnit
+</th>
+<th style="text-align:left;">
+StatisticalBaseCode
+</th>
+<th style="text-align:left;">
+StatisticalBaseDesc
+</th>
+<th style="text-align:left;">
+StatisticalBaseTypeCode
+</th>
+<th style="text-align:left;">
+StatisticalBaseTypeDesc
+</th>
+<th style="text-align:left;">
+DMREventId
+</th>
+<th style="text-align:left;">
+MonitoringPeriodEndDate
+</th>
+<th style="text-align:left;">
+DMRFormValueId
+</th>
+<th style="text-align:left;">
+ValueTypeCode
+</th>
+<th style="text-align:left;">
+ValueTypeDesc
+</th>
+<th style="text-align:left;">
+DMRValueId
+</th>
+<th style="text-align:right;">
+DMRValueNmbr
+</th>
+<th style="text-align:left;">
+DMRUnitCode
+</th>
+<th style="text-align:left;">
+DMRUnitDesc
+</th>
+<th style="text-align:right;">
+DMRValueStdUnits
+</th>
+<th style="text-align:left;">
+DMRQualifierCode
+</th>
+<th style="text-align:left;">
+ValueReceivedDate
+</th>
+<th style="text-align:right;">
+DaysLate
+</th>
+<th style="text-align:left;">
+NODICode
+</th>
+<th style="text-align:left;">
+NODEDesc
+</th>
+<th style="text-align:left;">
+ExceedancePct
+</th>
+<th style="text-align:left;">
+NPDESViolations
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">SKIDMORE WSC WWTP</td>
-<td align="left">001</td>
-<td align="left">TX0119407</td>
-<td align="left">110009771693</td>
-<td align="left">1000 FT N OF THE END OF BLACK RANCH RD AND APPROX</td>
-<td align="left">SKIDMORE</td>
-<td align="left">TX</td>
-<td align="left">78387</td>
-<td align="left">78387</td>
-<td align="left">16648</td>
-<td align="left">18322</td>
-<td align="right">0.131</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">NA</td>
-<td align="left">DB</td>
-<td align="left">DAILY AV</td>
-<td align="left">AVG</td>
-<td align="left">Average</td>
-<td align="left">3403423151</td>
-<td align="left">16678</td>
-<td align="left">3442281023</td>
-<td align="left">Q1</td>
-<td align="left">Quantity1</td>
-<td align="left">3612155723</td>
-<td align="right">0.0492</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="right">0.0492</td>
-<td align="left">NA</td>
-<td align="left">16695</td>
-<td align="right">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+SKIDMORE WSC WWTP
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+110009771693
+</td>
+<td style="text-align:left;">
+1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+</td>
+<td style="text-align:left;">
+SKIDMORE
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+16648
+</td>
+<td style="text-align:left;">
+18322
+</td>
+<td style="text-align:right;">
+0.131
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+DB
+</td>
+<td style="text-align:left;">
+DAILY AV
+</td>
+<td style="text-align:left;">
+AVG
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:left;">
+3403423151
+</td>
+<td style="text-align:left;">
+16678
+</td>
+<td style="text-align:left;">
+3442281023
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:left;">
+Quantity1
+</td>
+<td style="text-align:left;">
+3612155723
+</td>
+<td style="text-align:right;">
+0.0492
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:right;">
+0.0492
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+16695
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">SKIDMORE WSC WWTP</td>
-<td align="left">001</td>
-<td align="left">TX0119407</td>
-<td align="left">110009771693</td>
-<td align="left">1000 FT N OF THE END OF BLACK RANCH RD AND APPROX</td>
-<td align="left">SKIDMORE</td>
-<td align="left">TX</td>
-<td align="left">78387</td>
-<td align="left">78387</td>
-<td align="left">16648</td>
-<td align="left">18322</td>
-<td align="right">NA</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">NA</td>
-<td align="left">DD</td>
-<td align="left">DAILY MX</td>
-<td align="left">MAX</td>
-<td align="left">Maximum</td>
-<td align="left">3403423151</td>
-<td align="left">16678</td>
-<td align="left">3442281032</td>
-<td align="left">Q2</td>
-<td align="left">Quantity2</td>
-<td align="left">3612155724</td>
-<td align="right">0.0534</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="right">0.0534</td>
-<td align="left">NA</td>
-<td align="left">16695</td>
-<td align="right">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+SKIDMORE WSC WWTP
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+110009771693
+</td>
+<td style="text-align:left;">
+1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+</td>
+<td style="text-align:left;">
+SKIDMORE
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+16648
+</td>
+<td style="text-align:left;">
+18322
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+DAILY MX
+</td>
+<td style="text-align:left;">
+MAX
+</td>
+<td style="text-align:left;">
+Maximum
+</td>
+<td style="text-align:left;">
+3403423151
+</td>
+<td style="text-align:left;">
+16678
+</td>
+<td style="text-align:left;">
+3442281032
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:left;">
+Quantity2
+</td>
+<td style="text-align:left;">
+3612155724
+</td>
+<td style="text-align:right;">
+0.0534
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:right;">
+0.0534
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+16695
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">SKIDMORE WSC WWTP</td>
-<td align="left">001</td>
-<td align="left">TX0119407</td>
-<td align="left">110009771693</td>
-<td align="left">1000 FT N OF THE END OF BLACK RANCH RD AND APPROX</td>
-<td align="left">SKIDMORE</td>
-<td align="left">TX</td>
-<td align="left">78387</td>
-<td align="left">78387</td>
-<td align="left">16648</td>
-<td align="left">18322</td>
-<td align="right">0.131</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">NA</td>
-<td align="left">DB</td>
-<td align="left">DAILY AV</td>
-<td align="left">AVG</td>
-<td align="left">Average</td>
-<td align="left">3403423173</td>
-<td align="left">16708</td>
-<td align="left">3442281323</td>
-<td align="left">Q1</td>
-<td align="left">Quantity1</td>
-<td align="left">3613394763</td>
-<td align="right">0.0512</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="right">0.0512</td>
-<td align="left">NA</td>
-<td align="left">16728</td>
-<td align="right">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+SKIDMORE WSC WWTP
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+110009771693
+</td>
+<td style="text-align:left;">
+1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+</td>
+<td style="text-align:left;">
+SKIDMORE
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+16648
+</td>
+<td style="text-align:left;">
+18322
+</td>
+<td style="text-align:right;">
+0.131
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+DB
+</td>
+<td style="text-align:left;">
+DAILY AV
+</td>
+<td style="text-align:left;">
+AVG
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:left;">
+3403423173
+</td>
+<td style="text-align:left;">
+16708
+</td>
+<td style="text-align:left;">
+3442281323
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:left;">
+Quantity1
+</td>
+<td style="text-align:left;">
+3613394763
+</td>
+<td style="text-align:right;">
+0.0512
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:right;">
+0.0512
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+16728
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">SKIDMORE WSC WWTP</td>
-<td align="left">001</td>
-<td align="left">TX0119407</td>
-<td align="left">110009771693</td>
-<td align="left">1000 FT N OF THE END OF BLACK RANCH RD AND APPROX</td>
-<td align="left">SKIDMORE</td>
-<td align="left">TX</td>
-<td align="left">78387</td>
-<td align="left">78387</td>
-<td align="left">16648</td>
-<td align="left">18322</td>
-<td align="right">NA</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">NA</td>
-<td align="left">DD</td>
-<td align="left">DAILY MX</td>
-<td align="left">MAX</td>
-<td align="left">Maximum</td>
-<td align="left">3403423173</td>
-<td align="left">16708</td>
-<td align="left">3442281328</td>
-<td align="left">Q2</td>
-<td align="left">Quantity2</td>
-<td align="left">3613394764</td>
-<td align="right">0.0710</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="right">0.0710</td>
-<td align="left">NA</td>
-<td align="left">16728</td>
-<td align="right">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+SKIDMORE WSC WWTP
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+110009771693
+</td>
+<td style="text-align:left;">
+1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+</td>
+<td style="text-align:left;">
+SKIDMORE
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+16648
+</td>
+<td style="text-align:left;">
+18322
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+DAILY MX
+</td>
+<td style="text-align:left;">
+MAX
+</td>
+<td style="text-align:left;">
+Maximum
+</td>
+<td style="text-align:left;">
+3403423173
+</td>
+<td style="text-align:left;">
+16708
+</td>
+<td style="text-align:left;">
+3442281328
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:left;">
+Quantity2
+</td>
+<td style="text-align:left;">
+3613394764
+</td>
+<td style="text-align:right;">
+0.0710
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:right;">
+0.0710
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+16728
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">SKIDMORE WSC WWTP</td>
-<td align="left">001</td>
-<td align="left">TX0119407</td>
-<td align="left">110009771693</td>
-<td align="left">1000 FT N OF THE END OF BLACK RANCH RD AND APPROX</td>
-<td align="left">SKIDMORE</td>
-<td align="left">TX</td>
-<td align="left">78387</td>
-<td align="left">78387</td>
-<td align="left">16648</td>
-<td align="left">18322</td>
-<td align="right">0.131</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">NA</td>
-<td align="left">DB</td>
-<td align="left">DAILY AV</td>
-<td align="left">AVG</td>
-<td align="left">Average</td>
-<td align="left">3403423185</td>
-<td align="left">16739</td>
-<td align="left">3442281496</td>
-<td align="left">Q1</td>
-<td align="left">Quantity1</td>
-<td align="left">3614856996</td>
-<td align="right">0.0480</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="right">0.0480</td>
-<td align="left">NA</td>
-<td align="left">16759</td>
-<td align="right">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+SKIDMORE WSC WWTP
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+110009771693
+</td>
+<td style="text-align:left;">
+1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+</td>
+<td style="text-align:left;">
+SKIDMORE
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+16648
+</td>
+<td style="text-align:left;">
+18322
+</td>
+<td style="text-align:right;">
+0.131
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+DB
+</td>
+<td style="text-align:left;">
+DAILY AV
+</td>
+<td style="text-align:left;">
+AVG
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:left;">
+3403423185
+</td>
+<td style="text-align:left;">
+16739
+</td>
+<td style="text-align:left;">
+3442281496
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:left;">
+Quantity1
+</td>
+<td style="text-align:left;">
+3614856996
+</td>
+<td style="text-align:right;">
+0.0480
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:right;">
+0.0480
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+16759
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">SKIDMORE WSC WWTP</td>
-<td align="left">001</td>
-<td align="left">TX0119407</td>
-<td align="left">110009771693</td>
-<td align="left">1000 FT N OF THE END OF BLACK RANCH RD AND APPROX</td>
-<td align="left">SKIDMORE</td>
-<td align="left">TX</td>
-<td align="left">78387</td>
-<td align="left">78387</td>
-<td align="left">16648</td>
-<td align="left">18322</td>
-<td align="right">NA</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">MGD</td>
-<td align="left">NA</td>
-<td align="left">DD</td>
-<td align="left">DAILY MX</td>
-<td align="left">MAX</td>
-<td align="left">Maximum</td>
-<td align="left">3403423185</td>
-<td align="left">16739</td>
-<td align="left">3442281524</td>
-<td align="left">Q2</td>
-<td align="left">Quantity2</td>
-<td align="left">3614856997</td>
-<td align="right">0.0613</td>
-<td align="left">03</td>
-<td align="left">MGD</td>
-<td align="right">0.0613</td>
-<td align="left">NA</td>
-<td align="left">16759</td>
-<td align="right">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+SKIDMORE WSC WWTP
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+110009771693
+</td>
+<td style="text-align:left;">
+1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+</td>
+<td style="text-align:left;">
+SKIDMORE
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+78387
+</td>
+<td style="text-align:left;">
+16648
+</td>
+<td style="text-align:left;">
+18322
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+DAILY MX
+</td>
+<td style="text-align:left;">
+MAX
+</td>
+<td style="text-align:left;">
+Maximum
+</td>
+<td style="text-align:left;">
+3403423185
+</td>
+<td style="text-align:left;">
+16739
+</td>
+<td style="text-align:left;">
+3442281524
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:left;">
+Quantity2
+</td>
+<td style="text-align:left;">
+3614856997
+</td>
+<td style="text-align:right;">
+0.0613
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:right;">
+0.0613
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+16759
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>This function only retrieves from a single facility per call. The following arguments are available from ECHO:</p>
 <pre><code>p_id  string  EPA Facility Registry Service's REGISTRY_ID.
 

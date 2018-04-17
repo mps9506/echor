@@ -19,6 +19,13 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+library(httptest)
+library(here)
+library(kableExtra)
+
+path <- here::here("vignettes/data")
+
+httptest::start_vignette(path = path)
 ```
 
 ## echor introduction
@@ -57,7 +64,12 @@ df <- echoAirGetFacilityInfo(output = "df",
                                ymin = '30.583572',
                                xmax = '-96.281422',
                                ymax = '30.640008')
-knitr::kable(head(df))
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
 ```
 
 There are over 100 arguments that can be passed to `echoAirGetFacilityInfo()` to filter permitted facilites. They are documented here: https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info. Each argument should be passeed to ECHO as `echoAirGetFaclityInfo(parameter = "value")`. `echor` will URL encode strings automatically. Please note that any date argument needs to be entered as "mm/dd/yyyy".
@@ -111,8 +123,14 @@ ymax  string  Maximum latitude value in decimal degrees
 Download emissions inventory report data:
 ```{r}
 df <- echoGetCAAPR(p_id = '110000350174')
-knitr::kable(head(df))
 ```
+
+```{r echo=FALSE}
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
+```
+
 
 There are only two valid arguments for `echoGetCAAPR`.
 ```{}
@@ -132,7 +150,9 @@ df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395',
 ```
 
 ```{r echo=FALSE}
-knitr::kable(head(df))
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
 ```
 
 Again, there are a ton of possible arguments to query ECHO with. All arguments are described here: 
@@ -195,7 +215,9 @@ df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
 ```
 
 ```{r echo=FALSE}
-knitr::kable(head(df))
+knitr::kable(head(df), "html") %>%
+  kable_styling() %>%
+  scroll_box(width = "500px", height = "200px")
 ```
 
 This function only retrieves from a single facility per call. The following arguments are available from ECHO:
@@ -271,5 +293,9 @@ ggmap(collegestation) +
   labs(x = "Longitude", y = "Latitude", 
        title = "NPDES permits near Texas A&M",
        caption = "Source: EPA ECHO database")
+```
+
+```{r include = FALSE}
+httptest::end_vignette()
 ```
 
