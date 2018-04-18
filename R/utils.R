@@ -10,21 +10,27 @@ readEchoGetDots <- function(...) {
         stop("NA's are not allowed in query")
     }
 
-    values <- sapply(matchReturn, function(x) as.character(paste(eval(x), collapse = ",",
+    values <- sapply(matchReturn,
+                     function(x) as.character(paste(eval(x),
+                                                    collapse = ",",
         sep = "")))
     values
 }
 
 
 convertLists <- function(...) {
-    matchReturn <- c(do.call("c", list(...)[sapply(list(...), class) == "list"]),
+    matchReturn <- c(do.call("c",
+                             list(...)[sapply(list(...),
+                                              class) == "list"]),
         list(...)[sapply(list(...), class) != "list"])
     return(matchReturn)
 
 }
 
 queryList <- function(valuesList) {
-  valuesList <- sapply(valuesList, function(x) utils::URLencode(x, reserved=TRUE))
+  valuesList <- sapply(valuesList,
+                       function(x) utils::URLencode(x,
+                                                    reserved = TRUE))
   paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
 }
 
@@ -37,7 +43,7 @@ exclude <- function(list, names) {
 
 # data wrangling ----------------------------------------------------------
 
-## handle NULLs - Pulled from JennyBC's purrr tutorial originally from Zev Ross
+## handle NULLs,  Pulled from JennyBC's purrr tutorial originally from Zev Ross
 safe_extract <- function(l, wut) {
     res <- l[wut]
     null_here <- purrr::map_lgl(res, is.null)
@@ -61,7 +67,8 @@ safe_extract <- function(l, wut) {
 #' @noRd
 requestURL <- function(path, query) {
 
-    urlBuildList <- structure(list(scheme = "https", hostname = "ofmpub.epa.gov",
+    urlBuildList <- structure(list(scheme = "https",
+                                   hostname = "ofmpub.epa.gov",
         port = NULL, path = path, query = query), class = "url")
     return(build_url(urlBuildList))
 }
