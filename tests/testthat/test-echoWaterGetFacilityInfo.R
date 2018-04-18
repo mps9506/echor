@@ -38,6 +38,3 @@ with_mock_api({
     expect_message(echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "sf", verbose = TRUE))
   })
 })
-
-
-

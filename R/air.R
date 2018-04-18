@@ -38,7 +38,8 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## returns a list of arguments supplied by user
     valuesList <- readEchoGetDots(...)
 
-    ## check if user includes an output argument in dots if included, strip it out
+    ## check if user includes an output argument in dots if included, strip it
+    ## out
     valuesList <- exclude(valuesList, "output")
 
     ## generate query the will be pasted into GET URL
@@ -63,16 +64,21 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
         info <- content(request)
 
         ## build the output
-        len <- purrr::map(info[["Results"]][["Facilities"]], length)  # return a list of lengths
-        maxIndex <- which.max(len)  # if a different number of columns is returned per plant, we want to map values to the longest
-        # this might fail if a entirely different columns are returned. Need to find out
-        # if there is some consisteny in the returned columns
+
+        # return a list of lengths
+        len <- purrr::map(info[["Results"]][["Facilities"]], length)
+
+        # if a different number of columns is returned per plant, we want to map
+        # values to the longest
+        maxIndex <- which.max(len)
+        # this might fail if a entirely different columns are returned. Need to
+        # find out if there is some consisteny in the returned columns
 
         cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
 
         ## create the output dataframe
-        buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]], safe_extract,
-            cNames)
+        buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
+                                     safe_extract, cNames)
         return(buildOutput)
     }
 
@@ -99,7 +105,8 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
     }
     else {
-      stop("output argument = ", output, ", when it should be either 'df' or 'sf'")
+      stop("output argument = ", output,
+           ", when it should be either 'df' or 'sf'")
     }
 
 }
@@ -134,16 +141,18 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
 
 
     ## should check if character and return error if not
-    p_id = paste0("p_id=", p_id)
+    p_id <- paste0("p_id=", p_id)
 
     ## returns a list of arguments supplied by user
     valuesList <- readEchoGetDots(...)
 
-    ## check if user includes an output argument in dots if included, strip it out
+    ## check if user includes an output argument in dots if included, strip it
+    ## out
     valuesList <- exclude(valuesList, "output")
 
     ## generate the intial query
-    queryDots <- paste(paste(names(valuesList), valuesList, sep = "="), collapse = "&")
+    queryDots <- paste(paste(names(valuesList), valuesList, sep = "="),
+                       collapse = "&")
 
     ## build the request URL statement
     path <- "echo/caa_poll_rpt_rest_services.get_caapr"
@@ -160,9 +169,14 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
     info <- content(request)
 
     ## Emissions data is provided in wide format
-    pollutant <- purrr::map_df(info[["Results"]][["CAAPollRpt"]][["Pollutants"]],
-        safe_extract, c("Pollutant", "UnitsOfMeasure", "Year1", "Year2", "Year3",
-            "Year4", "Year5", "Year6", "Year7", "Year8", "Year9", "Year10", "Program"))
+    pollutant <- purrr::map_df(
+      info[["Results"]][["CAAPollRpt"]][["Pollutants"]],
+      safe_extract,
+      c("Pollutant", "UnitsOfMeasure", "Year1",
+        "Year2", "Year3", "Year4",
+        "Year5", "Year6", "Year7",
+        "Year8", "Year9", "Year10",
+        "Program"))
     ## Change emissions data from wide to narrow
     pollutant <- tidyr::gather_(pollutant, "Year", "Discharge", c("Year1",
                                                                   "Year2",
@@ -175,27 +189,35 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
                                                                   "Year9",
                                                                   "Year10"))
 
-    ## Year1 <- TRI_year_01... etc Note: Certainly a better way to do this.
-    pollutant <- pollutant %>% mutate(Year = case_when(Year == "Year1" ~ info[["Results"]][["TRI_year_01"]],
-        Year == "Year2" ~ info[["Results"]][["TRI_year_02"]], Year == "Year3" ~ info[["Results"]][["TRI_year_03"]],
-        Year == "Year4" ~ info[["Results"]][["TRI_year_04"]], Year == "Year5" ~ info[["Results"]][["TRI_year_05"]],
-        Year == "Year6" ~ info[["Results"]][["TRI_year_06"]], Year == "Year7" ~ info[["Results"]][["TRI_year_07"]],
-        Year == "Year8" ~ info[["Results"]][["TRI_year_08"]], Year == "Year9" ~ info[["Results"]][["TRI_year_09"]],
+
+    pollutant <- pollutant %>%
+      mutate(Year = case_when(Year == "Year1" ~
+                                info[["Results"]][["TRI_year_01"]],
+        Year == "Year2" ~ info[["Results"]][["TRI_year_02"]],
+        Year == "Year3" ~ info[["Results"]][["TRI_year_03"]],
+        Year == "Year4" ~ info[["Results"]][["TRI_year_04"]],
+        Year == "Year5" ~ info[["Results"]][["TRI_year_05"]],
+        Year == "Year6" ~ info[["Results"]][["TRI_year_06"]],
+        Year == "Year7" ~ info[["Results"]][["TRI_year_07"]],
+        Year == "Year8" ~ info[["Results"]][["TRI_year_08"]],
+        Year == "Year9" ~ info[["Results"]][["TRI_year_09"]],
         Year == "Year10" ~ info[["Results"]][["TRI_year_10"]]))
 
     ## build output dataframe
-    buildOutput <- tibble(Name = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["FacilityName"]],
-        SourceID = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["SourceId"]],
-        Street = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Street"]],
-        City = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["City"]],
-        State = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["State"]],
-        Zip = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Zip"]], County = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["County"]],
-        Region = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Region"]],
-        Latitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Latitude"]]),
-        Longitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Longitude"]]),
-        Pollutant = as.factor(pollutant$Pollutant), UnitsOfMeasure = as.factor(pollutant$UnitsOfMeasure),
-        Program = as.factor(pollutant$Program), Year = as.integer(pollutant$Year),
-        Discharge = as.numeric(gsub(",", "", pollutant$Discharge))  #handle commas
+    buildOutput <- tibble(
+      Name = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["FacilityName"]],
+      SourceID = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["SourceId"]],
+      Street = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Street"]],
+      City = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["City"]],
+      State = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["State"]],
+      Zip = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Zip"]],
+      County = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["County"]],
+      Region = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Region"]],
+      Latitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Latitude"]]),
+      Longitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Longitude"]]),
+      Pollutant = as.factor(pollutant$Pollutant), UnitsOfMeasure = as.factor(pollutant$UnitsOfMeasure),
+      Program = as.factor(pollutant$Program), Year = as.integer(pollutant$Year),
+      Discharge = as.numeric(gsub(",", "", pollutant$Discharge))  #handle commas
 )
 
     return(buildOutput)
