@@ -9,7 +9,7 @@ echoWaterGetFacilityInfo(output = "df", verbose = FALSE, ...)
 \arguments{
 \item{output}{Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.}
 
-\item{verbose}{Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE}
+\item{verbose}{Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE}
 
 \item{\dots}{Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.}
 }
