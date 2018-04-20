@@ -1,3 +1,14 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Added single quotes around package and software names 
+  (e.g. 'ECHO') in the title and description
+  
+* Explained all acronyms in the description
+
+* Replaced \dontrun{} with \donttest{} and added comment 
+  that an internet connection is required to run the examples 
+
 # 0.1.0
 
 * Initial release
