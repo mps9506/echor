@@ -20,7 +20,9 @@ dataframe
 Download EPA ECHO emissions inventory report data
 }
 \examples{
-\dontrun{
+\donttest{
+## This example requires an internet connection to run
+
 echoGetCAAPR(p_id = '110000350174')
 }
 

@@ -12,10 +12,12 @@
 #' @return returns a dataframe or simple features dataframe
 #' @import httr
 #' @import jsonlite
+#' @import sf
 #'
 #' @export
-#' @examples \dontrun{
-#' ## Not run:
+#' @examples \donttest{
+#' ## These examples require an internet connection to run
+#'
 #' ## Retrieve table of facilities by bounding box
 #' echoWaterGetFacilityInfo(xmin = '-96.407563',
 #' ymin = '30.554395',
@@ -23,7 +25,7 @@
 #' ymax = '30.751984',
 #' output = 'df')
 #'
-#' ## Retrieve a geojson by bounding box
+#' ## Retrieve a simple features dataframe by bounding box
 #' spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
@@ -126,8 +128,11 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 #' @return Returns a dataframe.
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
+#' ## This example requires an internet connection to run
+#'
 #' ## Retrieve single DMR for flow
+#'
 #' echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
 #' }
 echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
@@ -248,7 +253,9 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 #'
 #' @return Returns a dataframe.
 #' @export
-#' @examples \dontrun{
+#' @examples \donttest{
+#' ## These examples require an internet connection to run
+#'
 #' ## Retrieve parameter codes for dissolved oxygen
 #' echoWaterGetParams(term = "Oxygen, dissolved")
 #'

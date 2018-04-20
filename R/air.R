@@ -7,6 +7,7 @@
 #' Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info}
 #' @import httr
 #' @import jsonlite
+#' @import sf
 #' @param output Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
@@ -14,8 +15,9 @@
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
-#' @examples\dontrun{
-#' ## Not run:
+#' @examples\donttest{
+#' ## These examples require an internet connection to run
+#'
 #' ## Retrieve table of facilities by bounding box
 #' echoAirGetFacilityInfo(xmin = '-96.407563',
 #' ymin = '30.554395',
@@ -23,7 +25,7 @@
 #' ymax = '30.751984',
 #' output = 'df')
 #'
-#' ## Retrieve a geojson by bounding box
+#' ## Retrieve a simple features dataframe by bounding box
 #' spatialdata <- echoAirGetFacilityInfo(xmin = '-96.407563',
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
@@ -128,7 +130,9 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 #' @return dataframe
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
+#' ## This example requires an internet connection to run
+#'
 #' echoGetCAAPR(p_id = '110000350174')
 #' }
 #'

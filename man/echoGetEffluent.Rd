@@ -20,8 +20,11 @@ Returns a dataframe.
 Downloads EPA ECHO DMR records of dischargers with NPDES permits
 }
 \examples{
-\dontrun{
+\donttest{
+## This example requires an internet connection to run
+
 ## Retrieve single DMR for flow
+
 echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
 }
 }
