@@ -21,6 +21,8 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
@@ -108,9 +110,11 @@
     <div class="hidden name"><code>echoGetEffluent.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Downloads EPA ECHO DMR records of dischargers with NPDES permits</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>echoGetEffluent</span>(<span class='no'>p_id</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
     
@@ -137,10 +141,35 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
+    <pre class="examples"><div class='input'><span class='co'>## This example requires an internet connection to run</span>
+
 <span class='co'>## Retrieve single DMR for flow</span>
-<span class='fu'>echoGetEffluent</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'tx0119407'</span>, <span class='kw'>parameter_code</span> <span class='kw'>=</span> <span class='st'>'50050'</span>)
-<span class='co'># }</span></pre>
+
+<span class='fu'>echoGetEffluent</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'tx0119407'</span>, <span class='kw'>parameter_code</span> <span class='kw'>=</span> <span class='st'>'50050'</span>)</div><div class='output co'>#&gt; # A tibble: 78 x 38
+#&gt;    Name     Outfall ID     RegistryID  Location        City  State Zip   Status
+#&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
+#&gt;  1 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  2 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  3 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  4 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  5 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  6 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  7 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  8 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt;  9 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt; 10 SKIDMOR~ 001     TX011~ 1100097716~ 1000 FT N OF T~ SKID~ TX    78387 78387 
+#&gt; # ... with 68 more rows, and 29 more variables: LimitBeginDate &lt;date&gt;,
+#&gt; #   LimitEndDate &lt;date&gt;, LimitValueNmbr &lt;dbl&gt;, LimitUnitCode &lt;chr&gt;,
+#&gt; #   LimitUnitDesc &lt;chr&gt;, StdUnitCode &lt;chr&gt;, StdUnitDesc &lt;chr&gt;,
+#&gt; #   LimitValueStdUnit &lt;chr&gt;, StatisticalBaseCode &lt;chr&gt;,
+#&gt; #   StatisticalBaseDesc &lt;chr&gt;, StatisticalBaseTypeCode &lt;list&gt;,
+#&gt; #   StatisticalBaseTypeDesc &lt;list&gt;, DMREventId &lt;chr&gt;,
+#&gt; #   MonitoringPeriodEndDate &lt;date&gt;, DMRFormValueId &lt;chr&gt;, ValueTypeCode &lt;list&gt;,
+#&gt; #   ValueTypeDesc &lt;list&gt;, DMRValueId &lt;chr&gt;, DMRValueNmbr &lt;dbl&gt;,
+#&gt; #   DMRUnitCode &lt;list&gt;, DMRUnitDesc &lt;list&gt;, DMRValueStdUnits &lt;dbl&gt;,
+#&gt; #   DMRQualifierCode &lt;list&gt;, ValueReceivedDate &lt;date&gt;, DaysLate &lt;int&gt;,
+#&gt; #   NODICode &lt;list&gt;, NODEDesc &lt;list&gt;, ExceedancePct &lt;list&gt;,
+#&gt; #   NPDESViolations &lt;list&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
