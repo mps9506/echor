@@ -21,6 +21,8 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
@@ -108,9 +110,11 @@
     <div class="hidden name"><code>echoWaterGetParams.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Returns a dataframe of parameter codes and descriptions.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>code</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
@@ -137,12 +141,21 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='co'>## Retrieve parameter codes for dissolved oxygen</span>
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='st'>"Oxygen, dissolved"</span>)
+    <pre class="examples"><div class='input'><span class='co'>## These examples require an internet connection to run</span>
 
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"00300"</span>)
-<span class='co'># }</span></pre>
+<span class='co'>## Retrieve parameter codes for dissolved oxygen</span>
+<span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='st'>"Oxygen, dissolved"</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 2
+#&gt;   ValueCode ValueDescription                     
+#&gt;   &lt;chr&gt;     &lt;chr&gt;                                
+#&gt; 1 00300     Oxygen, dissolved [DO]               
+#&gt; 2 51646     Oxygen, dissolved [DO] maximum       
+#&gt; 3 51645     Oxygen, dissolved [DO] minimum       
+#&gt; 4 00301     Oxygen, dissolved percent saturation 
+#&gt; 5 00399     Oxygen, dissolved, % of time violated</div><div class='input'>
+<span class='fu'>echoWaterGetParams</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"00300"</span>)</div><div class='output co'>#&gt; # A tibble: 1 x 2
+#&gt;   ValueCode ValueDescription      
+#&gt;   &lt;chr&gt;     &lt;chr&gt;                 
+#&gt; 1 00300     Oxygen, dissolved [DO]</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -21,6 +21,8 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
@@ -109,10 +111,12 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-air
     <div class="hidden name"><code>echoAirGetFacilityInfo.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Returns a dataframe or simplefeature dataframe of permitted facilities returned by the query.
 Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info'>https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a></p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>echoAirGetFacilityInfo</span>(<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"df"</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
     
@@ -125,7 +129,7 @@ Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-s
     </tr>
     <tr>
       <th>verbose</th>
-      <td><p>Logical, indicating whether to provide prcessing and retrieval messages. Defaults to FALSE</p></td>
+      <td><p>Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -139,23 +143,52 @@ Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-s
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='co'>## Not run:</span>
+    <pre class="examples"><div class='input'><span class='co'>## These examples require an internet connection to run</span>
+
 <span class='co'>## Retrieve table of facilities by bounding box</span>
 <span class='fu'>echoAirGetFacilityInfo</span>(<span class='kw'>xmin</span> <span class='kw'>=</span> <span class='st'>'-96.407563'</span>,
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
 <span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
 <span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)
-
-<span class='co'>## Retrieve a geojson by bounding box</span>
+<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; # A tibble: 40 x 61
+#&gt;    ObjectId AIRName SourceID AIRStreet AIRCity AIRState LocalControlReg~ AIRZip
+#&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;    &lt;lgl&gt;            &lt;chr&gt; 
+#&gt;  1 1        AGGIE ~ 0600000~ 111 COLL~ COLLEG~ TX       NA               77840~
+#&gt;  2 2        ALENCO~ TX00000~ 615 CARS~ BRYAN   TX       NA               77801 
+#&gt;  3 3        ALL SE~ 0600000~ 2501 TEX~ COLLEG~ TX       NA               77840 
+#&gt;  4 4        BLUEBO~ TX00000~ HWY. 60,~ COLLEG~ TX       NA               77840 
+#&gt;  5 5        BRIARC~ 0600000~ 1887 BRI~ BRYAN   TX       NA               77802 
+#&gt;  6 6        BRYAN ~ TX00000~ 1500 IND~ BRYAN   TX       NA               77803 
+#&gt;  7 7        BRYAN ~ 0600000~ 1803 HOL~ COLLEG~ TX       NA               77840 
+#&gt;  8 8        BRYAN ~ TX00000~ 3747 OLD~ BRYAN   TX       NA               77808~
+#&gt;  9 9        CITGO ~ TX00000~ 1714 FIN~ BRYAN   TX       NA               77801 
+#&gt; 10 10       CITY O~ TX00000~ 1.5 MI W~ BRYAN   TX       NA               77801 
+#&gt; # ... with 30 more rows, and 53 more variables: RegistryID &lt;chr&gt;,
+#&gt; #   AIRCounty &lt;chr&gt;, AIREPARegion &lt;chr&gt;, FacFederalAgencyCode &lt;lgl&gt;,
+#&gt; #   FacFederalAgencyName &lt;lgl&gt;, FacDerivedHuc &lt;chr&gt;, FacFIPSCode &lt;chr&gt;,
+#&gt; #   FacIndianCntryFlg &lt;chr&gt;, AIRIndianCntryFlg &lt;chr&gt;,
+#&gt; #   FacIndianSpatialFlg &lt;chr&gt;, FacDerivedTRIbes &lt;lgl&gt;, FacUsMexBorderFlg &lt;chr&gt;,
+#&gt; #   FacSICCodes &lt;chr&gt;, AIRNAICS &lt;chr&gt;, FacLat &lt;chr&gt;, FacLong &lt;chr&gt;,
+#&gt; #   AIRPrograms &lt;chr&gt;, AIRMacts &lt;chr&gt;, AIRStatus &lt;chr&gt;, AIRUniverse &lt;chr&gt;,
+#&gt; #   FacDerivedWBD &lt;chr&gt;, FacDerivedWBDName &lt;chr&gt;, ChesapeakeBayFlag &lt;lgl&gt;,
+#&gt; #   AIRIDs &lt;chr&gt;, CWAIDs &lt;chr&gt;, RCRAIDs &lt;chr&gt;, RmpIDs &lt;lgl&gt;, SDWAIDs &lt;chr&gt;,
+#&gt; #   TRIIDs &lt;chr&gt;, GHGIDs &lt;chr&gt;, EisIDs &lt;chr&gt;, CamdIDs &lt;lgl&gt;,
+#&gt; #   AIRCurrComplStatus &lt;chr&gt;, AIRCurrHpv &lt;chr&gt;, AIRMnthsInHpv &lt;chr&gt;,
+#&gt; #   AIRQtrsInHpv &lt;chr&gt;, AIRQtrsWithViol &lt;chr&gt;, AIRPollRecentViol &lt;chr&gt;,
+#&gt; #   AIRRecentViolCnt &lt;chr&gt;, AIRLastViolDate &lt;chr&gt;, AIREvalCnt &lt;chr&gt;,
+#&gt; #   AIRDaysLastEval &lt;chr&gt;, AIRLastEvalDate &lt;chr&gt;, AIRLastEvalDateEPA &lt;chr&gt;,
+#&gt; #   AIRLastEvalDateState &lt;chr&gt;, LastDatePce &lt;chr&gt;, LastDatePceEPA &lt;lgl&gt;,
+#&gt; #   LastDatePceSta &lt;chr&gt;, AIRLastStckTestDate &lt;chr&gt;,
+#&gt; #   AIRLastStckTestResults &lt;chr&gt;, FacNaaFlag &lt;lgl&gt;, FacTRIReporter &lt;chr&gt;,
+#&gt; #   FacTRIAIRReleases &lt;chr&gt;</div><div class='input'>
+<span class='co'>## Retrieve a simple features dataframe by bounding box</span>
 <span class='no'>spatialdata</span> <span class='kw'>&lt;-</span> <span class='fu'>echoAirGetFacilityInfo</span>(<span class='kw'>xmin</span> <span class='kw'>=</span> <span class='st'>'-96.407563'</span>,
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
 <span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
 <span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'sf'</span>)
-
-<span class='co'># }</span></pre>
+<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'sf'</span>)</div><div class='output co'>#&gt; [1] "# Status message: Success"           "# Status message: OK"               
+#&gt; [3] "# Status message: Success: (200) OK"</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
