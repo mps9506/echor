@@ -50,6 +50,7 @@ devtools::install_github("mps9506/echor")
 ## Usage
 
 [Getting started](https://mps9506.github.io/echor/articles/introduction.html)
+
 [Functions](https://mps9506.github.io/echor/reference/index.html)
 
 ## Examples
