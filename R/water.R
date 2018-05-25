@@ -34,7 +34,9 @@
 #'
 #' }
 #'
-echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
+echoWaterGetFacilityInfo <- function(output = "df",
+                                     qcolumns = c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206),
+                                     verbose = FALSE, ...) {
     if (length(list(...)) == 0) {
         stop("No valid arguments supplied")
     }
@@ -48,11 +50,15 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
 
+    qcolumns <- paste(as.character(qcolumns), collapse = ",")
+    qcolumns <- utils::URLencode(qcolumns, reserved = TRUE)
+
     if (output == "df") {
 
         ## build the request URL statement
         path <- "echo/cwa_rest_services.get_facility_info"
-        query <- paste("output=JSON", queryDots, sep = "&")
+        qcolumns <- paste0("qcolumns=", qcolumns)
+        query <- paste("output=JSON", qcolumns, queryDots, sep = "&")
         getURL <- requestURL(path = path, query = query)
 
         ## Make the request
@@ -66,23 +72,37 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
         info <- content(request)
 
+        qid <- info[["Results"]][["QueryID"]]
+
         ## build the output
 
-        # return a list of lengths
-        len <- purrr::map(info[["Results"]][["Facilities"]], length)
+        ## if a cluster is returned
+        if (names(info[["Results"]][19]) == "ClusterRecords") {
+          ## call new function get_qid
 
-        # if a different number of columns is returned per plant, we want to map
-        # values to the longest
-        maxIndex <- which.max(len)
-        # this might fail if a entirely different columns are returned. Need to
-        # find out if there is some consisteny in the returned columns
+          #need to add qcolumns
+          buildOutput <- echoWaterGetQID(qid, qcolumns)
+          return(buildOutput)
 
-        cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+        }
 
-        ## create the output dataframe
-        buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
-                                     safe_extract, cNames)
-        return(buildOutput)
+        else {
+          ## if a list of plants is returned
+
+          # return a list of lengths
+          len <- purrr::map(info[["Results"]][["Facilities"]], length)
+          # if a different number of columns is returned per plant, we want to map
+          # values to the longest
+          maxIndex <- which.max(len)
+          # this might fail if a entirely different columns are returned. Need to
+          # find out if there is some consisteny in the returned columns
+          cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+
+          ## create the output dataframe
+          buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
+                                       safe_extract, cNames)
+          return(buildOutput)
+        }
     }
 
     if (output == "sf") {
@@ -154,6 +174,38 @@ echoWaterGetMeta <- function(verbose = FALSE){
                                c("ColumnName", "DataType", "DataLength",
                                  "ColumnID", "ObjectName", "Description"))
 
+  return(buildOutput)
+}
+
+
+# echoWaterGetQID ---------------------------------------------------------
+
+echoWaterGetQID <- function(qid, qcolumns) {
+  ## build the request URL statement
+  path <- "echo/cwa_rest_services.get_qid"
+  qid <- paste0("qid=", qid)
+  query <- paste("output=JSON", qid, qcolumns, sep = "&")
+  getURL <- requestURL(path = path, query = query)
+
+  ## Make the request
+  request <- GET(getURL, accept_json())
+
+
+
+  info <- content(request)
+
+  # return a list of lengths
+  len <- purrr::map(info[["Results"]][["Facilities"]], length)
+  # if a different number of columns is returned per plant, we want to map
+  # values to the longest
+  maxIndex <- which.max(len)
+  # this might fail if a entirely different columns are returned. Need to
+  # find out if there is some consisteny in the returned columns
+  cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+
+  ## create the output dataframe
+  buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
+                               safe_extract, cNames)
   return(buildOutput)
 }
 
