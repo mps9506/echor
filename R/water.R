@@ -114,6 +114,49 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
 }
 
+# echoWaterGetMeta ============================================================
+
+#' Downloads EPA ECHO Water Facility Metadata
+#'
+#' Returns variable name and descriptions for parameters returned by \code{\link{echoWaterGetFacilityInfo}}
+#' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
+#'
+#' @return returns a dataframe
+#' @export
+#'
+#' @examples \donttest{
+#' ## These examples require an internet connection to run
+#'
+#' # returns a dataframe of
+#' echoWaterGetMeta()
+#' }
+echoWaterGetMeta <- function(verbose = FALSE){
+
+  ## build the request URL statement
+  path <- "echo/cwa_rest_services.metadata?output=JSON"
+  getURL <- requestURL(path = path, query = NULL)
+
+  ## Make the request
+  request <- GET(getURL, accept_json())
+
+  ## Print status message, need to make this optional
+  if (verbose) {
+    message("Request URL:", getURL)
+    message(http_status(request))
+  }
+
+  info <- content(request)
+  info
+
+  ## build the output
+  buildOutput <- purrr::map_df(info[["Results"]][["ResultColumns"]],
+                               safe_extract,
+                               c("ColumnName", "DataType", "DataLength",
+                                 "ColumnID", "ObjectName", "Description"))
+
+  return(buildOutput)
+}
+
 
 # echoGetEffluent =========================================================
 
