@@ -4,8 +4,7 @@
 \alias{echoWaterGetFacilityInfo}
 \title{Downloads EPA ECHO water facility information}
 \usage{
-echoWaterGetFacilityInfo(output = "df", qcolumns = c(1:11, 14, 23, 24, 25,
-  26, 30, 36, 58, 60, 63, 64, 65, 67, 86, 206), verbose = FALSE, ...)
+echoWaterGetFacilityInfo(output = "df", verbose = FALSE, ...)
 }
 \arguments{
 \item{output}{Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.}

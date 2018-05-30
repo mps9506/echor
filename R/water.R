@@ -35,7 +35,6 @@
 #' }
 #'
 echoWaterGetFacilityInfo <- function(output = "df",
-                                     qcolumns = c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206),
                                      verbose = FALSE, ...) {
     if (length(list(...)) == 0) {
         stop("No valid arguments supplied")
@@ -47,18 +46,22 @@ echoWaterGetFacilityInfo <- function(output = "df",
     ## out
     valuesList <- exclude(valuesList, "output")
 
+    ## check if qcolumns argument is provided by user
+    ## if user does not provide qcolumns, provide a sensible default
+    if (!("qcolumns" %in% names(valuesList))) {
+      qcolumns <- c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206)
+      qcolumns <- paste(as.character(qcolumns), collapse = ",")
+      valuesList[["qcolumns"]] <- qcolumns
+    }
+
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
-
-    qcolumns <- paste(as.character(qcolumns), collapse = ",")
-    qcolumns <- utils::URLencode(qcolumns, reserved = TRUE)
 
     if (output == "df") {
 
         ## build the request URL statement
         path <- "echo/cwa_rest_services.get_facility_info"
-        qcolumns <- paste0("qcolumns=", qcolumns)
-        query <- paste("output=JSON", qcolumns, queryDots, sep = "&")
+        query <- paste("output=JSON", queryDots, sep = "&")
         getURL <- requestURL(path = path, query = query)
 
         ## Make the request
@@ -79,9 +82,7 @@ echoWaterGetFacilityInfo <- function(output = "df",
         ## if a cluster is returned
         if (names(info[["Results"]][19]) == "ClusterRecords") {
           ## call new function get_qid
-
-          #need to add qcolumns
-          buildOutput <- echoWaterGetQID(qid, qcolumns)
+          buildOutput <- echoWaterGetQID(qid)
           return(buildOutput)
 
         }
