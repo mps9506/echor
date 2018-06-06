@@ -44,6 +44,14 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## out
     valuesList <- exclude(valuesList, "output")
 
+    ## check if qcolumns argument is provided by user
+    ## if user does not provide qcolumns, provide a sensible default
+    if (!("qcolumns" %in% names(valuesList))) {
+      qcolumns <- c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206)
+      qcolumns <- paste(as.character(qcolumns), collapse = ",")
+      valuesList[["qcolumns"]] <- qcolumns
+    }
+
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
 
@@ -65,23 +73,35 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
         info <- content(request)
 
+        qid <- info[["Results"]][["QueryID"]]
+
         ## build the output
 
-        # return a list of lengths
-        len <- purrr::map(info[["Results"]][["Facilities"]], length)
+        ## if a cluster is returned
+        if (names(info[["Results"]][16]) == "ClusterRecords") {
+          ## get qcolumns argument specific to this query
+          qcolumns <- queryList(valuesList["qcolumns"])
 
-        # if a different number of columns is returned per plant, we want to map
-        # values to the longest
-        maxIndex <- which.max(len)
-        # this might fail if a entirely different columns are returned. Need to
-        # find out if there is some consisteny in the returned columns
+          ## call new function get_qid
+          buildOutput <- echoAirGetQID(qid, qcolumns)
+          return(buildOutput)
+        }
 
-        cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+        else {
+          # return a list of lengths
+          len <- purrr::map(info[["Results"]][["Facilities"]], length)
 
-        ## create the output dataframe
-        buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
+          # if a different number of columns is returned per plant, we want to map
+          # values to the longest
+          maxIndex <- which.max(len)
+          cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+
+          ## create the output dataframe
+          buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
                                      safe_extract, cNames)
-        return(buildOutput)
+
+          return(buildOutput)
+        }
     }
 
     if (output == "sf") {
