@@ -397,6 +397,24 @@
 "Program":"NEI",
 "System":"NEI",
 "ProgramSysId":"8547211",
+"Pollutant":"Primary PM10 (filterables and condensibles)",
+"UnitsOfMeasure":"Pounds",
+"Year1":null,
+"Year2":"1,241,120.00",
+"Year3":null,
+"Year4":null,
+"Year5":"877,540.00",
+"Year6":null,
+"Year7":null,
+"Year8":"268,380.00",
+"Year9":null,
+"Year10":null
+}
+,{
+"RegistryId":"110000350174",
+"Program":"NEI",
+"System":"NEI",
+"ProgramSysId":"8547211",
 "Pollutant":"5-Methylchrysene",
 "UnitsOfMeasure":"Pounds",
 "Year1":null,
@@ -533,24 +551,6 @@
 "Year6":null,
 "Year7":null,
 "Year8":"15.68",
-"Year9":null,
-"Year10":null
-}
-,{
-"RegistryId":"110000350174",
-"Program":"NEI",
-"System":"NEI",
-"ProgramSysId":"8547211",
-"Pollutant":"Primary PM10 (filterables and condensibles)",
-"UnitsOfMeasure":"Pounds",
-"Year1":null,
-"Year2":"1,241,120.00",
-"Year3":null,
-"Year4":null,
-"Year5":"877,540.00",
-"Year6":null,
-"Year7":null,
-"Year8":"268,380.00",
 "Year9":null,
 "Year10":null
 }
@@ -736,24 +736,6 @@
 }
 ,{
 "RegistryId":"110000350174",
-"Program":"NEI",
-"System":"NEI",
-"ProgramSysId":"8547211",
-"Pollutant":"Selenium",
-"UnitsOfMeasure":"Pounds",
-"Year1":null,
-"Year2":"1,061.89",
-"Year3":null,
-"Year4":null,
-"Year5":"666.59",
-"Year6":null,
-"Year7":null,
-"Year8":null,
-"Year9":null,
-"Year10":null
-}
-,{
-"RegistryId":"110000350174",
 "Program":"TRI",
 "System":"TRI",
 "ProgramSysId":"28401LVSTT801SU",
@@ -766,6 +748,24 @@
 "Year5":"1,400,000.00",
 "Year6":"1,100,000.00",
 "Year7":"1,200,000.00",
+"Year8":null,
+"Year9":null,
+"Year10":null
+}
+,{
+"RegistryId":"110000350174",
+"Program":"NEI",
+"System":"NEI",
+"ProgramSysId":"8547211",
+"Pollutant":"Selenium",
+"UnitsOfMeasure":"Pounds",
+"Year1":null,
+"Year2":"1,061.89",
+"Year3":null,
+"Year4":null,
+"Year5":"666.59",
+"Year6":null,
+"Year7":null,
 "Year8":null,
 "Year9":null,
 "Year10":null
@@ -1981,16 +1981,6 @@
 "Permits":[
 {
 "Statute":"CAA",
-"EPASystem":"AIR",
-"SourceID":"NC0000003706500036",
-"Universe":"Major Emissions",
-"NAICS":"221112",
-"NAICSDesc":"Fossil Fuel Electric Power Generation",
-"SIC":"4911",
-"FacilityStatus":"Operating"
-}
-,{
-"Statute":"CAA",
 "EPASystem":"GHG",
 "SourceID":"1000828",
 "Universe":"Direct Emitter",
@@ -1998,6 +1988,16 @@
 "NAICSDesc":"Fossil Fuel Electric Power Generation",
 "SIC":null,
 "FacilityStatus":"Subject"
+}
+,{
+"Statute":"CAA",
+"EPASystem":"CEDRI",
+"SourceID":"CEDRI10000161",
+"Universe":"",
+"NAICS":null,
+"NAICSDesc":null,
+"SIC":null,
+"FacilityStatus":null
 }
 ,{
 "Statute":"CAA",
@@ -2011,13 +2011,13 @@
 }
 ,{
 "Statute":"CAA",
-"EPASystem":"CEDRI",
-"SourceID":"CEDRI10000161",
-"Universe":"",
-"NAICS":null,
-"NAICSDesc":null,
-"SIC":null,
-"FacilityStatus":null
+"EPASystem":"AIR",
+"SourceID":"NC0000003706500036",
+"Universe":"Major Emissions",
+"NAICS":"221112",
+"NAICSDesc":"Fossil Fuel Electric Power Generation",
+"SIC":"4911",
+"FacilityStatus":"Operating"
 }
 ,{
 "Statute":"CAA",
