@@ -34,7 +34,8 @@
 #'
 #' }
 #'
-echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
+echoWaterGetFacilityInfo <- function(output = "df",
+                                     verbose = FALSE, ...) {
     if (length(list(...)) == 0) {
         stop("No valid arguments supplied")
     }
@@ -44,6 +45,14 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## check if user includes an output argument in dots if included, strip it
     ## out
     valuesList <- exclude(valuesList, "output")
+
+    ## check if qcolumns argument is provided by user
+    ## if user does not provide qcolumns, provide a sensible default
+    if (!("qcolumns" %in% names(valuesList))) {
+      qcolumns <- c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206)
+      qcolumns <- paste(as.character(qcolumns), collapse = ",")
+      valuesList[["qcolumns"]] <- qcolumns
+    }
 
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
@@ -66,23 +75,38 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
         info <- content(request)
 
+        qid <- info[["Results"]][["QueryID"]]
+
         ## build the output
 
-        # return a list of lengths
-        len <- purrr::map(info[["Results"]][["Facilities"]], length)
+        ## if a cluster is returned
+        if (names(info[["Results"]][19]) == "ClusterRecords") {
+          ## get qcolumns argument specific to this query
+          qcolumns <- queryList(valuesList["qcolumns"])
 
-        # if a different number of columns is returned per plant, we want to map
-        # values to the longest
-        maxIndex <- which.max(len)
-        # this might fail if a entirely different columns are returned. Need to
-        # find out if there is some consisteny in the returned columns
+          ## call new function get_qid
+          buildOutput <- echoWaterGetQID(qid, qcolumns)
+          return(buildOutput)
 
-        cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+        }
 
-        ## create the output dataframe
-        buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
-                                     safe_extract, cNames)
-        return(buildOutput)
+        else {
+          ## if a list of plants is returned
+
+          # return a list of lengths
+          len <- purrr::map(info[["Results"]][["Facilities"]], length)
+          # if a different number of columns is returned per plant, we want to map
+          # values to the longest
+          maxIndex <- which.max(len)
+          # this might fail if a entirely different columns are returned. Need to
+          # find out if there is some consisteny in the returned columns
+          cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+
+          ## create the output dataframe
+          buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
+                                       safe_extract, cNames)
+          return(buildOutput)
+        }
     }
 
     if (output == "sf") {
@@ -112,6 +136,81 @@ echoWaterGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
              ", when it should be either 'df' or 'sf'")
     }
 
+}
+
+# echoWaterGetMeta ============================================================
+
+#' Downloads EPA ECHO Water Facility Metadata
+#'
+#' Returns variable name and descriptions for parameters returned by \code{\link{echoWaterGetFacilityInfo}}
+#' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
+#'
+#' @return returns a dataframe
+#' @export
+#'
+#' @examples \donttest{
+#' ## These examples require an internet connection to run
+#'
+#' # returns a dataframe of
+#' echoWaterGetMeta()
+#' }
+echoWaterGetMeta <- function(verbose = FALSE){
+
+  ## build the request URL statement
+  path <- "echo/cwa_rest_services.metadata?output=JSON"
+  getURL <- requestURL(path = path, query = NULL)
+
+  ## Make the request
+  request <- GET(getURL, accept_json())
+
+  ## Print status message, need to make this optional
+  if (verbose) {
+    message("Request URL:", getURL)
+    message(http_status(request))
+  }
+
+  info <- content(request)
+  info
+
+  ## build the output
+  buildOutput <- purrr::map_df(info[["Results"]][["ResultColumns"]],
+                               safe_extract,
+                               c("ColumnName", "DataType", "DataLength",
+                                 "ColumnID", "ObjectName", "Description"))
+
+  return(buildOutput)
+}
+
+
+# echoWaterGetQID ---------------------------------------------------------
+
+echoWaterGetQID <- function(qid, qcolumns) {
+  ## build the request URL statement
+  path <- "echo/cwa_rest_services.get_qid"
+  qid <- paste0("qid=", qid)
+  query <- paste("output=JSON", qid, qcolumns, sep = "&")
+  getURL <- requestURL(path = path, query = query)
+
+  ## Make the request
+  request <- GET(getURL, accept_json())
+
+
+
+  info <- content(request)
+
+  # return a list of lengths
+  len <- purrr::map(info[["Results"]][["Facilities"]], length)
+  # if a different number of columns is returned per plant, we want to map
+  # values to the longest
+  maxIndex <- which.max(len)
+  # this might fail if a entirely different columns are returned. Need to
+  # find out if there is some consisteny in the returned columns
+  cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+
+  ## create the output dataframe
+  buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
+                               safe_extract, cNames)
+  return(buildOutput)
 }
 
 

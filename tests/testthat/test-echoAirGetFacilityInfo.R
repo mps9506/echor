@@ -8,7 +8,7 @@ library(here)
 
 # test_that("Record requests if online", {
 #   capture_requests({
-#   echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "JSON")
+#   echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "df")
 #   })
 #
 # })

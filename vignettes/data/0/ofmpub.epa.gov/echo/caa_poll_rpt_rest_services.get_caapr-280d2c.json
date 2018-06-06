@@ -1981,16 +1981,6 @@
 "Permits":[
 {
 "Statute":"CAA",
-"EPASystem":"AIR",
-"SourceID":"NC0000003706500036",
-"Universe":"Major Emissions",
-"NAICS":"221112",
-"NAICSDesc":"Fossil Fuel Electric Power Generation",
-"SIC":"4911",
-"FacilityStatus":"Operating"
-}
-,{
-"Statute":"CAA",
 "EPASystem":"GHG",
 "SourceID":"1000828",
 "Universe":"Direct Emitter",
@@ -1998,6 +1988,16 @@
 "NAICSDesc":"Fossil Fuel Electric Power Generation",
 "SIC":null,
 "FacilityStatus":"Subject"
+}
+,{
+"Statute":"CAA",
+"EPASystem":"CEDRI",
+"SourceID":"CEDRI10000161",
+"Universe":"",
+"NAICS":null,
+"NAICSDesc":null,
+"SIC":null,
+"FacilityStatus":null
 }
 ,{
 "Statute":"CAA",
@@ -2011,13 +2011,13 @@
 }
 ,{
 "Statute":"CAA",
-"EPASystem":"CEDRI",
-"SourceID":"CEDRI10000161",
-"Universe":"",
-"NAICS":null,
-"NAICSDesc":null,
-"SIC":null,
-"FacilityStatus":null
+"EPASystem":"AIR",
+"SourceID":"NC0000003706500036",
+"Universe":"Major Emissions",
+"NAICS":"221112",
+"NAICSDesc":"Fossil Fuel Electric Power Generation",
+"SIC":"4911",
+"FacilityStatus":"Operating"
 }
 ,{
 "Statute":"CAA",
