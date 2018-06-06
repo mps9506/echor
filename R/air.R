@@ -113,6 +113,79 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
 }
 
+# echoAirGetMeta ============================================================
+
+#' Downloads EPA ECHO Air Facility Metadata
+#'
+#' Returns variable name and descriptions for parameters returned by \code{\link{echoAirGetFacilityInfo}}
+#' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
+#'
+#' @return returns a dataframe
+#' @export
+#'
+#' @examples \donttest{
+#' ## These examples require an internet connection to run
+#'
+#' # returns a dataframe of
+#' echoAirGetMeta()
+#' }
+echoAirGetMeta <- function(verbose = FALSE){
+
+  ## build the request URL statement
+  path <- "echo/air_rest_services.metadata?output=JSON"
+  getURL <- requestURL(path = path, query = NULL)
+
+  ## Make the request
+  request <- GET(getURL, accept_json())
+
+  ## Print status message, need to make this optional
+  if (verbose) {
+    message("Request URL:", getURL)
+    message(http_status(request))
+  }
+
+  info <- content(request)
+  info
+
+  ## build the output
+  buildOutput <- purrr::map_df(info[["Results"]][["ResultColumns"]],
+                               safe_extract,
+                               c("ColumnName", "DataType", "DataLength",
+                                 "ColumnID", "ObjectName", "Description"))
+
+  return(buildOutput)
+}
+
+# echoAirGetQID ---------------------------------------------------------
+
+echoAirGetQID <- function(qid, qcolumns) {
+  ## build the request URL statement
+  path <- "echo/air_rest_services.get_qid"
+  qid <- paste0("qid=", qid)
+  query <- paste("output=JSON", qid, qcolumns, sep = "&")
+  getURL <- requestURL(path = path, query = query)
+
+  ## Make the request
+  request <- GET(getURL, accept_json())
+
+
+
+  info <- content(request)
+
+  # return a list of lengths
+  len <- purrr::map(info[["Results"]][["Facilities"]], length)
+  # if a different number of columns is returned per plant, we want to map
+  # values to the longest
+  maxIndex <- which.max(len)
+  # this might fail if a entirely different columns are returned. Need to
+  # find out if there is some consisteny in the returned columns
+  cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
+
+  ## create the output dataframe
+  buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
+                               safe_extract, cNames)
+  return(buildOutput)
+}
 
 
 # echoGetcaapr ------------------------------------------------------------
