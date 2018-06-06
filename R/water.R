@@ -83,7 +83,6 @@ echoWaterGetFacilityInfo <- function(output = "df",
         if (names(info[["Results"]][19]) == "ClusterRecords") {
           ## get qcolumns argument specific to this query
           qcolumns <- queryList(valuesList["qcolumns"])
-          print(qcolumns)
 
           ## call new function get_qid
           buildOutput <- echoWaterGetQID(qid, qcolumns)
