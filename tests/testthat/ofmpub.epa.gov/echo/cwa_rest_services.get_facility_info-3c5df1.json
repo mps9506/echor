@@ -1,7 +1,7 @@
 {
 "Results":{
 "Message":"Success",
-"QueryID":"51",
+"QueryID":"13",
 "QueryRows":"1",
 "IndianCountryRows":"0",
 "SVRows":"0",
@@ -63,9 +63,9 @@
 "CWPIssueDate":"09/06/2016",
 "CWPEffectiveDate":"10/01/2016",
 "CWPExpirationDate":"09/30/2021",
-"CWPQtrsInNC":"0",
-"CWPStateWaterBodyName":null,
-"FacMapIcon":"CWA-IC-MN-1.png"
+"CWPCurrentSNCStatusDate":"12/31/2017",
+"CWPStateWaterBodyCode":null,
+"FacMapFlg":"Y"
 }
 ]
 }
