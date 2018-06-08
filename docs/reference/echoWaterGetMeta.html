@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Search parameter codes for Clean Water Act permits on EPA ECHO — echoWaterGetParams • echor</title>
+<title>Downloads EPA ECHO Water Facility Metadata — echoWaterGetMeta • echor</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Search parameter codes for Clean Water Act permits on EPA ECHO — echoWaterGetParams" />
+<meta property="og:title" content="Downloads EPA ECHO Water Facility Metadata — echoWaterGetMeta" />
 
-<meta property="og:description" content="Returns a dataframe of parameter codes and descriptions." />
+<meta property="og:description" content="Returns variable name and descriptions for parameters returned by echoWaterGetFacilityInfo" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -107,30 +107,22 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Search parameter codes for Clean Water Act permits on EPA ECHO</h1>
+    <h1>Downloads EPA ECHO Water Facility Metadata</h1>
     
-    <div class="hidden name"><code>echoWaterGetParams.Rd</code></div>
+    <div class="hidden name"><code>echoWaterGetMeta.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Returns a dataframe of parameter codes and descriptions.</p>
+    <p>Returns variable name and descriptions for parameters returned by <code><a href='echoWaterGetFacilityInfo.html'>echoWaterGetFacilityInfo</a></code></p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>code</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>echoWaterGetMeta</span>(<span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>term</th>
-      <td><p>Character string specifying the parameter search term. Partial or complete search phrase or word.</p></td>
-    </tr>
-    <tr>
-      <th>code</th>
-      <td><p>Character string specifying the parameter search code value.</p></td>
-    </tr>
     <tr>
       <th>verbose</th>
       <td><p>Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE</p></td>
@@ -139,25 +131,27 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns a dataframe.</p>
+    <p>returns a dataframe</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## These examples require an internet connection to run</span>
 
-<span class='co'>## Retrieve parameter codes for dissolved oxygen</span>
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='st'>"Oxygen, dissolved"</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 2
-#&gt;   ValueCode ValueDescription                     
-#&gt;   &lt;chr&gt;     &lt;chr&gt;                                
-#&gt; 1 00300     Oxygen, dissolved [DO]               
-#&gt; 2 51646     Oxygen, dissolved [DO] maximum       
-#&gt; 3 51645     Oxygen, dissolved [DO] minimum       
-#&gt; 4 00301     Oxygen, dissolved percent saturation 
-#&gt; 5 00399     Oxygen, dissolved, % of time violated</div><div class='input'>
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"00300"</span>)</div><div class='output co'>#&gt; # A tibble: 1 x 2
-#&gt;   ValueCode ValueDescription      
-#&gt;   &lt;chr&gt;     &lt;chr&gt;                 
-#&gt; 1 00300     Oxygen, dissolved [DO]</div></pre>
+<span class='co'># returns a dataframe of</span>
+<span class='fu'>echoWaterGetMeta</span>()</div><div class='output co'>#&gt; # A tibble: 287 x 6
+#&gt;    ColumnName   DataType DataLength ColumnID ObjectName  Description           
+#&gt;    &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;                 
+#&gt;  1 CWP_NAME     VARCHAR2 200        1        CWPName     Facility or permit ho~
+#&gt;  2 SOURCE_ID    VARCHAR2 30         2        SourceID    Unique Identifier ass~
+#&gt;  3 CWP_STREET   VARCHAR2 200        3        CWPStreet   Facility street addre~
+#&gt;  4 CWP_CITY     VARCHAR2 100        4        CWPCity     City in which the fac~
+#&gt;  5 CWP_STATE    CHAR     2          5        CWPState    Facility location - t~
+#&gt;  6 CWP_STATE_D~ VARCHAR2 40         6        CWPStateDi~ The State Congression~
+#&gt;  7 CWP_ZIP      VARCHAR2 10         7        CWPZip      Facility ZIP code     
+#&gt;  8 MASTER_EXTE~ VARCHAR2 9          8        MasterExte~ This is the unique id~
+#&gt;  9 REGISTRY_ID  VARCHAR2 50         9        RegistryID  An internal 12-digit ~
+#&gt; 10 CWP_COUNTY   VARCHAR2 100        10       CWPCounty   County in which the f~
+#&gt; # ... with 277 more rows</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
