@@ -21,7 +21,7 @@ permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
 Installation
 ------------
 
-Install from CRAN:
+echor is on CRAN:
 
 ``` r
 install.packages("echor")
@@ -56,7 +56,7 @@ However, arguments can be looked up here:
 library(tidyverse)
 library(echor)
 
-## echo*GetFacilityInfo() will return a dataframe or simple features (sf) dataframe.
+## echoWaterGetFacilityInfo() will return a dataframe or simple features (sf) dataframe.
 
 df <- echoWaterGetFacilityInfo(output = "df", 
                                xmin = '-96.387509', 
@@ -65,7 +65,7 @@ df <- echoWaterGetFacilityInfo(output = "df",
                                ymax = '30.640008')
 
 head(df)
-#> # A tibble: 6 x 25
+#> # A tibble: 6 x 28
 #>   ObjectId CWPName   SourceID CWPStreet  CWPCity CWPState CWPStateDistrict
 #>   <chr>    <chr>     <chr>    <chr>      <chr>   <chr>    <lgl>           
 #> 1 1        BOSSIER ~ LAG8301~ 3228 BARK~ BENTON  LA       NA              
@@ -74,15 +74,44 @@ head(df)
 #> 4 4        CITY OF ~ TXR0400~ WITHIN CI~ COLLEG~ TX       NA              
 #> 5 5        HEAT TRA~ TX01065~ 0.25MI SW~ COLLEG~ TX       NA              
 #> 6 6        HOLLEMAN~ TXR10F4~ NW OF HOL~ COLLEG~ TX       NA              
-#> # ... with 18 more variables: CWPZip <chr>,
-#> #   MasterExternalPermitNmbr <chr>, CWPCounty <chr>, CWPEPARegion <chr>,
-#> #   FacFederalAgencyCode <lgl>, FacLong <chr>,
-#> #   CWPFacilityTypeIndicator <chr>, ReceivingMs4Name <lgl>,
-#> #   SpeciesCriticalHabitalFlag <lgl>, ExposedActivity <lgl>,
-#> #   AssociatedPollutant <lgl>, ControlMeasure <lgl>,
-#> #   ControlMeasureSchedule <lgl>, EjscreenFlagUs <chr>,
-#> #   Over80CountUs <chr>, PctilePctpre1960Us <chr>,
-#> #   PctileProximityRmpUs <chr>, PctileProximityTsdfUs <chr>
+#> # ... with 21 more variables: CWPZip <chr>,
+#> #   MasterExternalPermitNmbr <chr>, RegistryID <chr>, CWPCounty <chr>,
+#> #   CWPEPARegion <chr>, FacDerivedHuc <chr>, FacLat <chr>, FacLong <chr>,
+#> #   CWPTotalDesignFlowNmbr <chr>, CWPActualAverageFlowNmbr <lgl>,
+#> #   ReceivingMs4Name <lgl>, AssociatedPollutant <lgl>,
+#> #   MsgpPermitType <lgl>, CWPPermitStatusDesc <chr>,
+#> #   CWPPermitTypeDesc <chr>, CWPIssueDate <chr>, CWPEffectiveDate <chr>,
+#> #   CWPExpirationDate <chr>, CWPSNCStatusDate <chr>,
+#> #   CWPStateWaterBodyCode <chr>, FacMapFlg <chr>
+```
+
+The ECHO database can provide over 270 different columns. echor returns
+a subset of these columns that should work for most users. However, you
+can specify what data you want returned. Use `echoWaterGetMeta()` to
+return a dataframe with column numbers, names, and descriptions to
+identify the columns you want returned. Then include the column numbers
+as a comma seperated string in the `qcolumns` argument. In the example
+below, the `qcolumns` argument indicates the dataframe will include
+plant name, 8-digit HUC, latitute, longitude, and total design flow.
+
+``` r
+df <- echoWaterGetFacilityInfo(output = "df", 
+                               xmin = '-96.387509', 
+                               ymin = '30.583572', 
+                               xmax = '-96.281422', 
+                               ymax = '30.640008',
+                               qcolumns = '1,14,23,24,25')
+head(df)
+#> # A tibble: 6 x 9
+#>   ObjectId CWPName       SourceID  RegistryID FacDerivedHuc FacLat FacLong
+#>   <chr>    <chr>         <chr>     <chr>      <chr>         <chr>  <chr>  
+#> 1 1        BOSSIER PARI~ LAG830191 110016696~ 12070103      30.61~ -96.28~
+#> 2 2        BROADSTONE T~ TXR10F50H 110070110~ 12070101      30.60~ -96.38~
+#> 3 3        BROADSTONE T~ TXR10F50D 110070110~ 12070101      30.60~ -96.38~
+#> 4 4        CITY OF COLL~ TXR040008 110043267~ <NA>          30.59~ -96.30~
+#> 5 5        HEAT TRANSFE~ TX0106526 110039192~ 12070101      30.58~ -96.35~
+#> 6 6        HOLLEMAN EXT~ TXR10F4N6 110070080~ 12070103      30.58~ -96.33~
+#> # ... with 2 more variables: CWPTotalDesignFlowNmbr <chr>, FacMapFlg <chr>
 ```
 
 When returned as sf dataframes, the data is suitable for immediate
@@ -130,7 +159,7 @@ ggmap(collegestation) +
        caption = "Source: EPA ECHO database")
 ```
 
-![](man/figures/README-example2-1.png)
+![](man/figures/README-example3-1.png)
 
 ### Download discharge/emissions data
 
@@ -154,4 +183,4 @@ ggplot(df) +
        caption = "Source: EPA ECHO")
 ```
 
-![](man/figures/README-unnamed-chunk-3-1.png)
+![](man/figures/README-unnamed-chunk-2-1.png)
