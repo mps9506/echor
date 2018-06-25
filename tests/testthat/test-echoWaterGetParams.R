@@ -1,28 +1,21 @@
 context("test-echoWaterGetParams")
 
-library(httptest)
-library(here)
+test_that("echoWaterGetParams returns dataframe", {
+  skip_on_cran()
+  x <- echoWaterGetParams(term = "Oxygen, dissolved")
+  expect_equal(is.data.frame(x), TRUE)
 
-.mockPaths(here("tests/testthat/"))
+  x <- echoWaterGetParams(code = "00300")
+  expect_equal(is.data.frame(x), TRUE)
 
-# capture_requests({
-#   echoWaterGetParams(term = "Oxygen, dissolved")
-#   echoWaterGetParams(code = "00300")
-#   })
-
-
-with_mock_api({
-  test_that("echoWaterGetParams works", {
-    x <- echoWaterGetParams(term = "Oxygen, dissolved")
-    expect_equal(is.data.frame(x), TRUE)
-
-    x <- echoWaterGetParams(code = "00300")
-    expect_equal(is.data.frame(x), TRUE)
-
-    expect_error(echoWaterGetParams(term = "Oxygen, dissolved", code = "00300"))
-
-    expect_error(echoWaterGetParams())
-
-    expect_message(echoWaterGetParams(code = "00300", verbose = TRUE))
   })
-})
+
+test_that("echoWaterGetParams returns errors", {
+  skip_on_cran()
+  expect_error(echoWaterGetParams(term = "Oxygen, dissolved", code = "00300"))
+  expect_error(echoWaterGetParams())
+  })
+
+test_that("echoWaterGetParams returns messages", {
+  expect_message(echoWaterGetParams(code = "00300", verbose = TRUE))
+  })
