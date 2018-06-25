@@ -10,9 +10,7 @@
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param \dots Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @return returns a dataframe or simple features dataframe
-#' @import httr
-#' @import jsonlite
-#' @import sf
+#' @importFrom httr GET content accept_json http_status
 #'
 #' @export
 #' @examples \donttest{
@@ -65,15 +63,15 @@ echoWaterGetFacilityInfo <- function(output = "df",
         getURL <- requestURL(path = path, query = query)
 
         ## Make the request
-        request <- GET(getURL, accept_json())
+        request <- httr::GET(getURL, httr::accept_json())
 
         ## Print status message, need to make this optional
         if (verbose) {
             message("Request URL:", getURL)
-            message(http_status(request))
+            message(httr::http_status(request))
         }
 
-        info <- content(request)
+        info <- httr::content(request)
 
         qid <- info[["Results"]][["QueryID"]]
 
@@ -95,16 +93,16 @@ echoWaterGetFacilityInfo <- function(output = "df",
         getURL <- requestURL(path = path, query = query)
 
         ## Make the request
-        request <- GET(getURL, accept_json())
+        request <- httr::GET(getURL, httr::accept_json())
 
         ## Print status message, need to make this optional
         if (verbose) {
             message("Request URL:", getURL)
-            message(http_status(request))
+            message(httr::http_status(request))
         }
 
         ## Download GeoJSON as text
-        buildOutput <- content(request, as = "text")
+        buildOutput <- httr::content(request, as = "text")
 
         ## Convert to sf dataframe
         buildOutput <- convertSF(buildOutput)
@@ -124,6 +122,8 @@ echoWaterGetFacilityInfo <- function(output = "df",
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #'
 #' @return returns a dataframe
+#' @importFrom httr GET content accept_json http_status
+#' @importFrom purrr map_df
 #' @export
 #'
 #' @examples \donttest{
@@ -139,15 +139,15 @@ echoWaterGetMeta <- function(verbose = FALSE){
   getURL <- requestURL(path = path, query = NULL)
 
   ## Make the request
-  request <- GET(getURL, accept_json())
+  request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
   if (verbose) {
     message("Request URL:", getURL)
-    message(http_status(request))
+    message(httr::http_status(request))
   }
 
-  info <- content(request)
+  info <- httr::content(request)
   info
 
   ## build the output
@@ -164,12 +164,13 @@ echoWaterGetMeta <- function(verbose = FALSE){
 
 
 #' Downloads EPA ECHO DMR records of dischargers with NPDES permits
-#' @import httr
-#' @import jsonlite
-#' @import tibble
 #' @param p_id Character string specify the identifier for the service. Required.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}
+#' @importFrom httr GET content accept_json http_status
+#' @importFrom lubridate dmy
+#' @importFrom purrr map map_chr
+#' @importFrom tibble tibble
 #' @return Returns a dataframe.
 #' @export
 #'
@@ -200,14 +201,14 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
     query <- paste(p_id, queryDots, "output=JSON", sep = "&")
     getURL <- requestURL(path = path, query = query)
 
-    request <- GET(getURL, accept_json())
+    request <- httr::GET(getURL, httr::accept_json())
 
     if (verbose) {
         message("Request URL:", getURL)
-        message(http_status(request))
+        message(httr::http_status(request))
     }
 
-    info <- content(request)
+    info <- httr::content(request)
 
     ## Obtain permit information used to make the dataframe
     CWPName <- info[["Results"]][["CWPName"]]
@@ -287,9 +288,8 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 #' Search parameter codes for Clean Water Act permits on EPA ECHO
 #'
 #' Returns a dataframe of parameter codes and descriptions.
-#' @import httr
-#' @import jsonlite
-#' @import tibble
+#' @importFrom httr GET content accept_json http_status
+#' @importFrom purrr map_df
 #' @importFrom utils URLencode
 #'
 #' @param term Character string specifying the parameter search term. Partial or complete search phrase or word.
@@ -329,21 +329,21 @@ echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
     }
     else{
       ## build the request URL statement for term argument
-      term <- URLencode(term, reserved = TRUE)
+      term <- utils::URLencode(term, reserved = TRUE)
       term <- paste0("search_term=", term)
       query <- paste("output=JSON", term, sep = "&")
       getURL <- requestURL(path = path, query = query)
     }
   }
 
-  request <- GET(getURL, accept_json())
+  request <- httr::GET(getURL, httr::accept_json())
 
   if (verbose) {
     message("Request URL:", getURL)
-    message(http_status(request))
+    message(httr::http_status(request))
   }
 
-  info <- content(request)
+  info <- httr::content(request)
 
   buildOutput <- purrr::map_df(info[["Results"]][["LuValues"]],
                                safe_extract,

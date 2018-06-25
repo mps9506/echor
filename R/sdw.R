@@ -6,7 +6,8 @@
 #'
 #'
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
-#'
+#' @importFrom httr GET content accept_json http_status
+#' @importFrom purrr map_df
 #' @return returns a dataframe
 #' @export
 #'
@@ -23,15 +24,15 @@ echoSDWGetMeta <- function(verbose = FALSE){
   getURL <- requestURL(path = path, query = NULL)
 
   ## Make the request
-  request <- GET(getURL, accept_json())
+  request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
   if (verbose) {
     message("Request URL:", getURL)
-    message(http_status(request))
+    message(httr::http_status(request))
   }
 
-  info <- content(request)
+  info <- httr::content(request)
   info
 
   ## build the output
@@ -53,13 +54,13 @@ echoSDWGetMeta <- function(verbose = FALSE){
 #' Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems}.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems} for a complete list of parameter options. Examples provided below.
-#'
+#' @importFrom httr GET content accept_json http_status
 #' @return returns a dataframe
 #' @export
 #'
 #' @examples \donttest{
 #' ## These examples require an internet connection to run
-#' echoSDWGetSystems(p_co = "Brazos", p_st = "tx)
+#' echoSDWGetSystems(p_co = "Brazos", p_st = "tx")
 #' }
 echoSDWGetSystems <- function(verbose = FALSE, ...) {
   if (length(list(...)) == 0) {
@@ -89,15 +90,15 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
-  request <- GET(getURL, accept_json())
+  request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
   if (verbose) {
     message("Request URL:", getURL)
-    message(http_status(request))
+    message(httr::http_status(request))
   }
 
-  info <- content(request)
+  info <- httr::content(request)
 
   qid <- info[["Results"]][["QueryID"]]
 

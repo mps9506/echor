@@ -5,13 +5,10 @@
 #'
 #' Returns a dataframe or simplefeature dataframe of permitted facilities returned by the query.
 #' Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info}
-#' @import httr
-#' @import jsonlite
-#' @import sf
 #' @param output Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
-#'
+#' @importFrom httr GET content accept_json http_status
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
@@ -63,15 +60,15 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
       getURL <- requestURL(path = path, query = query)
 
         ## Make the request
-        request <- GET(getURL, accept_json())
+        request <- httr::GET(getURL, httr::accept_json())
 
         ## Print status message, need to make this optional
         if (verbose) {
           message("Request URL:", getURL)
-          message(http_status(request))
+          message(httr::http_status(request))
         }
 
-        info <- content(request)
+        info <- httr::content(request)
 
         qid <- info[["Results"]][["QueryID"]]
 
@@ -92,13 +89,13 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
         getURL <- requestURL(path = path, query = query)
 
         ## Make the request
-        request <- GET(getURL, accept_json())
+        request <- httr::GET(getURL, httr::accept_json())
 
         ## Print status message, need to make this optional
-        print(paste("# Status message:", http_status(request)))
+        print(paste("# Status message:", httr::http_status(request)))
 
         ## Download GeoJSON as text
-        buildOutput <- content(request, as = "text")
+        buildOutput <- httr::content(request, as = "text")
 
         ## Convert to sf dataframe
         buildOutput <- convertSF(buildOutput)
@@ -119,7 +116,8 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 #'
 #' Returns variable name and descriptions for parameters returned by \code{\link{echoAirGetFacilityInfo}}
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
-#'
+#' @importFrom httr GET content accept_json http_status
+#' @importFrom purrr map_df
 #' @return returns a dataframe
 #' @export
 #'
@@ -136,15 +134,15 @@ echoAirGetMeta <- function(verbose = FALSE){
   getURL <- requestURL(path = path, query = NULL)
 
   ## Make the request
-  request <- GET(getURL, accept_json())
+  request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
   if (verbose) {
     message("Request URL:", getURL)
-    message(http_status(request))
+    message(httr::http_status(request))
   }
 
-  info <- content(request)
+  info <- httr::content(request)
   info
 
   ## build the output
@@ -161,14 +159,14 @@ echoAirGetMeta <- function(verbose = FALSE){
 
 #' Download EPA ECHO emissions inventory report data
 #'
-#' @import httr
-#' @import jsonlite
-#' @import tibble
-#' @import dplyr
 #' @param p_id character string specify the identifier for the service. Required.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Additional arguments
-#'
+#' @importFrom httr GET content accept_json http_status
+#' @importFrom purrr map_df
+#' @importFrom tidyr gather_
+#' @importFrom tibble tibble
+#' @import dplyr
 #' @return dataframe
 #' @export
 #'
@@ -205,14 +203,14 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
     query <- paste(p_id, queryDots, "output=JSON", sep = "&")
     getURL <- requestURL(path = path, query = query)
 
-    request <- GET(getURL, accept_json())
+    request <- httr::GET(getURL, httr::accept_json())
 
     if (verbose) {
         message("Request URL:", getURL)
-        message(http_status(request))
+        message(httr::http_status(request))
     }
 
-    info <- content(request)
+    info <- httr::content(request)
 
     ## Emissions data is provided in wide format
     pollutant <- purrr::map_df(

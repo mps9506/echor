@@ -44,6 +44,14 @@ exclude <- function(list, names) {
 # data wrangling ----------------------------------------------------------
 
 ## handle NULLs,  Pulled from JennyBC's purrr tutorial originally from Zev Ross
+
+#' Safely handle nulls
+#'
+#' @param l list
+#' @param wut element
+#' @importFrom purrr map_lgl
+#' @keywords internal
+#' @noRd
 safe_extract <- function(l, wut) {
     res <- l[wut]
     null_here <- purrr::map_lgl(res, is.null)
@@ -61,7 +69,7 @@ safe_extract <- function(l, wut) {
 #'
 #' @param path Character vector, specifies API path to ECHO's webservices
 #' @param query Character vector, specifies the parameters sent in the GET request
-#'
+#' @importFrom httr build_url
 #' @return URL used in the httr call
 #' @keywords internal
 #' @noRd
@@ -70,7 +78,7 @@ requestURL <- function(path, query) {
     urlBuildList <- structure(list(scheme = "https",
                                    hostname = "ofmpub.epa.gov",
         port = NULL, path = path, query = query), class = "url")
-    return(build_url(urlBuildList))
+    return(httr::build_url(urlBuildList))
 }
 
 #' Returns comma deliminated data from get.download endpoints
@@ -80,10 +88,9 @@ requestURL <- function(path, query) {
 #' @param qcolumns character string, specifies columns returned in query.
 #'
 #' @return Returns a dataframe
-#' @importFrom httr GET content
+#' @importFrom httr GET content accept_json
 #' @keywords internal
-#'
-#' @examples
+#' @noRd
 getDownload <- function(service, qid, qcolumns) {
   ## build the request URL statement
   if (service == "sdw") {
@@ -100,7 +107,7 @@ getDownload <- function(service, qid, qcolumns) {
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
-  request <- httr::GET(getURL, accept_json())
+  request <- httr::GET(getURL, httr::accept_json())
 
 
 
@@ -123,6 +130,6 @@ convertSF <- function(x) {
 
   t <- tempfile("spoutput", fileext = ".geojson")
   write(x, t)
-  output <- read_sf(t)
+  output <- sf::read_sf(t)
   return(output)
 }
