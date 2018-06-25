@@ -80,6 +80,7 @@ requestURL <- function(path, query) {
 #' @param qcolumns character string, specifies columns returned in query.
 #'
 #' @return Returns a dataframe
+#' @importFrom httr GET content
 #' @keywords internal
 #'
 #' @examples
