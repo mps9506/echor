@@ -32,6 +32,7 @@ Suggests:
     httptest,
     kableExtra,
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 BugReports: https://github.com/mps9506/echor/issues
 VignetteBuilder: knitr
