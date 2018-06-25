@@ -79,35 +79,13 @@ echoWaterGetFacilityInfo <- function(output = "df",
 
         ## build the output
 
-        ## if a cluster is returned
-        if (names(info[["Results"]][19]) == "ClusterRecords") {
-          ## get qcolumns argument specific to this query
-          qcolumns <- queryList(valuesList["qcolumns"])
+        ## get qcolumns argument specific to this query
+        qcolumns <- queryList(valuesList["qcolumns"])
 
-          ## call new function get_qid
-          buildOutput <- echoWaterGetQID(qid, qcolumns)
-          return(buildOutput)
+        buildOutput <- getDownload("cwa", qid, qcolumns)
+        return(buildOutput)
 
         }
-
-        else {
-          ## if a list of plants is returned
-
-          # return a list of lengths
-          len <- purrr::map(info[["Results"]][["Facilities"]], length)
-          # if a different number of columns is returned per plant, we want to map
-          # values to the longest
-          maxIndex <- which.max(len)
-          # this might fail if a entirely different columns are returned. Need to
-          # find out if there is some consisteny in the returned columns
-          cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
-
-          ## create the output dataframe
-          buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
-                                       safe_extract, cNames)
-          return(buildOutput)
-        }
-    }
 
     if (output == "sf") {
 
