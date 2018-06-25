@@ -73,7 +73,40 @@ requestURL <- function(path, query) {
     return(build_url(urlBuildList))
 }
 
+#' Returns comma deliminated data from get.download endpoints
+#'
+#' @param service character string. One of "sdw", "cwa", or "air"
+#' @param qid character string. Query identifier.
+#' @param qcolumns character string, specifies columns returned in query.
+#'
+#' @return Returns a dataframe
+#' @keywords internal
+#'
+#' @examples
+getDownload <- function(service, qid, qcolumns) {
+  ## build the request URL statement
+  if (service == "sdw") {
+  path <- "echo/sdw_rest_services.get_download"
+  } else if (service == "cwa") {
+    path <- "echo/cwa_rest_services.get_download"
+  } else if (service == "air") {
+    path <- "echo/air_rest_services.get_download"
+  } else {
+    stop("internal error in getDownload, incorrect service argument supplied")
+  }
+  qid <- paste0("qid=", qid)
+  query <- paste(qid, qcolumns, sep = "&")
+  getURL <- requestURL(path = path, query = query)
 
+  ## Make the request
+  request <- httr::GET(getURL, accept_json())
+
+
+
+  info <- httr::content(request, type = "text/csv")
+
+  return(info)
+}
 # Convert to sf -----------------------------------------------------------
 
 ## reads geojson in and produce the sf dataframe
