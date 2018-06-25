@@ -160,38 +160,6 @@ echoWaterGetMeta <- function(verbose = FALSE){
 }
 
 
-# echoWaterGetQID ---------------------------------------------------------
-
-echoWaterGetQID <- function(qid, qcolumns) {
-  ## build the request URL statement
-  path <- "echo/cwa_rest_services.get_qid"
-  qid <- paste0("qid=", qid)
-  query <- paste("output=JSON", qid, qcolumns, sep = "&")
-  getURL <- requestURL(path = path, query = query)
-
-  ## Make the request
-  request <- GET(getURL, accept_json())
-
-
-
-  info <- content(request)
-
-  # return a list of lengths
-  len <- purrr::map(info[["Results"]][["Facilities"]], length)
-  # if a different number of columns is returned per plant, we want to map
-  # values to the longest
-  maxIndex <- which.max(len)
-  # this might fail if a entirely different columns are returned. Need to
-  # find out if there is some consisteny in the returned columns
-  cNames <- names(info[["Results"]][["Facilities"]][[maxIndex]])
-
-  ## create the output dataframe
-  buildOutput <- purrr::map_df(info[["Results"]][["Facilities"]],
-                               safe_extract, cNames)
-  return(buildOutput)
-}
-
-
 # echoGetEffluent =========================================================
 
 
