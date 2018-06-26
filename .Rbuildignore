@@ -7,8 +7,10 @@
 ^codecov\.yml$
 ^appveyor\.yml$
 ^cran-comments\.md$
+^CONDUCT\.md$
 ^_pkgdown\.yml$
 ^pkgdown*$
 ^docs$
 ^\.lintr$
 ^paper$
+
