@@ -3,16 +3,16 @@ context("test-echoAirGetFacilityInfo")
 
 test_that("echoAirGetFacilityInfo returns a df", {
   skip_on_cran()
-  x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "df")
+  x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "df", verbose = FALSE)
   expect_equal(is.data.frame(x), TRUE)
 
-  x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf")
+  x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf", verbose = FALSE)
   expect_equal(is(x, "sf"), TRUE)
   })
 
 test_that("echoAirGetFacilityInfo returns errors", {
   expect_error(echoAirGetFacilityInfo(), "No valid arguments supplied")
-  expect_error(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "JSON", verbose = TRUE))
+  expect_error(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "JSON", verbose = FALSE))
   })
 
 test_that("echoAirGetFacilityInfo produces messages", {

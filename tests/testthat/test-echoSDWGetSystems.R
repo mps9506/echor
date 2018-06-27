@@ -12,7 +12,7 @@ test_that("echoSDWGetSystems returns errors", {
   })
 
 
-test_that("echoSDWGetSystems returns errors", {
+test_that("echoSDWGetSystems returns messages", {
   skip_on_cran()
   expect_message(echoSDWGetSystems(p_co = "Brazos", p_st = "tx", verbose = TRUE))
   })
