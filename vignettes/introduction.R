@@ -8,8 +8,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(httptest)
-library(here)
+
 library(kableExtra)
 
 path <- here::here("vignettes/data")

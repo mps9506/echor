@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michael Schramm" />
 
-<meta name="date" content="2018-04-17" />
+<meta name="date" content="2018-06-26" />
 
 <title>Introduction to echor</title>
 
@@ -20,46 +20,256 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
 
-<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 </head>
 
@@ -70,7 +280,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Introduction to echor</h1>
 <h4 class="author"><em>Michael Schramm</em></h4>
-<h4 class="date"><em>2018-04-17</em></h4>
+<h4 class="date"><em>2018-06-26</em></h4>
 
 
 
@@ -95,21 +305,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="air-facility-and-emissions-searches" class="section level3">
 <h3>Air facility and emissions searches</h3>
 <p>Find facilities with a permit to emit air pollutants under the Clean Air Act:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(echor)
-
-## Retrieve information about facilities within a geographic location
-df &lt;-<span class="st"> </span><span class="kw">echoAirGetFacilityInfo</span>(<span class="dt">output =</span> <span class="st">&quot;df&quot;</span>,
-                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>,
-                               <span class="dt">ymin =</span> <span class="st">'30.583572'</span>,
-                               <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>,
-                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(echor)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">## Retrieve information about facilities within a geographic location</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">df &lt;-<span class="st"> </span><span class="kw">echoAirGetFacilityInfo</span>(<span class="dt">output =</span> <span class="st">&quot;df&quot;</span>,</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>,</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">                               <span class="dt">ymin =</span> <span class="st">'30.583572'</span>,</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">                               <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>,</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt; Parsed with column specification:</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt; cols(</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt;   .default = col_character(),</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt;   AIRZip = col_integer(),</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt;   RegistryID = col_double(),</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt;   FacFIPSCode = col_integer(),</span></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt;   FacLong = col_double(),</span></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt;   AIRIeaCnt = col_integer(),</span></a>
+<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt;   PctilePmUs = col_double()</span></a>
+<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#&gt; )</span></a>
+<a class="sourceLine" id="cb1-20" data-line-number="20"><span class="co">#&gt; See spec(...) for full column specifications.</span></a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
-ObjectId
-</th>
 <th style="text-align:left;">
 AIRName
 </th>
@@ -128,10 +347,10 @@ AIRState
 <th style="text-align:left;">
 LocalControlRegionCode
 </th>
-<th style="text-align:left;">
+<th style="text-align:right;">
 AIRZip
 </th>
-<th style="text-align:left;">
+<th style="text-align:right;">
 RegistryID
 </th>
 <th style="text-align:left;">
@@ -143,40 +362,10 @@ AIREPARegion
 <th style="text-align:left;">
 FacFederalAgencyCode
 </th>
-<th style="text-align:left;">
-FacFederalAgencyName
-</th>
-<th style="text-align:left;">
-FacDerivedHuc
-</th>
-<th style="text-align:left;">
+<th style="text-align:right;">
 FacFIPSCode
 </th>
-<th style="text-align:left;">
-FacIndianCntryFlg
-</th>
-<th style="text-align:left;">
-AIRIndianCntryFlg
-</th>
-<th style="text-align:left;">
-FacIndianSpatialFlg
-</th>
-<th style="text-align:left;">
-FacDerivedTRIbes
-</th>
-<th style="text-align:left;">
-FacUsMexBorderFlg
-</th>
-<th style="text-align:left;">
-FacSICCodes
-</th>
-<th style="text-align:left;">
-AIRNAICS
-</th>
-<th style="text-align:left;">
-FacLat
-</th>
-<th style="text-align:left;">
+<th style="text-align:right;">
 FacLong
 </th>
 <th style="text-align:left;">
@@ -189,114 +378,36 @@ AIRMacts
 AIRStatus
 </th>
 <th style="text-align:left;">
-AIRUniverse
-</th>
-<th style="text-align:left;">
-FacDerivedWBD
-</th>
-<th style="text-align:left;">
-FacDerivedWBDName
-</th>
-<th style="text-align:left;">
 ChesapeakeBayFlag
-</th>
-<th style="text-align:left;">
-AIRIDs
-</th>
-<th style="text-align:left;">
-CWAIDs
-</th>
-<th style="text-align:left;">
-RCRAIDs
-</th>
-<th style="text-align:left;">
-RmpIDs
-</th>
-<th style="text-align:left;">
-SDWAIDs
 </th>
 <th style="text-align:left;">
 TRIIDs
 </th>
 <th style="text-align:left;">
-GHGIDs
-</th>
-<th style="text-align:left;">
-EisIDs
-</th>
-<th style="text-align:left;">
-CamdIDs
-</th>
-<th style="text-align:left;">
-AIRCurrComplStatus
-</th>
-<th style="text-align:left;">
-AIRCurrHpv
-</th>
-<th style="text-align:left;">
-AIRMnthsInHpv
-</th>
-<th style="text-align:left;">
-AIRQtrsInHpv
-</th>
-<th style="text-align:left;">
-AIRQtrsWithViol
-</th>
-<th style="text-align:left;">
-AIRPollRecentViol
-</th>
-<th style="text-align:left;">
-AIRRecentViolCnt
-</th>
-<th style="text-align:left;">
-AIRLastViolDate
-</th>
-<th style="text-align:left;">
-AIREvalCnt
-</th>
-<th style="text-align:left;">
-AIRDaysLastEval
-</th>
-<th style="text-align:left;">
-AIRLastEvalDate
-</th>
-<th style="text-align:left;">
-AIRLastEvalDateEPA
-</th>
-<th style="text-align:left;">
-AIRLastEvalDateState
-</th>
-<th style="text-align:left;">
-LastDatePce
-</th>
-<th style="text-align:left;">
-LastDatePceEPA
-</th>
-<th style="text-align:left;">
-LastDatePceSta
-</th>
-<th style="text-align:left;">
-AIRLastStckTestDate
-</th>
-<th style="text-align:left;">
-AIRLastStckTestResults
-</th>
-<th style="text-align:left;">
 FacNaaFlag
 </th>
 <th style="text-align:left;">
-FacTRIReporter
+FacTRIAIRReleases
 </th>
 <th style="text-align:left;">
-FacTRIAIRReleases
+FacEisAIRReleases
+</th>
+<th style="text-align:left;">
+FacGHGCO2Releases
+</th>
+<th style="text-align:right;">
+AIRIeaCnt
+</th>
+<th style="text-align:left;">
+AIRLastIeaDate
+</th>
+<th style="text-align:right;">
+PctilePmUs
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
-1
-</td>
 <td style="text-align:left;">
 AGGIE CLEANERS
 </td>
@@ -315,10 +426,10 @@ TX
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 778401221
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 110001873786
 </td>
 <td style="text-align:left;">
@@ -330,40 +441,10 @@ Brazos
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-12070101
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 48041
 </td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-7216
-</td>
-<td style="text-align:left;">
-999999
-</td>
-<td style="text-align:left;">
-30.61869
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 -96.34588
 </td>
 <td style="text-align:left;">
@@ -376,21 +457,6 @@ M
 Operating
 </td>
 <td style="text-align:left;">
-Minor Emissions
-</td>
-<td style="text-align:left;">
-120701030702
-</td>
-<td style="text-align:left;">
-Bee Creek-Carters Creek
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-06000000480416E020
-</td>
-<td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
@@ -408,80 +474,17 @@ NA
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-No Viol
-</td>
-<td style="text-align:left;">
-No
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-7725
-</td>
-<td style="text-align:left;">
-02/19/1997
-</td>
-<td style="text-align:left;">
-02/19/1997
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
+<td style="text-align:right;">
+80.7
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-2
-</td>
 <td style="text-align:left;">
 ALL SEASONS 1 HR CLEANERS
 </td>
@@ -500,10 +503,10 @@ TX
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 77840
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 110001873731
 </td>
 <td style="text-align:left;">
@@ -515,40 +518,10 @@ Brazos
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-12070103
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 48041
 </td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-7216
-</td>
-<td style="text-align:left;">
-999999
-</td>
-<td style="text-align:left;">
-30.60704
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 -96.30875
 </td>
 <td style="text-align:left;">
@@ -561,27 +534,6 @@ M
 Operating
 </td>
 <td style="text-align:left;">
-Minor Emissions
-</td>
-<td style="text-align:left;">
-120701030702
-</td>
-<td style="text-align:left;">
-Bee Creek-Carters Creek
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-06000000480416E015
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-TXD981611270
-</td>
-<td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
@@ -599,74 +551,17 @@ NA
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-No Viol
-</td>
-<td style="text-align:left;">
-No
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-7725
-</td>
-<td style="text-align:left;">
-02/19/1997
-</td>
-<td style="text-align:left;">
-02/19/1997
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
+<td style="text-align:right;">
+70.2
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-3
-</td>
 <td style="text-align:left;">
 BLUEBONNET PAVING
 </td>
@@ -685,10 +580,10 @@ TX
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 77840
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 110007194044
 </td>
 <td style="text-align:left;">
@@ -700,41 +595,11 @@ Brazos
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 48777
 </td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-2951
-</td>
-<td style="text-align:left;">
-999999
-</td>
-<td style="text-align:left;">
-30.613371
-</td>
-<td style="text-align:left;">
--96.320977
+<td style="text-align:right;">
+-96.32098
 </td>
 <td style="text-align:left;">
 NSPS
@@ -746,21 +611,6 @@ NA
 Operating
 </td>
 <td style="text-align:left;">
-Minor Emissions
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-TX0000004877700147
-</td>
-<td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
@@ -778,80 +628,17 @@ NA
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-No Viol
-</td>
-<td style="text-align:left;">
-No
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-4
-</td>
 <td style="text-align:left;">
 BRYAN CERAMICS PLANT
 </td>
@@ -870,10 +657,10 @@ TX
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 77803
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 110007200830
 </td>
 <td style="text-align:left;">
@@ -885,41 +672,11 @@ Brazos
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 48041
 </td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-325188
-</td>
-<td style="text-align:left;">
-30.637595
-</td>
-<td style="text-align:left;">
--96.362352
+<td style="text-align:right;">
+-96.36235
 </td>
 <td style="text-align:left;">
 SIP, TVP
@@ -931,21 +688,6 @@ NA
 Operating
 </td>
 <td style="text-align:left;">
-Major Emissions
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-TX0000004804100027
-</td>
-<td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
@@ -963,80 +705,17 @@ NA
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
-NA
+07/18/2008
 </td>
-<td style="text-align:left;">
-No Viol
-</td>
-<td style="text-align:left;">
-No
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-481
-</td>
-<td style="text-align:left;">
-12/20/2016
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-12/20/2016
-</td>
-<td style="text-align:left;">
-01/17/2013
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-01/17/2013
-</td>
-<td style="text-align:left;">
-03/12/2012
-</td>
-<td style="text-align:left;">
-Pass
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-5
-</td>
 <td style="text-align:left;">
 BRYAN CLEANERS &amp; LAUNDRY
 </td>
@@ -1055,10 +734,10 @@ TX
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 77840
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 110001873713
 </td>
 <td style="text-align:left;">
@@ -1070,41 +749,11 @@ Brazos
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-12070103
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 48041
 </td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-7216
-</td>
-<td style="text-align:left;">
-999999
-</td>
-<td style="text-align:left;">
-30.61225
-</td>
-<td style="text-align:left;">
--96.317503
+<td style="text-align:right;">
+-96.31750
 </td>
 <td style="text-align:left;">
 MACT
@@ -1116,21 +765,6 @@ M
 Operating
 </td>
 <td style="text-align:left;">
-Minor Emissions
-</td>
-<td style="text-align:left;">
-120701030702
-</td>
-<td style="text-align:left;">
-Bee Creek-Carters Creek
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-06000000480416E012
-</td>
-<td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
@@ -1148,80 +782,17 @@ NA
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-No Viol
-</td>
-<td style="text-align:left;">
-No
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-7725
-</td>
-<td style="text-align:left;">
-02/19/1997
-</td>
-<td style="text-align:left;">
-02/19/1997
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
+<td style="text-align:right;">
+91.1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-6
-</td>
 <td style="text-align:left;">
 CITY OF BRYAN
 </td>
@@ -1240,10 +811,10 @@ TX
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 77801
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 110007194142
 </td>
 <td style="text-align:left;">
@@ -1255,41 +826,11 @@ Brazos
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 48041
 </td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-N
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-4953
-</td>
-<td style="text-align:left;">
-999999
-</td>
-<td style="text-align:left;">
-30.637595
-</td>
-<td style="text-align:left;">
--96.362352
+<td style="text-align:right;">
+-96.36235
 </td>
 <td style="text-align:left;">
 SIP
@@ -1301,21 +842,6 @@ NA
 Operating
 </td>
 <td style="text-align:left;">
-Minor Emissions
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-TX0000004804100026
-</td>
-<td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
@@ -1333,73 +859,13 @@ NA
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
 NA
 </td>
-<td style="text-align:left;">
-No Viol
-</td>
-<td style="text-align:left;">
-No
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 </tr>
@@ -1451,7 +917,7 @@ xmax  string  Maximum longitude value in decimal degrees
 
 ymax  string  Maximum latitude value in decimal degrees</code></pre>
 <p>Download emissions inventory report data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">echoGetCAAPR</span>(<span class="dt">p_id =</span> <span class="st">'110000350174'</span>)</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoGetCAAPR</span>(<span class="dt">p_id =</span> <span class="st">'110000350174'</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -1798,16 +1264,26 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 <div id="water-facility-and-discharge-searches" class="section level3">
 <h3>Water facility and discharge searches</h3>
 <p>Find facilites with NPDES permits to discharge wastewater:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>, 
-                               <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>,  <span class="dt">ymax =</span> <span class="st">'30.751984'</span>, 
-                               <span class="dt">output =</span> <span class="st">'df'</span>)</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>, </a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">                               <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>,  <span class="dt">ymax =</span> <span class="st">'30.751984'</span>, </a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">                               <span class="dt">output =</span> <span class="st">'df'</span>)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; Parsed with column specification:</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; cols(</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;   .default = col_character(),</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;   RegistryID = col_double(),</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;   FacDerivedHuc = col_integer(),</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;   FacLat = col_double(),</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;   FacLong = col_double(),</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;   CWPTotalDesignFlowNmbr = col_double(),</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;   CWPActualAverageFlowNmbr = col_double(),</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;   CWPStateWaterBodyCode = col_double()</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; )</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; See spec(...) for full column specifications.</span></a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
-ObjectId
-</th>
 <th style="text-align:left;">
 CWPName
 </th>
@@ -1832,61 +1308,64 @@ CWPZip
 <th style="text-align:left;">
 MasterExternalPermitNmbr
 </th>
+<th style="text-align:right;">
+RegistryID
+</th>
 <th style="text-align:left;">
 CWPCounty
 </th>
 <th style="text-align:left;">
 CWPEPARegion
 </th>
-<th style="text-align:left;">
-FacFederalAgencyCode
+<th style="text-align:right;">
+FacDerivedHuc
 </th>
-<th style="text-align:left;">
+<th style="text-align:right;">
+FacLat
+</th>
+<th style="text-align:right;">
 FacLong
 </th>
-<th style="text-align:left;">
-CWPFacilityTypeIndicator
+<th style="text-align:right;">
+CWPTotalDesignFlowNmbr
+</th>
+<th style="text-align:right;">
+CWPActualAverageFlowNmbr
 </th>
 <th style="text-align:left;">
 ReceivingMs4Name
 </th>
 <th style="text-align:left;">
-SpeciesCriticalHabitalFlag
-</th>
-<th style="text-align:left;">
-ExposedActivity
-</th>
-<th style="text-align:left;">
 AssociatedPollutant
 </th>
 <th style="text-align:left;">
-ControlMeasure
+MsgpPermitType
 </th>
 <th style="text-align:left;">
-ControlMeasureSchedule
+CWPPermitStatusDesc
 </th>
 <th style="text-align:left;">
-EjscreenFlagUs
+CWPPermitTypeDesc
 </th>
 <th style="text-align:left;">
-Over80CountUs
+CWPIssueDate
 </th>
 <th style="text-align:left;">
-PctilePctpre1960Us
+CWPEffectiveDate
 </th>
 <th style="text-align:left;">
-PctileProximityRmpUs
+CWPExpirationDate
 </th>
 <th style="text-align:left;">
-PctileProximityTsdfUs
+CWPSNCStatusDate
+</th>
+<th style="text-align:right;">
+CWPStateWaterBodyCode
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
-1
-</td>
 <td style="text-align:left;">
 AGGIE ACRES WWTP
 </td>
@@ -1911,41 +1390,29 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:right;">
+110064633829
+</td>
 <td style="text-align:left;">
 Brazos
 </td>
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
-<td style="text-align:left;">
--96.291099
+<td style="text-align:right;">
+30.55565
 </td>
-<td style="text-align:left;">
-NON-POTW
+<td style="text-align:right;">
+-96.29110
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-N
 </td>
 <td style="text-align:left;">
 NA
@@ -1957,13 +1424,28 @@ NA
 NA
 </td>
 <td style="text-align:left;">
+Not Needed
+</td>
+<td style="text-align:left;">
+NPDES Individual Permit
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+03/31/2018
+</td>
+<td style="text-align:right;">
 NA
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-2
-</td>
 <td style="text-align:left;">
 AGRIVEST SWINE FEEDLOT
 </td>
@@ -1988,22 +1470,28 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:right;">
+110039193271
+</td>
 <td style="text-align:left;">
 Swisher
 </td>
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+30.66658
+</td>
+<td style="text-align:right;">
 -96.36552
 </td>
-<td style="text-align:left;">
-NON-POTW
+<td style="text-align:right;">
+NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
@@ -2016,31 +1504,28 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
+Terminated
 </td>
 <td style="text-align:left;">
-NA
+NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-N
+01/14/2000
 </td>
 <td style="text-align:left;">
-NA
+01/14/2000
 </td>
 <td style="text-align:left;">
-NA
+07/27/2004
 </td>
 <td style="text-align:left;">
-NA
+03/31/2018
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-3
-</td>
 <td style="text-align:left;">
 ATKINS STREET POWER STATION
 </td>
@@ -2065,20 +1550,29 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:right;">
+110001866623
+</td>
 <td style="text-align:left;">
 Brazos
 </td>
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:left;">
-NA
+<td style="text-align:right;">
+12070103
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+30.64816
+</td>
+<td style="text-align:right;">
 -96.37165
 </td>
-<td style="text-align:left;">
-NON-POTW
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+0.385
 </td>
 <td style="text-align:left;">
 NA
@@ -2090,34 +1584,28 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
+Terminated
 </td>
 <td style="text-align:left;">
-NA
+NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-NA
+08/28/2014
 </td>
 <td style="text-align:left;">
-Y
+09/01/2014
 </td>
 <td style="text-align:left;">
-4
+05/01/2019
 </td>
 <td style="text-align:left;">
-82.2
+03/31/2018
 </td>
-<td style="text-align:left;">
-82.4
-</td>
-<td style="text-align:left;">
-70.4
+<td style="text-align:right;">
+1.20701e+11
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-4
-</td>
 <td style="text-align:left;">
 ATOFINA CHEMICALS, INC.
 </td>
@@ -2142,22 +1630,28 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:right;">
+110000464293
+</td>
 <td style="text-align:left;">
 Brazos
 </td>
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:left;">
-NA
+<td style="text-align:right;">
+12070103
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+30.65792
+</td>
+<td style="text-align:right;">
 -96.37303
 </td>
-<td style="text-align:left;">
-NON-POTW
+<td style="text-align:right;">
+NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
@@ -2170,31 +1664,28 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
+Expired
 </td>
 <td style="text-align:left;">
-NA
+NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-Y
+06/30/2009
 </td>
 <td style="text-align:left;">
-4
+07/01/2009
 </td>
 <td style="text-align:left;">
-82.2
+05/01/2013
 </td>
 <td style="text-align:left;">
-82.4
+03/31/2018
 </td>
-<td style="text-align:left;">
-70.4
+<td style="text-align:right;">
+1.20701e+07
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-5
-</td>
 <td style="text-align:left;">
 BARTLETT 1
 </td>
@@ -2219,22 +1710,28 @@ NA
 <td style="text-align:left;">
 NA
 </td>
+<td style="text-align:right;">
+110039193271
+</td>
 <td style="text-align:left;">
 Swisher
 </td>
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+30.66658
+</td>
+<td style="text-align:right;">
 -96.36552
 </td>
-<td style="text-align:left;">
-NON-POTW
+<td style="text-align:right;">
+NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
@@ -2247,31 +1744,28 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
+Terminated
 </td>
 <td style="text-align:left;">
-NA
+NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-N
+01/14/2000
 </td>
 <td style="text-align:left;">
-NA
+01/14/2000
 </td>
 <td style="text-align:left;">
-NA
+07/27/2004
 </td>
 <td style="text-align:left;">
-NA
+03/31/2018
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-6
-</td>
 <td style="text-align:left;">
 BOSSIER PARISH RESOURCE CENTER
 </td>
@@ -2296,22 +1790,28 @@ NA
 <td style="text-align:left;">
 LAG830000
 </td>
+<td style="text-align:right;">
+110016696832
+</td>
 <td style="text-align:left;">
 Bossier
 </td>
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:left;">
-NA
+<td style="text-align:right;">
+12070103
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+30.61602
+</td>
+<td style="text-align:right;">
 -96.28182
 </td>
-<td style="text-align:left;">
-NON-POTW
+<td style="text-align:right;">
+NA
 </td>
-<td style="text-align:left;">
+<td style="text-align:right;">
 NA
 </td>
 <td style="text-align:left;">
@@ -2324,25 +1824,25 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
+Terminated
 </td>
 <td style="text-align:left;">
-NA
+General Permit Covered Facility
 </td>
 <td style="text-align:left;">
-N
+12/15/2012
 </td>
 <td style="text-align:left;">
-0
+12/15/2012
 </td>
 <td style="text-align:left;">
-62.7
+12/14/2017
 </td>
 <td style="text-align:left;">
-38.2
+03/31/2018
 </td>
-<td style="text-align:left;">
-43.6
+<td style="text-align:right;">
+1.11402e+07
 </td>
 </tr>
 </tbody>
@@ -2397,7 +1897,7 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
               May contain comma-seperated values
               </code></pre>
 <p>Download discharge monitoring reports from ECHO from specified facilities:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">echoGetEffluent</span>(<span class="dt">p_id =</span> <span class="st">'tx0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'50050'</span>)</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoGetEffluent</span>(<span class="dt">p_id =</span> <span class="st">'tx0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'50050'</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -3229,15 +2729,15 @@ start_date  string  Start date of interest. Must be entered as &quot;mm/dd/yyyy&
 
 end_date  string  End date of interest. Must be entered as &quot;mm/dd/yyyy&quot;</code></pre>
 <p>Parameters codes can be searched using <code>echoWaterGetParams</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">echoWaterGetParams</span>(<span class="dt">term =</span> <span class="st">&quot;Oxygen, dissolved&quot;</span>)
-<span class="co">#&gt; # A tibble: 5 x 2</span>
-<span class="co">#&gt;   ValueCode ValueDescription                     </span>
-<span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                                </span>
-<span class="co">#&gt; 1 00300     Oxygen, dissolved [DO]               </span>
-<span class="co">#&gt; 2 51646     Oxygen, dissolved [DO] maximum       </span>
-<span class="co">#&gt; 3 51645     Oxygen, dissolved [DO] minimum       </span>
-<span class="co">#&gt; 4 00301     Oxygen, dissolved percent saturation </span>
-<span class="co">#&gt; 5 00399     Oxygen, dissolved, % of time violated</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">echoWaterGetParams</span>(<span class="dt">term =</span> <span class="st">&quot;Oxygen, dissolved&quot;</span>)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; # A tibble: 5 x 2</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt;   ValueCode ValueDescription                     </span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                                </span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; 1 00300     Oxygen, dissolved [DO]               </span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; 2 51646     Oxygen, dissolved [DO] maximum       </span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; 3 51645     Oxygen, dissolved [DO] minimum       </span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; 4 00301     Oxygen, dissolved percent saturation </span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt; 5 00399     Oxygen, dissolved, % of time violated</span></a></code></pre></div>
 <p>Available arguments include:</p>
 <pre><code>term string partial or complete search phrase or word
 
@@ -3248,46 +2748,46 @@ code  string  partial or complete code value</code></pre>
 <h3>Spatial data</h3>
 <p><code>echor</code> can also return spatial data frames known as simple features (<a href="https://r-spatial.github.io/sf/" class="uri">https://r-spatial.github.io/sf/</a>), to facilitate creation of maps. Both <code>echoAirGetFacilityInfo</code> and <code>echoWaterGetFacilityInfo</code> include arguments to return simple feature dataframes.</p>
 <p>Using <code>sf</code>, <code>ggmap</code>, and the current development version of <code>ggplot2</code> (<code>devtools::install_github(&quot;tidyverse/ggplot2&quot;)</code>), we can quickly create a map of downloaded data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Sample code only,
-## This example requires the development
-## version of ggplot2 with support for
-## geom_sf()
-
-<span class="kw">library</span>(ggplot2)
-<span class="kw">library</span>(ggmap)
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(purrr)
-<span class="kw">library</span>(sf)
-<span class="kw">library</span>(ggrepel)
-
-## Download data as a simple feature
-df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>,
-                                        <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>, <span class="dt">ymax =</span> <span class="st">'30.751984'</span>,
-                                        <span class="dt">output =</span> <span class="st">'sf'</span>)
-## Download a basemap with gg_map
-collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,
-                                       <span class="op">-</span><span class="fl">96.281422</span>, <span class="fl">30.640008</span>), 
-                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner&quot;</span>)
-
-## Use coordinates to create label locations
-df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate</span>(
-    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),
-    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),
-    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)
-  )
-
-## Make the map
-<span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, 
-          <span class="dt">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>, 
-          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),
-                   <span class="dt">point.padding =</span> .<span class="dv">5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,
-                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;dodgerblue&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, 
-       <span class="dt">title =</span> <span class="st">&quot;NPDES permits near Texas A&amp;M&quot;</span>,
-       <span class="dt">caption =</span> <span class="st">&quot;Source: EPA ECHO database&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">## Sample code only,</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">## This example requires the development</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">## version of ggplot2 with support for</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">## geom_sf()</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="kw">library</span>(ggmap)</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="kw">library</span>(purrr)</a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="kw">library</span>(ggrepel)</a>
+<a class="sourceLine" id="cb11-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb11-13" data-line-number="13">## Download data as a simple feature</a>
+<a class="sourceLine" id="cb11-14" data-line-number="14">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>,</a>
+<a class="sourceLine" id="cb11-15" data-line-number="15">                                        <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>, <span class="dt">ymax =</span> <span class="st">'30.751984'</span>,</a>
+<a class="sourceLine" id="cb11-16" data-line-number="16">                                        <span class="dt">output =</span> <span class="st">'sf'</span>)</a>
+<a class="sourceLine" id="cb11-17" data-line-number="17">## Download a basemap with gg_map</a>
+<a class="sourceLine" id="cb11-18" data-line-number="18">collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,</a>
+<a class="sourceLine" id="cb11-19" data-line-number="19">                                       <span class="fl">-96.281422</span>, <span class="fl">30.640008</span>), </a>
+<a class="sourceLine" id="cb11-20" data-line-number="20">                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner&quot;</span>)</a>
+<a class="sourceLine" id="cb11-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb11-22" data-line-number="22">## Use coordinates to create label locations</a>
+<a class="sourceLine" id="cb11-23" data-line-number="23">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-24" data-line-number="24"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb11-25" data-line-number="25">    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),</a>
+<a class="sourceLine" id="cb11-26" data-line-number="26">    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb11-27" data-line-number="27">    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb11-28" data-line-number="28">  )</a>
+<a class="sourceLine" id="cb11-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb11-30" data-line-number="30">## Make the map</a>
+<a class="sourceLine" id="cb11-31" data-line-number="31"><span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb11-32" data-line-number="32"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, </a>
+<a class="sourceLine" id="cb11-33" data-line-number="33">          <span class="dt">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>, </a>
+<a class="sourceLine" id="cb11-34" data-line-number="34">          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-35" data-line-number="35"><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),</a>
+<a class="sourceLine" id="cb11-36" data-line-number="36">                   <span class="dt">point.padding =</span> <span class="fl">.5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,</a>
+<a class="sourceLine" id="cb11-37" data-line-number="37">                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;dodgerblue&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-38" data-line-number="38"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, </a>
+<a class="sourceLine" id="cb11-39" data-line-number="39">       <span class="dt">title =</span> <span class="st">&quot;NPDES permits near Texas A&amp;M&quot;</span>,</a>
+<a class="sourceLine" id="cb11-40" data-line-number="40">       <span class="dt">caption =</span> <span class="st">&quot;Source: EPA ECHO database&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 
