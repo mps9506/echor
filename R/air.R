@@ -77,7 +77,15 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
         ## get qcolumns argument specific to this query
         qcolumns <- queryList(valuesList["qcolumns"])
 
-        buildOutput <- getDownload("air", qid, qcolumns)
+        ## Find out column types
+        colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+        colNums <- as.numeric(colNums)
+        colTypes <- columnsToParse(program = "caa", colNums)
+
+        buildOutput <- getDownload("caa",
+                                   qid,
+                                   qcolumns,
+                                   col_types = colTypes)
         return(buildOutput)
         }
 

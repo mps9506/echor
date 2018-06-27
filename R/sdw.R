@@ -55,6 +55,8 @@ echoSDWGetMeta <- function(verbose = FALSE){
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems} for a complete list of parameter options. Examples provided below.
 #' @importFrom httr GET content accept_json http_status
+#' @importFrom purrr map
+#' @import dplyr
 #' @return returns a dataframe
 #' @export
 #'
@@ -105,9 +107,15 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
   ## get qcolumns argument specific to this query
   qcolumns <- queryList(valuesList["qcolumns"])
 
+  ## Find out column types
+  colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+  colNums <- as.numeric(colNums)
+  colTypes <- columnsToParse(program = "sdw", colNums)
+
   ## call new function get_qid
   buildOutput <- getDownload(service = "sdw",
                              qid = qid,
-                             qcolumns = qcolumns)
+                             qcolumns = qcolumns,
+                             col_types = colTypes)
   return(buildOutput)
 }

@@ -65,9 +65,9 @@ echoWaterGetFacilityInfo <- function(output = "df",
         ## Make the request
         request <- httr::GET(getURL, httr::accept_json())
 
-        ## Print status message, need to make this optional
+        ## Print status message
         if (verbose) {
-            message("Request URL:", getURL)
+            message("The formatted URL is: ", getURL)
             message(httr::http_status(request))
         }
 
@@ -80,7 +80,15 @@ echoWaterGetFacilityInfo <- function(output = "df",
         ## get qcolumns argument specific to this query
         qcolumns <- queryList(valuesList["qcolumns"])
 
-        buildOutput <- getDownload("cwa", qid, qcolumns)
+        ## Find out column types
+        colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+        colNums <- as.numeric(colNums)
+        colTypes <- columnsToParse(program = "cwa", colNums)
+
+        buildOutput <- getDownload("cwa",
+                                   qid,
+                                   qcolumns,
+                                   col_types = colTypes)
         return(buildOutput)
 
         }

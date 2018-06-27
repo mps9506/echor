@@ -83,7 +83,7 @@ requestURL <- function(path, query) {
 
 #' Returns comma deliminated data from get.download endpoints
 #'
-#' @param service character string. One of "sdw", "cwa", or "air"
+#' @param service character string. One of "sdw", "cwa", or "caa"
 #' @param qid character string. Query identifier.
 #' @param qcolumns character string, specifies columns returned in query.
 #' @param col_types One of NULL, a cols() specification, or a string.
@@ -99,7 +99,7 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
   path <- "echo/sdw_rest_services.get_download"
   } else if (service == "cwa") {
     path <- "echo/cwa_rest_services.get_download"
-  } else if (service == "air") {
+  } else if (service == "caa") {
     path <- "echo/air_rest_services.get_download"
   } else {
     stop("internal error in getDownload, incorrect service argument supplied")
@@ -137,4 +137,107 @@ convertSF <- function(x) {
   output <- sf::read_sf(t)
   unlink(t)
   return(output)
+}
+
+
+
+# Specify column types to parse -------------------------------------------
+
+columnsToParse <- function(program, colNums) {
+
+  if (program == "caa") {
+    meta <- httr::content(httr::GET(url = "https:///ofmpub.epa.gov/echo/air_rest_services.metadata?output=JSON"))
+  } else if (program == "cwa") {
+    meta <- httr::content(httr::GET(url = "https:///ofmpub.epa.gov/echo/cwa_rest_services.metadata?output=JSON"))
+  } else if (program == "sdw") {
+    meta <- httr::content(httr::GET(url = "https:///ofmpub.epa.gov/echo/sdw_rest_services.metadata?output=JSON"))
+  } else {
+    stop("Incorrect argument specified in columnsToParse(). program should be a character == to 'caa', 'cwa', or 'sdw'")}
+
+  col_types <- purrr::map(meta[["Results"]][["ResultColumns"]], "DataType")[c(colNums)]
+  col_types <- unlist(col_types)
+  col_types <- recode(col_types, " 'VARCHAR2' = 'c';
+                             'CHAR' = 'c';
+                             'NUMBER' = 'n';
+                             'DATE' = 'D'")
+  col_types <- paste(col_types, sep = "", collapse = "")
+  }
+
+
+
+# recode ------------------------------------------------------------------
+
+
+## borrowed from car package https://github.com/cran/car
+recode <- function(var, recodes, as.factor, as.numeric = TRUE, levels){
+  lo <- -Inf
+  hi <- Inf
+  recodes <- gsub("\n|\t", " ", recodes)
+  recode.list <- rev(strsplit(recodes, ";")[[1]])
+  is.fac <- is.factor(var)
+  if (missing(as.factor)) as.factor <- is.fac
+  if (is.fac) var <- as.character(var)
+  result <- var
+  for (term in recode.list) {
+    if (0 < length(grep(":", term))) {
+      range <- strsplit(strsplit(term, "=")[[1]][1],":")
+      low <- try(eval(parse(text = range[[1]][1])), silent = TRUE)
+      if (class(low) == "try-error") {
+        stop("\n  in recode term: ", term,
+             "\n  message: ", low)
+      }
+      high <- try(eval(parse(text = range[[1]][2])), silent = TRUE)
+      if (class(high) == "try-error") {
+        stop("\n  in recode term: ", term,
+             "\n  message: ", high)
+      }
+      target <- try(eval(parse(text = strsplit(term, "=")[[1]][2])), silent = TRUE)
+      if (class(target) == "try-error") {
+        stop("\n  in recode term: ", term,
+             "\n  message: ", target)
+      }
+      result[(var >= low) & (var <= high)] <- target
+    }
+    else if (0 < length(grep("^else=", squeezeBlanks(term)))) {
+      target <- try(eval(parse(text = strsplit(term, "=")[[1]][2])), silent = TRUE)
+      if (class(target) == "try-error") {
+        stop("\n  in recode term: ", term,
+             "\n  message: ", target)
+      }
+      result[1:length(var)] <- target
+    }
+    else {
+      set <- try(eval(parse(text = strsplit(term, "=")[[1]][1])), silent = TRUE)
+      if (class(set) == "try-error") {
+        stop("\n  in recode term: ", term,
+             "\n  message: ", set)
+      }
+      target <- try(eval(parse(text = strsplit(term, "=")[[1]][2])), silent = TRUE)
+      if (class(target) == "try-error") {
+        stop("\n  in recode term: ", term,
+             "\n  message: ", target)
+      }
+      for (val in set) {
+        if (is.na(val)) result[is.na(var)] <- target
+        else result[var == val] <- target
+      }
+    }
+  }
+  if (as.factor) {
+    result <- if (!missing(levels)) factor(result, levels = levels)
+    else as.factor(result)
+  }
+  else if (as.numeric && (!is.numeric(result))) {
+    result.valid <- na.omit(result)
+    opt <- options("warn" = -1)
+    result.valid <- as.numeric(result.valid)
+    options(opt)
+    if (!any(is.na(result.valid))) result <- as.numeric(result)
+  }
+  result
+}
+
+## borrowed from car package https://github.com/cran/car
+squeezeBlanks <- function(text){
+  gsub(" *", "",  text)
 }
