@@ -86,12 +86,14 @@ requestURL <- function(path, query) {
 #' @param service character string. One of "sdw", "cwa", or "air"
 #' @param qid character string. Query identifier.
 #' @param qcolumns character string, specifies columns returned in query.
+#' @param col_types One of NULL, a cols() specification, or a string.
 #'
 #' @return Returns a dataframe
 #' @importFrom httr GET content accept_json
+#' @importFrom readr read_csv locale
 #' @keywords internal
 #' @noRd
-getDownload <- function(service, qid, qcolumns) {
+getDownload <- function(service, qid, qcolumns, col_types = NULL) {
   ## build the request URL statement
   if (service == "sdw") {
   path <- "echo/sdw_rest_services.get_download"
@@ -107,11 +109,13 @@ getDownload <- function(service, qid, qcolumns) {
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
-  request <- httr::GET(getURL, httr::accept_json())
+  request <- httr::GET(getURL)
 
+  info <- httr::content(request, as = "raw")
 
-
-  info <- httr::content(request, type = "text/csv")
+  info <- readr::read_csv(info, col_names = TRUE,
+                  col_types = col_types,
+                  locale = readr::locale(date_format = "%m/%d/%Y"))
 
   return(info)
 }
@@ -131,5 +135,6 @@ convertSF <- function(x) {
   t <- tempfile("spoutput", fileext = ".geojson")
   write(x, t)
   output <- sf::read_sf(t)
+  unlink(t)
   return(output)
 }
