@@ -10,8 +10,9 @@ knitr::opts_chunk$set(
 )
 
 library(kableExtra)
+library(httptest)
 
-path <- here::here("vignettes/data")
+path <- here::here("vignettes/introduction")
 
 httptest::start_vignette(path = path)
 

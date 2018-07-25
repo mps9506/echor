@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michael Schramm" />
 
-<meta name="date" content="2018-06-26" />
+<meta name="date" content="2018-07-25" />
 
 <title>Introduction to echor</title>
 
@@ -280,7 +280,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">Introduction to echor</h1>
 <h4 class="author"><em>Michael Schramm</em></h4>
-<h4 class="date"><em>2018-06-26</em></h4>
+<h4 class="date"><em>2018-07-25</em></h4>
 
 
 
@@ -299,7 +299,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 </div>
 <div id="getting-started" class="section level2">
 <h2>Getting started</h2>
-<p>This vignette docuemnts a few key functions to get started.</p>
+<p>This vignette documents a few key functions to get started.</p>
 <p>The two main functions used to retrieve air emissions permit and facility data are: <code>echoAirGetFacilityInfo</code> and <code>echoGetCAAPR</code>. <code>echoAirGetFacilityInfo</code> returns a dataframe or simple features geospatial dataframe with information about permittee that match the query. <code>echoGetCAAPR</code> returns a dataframe with the emissions inventory report of the queried facility.</p>
 <p>The two main functions used to retrieve data about facilities with permits to discharge into water bodies are <code>echoWaterGetFacilityInfo</code> and <code>echoGetEffluent</code>. <code>echoWaterGetFacilityInfo</code> returns a dataframe or simple features geospatial dataframe with information about permitees that match the query. <code>echoGetEffluent</code> returns a dataframe with reported discharges from the queried facilities.</p>
 <div id="air-facility-and-emissions-searches" class="section level3">
@@ -312,19 +312,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb1-5" data-line-number="5">                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>,</a>
 <a class="sourceLine" id="cb1-6" data-line-number="6">                               <span class="dt">ymin =</span> <span class="st">'30.583572'</span>,</a>
 <a class="sourceLine" id="cb1-7" data-line-number="7">                               <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>,</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt; Parsed with column specification:</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt; cols(</span></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt;   .default = col_character(),</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt;   AIRZip = col_integer(),</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt;   RegistryID = col_double(),</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt;   FacFIPSCode = col_integer(),</span></a>
-<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt;   FacLong = col_double(),</span></a>
-<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt;   AIRIeaCnt = col_integer(),</span></a>
-<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt;   PctilePmUs = col_double()</span></a>
-<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#&gt; )</span></a>
-<a class="sourceLine" id="cb1-20" data-line-number="20"><span class="co">#&gt; See spec(...) for full column specifications.</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-8" data-line-number="8">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -344,65 +332,11 @@ AIRCity
 <th style="text-align:left;">
 AIRState
 </th>
-<th style="text-align:left;">
-LocalControlRegionCode
-</th>
 <th style="text-align:right;">
-AIRZip
-</th>
-<th style="text-align:right;">
-RegistryID
-</th>
-<th style="text-align:left;">
-AIRCounty
-</th>
-<th style="text-align:left;">
-AIREPARegion
-</th>
-<th style="text-align:left;">
-FacFederalAgencyCode
-</th>
-<th style="text-align:right;">
-FacFIPSCode
+FacLat
 </th>
 <th style="text-align:right;">
 FacLong
-</th>
-<th style="text-align:left;">
-AIRPrograms
-</th>
-<th style="text-align:left;">
-AIRMacts
-</th>
-<th style="text-align:left;">
-AIRStatus
-</th>
-<th style="text-align:left;">
-ChesapeakeBayFlag
-</th>
-<th style="text-align:left;">
-TRIIDs
-</th>
-<th style="text-align:left;">
-FacNaaFlag
-</th>
-<th style="text-align:left;">
-FacTRIAIRReleases
-</th>
-<th style="text-align:left;">
-FacEisAIRReleases
-</th>
-<th style="text-align:left;">
-FacGHGCO2Releases
-</th>
-<th style="text-align:right;">
-AIRIeaCnt
-</th>
-<th style="text-align:left;">
-AIRLastIeaDate
-</th>
-<th style="text-align:right;">
-PctilePmUs
 </th>
 </tr>
 </thead>
@@ -423,65 +357,11 @@ COLLEGE STATION
 <td style="text-align:left;">
 TX
 </td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:right;">
-778401221
-</td>
-<td style="text-align:right;">
-110001873786
-</td>
-<td style="text-align:left;">
-Brazos
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-48041
+30.61869
 </td>
 <td style="text-align:right;">
 -96.34588
-</td>
-<td style="text-align:left;">
-MACT
-</td>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-Operating
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-80.7
 </td>
 </tr>
 <tr>
@@ -500,65 +380,11 @@ COLLEGE STATION
 <td style="text-align:left;">
 TX
 </td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:right;">
-77840
-</td>
-<td style="text-align:right;">
-110001873731
-</td>
-<td style="text-align:left;">
-Brazos
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-48041
+30.60704
 </td>
 <td style="text-align:right;">
 -96.30875
-</td>
-<td style="text-align:left;">
-MACT
-</td>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-Operating
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-70.2
 </td>
 </tr>
 <tr>
@@ -577,65 +403,11 @@ COLLEGE STATION
 <td style="text-align:left;">
 TX
 </td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:right;">
-77840
-</td>
-<td style="text-align:right;">
-110007194044
-</td>
-<td style="text-align:left;">
-Brazos
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-48777
+30.61337
 </td>
 <td style="text-align:right;">
 -96.32098
-</td>
-<td style="text-align:left;">
-NSPS
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Operating
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
 </td>
 </tr>
 <tr>
@@ -654,65 +426,11 @@ BRYAN
 <td style="text-align:left;">
 TX
 </td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:right;">
-77803
-</td>
-<td style="text-align:right;">
-110007200830
-</td>
-<td style="text-align:left;">
-Brazos
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-48041
+30.63760
 </td>
 <td style="text-align:right;">
 -96.36235
-</td>
-<td style="text-align:left;">
-SIP, TVP
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Operating
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-07/18/2008
-</td>
-<td style="text-align:right;">
-NA
 </td>
 </tr>
 <tr>
@@ -731,65 +449,11 @@ COLLEGE STATION
 <td style="text-align:left;">
 TX
 </td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:right;">
-77840
-</td>
-<td style="text-align:right;">
-110001873713
-</td>
-<td style="text-align:left;">
-Brazos
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-48041
+30.61225
 </td>
 <td style="text-align:right;">
 -96.31750
-</td>
-<td style="text-align:left;">
-MACT
-</td>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-Operating
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-91.1
 </td>
 </tr>
 <tr>
@@ -808,65 +472,11 @@ BRYAN
 <td style="text-align:left;">
 TX
 </td>
-<td style="text-align:left;">
-NA
-</td>
 <td style="text-align:right;">
-77801
-</td>
-<td style="text-align:right;">
-110007194142
-</td>
-<td style="text-align:left;">
-Brazos
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-48041
+30.63760
 </td>
 <td style="text-align:right;">
 -96.36235
-</td>
-<td style="text-align:left;">
-SIP
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Operating
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
 </td>
 </tr>
 </tbody>
@@ -1266,20 +876,7 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 <p>Find facilites with NPDES permits to discharge wastewater:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>, </a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">                               <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>,  <span class="dt">ymax =</span> <span class="st">'30.751984'</span>, </a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">                               <span class="dt">output =</span> <span class="st">'df'</span>)</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; Parsed with column specification:</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; cols(</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;   .default = col_character(),</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;   RegistryID = col_double(),</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;   FacDerivedHuc = col_integer(),</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;   FacLat = col_double(),</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;   FacLong = col_double(),</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;   CWPTotalDesignFlowNmbr = col_double(),</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;   CWPActualAverageFlowNmbr = col_double(),</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;   CWPStateWaterBodyCode = col_double()</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; )</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; See spec(...) for full column specifications.</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-3" data-line-number="3">                               <span class="dt">output =</span> <span class="st">'df'</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -1308,7 +905,7 @@ CWPZip
 <th style="text-align:left;">
 MasterExternalPermitNmbr
 </th>
-<th style="text-align:right;">
+<th style="text-align:left;">
 RegistryID
 </th>
 <th style="text-align:left;">
@@ -1317,7 +914,7 @@ CWPCounty
 <th style="text-align:left;">
 CWPEPARegion
 </th>
-<th style="text-align:right;">
+<th style="text-align:left;">
 FacDerivedHuc
 </th>
 <th style="text-align:right;">
@@ -1359,7 +956,7 @@ CWPExpirationDate
 <th style="text-align:left;">
 CWPSNCStatusDate
 </th>
-<th style="text-align:right;">
+<th style="text-align:left;">
 CWPStateWaterBodyCode
 </th>
 </tr>
@@ -1382,15 +979,13 @@ COLLEGE STATION
 TX
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 77845
 </td>
 <td style="text-align:left;">
-NA
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 110064633829
 </td>
 <td style="text-align:left;">
@@ -1399,8 +994,7 @@ Brazos
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:right;">
-NA
+<td style="text-align:left;">
 </td>
 <td style="text-align:right;">
 30.55565
@@ -1415,13 +1009,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 Not Needed
@@ -1439,10 +1030,9 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-03/31/2018
+2018-03-31
 </td>
-<td style="text-align:right;">
-NA
+<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -1462,15 +1052,13 @@ BRYAN
 TX
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 00000
 </td>
 <td style="text-align:left;">
-NA
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 110039193271
 </td>
 <td style="text-align:left;">
@@ -1479,8 +1067,7 @@ Swisher
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:right;">
-NA
+<td style="text-align:left;">
 </td>
 <td style="text-align:right;">
 30.66658
@@ -1495,13 +1082,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 Terminated
@@ -1510,19 +1094,18 @@ Terminated
 NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-01/14/2000
+2000-01-14
 </td>
 <td style="text-align:left;">
-01/14/2000
+2000-01-14
 </td>
 <td style="text-align:left;">
-07/27/2004
+2004-07-27
 </td>
 <td style="text-align:left;">
-03/31/2018
+2018-03-31
 </td>
-<td style="text-align:right;">
-NA
+<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -1542,15 +1125,13 @@ BRYAN
 TX
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 77801
 </td>
 <td style="text-align:left;">
-NA
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 110001866623
 </td>
 <td style="text-align:left;">
@@ -1559,7 +1140,7 @@ Brazos
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 12070103
 </td>
 <td style="text-align:right;">
@@ -1575,13 +1156,10 @@ NA
 0.385
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 Terminated
@@ -1590,19 +1168,19 @@ Terminated
 NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-08/28/2014
+2014-08-28
 </td>
 <td style="text-align:left;">
-09/01/2014
+2014-09-01
 </td>
 <td style="text-align:left;">
-05/01/2019
+2019-05-01
 </td>
 <td style="text-align:left;">
-03/31/2018
+2018-03-31
 </td>
-<td style="text-align:right;">
-1.20701e+11
+<td style="text-align:left;">
+120701030340
 </td>
 </tr>
 <tr>
@@ -1622,15 +1200,13 @@ BRYAN
 TX
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 77801
 </td>
 <td style="text-align:left;">
-NA
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 110000464293
 </td>
 <td style="text-align:left;">
@@ -1639,7 +1215,7 @@ Brazos
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 12070103
 </td>
 <td style="text-align:right;">
@@ -1655,13 +1231,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 Expired
@@ -1670,19 +1243,19 @@ Expired
 NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-06/30/2009
+2009-06-30
 </td>
 <td style="text-align:left;">
-07/01/2009
+2009-07-01
 </td>
 <td style="text-align:left;">
-05/01/2013
+2013-05-01
 </td>
 <td style="text-align:left;">
-03/31/2018
+2018-03-31
 </td>
-<td style="text-align:right;">
-1.20701e+07
+<td style="text-align:left;">
+12070101
 </td>
 </tr>
 <tr>
@@ -1702,15 +1275,13 @@ AMARILLO
 TX
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 00000
 </td>
 <td style="text-align:left;">
-NA
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 110039193271
 </td>
 <td style="text-align:left;">
@@ -1719,8 +1290,7 @@ Swisher
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:right;">
-NA
+<td style="text-align:left;">
 </td>
 <td style="text-align:right;">
 30.66658
@@ -1735,13 +1305,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 Terminated
@@ -1750,19 +1317,18 @@ Terminated
 NPDES Individual Permit
 </td>
 <td style="text-align:left;">
-01/14/2000
+2000-01-14
 </td>
 <td style="text-align:left;">
-01/14/2000
+2000-01-14
 </td>
 <td style="text-align:left;">
-07/27/2004
+2004-07-27
 </td>
 <td style="text-align:left;">
-03/31/2018
+2018-03-31
 </td>
-<td style="text-align:right;">
-NA
+<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -1782,7 +1348,6 @@ BENTON
 LA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 71111
@@ -1790,7 +1355,7 @@ NA
 <td style="text-align:left;">
 LAG830000
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 110016696832
 </td>
 <td style="text-align:left;">
@@ -1799,7 +1364,7 @@ Bossier
 <td style="text-align:left;">
 06
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;">
 12070103
 </td>
 <td style="text-align:right;">
@@ -1815,13 +1380,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
 Terminated
@@ -1830,19 +1392,19 @@ Terminated
 General Permit Covered Facility
 </td>
 <td style="text-align:left;">
-12/15/2012
+2012-12-15
 </td>
 <td style="text-align:left;">
-12/15/2012
+2012-12-15
 </td>
 <td style="text-align:left;">
-12/14/2017
+2017-12-14
 </td>
 <td style="text-align:left;">
-03/31/2018
+2018-03-31
 </td>
-<td style="text-align:right;">
-1.11402e+07
+<td style="text-align:left;">
+11140204
 </td>
 </tr>
 </tbody>
@@ -2033,7 +1595,7 @@ TX0119407
 110009771693
 </td>
 <td style="text-align:left;">
-1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+1000’ N OF THE END OF BLACK RANCH RD AND APPROX
 </td>
 <td style="text-align:left;">
 SKIDMORE
@@ -2149,7 +1711,7 @@ TX0119407
 110009771693
 </td>
 <td style="text-align:left;">
-1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+1000’ N OF THE END OF BLACK RANCH RD AND APPROX
 </td>
 <td style="text-align:left;">
 SKIDMORE
@@ -2265,7 +1827,7 @@ TX0119407
 110009771693
 </td>
 <td style="text-align:left;">
-1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+1000’ N OF THE END OF BLACK RANCH RD AND APPROX
 </td>
 <td style="text-align:left;">
 SKIDMORE
@@ -2381,7 +1943,7 @@ TX0119407
 110009771693
 </td>
 <td style="text-align:left;">
-1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+1000’ N OF THE END OF BLACK RANCH RD AND APPROX
 </td>
 <td style="text-align:left;">
 SKIDMORE
@@ -2497,7 +2059,7 @@ TX0119407
 110009771693
 </td>
 <td style="text-align:left;">
-1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+1000’ N OF THE END OF BLACK RANCH RD AND APPROX
 </td>
 <td style="text-align:left;">
 SKIDMORE
@@ -2613,7 +2175,7 @@ TX0119407
 110009771693
 </td>
 <td style="text-align:left;">
-1000 FT N OF THE END OF BLACK RANCH RD AND APPROX
+1000’ N OF THE END OF BLACK RANCH RD AND APPROX
 </td>
 <td style="text-align:left;">
 SKIDMORE
@@ -2730,14 +2292,7 @@ start_date  string  Start date of interest. Must be entered as &quot;mm/dd/yyyy&
 end_date  string  End date of interest. Must be entered as &quot;mm/dd/yyyy&quot;</code></pre>
 <p>Parameters codes can be searched using <code>echoWaterGetParams</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">echoWaterGetParams</span>(<span class="dt">term =</span> <span class="st">&quot;Oxygen, dissolved&quot;</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; # A tibble: 5 x 2</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt;   ValueCode ValueDescription                     </span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                                </span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; 1 00300     Oxygen, dissolved [DO]               </span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; 2 51646     Oxygen, dissolved [DO] maximum       </span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; 3 51645     Oxygen, dissolved [DO] minimum       </span></a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; 4 00301     Oxygen, dissolved percent saturation </span></a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt; 5 00399     Oxygen, dissolved, % of time violated</span></a></code></pre></div>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; # A tibble: 0 x 0</span></a></code></pre></div>
 <p>Available arguments include:</p>
 <pre><code>term string partial or complete search phrase or word
 
