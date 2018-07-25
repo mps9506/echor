@@ -12,11 +12,13 @@
 echoGetFacilities <- function(program, output = "df", verbose = FALSE, ...) {
   if (program == "caa") {
 
-    echoAirGetFacilityInfo(output = output, verbose = verbose, ...)
+    df <- echoAirGetFacilityInfo(output = output, verbose = verbose, ...)
+    return(df)
 
     } else if (program == "cwa") {
 
-      echoWaterGetFacilityInfo(output = output, verbose = verbose, ...)
+      df <- echoWaterGetFacilityInfo(output = output, verbose = verbose, ...)
+      return(df)
 
       } else if (program == "sdw") {
 
@@ -26,7 +28,8 @@ echoGetFacilities <- function(program, output = "df", verbose = FALSE, ...) {
 
         } else if (output == "df") {
 
-          echoSDWGetSystems(verbose = verbose, ...)
+          df <- echoSDWGetSystems(verbose = verbose, ...)
+          return(df)
         }
 
   } else {
