@@ -3,8 +3,8 @@ context("test-echoGetFacilities")
 test_that("echoGetFacilities returns a dataframe", {
   skip_on_cran()
   Sys.sleep(5)
-  x <- echoGetFacilities(program = "cwa", p_pid = "ALR040033", output = "df", verbose = TRUE, qcolumns = "1,2,3")
-  expect_equal(is.data.frame(x), TRUE)
+  x <- echoGetFacilities(program = "cwa", p_pid = "ALR040033", output = "df", verbose = FALSE, qcolumns = "1,2,3")
+  expect_s3_class(x, "tbl_df")
 
   #x <- echoGetFacilities(program = "caa", p_pid = "NC0000003706500036", output = "df", verbose = FALSE, qcolumns = "1,2,3")
   #expect_equal(is.data.frame(x), TRUE)

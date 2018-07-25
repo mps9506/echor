@@ -4,10 +4,10 @@ context("test-echoAirGetFacilityInfo")
 test_that("echoAirGetFacilityInfo returns a df", {
   skip_on_cran()
   x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "df", verbose = FALSE)
-  expect_equal(is.data.frame(x), TRUE)
+  expect_s3_class(x, "tbl_df")
 
   x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf", verbose = FALSE)
-  expect_equal(is(x, "sf"), TRUE)
+  expect_s3_class(x, "sf")
   })
 
 test_that("echoAirGetFacilityInfo returns errors", {

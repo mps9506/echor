@@ -2,8 +2,8 @@ context("test-echoWatergetfacilityInfo")
 
 test_that("echoWaterGetFacilityInfo returns df", {
   skip_on_cran()
-  x <- echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "df")
-  expect_equal(is.data.frame(x), TRUE)
+  x <- echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "df", verbose = FALSE)
+  expect_s3_class(x, "tbl_df")
   })
 
 test_that("echoWaterGetFacilityInfo returns errors",{
@@ -20,5 +20,5 @@ test_that("echoWaterGetFacilityInfo returns messages", {
 test_that("echoWaterGetFacilityInfo returns sf", {
   skip_on_cran()
   x <- echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "sf")
-  expect_equal(is(x, "sf"), TRUE)
+  expect_s3_class(x, "sf")
 })

@@ -4,7 +4,7 @@ test_that("echoSDWGetSystems returns dataframe", {
   skip_on_cran()
 
   x <- echoSDWGetSystems(p_co = "Brazos", p_st = "tx", verbose = FALSE)
-  expect_equal(is.data.frame(x), TRUE)
+  expect_s3_class(x, "tbl_df")
   })
 
 test_that("echoSDWGetSystems returns errors", {
