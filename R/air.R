@@ -44,7 +44,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## check if qcolumns argument is provided by user
     ## if user does not provide qcolumns, provide a sensible default
     if (!("qcolumns" %in% names(valuesList))) {
-      qcolumns <- c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206)
+      qcolumns <- c(1:5,22,23)
       qcolumns <- paste(as.character(qcolumns), collapse = ",")
       valuesList[["qcolumns"]] <- qcolumns
     }
