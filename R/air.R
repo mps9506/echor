@@ -8,7 +8,7 @@
 #' @param output Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
-#' @importFrom httr GET content accept_json http_status
+#' @import httr
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
@@ -49,6 +49,9 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
       valuesList[["qcolumns"]] <- qcolumns
     }
 
+    # check if 1 and 2 are in, if not, insert and order
+    valuesList <- insertQColumns(valuesList)
+
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
 
@@ -80,6 +83,16 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
         ## Find out column types
         colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
         colNums <- as.numeric(colNums)
+
+        ## ECHO always returns columns 1 and 2
+        ## regardless of the url request.
+        ## In order to correctly sort and identify column
+        ## types, insert 1 and 2 into the request so
+        ## metadat is looked up correctly
+        if (!1 %in% colNums) { colNums <- append(colNums, 1)}
+        if (!2 %in% colNums) { colNums <- append(colNums, 2)}
+        colNums <- sort(colNums)
+
         colTypes <- columnsToParse(program = "caa", colNums)
 
         buildOutput <- getDownload("caa",
@@ -124,7 +137,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 #'
 #' Returns variable name and descriptions for parameters returned by \code{\link{echoAirGetFacilityInfo}}
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
-#' @importFrom httr GET content accept_json http_status
+#' @import httr
 #' @importFrom purrr map_df
 #' @return returns a dataframe
 #' @export
@@ -170,10 +183,10 @@ echoAirGetMeta <- function(verbose = FALSE){
 #' @param p_id character string specify the identifier for the service. Required.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Additional arguments
-#' @importFrom httr GET content accept_json http_status
 #' @importFrom purrr map_df
 #' @importFrom tidyr gather_
 #' @importFrom tibble tibble
+#' @import httr
 #' @import dplyr
 #' @return dataframe
 #' @export

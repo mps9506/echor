@@ -89,7 +89,7 @@ requestURL <- function(path, query) {
 #' @param col_types One of NULL, a cols() specification, or a string.
 #'
 #' @return Returns a dataframe
-#' @importFrom httr GET content accept_json
+#' @import httr
 #' @importFrom readr read_csv locale
 #' @keywords internal
 #' @noRd
@@ -142,6 +142,27 @@ convertSF <- function(x) {
 
 
 
+# Clean up qcolumns ------------------------------------------------------
+
+insertQColumns <- function(valuesList) {
+
+  qcolumns <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+  # unlist qcolumns into a numeric vector
+  # check if 1 and 2 are in, if not, insert and order
+  if (!1 %in% qcolumns) { qcolumns <- append(qcolumns, 1)}
+  if (!2 %in% qcolumns) { qcolumns <- append(qcolumns, 2)}
+  qcolumns <- as.character(sort(as.numeric(qcolumns)))
+
+  qcolumns <- paste(as.character(qcolumns), collapse = ",")
+
+  valuesList[["qcolumns"]] <- qcolumns
+
+  return(valuesList)
+}
+
+
+
+
 # Specify column types to parse -------------------------------------------
 
 columnsToParse <- function(program, colNums) {
@@ -157,9 +178,9 @@ columnsToParse <- function(program, colNums) {
 
   col_types <- purrr::map(meta[["Results"]][["ResultColumns"]], "DataType")[c(colNums)]
   col_types <- unlist(col_types)
-  col_types <- recode(col_types, " 'VARCHAR2' = 'c';
+  col_types <- recode(col_types, "'VARCHAR2' = 'c';
                              'CHAR' = 'c';
-                             'NUMBER' = 'n';
+                             'NUMBER' = 'd';
                              'DATE' = 'D'")
   col_types <- paste(col_types, sep = "", collapse = "")
   }
@@ -170,6 +191,9 @@ columnsToParse <- function(program, colNums) {
 
 
 ## borrowed from car package https://github.com/cran/car
+#' Recode Factors
+#'
+#' @importFrom stats na.omit
 recode <- function(var, recodes, as.factor, as.numeric = TRUE, levels){
   lo <- -Inf
   hi <- Inf
