@@ -194,6 +194,8 @@ columnsToParse <- function(program, colNums) {
 #' Recode Factors
 #'
 #' @importFrom stats na.omit
+#' @noRd
+#' @keywords internal
 recode <- function(var, recodes, as.factor, as.numeric = TRUE, levels){
   lo <- -Inf
   hi <- Inf
