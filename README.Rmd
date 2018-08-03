@@ -153,3 +153,12 @@ ggplot(df) +
 
 ```
 
+## Test Results
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(echor)
+
+date()
+
+devtools::test()
+```
+

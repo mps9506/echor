@@ -63,22 +63,22 @@ df <- echoWaterGetFacilityInfo(output = "df",
 head(df)
 #> # A tibble: 6 x 26
 #>   CWPName   SourceID  CWPStreet   CWPCity CWPState CWPStateDistrict CWPZip
-#>   <chr>     <chr>     <chr>       <chr>   <chr>    <chr>             <int>
-#> 1 BOSSIER ~ LAG830191 3228 BARKD~ BENTON  LA       <NA>              71111
-#> 2 BROADSTO~ TXR10F50D NW OF ATLA~ BRYAN   TX       <NA>              77807
-#> 3 BROADSTO~ TXR10F50H NW OF ATLA~ BRYAN   TX       <NA>              77807
-#> 4 CITY OF ~ TXR040008 WITHIN CIT~ COLLEG~ TX       <NA>              77842
-#> 5 HEAT TRA~ TX0106526 0.25MI SW ~ COLLEG~ TX       <NA>              77845
-#> 6 HOLLEMAN~ TXR10F4N6 NW OF HOLL~ COLLEG~ TX       <NA>              77840
+#>   <chr>     <chr>     <chr>       <chr>   <chr>    <chr>            <chr> 
+#> 1 BOSSIER ~ LAG830191 3228 BARKD~ BENTON  LA       ""               71111 
+#> 2 BROADSTO~ TXR10F50H NW OF ATLA~ BRYAN   TX       ""               77807 
+#> 3 BROADSTO~ TXR10F50D NW OF ATLA~ BRYAN   TX       ""               77807 
+#> 4 CITY OF ~ TXR040008 WITHIN CIT~ COLLEG~ TX       ""               77842 
+#> 5 HEAT TRA~ TX0106526 0.25MI SW ~ COLLEG~ TX       ""               77845 
+#> 6 HOLLEMAN~ TXR10F4N6 NW OF HOLL~ COLLEG~ TX       ""               77840 
 #> # ... with 19 more variables: MasterExternalPermitNmbr <chr>,
-#> #   RegistryID <dbl>, CWPCounty <chr>, CWPEPARegion <chr>,
-#> #   FacDerivedHuc <int>, FacLat <dbl>, FacLong <dbl>,
-#> #   CWPTotalDesignFlowNmbr <dbl>, CWPActualAverageFlowNmbr <chr>,
+#> #   RegistryID <chr>, CWPCounty <chr>, CWPEPARegion <chr>,
+#> #   FacDerivedHuc <chr>, FacLat <dbl>, FacLong <dbl>,
+#> #   CWPTotalDesignFlowNmbr <dbl>, CWPActualAverageFlowNmbr <dbl>,
 #> #   ReceivingMs4Name <chr>, AssociatedPollutant <chr>,
 #> #   MsgpPermitType <chr>, CWPPermitStatusDesc <chr>,
-#> #   CWPPermitTypeDesc <chr>, CWPIssueDate <chr>, CWPEffectiveDate <chr>,
-#> #   CWPExpirationDate <chr>, CWPSNCStatusDate <chr>,
-#> #   CWPStateWaterBodyCode <dbl>
+#> #   CWPPermitTypeDesc <chr>, CWPIssueDate <date>, CWPEffectiveDate <date>,
+#> #   CWPExpirationDate <date>, CWPSNCStatusDate <date>,
+#> #   CWPStateWaterBodyCode <chr>
 ```
 
 The ECHO database can provide over 270 different columns. echor returns
@@ -100,13 +100,13 @@ df <- echoWaterGetFacilityInfo(output = "df",
 head(df)
 #> # A tibble: 6 x 6
 #>   CWPName         SourceID FacDerivedHuc FacLat FacLong CWPTotalDesignFlo~
-#>   <chr>           <chr>            <int>  <dbl>   <dbl>              <dbl>
-#> 1 BOSSIER PARISH~ LAG8301~      12070103   30.6   -96.3                 NA
-#> 2 BROADSTONE TRA~ TXR10F5~      12070101   30.6   -96.4                 NA
-#> 3 BROADSTONE TRA~ TXR10F5~      12070101   30.6   -96.4                 NA
-#> 4 CITY OF COLLEG~ TXR0400~            NA   30.6   -96.3                 NA
-#> 5 HEAT TRANSFER ~ TX01065~      12070101   30.6   -96.4                 NA
-#> 6 HOLLEMAN EXTEN~ TXR10F4~      12070103   30.6   -96.3                 NA
+#>   <chr>           <chr>    <chr>          <dbl>   <dbl>              <dbl>
+#> 1 BOSSIER PARISH~ LAG8301~ 12070103        30.6   -96.3                 NA
+#> 2 BROADSTONE TRA~ TXR10F5~ 12070101        30.6   -96.4                 NA
+#> 3 BROADSTONE TRA~ TXR10F5~ 12070101        30.6   -96.4                 NA
+#> 4 CITY OF COLLEG~ TXR0400~ ""              30.6   -96.3                 NA
+#> 5 HEAT TRANSFER ~ TX01065~ 12070101        30.6   -96.4                 NA
+#> 6 HOLLEMAN EXTEN~ TXR10F4~ 12070103        30.6   -96.3                 NA
 ```
 
 When returned as sf dataframes, the data is suitable for immediate
@@ -179,3 +179,91 @@ ggplot(df) +
 ```
 
 ![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
+
+## Test Results
+
+``` r
+library(echor)
+
+date()
+#> [1] "Fri Aug 03 16:46:28 2018"
+
+devtools::test()
+#> v | OK F W S | Context
+#> 
+/ |  0       | core functions return expected errors
+- |  1       | core functions return expected errors
+\ |  2       | core functions return expected errors
+| |  3       | core functions return expected errors
+/ |  4       | core functions return expected errors
+- |  5       | core functions return expected errors
+\ |  6       | core functions return expected errors
+| |  7       | core functions return expected errors
+/ |  8       | core functions return expected errors
+- |  9       | core functions return expected errors
+\ | 10       | core functions return expected errors
+v | 10       | core functions return expected errors
+#> 
+/ |  0       | core functions return expected objects
+- |  0   1   | core functions return expected objects
+\ |  0   2   | core functions return expected objects
+| |  1   2   | core functions return expected objects
+/ |  2   2   | core functions return expected objects
+- |  2 1 2   | core functions return expected objects[1] "# Status message: Success"          
+#> [2] "# Status message: OK"               
+#> [3] "# Status message: Success: (200) OK"
+#> 
+\ |  2 1 3   | core functions return expected objectsCannot open data source C:\Users\michael.schramm\AppData\Local\Temp\Rtmpa4wMKJ\spoutput27187fb65e8f.geojson
+#> 
+| |  2 2 3   | core functions return expected objects
+x |  2 2 3   | core functions return expected objects [1.7 s]
+#> -----------------------------------------------------------------------------------------------------
+#> test-expected_objects.R:7: warning: core functions return tbl_df
+#> number of columns of result is not a multiple of vector length (arg 2)
+#> 
+#> test-expected_objects.R:7: warning: core functions return tbl_df
+#> 1 parsing failure.
+#> row # A tibble: 1 x 5 col     row col   expected  actual    file         expected   <int> <chr> <chr>     <chr>     <chr>        actual 1     2 <NA>  1 columns 2 columns <raw vector> file # A tibble: 1 x 5
+#> 
+#> 
+#> test-expected_objects.R:13: error: core functions return tbl_df
+#> object 'Year1' not found
+#> 1: echoGetCAAPR(p_id = "110000350174") at C:\BACKUP\Documents\Data-Analysis-Projects\echor/tests/testthat/test-expected_objects.R:13
+#> 2: tidyr::gather_(pollutant, "Year", "Discharge", c("Year1", "Year2", "Year3", "Year4", "Year5", "Year6", 
+#>        "Year7", "Year8", "Year9", "Year10")) at C:\BACKUP\Documents\Data-Analysis-Projects\echor/R/air.R:246
+#> 3: gather_.data.frame(pollutant, "Year", "Discharge", c("Year1", "Year2", "Year3", "Year4", "Year5", "Year6", 
+#>        "Year7", "Year8", "Year9", "Year10"))
+#> 4: gather(data, key = !!key_col, value = !!value_col, !!!gather_cols, na.rm = na.rm, convert = convert, factor_key = factor_key)
+#> 5: gather.data.frame(data, key = !!key_col, value = !!value_col, !!!gather_cols, na.rm = na.rm, convert = convert, 
+#>        factor_key = factor_key)
+#> 6: unname(tidyselect::vars_select(names(data), !!!quos))
+#> 7: tidyselect::vars_select(names(data), !!!quos)
+#> 8: vars_select_eval(.vars, quos)
+#> 9: map_if(quos, !is_helper, overscope_eval_next, overscope = overscope)
+#> 10: map(.x[sel], .f, ...)
+#> 11: .f(.x[[i]], ...)
+#> 
+#> test-expected_objects.R:51: warning: core functions return sf
+#> GDAL Error 4: Failed to read GeoJSON data
+#> 
+#> test-expected_objects.R:51: error: core functions return sf
+#> Open failed.
+#> 1: echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf", verbose = FALSE) at C:\BACKUP\Documents\Data-Analysis-Projects\echor/tests/testthat/test-expected_objects.R:51
+#> 2: convertSF(buildOutput) at C:\BACKUP\Documents\Data-Analysis-Projects\echor/R/air.R:122
+#> 3: sf::read_sf(t) at C:\BACKUP\Documents\Data-Analysis-Projects\echor/R/utils.R:138
+#> 4: st_as_sf(tibble::as_tibble(as.data.frame(st_read(..., quiet = quiet, stringsAsFactors = stringsAsFactors))))
+#> 5: tibble::as_tibble(as.data.frame(st_read(..., quiet = quiet, stringsAsFactors = stringsAsFactors)))
+#> 6: as.data.frame(st_read(..., quiet = quiet, stringsAsFactors = stringsAsFactors))
+#> 7: st_read(..., quiet = quiet, stringsAsFactors = stringsAsFactors)
+#> 8: st_read.default(..., quiet = quiet, stringsAsFactors = stringsAsFactors)
+#> 9: CPL_read_ogr(dsn, layer, as.character(options), quiet, type, promote_to_multi, int64_as_string)
+#> -----------------------------------------------------------------------------------------------------
+#> 
+#> == Results ==========================================================================================
+#> Duration: 1.8 s
+#> 
+#> OK:       12
+#> Failed:   2
+#> Warnings: 3
+#> Skipped:  0
+```
