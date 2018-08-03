@@ -41,6 +41,7 @@ test_that("core functions return tbl_df", {
 
   x <- echoGetFacilities(program = "cwa", p_pid = "ALR040033", output = "df", verbose = FALSE, qcolumns = "1,2,3")
   expect_s3_class(x, "tbl_df")
+
 })
 
 test_that("core functions return sf", {
@@ -52,4 +53,5 @@ test_that("core functions return sf", {
 
   x <- echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "sf")
   expect_s3_class(x, "sf")
+
 })
