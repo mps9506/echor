@@ -120,6 +120,38 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
 
   return(info)
 }
+
+#' Returns geojson from get.geojson endpoints
+#'
+#' @param service character string. One of "cwa", or "caa"
+#' @param qid character string. Query identifier.
+#' @param qcolumns character string, specifies columns returned in query.
+#'
+#' @return Returns a dataframe
+#' @import httr
+#' @importFrom readr read_csv locale
+#' @keywords internal
+#' @noRd
+getGeoJson <- function(service, qid, qcolumns) {
+  ## build the request URL statement
+  if (service == "cwa") {
+    path <- "echo/cwa_rest_services.get_downloa"
+  } else if (service == "caa") {
+    path <- "echo/air_rest_services.get_geojson"
+  } else {
+    stop("internal error in getDownload, incorrect service argument supplied")
+  }
+  qid <- paste0("qid=", qid)
+  query <- paste(qid, qcolumns, sep = "&")
+  getURL <- requestURL(path = path, query = query)
+
+  ## Make the request
+  request <- httr::GET(getURL)
+
+  info <- httr::content(request, as = "text", encoding = "UTF-8")
+
+  return(info)
+}
 # Convert to sf -----------------------------------------------------------
 
 ## reads geojson in and produce the sf dataframe
@@ -135,7 +167,7 @@ convertSF <- function(x) {
 
   t <- tempfile("spoutput", fileext = ".geojson")
   write(x, t)
-  output <- sf::read_sf(t)
+  output <- sf::read_sf(t, quiet = T, stringsAsFactors = F)
   unlink(t)
   return(output)
 }
