@@ -2,9 +2,12 @@ context("core functions return expected errors")
 
 test_that("core functions returns expected errors", {
   expect_error(echoAirGetFacilityInfo(), "No valid arguments supplied")
-  expect_error(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "JSON"))
-  expect_error(echoGetReports(program = "sdw"))
-  expect_error(echoSDWGetSystems())
+  expect_error(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "JSON"),
+               "output argument = JSON, when it should be either 'df' or 'sf'")
+  expect_error(echoGetReports(program = "sdw"),
+               "the argument 'program' must be specified as one of 'caa' or 'cwa'")
+  expect_error(echoSDWGetSystems(),
+               "No valid arguments supplied")
 
   #echoWaterGetFacilityInto returns error when no args uses, or incorrect output specified
   expect_error(echoWaterGetFacilityInfo(), "No valid arguments supplied")
