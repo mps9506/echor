@@ -6,9 +6,6 @@ cache: packages
 
 dist: trusty
 
-env:
-  - NOT_CRAN="true"
-
 r_packages:
   - devtools
 
