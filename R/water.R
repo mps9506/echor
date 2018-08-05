@@ -11,6 +11,7 @@
 #' @param \dots Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @return returns a dataframe or simple features dataframe
 #' @import httr
+#' @importFrom geojsonsf geojson_sf
 #'
 #' @export
 #' @examples \donttest{
@@ -59,7 +60,7 @@ echoWaterGetFacilityInfo <- function(output = "df",
     queryDots <- queryList(valuesList)
 
     ## build the request URL statement
-    path <- "echo/cwa_rest_services.get_facilities"
+    path <- "echo/cwa_rest_services.get_facility_info"
     query <- paste("output=JSON", queryDots, sep = "&")
     getURL <- requestURL(path = path, query = query)
 
