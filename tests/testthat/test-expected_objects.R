@@ -4,7 +4,8 @@ test_that("core functions return tbl_df", {
 
   skip_on_cran()
 
-  x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "df", verbose = FALSE)
+  x <- echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "df",
+                              qcolumns = "3,4,5")
   expect_s3_class(x, "tbl_df")
 
   x <- echoSDWGetMeta(verbose = FALSE)
@@ -30,7 +31,8 @@ test_that("core functions return tbl_df", {
   x <- echoSDWGetSystems(p_co = "Brazos", p_st = "tx", verbose = FALSE)
   expect_s3_class(x, "tbl_df")
 
-  x <- echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "df", verbose = FALSE)
+  x <- echoWaterGetFacilityInfo(p_pid = "ALR040033", output = "df",
+                                qcolumns = "3,4,5")
   expect_s3_class(x, "tbl_df")
 
   x <- echoWaterGetParams(term = "Oxygen, dissolved")
@@ -39,7 +41,8 @@ test_that("core functions return tbl_df", {
   x <- echoWaterGetParams(code = "00300")
   expect_s3_class(x, "tbl_df")
 
-  x <- echoGetFacilities(program = "cwa", p_pid = "ALR040033", output = "df", verbose = FALSE, qcolumns = "1,2,3")
+  x <- echoGetFacilities(program = "cwa", p_pid = "ALR040033", output = "df",
+                         qcolumns = "1,2,3")
   expect_s3_class(x, "tbl_df")
 
 })

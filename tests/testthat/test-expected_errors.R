@@ -2,7 +2,7 @@ context("core functions return expected errors")
 
 test_that("core functions returns expected errors", {
   expect_error(echoAirGetFacilityInfo(), "No valid arguments supplied")
-  expect_error(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "JSON", verbose = FALSE))
+  expect_error(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "JSON"))
   expect_error(echoGetReports(program = "sdw"))
   expect_error(echoSDWGetSystems())
 
