@@ -9,6 +9,7 @@
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @import httr
+#' @importFrom geojsonsf geojson_sf
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
@@ -55,45 +56,38 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
 
+    ## build the request URL statement
+    path <- "echo/air_rest_services.get_facility_info"
+    query <- paste("output=JSON", queryDots, sep = "&")
+    getURL <- requestURL(path = path, query = query)
+
+    ## Make the request
+    request <- httr::GET(getURL, httr::accept_json())
+
+    ## Print status message, need to make this optional
+    if (isTRUE(verbose)) {
+      message("Request URL:", getURL)
+      message(httr::http_status(request))
+    }
+
+    info <- httr::content(request)
+
+    qid <- info[["Results"]][["QueryID"]]
+
+    ## build the output
+
+    ## get qcolumns argument specific to this query
+    qcolumns <- queryList(valuesList["qcolumns"])
+
+    ## Find out column types so they are parsed correctly
+    colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+    colNums <- as.numeric(colNums)
+
+    colTypes <- columnsToParse(program = "caa", colNums)
+
+    ## if df return output from air_rest_services.get_download
     if (output == "df") {
 
-      ## build the request URL statement
-      path <- "echo/air_rest_services.get_facility_info"
-      query <- paste("output=JSON", queryDots, sep = "&")
-      getURL <- requestURL(path = path, query = query)
-
-        ## Make the request
-        request <- httr::GET(getURL, httr::accept_json())
-
-        ## Print status message, need to make this optional
-        if (verbose) {
-          message("Request URL:", getURL)
-          message(httr::http_status(request))
-        }
-
-        info <- httr::content(request)
-
-        qid <- info[["Results"]][["QueryID"]]
-
-        ## build the output
-
-        ## get qcolumns argument specific to this query
-        qcolumns <- queryList(valuesList["qcolumns"])
-
-        ## Find out column types
-        colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
-        colNums <- as.numeric(colNums)
-
-        ## ECHO always returns columns 1 and 2
-        ## regardless of the url request.
-        ## In order to correctly sort and identify column
-        ## types, insert 1 and 2 into the request so
-        ## metadat is looked up correctly
-        if (!1 %in% colNums) { colNums <- append(colNums, 1)}
-        if (!2 %in% colNums) { colNums <- append(colNums, 2)}
-        colNums <- sort(colNums)
-
-        colTypes <- columnsToParse(program = "caa", colNums)
 
         buildOutput <- getDownload("caa",
                                    qid,
@@ -102,28 +96,19 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
         return(buildOutput)
         }
 
+    ## if df return output from air_rest_services.get_geojson
     if (output == "sf") {
 
-        ## build the request URL statement
-        path <- "echo/air_rest_services.get_facility_info"
-        query <- paste("output=GEOJSON", queryDots, sep = "&")
-        getURL <- requestURL(path = path, query = query)
+      buildOutput <- getGeoJson("caa",
+                                qid,
+                                qcolumns)
+      ## Convert to sf dataframe
+      buildOutput <- geojsonsf::geojson_sf(buildOutput)
 
-        ## Make the request
-        request <- httr::GET(getURL, httr::accept_json())
+      return(buildOutput)
 
-        ## Print status message, need to make this optional
-        print(paste("# Status message:", httr::http_status(request)))
+      }
 
-        ## Download GeoJSON as text
-        buildOutput <- httr::content(request, as = "text")
-
-        ## Convert to sf dataframe
-        buildOutput <- convertSF(buildOutput)
-
-        return(buildOutput)
-
-    }
     else {
       stop("output argument = ", output,
            ", when it should be either 'df' or 'sf'")
@@ -158,7 +143,7 @@ echoAirGetMeta <- function(verbose = FALSE){
   request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
-  if (verbose) {
+  if (isTRUE(verbose)) {
     message("Request URL:", getURL)
     message(httr::http_status(request))
   }
@@ -226,9 +211,9 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
 
     request <- httr::GET(getURL, httr::accept_json())
 
-    if (verbose) {
-        message("Request URL:", getURL)
-        message(httr::http_status(request))
+    if (isTRUE(verbose)) {
+      message("Request URL:", getURL)
+      message(httr::http_status(request))
     }
 
     info <- httr::content(request)

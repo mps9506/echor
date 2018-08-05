@@ -27,7 +27,7 @@ echoSDWGetMeta <- function(verbose = FALSE){
   request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
-  if (verbose) {
+  if (isTRUE(verbose)) {
     message("Request URL:", getURL)
     message(httr::http_status(request))
   }
@@ -98,7 +98,7 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
   request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
-  if (verbose) {
+  if (isTRUE(verbose)) {
     message("Request URL:", getURL)
     message(httr::http_status(request))
   }

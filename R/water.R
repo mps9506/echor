@@ -58,47 +58,39 @@ echoWaterGetFacilityInfo <- function(output = "df",
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
 
+    ## build the request URL statement
+    path <- "echo/cwa_rest_services.get_facilities"
+    query <- paste("output=JSON", queryDots, sep = "&")
+    getURL <- requestURL(path = path, query = query)
+
+    ## Make the request
+    request <- httr::GET(getURL, httr::accept_json())
+
+    ## Print status message
+    if (isTRUE(verbose)) {
+      message("The formatted URL is: ", getURL)
+      message(httr::http_status(request))
+    }
+
+    info <- httr::content(request)
+
+    qid <- info[["Results"]][["QueryID"]]
+
+    ## build the output
+
+    ## get qcolumns argument specific to this query
+    qcolumns <- queryList(valuesList["qcolumns"])
+
+    ## Find out column types
+    colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+    colNums <- as.numeric(colNums)
+
+    colTypes <- columnsToParse(program = "cwa", colNums)
+
+    ## if df return output from air_rest_services.get_download
     if (output == "df") {
 
-        ## build the request URL statement
-        path <- "echo/cwa_rest_services.get_facility_info"
-        query <- paste("output=JSON", queryDots, sep = "&")
-        getURL <- requestURL(path = path, query = query)
-
-        ## Make the request
-        request <- httr::GET(getURL, httr::accept_json())
-
-        ## Print status message
-        if (verbose) {
-            message("The formatted URL is: ", getURL)
-            message(httr::http_status(request))
-        }
-
-        info <- httr::content(request)
-
-        qid <- info[["Results"]][["QueryID"]]
-
-        ## build the output
-
-        ## get qcolumns argument specific to this query
-        qcolumns <- queryList(valuesList["qcolumns"])
-
-        ## Find out column types
-        colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
-        colNums <- as.numeric(colNums)
-
-        ## ECHO always returns columns 1 and 2
-        ## regardless of the url request.
-        ## In order to correctly sort and identify column
-        ## types, insert 1 and 2 into the request so
-        ## metadat is looked up correctly
-        if (!1 %in% colNums) { colNums <- append(colNums, 1)}
-        if (!2 %in% colNums) { colNums <- append(colNums, 2)}
-        colNums <- sort(colNums)
-
-        colTypes <- columnsToParse(program = "cwa", colNums)
-
-        buildOutput <- getDownload("cwa",
+               buildOutput <- getDownload("cwa",
                                    qid,
                                    qcolumns,
                                    col_types = colTypes)
@@ -106,28 +98,17 @@ echoWaterGetFacilityInfo <- function(output = "df",
 
         }
 
+    ## if df return output from air_rest_services.get_geojson
     if (output == "sf") {
 
-        ## build the request URL statement
-        path <- "echo/cwa_rest_services.get_facility_info"
-        query <- paste("output=GEOJSON", queryDots, sep = "&")
-        getURL <- requestURL(path = path, query = query)
+      buildOutput <- getGeoJson("cwa",
+                                qid,
+                                qcolumns)
+      ## Convert to sf dataframe
+      buildOutput <- geojsonsf::geojson_sf(buildOutput)
 
-        ## Make the request
-        request <- httr::GET(getURL, httr::accept_json())
+      return(buildOutput)
 
-        ## Print status message, need to make this optional
-        if (verbose) {
-            message("Request URL:", getURL)
-            message(httr::http_status(request))
-        }
-
-        ## Download GeoJSON as text
-        buildOutput <- httr::content(request, as = "text")
-
-        ## Convert to sf dataframe
-        buildOutput <- convertSF(buildOutput)
-        return(buildOutput)
     } else {
         stop("output argument = ", output,
              ", when it should be either 'df' or 'sf'")
@@ -163,7 +144,7 @@ echoWaterGetMeta <- function(verbose = FALSE){
   request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
-  if (verbose) {
+  if (isTRUE(verbose)) {
     message("Request URL:", getURL)
     message(httr::http_status(request))
   }
@@ -224,9 +205,9 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 
     request <- httr::GET(getURL, httr::accept_json())
 
-    if (verbose) {
-        message("Request URL:", getURL)
-        message(httr::http_status(request))
+    if (isTRUE(verbose)) {
+      message("Request URL:", getURL)
+      message(httr::http_status(request))
     }
 
     info <- httr::content(request)
@@ -359,7 +340,7 @@ echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
 
   request <- httr::GET(getURL, httr::accept_json())
 
-  if (verbose) {
+  if (isTRUE(verbose)) {
     message("Request URL:", getURL)
     message(httr::http_status(request))
   }
