@@ -135,7 +135,7 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
 getGeoJson <- function(service, qid, qcolumns) {
   ## build the request URL statement
   if (service == "cwa") {
-    path <- "echo/cwa_rest_services.get_downloa"
+    path <- "echo/cwa_rest_services.get_geojson"
   } else if (service == "caa") {
     path <- "echo/air_rest_services.get_geojson"
   } else {
@@ -152,27 +152,6 @@ getGeoJson <- function(service, qid, qcolumns) {
 
   return(info)
 }
-# Convert to sf -----------------------------------------------------------
-
-## reads geojson in and produce the sf dataframe
-#' Convert from geojson string to sf dataframe
-#'
-#' @param x character vector, of geojson format
-#'
-#' @return simple features dataframe
-#' @importFrom sf read_sf
-#' @keywords internal
-#' @noRd
-convertSF <- function(x) {
-
-  t <- tempfile("spoutput", fileext = ".geojson")
-  write(x, t)
-  output <- sf::read_sf(t, quiet = T, stringsAsFactors = F)
-  unlink(t)
-  return(output)
-}
-
-
 
 # Clean up qcolumns ------------------------------------------------------
 
@@ -197,6 +176,16 @@ insertQColumns <- function(valuesList) {
 
 # Specify column types to parse -------------------------------------------
 
+#' Create character vector to parse columns
+#'
+#' @param program character
+#' @param colNums qcolumns
+#'
+#' @import httr
+#' @importFrom plyr mapvalues
+#' @importFrom purrr map
+#' @noRd
+#' @keywords internal
 columnsToParse <- function(program, colNums) {
 
   if (program == "caa") {
@@ -210,93 +199,9 @@ columnsToParse <- function(program, colNums) {
 
   col_types <- purrr::map(meta[["Results"]][["ResultColumns"]], "DataType")[c(colNums)]
   col_types <- unlist(col_types)
-  col_types <- recode(col_types, "'VARCHAR2' = 'c';
-                             'CHAR' = 'c';
-                             'NUMBER' = 'd';
-                             'DATE' = 'D'")
+  col_types <- plyr::mapvalues(col_types, from = c("VARCHAR2", "CHAR", "NUMBER", "DATE"),
+                               to = c("c", "c", "d", "D"),
+                               warn_missing = FALSE)
   col_types <- paste(col_types, sep = "", collapse = "")
+  return(col_types)
   }
-
-
-
-# recode ------------------------------------------------------------------
-
-
-## borrowed from car package https://github.com/cran/car
-#' Recode Factors
-#'
-#' @importFrom stats na.omit
-#' @noRd
-#' @keywords internal
-recode <- function(var, recodes, as.factor, as.numeric = TRUE, levels){
-  lo <- -Inf
-  hi <- Inf
-  recodes <- gsub("\n|\t", " ", recodes)
-  recode.list <- rev(strsplit(recodes, ";")[[1]])
-  is.fac <- is.factor(var)
-  if (missing(as.factor)) as.factor <- is.fac
-  if (is.fac) var <- as.character(var)
-  result <- var
-  for (term in recode.list) {
-    if (0 < length(grep(":", term))) {
-      range <- strsplit(strsplit(term, "=")[[1]][1],":")
-      low <- try(eval(parse(text = range[[1]][1])), silent = TRUE)
-      if (class(low) == "try-error") {
-        stop("\n  in recode term: ", term,
-             "\n  message: ", low)
-      }
-      high <- try(eval(parse(text = range[[1]][2])), silent = TRUE)
-      if (class(high) == "try-error") {
-        stop("\n  in recode term: ", term,
-             "\n  message: ", high)
-      }
-      target <- try(eval(parse(text = strsplit(term, "=")[[1]][2])), silent = TRUE)
-      if (class(target) == "try-error") {
-        stop("\n  in recode term: ", term,
-             "\n  message: ", target)
-      }
-      result[(var >= low) & (var <= high)] <- target
-    }
-    else if (0 < length(grep("^else=", squeezeBlanks(term)))) {
-      target <- try(eval(parse(text = strsplit(term, "=")[[1]][2])), silent = TRUE)
-      if (class(target) == "try-error") {
-        stop("\n  in recode term: ", term,
-             "\n  message: ", target)
-      }
-      result[1:length(var)] <- target
-    }
-    else {
-      set <- try(eval(parse(text = strsplit(term, "=")[[1]][1])), silent = TRUE)
-      if (class(set) == "try-error") {
-        stop("\n  in recode term: ", term,
-             "\n  message: ", set)
-      }
-      target <- try(eval(parse(text = strsplit(term, "=")[[1]][2])), silent = TRUE)
-      if (class(target) == "try-error") {
-        stop("\n  in recode term: ", term,
-             "\n  message: ", target)
-      }
-      for (val in set) {
-        if (is.na(val)) result[is.na(var)] <- target
-        else result[var == val] <- target
-      }
-    }
-  }
-  if (as.factor) {
-    result <- if (!missing(levels)) factor(result, levels = levels)
-    else as.factor(result)
-  }
-  else if (as.numeric && (!is.numeric(result))) {
-    result.valid <- na.omit(result)
-    opt <- options("warn" = -1)
-    result.valid <- as.numeric(result.valid)
-    options(opt)
-    if (!any(is.na(result.valid))) result <- as.numeric(result)
-  }
-  result
-}
-
-## borrowed from car package https://github.com/cran/car
-squeezeBlanks <- function(text){
-  gsub(" *", "",  text)
-}

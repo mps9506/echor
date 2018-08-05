@@ -17,11 +17,12 @@ LazyData: true
 RoxygenNote: 6.1.0
 Imports:
   dplyr,
+  geojsonsf,
   httr,
   lubridate,
+  plyr,
   purrr,
   readr,
-  sf,
   tibble,
   tidyr,
   utils
@@ -34,6 +35,7 @@ Suggests:
     kableExtra,
     knitr,
     rmarkdown,
+    sf,
     testthat
 BugReports: https://github.com/mps9506/echor/issues
 VignetteBuilder: knitr
