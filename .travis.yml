@@ -25,6 +25,7 @@ addons:
       - libproj-dev
       - libgeos-dev
       - libgdal-dev
+      - libcurl4-openssl-dev
 
 after_success:
     - Rscript -e 'covr::codecov()'
