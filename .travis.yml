@@ -1,22 +1,28 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
-sudo: required
 cache: packages
 
 dist: trusty
 
 r_packages:
   - devtools
+  - covr
 
 r_github_packages:
   - jimhester/lintr
-  - r-lib/covr
 
-before_install:
-  - sudo add-apt-repository ppa:ubuntugis/ppa --yes
-  - sudo apt-get --yes --force-yes update -qq
-  - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev
+#before_install:
+#  - sudo add-apt-repository ppa:ubuntugis/ppa --yes
+#  - sudo apt-get --yes --force-yes update -qq
+#  - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev
+
+addons:
+  apt:
+    packages:
+      - binutils
+      - libproj-dev
+      - gdal-bin
 
 after_success:
     - Rscript -e 'covr::codecov()'
