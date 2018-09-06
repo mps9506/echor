@@ -189,11 +189,11 @@ insertQColumns <- function(valuesList) {
 columnsToParse <- function(program, colNums) {
 
   if (program == "caa") {
-    meta <- httr::content(httr::GET(url = "https:///ofmpub.epa.gov/echo/air_rest_services.metadata?output=JSON"))
+    meta <- httr::content(httr::GET(url = "https://ofmpub.epa.gov/echo/air_rest_services.metadata?output=JSON"))
   } else if (program == "cwa") {
-    meta <- httr::content(httr::GET(url = "https:///ofmpub.epa.gov/echo/cwa_rest_services.metadata?output=JSON"))
+    meta <- httr::content(httr::GET(url = "https://ofmpub.epa.gov/echo/cwa_rest_services.metadata?output=JSON"))
   } else if (program == "sdw") {
-    meta <- httr::content(httr::GET(url = "https:///ofmpub.epa.gov/echo/sdw_rest_services.metadata?output=JSON"))
+    meta <- httr::content(httr::GET(url = "https://ofmpub.epa.gov/echo/sdw_rest_services.metadata?output=JSON"))
   } else {
     stop("Incorrect argument specified in columnsToParse(). program should be a character == to 'caa', 'cwa', or 'sdw'")}
 
