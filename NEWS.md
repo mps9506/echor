@@ -1,4 +1,4 @@
-# echor 0.1.1 (unreleased)
+# echor 0.1.1
 
 * Single function returns air and water data; `echoGetFacilities()` and `echoGetReports()` wrap the individual functions to streamline functions that users need to be familiar with. (closes #33)
 * Added `echoWaterGetMeta()` and `echoAirGetMeta()` functions to retrieve column metadata returned by `echoWaterGetFacilityInfo()` and `echoAirGetFacilityInfo()`; specify columns returned by respective functions by including qcolumns argument in respective functions.   (closes #28).

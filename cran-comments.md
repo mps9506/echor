@@ -1,30 +1,22 @@
-## Resubmission
-This is a resubmission. In this version I have:
-
-* Added single quotes around package and software names 
-  (e.g. 'ECHO') in the title and description
-  
-* Explained all acronyms in the description
-
-* Replaced \dontrun{} with \donttest{} and added comment 
-  that an internet connection is required to run the examples 
-
-# 0.1.0
-
-* Initial release
-
 ## Test environments
 
-* local Windows 10, R 3.4.3
-* ubuntu 14.04 (on travis-ci), R 3.4.4
-* win-builder (devel and release)
+* local Windows 10, R 3.5.0
+* travis-ci: R 3.5.0, R-devel
+* appveyor: R 3.5.1
+* win-builder (devel)
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* Note: This is a new submission
+0 errors | 0 warnings | 0 notes
 
 ## Reverse dependencies
 
-This is a new release, so there are no reverse dependencies.
+There are currently no downstream dependencies for this package.
+
+## Comments
+
+This is a release of version 0.1.1.
+
+* Examples are wrapped in \donttest{} since they rely on an internet connection and responses from the server can take time.
+
+* Most tests are \skip_on_cran() for the same reason. However, full tests are run on Travis and Appveyor.

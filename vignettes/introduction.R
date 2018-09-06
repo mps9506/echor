@@ -18,13 +18,19 @@ httptest::start_vignette(path = path)
 
 ## ------------------------------------------------------------------------
 library(echor)
+meta <- echoAirGetMeta()
+meta
+
+## ------------------------------------------------------------------------
+library(echor)
 
 ## Retrieve information about facilities within a geographic location
 df <- echoAirGetFacilityInfo(output = "df",
-                               xmin = '-96.387509',
-                               ymin = '30.583572',
-                               xmax = '-96.281422',
-                               ymax = '30.640008')
+                             xmin = '-96.387509',
+                             ymin = '30.583572',
+                             xmax = '-96.281422',
+                             ymax = '30.640008',
+                             qcolumns = "1,2,3,22,23")
 
 ## ----echo=FALSE, message=FALSE, warning=FALSE----------------------------
 knitr::kable(head(df), "html") %>%

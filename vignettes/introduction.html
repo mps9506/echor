@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michael Schramm" />
 
-<meta name="date" content="2018-07-25" />
+<meta name="date" content="2018-09-06" />
 
 <title>Introduction to echor</title>
 
@@ -280,7 +280,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">Introduction to echor</h1>
 <h4 class="author"><em>Michael Schramm</em></h4>
-<h4 class="date"><em>2018-07-25</em></h4>
+<h4 class="date"><em>2018-09-06</em></h4>
 
 
 
@@ -294,25 +294,75 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <li>Hazardous Waste Handlers permitted under the Resource Conservation and Recovery Act, with data drawn from the RCRAInfo data system.</li>
 <li>Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA’s ICIS-NPDES system and possibly waterbody information from EPA’s ATTAINS data system.</li>
 </ul>
-<p><code>echor</code> currently provides functions to retrieve air emissions and wastewater discharge data. Later releases will include functions to download drinking water supply and hazardous waste info from ECHO.</p>
+<p><code>echor</code> currently provides functions to retrieve information about permitted air dischargers, water dischargers, and public drinking water supply systems. It also provides functions to download discharge reports for permitted air and water dischargers. <code>echor</code> does not currently provide functionality to retrieve RCRA data.</p>
 <p>See <a href="https://echo.epa.gov/tools/web-services" class="uri">https://echo.epa.gov/tools/web-services</a> for information about ECHO web services and API functions.</p>
 </div>
 <div id="getting-started" class="section level2">
 <h2>Getting started</h2>
 <p>This vignette documents a few key functions to get started.</p>
-<p>The two main functions used to retrieve air emissions permit and facility data are: <code>echoAirGetFacilityInfo</code> and <code>echoGetCAAPR</code>. <code>echoAirGetFacilityInfo</code> returns a dataframe or simple features geospatial dataframe with information about permittee that match the query. <code>echoGetCAAPR</code> returns a dataframe with the emissions inventory report of the queried facility.</p>
-<p>The two main functions used to retrieve data about facilities with permits to discharge into water bodies are <code>echoWaterGetFacilityInfo</code> and <code>echoGetEffluent</code>. <code>echoWaterGetFacilityInfo</code> returns a dataframe or simple features geospatial dataframe with information about permitees that match the query. <code>echoGetEffluent</code> returns a dataframe with reported discharges from the queried facilities.</p>
-<div id="air-facility-and-emissions-searches" class="section level3">
-<h3>Air facility and emissions searches</h3>
-<p>Find facilities with a permit to emit air pollutants under the Clean Air Act:</p>
+<p>There are three types of functions:</p>
+<div id="metadata" class="section level3">
+<h3>Metadata</h3>
+<p>Retrieve metadata from ECHO to narrow the specify data returned or lookup parameter codes.</p>
+<ul>
+<li><p><code>echoAirGetMeta()</code> - Returns variable name and descriptions for paramaters returned in air facility queries.</p></li>
+<li><p><code>echoSDWGetMeta()</code> - Returns variable name and descriptions for parameters returned in public water system queries.</p></li>
+<li><p><code>echoWaterGetMeta()</code> - Returns varaiable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).</p></li>
+<li><p><code>echoWaterGetParams()</code> - Search parameter codes for constiuent pollutants regulated under NPDES permits.</p></li>
+</ul>
+</div>
+<div id="query-facilities" class="section level3">
+<h3>Query Facilities</h3>
+<p>Search and return facility information based on lookup parameters.</p>
+<ul>
+<li><p><code>echoAirGetFacilityInfo()</code> - Returns a dataframe of permitted air discharge facilities and associated information based on lookup parameters specified by the user.</p></li>
+<li><p><code>echoSDWGetSystems()</code> - Returns a dataframe of permitted air discharge facilities and associated information based on lookup parameters specified by the user.</p></li>
+<li><p><code>echoWaterGetFacilityInfo()</code> - Returns a dataframe of permitted water discharge facilities and associated information based on lookup parameters specified by the user.</p></li>
+</ul>
+</div>
+<div id="reports" class="section level3">
+<h3>Reports</h3>
+<p>Search and return discharge and emissions reports for specified facilities.</p>
+<ul>
+<li><p><code>echoGetCAAPR()</code> - Returns a dataframe with reported annual air emissions from permitted facilities.</p></li>
+<li><p><code>echoGetEffluent()</code> - Returns a dataframe with reported water effluent discharges from permitted facilities.</p></li>
+</ul>
+</div>
+</div>
+<div id="sample-workflows" class="section level2">
+<h2>Sample workflows</h2>
+<div id="air" class="section level3">
+<h3>Air</h3>
+<p>Suppose we want to find facilities permitted under the Clean Air Act requirements.</p>
+<p>Step 1 - Identify the information we need returned from the query:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(echor)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">## Retrieve information about facilities within a geographic location</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">df &lt;-<span class="st"> </span><span class="kw">echoAirGetFacilityInfo</span>(<span class="dt">output =</span> <span class="st">&quot;df&quot;</span>,</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>,</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">                               <span class="dt">ymin =</span> <span class="st">'30.583572'</span>,</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">                               <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>,</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2">meta &lt;-<span class="st"> </span><span class="kw">echoAirGetMeta</span>()</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">meta</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; # A tibble: 127 x 6</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt;    ColumnName  DataType DataLength ColumnID ObjectName  Description       </span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;             </span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt;  1 AIR_NAME    VARCHAR2 200        1        AIRName     The name of the A~</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt;  2 SOURCE_ID   VARCHAR2 30         2        SourceID    Unique Identifier~</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt;  3 AIR_STREET  VARCHAR2 200        3        AIRStreet   The street addres~</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt;  4 AIR_CITY    VARCHAR2 100        4        AIRCity     &lt;NA&gt;              </span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt;  5 AIR_STATE   CHAR     2          5        AIRState    The state where t~</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt;  6 LOCAL_CONT~ CHAR     3          6        LocalContr~ Code for regions ~</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt;  7 AIR_ZIP     VARCHAR2 10         7        AIRZip      The five-digit zi~</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt;  8 REGISTRY_ID VARCHAR2 50         8        RegistryID  An internal 12-di~</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt;  9 AIR_COUNTY  VARCHAR2 100        9        AIRCounty   The name of the c~</span></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; 10 AIR_EPA_RE~ CHAR     2          10       AIREPARegi~ The EPA region wh~</span></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; # ... with 117 more rows</span></a></code></pre></div>
+<p>The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: <code>qcolumns = &quot;1,2,3,22,23&quot;</code></p>
+<p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I reccomend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specfiy the returned information with the <code>qcolumns</code> argument. Each argument should be passeed to ECHO as <code>echoAirGetFacilityInfo(parameter = &quot;value&quot;)</code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(echor)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">## Retrieve information about facilities within a geographic location</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">df &lt;-<span class="st"> </span><span class="kw">echoAirGetFacilityInfo</span>(<span class="dt">output =</span> <span class="st">&quot;df&quot;</span>,</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">                             <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>,</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">                             <span class="dt">ymin =</span> <span class="st">'30.583572'</span>,</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">                             <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>,</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">                             <span class="dt">ymax =</span> <span class="st">'30.640008'</span>,</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">                             <span class="dt">qcolumns =</span> <span class="st">&quot;1,2,3,22,23&quot;</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -325,12 +375,6 @@ SourceID
 </th>
 <th style="text-align:left;">
 AIRStreet
-</th>
-<th style="text-align:left;">
-AIRCity
-</th>
-<th style="text-align:left;">
-AIRState
 </th>
 <th style="text-align:right;">
 FacLat
@@ -351,12 +395,6 @@ AGGIE CLEANERS
 <td style="text-align:left;">
 111 COLLEGE MAIN
 </td>
-<td style="text-align:left;">
-COLLEGE STATION
-</td>
-<td style="text-align:left;">
-TX
-</td>
 <td style="text-align:right;">
 30.61869
 </td>
@@ -373,12 +411,6 @@ ALL SEASONS 1 HR CLEANERS
 </td>
 <td style="text-align:left;">
 2501 TEXAS AVENUE SOUTH #D100
-</td>
-<td style="text-align:left;">
-COLLEGE STATION
-</td>
-<td style="text-align:left;">
-TX
 </td>
 <td style="text-align:right;">
 30.60704
@@ -397,12 +429,6 @@ TX0000004877700147
 <td style="text-align:left;">
 HWY. 60, WEST OF
 </td>
-<td style="text-align:left;">
-COLLEGE STATION
-</td>
-<td style="text-align:left;">
-TX
-</td>
 <td style="text-align:right;">
 30.61337
 </td>
@@ -419,12 +445,6 @@ TX0000004804100027
 </td>
 <td style="text-align:left;">
 1500 INDEPENDENCE AVE
-</td>
-<td style="text-align:left;">
-BRYAN
-</td>
-<td style="text-align:left;">
-TX
 </td>
 <td style="text-align:right;">
 30.63760
@@ -443,12 +463,6 @@ BRYAN CLEANERS &amp; LAUNDRY
 <td style="text-align:left;">
 1803 HOLLEMAN DRIVE
 </td>
-<td style="text-align:left;">
-COLLEGE STATION
-</td>
-<td style="text-align:left;">
-TX
-</td>
 <td style="text-align:right;">
 30.61225
 </td>
@@ -466,12 +480,6 @@ TX0000004804100026
 <td style="text-align:left;">
 1.5 MI W OF <span class="citation">@FM</span> 1687 &amp; FM 2818
 </td>
-<td style="text-align:left;">
-BRYAN
-</td>
-<td style="text-align:left;">
-TX
-</td>
 <td style="text-align:right;">
 30.63760
 </td>
@@ -482,8 +490,7 @@ TX
 </tbody>
 </table>
 </div>
-<p>There are over 100 arguments that can be passed to <code>echoAirGetFacilityInfo()</code> to filter permitted facilites. They are documented here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. Each argument should be passeed to ECHO as <code>echoAirGetFaclityInfo(parameter = &quot;value&quot;)</code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
-<p>The most useful arguments are listed below:</p>
+<p>Some example arguments are listed below:</p>
 <pre><code>p_fn  string  Facility Name Filter.
               One or more case-insesitive facility names.
               Provide multiple values as comma-delimited list
@@ -526,8 +533,8 @@ ymin  string  Minimum latitude value in decimal degrees
 xmax  string  Maximum longitude value in decimal degrees
 
 ymax  string  Maximum latitude value in decimal degrees</code></pre>
-<p>Download emissions inventory report data:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoGetCAAPR</span>(<span class="dt">p_id =</span> <span class="st">'110000350174'</span>)</a></code></pre></div>
+<p>Step 3 - Download the emission inventory report for a permitted facility:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoGetCAAPR</span>(<span class="dt">p_id =</span> <span class="st">'110000350174'</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -612,19 +619,19 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-2,4-Dinitrotoluene
+Carbon dioxide
 </td>
 <td style="text-align:left;">
 Pounds
 </td>
 <td style="text-align:left;">
-NEI
+CAMD
 </td>
 <td style="text-align:right;">
-2007
+2008
 </td>
 <td style="text-align:right;">
-NA
+5.90014e+09
 </td>
 </tr>
 <tr>
@@ -659,19 +666,19 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-2-Chloroacetophenone
+Nitrogen oxides
 </td>
 <td style="text-align:left;">
 Pounds
 </td>
 <td style="text-align:left;">
-NEI
+CAMD
 </td>
 <td style="text-align:right;">
-2007
+2008
 </td>
 <td style="text-align:right;">
-NA
+9.95600e+06
 </td>
 </tr>
 <tr>
@@ -706,7 +713,7 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Acenaphthene
+1,2-Dichloroethane
 </td>
 <td style="text-align:left;">
 Pounds
@@ -715,57 +722,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2007
+2008
 </td>
 <td style="text-align:right;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-CP&amp;L - SUTTON PLANT
-</td>
-<td style="text-align:left;">
-110000350174
-</td>
-<td style="text-align:left;">
-801 SUTTON STEAM PLANT ROAD
-</td>
-<td style="text-align:left;">
-WILMINGTON
-</td>
-<td style="text-align:left;">
-NC
-</td>
-<td style="text-align:left;">
-28401
-</td>
-<td style="text-align:left;">
-NEW HANOVER
-</td>
-<td style="text-align:left;">
-04
-</td>
-<td style="text-align:right;">
-34.28332
-</td>
-<td style="text-align:right;">
--77.98523
-</td>
-<td style="text-align:left;">
-Acetaldehyde
-</td>
-<td style="text-align:left;">
-Pounds
-</td>
-<td style="text-align:left;">
-NEI
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-NA
+4.79500e+01
 </td>
 </tr>
 <tr>
@@ -809,10 +769,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2007
+2008
 </td>
 <td style="text-align:right;">
-NA
+1.79800e+01
 </td>
 </tr>
 <tr>
@@ -847,7 +807,7 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Allyl chloride
+Anthracene
 </td>
 <td style="text-align:left;">
 Pounds
@@ -856,10 +816,57 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2007
+2008
 </td>
 <td style="text-align:right;">
-NA
+2.50000e-01
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+Dimethyl sulfate
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:right;">
+6.31900e+01
 </td>
 </tr>
 </tbody>
@@ -874,9 +881,9 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 <div id="water-facility-and-discharge-searches" class="section level3">
 <h3>Water facility and discharge searches</h3>
 <p>Find facilites with NPDES permits to discharge wastewater:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>, </a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">                               <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>,  <span class="dt">ymax =</span> <span class="st">'30.751984'</span>, </a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">                               <span class="dt">output =</span> <span class="st">'df'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>, </a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">                               <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>,  <span class="dt">ymax =</span> <span class="st">'30.751984'</span>, </a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">                               <span class="dt">output =</span> <span class="st">'df'</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -1459,7 +1466,7 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
               May contain comma-seperated values
               </code></pre>
 <p>Download discharge monitoring reports from ECHO from specified facilities:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoGetEffluent</span>(<span class="dt">p_id =</span> <span class="st">'tx0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'50050'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">echoGetEffluent</span>(<span class="dt">p_id =</span> <span class="st">'tx0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'50050'</span>)</a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -2291,8 +2298,15 @@ start_date  string  Start date of interest. Must be entered as &quot;mm/dd/yyyy&
 
 end_date  string  End date of interest. Must be entered as &quot;mm/dd/yyyy&quot;</code></pre>
 <p>Parameters codes can be searched using <code>echoWaterGetParams</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">echoWaterGetParams</span>(<span class="dt">term =</span> <span class="st">&quot;Oxygen, dissolved&quot;</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; # A tibble: 0 x 0</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">echoWaterGetParams</span>(<span class="dt">term =</span> <span class="st">&quot;Oxygen, dissolved&quot;</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co">#&gt; # A tibble: 5 x 2</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt;   ValueCode ValueDescription                     </span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                                </span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; 1 00300     Oxygen, dissolved [DO]               </span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt; 2 51646     Oxygen, dissolved [DO] maximum       </span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt; 3 51645     Oxygen, dissolved [DO] minimum       </span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; 4 00301     Oxygen, dissolved percent saturation </span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt; 5 00399     Oxygen, dissolved, % of time violated</span></a></code></pre></div>
 <p>Available arguments include:</p>
 <pre><code>term string partial or complete search phrase or word
 
@@ -2303,46 +2317,46 @@ code  string  partial or complete code value</code></pre>
 <h3>Spatial data</h3>
 <p><code>echor</code> can also return spatial data frames known as simple features (<a href="https://r-spatial.github.io/sf/" class="uri">https://r-spatial.github.io/sf/</a>), to facilitate creation of maps. Both <code>echoAirGetFacilityInfo</code> and <code>echoWaterGetFacilityInfo</code> include arguments to return simple feature dataframes.</p>
 <p>Using <code>sf</code>, <code>ggmap</code>, and the current development version of <code>ggplot2</code> (<code>devtools::install_github(&quot;tidyverse/ggplot2&quot;)</code>), we can quickly create a map of downloaded data.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">## Sample code only,</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">## This example requires the development</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">## version of ggplot2 with support for</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">## geom_sf()</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="kw">library</span>(ggmap)</a>
-<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="kw">library</span>(purrr)</a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="kw">library</span>(sf)</a>
-<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="kw">library</span>(ggrepel)</a>
-<a class="sourceLine" id="cb11-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb11-13" data-line-number="13">## Download data as a simple feature</a>
-<a class="sourceLine" id="cb11-14" data-line-number="14">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>,</a>
-<a class="sourceLine" id="cb11-15" data-line-number="15">                                        <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>, <span class="dt">ymax =</span> <span class="st">'30.751984'</span>,</a>
-<a class="sourceLine" id="cb11-16" data-line-number="16">                                        <span class="dt">output =</span> <span class="st">'sf'</span>)</a>
-<a class="sourceLine" id="cb11-17" data-line-number="17">## Download a basemap with gg_map</a>
-<a class="sourceLine" id="cb11-18" data-line-number="18">collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,</a>
-<a class="sourceLine" id="cb11-19" data-line-number="19">                                       <span class="fl">-96.281422</span>, <span class="fl">30.640008</span>), </a>
-<a class="sourceLine" id="cb11-20" data-line-number="20">                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner&quot;</span>)</a>
-<a class="sourceLine" id="cb11-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb11-22" data-line-number="22">## Use coordinates to create label locations</a>
-<a class="sourceLine" id="cb11-23" data-line-number="23">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb11-24" data-line-number="24"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb11-25" data-line-number="25">    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),</a>
-<a class="sourceLine" id="cb11-26" data-line-number="26">    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb11-27" data-line-number="27">    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb11-28" data-line-number="28">  )</a>
-<a class="sourceLine" id="cb11-29" data-line-number="29"></a>
-<a class="sourceLine" id="cb11-30" data-line-number="30">## Make the map</a>
-<a class="sourceLine" id="cb11-31" data-line-number="31"><span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb11-32" data-line-number="32"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, </a>
-<a class="sourceLine" id="cb11-33" data-line-number="33">          <span class="dt">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>, </a>
-<a class="sourceLine" id="cb11-34" data-line-number="34">          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-35" data-line-number="35"><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),</a>
-<a class="sourceLine" id="cb11-36" data-line-number="36">                   <span class="dt">point.padding =</span> <span class="fl">.5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,</a>
-<a class="sourceLine" id="cb11-37" data-line-number="37">                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;dodgerblue&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-38" data-line-number="38"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, </a>
-<a class="sourceLine" id="cb11-39" data-line-number="39">       <span class="dt">title =</span> <span class="st">&quot;NPDES permits near Texas A&amp;M&quot;</span>,</a>
-<a class="sourceLine" id="cb11-40" data-line-number="40">       <span class="dt">caption =</span> <span class="st">&quot;Source: EPA ECHO database&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">## Sample code only,</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">## This example requires the development</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">## version of ggplot2 with support for</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">## geom_sf()</a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="kw">library</span>(ggmap)</a>
+<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="kw">library</span>(purrr)</a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="kw">library</span>(ggrepel)</a>
+<a class="sourceLine" id="cb12-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">## Download data as a simple feature</a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>,</a>
+<a class="sourceLine" id="cb12-15" data-line-number="15">                                        <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>, <span class="dt">ymax =</span> <span class="st">'30.751984'</span>,</a>
+<a class="sourceLine" id="cb12-16" data-line-number="16">                                        <span class="dt">output =</span> <span class="st">'sf'</span>)</a>
+<a class="sourceLine" id="cb12-17" data-line-number="17">## Download a basemap with gg_map</a>
+<a class="sourceLine" id="cb12-18" data-line-number="18">collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,</a>
+<a class="sourceLine" id="cb12-19" data-line-number="19">                                       <span class="fl">-96.281422</span>, <span class="fl">30.640008</span>), </a>
+<a class="sourceLine" id="cb12-20" data-line-number="20">                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner&quot;</span>)</a>
+<a class="sourceLine" id="cb12-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb12-22" data-line-number="22">## Use coordinates to create label locations</a>
+<a class="sourceLine" id="cb12-23" data-line-number="23">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-24" data-line-number="24"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb12-25" data-line-number="25">    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),</a>
+<a class="sourceLine" id="cb12-26" data-line-number="26">    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb12-27" data-line-number="27">    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb12-28" data-line-number="28">  )</a>
+<a class="sourceLine" id="cb12-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb12-30" data-line-number="30">## Make the map</a>
+<a class="sourceLine" id="cb12-31" data-line-number="31"><span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-32" data-line-number="32"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, </a>
+<a class="sourceLine" id="cb12-33" data-line-number="33">          <span class="dt">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>, </a>
+<a class="sourceLine" id="cb12-34" data-line-number="34">          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-35" data-line-number="35"><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),</a>
+<a class="sourceLine" id="cb12-36" data-line-number="36">                   <span class="dt">point.padding =</span> <span class="fl">.5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,</a>
+<a class="sourceLine" id="cb12-37" data-line-number="37">                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;dodgerblue&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-38" data-line-number="38"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, </a>
+<a class="sourceLine" id="cb12-39" data-line-number="39">       <span class="dt">title =</span> <span class="st">&quot;NPDES permits near Texas A&amp;M&quot;</span>,</a>
+<a class="sourceLine" id="cb12-40" data-line-number="40">       <span class="dt">caption =</span> <span class="st">&quot;Source: EPA ECHO database&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 

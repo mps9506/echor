@@ -39,31 +39,75 @@ ECHO provides data for:
 * Hazardous Waste Handlers permitted under the Resource Conservation and Recovery Act, with data drawn from the RCRAInfo data system.
 * Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA's ICIS-NPDES system and possibly waterbody information from EPA's ATTAINS data system.
 
-`echor` currently provides functions to retrieve air emissions and wastewater discharge data. Later releases will include functions to download drinking water supply and hazardous waste info from ECHO. 
+`echor` currently provides functions to retrieve information about permitted air dischargers, water dischargers, and public drinking water supply systems. It also provides functions to download discharge reports for permitted air and water dischargers. `echor` does not currently provide functionality to retrieve RCRA data.
 
 See https://echo.epa.gov/tools/web-services for information about ECHO web services and API functions.
 
 ## Getting started
 
-This vignette documents a few key functions to get started. 
+This vignette documents a few key functions to get started.
 
-The two main functions used to retrieve air emissions permit and facility data are: `echoAirGetFacilityInfo` and `echoGetCAAPR`. `echoAirGetFacilityInfo` returns a dataframe or simple features geospatial dataframe with information about permittee that match the query. `echoGetCAAPR` returns a dataframe with the emissions inventory report of the queried facility.
+There are three types of functions:
 
-The two main functions used to retrieve data about facilities with permits to discharge into water bodies are `echoWaterGetFacilityInfo` and `echoGetEffluent`. `echoWaterGetFacilityInfo` returns a dataframe or simple features geospatial dataframe with information about permitees that match the query. `echoGetEffluent` returns a dataframe with reported discharges from the queried facilities.
+### Metadata
 
-### Air facility and emissions searches
+Retrieve metadata from ECHO to narrow the specify data returned or lookup parameter codes.
 
-Find facilities with a permit to emit air pollutants under the Clean Air Act:
+* `echoAirGetMeta()` - Returns variable name and descriptions for paramaters returned in air facility queries.
+
+* `echoSDWGetMeta()` - Returns variable name and descriptions for parameters returned in public water system queries.
+
+* `echoWaterGetMeta()` - Returns varaiable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).
+
+* `echoWaterGetParams()` - Search parameter codes for constiuent pollutants regulated under NPDES permits.
+
+### Query Facilities
+
+Search and return facility information based on lookup parameters.
+
+* `echoAirGetFacilityInfo()` - Returns a dataframe of permitted air discharge facilities and associated information based on lookup parameters specified by the user.
+
+* `echoSDWGetSystems()` - Returns a dataframe of permitted air discharge facilities and associated information based on lookup parameters specified by the user.
+
+* `echoWaterGetFacilityInfo()` - Returns a dataframe of permitted water discharge facilities and associated information based on lookup parameters specified by the user.
+
+### Reports
+
+Search and return discharge and emissions reports for specified facilities.
+
+* `echoGetCAAPR()` - Returns a dataframe with reported annual air emissions from permitted facilities.
+
+* `echoGetEffluent()` - Returns a dataframe with reported water effluent discharges from permitted facilities.
+
+
+## Sample workflows
+
+### Air
+
+Suppose we want to find facilities permitted under the Clean Air Act requirements.
+
+Step 1 - Identify the information we need returned from the query:
+
+```{r}
+library(echor)
+meta <- echoAirGetMeta()
+meta
+```
+
+The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: `qcolumns = "1,2,3,22,23"`
+
+Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I reccomend exploring the documentation here: https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info. In this example, we will search by a geographic bounding box and specfiy the returned information with the `qcolumns` argument. Each argument should be passeed to ECHO as `echoAirGetFacilityInfo(parameter = "value")`. `echor` will URL encode strings automatically. Please note that any date argument needs to be entered as "mm/dd/yyyy".
 
 ```{r}
 library(echor)
 
 ## Retrieve information about facilities within a geographic location
 df <- echoAirGetFacilityInfo(output = "df",
-                               xmin = '-96.387509',
-                               ymin = '30.583572',
-                               xmax = '-96.281422',
-                               ymax = '30.640008')
+                             xmin = '-96.387509',
+                             ymin = '30.583572',
+                             xmax = '-96.281422',
+                             ymax = '30.640008',
+                             qcolumns = "1,2,3,22,23")
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -72,9 +116,8 @@ knitr::kable(head(df), "html") %>%
   scroll_box(width = "500px", height = "200px")
 ```
 
-There are over 100 arguments that can be passed to `echoAirGetFacilityInfo()` to filter permitted facilites. They are documented here: https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info. Each argument should be passeed to ECHO as `echoAirGetFaclityInfo(parameter = "value")`. `echor` will URL encode strings automatically. Please note that any date argument needs to be entered as "mm/dd/yyyy".
 
-The most useful arguments are listed below:
+Some example arguments are listed below:
 ```{}
 p_fn  string  Facility Name Filter.
               One or more case-insesitive facility names.
@@ -120,7 +163,8 @@ xmax  string  Maximum longitude value in decimal degrees
 ymax  string  Maximum latitude value in decimal degrees
 ```
 
-Download emissions inventory report data:
+Step 3 - Download the emission inventory report for a permitted facility:
+
 ```{r}
 df <- echoGetCAAPR(p_id = '110000350174')
 ```
