@@ -8,7 +8,8 @@
 #' @param output Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. See (\url{https://CRAN.R-project.org/package=sf}) for more information about simple features.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
-#' @importFrom httr GET content accept_json http_status
+#' @import httr
+#' @importFrom geojsonsf geojson_sf
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
@@ -44,65 +45,70 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## check if qcolumns argument is provided by user
     ## if user does not provide qcolumns, provide a sensible default
     if (!("qcolumns" %in% names(valuesList))) {
-      qcolumns <- c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206)
+      qcolumns <- c(1:5,22,23)
       qcolumns <- paste(as.character(qcolumns), collapse = ",")
       valuesList[["qcolumns"]] <- qcolumns
     }
 
+    # check if 1 and 2 are in, if not, insert and order
+    valuesList <- insertQColumns(valuesList)
+
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
 
+    ## build the request URL statement
+    path <- "echo/air_rest_services.get_facility_info"
+    query <- paste("output=JSON", queryDots, sep = "&")
+    getURL <- requestURL(path = path, query = query)
+
+    ## Make the request
+    request <- httr::GET(getURL, httr::accept_json())
+
+    ## Print status message, need to make this optional
+    if (isTRUE(verbose)) {
+      message("Request URL:", getURL)
+      message(httr::http_status(request))
+    }
+
+    info <- httr::content(request)
+
+    qid <- info[["Results"]][["QueryID"]]
+
+    ## build the output
+
+    ## get qcolumns argument specific to this query
+    qcolumns <- queryList(valuesList["qcolumns"])
+
+    ## Find out column types so they are parsed correctly
+    colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+    colNums <- as.numeric(colNums)
+
+    colTypes <- columnsToParse(program = "caa", colNums)
+
+    ## if df return output from air_rest_services.get_download
     if (output == "df") {
 
-      ## build the request URL statement
-      path <- "echo/air_rest_services.get_facility_info"
-      query <- paste("output=JSON", queryDots, sep = "&")
-      getURL <- requestURL(path = path, query = query)
 
-        ## Make the request
-        request <- httr::GET(getURL, httr::accept_json())
-
-        ## Print status message, need to make this optional
-        if (verbose) {
-          message("Request URL:", getURL)
-          message(httr::http_status(request))
-        }
-
-        info <- httr::content(request)
-
-        qid <- info[["Results"]][["QueryID"]]
-
-        ## build the output
-
-        ## get qcolumns argument specific to this query
-        qcolumns <- queryList(valuesList["qcolumns"])
-
-        buildOutput <- getDownload("air", qid, qcolumns)
+        buildOutput <- getDownload("caa",
+                                   qid,
+                                   qcolumns,
+                                   col_types = colTypes)
         return(buildOutput)
         }
 
+    ## if df return output from air_rest_services.get_geojson
     if (output == "sf") {
 
-        ## build the request URL statement
-        path <- "echo/air_rest_services.get_facility_info"
-        query <- paste("output=GEOJSON", queryDots, sep = "&")
-        getURL <- requestURL(path = path, query = query)
+      buildOutput <- getGeoJson("caa",
+                                qid,
+                                qcolumns)
+      ## Convert to sf dataframe
+      buildOutput <- geojsonsf::geojson_sf(buildOutput)
 
-        ## Make the request
-        request <- httr::GET(getURL, httr::accept_json())
+      return(buildOutput)
 
-        ## Print status message, need to make this optional
-        print(paste("# Status message:", httr::http_status(request)))
+      }
 
-        ## Download GeoJSON as text
-        buildOutput <- httr::content(request, as = "text")
-
-        ## Convert to sf dataframe
-        buildOutput <- convertSF(buildOutput)
-
-        return(buildOutput)
-
-    }
     else {
       stop("output argument = ", output,
            ", when it should be either 'df' or 'sf'")
@@ -116,7 +122,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 #'
 #' Returns variable name and descriptions for parameters returned by \code{\link{echoAirGetFacilityInfo}}
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
-#' @importFrom httr GET content accept_json http_status
+#' @import httr
 #' @importFrom purrr map_df
 #' @return returns a dataframe
 #' @export
@@ -137,7 +143,7 @@ echoAirGetMeta <- function(verbose = FALSE){
   request <- httr::GET(getURL, httr::accept_json())
 
   ## Print status message, need to make this optional
-  if (verbose) {
+  if (isTRUE(verbose)) {
     message("Request URL:", getURL)
     message(httr::http_status(request))
   }
@@ -162,10 +168,10 @@ echoAirGetMeta <- function(verbose = FALSE){
 #' @param p_id character string specify the identifier for the service. Required.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Additional arguments
-#' @importFrom httr GET content accept_json http_status
 #' @importFrom purrr map_df
 #' @importFrom tidyr gather_
 #' @importFrom tibble tibble
+#' @import httr
 #' @import dplyr
 #' @return dataframe
 #' @export
@@ -205,9 +211,9 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
 
     request <- httr::GET(getURL, httr::accept_json())
 
-    if (verbose) {
-        message("Request URL:", getURL)
-        message(httr::http_status(request))
+    if (isTRUE(verbose)) {
+      message("Request URL:", getURL)
+      message(httr::http_status(request))
     }
 
     info <- httr::content(request)

@@ -1,7 +1,5 @@
 ---
-output:
-  md_document:
-    variant: gfm
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -10,7 +8,8 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-"
+  fig.path = "man/figures/README-",
+  fig.retina = 2
 )
 
 library(tidyverse)
@@ -151,5 +150,14 @@ ggplot(df) +
        subtitle = "NPDES ID = TX119407",
        caption = "Source: EPA ECHO")
 
+```
+
+## Test Results
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(echor)
+
+date()
+
+devtools::test()
 ```
 

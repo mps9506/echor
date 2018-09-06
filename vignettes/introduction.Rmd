@@ -21,8 +21,9 @@ knitr::opts_chunk$set(
 )
 
 library(kableExtra)
+library(httptest)
 
-path <- here::here("vignettes/data")
+path <- here::here("vignettes/introduction")
 
 httptest::start_vignette(path = path)
 ```
@@ -44,7 +45,7 @@ See https://echo.epa.gov/tools/web-services for information about ECHO web servi
 
 ## Getting started
 
-This vignette docuemnts a few key functions to get started. 
+This vignette documents a few key functions to get started. 
 
 The two main functions used to retrieve air emissions permit and facility data are: `echoAirGetFacilityInfo` and `echoGetCAAPR`. `echoAirGetFacilityInfo` returns a dataframe or simple features geospatial dataframe with information about permittee that match the query. `echoGetCAAPR` returns a dataframe with the emissions inventory report of the queried facility.
 
