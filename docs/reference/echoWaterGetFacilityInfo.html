@@ -64,7 +64,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-wat
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
       </span>
     </div>
 
@@ -154,33 +154,18 @@ Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-s
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
 <span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
 <span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; # A tibble: 60 x 28
-#&gt;    ObjectId CWPName SourceID CWPStreet CWPCity CWPState CWPStateDistrict CWPZip
-#&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;    &lt;lgl&gt;            &lt;chr&gt; 
-#&gt;  1 1        AGGIE ~ TX01321~ 800 FT S~ COLLEG~ TX       NA               77845 
-#&gt;  2 2        AGRIVE~ TX01212~ SWISHER ~ BRYAN   TX       NA               00000 
-#&gt;  3 3        ATKINS~ TX00279~ 601 ATKI~ BRYAN   TX       NA               77801 
-#&gt;  4 4        ATOFIN~ TX01088~ SW OF TH~ BRYAN   TX       NA               77801 
-#&gt;  5 5        BARTLE~ TX01204~ SWISHER ~ AMARIL~ TX       NA               00000 
-#&gt;  6 6        BOSSIE~ LAG8301~ 3228 BAR~ BENTON  LA       NA               71111 
-#&gt;  7 7        BRAYTO~ TX00908~ 1595 NUC~ COLLEG~ TX       NA               77843~
-#&gt;  8 8        BRAZOS~ TXR0401~ URBANIZE~ BRYAN   TX       NA               77803 
-#&gt;  9 9        BRM 5   TXG1119~ 1391 OLD~ BRYAN-~ TX       NA               77845 
-#&gt; 10 10       BROADS~ TXR10F5~ NW OF AT~ BRYAN   TX       NA               77807 
-#&gt; # ... with 50 more rows, and 20 more variables: MasterExternalPermitNmbr &lt;chr&gt;,
-#&gt; #   RegistryID &lt;chr&gt;, CWPCounty &lt;chr&gt;, CWPEPARegion &lt;chr&gt;, FacDerivedHuc &lt;chr&gt;,
-#&gt; #   FacLat &lt;chr&gt;, FacLong &lt;chr&gt;, CWPTotalDesignFlowNmbr &lt;chr&gt;,
-#&gt; #   CWPActualAverageFlowNmbr &lt;chr&gt;, ReceivingMs4Name &lt;lgl&gt;,
-#&gt; #   AssociatedPollutant &lt;lgl&gt;, MsgpPermitType &lt;lgl&gt;, CWPPermitStatusDesc &lt;chr&gt;,
-#&gt; #   CWPPermitTypeDesc &lt;chr&gt;, CWPIssueDate &lt;chr&gt;, CWPEffectiveDate &lt;chr&gt;,
-#&gt; #   CWPExpirationDate &lt;chr&gt;, CWPSNCStatusDate &lt;chr&gt;,
-#&gt; #   CWPStateWaterBodyCode &lt;chr&gt;, FacMapFlg &lt;chr&gt;</div><div class='input'>
+<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: number of columns of result is not a multiple of vector length (arg 2)</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1 parsing failure.</span>
+#&gt; <span class='warning'>row # A tibble: 1 x 5 col     row col   expected  actual    file         expected   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;        actual 1     2 &lt;NA&gt;  1 columns 2 columns &lt;raw vector&gt; file # A tibble: 1 x 5</span></div><div class='output co'>#&gt; # A tibble: 2 x 1
+#&gt;   `&lt;b&gt;FILE OUTPUT FAILED&lt;/b&gt;`                                                  
+#&gt;   &lt;chr&gt;                                                                        
+#&gt; 1 &lt;br /&gt;                                                                       
+#&gt; 2 &lt;b&gt;ERROR MESSAGE:&lt;/b&gt; Your query has been identified as a robotic or program~</div><div class='input'>
 <span class='co'>## Retrieve a simple features dataframe by bounding box</span>
 <span class='no'>spatialdata</span> <span class='kw'>&lt;-</span> <span class='fu'>echoWaterGetFacilityInfo</span>(<span class='kw'>xmin</span> <span class='kw'>=</span> <span class='st'>'-96.407563'</span>,
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
 <span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
 <span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'sf'</span>)</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='input'>
+<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'sf'</span>)</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='error'>Error in rcpp_geojson_to_sf(geojson, expand_geometries): No 'type' member at object index 0 - invalid GeoJSON</span></div><div class='input'>
 </div><div class='input'>
 </div></pre>
   </div>

@@ -64,7 +64,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-air
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
       </span>
     </div>
 
@@ -154,33 +154,18 @@ Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-s
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
 <span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
 <span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; # A tibble: 40 x 29
-#&gt;    ObjectId AIRName SourceID AIRStreet AIRCity AIRState LocalControlReg~ AIRZip
-#&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;    &lt;lgl&gt;            &lt;chr&gt; 
-#&gt;  1 1        AGGIE ~ 0600000~ 111 COLL~ COLLEG~ TX       NA               77840~
-#&gt;  2 2        ALENCO~ TX00000~ 615 CARS~ BRYAN   TX       NA               77801 
-#&gt;  3 3        ALL SE~ 0600000~ 2501 TEX~ COLLEG~ TX       NA               77840 
-#&gt;  4 4        BLUEBO~ TX00000~ HWY. 60,~ COLLEG~ TX       NA               77840 
-#&gt;  5 5        BRIARC~ 0600000~ 1887 BRI~ BRYAN   TX       NA               77802 
-#&gt;  6 6        BRYAN ~ TX00000~ 1500 IND~ BRYAN   TX       NA               77803 
-#&gt;  7 7        BRYAN ~ 0600000~ 1803 HOL~ COLLEG~ TX       NA               77840 
-#&gt;  8 8        BRYAN ~ TX00000~ 3747 OLD~ BRYAN   TX       NA               77808~
-#&gt;  9 9        CITGO ~ TX00000~ 1714 FIN~ BRYAN   TX       NA               77801 
-#&gt; 10 10       CITY O~ TX00000~ 1.5 MI W~ BRYAN   TX       NA               77801 
-#&gt; # ... with 30 more rows, and 21 more variables: RegistryID &lt;chr&gt;,
-#&gt; #   AIRCounty &lt;chr&gt;, AIREPARegion &lt;chr&gt;, FacFederalAgencyCode &lt;lgl&gt;,
-#&gt; #   FacFIPSCode &lt;chr&gt;, FacLat &lt;chr&gt;, FacLong &lt;chr&gt;, AIRPrograms &lt;chr&gt;,
-#&gt; #   AIRMacts &lt;chr&gt;, AIRStatus &lt;chr&gt;, ChesapeakeBayFlag &lt;lgl&gt;, TRIIDs &lt;chr&gt;,
-#&gt; #   FacNaaFlag &lt;lgl&gt;, FacTRIAIRReleases &lt;chr&gt;, FacEisAIRReleases &lt;chr&gt;,
-#&gt; #   FacGHGCO2Releases &lt;lgl&gt;, AIRIeaCnt &lt;chr&gt;, AIRLastIeaDate &lt;chr&gt;,
-#&gt; #   PctilePmUs &lt;chr&gt;, FacMapIcon &lt;chr&gt;, Map &lt;lgl&gt;</div><div class='input'>
+<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: number of columns of result is not a multiple of vector length (arg 2)</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1 parsing failure.</span>
+#&gt; <span class='warning'>row # A tibble: 1 x 5 col     row col   expected  actual    file         expected   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;        actual 1     2 &lt;NA&gt;  1 columns 2 columns &lt;raw vector&gt; file # A tibble: 1 x 5</span></div><div class='output co'>#&gt; # A tibble: 2 x 1
+#&gt;   `&lt;b&gt;FILE OUTPUT FAILED&lt;/b&gt;`                                                  
+#&gt;   &lt;chr&gt;                                                                        
+#&gt; 1 &lt;br /&gt;                                                                       
+#&gt; 2 &lt;b&gt;ERROR MESSAGE:&lt;/b&gt; Your query has been identified as a robotic or program~</div><div class='input'>
 <span class='co'>## Retrieve a simple features dataframe by bounding box</span>
 <span class='no'>spatialdata</span> <span class='kw'>&lt;-</span> <span class='fu'>echoAirGetFacilityInfo</span>(<span class='kw'>xmin</span> <span class='kw'>=</span> <span class='st'>'-96.407563'</span>,
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
 <span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
 <span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'sf'</span>)</div><div class='output co'>#&gt; [1] "# Status message: Success"           "# Status message: OK"               
-#&gt; [3] "# Status message: Success: (200) OK"</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='input'>
+<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'sf'</span>)</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='error'>Error in rcpp_geojson_to_sf(geojson, expand_geometries): No 'type' member at object index 0 - invalid GeoJSON</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

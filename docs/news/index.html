@@ -60,7 +60,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
       </span>
     </div>
 
@@ -112,16 +112,26 @@
 
     <div id="echor-0-1-1" class="section level1">
 <h1 class="page-header">
-<a href="#echor-0-1-1" class="anchor"></a>echor 0.1.1<small> Unreleased </small>
+<a href="#echor-0-1-1" class="anchor"></a>echor 0.1.1<small> 2018-09-11 </small>
 </h1>
 <ul>
-<li>Added <code><a href="../reference/echoWaterGetMeta.html">echoWaterGetMeta()</a></code> and <code><a href="../reference/echoAirGetMeta.html">echoAirGetMeta()</a></code> functions to retrieve metadata about possible arguments that can be included within <code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code> and <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo()</a></code> (closes #28).</li>
-<li>Added default <code>q_columns</code> argument to <code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code> to ensure reasonable default columns are returned (#29).</li>
+<li>Single function returns air and water data; <code><a href="../reference/echoGetFacilities.html">echoGetFacilities()</a></code> and <code><a href="../reference/echoGetReports.html">echoGetReports()</a></code> wrap the individual functions to streamline functions that users need to be familiar with. (closes #33)</li>
+<li>Added <code><a href="../reference/echoWaterGetMeta.html">echoWaterGetMeta()</a></code> and <code><a href="../reference/echoAirGetMeta.html">echoAirGetMeta()</a></code> functions to retrieve column metadata returned by <code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code> and <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo()</a></code>; specify columns returned by respective functions by including qcolumns argument in respective functions. (closes #28).</li>
+<li>Added default <code>qcolumns</code> argument to <code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code> to ensure reasonable default columns are returned (#29).</li>
 <li>
-<code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code> handles clusters returned by ECHO. The function checks if the returned JSON is a cluster, if it is, it uses the qid from the query and the new internal function <code>echoWaterGetQID()</code> to return a large data frame of results. Results are limited to 5,000 records (closes #27).</li>
-<li>Added default <code>q_columns</code> argument to <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo()</a></code> to ensure reasonable default columns are returned (#29).</li>
+<code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code> properly returns large datasets. The new internal function <code>getDownload()</code> downloads the entire CSV of queried data as a dataframe (closes #27).</li>
+<li>Added default <code>qcolumns</code> argument to <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo()</a></code> to ensure reasonable default columns are returned (#29).</li>
 <li>
-<code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo()</a></code> handles clusters returned by ECHO. The function checkis if the returned JSON is a cluster, if it is, it uses the qid from the query and the new internal function <code>echoAirGetQID()</code> to return a large data frame of results. Results are limited to 5,000 records (closes #27).</li>
+<code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo()</a></code> properly returns large datasets. The new internal function <code>getDownload()</code> downloads the entire CSV of queried data as a dataframe (closes #27).</li>
+<li>
+<code><a href="../reference/echoSDWGetSystems.html">echoSDWGetSystems()</a></code> downloads data for public drinking water systems.</li>
+<li>
+<code><a href="../reference/echoSDWGetMeta.html">echoSDWGetMeta()</a></code> downloads metadata for columns returned by <code><a href="../reference/echoSDWGetSystems.html">echoSDWGetSystems()</a></code>
+</li>
+<li>Unit tests for functions that rely on EPA ECHO API utilize <code>skip_on_cran()</code> instead of <code><a href="https://enpiar.com/r/httptest/reference/with_mock_api.html">httptest::with_mock_API()</a></code>
+</li>
+<li>Imported functions are called explicitly eg. <code>pkg::fun()</code>
+</li>
 </ul>
 </div>
     <div id="echor-0-1-0" class="section level1">

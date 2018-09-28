@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Downloads EPA ECHO Water Facility Metadata — echoWaterGetMeta • echor</title>
+<title>Downloads public water system information — echoSDWGetSystems • echor</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -32,9 +32,10 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Downloads EPA ECHO Water Facility Metadata — echoWaterGetMeta" />
+<meta property="og:title" content="Downloads public water system information — echoSDWGetSystems" />
 
-<meta property="og:description" content="Returns variable name and descriptions for parameters returned by echoWaterGetFacilityInfo" />
+<meta property="og:description" content="Returns a dataframe of permitted public water systems returned by the query.
+Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,18 +110,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Downloads EPA ECHO Water Facility Metadata</h1>
+    <h1>Downloads public water system information</h1>
     
-    <div class="hidden name"><code>echoWaterGetMeta.Rd</code></div>
+    <div class="hidden name"><code>echoSDWGetSystems.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Returns variable name and descriptions for parameters returned by <code><a href='echoWaterGetFacilityInfo.html'>echoWaterGetFacilityInfo</a></code></p>
+    <p>Returns a dataframe of permitted public water systems returned by the query.
+Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems'>https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>echoWaterGetMeta</span>(<span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>echoSDWGetSystems</span>(<span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,6 +130,10 @@
     <tr>
       <th>verbose</th>
       <td><p>Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: <a href='https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems'>https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems</a> for a complete list of parameter options. Examples provided below.</p></td>
     </tr>
     </table>
     
@@ -138,9 +144,12 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## These examples require an internet connection to run</span>
-
-<span class='co'># returns a dataframe of</span>
-<span class='fu'>echoWaterGetMeta</span>()</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; # A tibble: 0 x 0</div></pre>
+<span class='fu'>echoSDWGetSystems</span>(<span class='kw'>p_co</span> <span class='kw'>=</span> <span class='st'>"Brazos"</span>, <span class='kw'>p_st</span> <span class='kw'>=</span> <span class='st'>"tx"</span>)</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: number of columns of result is not a multiple of vector length (arg 2)</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1 parsing failure.</span>
+#&gt; <span class='warning'>row # A tibble: 1 x 5 col     row col   expected  actual    file         expected   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;        actual 1     2 &lt;NA&gt;  1 columns 2 columns &lt;raw vector&gt; file # A tibble: 1 x 5</span></div><div class='output co'>#&gt; # A tibble: 2 x 1
+#&gt;   `&lt;b&gt;FILE OUTPUT FAILED&lt;/b&gt;`                                                  
+#&gt;   &lt;chr&gt;                                                                        
+#&gt; 1 &lt;br /&gt;                                                                       
+#&gt; 2 &lt;b&gt;ERROR MESSAGE:&lt;/b&gt; Your query has been identified as a robotic or program~</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

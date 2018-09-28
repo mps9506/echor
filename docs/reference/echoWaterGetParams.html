@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
       </span>
     </div>
 
@@ -148,18 +148,8 @@
     <pre class="examples"><div class='input'><span class='co'>## These examples require an internet connection to run</span>
 
 <span class='co'>## Retrieve parameter codes for dissolved oxygen</span>
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='st'>"Oxygen, dissolved"</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 2
-#&gt;   ValueCode ValueDescription                     
-#&gt;   &lt;chr&gt;     &lt;chr&gt;                                
-#&gt; 1 00300     Oxygen, dissolved [DO]               
-#&gt; 2 51646     Oxygen, dissolved [DO] maximum       
-#&gt; 3 51645     Oxygen, dissolved [DO] minimum       
-#&gt; 4 00301     Oxygen, dissolved percent saturation 
-#&gt; 5 00399     Oxygen, dissolved, % of time violated</div><div class='input'>
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"00300"</span>)</div><div class='output co'>#&gt; # A tibble: 1 x 2
-#&gt;   ValueCode ValueDescription      
-#&gt;   &lt;chr&gt;     &lt;chr&gt;                 
-#&gt; 1 00300     Oxygen, dissolved [DO]</div></pre>
+<span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='st'>"Oxygen, dissolved"</span>)</div><div class='output co'>#&gt; # A tibble: 0 x 0</div><div class='input'>
+<span class='fu'>echoWaterGetParams</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"00300"</span>)</div><div class='output co'>#&gt; # A tibble: 0 x 0</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
