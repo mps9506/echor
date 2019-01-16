@@ -25,6 +25,6 @@ Downloads flattened EPA ECHO DMR records of dischargers with NPDES permits
 
 ## Retrieve single DMR for flow
 
-echoGetEffluentSummary(p_id = 'tx0119407', parameter_code = '50050')
+echoGetEffluentSummary(p_id = 'TX0021474', parameter_code = '50050')
 }
 }
