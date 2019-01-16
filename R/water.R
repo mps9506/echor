@@ -284,7 +284,68 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 
 }
 
+# echoGetEffluentSummary ------------------------------------------------------
 
+
+#' Downloads flattened EPA ECHO DMR records of dischargers with NPDES permits
+#' @param p_id Character string specify the identifier for the service. Required.
+#' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
+#' @param ... Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}
+#' @return Returns a dataframe.
+#' @export
+#'
+#' @examples \donttest{
+#' ## This example requires an internet connection to run
+#'
+#' ## Retrieve single DMR for flow
+#'
+#' echoGetEffluentSummary(p_id = 'TX0021474', parameter_code = '50050')
+#' }
+echoGetEffluentSummary <- function(p_id, verbose = FALSE, ...) {
+  ## should check if character and return error if not
+  p_id <- paste0("p_id=", p_id)
+
+  ## returns a list of arguments supplied by user
+  valuesList <- readEchoGetDots(...)
+
+  ## check if user includes an output argument in dots if included, strip it
+  ## out
+  valuesList <- exclude(valuesList, "output")
+
+  ## generate the intial query
+  queryDots <- queryList(valuesList)
+
+  ## build the request URL statement and download csv as df
+  buildOutput <- downloadEffluentChart(p_id = p_id, verbose = verbose, queryDots = queryDots)
+
+  return(buildOutput)
+
+}
+
+downloadEffluentChart <- function(p_id, verbose, queryDots) {
+  ## build the request URL statement
+  path <- "echo/eff_rest_services.download_effluent_chart"
+  query <- paste(p_id, queryDots, "output=JSON", sep = "&")
+  getURL <- requestURL(path = path, query = query)
+
+  ## Make the request
+  request <- httr::GET(getURL)
+
+  ## Print status message
+  if (isTRUE(verbose)) {
+    message("The formatted URL is: ", getURL)
+    message(httr::http_status(request))
+  }
+
+  info <- httr::content(request, as = "raw")
+
+  info <- readr::read_csv(info, col_names = TRUE,
+                          ## Would prefer this not be hard-coded in case csv changes format later
+                          col_types = "cccccccccccDDccccccccccdccccdcccccccDccccdccdcDcccdcccccccccc",
+                          na = " ",
+                          locale = readr::locale(date_format = "%m/%d/%Y"))
+  return(info)
+}
 
 # echoWaterGetParams ------------------------------------------------------
 
