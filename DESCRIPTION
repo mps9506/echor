@@ -23,6 +23,7 @@ Imports:
   plyr,
   purrr,
   readr,
+  rlang,
   tibble,
   tidyr,
   utils
