@@ -5,7 +5,7 @@
 #' Title
 #'
 #' @param df dataframe with column of id numbers
-#' @param nColumn numeric, indicates the column with p_id permit numbers
+#' @param nColumn unquoted string, name of column containing the p_id permit numbers
 #' @param pBar logical, display a progress bar? Defaults to TRUE
 #' @param ... additional arguments passed to echoGetEffluentSummary
 #'
@@ -31,9 +31,8 @@ downloadDMRs <- function(df, nColumn, pBar = TRUE, ...) {
 
 
                                  echoGetEffluentSummary(p_id = ..1,
-                                                        verbose = FALSE,
                                                         ...)
-                               }))
+                               }, ...))
   }
 
   else {
@@ -41,9 +40,8 @@ downloadDMRs <- function(df, nColumn, pBar = TRUE, ...) {
       mutate(dmr = purrr::pmap(data,
                                ~ {
                                  echoGetEffluentSummary(p_id = ..1,
-                                                        verbose = FALSE,
                                                         ...)
-                               }))
+                               }, ...))
   }
 
   return(df)
