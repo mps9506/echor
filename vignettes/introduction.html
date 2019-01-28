@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michael Schramm" />
 
-<meta name="date" content="2018-09-06" />
+<meta name="date" content="2019-01-28" />
 
 <title>Introduction to echor</title>
 
@@ -280,7 +280,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">Introduction to echor</h1>
 <h4 class="author"><em>Michael Schramm</em></h4>
-<h4 class="date"><em>2018-09-06</em></h4>
+<h4 class="date"><em>2019-01-28</em></h4>
 
 
 
@@ -338,7 +338,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(echor)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">meta &lt;-<span class="st"> </span><span class="kw">echoAirGetMeta</span>()</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3">meta</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; # A tibble: 127 x 6</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; # A tibble: 131 x 6</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt;    ColumnName  DataType DataLength ColumnID ObjectName  Description       </span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;             </span></a>
 <a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt;  1 AIR_NAME    VARCHAR2 200        1        AIRName     The name of the A~</span></a>
@@ -351,7 +351,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt;  8 REGISTRY_ID VARCHAR2 50         8        RegistryID  An internal 12-di~</span></a>
 <a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt;  9 AIR_COUNTY  VARCHAR2 100        9        AIRCounty   The name of the c~</span></a>
 <a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; 10 AIR_EPA_RE~ CHAR     2          10       AIREPARegi~ The EPA region wh~</span></a>
-<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; # ... with 117 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; # ... with 121 more rows</span></a></code></pre></div>
 <p>The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: <code>qcolumns = &quot;1,2,3,22,23&quot;</code></p>
 <p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I reccomend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specfiy the returned information with the <code>qcolumns</code> argument. Each argument should be passeed to ECHO as <code>echoAirGetFacilityInfo(parameter = &quot;value&quot;)</code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(echor)</a>
@@ -438,6 +438,23 @@ HWY. 60, WEST OF
 </tr>
 <tr>
 <td style="text-align:left;">
+BRAZOS PAVING TRENCH BURNER IN1633
+</td>
+<td style="text-align:left;">
+TX0000004877702288
+</td>
+<td style="text-align:left;">
+TURN S ON VICTORIA AVE OFF OF HWY 40 TAKE A R ON W
+</td>
+<td style="text-align:right;">
+30.61337
+</td>
+<td style="text-align:right;">
+-96.32098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 BRYAN CERAMICS PLANT
 </td>
 <td style="text-align:left;">
@@ -468,23 +485,6 @@ BRYAN CLEANERS &amp; LAUNDRY
 </td>
 <td style="text-align:right;">
 -96.31750
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-CITY OF BRYAN
-</td>
-<td style="text-align:left;">
-TX0000004804100026
-</td>
-<td style="text-align:left;">
-1.5 MI W OF <span class="citation">@FM</span> 1687 &amp; FM 2818
-</td>
-<td style="text-align:right;">
-30.63760
-</td>
-<td style="text-align:right;">
--96.36235
 </td>
 </tr>
 </tbody>
@@ -619,100 +619,6 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Carbon dioxide
-</td>
-<td style="text-align:left;">
-Pounds
-</td>
-<td style="text-align:left;">
-CAMD
-</td>
-<td style="text-align:right;">
-2008
-</td>
-<td style="text-align:right;">
-5.90014e+09
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-CP&amp;L - SUTTON PLANT
-</td>
-<td style="text-align:left;">
-110000350174
-</td>
-<td style="text-align:left;">
-801 SUTTON STEAM PLANT ROAD
-</td>
-<td style="text-align:left;">
-WILMINGTON
-</td>
-<td style="text-align:left;">
-NC
-</td>
-<td style="text-align:left;">
-28401
-</td>
-<td style="text-align:left;">
-NEW HANOVER
-</td>
-<td style="text-align:left;">
-04
-</td>
-<td style="text-align:right;">
-34.28332
-</td>
-<td style="text-align:right;">
--77.98523
-</td>
-<td style="text-align:left;">
-Nitrogen oxides
-</td>
-<td style="text-align:left;">
-Pounds
-</td>
-<td style="text-align:left;">
-CAMD
-</td>
-<td style="text-align:right;">
-2008
-</td>
-<td style="text-align:right;">
-9.95600e+06
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-CP&amp;L - SUTTON PLANT
-</td>
-<td style="text-align:left;">
-110000350174
-</td>
-<td style="text-align:left;">
-801 SUTTON STEAM PLANT ROAD
-</td>
-<td style="text-align:left;">
-WILMINGTON
-</td>
-<td style="text-align:left;">
-NC
-</td>
-<td style="text-align:left;">
-28401
-</td>
-<td style="text-align:left;">
-NEW HANOVER
-</td>
-<td style="text-align:left;">
-04
-</td>
-<td style="text-align:right;">
-34.28332
-</td>
-<td style="text-align:right;">
--77.98523
-</td>
-<td style="text-align:left;">
 1,2-Dichloroethane
 </td>
 <td style="text-align:left;">
@@ -725,7 +631,7 @@ NEI
 2008
 </td>
 <td style="text-align:right;">
-4.79500e+01
+47.95
 </td>
 </tr>
 <tr>
@@ -772,7 +678,7 @@ NEI
 2008
 </td>
 <td style="text-align:right;">
-1.79800e+01
+17.98
 </td>
 </tr>
 <tr>
@@ -819,7 +725,7 @@ NEI
 2008
 </td>
 <td style="text-align:right;">
-2.50000e-01
+0.25
 </td>
 </tr>
 <tr>
@@ -866,7 +772,101 @@ NEI
 2008
 </td>
 <td style="text-align:right;">
-6.31900e+01
+63.19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+Hexane
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:right;">
+80.31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+34.28332
+</td>
+<td style="text-align:right;">
+-77.98523
+</td>
+<td style="text-align:left;">
+Manganese
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:right;">
+290.51
 </td>
 </tr>
 </tbody>
@@ -971,6 +971,80 @@ CWPStateWaterBodyCode
 <tbody>
 <tr>
 <td style="text-align:left;">
+ACE TOWNHOME
+</td>
+<td style="text-align:left;">
+TXR15667I
+</td>
+<td style="text-align:left;">
+2136 CHESTNUT OAK CIR
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+77845-4168
+</td>
+<td style="text-align:left;">
+TXR150000
+</td>
+<td style="text-align:left;">
+110070364352
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+12070103
+</td>
+<td style="text-align:right;">
+30.61411
+</td>
+<td style="text-align:right;">
+-96.28490
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Effective
+</td>
+<td style="text-align:left;">
+General Permit Covered Facility
+</td>
+<td style="text-align:left;">
+2018-06-01
+</td>
+<td style="text-align:left;">
+2018-06-01
+</td>
+<td style="text-align:left;">
+2023-03-05
+</td>
+<td style="text-align:left;">
+2018-09-30
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 AGGIE ACRES WWTP
 </td>
 <td style="text-align:left;">
@@ -1037,7 +1111,7 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-2018-03-31
+2018-09-30
 </td>
 <td style="text-align:left;">
 </td>
@@ -1110,20 +1184,20 @@ NPDES Individual Permit
 2004-07-27
 </td>
 <td style="text-align:left;">
-2018-03-31
+2018-09-30
 </td>
 <td style="text-align:left;">
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-ATKINS STREET POWER STATION
+ALENCO WINDOWS
 </td>
 <td style="text-align:left;">
-TX0027952
+TXR05U808
 </td>
 <td style="text-align:left;">
-601 ATKINS STREET
+615 W CARSON ST
 </td>
 <td style="text-align:left;">
 BRYAN
@@ -1134,12 +1208,13 @@ TX
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-77801
+77801-1102
 </td>
 <td style="text-align:left;">
+TXR050000
 </td>
 <td style="text-align:left;">
-110001866623
+110000464284
 </td>
 <td style="text-align:left;">
 Brazos
@@ -1151,85 +1226,10 @@ Brazos
 12070103
 </td>
 <td style="text-align:right;">
-30.64816
+30.64457
 </td>
 <td style="text-align:right;">
--96.37165
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-0.385
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Terminated
-</td>
-<td style="text-align:left;">
-NPDES Individual Permit
-</td>
-<td style="text-align:left;">
-2014-08-28
-</td>
-<td style="text-align:left;">
-2014-09-01
-</td>
-<td style="text-align:left;">
-2019-05-01
-</td>
-<td style="text-align:left;">
-2018-03-31
-</td>
-<td style="text-align:left;">
-120701030340
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ATOFINA CHEMICALS, INC.
-</td>
-<td style="text-align:left;">
-TX0108863
-</td>
-<td style="text-align:left;">
-SW OF THE MO PACIFIC RR &amp;
-</td>
-<td style="text-align:left;">
-BRYAN
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-77801
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-110000464293
-</td>
-<td style="text-align:left;">
-Brazos
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-12070103
-</td>
-<td style="text-align:right;">
-30.65792
-</td>
-<td style="text-align:right;">
--96.37303
+-96.37270
 </td>
 <td style="text-align:right;">
 NA
@@ -1244,174 +1244,172 @@ NA
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-Expired
-</td>
-<td style="text-align:left;">
-NPDES Individual Permit
-</td>
-<td style="text-align:left;">
-2009-06-30
-</td>
-<td style="text-align:left;">
-2009-07-01
-</td>
-<td style="text-align:left;">
-2013-05-01
-</td>
-<td style="text-align:left;">
-2018-03-31
-</td>
-<td style="text-align:left;">
-12070101
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BARTLETT 1
-</td>
-<td style="text-align:left;">
-TX0120421
-</td>
-<td style="text-align:left;">
-SWISHER COUNTY
-</td>
-<td style="text-align:left;">
-AMARILLO
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-00000
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-110039193271
-</td>
-<td style="text-align:left;">
-Swisher
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:right;">
-30.66658
-</td>
-<td style="text-align:right;">
--96.36552
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Terminated
-</td>
-<td style="text-align:left;">
-NPDES Individual Permit
-</td>
-<td style="text-align:left;">
-2000-01-14
-</td>
-<td style="text-align:left;">
-2000-01-14
-</td>
-<td style="text-align:left;">
-2004-07-27
-</td>
-<td style="text-align:left;">
-2018-03-31
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BOSSIER PARISH RESOURCE CENTER
-</td>
-<td style="text-align:left;">
-LAG830191
-</td>
-<td style="text-align:left;">
-3228 BARKDALE BLVD
-</td>
-<td style="text-align:left;">
-BENTON
-</td>
-<td style="text-align:left;">
-LA
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-71111
-</td>
-<td style="text-align:left;">
-LAG830000
-</td>
-<td style="text-align:left;">
-110016696832
-</td>
-<td style="text-align:left;">
-Bossier
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-12070103
-</td>
-<td style="text-align:right;">
-30.61602
-</td>
-<td style="text-align:right;">
--96.28182
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Terminated
+Effective
 </td>
 <td style="text-align:left;">
 General Permit Covered Facility
 </td>
 <td style="text-align:left;">
-2012-12-15
+2016-10-28
 </td>
 <td style="text-align:left;">
-2012-12-15
+2016-11-01
 </td>
 <td style="text-align:left;">
-2017-12-14
+2021-08-13
 </td>
 <td style="text-align:left;">
-2018-03-31
+2018-09-30
 </td>
 <td style="text-align:left;">
-11140204
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ANDREWS ORTHODONTIST AND RETAIL BUILDING
+</td>
+<td style="text-align:left;">
+TXR15193R
+</td>
+<td style="text-align:left;">
+1098 ARRINGTON RD
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+77845
+</td>
+<td style="text-align:left;">
+TXR150000
+</td>
+<td style="text-align:left;">
+110070368658
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+12070103
+</td>
+<td style="text-align:right;">
+30.55800
+</td>
+<td style="text-align:right;">
+-96.26566
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Effective
+</td>
+<td style="text-align:left;">
+General Permit Covered Facility
+</td>
+<td style="text-align:left;">
+2018-08-27
+</td>
+<td style="text-align:left;">
+2018-09-01
+</td>
+<td style="text-align:left;">
+2023-03-05
+</td>
+<td style="text-align:left;">
+2018-09-30
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ASTIN AVIATION
+</td>
+<td style="text-align:left;">
+TXR05CE76
+</td>
+<td style="text-align:left;">
+1770 GEORGE BUSH DR W
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+77845-4761
+</td>
+<td style="text-align:left;">
+TXR050000
+</td>
+<td style="text-align:left;">
+110070360445
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+12070101
+</td>
+<td style="text-align:right;">
+30.59288
+</td>
+<td style="text-align:right;">
+-96.35277
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Effective
+</td>
+<td style="text-align:left;">
+General Permit Covered Facility
+</td>
+<td style="text-align:left;">
+2017-07-10
+</td>
+<td style="text-align:left;">
+2017-08-01
+</td>
+<td style="text-align:left;">
+2021-08-13
+</td>
+<td style="text-align:left;">
+2018-09-30
+</td>
+<td style="text-align:left;">
 </td>
 </tr>
 </tbody>
@@ -1472,817 +1470,192 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
 <thead>
 <tr>
 <th style="text-align:left;">
-Name
+activity_id
 </th>
 <th style="text-align:left;">
-Outfall
+npdes_id
 </th>
 <th style="text-align:left;">
-ID
+version_nmbr
 </th>
 <th style="text-align:left;">
-RegistryID
+perm_feature_id
 </th>
 <th style="text-align:left;">
-Location
+perm_feature_nmbr
 </th>
 <th style="text-align:left;">
-City
+perm_feature_type_code
 </th>
 <th style="text-align:left;">
-State
+perm_feature_type_desc
 </th>
 <th style="text-align:left;">
-Zip
+limit_set_id
 </th>
 <th style="text-align:left;">
-Status
+limit_set_schedule_id
 </th>
 <th style="text-align:left;">
-LimitBeginDate
+limit_id
 </th>
 <th style="text-align:left;">
-LimitEndDate
+limit_type_code
+</th>
+<th style="text-align:left;">
+limit_begin_date
+</th>
+<th style="text-align:left;">
+limit_end_date
+</th>
+<th style="text-align:left;">
+nmbr_of_submission
+</th>
+<th style="text-align:left;">
+parameter_code
+</th>
+<th style="text-align:left;">
+parameter_desc
+</th>
+<th style="text-align:left;">
+monitoring_location_code
+</th>
+<th style="text-align:left;">
+monitoring_location_desc
+</th>
+<th style="text-align:left;">
+stay_type_code
+</th>
+<th style="text-align:left;">
+stay_type_desc
+</th>
+<th style="text-align:left;">
+limit_value_id
+</th>
+<th style="text-align:left;">
+limit_value_type_code
+</th>
+<th style="text-align:left;">
+limit_value_type_desc
 </th>
 <th style="text-align:right;">
-LimitValueNmbr
+limit_value_nmbr
 </th>
 <th style="text-align:left;">
-LimitUnitCode
+limit_unit_code
 </th>
 <th style="text-align:left;">
-LimitUnitDesc
+limit_unit_desc
 </th>
 <th style="text-align:left;">
-StdUnitCode
+standard_unit_code
 </th>
 <th style="text-align:left;">
-StdUnitDesc
-</th>
-<th style="text-align:left;">
-LimitValueStdUnit
-</th>
-<th style="text-align:left;">
-StatisticalBaseCode
-</th>
-<th style="text-align:left;">
-StatisticalBaseDesc
-</th>
-<th style="text-align:left;">
-StatisticalBaseTypeCode
-</th>
-<th style="text-align:left;">
-StatisticalBaseTypeDesc
-</th>
-<th style="text-align:left;">
-DMREventId
-</th>
-<th style="text-align:left;">
-MonitoringPeriodEndDate
-</th>
-<th style="text-align:left;">
-DMRFormValueId
-</th>
-<th style="text-align:left;">
-ValueTypeCode
-</th>
-<th style="text-align:left;">
-ValueTypeDesc
-</th>
-<th style="text-align:left;">
-DMRValueId
+standard_unit_desc
 </th>
 <th style="text-align:right;">
-DMRValueNmbr
+limit_value_standard_units
 </th>
 <th style="text-align:left;">
-DMRUnitCode
+statistical_base_code
 </th>
 <th style="text-align:left;">
-DMRUnitDesc
+statistical_base_short_desc
+</th>
+<th style="text-align:left;">
+statistical_base_type_code
+</th>
+<th style="text-align:left;">
+statistical_base_type_desc
+</th>
+<th style="text-align:left;">
+limit_value_qualifier_code
+</th>
+<th style="text-align:left;">
+stay_value_nmbr
+</th>
+<th style="text-align:left;">
+dmr_event_id
+</th>
+<th style="text-align:left;">
+monitoring_period_end_date
+</th>
+<th style="text-align:left;">
+dmr_form_value_id
+</th>
+<th style="text-align:left;">
+value_type_code
+</th>
+<th style="text-align:left;">
+value_type_desc
+</th>
+<th style="text-align:left;">
+dmr_value_id
 </th>
 <th style="text-align:right;">
-DMRValueStdUnits
+dmr_value_nmbr
 </th>
 <th style="text-align:left;">
-DMRQualifierCode
+dmr_unit_code
 </th>
 <th style="text-align:left;">
-ValueReceivedDate
+dmr_unit_desc
 </th>
 <th style="text-align:right;">
-DaysLate
+dmr_value_standard_units
 </th>
 <th style="text-align:left;">
-NODICode
+dmr_value_qualifier_code
 </th>
 <th style="text-align:left;">
-NODEDesc
+value_received_date
 </th>
 <th style="text-align:left;">
-ExceedancePct
+days_late
 </th>
 <th style="text-align:left;">
-NPDESViolations
+nodi_code
+</th>
+<th style="text-align:left;">
+nodi_desc
+</th>
+<th style="text-align:right;">
+exceedence_pct
+</th>
+<th style="text-align:left;">
+npdes_violation_id
+</th>
+<th style="text-align:left;">
+violation_code
+</th>
+<th style="text-align:left;">
+violation_desc
+</th>
+<th style="text-align:left;">
+rnc_detection_code
+</th>
+<th style="text-align:left;">
+rnc_detection_desc
+</th>
+<th style="text-align:left;">
+rnc_detection_date
+</th>
+<th style="text-align:left;">
+rnc_resolution_code
+</th>
+<th style="text-align:left;">
+rnc_resolution_desc
+</th>
+<th style="text-align:left;">
+rnc_resolution_date
+</th>
+<th style="text-align:left;">
+violation_severity
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
-SKIDMORE WSC WWTP
-</td>
-<td style="text-align:left;">
-001
-</td>
-<td style="text-align:left;">
-TX0119407
-</td>
-<td style="text-align:left;">
-110009771693
-</td>
-<td style="text-align:left;">
-1000’ N OF THE END OF BLACK RANCH RD AND APPROX
-</td>
-<td style="text-align:left;">
-SKIDMORE
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-16648
-</td>
-<td style="text-align:left;">
-18322
-</td>
-<td style="text-align:right;">
-0.131
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-DB
-</td>
-<td style="text-align:left;">
-DAILY AV
-</td>
-<td style="text-align:left;">
-AVG
-</td>
-<td style="text-align:left;">
-Average
-</td>
-<td style="text-align:left;">
-3403423151
-</td>
-<td style="text-align:left;">
-16678
-</td>
-<td style="text-align:left;">
-3442281023
-</td>
-<td style="text-align:left;">
-Q1
-</td>
-<td style="text-align:left;">
-Quantity1
-</td>
-<td style="text-align:left;">
-3612155723
-</td>
-<td style="text-align:right;">
-0.0492
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:right;">
-0.0492
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-16695
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-SKIDMORE WSC WWTP
-</td>
-<td style="text-align:left;">
-001
-</td>
-<td style="text-align:left;">
-TX0119407
-</td>
-<td style="text-align:left;">
-110009771693
-</td>
-<td style="text-align:left;">
-1000’ N OF THE END OF BLACK RANCH RD AND APPROX
-</td>
-<td style="text-align:left;">
-SKIDMORE
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-16648
-</td>
-<td style="text-align:left;">
-18322
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-DD
-</td>
-<td style="text-align:left;">
-DAILY MX
-</td>
-<td style="text-align:left;">
-MAX
-</td>
-<td style="text-align:left;">
-Maximum
-</td>
-<td style="text-align:left;">
-3403423151
-</td>
-<td style="text-align:left;">
-16678
-</td>
-<td style="text-align:left;">
-3442281032
-</td>
-<td style="text-align:left;">
-Q2
-</td>
-<td style="text-align:left;">
-Quantity2
-</td>
-<td style="text-align:left;">
-3612155724
-</td>
-<td style="text-align:right;">
-0.0534
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:right;">
-0.0534
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-16695
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-SKIDMORE WSC WWTP
-</td>
-<td style="text-align:left;">
-001
-</td>
-<td style="text-align:left;">
-TX0119407
-</td>
-<td style="text-align:left;">
-110009771693
-</td>
-<td style="text-align:left;">
-1000’ N OF THE END OF BLACK RANCH RD AND APPROX
-</td>
-<td style="text-align:left;">
-SKIDMORE
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-16648
-</td>
-<td style="text-align:left;">
-18322
-</td>
-<td style="text-align:right;">
-0.131
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-DB
-</td>
-<td style="text-align:left;">
-DAILY AV
-</td>
-<td style="text-align:left;">
-AVG
-</td>
-<td style="text-align:left;">
-Average
-</td>
-<td style="text-align:left;">
-3403423173
-</td>
-<td style="text-align:left;">
-16708
-</td>
-<td style="text-align:left;">
-3442281323
-</td>
-<td style="text-align:left;">
-Q1
-</td>
-<td style="text-align:left;">
-Quantity1
-</td>
-<td style="text-align:left;">
-3613394763
-</td>
-<td style="text-align:right;">
-0.0512
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:right;">
-0.0512
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-16728
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-SKIDMORE WSC WWTP
-</td>
-<td style="text-align:left;">
-001
-</td>
-<td style="text-align:left;">
-TX0119407
-</td>
-<td style="text-align:left;">
-110009771693
-</td>
-<td style="text-align:left;">
-1000’ N OF THE END OF BLACK RANCH RD AND APPROX
-</td>
-<td style="text-align:left;">
-SKIDMORE
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-16648
-</td>
-<td style="text-align:left;">
-18322
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-DD
-</td>
-<td style="text-align:left;">
-DAILY MX
-</td>
-<td style="text-align:left;">
-MAX
-</td>
-<td style="text-align:left;">
-Maximum
-</td>
-<td style="text-align:left;">
-3403423173
-</td>
-<td style="text-align:left;">
-16708
-</td>
-<td style="text-align:left;">
-3442281328
-</td>
-<td style="text-align:left;">
-Q2
-</td>
-<td style="text-align:left;">
-Quantity2
-</td>
-<td style="text-align:left;">
-3613394764
-</td>
-<td style="text-align:right;">
-0.0710
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:right;">
-0.0710
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-16728
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-SKIDMORE WSC WWTP
-</td>
-<td style="text-align:left;">
-001
-</td>
-<td style="text-align:left;">
-TX0119407
-</td>
-<td style="text-align:left;">
-110009771693
-</td>
-<td style="text-align:left;">
-1000’ N OF THE END OF BLACK RANCH RD AND APPROX
-</td>
-<td style="text-align:left;">
-SKIDMORE
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-16648
-</td>
-<td style="text-align:left;">
-18322
-</td>
-<td style="text-align:right;">
-0.131
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-DB
-</td>
-<td style="text-align:left;">
-DAILY AV
-</td>
-<td style="text-align:left;">
-AVG
-</td>
-<td style="text-align:left;">
-Average
-</td>
-<td style="text-align:left;">
-3403423185
-</td>
-<td style="text-align:left;">
-16739
-</td>
-<td style="text-align:left;">
-3442281496
-</td>
-<td style="text-align:left;">
-Q1
-</td>
-<td style="text-align:left;">
-Quantity1
-</td>
-<td style="text-align:left;">
-3614856996
-</td>
-<td style="text-align:right;">
-0.0480
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:right;">
-0.0480
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-16759
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-SKIDMORE WSC WWTP
-</td>
-<td style="text-align:left;">
-001
-</td>
-<td style="text-align:left;">
-TX0119407
-</td>
-<td style="text-align:left;">
-110009771693
-</td>
-<td style="text-align:left;">
-1000’ N OF THE END OF BLACK RANCH RD AND APPROX
-</td>
-<td style="text-align:left;">
-SKIDMORE
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-78387
-</td>
-<td style="text-align:left;">
-16648
-</td>
-<td style="text-align:left;">
-18322
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-DD
-</td>
-<td style="text-align:left;">
-DAILY MX
-</td>
-<td style="text-align:left;">
-MAX
-</td>
-<td style="text-align:left;">
-Maximum
-</td>
-<td style="text-align:left;">
-3403423185
-</td>
-<td style="text-align:left;">
-16739
-</td>
-<td style="text-align:left;">
-3442281524
-</td>
-<td style="text-align:left;">
-Q2
-</td>
-<td style="text-align:left;">
-Quantity2
-</td>
-<td style="text-align:left;">
-3614856997
-</td>
-<td style="text-align:right;">
-0.0613
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:right;">
-0.0613
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-16759
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
 </tr>
 </tbody>
 </table>
@@ -2312,51 +1685,119 @@ end_date  string  End date of interest. Must be entered as &quot;mm/dd/yyyy&quot
 
 code  string  partial or complete code value</code></pre>
 <p>You can only enter either term or code arguments.</p>
+<p>Multiple DMRs can be downloaded using a helper function: <code>downloadDMRs</code>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">permit =</span> <span class="kw">c</span>(<span class="st">'TX0132187'</span>, <span class="st">'TX040237'</span>))</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">df &lt;-<span class="st"> </span><span class="kw">downloadDMRs</span>(df, <span class="dt">idColumn =</span> permit)</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">df &lt;-<span class="st"> </span>tidyr<span class="op">::</span><span class="kw">unnest</span>(df)</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw">str</span>(df)</a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    0 obs. of  62 variables:</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt;  $ permit                     : Factor w/ 2 levels &quot;TX0132187&quot;,&quot;TX040237&quot;: </span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt;  $ activity_id                : chr </span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co">#&gt;  $ npdes_id                   : chr </span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co">#&gt;  $ version_nmbr               : chr </span></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="co">#&gt;  $ perm_feature_id            : chr </span></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co">#&gt;  $ perm_feature_nmbr          : chr </span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12"><span class="co">#&gt;  $ perm_feature_type_code     : chr </span></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13"><span class="co">#&gt;  $ perm_feature_type_desc     : chr </span></a>
+<a class="sourceLine" id="cb12-14" data-line-number="14"><span class="co">#&gt;  $ limit_set_id               : chr </span></a>
+<a class="sourceLine" id="cb12-15" data-line-number="15"><span class="co">#&gt;  $ limit_set_schedule_id      : chr </span></a>
+<a class="sourceLine" id="cb12-16" data-line-number="16"><span class="co">#&gt;  $ limit_id                   : chr </span></a>
+<a class="sourceLine" id="cb12-17" data-line-number="17"><span class="co">#&gt;  $ limit_type_code            : chr </span></a>
+<a class="sourceLine" id="cb12-18" data-line-number="18"><span class="co">#&gt;  $ limit_begin_date           : 'Date' num(0) </span></a>
+<a class="sourceLine" id="cb12-19" data-line-number="19"><span class="co">#&gt;  $ limit_end_date             : 'Date' num(0) </span></a>
+<a class="sourceLine" id="cb12-20" data-line-number="20"><span class="co">#&gt;  $ nmbr_of_submission         : chr </span></a>
+<a class="sourceLine" id="cb12-21" data-line-number="21"><span class="co">#&gt;  $ parameter_code             : chr </span></a>
+<a class="sourceLine" id="cb12-22" data-line-number="22"><span class="co">#&gt;  $ parameter_desc             : chr </span></a>
+<a class="sourceLine" id="cb12-23" data-line-number="23"><span class="co">#&gt;  $ monitoring_location_code   : chr </span></a>
+<a class="sourceLine" id="cb12-24" data-line-number="24"><span class="co">#&gt;  $ monitoring_location_desc   : chr </span></a>
+<a class="sourceLine" id="cb12-25" data-line-number="25"><span class="co">#&gt;  $ stay_type_code             : chr </span></a>
+<a class="sourceLine" id="cb12-26" data-line-number="26"><span class="co">#&gt;  $ stay_type_desc             : chr </span></a>
+<a class="sourceLine" id="cb12-27" data-line-number="27"><span class="co">#&gt;  $ limit_value_id             : chr </span></a>
+<a class="sourceLine" id="cb12-28" data-line-number="28"><span class="co">#&gt;  $ limit_value_type_code      : chr </span></a>
+<a class="sourceLine" id="cb12-29" data-line-number="29"><span class="co">#&gt;  $ limit_value_type_desc      : chr </span></a>
+<a class="sourceLine" id="cb12-30" data-line-number="30"><span class="co">#&gt;  $ limit_value_nmbr           : num </span></a>
+<a class="sourceLine" id="cb12-31" data-line-number="31"><span class="co">#&gt;  $ limit_unit_code            : chr </span></a>
+<a class="sourceLine" id="cb12-32" data-line-number="32"><span class="co">#&gt;  $ limit_unit_desc            : chr </span></a>
+<a class="sourceLine" id="cb12-33" data-line-number="33"><span class="co">#&gt;  $ standard_unit_code         : chr </span></a>
+<a class="sourceLine" id="cb12-34" data-line-number="34"><span class="co">#&gt;  $ standard_unit_desc         : chr </span></a>
+<a class="sourceLine" id="cb12-35" data-line-number="35"><span class="co">#&gt;  $ limit_value_standard_units : num </span></a>
+<a class="sourceLine" id="cb12-36" data-line-number="36"><span class="co">#&gt;  $ statistical_base_code      : chr </span></a>
+<a class="sourceLine" id="cb12-37" data-line-number="37"><span class="co">#&gt;  $ statistical_base_short_desc: chr </span></a>
+<a class="sourceLine" id="cb12-38" data-line-number="38"><span class="co">#&gt;  $ statistical_base_type_code : chr </span></a>
+<a class="sourceLine" id="cb12-39" data-line-number="39"><span class="co">#&gt;  $ statistical_base_type_desc : chr </span></a>
+<a class="sourceLine" id="cb12-40" data-line-number="40"><span class="co">#&gt;  $ limit_value_qualifier_code : chr </span></a>
+<a class="sourceLine" id="cb12-41" data-line-number="41"><span class="co">#&gt;  $ stay_value_nmbr            : chr </span></a>
+<a class="sourceLine" id="cb12-42" data-line-number="42"><span class="co">#&gt;  $ dmr_event_id               : chr </span></a>
+<a class="sourceLine" id="cb12-43" data-line-number="43"><span class="co">#&gt;  $ monitoring_period_end_date : 'Date' num(0) </span></a>
+<a class="sourceLine" id="cb12-44" data-line-number="44"><span class="co">#&gt;  $ dmr_form_value_id          : chr </span></a>
+<a class="sourceLine" id="cb12-45" data-line-number="45"><span class="co">#&gt;  $ value_type_code            : chr </span></a>
+<a class="sourceLine" id="cb12-46" data-line-number="46"><span class="co">#&gt;  $ value_type_desc            : chr </span></a>
+<a class="sourceLine" id="cb12-47" data-line-number="47"><span class="co">#&gt;  $ dmr_value_id               : chr </span></a>
+<a class="sourceLine" id="cb12-48" data-line-number="48"><span class="co">#&gt;  $ dmr_value_nmbr             : num </span></a>
+<a class="sourceLine" id="cb12-49" data-line-number="49"><span class="co">#&gt;  $ dmr_unit_code              : chr </span></a>
+<a class="sourceLine" id="cb12-50" data-line-number="50"><span class="co">#&gt;  $ dmr_unit_desc              : chr </span></a>
+<a class="sourceLine" id="cb12-51" data-line-number="51"><span class="co">#&gt;  $ dmr_value_standard_units   : num </span></a>
+<a class="sourceLine" id="cb12-52" data-line-number="52"><span class="co">#&gt;  $ dmr_value_qualifier_code   : chr </span></a>
+<a class="sourceLine" id="cb12-53" data-line-number="53"><span class="co">#&gt;  $ value_received_date        : 'Date' num(0) </span></a>
+<a class="sourceLine" id="cb12-54" data-line-number="54"><span class="co">#&gt;  $ days_late                  : chr </span></a>
+<a class="sourceLine" id="cb12-55" data-line-number="55"><span class="co">#&gt;  $ nodi_code                  : chr </span></a>
+<a class="sourceLine" id="cb12-56" data-line-number="56"><span class="co">#&gt;  $ nodi_desc                  : chr </span></a>
+<a class="sourceLine" id="cb12-57" data-line-number="57"><span class="co">#&gt;  $ exceedence_pct             : num </span></a>
+<a class="sourceLine" id="cb12-58" data-line-number="58"><span class="co">#&gt;  $ npdes_violation_id         : chr </span></a>
+<a class="sourceLine" id="cb12-59" data-line-number="59"><span class="co">#&gt;  $ violation_code             : chr </span></a>
+<a class="sourceLine" id="cb12-60" data-line-number="60"><span class="co">#&gt;  $ violation_desc             : chr </span></a>
+<a class="sourceLine" id="cb12-61" data-line-number="61"><span class="co">#&gt;  $ rnc_detection_code         : chr </span></a>
+<a class="sourceLine" id="cb12-62" data-line-number="62"><span class="co">#&gt;  $ rnc_detection_desc         : chr </span></a>
+<a class="sourceLine" id="cb12-63" data-line-number="63"><span class="co">#&gt;  $ rnc_detection_date         : chr </span></a>
+<a class="sourceLine" id="cb12-64" data-line-number="64"><span class="co">#&gt;  $ rnc_resolution_code        : chr </span></a>
+<a class="sourceLine" id="cb12-65" data-line-number="65"><span class="co">#&gt;  $ rnc_resolution_desc        : chr </span></a>
+<a class="sourceLine" id="cb12-66" data-line-number="66"><span class="co">#&gt;  $ rnc_resolution_date        : chr </span></a>
+<a class="sourceLine" id="cb12-67" data-line-number="67"><span class="co">#&gt;  $ violation_severity         : chr</span></a></code></pre></div>
 </div>
 <div id="spatial-data" class="section level3">
 <h3>Spatial data</h3>
 <p><code>echor</code> can also return spatial data frames known as simple features (<a href="https://r-spatial.github.io/sf/" class="uri">https://r-spatial.github.io/sf/</a>), to facilitate creation of maps. Both <code>echoAirGetFacilityInfo</code> and <code>echoWaterGetFacilityInfo</code> include arguments to return simple feature dataframes.</p>
 <p>Using <code>sf</code>, <code>ggmap</code>, and the current development version of <code>ggplot2</code> (<code>devtools::install_github(&quot;tidyverse/ggplot2&quot;)</code>), we can quickly create a map of downloaded data.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">## Sample code only,</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">## This example requires the development</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">## version of ggplot2 with support for</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">## geom_sf()</a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="kw">library</span>(ggmap)</a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="kw">library</span>(purrr)</a>
-<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="kw">library</span>(sf)</a>
-<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="kw">library</span>(ggrepel)</a>
-<a class="sourceLine" id="cb12-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb12-13" data-line-number="13">## Download data as a simple feature</a>
-<a class="sourceLine" id="cb12-14" data-line-number="14">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>,</a>
-<a class="sourceLine" id="cb12-15" data-line-number="15">                                        <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>, <span class="dt">ymax =</span> <span class="st">'30.751984'</span>,</a>
-<a class="sourceLine" id="cb12-16" data-line-number="16">                                        <span class="dt">output =</span> <span class="st">'sf'</span>)</a>
-<a class="sourceLine" id="cb12-17" data-line-number="17">## Download a basemap with gg_map</a>
-<a class="sourceLine" id="cb12-18" data-line-number="18">collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,</a>
-<a class="sourceLine" id="cb12-19" data-line-number="19">                                       <span class="fl">-96.281422</span>, <span class="fl">30.640008</span>), </a>
-<a class="sourceLine" id="cb12-20" data-line-number="20">                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner&quot;</span>)</a>
-<a class="sourceLine" id="cb12-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb12-22" data-line-number="22">## Use coordinates to create label locations</a>
-<a class="sourceLine" id="cb12-23" data-line-number="23">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-24" data-line-number="24"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb12-25" data-line-number="25">    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),</a>
-<a class="sourceLine" id="cb12-26" data-line-number="26">    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb12-27" data-line-number="27">    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb12-28" data-line-number="28">  )</a>
-<a class="sourceLine" id="cb12-29" data-line-number="29"></a>
-<a class="sourceLine" id="cb12-30" data-line-number="30">## Make the map</a>
-<a class="sourceLine" id="cb12-31" data-line-number="31"><span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb12-32" data-line-number="32"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, </a>
-<a class="sourceLine" id="cb12-33" data-line-number="33">          <span class="dt">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>, </a>
-<a class="sourceLine" id="cb12-34" data-line-number="34">          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-35" data-line-number="35"><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),</a>
-<a class="sourceLine" id="cb12-36" data-line-number="36">                   <span class="dt">point.padding =</span> <span class="fl">.5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,</a>
-<a class="sourceLine" id="cb12-37" data-line-number="37">                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;dodgerblue&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-38" data-line-number="38"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, </a>
-<a class="sourceLine" id="cb12-39" data-line-number="39">       <span class="dt">title =</span> <span class="st">&quot;NPDES permits near Texas A&amp;M&quot;</span>,</a>
-<a class="sourceLine" id="cb12-40" data-line-number="40">       <span class="dt">caption =</span> <span class="st">&quot;Source: EPA ECHO database&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">## Sample code only,</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">## This example requires the development</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">## version of ggplot2 with support for</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">## geom_sf()</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="kw">library</span>(ggmap)</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="kw">library</span>(purrr)</a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="kw">library</span>(ggrepel)</a>
+<a class="sourceLine" id="cb13-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb13-13" data-line-number="13">## Download data as a simple feature</a>
+<a class="sourceLine" id="cb13-14" data-line-number="14">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>,</a>
+<a class="sourceLine" id="cb13-15" data-line-number="15">                                        <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>, <span class="dt">ymax =</span> <span class="st">'30.751984'</span>,</a>
+<a class="sourceLine" id="cb13-16" data-line-number="16">                                        <span class="dt">output =</span> <span class="st">'sf'</span>)</a>
+<a class="sourceLine" id="cb13-17" data-line-number="17">## Download a basemap with gg_map</a>
+<a class="sourceLine" id="cb13-18" data-line-number="18">collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,</a>
+<a class="sourceLine" id="cb13-19" data-line-number="19">                                       <span class="fl">-96.281422</span>, <span class="fl">30.640008</span>), </a>
+<a class="sourceLine" id="cb13-20" data-line-number="20">                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">&quot;toner&quot;</span>)</a>
+<a class="sourceLine" id="cb13-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb13-22" data-line-number="22">## Use coordinates to create label locations</a>
+<a class="sourceLine" id="cb13-23" data-line-number="23">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-24" data-line-number="24"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb13-25" data-line-number="25">    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),</a>
+<a class="sourceLine" id="cb13-26" data-line-number="26">    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb13-27" data-line-number="27">    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb13-28" data-line-number="28">  )</a>
+<a class="sourceLine" id="cb13-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb13-30" data-line-number="30">## Make the map</a>
+<a class="sourceLine" id="cb13-31" data-line-number="31"><span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-32" data-line-number="32"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, </a>
+<a class="sourceLine" id="cb13-33" data-line-number="33">          <span class="dt">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>, </a>
+<a class="sourceLine" id="cb13-34" data-line-number="34">          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-35" data-line-number="35"><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),</a>
+<a class="sourceLine" id="cb13-36" data-line-number="36">                   <span class="dt">point.padding =</span> <span class="fl">.5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,</a>
+<a class="sourceLine" id="cb13-37" data-line-number="37">                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;dodgerblue&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-38" data-line-number="38"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, </a>
+<a class="sourceLine" id="cb13-39" data-line-number="39">       <span class="dt">title =</span> <span class="st">&quot;NPDES permits near Texas A&amp;M&quot;</span>,</a>
+<a class="sourceLine" id="cb13-40" data-line-number="40">       <span class="dt">caption =</span> <span class="st">&quot;Source: EPA ECHO database&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 

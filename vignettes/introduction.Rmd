@@ -291,6 +291,16 @@ code  string  partial or complete code value
 
 You can only enter either term or code arguments.
 
+
+Multiple DMRs can be downloaded using a helper function: `downloadDMRs`:
+```{r}
+df <- data.frame(permit = c('TX0132187', 'TX040237'))
+df <- downloadDMRs(df, idColumn = permit)
+df <- tidyr::unnest(df)
+str(df)
+```
+
+
 ### Spatial data
 `echor` can also return spatial data frames known as simple features (https://r-spatial.github.io/sf/), to facilitate creation of maps. Both `echoAirGetFacilityInfo` and `echoWaterGetFacilityInfo` include arguments to return simple feature dataframes.
 

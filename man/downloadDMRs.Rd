@@ -19,7 +19,7 @@ downloadDMRs(df, idColumn, pBar = TRUE, ...)
 dataframe df, with a column containing the discharge monitoring reports downloaded with echoGetEffluentSummary
 }
 \description{
-Returns DMRs in a nested list using \code{echoGetEffluent()}. Uses a dataframe with a column of p_id numbers
+Returns DMRs in a nested list using \code{echoGetEffluent()}. Uses a dataframe with a column of p_id numbers. Please note that p_id's are case sensitive.
 }
 \examples{
 \donttest{
@@ -27,7 +27,7 @@ Returns DMRs in a nested list using \code{echoGetEffluent()}. Uses a dataframe w
 
 ## Retrieve multiple DMRs for flow
 
-df <- data.frame("p_id" = c('tx0119407', 'tx0132187', 'tx040237'))
+df <- data_frame("p_id" = c('TX0119407', 'TX0132187', 'TX040237'))
 df <- downloadDMRs(df, p_id)
 }
 }

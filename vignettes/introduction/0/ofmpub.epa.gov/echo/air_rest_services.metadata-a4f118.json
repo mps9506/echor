@@ -997,7 +997,7 @@
             {
                 "ColumnName": "NAA_CATEGORIES",
                 "DataType": "CHAR",
-                "DataLength": "120",
+                "DataLength": "240",
                 "ColumnID": "125",
                 "ObjectName": "NaaCategories",
                 "Description": null
@@ -1005,16 +1005,48 @@
             {
                 "ColumnName": "NAA_POLLUTANTS",
                 "DataType": "CHAR",
-                "DataLength": "60",
+                "DataLength": "120",
                 "ColumnID": "126",
                 "ObjectName": "NaaPollutants",
+                "Description": null
+            },
+            {
+                "ColumnName": "FAC_COUNTY_NAME",
+                "DataType": "VARCHAR2",
+                "DataLength": "100",
+                "ColumnID": "127",
+                "ObjectName": "FacCountyName",
+                "Description": null
+            },
+            {
+                "ColumnName": "FAC_STD_COUNTY_NAME",
+                "DataType": "VARCHAR2",
+                "DataLength": "300",
+                "ColumnID": "128",
+                "ObjectName": "FacStdCountyName",
+                "Description": null
+            },
+            {
+                "ColumnName": "AIR_NSPS",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "129",
+                "ObjectName": "AIRNsps",
+                "Description": null
+            },
+            {
+                "ColumnName": "AIR_NSPSM",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "130",
+                "ObjectName": "AIRNspsm",
                 "Description": null
             },
             {
                 "ColumnName": "SCORE",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "127",
+                "ColumnID": "131",
                 "ObjectName": "Score",
                 "Description": null
             }
