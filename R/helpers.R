@@ -4,7 +4,7 @@
 
 #' Download Multiple DMRs
 #'
-#' Returns DMRs in a nested list using \code{echoGetEffluent()}. Uses a dataframe with a column of p_id numbers
+#' Returns DMRs in a nested list using \code{echoGetEffluent()}. Uses a dataframe with a column of p_id numbers. Please note that p_id's are case sensitive.
 #' @param df dataframe with column of id numbers
 #' @param idColumn unquoted string, name of column containing the p_id permit numbers
 #' @param pBar logical, display a progress bar? Defaults to TRUE
@@ -19,11 +19,14 @@
 #'
 #' ## Retrieve multiple DMRs for flow
 #'
-#' df <- data.frame("p_id" = c('tx0119407', 'tx0132187', 'tx040237'))
+#' df <- data_frame("p_id" = c('TX0119407', 'TX0132187', 'TX040237'))
 #' df <- downloadDMRs(df, p_id)
 #' }
 
 downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
+
+  ## convert df to tibble
+  df <- tibble::as_tibble(df)
 
   idColumn <- enquo(idColumn)
   data <- select(df, !!idColumn)
@@ -38,9 +41,8 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
                                  # update the progress bar (tick()) and print progress (print())
                                  pb$tick()$print()
 
-
                                  echoGetEffluent(p_id = ..1,
-                                                        ...)
+                                                 ...)
                                }, ...))
   }
 
@@ -49,7 +51,7 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
       mutate(dmr = purrr::pmap(data,
                                ~ {
                                  echoGetEffluent(p_id = ..1,
-                                                        ...)
+                                                 ...)
                                }, ...))
   }
 
