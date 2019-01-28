@@ -14,9 +14,6 @@ test_that("core functions return tbl_df", {
   expect_is(echoGetEffluent(p_id = "tx0119407", parameter_code = "50050"),
                   "tbl_df")
 
-  expect_is(echoGetEffluentSummary(p_id = "tx0119407", parameter_code = "50050"),
-            "tbl_df")
-
   expect_is(echoGetReports(program = "caa",
                                  p_id = '110000350174',
                                  verbose = FALSE),

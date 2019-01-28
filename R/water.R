@@ -170,10 +170,6 @@ echoWaterGetMeta <- function(verbose = FALSE){
 #' @param p_id Character string specify the identifier for the service. Required.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}
-#' @import httr
-#' @importFrom lubridate dmy
-#' @importFrom purrr map map_chr
-#' @importFrom tibble tibble
 #' @return Returns a dataframe.
 #' @export
 #'
@@ -186,122 +182,6 @@ echoWaterGetMeta <- function(verbose = FALSE){
 #' }
 echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 
-    ## should check if character and return error if not
-    p_id <- paste0("p_id=", p_id)
-
-    ## returns a list of arguments supplied by user
-    valuesList <- readEchoGetDots(...)
-
-    ## check if user includes an output argument in dots if included, strip it
-    ## out
-    valuesList <- exclude(valuesList, "output")
-
-    ## generate the intial query
-    queryDots <- queryList(valuesList)
-
-    ## build the request URL statement
-    path <- "echo/eff_rest_services.get_effluent_chart"
-    query <- paste(p_id, queryDots, "output=JSON", sep = "&")
-    getURL <- requestURL(path = path, query = query)
-
-    request <- httr::GET(getURL, httr::accept_json())
-
-    if (isTRUE(verbose)) {
-      message("Request URL:", getURL)
-      message(httr::http_status(request))
-    }
-
-    info <- httr::content(request)
-
-    ## Obtain permit information used to make the dataframe
-    CWPName <- info[["Results"]][["CWPName"]]
-    SourceID <- info[["Results"]][["SourceId"]]
-    RegistryID <- info[["Results"]][["RegistryId"]]
-    Location <- info[["Results"]][["CWPStreet"]]
-    City <- info[["Results"]][["CWPCity"]]
-    State <- info[["Results"]][["CWPState"]]
-    Zip <- info[["Results"]][["CWPZip"]]
-    Status <- info[["Results"]][["CWPZip"]]
-    nOutfalls <- seq_along(info[["Results"]][["PermFeatures"]])
-
-    output <- data_frame()
-
-    ## can I do this with purr::map? ##
-    for (i in nOutfalls) {
-
-        #Specify the DMRs for the intended outfall
-        DMR <- info[["Results"]][["PermFeatures"]][[i]][["Parameters"]][[1]][["DischargeMonitoringReports"]]
-
-        #Grab the outfall if number
-        outfallNumber <- info[["Results"]][["PermFeatures"]][[i]][["PermFeatureNmbr"]]
-
-        # Begin Exclude Linting
-        buildOutput <- tibble(
-          Name = CWPName,
-          Outfall = outfallNumber,
-          ID = SourceID,
-          RegistryID = RegistryID,
-          Location = Location,
-          City = City,
-          State = State,
-          Zip = Zip,
-          Status = Status,
-          LimitBeginDate = lubridate::dmy(purrr::map_chr(DMR, "LimitBeginDate", .default = NA)),
-          LimitEndDate = lubridate::dmy(purrr::map_chr(DMR, "LimitEndDate", .default = NA)),
-          LimitValueNmbr = as.numeric(purrr::map_chr(DMR, "LimitValueNmbr", .default = NA)),
-          LimitUnitCode = purrr::map_chr(DMR, "LimitUnitCode", .default = NA),
-          LimitUnitDesc = purrr::map_chr(DMR, "LimitUnitDesc", .default = NA),
-          StdUnitCode = purrr::map_chr(DMR, "StdUnitDesc", .default = NA),
-          StdUnitDesc = purrr::map_chr(DMR, "StdUnitDesc", .default = NA),
-          LimitValueStdUnit = purrr::map_chr(DMR, "LimitValueStdUnit", .default = NA),
-          StatisticalBaseCode = purrr::map_chr(DMR, "StatisticalBaseCode", .default = NA),
-          StatisticalBaseDesc = purrr::map_chr(DMR, "StatisticalBaseDesc", .default = NA),
-          StatisticalBaseTypeCode = purrr::map(DMR, "StatisticalBaseTypeCode", .default = NA),
-          StatisticalBaseTypeDesc = purrr::map(DMR, "StatisticalBaseTypeDesc", .default = NA),
-          DMREventId = purrr::map_chr(DMR, "DMREventId", .default = NA),
-          MonitoringPeriodEndDate = lubridate::dmy(purrr::map_chr(DMR, "MonitoringPeriodEndDate", .default = NA)),
-          DMRFormValueId = purrr::map_chr(DMR, "DMRFormValueId", .default = NA),
-          ValueTypeCode = purrr::map(DMR, "ValueTypeCode", .default = NA),
-          ValueTypeDesc = purrr::map(DMR, "ValueTypeDesc", .default = NA),
-          DMRValueId = purrr::map_chr(DMR, "DMRValueId", .default = NA),
-          DMRValueNmbr = as.numeric(purrr::map(DMR, "DMRValueNmbr", .default = NA)),
-          DMRUnitCode = purrr::map(DMR, "DMRUnitCode", .default = NA),
-          DMRUnitDesc = purrr::map(DMR, "DMRUnitDesc", .default = NA),
-          DMRValueStdUnits = as.numeric(purrr::map(DMR, "DMRValueStdUnits", .default = NA)),
-          DMRQualifierCode = purrr::map(DMR, "DMRQualifierCode", .default = NA),
-          ValueReceivedDate = lubridate::dmy(purrr::map_chr(DMR, "ValueReceivedDate", .default = NA)),
-          DaysLate = as.integer(purrr::map(DMR, "DaysLate", .default = NA)),
-          NODICode = purrr::map(DMR, "NODICode", .default = NA),
-          NODEDesc = purrr::map(DMR, "NODEDesc", .default = NA),
-          ExceedancePct = purrr::map(DMR, "ExceedancePct", .default = NA),
-          NPDESViolations = purrr::map(DMR, "NPDESViolations", .default = NA))
-        # End Exclude Linting
-        output <- rbind(output, buildOutput)
-
-    }
-
-    return(output)
-
-}
-
-# echoGetEffluentSummary ------------------------------------------------------
-
-
-#' Downloads flattened EPA ECHO DMR records of dischargers with NPDES permits
-#' @param p_id Character string specify the identifier for the service. Required.
-#' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
-#' @param ... Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}
-#' @return Returns a dataframe.
-#' @export
-#'
-#' @examples \donttest{
-#' ## This example requires an internet connection to run
-#'
-#' ## Retrieve single DMR for flow
-#'
-#' echoGetEffluentSummary(p_id = 'TX0021474', parameter_code = '50050')
-#' }
-echoGetEffluentSummary <- function(p_id, verbose = FALSE, ...) {
   ## should check if character and return error if not
   p_id <- paste0("p_id=", p_id)
 
@@ -321,6 +201,8 @@ echoGetEffluentSummary <- function(p_id, verbose = FALSE, ...) {
   return(buildOutput)
 
 }
+
+
 
 downloadEffluentChart <- function(p_id, verbose, queryDots) {
   ## build the request URL statement

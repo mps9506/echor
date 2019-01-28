@@ -2,22 +2,32 @@
 % Please edit documentation in R/helpers.R
 \name{downloadDMRs}
 \alias{downloadDMRs}
-\title{Title}
+\title{Download Multiple DMRs}
 \usage{
-downloadDMRs(df, nColumn, pBar = TRUE, ...)
+downloadDMRs(df, idColumn, pBar = TRUE, ...)
 }
 \arguments{
 \item{df}{dataframe with column of id numbers}
 
-\item{nColumn}{numeric, indicates the column with p_id permit numbers}
+\item{idColumn}{unquoted string, name of column containing the p_id permit numbers}
 
 \item{pBar}{logical, display a progress bar? Defaults to TRUE}
 
-\item{...}{additional arguments passed to echoGetEffluentSummary}
+\item{...}{additional arguments passed to echoGetEffluent}
 }
 \value{
 dataframe df, with a column containing the discharge monitoring reports downloaded with echoGetEffluentSummary
 }
 \description{
-Title
+Returns DMRs in a nested list using \code{echoGetEffluent()}. Uses a dataframe with a column of p_id numbers
+}
+\examples{
+\donttest{
+## This example requires an internet connection to run
+
+## Retrieve multiple DMRs for flow
+
+df <- data.frame("p_id" = c('tx0119407', 'tx0132187', 'tx040237'))
+df <- downloadDMRs(df, p_id)
+}
 }
