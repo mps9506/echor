@@ -167,7 +167,9 @@ echoWaterGetMeta <- function(verbose = FALSE){
 
 
 #' Downloads EPA ECHO DMR records of dischargers with NPDES permits
-#' @param p_id Character string specify the identifier for the service. Required.
+#'
+#' Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive.
+#' @param p_id Character string specify the identifier for the service. Required. Case sensitive.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: \url{https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart}
 #' @return Returns a dataframe.
