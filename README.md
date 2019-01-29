@@ -1,19 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-echor
-=====
 
-[![CRAN status](https://www.r-pkg.org/badges/version/echor)](https://cran.r-project.org/package=echor)
+# echor
 
-[![Travis build status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor) [![Coverage status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/echor)](https://cran.r-project.org/package=echor)
 
-Overview
---------
+[![Travis build
+status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor)
+[![Coverage
+status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
 
-echor downloads wastewater discharge and air emission data for EPA permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
+## Overview
 
-Installation
-------------
+echor downloads wastewater discharge and air emission data for EPA
+permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
+
+## Installation
 
 echor is on CRAN:
 
@@ -28,19 +33,21 @@ Or install the development version from github:
 devtools::install_github("mps9506/echor")
 ```
 
-Usage
------
+## Usage
 
-[Getting started](https://mps9506.github.io/echor/articles/introduction.html)
+[Getting
+started](https://mps9506.github.io/echor/articles/introduction.html)
 
 [Functions](https://mps9506.github.io/echor/reference/index.html)
 
-Examples
---------
+## Examples
 
 ### Download information about facilities with an NPDES permit
 
-We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: [get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
+We can look up plants by permit id, bounding box, and numerous other
+parameters. I plan on providing documentation of available parameters.
+However, arguments can be looked up here:
+[get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
 
 ``` r
 library(tidyverse)
@@ -56,14 +63,14 @@ df <- echoWaterGetFacilityInfo(output = "df",
 
 head(df)
 #> # A tibble: 6 x 26
-#>   CWPName   SourceID  CWPStreet   CWPCity CWPState CWPStateDistrict CWPZip
-#>   <chr>     <chr>     <chr>       <chr>   <chr>    <chr>            <chr> 
-#> 1 BOSSIER ~ LAG830191 3228 BARKD~ BENTON  LA       ""               71111 
-#> 2 BROADSTO~ TXR10F50H NW OF ATLA~ BRYAN   TX       ""               77807 
-#> 3 BROADSTO~ TXR10F50D NW OF ATLA~ BRYAN   TX       ""               77807 
-#> 4 CITY OF ~ TXR040008 WITHIN CIT~ COLLEG~ TX       ""               77842 
-#> 5 HEAT TRA~ TX0106526 0.25MI SW ~ COLLEG~ TX       ""               77845 
-#> 6 HOLLEMAN~ TXR10F4N6 NW OF HOLL~ COLLEG~ TX       ""               77840 
+#>   CWPName    SourceID  CWPStreet  CWPCity CWPState CWPStateDistrict CWPZip
+#>   <chr>      <chr>     <chr>      <chr>   <chr>    <chr>            <chr> 
+#> 1 ACE TOWNH~ TXR15667I 2136 CHES~ COLLEG~ TX       ""               77845~
+#> 2 ASTIN AVI~ TXR05CE76 1770 GEOR~ COLLEG~ TX       ""               77845~
+#> 3 AT HOME -~ TXR15591P 2301 EARL~ COLLEG~ TX       ""               77845~
+#> 4 BEE CREEK~ TXR15647M THE SITE ~ COLLEG~ TX       ""               77845 
+#> 5 BOSSIER P~ LAG830191 3228 BARK~ BENTON  LA       ""               71111 
+#> 6 BROADSTON~ TXR15515C 8000 ATLA~ BRYAN   TX       ""               77807~
 #> # ... with 19 more variables: MasterExternalPermitNmbr <chr>,
 #> #   RegistryID <chr>, CWPCounty <chr>, CWPEPARegion <chr>,
 #> #   FacDerivedHuc <chr>, FacLat <dbl>, FacLong <dbl>,
@@ -75,7 +82,14 @@ head(df)
 #> #   CWPStateWaterBodyCode <chr>
 ```
 
-The ECHO database can provide over 270 different columns. echor returns a subset of these columns that should work for most users. However, you can specify what data you want returned. Use `echoWaterGetMeta()` to return a dataframe with column numbers, names, and descriptions to identify the columns you want returned. Then include the column numbers as a comma seperated string in the `qcolumns` argument. In the example below, the `qcolumns` argument indicates the dataframe will include plant name, 8-digit HUC, latitute, longitude, and total design flow.
+The ECHO database can provide over 270 different columns. echor returns
+a subset of these columns that should work for most users. However, you
+can specify what data you want returned. Use `echoWaterGetMeta()` to
+return a dataframe with column numbers, names, and descriptions to
+identify the columns you want returned. Then include the column numbers
+as a comma seperated string in the `qcolumns` argument. In the example
+below, the `qcolumns` argument indicates the dataframe will include
+plant name, 8-digit HUC, latitute, longitude, and total design flow.
 
 ``` r
 df <- echoWaterGetFacilityInfo(output = "df", 
@@ -86,17 +100,18 @@ df <- echoWaterGetFacilityInfo(output = "df",
                                qcolumns = '1,14,23,24,25')
 head(df)
 #> # A tibble: 6 x 6
-#>   CWPName         SourceID FacDerivedHuc FacLat FacLong CWPTotalDesignFlo~
-#>   <chr>           <chr>    <chr>          <dbl>   <dbl>              <dbl>
-#> 1 BOSSIER PARISH~ LAG8301~ 12070103        30.6   -96.3                 NA
-#> 2 BROADSTONE TRA~ TXR10F5~ 12070101        30.6   -96.4                 NA
-#> 3 BROADSTONE TRA~ TXR10F5~ 12070101        30.6   -96.4                 NA
-#> 4 CITY OF COLLEG~ TXR0400~ ""              30.6   -96.3                 NA
-#> 5 HEAT TRANSFER ~ TX01065~ 12070101        30.6   -96.4                 NA
-#> 6 HOLLEMAN EXTEN~ TXR10F4~ 12070103        30.6   -96.3                 NA
+#>   CWPName          SourceID FacDerivedHuc FacLat FacLong CWPTotalDesignFl~
+#>   <chr>            <chr>    <chr>          <dbl>   <dbl>             <dbl>
+#> 1 ACE TOWNHOME     TXR1566~ 12070103        30.6   -96.3                NA
+#> 2 ASTIN AVIATION   TXR05CE~ 12070101        30.6   -96.4                NA
+#> 3 AT HOME - COLLE~ TXR1559~ 12070103        30.6   -96.3                NA
+#> 4 BEE CREEK SANIT~ TXR1564~ 12070103        30.6   -96.3                NA
+#> 5 BOSSIER PARISH ~ LAG8301~ 12070103        30.6   -96.3                NA
+#> 6 BROADSTONE TRAD~ TXR1551~ 12070101        30.6   -96.4                NA
 ```
 
-When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
+When returned as sf dataframes, the data is suitable for immediate
+spatial plotting or analysis:
 
 ``` r
 library(ggmap)
@@ -144,16 +159,18 @@ ggmap(collegestation) +
 
 ### Download discharge/emissions data
 
-Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes of permitted water discharger Discharge Monitoring Report (DMR) or permitted emitters Clean Air Act annual emissions reports.
+Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes
+of permitted water discharger Discharge Monitoring Report (DMR) or
+permitted emitters Clean Air Act annual emissions reports.
 
 ``` r
-df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '00300')
+df <- echoGetEffluent(p_id = 'TX0119407', parameter_code = '00300')
 
 df <- df %>%
-  filter(!is.na(DMRValueNmbr) & ValueTypeCode == "C1")
+  filter(!is.na(dmr_value_nmbr) & limit_value_type_code == "C1")
 
 ggplot(df) +
-  geom_line(aes(MonitoringPeriodEndDate, DMRValueNmbr)) +
+  geom_line(aes(monitoring_period_end_date, dmr_value_nmbr)) +
   theme_ipsum_rc(grid = "Y") +
   labs(x = "Monitoring period date",
        y = "Dissolved oxygen concentration (mg/l)",
@@ -164,14 +181,13 @@ ggplot(df) +
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="672" />
 
-Test Results
-------------
+## Test Results
 
 ``` r
 library(echor)
 
 date()
-#> [1] "Sun Aug 05 00:53:09 2018"
+#> [1] "Mon Jan 28 15:33:59 2019"
 
 devtools::test()
 #> v | OK F W S | Context
@@ -186,8 +202,7 @@ devtools::test()
 | |  7       | core functions return expected errors
 / |  8       | core functions return expected errors
 - |  9       | core functions return expected errors
-\ | 10       | core functions return expected errors
-v | 10       | core functions return expected errors [1.4 s]
+v |  9       | core functions return expected errors [0.9 s]
 #> 
 / |  0       | core functions return expected objects
 - |  1       | core functions return expected objects
@@ -201,15 +216,25 @@ v | 10       | core functions return expected errors [1.4 s]
 - |  9       | core functions return expected objects
 \ | 10       | core functions return expected objects
 | | 11       | core functions return expected objects
-/ | 12       | core functions return expected objects
-- | 13       | core functions return expected objects
-v | 13       | core functions return expected objects [9.5 s]
+/ | 11 1     | core functions return expected objects
+x | 11 1     | core functions return expected objects [8.2 s]
+#> -----------------------------------------------------------------------------------------------------
+#> test-expected_objects.R:49: error: core functions return sf
+#> No 'type' member at object index 0 - invalid GeoJSON
+#> 1: expect_is(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf", verbose = FALSE), "sf") at C:\BACKUP\Documents\Data-Analysis-Projects\echor/tests/testthat/test-expected_objects.R:49
+#> 2: quasi_label(enquo(object), label)
+#> 3: eval_bare(get_expr(quo), get_env(quo))
+#> 4: echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf", verbose = FALSE)
+#> 5: geojsonsf::geojson_sf(buildOutput) at C:\BACKUP\Documents\Data-Analysis-Projects\echor/R/air.R:106
+#> 6: geojson_sf.character(buildOutput)
+#> 7: rcpp_geojson_to_sf(geojson, expand_geometries)
+#> -----------------------------------------------------------------------------------------------------
 #> 
-#> == Results =================================================================================================
-#> Duration: 10.9 s
+#> == Results ==========================================================================================
+#> Duration: 9.1 s
 #> 
-#> OK:       23
-#> Failed:   0
+#> OK:       20
+#> Failed:   1
 #> Warnings: 0
 #> Skipped:  0
 ```

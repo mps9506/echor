@@ -1,3 +1,13 @@
+# echor 0.1.2
+
+## New functions
+
+* `downloadDMRs()` Returns a tidy dataframe with dmr reports. (closes #38)
+
+## Updated functions
+
+* `echoGetEffluent()` uses a different API call to returns a flat dmr report (one plant at a time). Existing arguments remain the same and still returns a dataframe. (closes #37)
+
 # echor 0.1.1
 
 * Single function returns air and water data; `echoGetFacilities()` and `echoGetReports()` wrap the individual functions to streamline functions that users need to be familiar with. (closes #33)

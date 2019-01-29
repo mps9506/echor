@@ -34,7 +34,7 @@
   
 <meta property="og:title" content="Downloads EPA ECHO DMR records of dischargers with NPDES permits — echoGetEffluent" />
 
-<meta property="og:description" content="Downloads EPA ECHO DMR records of dischargers with NPDES permits" />
+<meta property="og:description" content="Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1.9999</span>
       </span>
     </div>
 
@@ -116,7 +116,7 @@
 
     <div class="ref-description">
     
-    <p>Downloads EPA ECHO DMR records of dischargers with NPDES permits</p>
+    <p>Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive.</p>
     
     </div>
 
@@ -127,7 +127,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>p_id</th>
-      <td><p>Character string specify the identifier for the service. Required.</p></td>
+      <td><p>Character string specify the identifier for the service. Required. Case sensitive.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
@@ -149,7 +149,32 @@
 
 <span class='co'>## Retrieve single DMR for flow</span>
 
-<span class='fu'>echoGetEffluent</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'tx0119407'</span>, <span class='kw'>parameter_code</span> <span class='kw'>=</span> <span class='st'>'50050'</span>)</div><div class='output co'>#&gt; # A tibble: 0 x 0</div></pre>
+<span class='fu'>echoGetEffluent</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'tx0119407'</span>, <span class='kw'>parameter_code</span> <span class='kw'>=</span> <span class='st'>'50050'</span>)</div><div class='output co'>#&gt; # A tibble: 0 x 61
+#&gt; # ... with 61 variables: activity_id &lt;chr&gt;, npdes_id &lt;chr&gt;, version_nmbr &lt;chr&gt;,
+#&gt; #   perm_feature_id &lt;chr&gt;, perm_feature_nmbr &lt;chr&gt;,
+#&gt; #   perm_feature_type_code &lt;chr&gt;, perm_feature_type_desc &lt;chr&gt;,
+#&gt; #   limit_set_id &lt;chr&gt;, limit_set_schedule_id &lt;chr&gt;, limit_id &lt;chr&gt;,
+#&gt; #   limit_type_code &lt;chr&gt;, limit_begin_date &lt;date&gt;, limit_end_date &lt;date&gt;,
+#&gt; #   nmbr_of_submission &lt;chr&gt;, parameter_code &lt;chr&gt;, parameter_desc &lt;chr&gt;,
+#&gt; #   monitoring_location_code &lt;chr&gt;, monitoring_location_desc &lt;chr&gt;,
+#&gt; #   stay_type_code &lt;chr&gt;, stay_type_desc &lt;chr&gt;, limit_value_id &lt;chr&gt;,
+#&gt; #   limit_value_type_code &lt;chr&gt;, limit_value_type_desc &lt;chr&gt;,
+#&gt; #   limit_value_nmbr &lt;dbl&gt;, limit_unit_code &lt;chr&gt;, limit_unit_desc &lt;chr&gt;,
+#&gt; #   standard_unit_code &lt;chr&gt;, standard_unit_desc &lt;chr&gt;,
+#&gt; #   limit_value_standard_units &lt;dbl&gt;, statistical_base_code &lt;chr&gt;,
+#&gt; #   statistical_base_short_desc &lt;chr&gt;, statistical_base_type_code &lt;chr&gt;,
+#&gt; #   statistical_base_type_desc &lt;chr&gt;, limit_value_qualifier_code &lt;chr&gt;,
+#&gt; #   stay_value_nmbr &lt;chr&gt;, dmr_event_id &lt;chr&gt;,
+#&gt; #   monitoring_period_end_date &lt;date&gt;, dmr_form_value_id &lt;chr&gt;,
+#&gt; #   value_type_code &lt;chr&gt;, value_type_desc &lt;chr&gt;, dmr_value_id &lt;chr&gt;,
+#&gt; #   dmr_value_nmbr &lt;dbl&gt;, dmr_unit_code &lt;chr&gt;, dmr_unit_desc &lt;chr&gt;,
+#&gt; #   dmr_value_standard_units &lt;dbl&gt;, dmr_value_qualifier_code &lt;chr&gt;,
+#&gt; #   value_received_date &lt;date&gt;, days_late &lt;chr&gt;, nodi_code &lt;chr&gt;,
+#&gt; #   nodi_desc &lt;chr&gt;, exceedence_pct &lt;dbl&gt;, npdes_violation_id &lt;chr&gt;,
+#&gt; #   violation_code &lt;chr&gt;, violation_desc &lt;chr&gt;, rnc_detection_code &lt;chr&gt;,
+#&gt; #   rnc_detection_desc &lt;chr&gt;, rnc_detection_date &lt;chr&gt;,
+#&gt; #   rnc_resolution_code &lt;chr&gt;, rnc_resolution_desc &lt;chr&gt;,
+#&gt; #   rnc_resolution_date &lt;chr&gt;, violation_severity &lt;chr&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

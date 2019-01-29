@@ -136,13 +136,13 @@ ggmap(collegestation) +
 Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes of permitted water discharger Discharge Monitoring Report (DMR) or permitted emitters Clean Air Act annual emissions reports.
 
 ```{r}
-df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '00300')
+df <- echoGetEffluent(p_id = 'TX0119407', parameter_code = '00300')
 
 df <- df %>%
-  filter(!is.na(DMRValueNmbr) & ValueTypeCode == "C1")
+  filter(!is.na(dmr_value_nmbr) & limit_value_type_code == "C1")
 
 ggplot(df) +
-  geom_line(aes(MonitoringPeriodEndDate, DMRValueNmbr)) +
+  geom_line(aes(monitoring_period_end_date, dmr_value_nmbr)) +
   theme_ipsum_rc(grid = "Y") +
   labs(x = "Monitoring period date",
        y = "Dissolved oxygen concentration (mg/l)",

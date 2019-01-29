@@ -7,7 +7,7 @@
 echoGetEffluent(p_id, verbose = FALSE, ...)
 }
 \arguments{
-\item{p_id}{Character string specify the identifier for the service. Required.}
+\item{p_id}{Character string specify the identifier for the service. Required. Case sensitive.}
 
 \item{verbose}{Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE}
 
@@ -17,7 +17,7 @@ echoGetEffluent(p_id, verbose = FALSE, ...)
 Returns a dataframe.
 }
 \description{
-Downloads EPA ECHO DMR records of dischargers with NPDES permits
+Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive.
 }
 \examples{
 \donttest{

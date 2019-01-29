@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Search parameter codes for Clean Water Act permits on EPA ECHO — echoWaterGetParams • echor</title>
+<title>Download Multiple DMRs — downloadDMRs • echor</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Search parameter codes for Clean Water Act permits on EPA ECHO — echoWaterGetParams" />
+<meta property="og:title" content="Download Multiple DMRs — downloadDMRs" />
 
-<meta property="og:description" content="Returns a dataframe of parameter codes and descriptions." />
+<meta property="og:description" content="Returns DMRs in a nested list using echoGetEffluent(). Uses a dataframe with a column of p_id numbers. Please note that p_id's are case sensitive." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,47 +109,51 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Search parameter codes for Clean Water Act permits on EPA ECHO</h1>
+    <h1>Download Multiple DMRs</h1>
     
-    <div class="hidden name"><code>echoWaterGetParams.Rd</code></div>
+    <div class="hidden name"><code>downloadDMRs.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Returns a dataframe of parameter codes and descriptions.</p>
+    <p>Returns DMRs in a nested list using <code><a href='echoGetEffluent.html'>echoGetEffluent()</a></code>. Uses a dataframe with a column of p_id numbers. Please note that p_id's are case sensitive.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>code</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>downloadDMRs</span>(<span class='no'>df</span>, <span class='no'>idColumn</span>, <span class='kw'>pBar</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>term</th>
-      <td><p>Character string specifying the parameter search term. Partial or complete search phrase or word.</p></td>
+      <th>df</th>
+      <td><p>dataframe with column of id numbers</p></td>
     </tr>
     <tr>
-      <th>code</th>
-      <td><p>Character string specifying the parameter search code value.</p></td>
+      <th>idColumn</th>
+      <td><p>unquoted string, name of column containing the p_id permit numbers</p></td>
     </tr>
     <tr>
-      <th>verbose</th>
-      <td><p>Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE</p></td>
+      <th>pBar</th>
+      <td><p>logical, display a progress bar? Defaults to TRUE</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional arguments passed to echoGetEffluent</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns a dataframe.</p>
+    <p>dataframe df, with a column containing the discharge monitoring reports downloaded with echoGetEffluentSummary</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## These examples require an internet connection to run</span>
+    <pre class="examples"><div class='input'><span class='co'>## This example requires an internet connection to run</span>
 
-<span class='co'>## Retrieve parameter codes for dissolved oxygen</span>
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>term</span> <span class='kw'>=</span> <span class='st'>"Oxygen, dissolved"</span>)</div><div class='output co'>#&gt; # A tibble: 0 x 0</div><div class='input'>
-<span class='fu'>echoWaterGetParams</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"00300"</span>)</div><div class='output co'>#&gt; # A tibble: 0 x 0</div></pre>
+<span class='co'>## Retrieve multiple DMRs for flow</span>
+
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>data_frame</span>(<span class='st'>"p_id"</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'TX0119407'</span>, <span class='st'>'TX0132187'</span>, <span class='st'>'TX040237'</span>))</div><div class='output co'>#&gt; <span class='error'>Error in data_frame(p_id = c("TX0119407", "TX0132187", "TX040237")): could not find function "data_frame"</span></div><div class='input'><span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>downloadDMRs</span>(<span class='no'>df</span>, <span class='no'>p_id</span>)</div><div class='output co'>#&gt; <span class='error'>Error: evaluation nested too deeply: infinite recursion / options(expressions=)?</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -2291,10 +2291,106 @@
                 "Description": "Contains flags that identify what web accessible documents are available for the facility."
             },
             {
-                "ColumnName": "SCORE",
+                "ColumnName": "E90_EXCEEDS_5YR",
                 "DataType": "NUMBER",
                 "DataLength": "22",
                 "ColumnID": "287",
+                "ObjectName": "E90Exceeds5yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_EXCEEDS_4YR",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "288",
+                "ObjectName": "E90Exceeds4yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_EXCEEDS_3YR",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "289",
+                "ObjectName": "E90Exceeds3yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_EXCEEDS_2YR",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "290",
+                "ObjectName": "E90Exceeds2yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_EXCEEDS_1YR",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "291",
+                "ObjectName": "E90Exceeds1yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_POLLUTANTS_5YR",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "292",
+                "ObjectName": "E90Pollutants5yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_POLLUTANTS_4YR",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "293",
+                "ObjectName": "E90Pollutants4yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_POLLUTANTS_3YR",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "294",
+                "ObjectName": "E90Pollutants3yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_POLLUTANTS_2YR",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "295",
+                "ObjectName": "E90Pollutants2yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "E90_POLLUTANTS_1YR",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "296",
+                "ObjectName": "E90Pollutants1yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "FAC_COUNTY_NAME",
+                "DataType": "VARCHAR2",
+                "DataLength": "100",
+                "ColumnID": "297",
+                "ObjectName": "FacCountyName",
+                "Description": null
+            },
+            {
+                "ColumnName": "FAC_STD_COUNTY_NAME",
+                "DataType": "VARCHAR2",
+                "DataLength": "300",
+                "ColumnID": "298",
+                "ObjectName": "FacStdCountyName",
+                "Description": null
+            },
+            {
+                "ColumnName": "SCORE",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "299",
                 "ObjectName": "Score",
                 "Description": null
             }

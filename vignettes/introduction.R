@@ -66,6 +66,12 @@ knitr::kable(head(df), "html") %>%
 ## ------------------------------------------------------------------------
 echoWaterGetParams(term = "Oxygen, dissolved")
 
+## ------------------------------------------------------------------------
+df <- tibble::tibble(permit = c('TX0119407', 'TX040237'))
+df <- downloadDMRs(df, idColumn = permit)
+df <- tidyr::unnest(df)
+tibble::glimpse(df)
+
 ## ----eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE---------
 #  ## Sample code only,
 #  ## This example requires the development
