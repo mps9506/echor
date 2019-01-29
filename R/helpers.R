@@ -12,6 +12,8 @@
 #'
 #' @import dplyr
 #' @import rlang
+#' @importFrom tibble as_tibble
+#' @importFrom tibble is_tibble
 #' @return dataframe df, with a column containing the discharge monitoring reports downloaded with echoGetEffluentSummary
 #' @export
 #' @examples \donttest{
@@ -25,8 +27,15 @@
 
 downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
 
-  ## convert df to tibble
-  df <- tibble::as_tibble(df)
+  ##  check that df is a tibble or data.frame
+  if (is.data.frame(df) == FALSE) {
+    stop("argument df must be a data.frame or tibble")
+  }
+
+  if (tibble::is_tibble(df) == FALSE) {
+    ## convert data.frame to tibble
+    df <- tibble::as_tibble(df)
+  }
 
   idColumn <- enquo(idColumn)
   data <- select(df, !!idColumn)
@@ -41,6 +50,9 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
                                  # update the progress bar (tick()) and print progress (print())
                                  pb$tick()$print()
 
+                                 # sleep for 1 sec between calls to keep from ticking off ECHO
+                                 Sys.sleep(1)
+
                                  echoGetEffluent(p_id = ..1,
                                                  ...)
                                }, ...))
@@ -50,6 +62,9 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
     df <- df %>%
       mutate(dmr = purrr::pmap(data,
                                ~ {
+                                 # sleep for 1 sec between calls to keep from ticking off ECHO
+                                 Sys.sleep(1)
+
                                  echoGetEffluent(p_id = ..1,
                                                  ...)
                                }, ...))
