@@ -224,10 +224,21 @@ downloadEffluentChart <- function(p_id, verbose, queryDots) {
   info <- httr::content(request, as = "raw")
 
   info <- readr::read_csv(info, col_names = TRUE,
-                          ## Would prefer this not be hard-coded in case csv changes format later
-                          col_types = "cccccccccccDDccccccccccdccccdcccccccDccccdccdcDcccdcccccccccc",
+                          ## Would prefer col_types not be hard-coded in case csv changes format later
+                          ## this just specs the columns that readr reads incorrectly
+                          ## col_types = "cccccccccccDDccccccccccdccccdcccccccDccccdccdcDcccdcccccccccc",
+                          col_types = readr::cols(
+                            activity_id = readr::col_character(),
+                            perm_feature_id = readr::col_character(),
+                            limit_value_id = readr::col_character(),
+                            dmr_event_id = readr::col_character(),
+                            dmr_form_value_id = readr::col_character(),
+                            dmr_value_id = readr::col_character(),
+                            npdes_violation_id = readr::col_character()
+                          ),
                           na = " ",
-                          locale = readr::locale(date_format = "%m/%d/%Y"))
+                          locale = readr::locale(date_format = "%m/%d/%Y"),
+                          progress = FALSE)
   return(info)
 }
 
