@@ -1743,6 +1743,24 @@
                 },
                 {
                     "RegistryId": "110000350174",
+                    "Program": "NEI",
+                    "System": "NEI",
+                    "ProgramSysId": "8547211",
+                    "Pollutant": "Primary PM10 (filterables and condensibles)",
+                    "UnitsOfMeasure": "Pounds",
+                    "Year1": "1,241,120.00",
+                    "Year2": null,
+                    "Year3": null,
+                    "Year4": "877,540.00",
+                    "Year5": null,
+                    "Year6": null,
+                    "Year7": "268,380.00",
+                    "Year8": null,
+                    "Year9": null,
+                    "Year10": null
+                },
+                {
+                    "RegistryId": "110000350174",
                     "Program": "GHG",
                     "System": "GHG",
                     "ProgramSysId": "1000828",
@@ -1890,24 +1908,6 @@
                     "Program": "NEI",
                     "System": "NEI",
                     "ProgramSysId": "8547211",
-                    "Pollutant": "Primary PM10 (filterables and condensibles)",
-                    "UnitsOfMeasure": "Pounds",
-                    "Year1": "1,241,120.00",
-                    "Year2": null,
-                    "Year3": null,
-                    "Year4": "877,540.00",
-                    "Year5": null,
-                    "Year6": null,
-                    "Year7": "268,380.00",
-                    "Year8": null,
-                    "Year9": null,
-                    "Year10": null
-                },
-                {
-                    "RegistryId": "110000350174",
-                    "Program": "NEI",
-                    "System": "NEI",
-                    "ProgramSysId": "8547211",
                     "Pollutant": "Styrene",
                     "UnitsOfMeasure": "Pounds",
                     "Year1": "29.97",
@@ -1971,26 +1971,6 @@
                 },
                 {
                     "Statute": "CAA",
-                    "EPASystem": "AIR",
-                    "SourceID": "NC0000003706500036",
-                    "Universe": "Major Emissions",
-                    "NAICS": "221112",
-                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
-                    "SIC": "4911",
-                    "FacilityStatus": "Operating"
-                },
-                {
-                    "Statute": "CAA",
-                    "EPASystem": "EIS",
-                    "SourceID": "8547211",
-                    "Universe": "",
-                    "NAICS": "221112",
-                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
-                    "SIC": null,
-                    "FacilityStatus": "OPERATING"
-                },
-                {
-                    "Statute": "CAA",
                     "EPASystem": "CAMDBS",
                     "SourceID": "2713",
                     "Universe": "",
@@ -2008,6 +1988,26 @@
                     "NAICSDesc": null,
                     "SIC": null,
                     "FacilityStatus": null
+                },
+                {
+                    "Statute": "CAA",
+                    "EPASystem": "AIR",
+                    "SourceID": "NC0000003706500036",
+                    "Universe": "Major Emissions",
+                    "NAICS": "221112",
+                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
+                    "SIC": "4911",
+                    "FacilityStatus": "Operating"
+                },
+                {
+                    "Statute": "CAA",
+                    "EPASystem": "EIS",
+                    "SourceID": "8547211",
+                    "Universe": "",
+                    "NAICS": "221112",
+                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
+                    "SIC": null,
+                    "FacilityStatus": "OPERATING"
                 },
                 {
                     "Statute": "EP313",
