@@ -70,7 +70,7 @@ head(df)
 #> 3 AT HOME -~ TXR15591P 2301 EARL~ COLLEG~ TX       ""               77845~
 #> 4 BEE CREEK~ TXR15647M THE SITE ~ COLLEG~ TX       ""               77845 
 #> 5 BOSSIER P~ LAG830191 3228 BARK~ BENTON  LA       ""               71111 
-#> 6 BROADSTON~ TXR15515C 8000 ATLA~ BRYAN   TX       ""               77807~
+#> 6 BROADSTON~ TXR10F50H NW OF ATL~ BRYAN   TX       ""               77807 
 #> # ... with 19 more variables: MasterExternalPermitNmbr <chr>,
 #> #   RegistryID <chr>, CWPCounty <chr>, CWPEPARegion <chr>,
 #> #   FacDerivedHuc <chr>, FacLat <dbl>, FacLong <dbl>,
@@ -107,7 +107,7 @@ head(df)
 #> 3 AT HOME - COLLE~ TXR1559~ 12070103        30.6   -96.3                NA
 #> 4 BEE CREEK SANIT~ TXR1564~ 12070103        30.6   -96.3                NA
 #> 5 BOSSIER PARISH ~ LAG8301~ 12070103        30.6   -96.3                NA
-#> 6 BROADSTONE TRAD~ TXR1551~ 12070101        30.6   -96.4                NA
+#> 6 BROADSTONE TRAD~ TXR10F5~ 12070101        30.6   -96.4                NA
 ```
 
 When returned as sf dataframes, the data is suitable for immediate
@@ -187,7 +187,7 @@ ggplot(df) +
 library(echor)
 
 date()
-#> [1] "Mon Jan 28 15:33:59 2019"
+#> [1] "Fri Feb 01 20:21:37 2019"
 
 devtools::test()
 #> v | OK F W S | Context
@@ -202,7 +202,7 @@ devtools::test()
 | |  7       | core functions return expected errors
 / |  8       | core functions return expected errors
 - |  9       | core functions return expected errors
-v |  9       | core functions return expected errors [0.9 s]
+v |  9       | core functions return expected errors [1.1 s]
 #> 
 / |  0       | core functions return expected objects
 - |  1       | core functions return expected objects
@@ -216,25 +216,15 @@ v |  9       | core functions return expected errors [0.9 s]
 - |  9       | core functions return expected objects
 \ | 10       | core functions return expected objects
 | | 11       | core functions return expected objects
-/ | 11 1     | core functions return expected objects
-x | 11 1     | core functions return expected objects [8.2 s]
-#> -----------------------------------------------------------------------------------------------------
-#> test-expected_objects.R:49: error: core functions return sf
-#> No 'type' member at object index 0 - invalid GeoJSON
-#> 1: expect_is(echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf", verbose = FALSE), "sf") at C:\BACKUP\Documents\Data-Analysis-Projects\echor/tests/testthat/test-expected_objects.R:49
-#> 2: quasi_label(enquo(object), label)
-#> 3: eval_bare(get_expr(quo), get_env(quo))
-#> 4: echoAirGetFacilityInfo(p_pid = "NC0000003706500036", output = "sf", verbose = FALSE)
-#> 5: geojsonsf::geojson_sf(buildOutput) at C:\BACKUP\Documents\Data-Analysis-Projects\echor/R/air.R:106
-#> 6: geojson_sf.character(buildOutput)
-#> 7: rcpp_geojson_to_sf(geojson, expand_geometries)
-#> -----------------------------------------------------------------------------------------------------
+/ | 12       | core functions return expected objects
+- | 13       | core functions return expected objects
+v | 13       | core functions return expected objects [10.0 s]
 #> 
-#> == Results ==========================================================================================
-#> Duration: 9.1 s
+#> == Results =================================================================================================
+#> Duration: 11.1 s
 #> 
-#> OK:       20
-#> Failed:   1
+#> OK:       22
+#> Failed:   0
 #> Warnings: 0
 #> Skipped:  0
 ```
