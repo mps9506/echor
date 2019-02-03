@@ -15,7 +15,11 @@ There are currently no downstream dependencies for this package.
 
 ## Comments
 
-This is a release of version 0.1.2.
+This is a resubmission of version 0.1.2 release and corrects the follwing problems in the previous submission:
+
+* Non-portable files paths that exceed 100 bytes are fixed
+
+Other comments:
 
 * Examples are wrapped in \donttest{} since they rely on an internet connection and responses from the server can take time.
 
