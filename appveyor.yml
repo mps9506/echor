@@ -16,19 +16,14 @@ cache:
 # Adapt as necessary starting from here
 
 environment:
+  NOT_CRAN: true
   global:
-   USE_RTOOLS: true
-
-   matrix:
-  - R_VERSION: devel
-    R_ARCH: x64
-
-  - R_VERSION: devel
-    R_ARCH: i386
-
-  - R_VERSION: release
-    R_ARCH: x64
-
+    WARNINGS_ARE_ERRORS: 1
+  matrix:
+    - R_ARCH: i386
+      GCC_PATH: mingw_32
+    - R_ARCH: x64
+      GCC_PATH: mingw_64
 
 build_script:
   - travis-tool.sh install_deps
