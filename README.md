@@ -1,24 +1,19 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+echor
+=====
 
-# echor
+[![CRAN status](https://www.r-pkg.org/badges/version/echor)](https://cran.r-project.org/package=echor)
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/echor)](https://cran.r-project.org/package=echor)
+[![Travis build status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor) [![Coverage status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
 
-[![Travis build
-status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor)
-[![Coverage
-status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
+Overview
+--------
 
-## Overview
+echor downloads wastewater discharge and air emission data for EPA permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
 
-echor downloads wastewater discharge and air emission data for EPA
-permitted facilities using the [EPA ECHO API](https://echo.epa.gov/).
-
-## Installation
+Installation
+------------
 
 echor is on CRAN:
 
@@ -33,21 +28,19 @@ Or install the development version from github:
 devtools::install_github("mps9506/echor")
 ```
 
-## Usage
+Usage
+-----
 
-[Getting
-started](https://mps9506.github.io/echor/articles/introduction.html)
+[Getting started](https://mps9506.github.io/echor/articles/introduction.html)
 
 [Functions](https://mps9506.github.io/echor/reference/index.html)
 
-## Examples
+Examples
+--------
 
 ### Download information about facilities with an NPDES permit
 
-We can look up plants by permit id, bounding box, and numerous other
-parameters. I plan on providing documentation of available parameters.
-However, arguments can be looked up here:
-[get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
+We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: [get\_cwa\_rest\_services\_get\_facility\_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
 
 ``` r
 library(tidyverse)
@@ -63,33 +56,25 @@ df <- echoWaterGetFacilityInfo(output = "df",
 
 head(df)
 #> # A tibble: 6 x 26
-#>   CWPName    SourceID  CWPStreet  CWPCity CWPState CWPStateDistrict CWPZip
-#>   <chr>      <chr>     <chr>      <chr>   <chr>    <chr>            <chr> 
-#> 1 ACE TOWNH~ TXR15667I 2136 CHES~ COLLEG~ TX       ""               77845~
-#> 2 ASTIN AVI~ TXR05CE76 1770 GEOR~ COLLEG~ TX       ""               77845~
-#> 3 AT HOME -~ TXR15591P 2301 EARL~ COLLEG~ TX       ""               77845~
-#> 4 BEE CREEK~ TXR15647M THE SITE ~ COLLEG~ TX       ""               77845 
-#> 5 BOSSIER P~ LAG830191 3228 BARK~ BENTON  LA       ""               71111 
-#> 6 BROADSTON~ TXR10F50H NW OF ATL~ BRYAN   TX       ""               77807 
+#>   CWPName SourceID CWPStreet CWPCity CWPState CWPStateDistrict CWPZip
+#>   <chr>   <chr>    <chr>     <chr>   <chr>    <chr>            <chr> 
+#> 1 ACE TO~ TXR1566~ 2136 CHE~ COLLEG~ TX       ""               77845~
+#> 2 ASTIN ~ TXR05CE~ 1770 GEO~ COLLEG~ TX       ""               77845~
+#> 3 AT HOM~ TXR1559~ 2301 EAR~ COLLEG~ TX       ""               77845~
+#> 4 BEE CR~ TXR1564~ THE SITE~ COLLEG~ TX       ""               77845 
+#> 5 BOSSIE~ LAG8301~ 3228 BAR~ BENTON  LA       ""               71111 
+#> 6 BROADS~ TXR1551~ 8000 ATL~ BRYAN   TX       ""               77807~
 #> # ... with 19 more variables: MasterExternalPermitNmbr <chr>,
 #> #   RegistryID <chr>, CWPCounty <chr>, CWPEPARegion <chr>,
 #> #   FacDerivedHuc <chr>, FacLat <dbl>, FacLong <dbl>,
 #> #   CWPTotalDesignFlowNmbr <dbl>, CWPActualAverageFlowNmbr <dbl>,
-#> #   ReceivingMs4Name <chr>, AssociatedPollutant <chr>,
-#> #   MsgpPermitType <chr>, CWPPermitStatusDesc <chr>,
-#> #   CWPPermitTypeDesc <chr>, CWPIssueDate <date>, CWPEffectiveDate <date>,
-#> #   CWPExpirationDate <date>, CWPSNCStatusDate <date>,
-#> #   CWPStateWaterBodyCode <chr>
+#> #   DschToMs4 <chr>, ExposedActivity <chr>, Subsector <chr>,
+#> #   CWPVersionNmbr <dbl>, SubmittedDate <date>, CWPPermitTypeDesc <chr>,
+#> #   CWPIssueDate <date>, CWPTerminationDate <date>, CWPSNCStatus <chr>,
+#> #   CWPCsoOutfalls <dbl>
 ```
 
-The ECHO database can provide over 270 different columns. echor returns
-a subset of these columns that should work for most users. However, you
-can specify what data you want returned. Use `echoWaterGetMeta()` to
-return a dataframe with column numbers, names, and descriptions to
-identify the columns you want returned. Then include the column numbers
-as a comma seperated string in the `qcolumns` argument. In the example
-below, the `qcolumns` argument indicates the dataframe will include
-plant name, 8-digit HUC, latitute, longitude, and total design flow.
+The ECHO database can provide over 270 different columns. echor returns a subset of these columns that should work for most users. However, you can specify what data you want returned. Use `echoWaterGetMeta()` to return a dataframe with column numbers, names, and descriptions to identify the columns you want returned. Then include the column numbers as a comma seperated string in the `qcolumns` argument. In the example below, the `qcolumns` argument indicates the dataframe will include plant name, 8-digit HUC, latitute, longitude, and total design flow.
 
 ``` r
 df <- echoWaterGetFacilityInfo(output = "df", 
@@ -100,18 +85,17 @@ df <- echoWaterGetFacilityInfo(output = "df",
                                qcolumns = '1,14,23,24,25')
 head(df)
 #> # A tibble: 6 x 6
-#>   CWPName          SourceID FacDerivedHuc FacLat FacLong CWPTotalDesignFl~
-#>   <chr>            <chr>    <chr>          <dbl>   <dbl>             <dbl>
-#> 1 ACE TOWNHOME     TXR1566~ 12070103        30.6   -96.3                NA
-#> 2 ASTIN AVIATION   TXR05CE~ 12070101        30.6   -96.4                NA
-#> 3 AT HOME - COLLE~ TXR1559~ 12070103        30.6   -96.3                NA
-#> 4 BEE CREEK SANIT~ TXR1564~ 12070103        30.6   -96.3                NA
-#> 5 BOSSIER PARISH ~ LAG8301~ 12070103        30.6   -96.3                NA
-#> 6 BROADSTONE TRAD~ TXR10F5~ 12070101        30.6   -96.4                NA
+#>   CWPName           SourceID FacDerivedHuc FacLat FacLong CWPTotalDesignFl~
+#>   <chr>             <chr>    <chr>          <dbl>   <dbl>             <dbl>
+#> 1 ACE TOWNHOME      TXR1566~ 12070103        30.6   -96.3                NA
+#> 2 ASTIN AVIATION    TXR05CE~ 12070101        30.6   -96.4                NA
+#> 3 AT HOME - COLLEG~ TXR1559~ 12070103        30.6   -96.3                NA
+#> 4 BEE CREEK SANITA~ TXR1564~ 12070103        30.6   -96.3                NA
+#> 5 BOSSIER PARISH R~ LAG8301~ 12070103        30.6   -96.3                NA
+#> 6 BROADSTONE TRADI~ TXR1551~ 12070101        30.6   -96.4                NA
 ```
 
-When returned as sf dataframes, the data is suitable for immediate
-spatial plotting or analysis:
+When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
 
 ``` r
 library(ggmap)
@@ -159,9 +143,7 @@ ggmap(collegestation) +
 
 ### Download discharge/emissions data
 
-Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes
-of permitted water discharger Discharge Monitoring Report (DMR) or
-permitted emitters Clean Air Act annual emissions reports.
+Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes of permitted water discharger Discharge Monitoring Report (DMR) or permitted emitters Clean Air Act annual emissions reports.
 
 ``` r
 df <- echoGetEffluent(p_id = 'TX0119407', parameter_code = '00300')
@@ -181,50 +163,64 @@ ggplot(df) +
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="672" />
 
-## Test Results
+Test Results
+------------
 
 ``` r
 library(echor)
 
 date()
-#> [1] "Fri Feb 01 20:21:37 2019"
+#> [1] "Fri Sep 13 16:50:32 2019"
 
 devtools::test()
-#> v | OK F W S | Context
+#> v |  OK F W S | Context
 #> 
-/ |  0       | core functions return expected errors
-- |  1       | core functions return expected errors
-\ |  2       | core functions return expected errors
-| |  3       | core functions return expected errors
-/ |  4       | core functions return expected errors
-- |  5       | core functions return expected errors
-\ |  6       | core functions return expected errors
-| |  7       | core functions return expected errors
-/ |  8       | core functions return expected errors
-- |  9       | core functions return expected errors
-v |  9       | core functions return expected errors [1.1 s]
+/ |   0       | core functions return expected errors
+- |   5       | core functions return expected errors
+v |   9       | core functions return expected errors [3.6 s]
 #> 
-/ |  0       | core functions return expected objects
-- |  1       | core functions return expected objects
-\ |  2       | core functions return expected objects
-| |  3       | core functions return expected objects
-/ |  4       | core functions return expected objects
-- |  5       | core functions return expected objects
-\ |  6       | core functions return expected objects
-| |  7       | core functions return expected objects
-/ |  8       | core functions return expected objects
-- |  9       | core functions return expected objects
-\ | 10       | core functions return expected objects
-| | 11       | core functions return expected objects
-/ | 12       | core functions return expected objects
-- | 13       | core functions return expected objects
-v | 13       | core functions return expected objects [10.0 s]
+/ |   0       | core functions return expected objects
+- |   1       | core functions return expected objects
+| |   3       | core functions return expected objects
+/ |   3   1   | core functions return expected objects
+\ |   5   1   | core functions return expected objects
+| |   5   2   | core functions return expected objects
+- |   7   2   | core functions return expected objects
+\ |   8   2   | core functions return expected objects
+- |  11   2   | core functions return expected objects
+\ |  12   2   | core functions return expected objects
+v |  13   2   | core functions return expected objects [2.2 s]
+#> -------------------------------------------------------------------------------------------
+#> test-expected_objects.R:31: warning: core functions return tbl_df
+#> 158 parsing failures.
+#> row col   expected    actual         file
+#>   1  -- 61 columns 1 columns <raw vector>
+#>   2  -- 61 columns 1 columns <raw vector>
+#>   4  -- 61 columns 1 columns <raw vector>
+#>   5  -- 61 columns 1 columns <raw vector>
+#>   7  -- 61 columns 1 columns <raw vector>
+#> ... ... .......... ......... ............
+#> See problems(...) for more details.
 #> 
-#> == Results =================================================================================================
-#> Duration: 11.1 s
+#> 
+#> test-expected_objects.R:41: warning: core functions return tbl_df
+#> 158 parsing failures.
+#> row col   expected    actual         file
+#>   1  -- 61 columns 1 columns <raw vector>
+#>   2  -- 61 columns 1 columns <raw vector>
+#>   4  -- 61 columns 1 columns <raw vector>
+#>   5  -- 61 columns 1 columns <raw vector>
+#>   7  -- 61 columns 1 columns <raw vector>
+#> ... ... .......... ......... ............
+#> See problems(...) for more details.
+#> 
+#> -------------------------------------------------------------------------------------------
+#> 
+#> == Results ================================================================================
+#> Duration: 5.8 s
 #> 
 #> OK:       22
 #> Failed:   0
-#> Warnings: 0
+#> Warnings: 2
 #> Skipped:  0
 ```
