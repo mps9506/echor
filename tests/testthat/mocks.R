@@ -10,7 +10,7 @@
 #   request %>%
 #     gsub_request(api_root, "api/", fixed = TRUE)
 # })
-#
+
 #
 # httptest::start_capturing()
 # echoAirGetFacilityInfo(
@@ -32,7 +32,7 @@
 # httptest::start_capturing()
 # echoGetEffluent(p_id = "tx0119407", parameter_code = "50050")
 # httptest::stop_capturing()
-#
+# #
 # httptest::start_capturing()
 # echoGetReports(program = "caa",
 #       p_id = '110000350174',
@@ -42,7 +42,7 @@
 # httptest::start_capturing()
 # echoGetReports(
 #         program = "cwa",
-#         p_id = "TX0119407",
+#         p_id = "tx0119407",
 #         parameter_code = "50050",
 #         verbose = FALSE
 #       )

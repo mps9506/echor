@@ -41,7 +41,7 @@ with_mock_api({
     expect_is(
       echoGetReports(
         program = "cwa",
-        p_id = "TX0119407",
+        p_id = "tx0119407",
         parameter_code = "50050",
         verbose = FALSE
       ),
