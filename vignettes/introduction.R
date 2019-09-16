@@ -82,7 +82,8 @@ echoWaterGetParams(term = "Oxygen, dissolved")
 ## ------------------------------------------------------------------------
 df <- tibble::tibble(permit = c('TX0119407', 'TX040237'))
 df <- downloadDMRs(df, idColumn = permit)
-df <- tidyr::unnest(df)
+df <- df %>%
+  tidyr::unnest(dmr)
 tibble::glimpse(df)
 
 ## ----eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE---------
