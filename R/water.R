@@ -213,7 +213,7 @@ downloadEffluentChart <- function(p_id, verbose, queryDots) {
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
-  request <- httr::GET(getURL)
+  request <- httr::GET(getURL, httr::accept("text/csv"))
 
   ## Print status message
   if (isTRUE(verbose)) {
