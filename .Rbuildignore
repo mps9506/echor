@@ -14,4 +14,3 @@
 ^\.lintr$
 ^paper$
 ^revdep$
-tests/testthat/api$
