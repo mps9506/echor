@@ -309,7 +309,8 @@ Multiple DMRs can be downloaded using a helper function: `downloadDMRs`:
 ```{r}
 df <- tibble::tibble(permit = c('TX0119407', 'TX040237'))
 df <- downloadDMRs(df, idColumn = permit)
-df <- tidyr::unnest(df)
+df <- df %>%
+  tidyr::unnest(dmr)
 tibble::glimpse(df)
 ```
 

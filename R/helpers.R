@@ -51,7 +51,7 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
                                  pb$tick()$print()
 
                                  # sleep for 1 sec between calls to keep from ticking off ECHO
-                                 Sys.sleep(1)
+                                 Sys.sleep(10)
 
                                  echoGetEffluent(p_id = ..1,
                                                  ...)
@@ -63,7 +63,7 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
       mutate(dmr = purrr::pmap(data,
                                ~ {
                                  # sleep for 1 sec between calls to keep from ticking off ECHO
-                                 Sys.sleep(1)
+                                 Sys.sleep(10)
 
                                  echoGetEffluent(p_id = ..1,
                                                  ...)
