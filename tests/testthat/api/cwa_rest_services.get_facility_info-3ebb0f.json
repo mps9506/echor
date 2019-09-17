@@ -1,7 +1,7 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "396",
+        "QueryID": "319",
         "QueryRows": "1",
         "IndianCountryRows": "0",
         "SVRows": "0",
@@ -16,8 +16,8 @@
         "TotalPenalties": "$0",
         "BadSystemIDs": null,
         "IconBaseURL": "https://echo.epa.gov/app/map/icons/",
-        "PopUpBaseURL": "api/cwa_rest_services.pop_up?p_id=",
-        "ServiceBaseURL": "api/cwa_rest_services.get_facility_info",
+        "PopUpBaseURL": "cwa_rest_services.pop_up?p_id=",
+        "ServiceBaseURL": "cwa_rest_services.get_facility_info",
         "QueryParameters": [
             {
                 "QP": "output",
