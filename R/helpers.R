@@ -21,8 +21,8 @@
 #'
 #' ## Retrieve multiple DMRs for flow
 #'
-#' df <- tibble("p_id" = c('TX0119407', 'TX0132187', 'TX040237'))
-#' df <- downloadDMRs(df, p_id)
+#' df <- tibble::tibble("id" = c('TX0119407', 'TX0132187', 'TX040237'))
+#' df <- downloadDMRs(df, id)
 #' }
 
 downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
