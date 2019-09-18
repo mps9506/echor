@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -149,20 +149,20 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This example requires an internet connection to run</span>
 
-<span class='fu'>echoGetCAAPR</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'110000350174'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1,070 x 15</span><span>
-#&gt;    Name    SourceID  Street  City  State Zip   County Region Latitude Longitude
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 2</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 3</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 4</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 5</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 6</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 7</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'> 9</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'>10</span><span> CP&amp;L -~ 11000035~ 801 SU~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
-#&gt; </span><span style='color: #555555;'># ... with 1,060 more rows, and 5 more variables: Pollutant </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
+<span class='fu'>echoGetCAAPR</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'110000350174'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 930 x 15</span><span>
+#&gt;    Name  SourceID Street City  State Zip   County Region Latitude Longitude
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 2</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 3</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 4</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 5</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 6</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 7</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 8</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'> 9</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'>10</span><span> CP&amp;L~ 1100003~ 801 S~ WILM~ NC    28401 NEW H~ 04         34.3     -</span><span style='color: #BB0000;'>78.0</span><span>
+#&gt; </span><span style='color: #555555;'># ... with 920 more rows, and 5 more variables: Pollutant </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
 #&gt; #   UnitsOfMeasure </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, Program </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, Year </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, Discharge </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span><div class='input'>
 </div></pre>
   </div>

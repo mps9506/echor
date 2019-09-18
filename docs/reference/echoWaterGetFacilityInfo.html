@@ -66,7 +66,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-wat
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -156,27 +156,27 @@ Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-s
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
 <span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
 <span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 188 x 26</span><span>
-#&gt;    CWPName     SourceID  CWPStreet     CWPCity CWPState CWPStateDistrict CWPZip
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span> ACE TOWNHO~ TXR15667I 2136 CHESTNU~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845~
-#&gt; </span><span style='color: #555555;'> 2</span><span> AGGIE ACRE~ TX0132187 800 FT SE OF~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845 
-#&gt; </span><span style='color: #555555;'> 3</span><span> AGRIVEST S~ TX0121240 SWISHER COUN~ BRYAN   TX       </span><span style='color: #555555;'>""</span><span>               00000 
-#&gt; </span><span style='color: #555555;'> 4</span><span> ALENCO WIN~ TXR05U808 615 W CARSON~ BRYAN   TX       </span><span style='color: #555555;'>""</span><span>               77801~
-#&gt; </span><span style='color: #555555;'> 5</span><span> ANDREWS OR~ TXR15193R 1098 ARRINGT~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845 
-#&gt; </span><span style='color: #555555;'> 6</span><span> ASTIN AVIA~ TXR05CE76 1770 GEORGE ~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845~
-#&gt; </span><span style='color: #555555;'> 7</span><span> AT HOME - ~ TXR15591P 2301 EARL RU~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845~
-#&gt; </span><span style='color: #555555;'> 8</span><span> ATKINS STR~ TX0027952 601 ATKINS S~ BRYAN   TX       </span><span style='color: #555555;'>""</span><span>               77801 
-#&gt; </span><span style='color: #555555;'> 9</span><span> ATOFINA CH~ TX0108863 SW OF THE MO~ BRYAN   TX       </span><span style='color: #555555;'>""</span><span>               77801 
-#&gt; </span><span style='color: #555555;'>10</span><span> AUSTINS CO~ TXR15651L 1000 FT WEST~ BRYAN   TX       </span><span style='color: #555555;'>""</span><span>               77803 
-#&gt; </span><span style='color: #555555;'># ... with 178 more rows, and 19 more variables:
+<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 241 x 26</span><span>
+#&gt;    CWPName SourceID CWPStreet CWPCity CWPState CWPStateDistrict CWPZip
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'> 1</span><span> ACE TO~ TXR1566~ 2136 CHE~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845~
+#&gt; </span><span style='color: #555555;'> 2</span><span> AGGIE ~ TX01321~ 800 FT S~ COLLEG~ TX       09               77845 
+#&gt; </span><span style='color: #555555;'> 3</span><span> AGRIVE~ TX01212~ SWISHER ~ BRYAN   TX       01               00000 
+#&gt; </span><span style='color: #555555;'> 4</span><span> ALENCO~ TXR05U8~ 615 W CA~ BRYAN   TX       </span><span style='color: #555555;'>""</span><span>               77801~
+#&gt; </span><span style='color: #555555;'> 5</span><span> ANDREW~ TXR1519~ 1098 ARR~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845 
+#&gt; </span><span style='color: #555555;'> 6</span><span> ASTIN ~ TXR05CE~ 1770 GEO~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845~
+#&gt; </span><span style='color: #555555;'> 7</span><span> AT HOM~ TXR1559~ 2301 EAR~ COLLEG~ TX       </span><span style='color: #555555;'>""</span><span>               77845~
+#&gt; </span><span style='color: #555555;'> 8</span><span> ATKINS~ TX00279~ 601 ATKI~ BRYAN   TX       09               77801 
+#&gt; </span><span style='color: #555555;'> 9</span><span> ATOFIN~ TX01088~ SW OF TH~ BRYAN   TX       09               77801 
+#&gt; </span><span style='color: #555555;'>10</span><span> AUSTIN~ TXR10F6~ NE OF BU~ BRYAN   TX       </span><span style='color: #555555;'>""</span><span>               77808 
+#&gt; </span><span style='color: #555555;'># ... with 231 more rows, and 19 more variables:
 #&gt; #   MasterExternalPermitNmbr </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, RegistryID </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, CWPCounty </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
 #&gt; #   CWPEPARegion </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, FacDerivedHuc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, FacLat </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, FacLong </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,
 #&gt; #   CWPTotalDesignFlowNmbr </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, CWPActualAverageFlowNmbr </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,
-#&gt; #   ReceivingMs4Name </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, AssociatedPollutant </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, MsgpPermitType </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
-#&gt; #   CWPPermitStatusDesc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, CWPPermitTypeDesc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, CWPIssueDate </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>,
-#&gt; #   CWPEffectiveDate </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>, CWPExpirationDate </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>, CWPSNCStatusDate </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>,
-#&gt; #   CWPStateWaterBodyCode </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div><div class='input'>
+#&gt; #   DschToMs4 </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, ExposedActivity </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, Subsector </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   CWPVersionNmbr </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, SubmittedDate </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>, CWPPermitTypeDesc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   CWPIssueDate </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>, CWPTerminationDate </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>, CWPSNCStatus </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   CWPCsoOutfalls </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'>
 <span class='co'>## Retrieve a simple features dataframe by bounding box</span>
 <span class='no'>spatialdata</span> <span class='kw'>&lt;-</span> <span class='fu'>echoWaterGetFacilityInfo</span>(<span class='kw'>xmin</span> <span class='kw'>=</span> <span class='st'>'-96.407563'</span>,
 <span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
