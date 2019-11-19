@@ -5,16 +5,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Access EPA 'ECHO' Data • echor</title>
+<title>Access EPA ECHO Data • echor</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
-<meta property="og:title" content="Access EPA 'ECHO' Data">
+<meta property="og:title" content="Access EPA ECHO Data">
 <meta property="og:description" content="An R interface to United States Environmental 
     Protection Agency (EPA) Environmental Compliance 
-    History Online ('ECHO') Application Program Interface
-    (API). 'ECHO' provides information about EPA permitted 
+    History Online (ECHO) Application Program Interface
+    (API). ECHO provides information about EPA permitted 
     facilities, discharges, and other reporting info 
     associated with permitted entities. Data are obtained 
     from &lt;https://echo.epa.gov/&gt;. ">
@@ -25,7 +26,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-article">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -45,7 +46,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -77,13 +78,9 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    
 
-    
-    
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+      </header><div class="row">
+  <div class="contents col-md-9">
 <div id="echor" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#echor" class="anchor"></a>echor</h1></div>
@@ -98,10 +95,10 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>echor is on CRAN:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"echor"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"echor"</span>)</a></code></pre></div>
 <p>Or install the development version from github:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"></a>
-<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"mps9506/echor"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/reexports.html">install_github</a></span>(<span class="st">"mps9506/echor"</span>)</a></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -116,8 +113,8 @@
 <h3 class="hasAnchor">
 <a href="#download-information-about-facilities-with-an-npdes-permit" class="anchor"></a>Download information about facilities with an NPDES permit</h3>
 <p>We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: <a href="https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info">get_cwa_rest_services_get_facility_info</a></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tidyverse)</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(echor)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyverse)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(echor)</a>
 <a class="sourceLine" id="cb3-3" title="3"></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="co">## echoWaterGetFacilityInfo() will return a dataframe or simple features (sf) dataframe.</span></a>
 <a class="sourceLine" id="cb3-5" title="5"></a>
@@ -125,47 +122,43 @@
 <a class="sourceLine" id="cb3-7" title="7">                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>, </a>
 <a class="sourceLine" id="cb3-8" title="8">                               <span class="dt">ymin =</span> <span class="st">'30.583572'</span>, </a>
 <a class="sourceLine" id="cb3-9" title="9">                               <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>, </a>
-<a class="sourceLine" id="cb3-10" title="10">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</a>
-<a class="sourceLine" id="cb3-11" title="11"></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(df)</a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; # A tibble: 6 x 26</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt;   CWPName SourceID CWPStreet CWPCity CWPState CWPStateDistrict CWPZip</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt; </span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 1 ACE TO~ TXR1566~ 2136 CHE~ COLLEG~ TX       ""               77845~</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 2 ASTIN ~ TXR05CE~ 1770 GEO~ COLLEG~ TX       ""               77845~</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 3 AT HOM~ TXR1559~ 2301 EAR~ COLLEG~ TX       ""               77845~</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 4 BEE CR~ TXR1564~ THE SITE~ COLLEG~ TX       ""               77845 </span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 5 BOSSIE~ LAG8301~ 3228 BAR~ BENTON  LA       ""               71111 </span></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; 6 BROADS~ TXR10F5~ NW OF AT~ BRYAN   TX       ""               77807 </span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; # ... with 19 more variables: MasterExternalPermitNmbr &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-23" title="23"><span class="co">#&gt; #   RegistryID &lt;chr&gt;, CWPCounty &lt;chr&gt;, CWPEPARegion &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt; #   FacDerivedHuc &lt;chr&gt;, FacLat &lt;dbl&gt;, FacLong &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; #   CWPTotalDesignFlowNmbr &lt;dbl&gt;, CWPActualAverageFlowNmbr &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; #   DschToMs4 &lt;chr&gt;, ExposedActivity &lt;chr&gt;, Subsector &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; #   CWPVersionNmbr &lt;dbl&gt;, SubmittedDate &lt;date&gt;, CWPPermitTypeDesc &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-28" title="28"><span class="co">#&gt; #   CWPIssueDate &lt;date&gt;, CWPTerminationDate &lt;date&gt;, CWPSNCStatus &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-29" title="29"><span class="co">#&gt; #   CWPCsoOutfalls &lt;dbl&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-10" title="10">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>,</a>
+<a class="sourceLine" id="cb3-11" title="11">                               <span class="dt">p_ptype =</span> <span class="st">"NPD"</span>)</a>
+<a class="sourceLine" id="cb3-12" title="12"></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(df)</a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; # A tibble: 3 x 26</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt;   CWPName SourceID CWPStreet CWPCity CWPState CWPStateDistrict CWPZip</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt; </span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 1 CENTRA~ TX00027~ 222 IREL~ COLLEG~ TX       09               77843 </span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 2 HEAT T~ TX01065~ 0.25MI S~ COLLEG~ TX       09               77845 </span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 3 TURKEY~ TX00624~ 3000FT W~ BRYAN   TX       09               77807 </span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; # ... with 19 more variables: MasterExternalPermitNmbr &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; #   RegistryID &lt;chr&gt;, CWPCounty &lt;chr&gt;, CWPEPARegion &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; #   FacDerivedHuc &lt;chr&gt;, FacLat &lt;dbl&gt;, FacLong &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="co">#&gt; #   CWPTotalDesignFlowNmbr &lt;dbl&gt;, CWPActualAverageFlowNmbr &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt; #   DschToMs4 &lt;chr&gt;, ExposedActivity &lt;chr&gt;, Subsector &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; #   CWPVersionNmbr &lt;dbl&gt;, SubmittedDate &lt;date&gt;, CWPPermitTypeDesc &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; #   CWPIssueDate &lt;date&gt;, CWPTerminationDate &lt;date&gt;, CWPSNCStatus &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; #   CWPCsoOutfalls &lt;dbl&gt;</span></a></code></pre></div>
 <p>The ECHO database can provide over 270 different columns. echor returns a subset of these columns that should work for most users. However, you can specify what data you want returned. Use <code><a href="reference/echoWaterGetMeta.html">echoWaterGetMeta()</a></code> to return a dataframe with column numbers, names, and descriptions to identify the columns you want returned. Then include the column numbers as a comma seperated string in the <code>qcolumns</code> argument. In the example below, the <code>qcolumns</code> argument indicates the dataframe will include plant name, 8-digit HUC, latitute, longitude, and total design flow.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">df &lt;-<span class="st"> </span><span class="kw"><a href="reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span>(<span class="dt">output =</span> <span class="st">"df"</span>, </a>
 <a class="sourceLine" id="cb4-2" title="2">                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>, </a>
 <a class="sourceLine" id="cb4-3" title="3">                               <span class="dt">ymin =</span> <span class="st">'30.583572'</span>, </a>
 <a class="sourceLine" id="cb4-4" title="4">                               <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>, </a>
 <a class="sourceLine" id="cb4-5" title="5">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>,</a>
-<a class="sourceLine" id="cb4-6" title="6">                               <span class="dt">qcolumns =</span> <span class="st">'1,14,23,24,25'</span>)</a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(df)</a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; # A tibble: 6 x 6</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt;   CWPName           SourceID FacDerivedHuc FacLat FacLong CWPTotalDesignFl~</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt;   &lt;chr&gt;             &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt; 1 ACE TOWNHOME      TXR1566~ 12070103        30.6   -96.3                NA</span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; 2 ASTIN AVIATION    TXR05CE~ 12070101        30.6   -96.4                NA</span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; 3 AT HOME - COLLEG~ TXR1559~ 12070103        30.6   -96.3                NA</span></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; 4 BEE CREEK SANITA~ TXR1564~ 12070103        30.6   -96.3                NA</span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; 5 BOSSIER PARISH R~ LAG8301~ 12070103        30.6   -96.3                NA</span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; 6 BROADSTONE TRADI~ TXR10F5~ 12070101        30.6   -96.4                NA</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-6" title="6">                               <span class="dt">qcolumns =</span> <span class="st">'1,14,23,24,25'</span>,</a>
+<a class="sourceLine" id="cb4-7" title="7">                               <span class="dt">p_ptype =</span> <span class="st">"NPD"</span>)</a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(df)</a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; # A tibble: 3 x 6</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt;   CWPName         SourceID FacDerivedHuc FacLat FacLong CWPTotalDesignFlow~</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt;   &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;               &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; 1 CENTRAL UTILIT~ TX00027~ 12070103        30.6   -96.3                0.93</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; 2 HEAT TRANSFER ~ TX01065~ 12070101        30.6   -96.4               NA   </span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; 3 TURKEY CREEK W~ TX00624~ 12070101        30.6   -96.4                0.75</span></a></code></pre></div>
 <p>When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggmap)</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sf)</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggrepel)</a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggmap)</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(sf)</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggrepel)</a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="co">## This example requires the development version of ggplot with support</span></a>
 <a class="sourceLine" id="cb5-5" title="5"><span class="co">## for geom_sf()</span></a>
 <a class="sourceLine" id="cb5-6" title="6"><span class="co">## and uses theme_ipsum_rc() from library(hrbrthemes)</span></a>
@@ -175,100 +168,94 @@
 <a class="sourceLine" id="cb5-10" title="10">                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>, </a>
 <a class="sourceLine" id="cb5-11" title="11">                               <span class="dt">ymin =</span> <span class="st">'30.583572'</span>, </a>
 <a class="sourceLine" id="cb5-12" title="12">                               <span class="dt">xmax =</span> <span class="st">'-96.281422'</span>, </a>
-<a class="sourceLine" id="cb5-13" title="13">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>)</a>
-<a class="sourceLine" id="cb5-14" title="14"></a>
-<a class="sourceLine" id="cb5-15" title="15">collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,</a>
-<a class="sourceLine" id="cb5-16" title="16">                                       <span class="fl">-96.281422</span>, <span class="fl">30.640008</span>), </a>
-<a class="sourceLine" id="cb5-17" title="17">                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">"toner"</span>)</a>
-<a class="sourceLine" id="cb5-18" title="18"></a>
-<a class="sourceLine" id="cb5-19" title="19"><span class="co">##to make labels, need to map the coords and use geom_text :(</span></a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="co">## can't help but think there is an easier way to do this</span></a>
-<a class="sourceLine" id="cb5-21" title="21"></a>
-<a class="sourceLine" id="cb5-22" title="22">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-23" title="23"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb5-24" title="24">    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),</a>
-<a class="sourceLine" id="cb5-25" title="25">    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb5-26" title="26">    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb5-27" title="27">  )</a>
-<a class="sourceLine" id="cb5-28" title="28"></a>
-<a class="sourceLine" id="cb5-29" title="29"><span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb5-30" title="30"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, </a>
-<a class="sourceLine" id="cb5-31" title="31">          <span class="dt">color =</span> <span class="st">"darkred"</span>, <span class="dt">fill =</span> <span class="st">"darkred"</span>, </a>
-<a class="sourceLine" id="cb5-32" title="32">          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-33" title="33"><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),</a>
-<a class="sourceLine" id="cb5-34" title="34">                   <span class="dt">point.padding =</span> <span class="fl">.5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,</a>
-<a class="sourceLine" id="cb5-35" title="35">                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">"dodgerblue"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-36" title="36"><span class="st">  </span><span class="kw">theme_ipsum_rc</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-37" title="37"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Longitude"</span>, <span class="dt">y =</span> <span class="st">"Latitude"</span>, </a>
-<a class="sourceLine" id="cb5-38" title="38">       <span class="dt">title =</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,</a>
-<a class="sourceLine" id="cb5-39" title="39">       <span class="dt">caption =</span> <span class="st">"Source: EPA ECHO database"</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-example3-1.png" width="700"></p>
+<a class="sourceLine" id="cb5-13" title="13">                               <span class="dt">ymax =</span> <span class="st">'30.640008'</span>,</a>
+<a class="sourceLine" id="cb5-14" title="14">                               <span class="dt">p_ptype =</span> <span class="st">"NPD"</span>)</a>
+<a class="sourceLine" id="cb5-15" title="15"></a>
+<a class="sourceLine" id="cb5-16" title="16">collegestation &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">96.387509</span>, <span class="fl">30.583572</span>,</a>
+<a class="sourceLine" id="cb5-17" title="17">                                       <span class="fl">-96.281422</span>, <span class="fl">30.640008</span>), </a>
+<a class="sourceLine" id="cb5-18" title="18">                          <span class="dt">zoom =</span> <span class="dv">14</span>, <span class="dt">maptype =</span> <span class="st">"toner"</span>)</a>
+<a class="sourceLine" id="cb5-19" title="19"></a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="co">##to make labels, need to map the coords and use geom_text :(</span></a>
+<a class="sourceLine" id="cb5-21" title="21"><span class="co">## can't help but think there is an easier way to do this</span></a>
+<a class="sourceLine" id="cb5-22" title="22"></a>
+<a class="sourceLine" id="cb5-23" title="23">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-24" title="24"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb5-25" title="25">    <span class="dt">coords =</span> <span class="kw">map</span>(geometry, st_coordinates),</a>
+<a class="sourceLine" id="cb5-26" title="26">    <span class="dt">coords_x =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb5-27" title="27">    <span class="dt">coords_y =</span> <span class="kw">map_dbl</span>(coords, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb5-28" title="28">  )</a>
+<a class="sourceLine" id="cb5-29" title="29"></a>
+<a class="sourceLine" id="cb5-30" title="30"><span class="kw">ggmap</span>(collegestation) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-31" title="31"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> df, <span class="dt">inherit.aes =</span> <span class="ot">FALSE</span>, <span class="dt">shape =</span> <span class="dv">21</span>, </a>
+<a class="sourceLine" id="cb5-32" title="32">          <span class="dt">color =</span> <span class="st">"darkred"</span>, <span class="dt">fill =</span> <span class="st">"darkred"</span>, </a>
+<a class="sourceLine" id="cb5-33" title="33">          <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-34" title="34"><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">data =</span> df, <span class="kw">aes</span>(<span class="dt">x =</span> coords_x, <span class="dt">y =</span> coords_y, <span class="dt">label =</span> SourceID),</a>
+<a class="sourceLine" id="cb5-35" title="35">                   <span class="dt">point.padding =</span> <span class="fl">.5</span>, <span class="dt">min.segment.length =</span> <span class="fl">0.1</span>,</a>
+<a class="sourceLine" id="cb5-36" title="36">                   <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">"dodgerblue"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-37" title="37"><span class="st">  </span><span class="kw">theme_ipsum_rc</span>(<span class="dt">plot_margin =</span> <span class="kw">margin</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-38" title="38"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Longitude"</span>, <span class="dt">y =</span> <span class="st">"Latitude"</span>, </a>
+<a class="sourceLine" id="cb5-39" title="39">       <span class="dt">title =</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,</a>
+<a class="sourceLine" id="cb5-40" title="40">       <span class="dt">caption =</span> <span class="st">"Source: EPA ECHO database"</span>)</a></code></pre></div>
+<p><img src="reference/figures/README-example3-1.png" width="672"></p>
 </div>
 <div id="download-dischargeemissions-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#download-dischargeemissions-data" class="anchor"></a>Download discharge/emissions data</h3>
-<p>Use <code><a href="reference/echoGetEffluent.html">echoGetEffluent()</a></code> or <code><a href="reference/echoGetCAAPR.html">echoGetCAAPR()</a></code> to download tidy dataframes of permitted water discharger Discharge Monitoring Report (DMR) or permitted emitters Clean Air Act annual emissions reports.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">df &lt;-<span class="st"> </span><span class="kw"><a href="reference/echoGetEffluent.html">echoGetEffluent</a></span>(<span class="dt">p_id =</span> <span class="st">'TX0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'00300'</span>)</a>
+<p>Use <code><a href="reference/echoGetEffluent.html">echoGetEffluent()</a></code> or <code><a href="reference/echoGetCAAPR.html">echoGetCAAPR()</a></code> to download tidy dataframes of permitted water discharger Discharge Monitoring Report (DMR) or permitted emitters Clean Air Act annual emissions reports. Please note that all variables are returned as <em>character</em> vectors.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">df &lt;-<span class="st"> </span><span class="kw"><a href="reference/echoGetEffluent.html">echoGetEffluent</a></span>(<span class="dt">p_id =</span> <span class="st">'tx0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'00300'</span>)</a>
 <a class="sourceLine" id="cb6-2" title="2"></a>
 <a class="sourceLine" id="cb6-3" title="3">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dmr_value_nmbr) <span class="op">&amp;</span><span class="st"> </span>limit_value_type_code <span class="op">==</span><span class="st"> "C1"</span>)</a>
-<a class="sourceLine" id="cb6-5" title="5"></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="kw">ggplot</span>(df) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(monitoring_period_end_date, dmr_value_nmbr)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="st">  </span><span class="kw">theme_ipsum_rc</span>(<span class="dt">grid =</span> <span class="st">"Y"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-9" title="9"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Monitoring period date"</span>,</a>
-<a class="sourceLine" id="cb6-10" title="10">       <span class="dt">y =</span> <span class="st">"Dissolved oxygen concentration (mg/l)"</span>,</a>
-<a class="sourceLine" id="cb6-11" title="11">       <span class="dt">title =</span> <span class="st">"Reported minimum dissolved oxygen concentration"</span>,</a>
-<a class="sourceLine" id="cb6-12" title="12">       <span class="dt">subtitle =</span> <span class="st">"NPDES ID = TX119407"</span>,</a>
-<a class="sourceLine" id="cb6-13" title="13">       <span class="dt">caption =</span> <span class="st">"Source: EPA ECHO"</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="700"></p>
+<a class="sourceLine" id="cb6-4" title="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dmr_value_nmbr =</span> <span class="kw"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(dmr_value_nmbr),</a>
+<a class="sourceLine" id="cb6-5" title="5">         <span class="dt">monitoring_period_end_date =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(monitoring_period_end_date,</a>
+<a class="sourceLine" id="cb6-6" title="6">                                              <span class="st">"%m/%d/%Y"</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(<span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(dmr_value_nmbr) <span class="op">&amp;</span><span class="st"> </span>limit_value_type_code <span class="op">==</span><span class="st"> "C1"</span>)</a>
+<a class="sourceLine" id="cb6-8" title="8"></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="kw">ggplot</span>(df) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(monitoring_period_end_date, dmr_value_nmbr)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="st">  </span><span class="kw">theme_ipsum_rc</span>(<span class="dt">grid =</span> <span class="st">"Y"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Monitoring period date"</span>,</a>
+<a class="sourceLine" id="cb6-13" title="13">       <span class="dt">y =</span> <span class="st">"Dissolved oxygen concentration (mg/l)"</span>,</a>
+<a class="sourceLine" id="cb6-14" title="14">       <span class="dt">title =</span> <span class="st">"Reported minimum dissolved oxygen concentration"</span>,</a>
+<a class="sourceLine" id="cb6-15" title="15">       <span class="dt">subtitle =</span> <span class="st">"NPDES ID = TX119407"</span>,</a>
+<a class="sourceLine" id="cb6-16" title="16">       <span class="dt">caption =</span> <span class="st">"Source: EPA ECHO"</span>)</a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="672"></p>
 </div>
 </div>
 <div id="test-results" class="section level2">
 <h2 class="hasAnchor">
 <a href="#test-results" class="anchor"></a>Test Results</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(echor)</a>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(echor)</a>
 <a class="sourceLine" id="cb7-2" title="2"></a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/date">date</a></span>()</a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co">#&gt; [1] "Tue Sep 17 19:00:32 2019"</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/date.html">date</a></span>()</a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co">#&gt; [1] "Tue Nov 19 11:36:13 2019"</span></a>
 <a class="sourceLine" id="cb7-5" title="5"></a>
-<a class="sourceLine" id="cb7-6" title="6">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/test">test</a></span>()</a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="co">#&gt; v | OK F W S | Context</span></a>
+<a class="sourceLine" id="cb7-6" title="6">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/test.html">test</a></span>()</a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="co">#&gt; v |  OK F W S | Context</span></a>
 <a class="sourceLine" id="cb7-8" title="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb7-9" title="9"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">0</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">1</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-11" title="11">\ <span class="op">|</span><span class="st">  </span><span class="dv">2</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-12" title="12"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">3</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-13" title="13"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">4</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-14" title="14"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">5</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-15" title="15">\ <span class="op">|</span><span class="st">  </span><span class="dv">6</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-16" title="16"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">7</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-17" title="17"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">8</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-18" title="18">v <span class="op">|</span><span class="st">  </span><span class="dv">8</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
-<a class="sourceLine" id="cb7-19" title="19"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb7-20" title="20"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">0</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-21" title="21"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">1</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-22" title="22">\ <span class="op">|</span><span class="st">  </span><span class="dv">2</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-23" title="23"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">3</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-24" title="24"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">4</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-25" title="25"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">5</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-26" title="26">\ <span class="op">|</span><span class="st">  </span><span class="dv">6</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-27" title="27"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">7</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-28" title="28"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">8</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-29" title="29"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">9</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-30" title="30">\ <span class="op">|</span><span class="st"> </span><span class="dv">10</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-31" title="31"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st"> </span><span class="dv">11</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-32" title="32"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st"> </span><span class="dv">12</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-33" title="33"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st"> </span><span class="dv">13</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
-<a class="sourceLine" id="cb7-34" title="34">v <span class="op">|</span><span class="st"> </span><span class="dv">13</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects [<span class="fl">0.8</span> s]</a>
-<a class="sourceLine" id="cb7-35" title="35"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb7-36" title="36"><span class="co">#&gt; == Results ===================================================================================================</span></a>
-<a class="sourceLine" id="cb7-37" title="37"><span class="co">#&gt; Duration: 0.8 s</span></a>
-<a class="sourceLine" id="cb7-38" title="38"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb7-39" title="39"><span class="co">#&gt; OK:       21</span></a>
-<a class="sourceLine" id="cb7-40" title="40"><span class="co">#&gt; Failed:   0</span></a>
-<a class="sourceLine" id="cb7-41" title="41"><span class="co">#&gt; Warnings: 0</span></a>
-<a class="sourceLine" id="cb7-42" title="42"><span class="co">#&gt; Skipped:  0</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-9" title="9"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">0</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
+<a class="sourceLine" id="cb7-10" title="10">v <span class="op">|</span><span class="st">   </span><span class="dv">8</span>       <span class="op">|</span><span class="st"> </span>core functions return expected errors</a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-12" title="12"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">0</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">1</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-14" title="14">\ <span class="op">|</span><span class="st">   </span><span class="dv">2</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-15" title="15"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">3</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-16" title="16"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">4</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-17" title="17"><span class="op">-</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">5</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-18" title="18">\ <span class="op">|</span><span class="st">   </span><span class="dv">6</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-19" title="19"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">7</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-20" title="20"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">   </span><span class="dv">8</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-21" title="21">\ <span class="op">|</span><span class="st">  </span><span class="dv">10</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-22" title="22"><span class="op">|</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">11</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-23" title="23"><span class="op">/</span><span class="st"> </span><span class="er">|</span><span class="st">  </span><span class="dv">12</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects</a>
+<a class="sourceLine" id="cb7-24" title="24">v <span class="op">|</span><span class="st">  </span><span class="dv">13</span>       <span class="op">|</span><span class="st"> </span>core functions return expected objects [<span class="fl">3.6</span> s]</a>
+<a class="sourceLine" id="cb7-25" title="25"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-26" title="26"><span class="co">#&gt; == Results =============================================================================</span></a>
+<a class="sourceLine" id="cb7-27" title="27"><span class="co">#&gt; Duration: 3.7 s</span></a>
+<a class="sourceLine" id="cb7-28" title="28"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-29" title="29"><span class="co">#&gt; OK:       21</span></a>
+<a class="sourceLine" id="cb7-30" title="30"><span class="co">#&gt; Failed:   0</span></a>
+<a class="sourceLine" id="cb7-31" title="31"><span class="co">#&gt; Warnings: 0</span></a>
+<a class="sourceLine" id="cb7-32" title="32"><span class="co">#&gt; Skipped:  0</span></a></code></pre></div>
 </div>
 </div>
   </div>
@@ -297,14 +284,13 @@
 </ul>
 </div>
 
-      <div class="dev-status">
+  <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=echor"><img src="https://www.r-pkg.org/badges/version/echor" alt="CRAN status"></a></li>
 </ul>
 </div>
 </div>
-
 </div>
 
 
@@ -313,12 +299,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
