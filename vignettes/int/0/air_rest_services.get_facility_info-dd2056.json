@@ -1,14 +1,14 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "441",
-        "QueryRows": "26",
+        "QueryID": "126",
+        "QueryRows": "24",
         "IndianCountryRows": "0",
         "SVRows": "1",
         "CVRows": "1",
         "V3Rows": "1",
         "FEARows": "1",
-        "InfFEARows": "1",
+        "InfFEARows": "0",
         "INSPRows": "2",
         "TotalPenalties": "$24,938",
         "BadSystemIDs": null,
@@ -54,8 +54,8 @@
                 "RegistryID": "110001873786",
                 "FacLat": "30.61869",
                 "FacLong": "-96.34588",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
             },
             {
                 "ObjectId": "2",
@@ -65,8 +65,8 @@
                 "RegistryID": "110001873731",
                 "FacLat": "30.60704",
                 "FacLong": "-96.30875",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
             },
             {
                 "ObjectId": "3",
@@ -76,261 +76,239 @@
                 "RegistryID": "110007194044",
                 "FacLat": "30.613371",
                 "FacLong": "-96.320977",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
                 "ObjectId": "4",
-                "AIRName": "BRAZOS PAVING TRENCH BURNER IN1633",
-                "SourceID": "TX0000004877702288",
-                "AIRStreet": "TURN S ON VICTORIA AVE OFF OF HWY 40 TAKE A R ON W",
-                "RegistryID": "110070262426",
-                "FacLat": "30.613371",
-                "FacLong": "-96.320977",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
-            },
-            {
-                "ObjectId": "5",
                 "AIRName": "BRYAN CERAMICS PLANT",
                 "SourceID": "TX0000004804100027",
                 "AIRStreet": "1500 INDEPENDENCE AVE",
                 "RegistryID": "110007200830",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MJ-1.png",
-                "Map": null
+                "AIRLastStckDateState": "03/12/2012",
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "6",
+                "ObjectId": "5",
                 "AIRName": "BRYAN CLEANERS & LAUNDRY",
                 "SourceID": "06000000480416E012",
                 "AIRStreet": "1803 HOLLEMAN DRIVE",
                 "RegistryID": "110001873713",
                 "FacLat": "30.61225",
                 "FacLong": "-96.317503",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "7",
+                "ObjectId": "6",
                 "AIRName": "CITY OF BRYAN",
                 "SourceID": "TX0000004804100026",
                 "AIRStreet": "1.5 MI W OF @FM 1687 & FM 2818",
                 "RegistryID": "110007194142",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "8",
+                "ObjectId": "7",
                 "AIRName": "COMET 1 HR CLEANERS",
                 "SourceID": "06000000480416E013",
                 "AIRStreet": "1712 SOUTHWEST PARKWAY #101",
                 "RegistryID": "110001873722",
                 "FacLat": "30.60616",
                 "FacLong": "-96.31034",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "9",
+                "ObjectId": "8",
                 "AIRName": "EAGLE DRY CLEANING",
                 "SourceID": "06000000480416E017",
                 "AIRStreet": "900-8 HARVEY ROAD",
                 "RegistryID": "110001873759",
                 "FacLat": "30.62254",
                 "FacLong": "-96.31053",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "10",
+                "ObjectId": "9",
                 "AIRName": "EARLY BIRD CLEANERS (CROWN)",
                 "SourceID": "06000000480416E019",
                 "AIRStreet": "615 EAST UNIVERSITY DRIVE",
                 "RegistryID": "110001873777",
                 "FacLat": "30.619764",
                 "FacLong": "-96.343989",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "11",
+                "ObjectId": "10",
                 "AIRName": "FABRIC CARE CLEANERS",
                 "SourceID": "06000000480416E014",
                 "AIRStreet": "2418 SOUTHWEST PARKWAY",
                 "RegistryID": "110007205041",
                 "FacLat": "30.60678",
                 "FacLong": "-96.30969",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "12",
+                "ObjectId": "11",
                 "AIRName": "FABRIC CARE DRY CLEANERS",
                 "SourceID": "06000000480416E001",
                 "AIRStreet": "4343 WELLBOURNE ROAD",
                 "RegistryID": "110001873606",
                 "FacLat": "30.621491",
                 "FacLong": "-96.35352",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "13",
+                "ObjectId": "12",
                 "AIRName": "FERGUSON BURLESON CO. GAS GATHERING",
                 "SourceID": "TX0000004804100040",
                 "AIRStreet": "OFF F.M. 2154",
                 "RegistryID": "110007203739",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "14",
+                "ObjectId": "13",
                 "AIRName": "FERGUSON BURLESON COUNTY GAS GATHER",
                 "SourceID": "TX0000004804100022",
                 "AIRStreet": "AT THE INTERSECTION OF F.M. 28",
                 "RegistryID": "110007194099",
                 "FacLat": "30.613371",
                 "FacLong": "-96.320977",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "15",
-                "AIRName": "GOEN STEEPHOLLOW 5 COMPRESSOR STATION",
-                "SourceID": "TX0000004804100037",
-                "AIRStreet": "FROM INTX OF HWY 30 & HWY 6 IN BRYAN GO SE 7.0 MI",
-                "RegistryID": "TX0000004804100037",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MJ-N.png",
-                "Map": null
-            },
-            {
-                "ObjectId": "16",
+                "ObjectId": "14",
                 "AIRName": "HIGHWAY MATERIALS INC",
                 "SourceID": "TX0000004877700260",
                 "AIRStreet": "FM 2818 AND SANDY POINT ROAD",
                 "RegistryID": "110007194981",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "17",
+                "ObjectId": "15",
                 "AIRName": "JOT 59 DRY CLEANERS",
                 "SourceID": "06000000480416E016",
                 "AIRStreet": "103 HOLLEMAN DRIVE",
                 "RegistryID": "110001873740",
                 "FacLat": "30.59645",
                 "FacLong": "-96.33268",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "18",
+                "ObjectId": "16",
                 "AIRName": "KIRK'S DRY CLEANING #2",
                 "SourceID": "06000000480416E021",
                 "AIRStreet": "313 SOUTH COLLEGE",
                 "RegistryID": "110001873795",
                 "FacLat": "30.624409",
                 "FacLong": "-96.342948",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "19",
+                "ObjectId": "17",
                 "AIRName": "NORTHSIDE CLEANERS",
                 "SourceID": "06000000480416E004",
                 "AIRStreet": "13011 NORTH TEXAS AVENUE",
                 "RegistryID": "110001873633",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "20",
+                "ObjectId": "18",
                 "AIRName": "PARK CLEANERS",
                 "SourceID": "06000000480416E018",
                 "AIRStreet": "314 GEORGE BUSH DRIVE",
                 "RegistryID": "110001873768",
                 "FacLat": "30.60572",
                 "FacLong": "-96.33784",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "21",
+                "ObjectId": "19",
                 "AIRName": "RIDGECREST $1.79 DRY CLEANING",
                 "SourceID": "06000000480416E008",
                 "AIRStreet": "3502 SOUTH TEXAS AVENUE",
                 "RegistryID": "110001873679",
                 "FacLat": "30.63881",
                 "FacLong": "-96.34786",
-                "FacMapIcon": "CAA-IC-MN-G.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "22",
+                "ObjectId": "20",
                 "AIRName": "SCURLOCK PERMIAN CORPORATION",
                 "SourceID": "TX0000004804100015",
                 "AIRStreet": "CLARK LANE OFF LOOP 6",
                 "RegistryID": "110007194071",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "23",
+                "ObjectId": "21",
                 "AIRName": "TEXAS A&M UNIVERSITY COLLEGE STATION CAMPUS",
                 "SourceID": "TX0000004804100003",
                 "AIRStreet": "1111 RESEARCH PKWY",
                 "RegistryID": "110034947949",
                 "FacLat": "30.60368",
                 "FacLong": "-96.358106",
-                "FacMapIcon": "CAA-SNC-MJ-1.png",
-                "Map": null
+                "AIRLastStckDateState": "02/08/2013",
+                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
             },
             {
-                "ObjectId": "24",
+                "ObjectId": "22",
                 "AIRName": "VANGUARD PIPELINE CORPORATION",
                 "SourceID": "TX0000004804100021",
                 "AIRStreet": "ROUTE 2, BOX 524",
                 "RegistryID": "110001866614",
                 "FacLat": "30.613371",
                 "FacLong": "-96.320977",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "25",
+                "ObjectId": "23",
                 "AIRName": "WEST CAMPUS COGENERATION COMPANY",
                 "SourceID": "TX0000004804100039",
                 "AIRStreet": "WELLBORN ROAD & UNIVERSITY DR.",
                 "RegistryID": "110007203169",
                 "FacLat": "30.615655",
                 "FacLong": "-96.348601",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             },
             {
-                "ObjectId": "26",
+                "ObjectId": "24",
                 "AIRName": "YOUNG BROTHERS INCORPORATED CONTRACT",
                 "SourceID": "TX0000004877700643",
                 "AIRStreet": "N OF HWY 21 2 MI W OF",
                 "RegistryID": "110007201919",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "FacMapIcon": "CAA-IC-MN-N.png",
-                "Map": null
+                "AIRLastStckDateState": null,
+                "ReferencePoint": null
             }
         ]
     }

@@ -84,9 +84,9 @@ a subset of these columns that should work for most users. However, you
 can specify what data you want returned. Use `echoWaterGetMeta()` to
 return a dataframe with column numbers, names, and descriptions to
 identify the columns you want returned. Then include the column numbers
-as a comma seperated string in the `qcolumns` argument. In the example
+as a comma separated string in the `qcolumns` argument. In the example
 below, the `qcolumns` argument indicates the dataframe will include
-plant name, 8-digit HUC, latitute, longitude, and total design flow.
+plant name, 8-digit HUC, latitude, longitude, and total design flow.
 
 ``` r
 df <- echoWaterGetFacilityInfo(output = "df", 
@@ -187,33 +187,35 @@ ggplot(df) +
 library(echor)
 
 date()
-#> [1] "Tue Nov 19 11:36:13 2019"
+#> [1] "Wed Nov 20 12:59:01 2019"
 
 devtools::test()
 #> v |  OK F W S | Context
 #> 
 / |   0       | core functions return expected errors
-v |   8       | core functions return expected errors
+| |   7       | core functions return expected errors
+v |   8       | core functions return expected errors [0.1 s]
 #> 
 / |   0       | core functions return expected objects
 - |   1       | core functions return expected objects
-\ |   2       | core functions return expected objects
 | |   3       | core functions return expected objects
 / |   4       | core functions return expected objects
 - |   5       | core functions return expected objects
 \ |   6       | core functions return expected objects
 | |   7       | core functions return expected objects
 / |   8       | core functions return expected objects
-\ |  10       | core functions return expected objects
 | |  11       | core functions return expected objects
 / |  12       | core functions return expected objects
-v |  13       | core functions return expected objects [3.6 s]
+- |  13       | core functions return expected objects
+v |  13       | core functions return expected objects [4.1 s]
 #> 
 #> == Results =============================================================================
-#> Duration: 3.7 s
+#> Duration: 4.2 s
 #> 
 #> OK:       21
 #> Failed:   0
 #> Warnings: 0
 #> Skipped:  0
+#> 
+#> Keep up the good work.
 ```

@@ -28,6 +28,7 @@ Imports:
   tidyr (>= 1.0.0),
   utils
 Suggests:
+    spelling,
     ggplot2,
     ggmap,
     ggrepel,
@@ -40,3 +41,4 @@ Suggests:
     testthat
 BugReports: https://github.com/mps9506/echor/issues
 VignetteBuilder: knitr
+Language: en-US

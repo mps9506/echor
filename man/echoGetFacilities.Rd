@@ -7,7 +7,7 @@
 echoGetFacilities(program, output = "df", verbose = FALSE, ...)
 }
 \arguments{
-\item{program}{Character, either \code{program = 'caa'}, \code{program = 'cwa'}, or \code{program = 'sdw'}. \code{'caa'} retrieves facilities permitted under the Clean Air Act, \code{'cwa'} retreives facilites permitted under the Clean Water Act, and \code{'sdw'} retrives facililtes permitted under the the Safe Drinking Water Act.}
+\item{program}{Character, either \code{program = 'caa'}, \code{program = 'cwa'}, or \code{program = 'sdw'}. \code{'caa'} retrieves facilities permitted under the Clean Air Act, \code{'cwa'} retrieves facilities permitted under the Clean Water Act, and \code{'sdw'} retrieves facilities permitted under the the Safe Drinking Water Act.}
 
 \item{output}{Character string specifying output format. \code{output = 'df'} for a dataframe or \code{output = 'sf'} for a simple features spatial dataframe. \code{'sf'} only applies to CAA and CWA queries.}
 

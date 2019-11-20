@@ -1,6 +1,6 @@
 #' Downloads self reported discharge and emissions data
 #'
-#' @param program Character, either \code{program = 'caa'} or \code{program = 'cwa'}. \code{'caa'} retrieves facilities permitted under the Clean Air Act, \code{'cwa'} retreives facilites permitted under the Clean Water Act.
+#' @param program Character, either \code{program = 'caa'} or \code{program = 'cwa'}. \code{'caa'} retrieves facilities permitted under the Clean Air Act, \code{'cwa'} retrieves facilities permitted under the Clean Water Act.
 #' @param p_id Character string specify the identifier for the service. Required.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE.
 #' @param ... Further arguments passed on as query parameters sent to EPA's ECHO API.

@@ -43,14 +43,14 @@ httptest::start_vignette(path = path)
 
 ## echor introduction
 
-`echor` is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). `echor` uses the [ECHO API](https://echo.epa.gov/) to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilites as volume or concentration of pollutants during reporting time periods (typically anually for air emissions and monthly or quarterly for water discharges).
+`echor` is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). `echor` uses the [ECHO API](https://echo.epa.gov/) to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilities as volume or concentration of pollutants during reporting time periods (typically annually for air emissions and monthly or quarterly for water discharges).
 
 ECHO provides data for:
 
 * Stationary sources permitted under the Clean Air Act, including data from the National Emissions Inventory, Greenhouse Gas Reporting Program, Toxics Release Inventory, and Clean Air Markets Division Acid Rain Program and Clean Air Interstate Rule.
 * Public drinking water systems permitted under the Safe Drinking Water Act, including data from the Safe Drinking Water Information System.
 * Hazardous Waste Handlers permitted under the Resource Conservation and Recovery Act, with data drawn from the RCRAInfo data system.
-* Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA's ICIS-NPDES system and possibly waterbody information from EPA's ATTAINS data system.
+* Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA's ICIS-NPDES system and possibly water body information from EPA's ATTAINS data system.
 
 `echor` currently provides functions to retrieve information about permitted air dischargers, water dischargers, and public drinking water supply systems. It also provides functions to download discharge reports for permitted air and water dischargers. `echor` does not currently provide functionality to retrieve RCRA data.
 
@@ -66,13 +66,13 @@ There are three types of functions:
 
 Retrieve metadata from ECHO to narrow the specify data returned or lookup parameter codes.
 
-* `echoAirGetMeta()` - Returns variable name and descriptions for paramaters returned in air facility queries.
+* `echoAirGetMeta()` - Returns variable name and descriptions for parameters returned in air facility queries.
 
 * `echoSDWGetMeta()` - Returns variable name and descriptions for parameters returned in public water system queries.
 
-* `echoWaterGetMeta()` - Returns varaiable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).
+* `echoWaterGetMeta()` - Returns variable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).
 
-* `echoWaterGetParams()` - Search parameter codes for constiuent pollutants regulated under NPDES permits.
+* `echoWaterGetParams()` - Search parameter codes for constituent pollutants regulated under NPDES permits.
 
 ### Query Facilities
 
@@ -109,7 +109,7 @@ meta
 
 The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: `qcolumns = "1,2,3,22,23"`
 
-Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I reccomend exploring the documentation here: https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info. In this example, we will search by a geographic bounding box and specfiy the returned information with the `qcolumns` argument. Each argument should be passeed to ECHO as `echoAirGetFacilityInfo(parameter = "value")`. `echor` will URL encode strings automatically. Please note that any date argument needs to be entered as "mm/dd/yyyy".
+Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I recommend exploring the documentation here: https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info. In this example, we will search by a geographic bounding box and specify the returned information with the `qcolumns` argument. Each argument should be passed to ECHO as `echoAirGetFacilityInfo(parameter = "value")`. `echor` will URL encode strings automatically. Please note that any date argument needs to be entered as "mm/dd/yyyy".
 
 ```{r}
 library(echor)
@@ -199,7 +199,7 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 
 ### Water facility and discharge searches
 
-Find facilites with NPDES permits to discharge wastewater:
+Find facilities with NPDES permits to discharge wastewater:
 ```{r}
 df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395', 
                                xmax = '-96.25947',  ymax = '30.751984', 

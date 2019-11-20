@@ -7,7 +7,7 @@
 echoGetReports(program, p_id, verbose = FALSE, ...)
 }
 \arguments{
-\item{program}{Character, either \code{program = 'caa'} or \code{program = 'cwa'}. \code{'caa'} retrieves facilities permitted under the Clean Air Act, \code{'cwa'} retreives facilites permitted under the Clean Water Act.}
+\item{program}{Character, either \code{program = 'caa'} or \code{program = 'cwa'}. \code{'caa'} retrieves facilities permitted under the Clean Air Act, \code{'cwa'} retrieves facilities permitted under the Clean Water Act.}
 
 \item{p_id}{Character string specify the identifier for the service. Required.}
 

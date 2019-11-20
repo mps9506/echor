@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michael Schramm" />
 
-<meta name="date" content="2019-09-16" />
+<meta name="date" content="2019-11-20" />
 
 <title>Introduction to echor</title>
 
@@ -28,7 +28,7 @@
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
@@ -90,7 +90,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
 </style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -278,6 +300,9 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
 </style>
 
+
+
+
 </head>
 
 <body>
@@ -286,20 +311,20 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 <h1 class="title toc-ignore">Introduction to echor</h1>
-<h4 class="author"><em>Michael Schramm</em></h4>
-<h4 class="date"><em>2019-09-16</em></h4>
+<h4 class="author">Michael Schramm</h4>
+<h4 class="date">2019-11-20</h4>
 
 
 
 <div id="echor-introduction" class="section level2">
 <h2>echor introduction</h2>
-<p><code>echor</code> is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). <code>echor</code> uses the <a href="https://echo.epa.gov/">ECHO API</a> to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilites as volume or concentration of pollutants during reporting time periods (typically anually for air emissions and monthly or quarterly for water discharges).</p>
+<p><code>echor</code> is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). <code>echor</code> uses the <a href="https://echo.epa.gov/">ECHO API</a> to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilities as volume or concentration of pollutants during reporting time periods (typically annually for air emissions and monthly or quarterly for water discharges).</p>
 <p>ECHO provides data for:</p>
 <ul>
 <li>Stationary sources permitted under the Clean Air Act, including data from the National Emissions Inventory, Greenhouse Gas Reporting Program, Toxics Release Inventory, and Clean Air Markets Division Acid Rain Program and Clean Air Interstate Rule.</li>
 <li>Public drinking water systems permitted under the Safe Drinking Water Act, including data from the Safe Drinking Water Information System.</li>
 <li>Hazardous Waste Handlers permitted under the Resource Conservation and Recovery Act, with data drawn from the RCRAInfo data system.</li>
-<li>Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA’s ICIS-NPDES system and possibly waterbody information from EPA’s ATTAINS data system.</li>
+<li>Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA’s ICIS-NPDES system and possibly water body information from EPA’s ATTAINS data system.</li>
 </ul>
 <p><code>echor</code> currently provides functions to retrieve information about permitted air dischargers, water dischargers, and public drinking water supply systems. It also provides functions to download discharge reports for permitted air and water dischargers. <code>echor</code> does not currently provide functionality to retrieve RCRA data.</p>
 <p>See <a href="https://echo.epa.gov/tools/web-services" class="uri">https://echo.epa.gov/tools/web-services</a> for information about ECHO web services and API functions.</p>
@@ -312,10 +337,10 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <h3>Metadata</h3>
 <p>Retrieve metadata from ECHO to narrow the specify data returned or lookup parameter codes.</p>
 <ul>
-<li><p><code>echoAirGetMeta()</code> - Returns variable name and descriptions for paramaters returned in air facility queries.</p></li>
+<li><p><code>echoAirGetMeta()</code> - Returns variable name and descriptions for parameters returned in air facility queries.</p></li>
 <li><p><code>echoSDWGetMeta()</code> - Returns variable name and descriptions for parameters returned in public water system queries.</p></li>
-<li><p><code>echoWaterGetMeta()</code> - Returns varaiable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).</p></li>
-<li><p><code>echoWaterGetParams()</code> - Search parameter codes for constiuent pollutants regulated under NPDES permits.</p></li>
+<li><p><code>echoWaterGetMeta()</code> - Returns variable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).</p></li>
+<li><p><code>echoWaterGetParams()</code> - Search parameter codes for constituent pollutants regulated under NPDES permits.</p></li>
 </ul>
 </div>
 <div id="query-facilities" class="section level3">
@@ -360,7 +385,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 10 AIR_EPA_REG~ CHAR     2          10       AIREPARegion The EPA region w~</span></a>
 <a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; # ... with 121 more rows</span></a></code></pre></div>
 <p>The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: <code>qcolumns = &quot;1,2,3,22,23&quot;</code></p>
-<p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I reccomend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specfiy the returned information with the <code>qcolumns</code> argument. Each argument should be passeed to ECHO as <code>echoAirGetFacilityInfo(parameter = &quot;value&quot;)</code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
+<p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I recommend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specify the returned information with the <code>qcolumns</code> argument. Each argument should be passed to ECHO as <code>echoAirGetFacilityInfo(parameter = &quot;value&quot;)</code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">library</span>(echor)</a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co">## Retrieve information about facilities within a geographic location</span></a>
@@ -370,23 +395,23 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb2-7" title="7">                             <span class="dt">xmax =</span> <span class="st">&#39;-96.281422&#39;</span>,</a>
 <a class="sourceLine" id="cb2-8" title="8">                             <span class="dt">ymax =</span> <span class="st">&#39;30.640008&#39;</span>,</a>
 <a class="sourceLine" id="cb2-9" title="9">                             <span class="dt">qcolumns =</span> <span class="st">&quot;1,2,3,22,23&quot;</span>)</a></code></pre></div>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 AIRName
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 SourceID
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 AIRStreet
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 FacLat
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 FacLong
 </th>
 </tr>
@@ -542,53 +567,53 @@ xmax  string  Maximum longitude value in decimal degrees
 ymax  string  Maximum latitude value in decimal degrees</code></pre>
 <p>Step 3 - Download the emission inventory report for a permitted facility:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">df &lt;-<span class="st"> </span><span class="kw">echoGetCAAPR</span>(<span class="dt">p_id =</span> <span class="st">&#39;110000350174&#39;</span>)</a></code></pre></div>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Name
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 SourceID
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Street
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 City
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 State
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Zip
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 County
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Region
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Latitude
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Longitude
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Pollutant
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 UnitsOfMeasure
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Program
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Discharge
 </th>
 </tr>
@@ -887,90 +912,90 @@ p_units string  Units of measurement. Defaults is &#39;lbs&#39;.
 </div>
 <div id="water-facility-and-discharge-searches" class="section level3">
 <h3>Water facility and discharge searches</h3>
-<p>Find facilites with NPDES permits to discharge wastewater:</p>
+<p>Find facilities with NPDES permits to discharge wastewater:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">xmin =</span> <span class="st">&#39;-96.407563&#39;</span>, <span class="dt">ymin =</span> <span class="st">&#39;30.554395&#39;</span>, </a>
 <a class="sourceLine" id="cb6-2" title="2">                               <span class="dt">xmax =</span> <span class="st">&#39;-96.25947&#39;</span>,  <span class="dt">ymax =</span> <span class="st">&#39;30.751984&#39;</span>, </a>
 <a class="sourceLine" id="cb6-3" title="3">                               <span class="dt">output =</span> <span class="st">&#39;df&#39;</span>)</a></code></pre></div>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPName
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 SourceID
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPStreet
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPCity
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPState
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPStateDistrict
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPZip
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 MasterExternalPermitNmbr
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 RegistryID
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPCounty
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPEPARegion
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 FacDerivedHuc
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 FacLat
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 FacLong
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 CWPTotalDesignFlowNmbr
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 CWPActualAverageFlowNmbr
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 ReceivingMs4Name
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 AssociatedPollutant
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 MsgpPermitType
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPPermitStatusDesc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPPermitTypeDesc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPIssueDate
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPEffectiveDate
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPExpirationDate
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPSNCStatusDate
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPStateWaterBodyCode
 </th>
 </tr>
@@ -1476,191 +1501,191 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
 <a class="sourceLine" id="cb8-3" title="3"><span class="co">#&gt; row col   expected    actual         file</span></a>
 <a class="sourceLine" id="cb8-4" title="4"><span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
 <a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span></a></code></pre></div>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 activity_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 npdes_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 version_nmbr
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 perm_feature_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 perm_feature_nmbr
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 perm_feature_type_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 perm_feature_type_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_set_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_set_schedule_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_type_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_begin_date
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_end_date
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 nmbr_of_submission
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 parameter_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 parameter_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 monitoring_location_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 monitoring_location_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 stay_type_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 stay_type_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_value_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_value_type_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_value_type_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_value_nmbr
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_unit_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_unit_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 standard_unit_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 standard_unit_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_value_standard_units
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 statistical_base_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 statistical_base_short_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 statistical_base_type_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 statistical_base_type_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 limit_value_qualifier_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 stay_value_nmbr
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_event_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 monitoring_period_end_date
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_form_value_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 value_type_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 value_type_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_value_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_value_nmbr
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_unit_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_unit_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_value_standard_units
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 dmr_value_qualifier_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 value_received_date
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 days_late
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 nodi_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 nodi_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 exceedence_pct
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 npdes_violation_id
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 violation_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 violation_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 rnc_detection_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 rnc_detection_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 rnc_detection_date
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 rnc_resolution_code
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 rnc_resolution_desc
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 rnc_resolution_date
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 violation_severity
 </th>
 </tr>

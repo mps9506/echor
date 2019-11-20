@@ -74,7 +74,7 @@ df <- echoWaterGetFacilityInfo(output = "df",
 head(df)
 ```
 
-The ECHO database can provide over 270 different columns. echor returns a subset of these columns that should work for most users. However, you can specify what data you want returned. Use `echoWaterGetMeta()` to return a dataframe with column numbers, names, and descriptions to identify the columns you want returned. Then include the column numbers as a comma seperated string in the `qcolumns` argument. In the example below, the `qcolumns` argument indicates the dataframe will include plant name, 8-digit HUC, latitute, longitude, and total design flow.
+The ECHO database can provide over 270 different columns. echor returns a subset of these columns that should work for most users. However, you can specify what data you want returned. Use `echoWaterGetMeta()` to return a dataframe with column numbers, names, and descriptions to identify the columns you want returned. Then include the column numbers as a comma separated string in the `qcolumns` argument. In the example below, the `qcolumns` argument indicates the dataframe will include plant name, 8-digit HUC, latitude, longitude, and total design flow.
 
 ```{r example2, echo=TRUE, message=FALSE, warning=FALSE}
 df <- echoWaterGetFacilityInfo(output = "df", 

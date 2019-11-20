@@ -79,7 +79,7 @@
       <h1>Introduction to echor</h1>
                         <h4 class="author">Michael Schramm</h4>
             
-            <h4 class="date">2019-11-19</h4>
+            <h4 class="date">2019-11-20</h4>
       
       
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -91,13 +91,13 @@
 <div id="echor-introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#echor-introduction" class="anchor"></a>echor introduction</h2>
-<p><code>echor</code> is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). <code>echor</code> uses the <a href="https://echo.epa.gov/">ECHO API</a> to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilites as volume or concentration of pollutants during reporting time periods (typically anually for air emissions and monthly or quarterly for water discharges).</p>
+<p><code>echor</code> is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). <code>echor</code> uses the <a href="https://echo.epa.gov/">ECHO API</a> to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilities as volume or concentration of pollutants during reporting time periods (typically annually for air emissions and monthly or quarterly for water discharges).</p>
 <p>ECHO provides data for:</p>
 <ul>
 <li>Stationary sources permitted under the Clean Air Act, including data from the National Emissions Inventory, Greenhouse Gas Reporting Program, Toxics Release Inventory, and Clean Air Markets Division Acid Rain Program and Clean Air Interstate Rule.</li>
 <li>Public drinking water systems permitted under the Safe Drinking Water Act, including data from the Safe Drinking Water Information System.</li>
 <li>Hazardous Waste Handlers permitted under the Resource Conservation and Recovery Act, with data drawn from the RCRAInfo data system.</li>
-<li>Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA’s ICIS-NPDES system and possibly waterbody information from EPA’s ATTAINS data system.</li>
+<li>Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA’s ICIS-NPDES system and possibly water body information from EPA’s ATTAINS data system.</li>
 </ul>
 <p><code>echor</code> currently provides functions to retrieve information about permitted air dischargers, water dischargers, and public drinking water supply systems. It also provides functions to download discharge reports for permitted air and water dischargers. <code>echor</code> does not currently provide functionality to retrieve RCRA data.</p>
 <p>See <a href="https://echo.epa.gov/tools/web-services" class="uri">https://echo.epa.gov/tools/web-services</a> for information about ECHO web services and API functions.</p>
@@ -112,10 +112,10 @@
 <a href="#metadata" class="anchor"></a>Metadata</h3>
 <p>Retrieve metadata from ECHO to narrow the specify data returned or lookup parameter codes.</p>
 <ul>
-<li><p><code><a href="../reference/echoAirGetMeta.html">echoAirGetMeta()</a></code> - Returns variable name and descriptions for paramaters returned in air facility queries.</p></li>
+<li><p><code><a href="../reference/echoAirGetMeta.html">echoAirGetMeta()</a></code> - Returns variable name and descriptions for parameters returned in air facility queries.</p></li>
 <li><p><code><a href="../reference/echoSDWGetMeta.html">echoSDWGetMeta()</a></code> - Returns variable name and descriptions for parameters returned in public water system queries.</p></li>
-<li><p><code><a href="../reference/echoWaterGetMeta.html">echoWaterGetMeta()</a></code> - Returns varaiable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).</p></li>
-<li><p><code><a href="../reference/echoWaterGetParams.html">echoWaterGetParams()</a></code> - Search parameter codes for constiuent pollutants regulated under NPDES permits.</p></li>
+<li><p><code><a href="../reference/echoWaterGetMeta.html">echoWaterGetMeta()</a></code> - Returns variable name and descriptions for parameters returned in water discharge facility queries (e.g. facilities with an NPDES permit).</p></li>
+<li><p><code><a href="../reference/echoWaterGetParams.html">echoWaterGetParams()</a></code> - Search parameter codes for constituent pollutants regulated under NPDES permits.</p></li>
 </ul>
 </div>
 <div id="query-facilities" class="section level3">
@@ -149,22 +149,22 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(echor)</a>
 <a class="sourceLine" id="cb1-2" title="2">meta &lt;-<span class="st"> </span><span class="kw"><a href="../reference/echoAirGetMeta.html">echoAirGetMeta</a></span>()</a>
 <a class="sourceLine" id="cb1-3" title="3">meta</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="co">#&gt; # A tibble: 131 x 6</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#&gt; # A tibble: 133 x 6</span></a>
 <a class="sourceLine" id="cb1-5" title="5"><span class="co">#&gt;    ColumnName   DataType DataLength ColumnID ObjectName   Description      </span></a>
 <a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;            </span></a>
 <a class="sourceLine" id="cb1-7" title="7"><span class="co">#&gt;  1 AIR_NAME     VARCHAR2 200        1        AIRName      The name of the ~</span></a>
 <a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt;  2 SOURCE_ID    VARCHAR2 30         2        SourceID     Unique Identifie~</span></a>
 <a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt;  3 AIR_STREET   VARCHAR2 200        3        AIRStreet    The street addre~</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt;  4 AIR_CITY     VARCHAR2 100        4        AIRCity      &lt;NA&gt;             </span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt;  4 AIR_CITY     VARCHAR2 100        4        AIRCity      The city where t~</span></a>
 <a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt;  5 AIR_STATE    CHAR     2          5        AIRState     The state where ~</span></a>
 <a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt;  6 LOCAL_CONTR~ CHAR     3          6        LocalContro~ Code for regions~</span></a>
 <a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt;  7 AIR_ZIP      VARCHAR2 10         7        AIRZip       The five-digit z~</span></a>
 <a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt;  8 REGISTRY_ID  VARCHAR2 50         8        RegistryID   An internal 12-d~</span></a>
 <a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt;  9 AIR_COUNTY   VARCHAR2 100        9        AIRCounty    The name of the ~</span></a>
 <a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 10 AIR_EPA_REG~ CHAR     2          10       AIREPARegion The EPA region w~</span></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; # ... with 121 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; # ... with 123 more rows</span></a></code></pre></div>
 <p>The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: <code>qcolumns = "1,2,3,22,23"</code></p>
-<p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I reccomend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specfiy the returned information with the <code>qcolumns</code> argument. Each argument should be passeed to ECHO as <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo(parameter = "value")</a></code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
+<p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I recommend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specify the returned information with the <code>qcolumns</code> argument. Each argument should be passed to ECHO as <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo(parameter = "value")</a></code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(echor)</a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co">## Retrieve information about facilities within a geographic location</span></a>
@@ -247,23 +247,6 @@ HWY. 60, WEST OF
 </tr>
 <tr>
 <td style="text-align:left;">
-BRAZOS PAVING TRENCH BURNER IN1633
-</td>
-<td style="text-align:left;">
-TX0000004877702288
-</td>
-<td style="text-align:left;">
-TURN S ON VICTORIA AVE OFF OF HWY 40 TAKE A R ON W
-</td>
-<td style="text-align:right;">
-30.61337
-</td>
-<td style="text-align:right;">
--96.32098
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 BRYAN CERAMICS PLANT
 </td>
 <td style="text-align:left;">
@@ -294,6 +277,23 @@ BRYAN CLEANERS &amp; LAUNDRY
 </td>
 <td style="text-align:right;">
 -96.31750
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CITY OF BRYAN
+</td>
+<td style="text-align:left;">
+TX0000004804100026
+</td>
+<td style="text-align:left;">
+1.5 MI W OF <span class="citation">@FM</span> 1687 &amp; FM 2818
+</td>
+<td style="text-align:right;">
+30.63760
+</td>
+<td style="text-align:right;">
+-96.36235
 </td>
 </tr>
 </tbody>
@@ -426,19 +426,19 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-1,2-Dichloroethane
+Nitrogen oxides
 </td>
 <td style="text-align:left;">
 Pounds
 </td>
 <td style="text-align:left;">
-NEI
+CAMD
 </td>
 <td style="text-align:right;">
-2008
+2009
 </td>
 <td style="text-align:right;">
-47.95
+8544200
 </td>
 </tr>
 <tr>
@@ -473,7 +473,7 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Acetophenone
+Cyanide
 </td>
 <td style="text-align:left;">
 Pounds
@@ -482,10 +482,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2008
+2009
 </td>
 <td style="text-align:right;">
-17.98
+NA
 </td>
 </tr>
 <tr>
@@ -520,7 +520,7 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Anthracene
+Lead
 </td>
 <td style="text-align:left;">
 Pounds
@@ -529,10 +529,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2008
+2009
 </td>
 <td style="text-align:right;">
-0.25
+NA
 </td>
 </tr>
 <tr>
@@ -567,7 +567,7 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Dimethyl sulfate
+Nickel
 </td>
 <td style="text-align:left;">
 Pounds
@@ -576,10 +576,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2008
+2009
 </td>
 <td style="text-align:right;">
-63.19
+NA
 </td>
 </tr>
 <tr>
@@ -614,7 +614,7 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Hexane
+Primary PM10, filterable portion only
 </td>
 <td style="text-align:left;">
 Pounds
@@ -623,10 +623,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2008
+2009
 </td>
 <td style="text-align:right;">
-80.31
+NA
 </td>
 </tr>
 <tr>
@@ -661,7 +661,7 @@ NEW HANOVER
 -77.98523
 </td>
 <td style="text-align:left;">
-Manganese
+Tribromomethane
 </td>
 <td style="text-align:left;">
 Pounds
@@ -670,10 +670,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2008
+2009
 </td>
 <td style="text-align:right;">
-290.51
+NA
 </td>
 </tr>
 </tbody>
@@ -688,7 +688,7 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 <div id="water-facility-and-discharge-searches" class="section level3">
 <h3 class="hasAnchor">
 <a href="#water-facility-and-discharge-searches" class="anchor"></a>Water facility and discharge searches</h3>
-<p>Find facilites with NPDES permits to discharge wastewater:</p>
+<p>Find facilities with NPDES permits to discharge wastewater:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span>(<span class="dt">xmin =</span> <span class="st">'-96.407563'</span>, <span class="dt">ymin =</span> <span class="st">'30.554395'</span>, </a>
 <a class="sourceLine" id="cb6-2" title="2">                               <span class="dt">xmax =</span> <span class="st">'-96.25947'</span>,  <span class="dt">ymax =</span> <span class="st">'30.751984'</span>, </a>
 <a class="sourceLine" id="cb6-3" title="3">                               <span class="dt">output =</span> <span class="st">'df'</span>)</a></code></pre></div>
@@ -744,16 +744,19 @@ CWPTotalDesignFlowNmbr
 CWPActualAverageFlowNmbr
 </th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-ReceivingMs4Name
+DschToMs4
 </th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-AssociatedPollutant
+ExposedActivity
 </th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-MsgpPermitType
+Subsector
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+CWPVersionNmbr
 </th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-CWPPermitStatusDesc
+SubmittedDate
 </th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPPermitTypeDesc
@@ -762,19 +765,90 @@ CWPPermitTypeDesc
 CWPIssueDate
 </th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-CWPEffectiveDate
+CWPTerminationDate
 </th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-CWPExpirationDate
+CWPSNCStatus
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-CWPSNCStatusDate
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-CWPStateWaterBodyCode
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+CWPCsoOutfalls
 </th>
 </tr></thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+777 GRAHAM RD
+</td>
+<td style="text-align:left;">
+TXR1578AE
+</td>
+<td style="text-align:left;">
+777 GRAHAM RD
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+77845
+</td>
+<td style="text-align:left;">
+TXR150000
+</td>
+<td style="text-align:left;">
+110070621969
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+12070103
+</td>
+<td style="text-align:right;">
+30.57004
+</td>
+<td style="text-align:right;">
+-96.29493
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+General Permit Covered Facility
+</td>
+<td style="text-align:left;">
+2019-09-23
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 ACE TOWNHOME
@@ -828,8 +902,11 @@ NA
 </td>
 <td style="text-align:left;">
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Effective
+NA
 </td>
 <td style="text-align:left;">
 General Permit Covered Facility
@@ -838,15 +915,12 @@ General Permit Covered Facility
 2018-06-01
 </td>
 <td style="text-align:left;">
-2018-06-01
+NA
 </td>
 <td style="text-align:left;">
-2023-03-05
 </td>
-<td style="text-align:left;">
-2018-09-30
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+NA
 </td>
 </tr>
 <tr>
@@ -866,6 +940,7 @@ COLLEGE STATION
 TX
 </td>
 <td style="text-align:left;">
+09
 </td>
 <td style="text-align:left;">
 77845
@@ -901,8 +976,11 @@ NA
 </td>
 <td style="text-align:left;">
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Not Needed
+NA
 </td>
 <td style="text-align:left;">
 NPDES Individual Permit
@@ -914,12 +992,9 @@ NA
 NA
 </td>
 <td style="text-align:left;">
+</td>
+<td style="text-align:right;">
 NA
-</td>
-<td style="text-align:left;">
-2018-09-30
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -939,6 +1014,7 @@ BRYAN
 TX
 </td>
 <td style="text-align:left;">
+01
 </td>
 <td style="text-align:left;">
 00000
@@ -974,8 +1050,11 @@ NA
 </td>
 <td style="text-align:left;">
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Terminated
+NA
 </td>
 <td style="text-align:left;">
 NPDES Individual Permit
@@ -984,15 +1063,12 @@ NPDES Individual Permit
 2000-01-14
 </td>
 <td style="text-align:left;">
-2000-01-14
+2000-10-30
 </td>
 <td style="text-align:left;">
-2004-07-27
 </td>
-<td style="text-align:left;">
-2018-09-30
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+NA
 </td>
 </tr>
 <tr>
@@ -1044,13 +1120,17 @@ NA
 NA
 </td>
 <td style="text-align:left;">
+N
 </td>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Effective
+2016-10-05
 </td>
 <td style="text-align:left;">
 General Permit Covered Facility
@@ -1059,15 +1139,12 @@ General Permit Covered Facility
 2016-10-28
 </td>
 <td style="text-align:left;">
-2016-11-01
+NA
 </td>
 <td style="text-align:left;">
-2021-08-13
 </td>
-<td style="text-align:left;">
-2018-09-30
-</td>
-<td style="text-align:left;">
+<td style="text-align:right;">
+NA
 </td>
 </tr>
 <tr>
@@ -1123,8 +1200,11 @@ NA
 </td>
 <td style="text-align:left;">
 </td>
+<td style="text-align:right;">
+0
+</td>
 <td style="text-align:left;">
-Effective
+NA
 </td>
 <td style="text-align:left;">
 General Permit Covered Facility
@@ -1133,89 +1213,12 @@ General Permit Covered Facility
 2018-08-27
 </td>
 <td style="text-align:left;">
-2018-09-01
+2019-07-18
 </td>
 <td style="text-align:left;">
-2023-03-05
-</td>
-<td style="text-align:left;">
-2018-09-30
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ASTIN AVIATION
-</td>
-<td style="text-align:left;">
-TXR05CE76
-</td>
-<td style="text-align:left;">
-1770 GEORGE BUSH DR W
-</td>
-<td style="text-align:left;">
-COLLEGE STATION
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-77845-4761
-</td>
-<td style="text-align:left;">
-TXR050000
-</td>
-<td style="text-align:left;">
-110070360445
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-06
-</td>
-<td style="text-align:left;">
-12070101
-</td>
-<td style="text-align:right;">
-30.59288
-</td>
-<td style="text-align:right;">
--96.35277
 </td>
 <td style="text-align:right;">
 NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Effective
-</td>
-<td style="text-align:left;">
-General Permit Covered Facility
-</td>
-<td style="text-align:left;">
-2017-07-10
-</td>
-<td style="text-align:left;">
-2017-08-01
-</td>
-<td style="text-align:left;">
-2021-08-13
-</td>
-<td style="text-align:left;">
-2018-09-30
-</td>
-<td style="text-align:left;">
 </td>
 </tr>
 </tbody>
@@ -1271,10 +1274,15 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
               </code></pre>
 <p>Download discharge monitoring reports from ECHO from specified facilities:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/echoGetEffluent.html">echoGetEffluent</a></span>(<span class="dt">p_id =</span> <span class="st">'tx0119407'</span>, <span class="dt">parameter_code =</span> <span class="st">'50050'</span>)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; Warning: 2 parsing failures.</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; Warning: 162 parsing failures.</span></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="co">#&gt; row col   expected    actual         file</span></a>
 <a class="sourceLine" id="cb8-4" title="4"><span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="co">#&gt;   4  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="co">#&gt;   5  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="co">#&gt;   7  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="co">#&gt; ... ... .......... ......... ............</span></a>
+<a class="sourceLine" id="cb8-10" title="10"><span class="co">#&gt; See problems(...) for more details.</span></a></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:500px; ">
 <table class="table table">
 <thead><tr>
@@ -1831,6 +1839,709 @@ NA
 NA
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+3600178396
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+3600049681
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+EXO
+</td>
+<td style="text-align:left;">
+External Outfall
+</td>
+<td style="text-align:left;">
+3600061722
+</td>
+<td style="text-align:left;">
+3600073706
+</td>
+<td style="text-align:left;">
+3600437316
+</td>
+<td style="text-align:left;">
+ENF
+</td>
+<td style="text-align:left;">
+08/01/2015
+</td>
+<td style="text-align:left;">
+03/01/2020
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+50050
+</td>
+<td style="text-align:left;">
+Flow, in conduit or thru treatment plant
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Effluent Gross
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3600678122
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:left;">
+Quantity2
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+DAILY MX
+</td>
+<td style="text-align:left;">
+MAX
+</td>
+<td style="text-align:left;">
+Maximum
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3600838743
+</td>
+<td style="text-align:left;">
+07/31/2016
+</td>
+<td style="text-align:left;">
+3610876716
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:left;">
+Quantity2
+</td>
+<td style="text-align:left;">
+3625942746
+</td>
+<td style="text-align:left;">
+.0689
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+.0689
+</td>
+<td style="text-align:left;">
+=
+</td>
+<td style="text-align:left;">
+08/11/2016
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+No Violation Identified
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3600178396
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+3600049681
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+EXO
+</td>
+<td style="text-align:left;">
+External Outfall
+</td>
+<td style="text-align:left;">
+3600061722
+</td>
+<td style="text-align:left;">
+3600073706
+</td>
+<td style="text-align:left;">
+3600437316
+</td>
+<td style="text-align:left;">
+ENF
+</td>
+<td style="text-align:left;">
+08/01/2015
+</td>
+<td style="text-align:left;">
+03/01/2020
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+50050
+</td>
+<td style="text-align:left;">
+Flow, in conduit or thru treatment plant
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Effluent Gross
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3600678123
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:left;">
+Quantity1
+</td>
+<td style="text-align:left;">
+.131
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+.131
+</td>
+<td style="text-align:left;">
+DB
+</td>
+<td style="text-align:left;">
+DAILY AV
+</td>
+<td style="text-align:left;">
+AVG
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:left;">
+&lt;=
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3600838743
+</td>
+<td style="text-align:left;">
+07/31/2016
+</td>
+<td style="text-align:left;">
+3610876711
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:left;">
+Quantity1
+</td>
+<td style="text-align:left;">
+3625942745
+</td>
+<td style="text-align:left;">
+.0613
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+.0613
+</td>
+<td style="text-align:left;">
+=
+</td>
+<td style="text-align:left;">
+08/11/2016
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+No Violation Identified
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1862,7 +2573,7 @@ code  string  partial or complete code value</code></pre>
 <p>Multiple DMRs can be downloaded using a helper function: <code>downloadDMRs</code>:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">df &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(<span class="dt">permit =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'TX0119407'</span>, <span class="st">'TX040237'</span>))</a>
 <a class="sourceLine" id="cb12-2" title="2">df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/downloadDMRs.html">downloadDMRs</a></span>(df, <span class="dt">idColumn =</span> permit)</a>
-<a class="sourceLine" id="cb12-3" title="3"><span class="co">#&gt; Warning: 1762 parsing failures.</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="co">#&gt; Warning: 1918 parsing failures.</span></a>
 <a class="sourceLine" id="cb12-4" title="4"><span class="co">#&gt; row col   expected    actual         file</span></a>
 <a class="sourceLine" id="cb12-5" title="5"><span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
 <a class="sourceLine" id="cb12-6" title="6"><span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
@@ -1871,77 +2582,83 @@ code  string  partial or complete code value</code></pre>
 <a class="sourceLine" id="cb12-9" title="9"><span class="co">#&gt;   7  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
 <a class="sourceLine" id="cb12-10" title="10"><span class="co">#&gt; ... ... .......... ......... ............</span></a>
 <a class="sourceLine" id="cb12-11" title="11"><span class="co">#&gt; See problems(...) for more details.</span></a>
-<a class="sourceLine" id="cb12-12" title="12"><span class="co">#&gt; Warning: 2 parsing failures.</span></a>
-<a class="sourceLine" id="cb12-13" title="13"><span class="co">#&gt; row col   expected    actual         file</span></a>
-<a class="sourceLine" id="cb12-14" title="14"><span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
-<a class="sourceLine" id="cb12-15" title="15"><span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span></a>
-<a class="sourceLine" id="cb12-16" title="16">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-17" title="17"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span>(dmr)</a>
-<a class="sourceLine" id="cb12-18" title="18">tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span>(df)</a>
-<a class="sourceLine" id="cb12-19" title="19"><span class="co">#&gt; Observations: 2,644</span></a>
-<a class="sourceLine" id="cb12-20" title="20"><span class="co">#&gt; Variables: 62</span></a>
-<a class="sourceLine" id="cb12-21" title="21"><span class="co">#&gt; $ permit                      &lt;chr&gt; "TX0119407", "TX0119407", "TX01194...</span></a>
-<a class="sourceLine" id="cb12-22" title="22"><span class="co">#&gt; $ activity_id                 &lt;chr&gt; "", "", "3600178396", "", "", "360...</span></a>
-<a class="sourceLine" id="cb12-23" title="23"><span class="co">#&gt; $ npdes_id                    &lt;chr&gt; NA, NA, "TX0119407", NA, NA, "TX01...</span></a>
-<a class="sourceLine" id="cb12-24" title="24"><span class="co">#&gt; $ version_nmbr                &lt;chr&gt; NA, NA, "0", NA, NA, "0", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-25" title="25"><span class="co">#&gt; $ perm_feature_id             &lt;chr&gt; NA, NA, "3600049681", NA, NA, "360...</span></a>
-<a class="sourceLine" id="cb12-26" title="26"><span class="co">#&gt; $ perm_feature_nmbr           &lt;chr&gt; NA, NA, "001", NA, NA, "001", NA, ...</span></a>
-<a class="sourceLine" id="cb12-27" title="27"><span class="co">#&gt; $ perm_feature_type_code      &lt;chr&gt; NA, NA, "EXO", NA, NA, "EXO", NA, ...</span></a>
-<a class="sourceLine" id="cb12-28" title="28"><span class="co">#&gt; $ perm_feature_type_desc      &lt;chr&gt; NA, NA, "External Outfall", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-29" title="29"><span class="co">#&gt; $ limit_set_id                &lt;chr&gt; NA, NA, "3600061722", NA, NA, "360...</span></a>
-<a class="sourceLine" id="cb12-30" title="30"><span class="co">#&gt; $ limit_set_schedule_id       &lt;chr&gt; NA, NA, "3600073706", NA, NA, "360...</span></a>
-<a class="sourceLine" id="cb12-31" title="31"><span class="co">#&gt; $ limit_id                    &lt;chr&gt; NA, NA, "3600437315", NA, NA, "360...</span></a>
-<a class="sourceLine" id="cb12-32" title="32"><span class="co">#&gt; $ limit_type_code             &lt;chr&gt; NA, NA, "ENF", NA, NA, "ENF", NA, ...</span></a>
-<a class="sourceLine" id="cb12-33" title="33"><span class="co">#&gt; $ limit_begin_date            &lt;chr&gt; NA, NA, "08/01/2015", NA, NA, "08/...</span></a>
-<a class="sourceLine" id="cb12-34" title="34"><span class="co">#&gt; $ limit_end_date              &lt;chr&gt; NA, NA, "03/01/2020", NA, NA, "03/...</span></a>
-<a class="sourceLine" id="cb12-35" title="35"><span class="co">#&gt; $ nmbr_of_submission          &lt;chr&gt; NA, NA, "1", NA, NA, "1", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-36" title="36"><span class="co">#&gt; $ parameter_code              &lt;chr&gt; NA, NA, "00300", NA, NA, "00300", ...</span></a>
-<a class="sourceLine" id="cb12-37" title="37"><span class="co">#&gt; $ parameter_desc              &lt;chr&gt; NA, NA, "Oxygen, dissolved [DO]", ...</span></a>
-<a class="sourceLine" id="cb12-38" title="38"><span class="co">#&gt; $ monitoring_location_code    &lt;chr&gt; NA, NA, "1", NA, NA, "1", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-39" title="39"><span class="co">#&gt; $ monitoring_location_desc    &lt;chr&gt; NA, NA, "Effluent Gross", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-40" title="40"><span class="co">#&gt; $ stay_type_code              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-41" title="41"><span class="co">#&gt; $ stay_type_desc              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-42" title="42"><span class="co">#&gt; $ limit_value_id              &lt;chr&gt; NA, NA, "3600678121", NA, NA, "360...</span></a>
-<a class="sourceLine" id="cb12-43" title="43"><span class="co">#&gt; $ limit_value_type_code       &lt;chr&gt; NA, NA, "C1", NA, NA, "C1", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-44" title="44"><span class="co">#&gt; $ limit_value_type_desc       &lt;chr&gt; NA, NA, "Concentration1", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-45" title="45"><span class="co">#&gt; $ limit_value_nmbr            &lt;chr&gt; NA, NA, "4", NA, NA, "4", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-46" title="46"><span class="co">#&gt; $ limit_unit_code             &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-47" title="47"><span class="co">#&gt; $ limit_unit_desc             &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA...</span></a>
-<a class="sourceLine" id="cb12-48" title="48"><span class="co">#&gt; $ standard_unit_code          &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-49" title="49"><span class="co">#&gt; $ standard_unit_desc          &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA...</span></a>
-<a class="sourceLine" id="cb12-50" title="50"><span class="co">#&gt; $ limit_value_standard_units  &lt;chr&gt; NA, NA, "4", NA, NA, "4", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-51" title="51"><span class="co">#&gt; $ statistical_base_code       &lt;chr&gt; NA, NA, "MO", NA, NA, "MO", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-52" title="52"><span class="co">#&gt; $ statistical_base_short_desc &lt;chr&gt; NA, NA, "MO MIN", NA, NA, "MO MIN"...</span></a>
-<a class="sourceLine" id="cb12-53" title="53"><span class="co">#&gt; $ statistical_base_type_code  &lt;chr&gt; NA, NA, "MIN", NA, NA, "MIN", NA, ...</span></a>
-<a class="sourceLine" id="cb12-54" title="54"><span class="co">#&gt; $ statistical_base_type_desc  &lt;chr&gt; NA, NA, "Minimum", NA, NA, "Minimu...</span></a>
-<a class="sourceLine" id="cb12-55" title="55"><span class="co">#&gt; $ limit_value_qualifier_code  &lt;chr&gt; NA, NA, "&gt;=", NA, NA, "&gt;=", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-56" title="56"><span class="co">#&gt; $ stay_value_nmbr             &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-57" title="57"><span class="co">#&gt; $ dmr_event_id                &lt;chr&gt; NA, NA, "3403423185", NA, NA, "340...</span></a>
-<a class="sourceLine" id="cb12-58" title="58"><span class="co">#&gt; $ monitoring_period_end_date  &lt;chr&gt; NA, NA, "10/31/2015", NA, NA, "11/...</span></a>
-<a class="sourceLine" id="cb12-59" title="59"><span class="co">#&gt; $ dmr_form_value_id           &lt;chr&gt; NA, NA, "3442281413", NA, NA, "344...</span></a>
-<a class="sourceLine" id="cb12-60" title="60"><span class="co">#&gt; $ value_type_code             &lt;chr&gt; NA, NA, "C1", NA, NA, "C1", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-61" title="61"><span class="co">#&gt; $ value_type_desc             &lt;chr&gt; NA, NA, "Concentration1", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-62" title="62"><span class="co">#&gt; $ dmr_value_id                &lt;chr&gt; NA, NA, "3614856990", NA, NA, "361...</span></a>
-<a class="sourceLine" id="cb12-63" title="63"><span class="co">#&gt; $ dmr_value_nmbr              &lt;chr&gt; NA, NA, "5.21", NA, NA, "7.9", NA,...</span></a>
-<a class="sourceLine" id="cb12-64" title="64"><span class="co">#&gt; $ dmr_unit_code               &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA...</span></a>
-<a class="sourceLine" id="cb12-65" title="65"><span class="co">#&gt; $ dmr_unit_desc               &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA...</span></a>
-<a class="sourceLine" id="cb12-66" title="66"><span class="co">#&gt; $ dmr_value_standard_units    &lt;chr&gt; NA, NA, "5.21", NA, NA, "7.9", NA,...</span></a>
-<a class="sourceLine" id="cb12-67" title="67"><span class="co">#&gt; $ dmr_value_qualifier_code    &lt;chr&gt; NA, NA, "=", NA, NA, "=", NA, NA, ...</span></a>
-<a class="sourceLine" id="cb12-68" title="68"><span class="co">#&gt; $ value_received_date         &lt;chr&gt; NA, NA, "11/20/2015", NA, NA, "12/...</span></a>
-<a class="sourceLine" id="cb12-69" title="69"><span class="co">#&gt; $ days_late                   &lt;chr&gt; NA, NA, "", NA, NA, "9", NA, NA, "...</span></a>
-<a class="sourceLine" id="cb12-70" title="70"><span class="co">#&gt; $ nodi_code                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-71" title="71"><span class="co">#&gt; $ nodi_desc                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-72" title="72"><span class="co">#&gt; $ exceedence_pct              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-73" title="73"><span class="co">#&gt; $ npdes_violation_id          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-74" title="74"><span class="co">#&gt; $ violation_code              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-75" title="75"><span class="co">#&gt; $ violation_desc              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-76" title="76"><span class="co">#&gt; $ rnc_detection_code          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-77" title="77"><span class="co">#&gt; $ rnc_detection_desc          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-78" title="78"><span class="co">#&gt; $ rnc_detection_date          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-79" title="79"><span class="co">#&gt; $ rnc_resolution_code         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-80" title="80"><span class="co">#&gt; $ rnc_resolution_desc         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-81" title="81"><span class="co">#&gt; $ rnc_resolution_date         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
-<a class="sourceLine" id="cb12-82" title="82"><span class="co">#&gt; $ violation_severity          &lt;chr&gt; NA, NA, "0", NA, NA, "0", NA, NA, ...</span></a></code></pre></div>
+<a class="sourceLine" id="cb12-12" title="12"><span class="co">#&gt; Warning: 6 parsing failures.</span></a>
+<a class="sourceLine" id="cb12-13" title="13"><span class="co">#&gt; row col           expected actual         file</span></a>
+<a class="sourceLine" id="cb12-14" title="14"><span class="co">#&gt;   1   { delimiter or quote      : &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb12-15" title="15"><span class="co">#&gt;   1   { delimiter or quote      E &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb12-16" title="16"><span class="co">#&gt;   1   { delimiter or quote      : &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb12-17" title="17"><span class="co">#&gt;   1   { delimiter or quote      E &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb12-18" title="18"><span class="co">#&gt;   1   { delimiter or quote      : &lt;raw vector&gt;</span></a>
+<a class="sourceLine" id="cb12-19" title="19"><span class="co">#&gt; ... ... .................. ...... ............</span></a>
+<a class="sourceLine" id="cb12-20" title="20"><span class="co">#&gt; See problems(...) for more details.</span></a>
+<a class="sourceLine" id="cb12-21" title="21">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-22" title="22"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span>(dmr)</a>
+<a class="sourceLine" id="cb12-23" title="23">tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span>(df)</a>
+<a class="sourceLine" id="cb12-24" title="24"><span class="co">#&gt; Observations: 2,880</span></a>
+<a class="sourceLine" id="cb12-25" title="25"><span class="co">#&gt; Variables: 63</span></a>
+<a class="sourceLine" id="cb12-26" title="26"><span class="co">#&gt; $ permit                      &lt;chr&gt; "TX0119407", "TX0119407", "TX01194...</span></a>
+<a class="sourceLine" id="cb12-27" title="27"><span class="co">#&gt; $ activity_id                 &lt;chr&gt; "", "", "3600178396", "", "", "360...</span></a>
+<a class="sourceLine" id="cb12-28" title="28"><span class="co">#&gt; $ npdes_id                    &lt;chr&gt; NA, NA, "TX0119407", NA, NA, "TX01...</span></a>
+<a class="sourceLine" id="cb12-29" title="29"><span class="co">#&gt; $ version_nmbr                &lt;chr&gt; NA, NA, "0", NA, NA, "0", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-30" title="30"><span class="co">#&gt; $ perm_feature_id             &lt;chr&gt; NA, NA, "3600049681", NA, NA, "360...</span></a>
+<a class="sourceLine" id="cb12-31" title="31"><span class="co">#&gt; $ perm_feature_nmbr           &lt;chr&gt; NA, NA, "001", NA, NA, "001", NA, ...</span></a>
+<a class="sourceLine" id="cb12-32" title="32"><span class="co">#&gt; $ perm_feature_type_code      &lt;chr&gt; NA, NA, "EXO", NA, NA, "EXO", NA, ...</span></a>
+<a class="sourceLine" id="cb12-33" title="33"><span class="co">#&gt; $ perm_feature_type_desc      &lt;chr&gt; NA, NA, "External Outfall", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-34" title="34"><span class="co">#&gt; $ limit_set_id                &lt;chr&gt; NA, NA, "3600061722", NA, NA, "360...</span></a>
+<a class="sourceLine" id="cb12-35" title="35"><span class="co">#&gt; $ limit_set_schedule_id       &lt;chr&gt; NA, NA, "3600073706", NA, NA, "360...</span></a>
+<a class="sourceLine" id="cb12-36" title="36"><span class="co">#&gt; $ limit_id                    &lt;chr&gt; NA, NA, "3600437315", NA, NA, "360...</span></a>
+<a class="sourceLine" id="cb12-37" title="37"><span class="co">#&gt; $ limit_type_code             &lt;chr&gt; NA, NA, "ENF", NA, NA, "ENF", NA, ...</span></a>
+<a class="sourceLine" id="cb12-38" title="38"><span class="co">#&gt; $ limit_begin_date            &lt;chr&gt; NA, NA, "08/01/2015", NA, NA, "08/...</span></a>
+<a class="sourceLine" id="cb12-39" title="39"><span class="co">#&gt; $ limit_end_date              &lt;chr&gt; NA, NA, "03/01/2020", NA, NA, "03/...</span></a>
+<a class="sourceLine" id="cb12-40" title="40"><span class="co">#&gt; $ nmbr_of_submission          &lt;chr&gt; NA, NA, "1", NA, NA, "1", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-41" title="41"><span class="co">#&gt; $ parameter_code              &lt;chr&gt; NA, NA, "00300", NA, NA, "00300", ...</span></a>
+<a class="sourceLine" id="cb12-42" title="42"><span class="co">#&gt; $ parameter_desc              &lt;chr&gt; NA, NA, "Oxygen, dissolved [DO]", ...</span></a>
+<a class="sourceLine" id="cb12-43" title="43"><span class="co">#&gt; $ monitoring_location_code    &lt;chr&gt; NA, NA, "1", NA, NA, "1", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-44" title="44"><span class="co">#&gt; $ monitoring_location_desc    &lt;chr&gt; NA, NA, "Effluent Gross", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-45" title="45"><span class="co">#&gt; $ stay_type_code              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-46" title="46"><span class="co">#&gt; $ stay_type_desc              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-47" title="47"><span class="co">#&gt; $ limit_value_id              &lt;chr&gt; NA, NA, "3600678121", NA, NA, "360...</span></a>
+<a class="sourceLine" id="cb12-48" title="48"><span class="co">#&gt; $ limit_value_type_code       &lt;chr&gt; NA, NA, "C1", NA, NA, "C1", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-49" title="49"><span class="co">#&gt; $ limit_value_type_desc       &lt;chr&gt; NA, NA, "Concentration1", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-50" title="50"><span class="co">#&gt; $ limit_value_nmbr            &lt;chr&gt; NA, NA, "4", NA, NA, "4", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-51" title="51"><span class="co">#&gt; $ limit_unit_code             &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-52" title="52"><span class="co">#&gt; $ limit_unit_desc             &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA...</span></a>
+<a class="sourceLine" id="cb12-53" title="53"><span class="co">#&gt; $ standard_unit_code          &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-54" title="54"><span class="co">#&gt; $ standard_unit_desc          &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA...</span></a>
+<a class="sourceLine" id="cb12-55" title="55"><span class="co">#&gt; $ limit_value_standard_units  &lt;chr&gt; NA, NA, "4", NA, NA, "4", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-56" title="56"><span class="co">#&gt; $ statistical_base_code       &lt;chr&gt; NA, NA, "MO", NA, NA, "MO", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-57" title="57"><span class="co">#&gt; $ statistical_base_short_desc &lt;chr&gt; NA, NA, "MO MIN", NA, NA, "MO MIN"...</span></a>
+<a class="sourceLine" id="cb12-58" title="58"><span class="co">#&gt; $ statistical_base_type_code  &lt;chr&gt; NA, NA, "MIN", NA, NA, "MIN", NA, ...</span></a>
+<a class="sourceLine" id="cb12-59" title="59"><span class="co">#&gt; $ statistical_base_type_desc  &lt;chr&gt; NA, NA, "Minimum", NA, NA, "Minimu...</span></a>
+<a class="sourceLine" id="cb12-60" title="60"><span class="co">#&gt; $ limit_value_qualifier_code  &lt;chr&gt; NA, NA, "&gt;=", NA, NA, "&gt;=", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-61" title="61"><span class="co">#&gt; $ stay_value_nmbr             &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-62" title="62"><span class="co">#&gt; $ dmr_event_id                &lt;chr&gt; NA, NA, "3600838743", NA, NA, "360...</span></a>
+<a class="sourceLine" id="cb12-63" title="63"><span class="co">#&gt; $ monitoring_period_end_date  &lt;chr&gt; NA, NA, "07/31/2016", NA, NA, "08/...</span></a>
+<a class="sourceLine" id="cb12-64" title="64"><span class="co">#&gt; $ dmr_form_value_id           &lt;chr&gt; NA, NA, "3610876649", NA, NA, "361...</span></a>
+<a class="sourceLine" id="cb12-65" title="65"><span class="co">#&gt; $ value_type_code             &lt;chr&gt; NA, NA, "C1", NA, NA, "C1", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-66" title="66"><span class="co">#&gt; $ value_type_desc             &lt;chr&gt; NA, NA, "Concentration1", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-67" title="67"><span class="co">#&gt; $ dmr_value_id                &lt;chr&gt; NA, NA, "3625942742", NA, NA, "362...</span></a>
+<a class="sourceLine" id="cb12-68" title="68"><span class="co">#&gt; $ dmr_value_nmbr              &lt;chr&gt; NA, NA, "5.71", NA, NA, "5.06", NA...</span></a>
+<a class="sourceLine" id="cb12-69" title="69"><span class="co">#&gt; $ dmr_unit_code               &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA...</span></a>
+<a class="sourceLine" id="cb12-70" title="70"><span class="co">#&gt; $ dmr_unit_desc               &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA...</span></a>
+<a class="sourceLine" id="cb12-71" title="71"><span class="co">#&gt; $ dmr_value_standard_units    &lt;chr&gt; NA, NA, "5.71", NA, NA, "5.06", NA...</span></a>
+<a class="sourceLine" id="cb12-72" title="72"><span class="co">#&gt; $ dmr_value_qualifier_code    &lt;chr&gt; NA, NA, "=", NA, NA, "=", NA, NA, ...</span></a>
+<a class="sourceLine" id="cb12-73" title="73"><span class="co">#&gt; $ value_received_date         &lt;chr&gt; NA, NA, "08/11/2016", NA, NA, "09/...</span></a>
+<a class="sourceLine" id="cb12-74" title="74"><span class="co">#&gt; $ days_late                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-75" title="75"><span class="co">#&gt; $ nodi_code                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-76" title="76"><span class="co">#&gt; $ nodi_desc                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-77" title="77"><span class="co">#&gt; $ exceedence_pct              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-78" title="78"><span class="co">#&gt; $ npdes_violation_id          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-79" title="79"><span class="co">#&gt; $ violation_code              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-80" title="80"><span class="co">#&gt; $ violation_desc              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-81" title="81"><span class="co">#&gt; $ rnc_detection_code          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-82" title="82"><span class="co">#&gt; $ rnc_detection_desc          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-83" title="83"><span class="co">#&gt; $ rnc_detection_date          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-84" title="84"><span class="co">#&gt; $ rnc_resolution_code         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-85" title="85"><span class="co">#&gt; $ rnc_resolution_desc         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-86" title="86"><span class="co">#&gt; $ rnc_resolution_date         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, ""...</span></a>
+<a class="sourceLine" id="cb12-87" title="87"><span class="co">#&gt; $ violation_severity          &lt;chr&gt; NA, NA, "No Violation Identified",...</span></a>
+<a class="sourceLine" id="cb12-88" title="88"><span class="co">#&gt; $ `{`                         &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA...</span></a></code></pre></div>
 </div>
 <div id="spatial-data" class="section level3">
 <h3 class="hasAnchor">

@@ -8,7 +8,7 @@
 
 * fix vignette (closes #44)
 * import tidyr (v1.0.0)
-* utlize httptest for unit testing
+* utilize httptest for unit testing
 
 # echor 0.1.2
 
@@ -36,4 +36,4 @@
 # echor 0.1.0
 
 * Added a `NEWS.md` file to track changes to the package.
-* Intial Release
+* Initial Release
