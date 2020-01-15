@@ -8,7 +8,7 @@
 #' @param df dataframe with column of id numbers
 #' @param idColumn unquoted string, name of column containing the p_id permit numbers
 #' @param pBar logical, display a progress bar? Defaults to TRUE
-#' @param verbose logical, ndicating whether to provide processing and retrieval messages. Defaults to FALSE. Suggest leaving this FALSE if \code{pBar = TRUE}.
+#' @param verbose logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE. Suggest leaving this FALSE if \code{pBar = TRUE}.
 #' @param ... additional arguments passed to echoGetEffluent
 #'
 #' @import dplyr
