@@ -8,6 +8,7 @@
 #' @param df dataframe with column of id numbers
 #' @param idColumn unquoted string, name of column containing the p_id permit numbers
 #' @param pBar logical, display a progress bar? Defaults to TRUE
+#' @param verbose logical, ndicating whether to provide processing and retrieval messages. Defaults to FALSE. Suggest leaving this FALSE if \code{pBar = TRUE}.
 #' @param ... additional arguments passed to echoGetEffluent
 #'
 #' @import dplyr
@@ -25,7 +26,11 @@
 #' df <- downloadDMRs(df, id)
 #' }
 
-downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
+downloadDMRs <- function(df,
+                         idColumn,
+                         pBar = TRUE,
+                         verbose = FALSE,
+                         ...) {
 
   ##  check that df is a tibble or data.frame
   if (is.data.frame(df) == FALSE) {
@@ -40,6 +45,9 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
   idColumn <- enquo(idColumn)
   data <- select(df, !!idColumn)
 
+  # capture args to pass to echoGetEffluent
+  dots_user <- dots_values(...)
+
   if (isTRUE(pBar)) {
     # create the progress bar with a dplyr function.
     pb <- progress_estimated(nrow(df))
@@ -51,11 +59,12 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
                                  pb$tick()$print()
 
                                  # sleep for 1 sec between calls to keep from ticking off ECHO
-                                 Sys.sleep(10)
+                                 Sys.sleep(5)
 
-                                 echoGetEffluent(p_id = ..1,
-                                                 ...)
-                               }, ...))
+                                 echoGetEffluent(p_id = .x,
+                                                 verbose = verbose,
+                                                 dots_user)
+                               }))
   }
 
   else {
@@ -63,11 +72,12 @@ downloadDMRs <- function(df, idColumn, pBar = TRUE, ...) {
       mutate(dmr = purrr::pmap(data,
                                ~ {
                                  # sleep for 1 sec between calls to keep from ticking off ECHO
-                                 Sys.sleep(10)
+                                 Sys.sleep(5)
 
-                                 echoGetEffluent(p_id = ..1,
-                                                 ...)
-                               }, ...))
+                                 echoGetEffluent(p_id = .x,
+                                                 verbose = verbose,
+                                                 dots_user)
+                               }))
   }
 
   return(df)
