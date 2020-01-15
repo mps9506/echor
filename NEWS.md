@@ -1,3 +1,8 @@
+# echor 0.1.4 (unreleased)
+
+* `downloadDMRs()` passes arguments properly. This fixes #43.
+
+
 # echor 0.1.3
 
 ## Major Changes (possibly breaking)
