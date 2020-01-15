@@ -209,7 +209,7 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 downloadEffluentChart <- function(p_id, verbose, queryDots) {
   ## build the request URL statement
   path <- "echo/eff_rest_services.download_effluent_chart"
-  query <- paste(p_id, queryDots, "output=JSON", sep = "&")
+  query <- paste(p_id, queryDots, sep = "&")
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
