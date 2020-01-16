@@ -4,7 +4,7 @@
 \alias{downloadDMRs}
 \title{Download Multiple DMRs}
 \usage{
-downloadDMRs(df, idColumn, pBar = TRUE, ...)
+downloadDMRs(df, idColumn, pBar = TRUE, verbose = FALSE, ...)
 }
 \arguments{
 \item{df}{dataframe with column of id numbers}
@@ -12,6 +12,8 @@ downloadDMRs(df, idColumn, pBar = TRUE, ...)
 \item{idColumn}{unquoted string, name of column containing the p_id permit numbers}
 
 \item{pBar}{logical, display a progress bar? Defaults to TRUE}
+
+\item{verbose}{logical, ndicating whether to provide processing and retrieval messages. Defaults to FALSE. Suggest leaving this FALSE if \code{pBar = TRUE}.}
 
 \item{...}{additional arguments passed to echoGetEffluent}
 }

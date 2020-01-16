@@ -206,7 +206,7 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
 
     ## build the request URL statement
     path <- "echo/caa_poll_rpt_rest_services.get_caapr"
-    query <- paste(p_id, queryDots, "output=JSON", sep = "&")
+    query <- paste(p_id, queryDots, sep = "&")
     getURL <- requestURL(path = path, query = query)
 
     request <- httr::GET(getURL, httr::accept_json())
