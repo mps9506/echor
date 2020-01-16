@@ -1,7 +1,7 @@
 Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
-Version: 0.1.3.9999
+Version: 0.1.4
 Authors@R: person("Michael", "Schramm", role = c("aut", "cre"), email = "michael.schramm@ag.tamu.edu")
 Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
 Description: An R interface to United States Environmental 

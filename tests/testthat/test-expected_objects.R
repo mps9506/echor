@@ -26,11 +26,14 @@ with_mock_api({
       "tbl_df"
     )
 
-    expect_is(echoSDWGetMeta(verbose = FALSE), "tbl_df")
+    expect_is(echoSDWGetMeta(verbose = FALSE),
+              "tbl_df")
 
-    expect_is(echoGetCAAPR(p_id = '110000350174'), "tbl_df")
+    expect_is(echoGetCAAPR(p_id = '110000350174'),
+              "tbl_df")
 
-    expect_is(echoGetEffluent(p_id = "tx0119407", parameter_code = "50050"),
+    expect_is(echoGetEffluent(p_id = "tx0124362",
+                              parameter_code = "50050"),
               "tbl_df")
 
     expect_is(echoGetReports(
@@ -43,7 +46,7 @@ with_mock_api({
     expect_is(
       echoGetReports(
         program = "cwa",
-        p_id = "tx0119407",
+        p_id = "tx0124362",
         parameter_code = "50050",
         verbose = FALSE
       ),

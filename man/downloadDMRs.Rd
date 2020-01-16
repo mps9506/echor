@@ -13,7 +13,7 @@ downloadDMRs(df, idColumn, pBar = TRUE, verbose = FALSE, ...)
 
 \item{pBar}{logical, display a progress bar? Defaults to TRUE}
 
-\item{verbose}{logical, ndicating whether to provide processing and retrieval messages. Defaults to FALSE. Suggest leaving this FALSE if \code{pBar = TRUE}.}
+\item{verbose}{logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE. Suggest leaving this FALSE if \code{pBar = TRUE}.}
 
 \item{...}{additional arguments passed to echoGetEffluent}
 }

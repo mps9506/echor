@@ -41,9 +41,7 @@ install.packages("echor")
 Or install the development version from github:
 
 ```{r InstallDev, eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-
 devtools::install_github("mps9506/echor")
-
 ```
 
 ## Usage
@@ -158,12 +156,10 @@ ggplot(df) +
 
 ```
 
-## Test Results
+## Session Info
+
 ```{r message=FALSE, warning=FALSE, error=FALSE}
-library(echor)
-
-date()
-
-devtools::test()
+sessioninfo::platform_info()
+sessioninfo::package_info()
 ```
 
