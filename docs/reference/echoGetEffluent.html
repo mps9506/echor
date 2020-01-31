@@ -8,11 +8,13 @@
 
 <title>Downloads EPA ECHO DMR records of dischargers with NPDES permits — echoGetEffluent • echor</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -34,10 +36,11 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Downloads EPA ECHO DMR records of dischargers with NPDES permits — echoGetEffluent" />
 
+<meta property="og:title" content="Downloads EPA ECHO DMR records of dischargers with NPDES permits — echoGetEffluent" />
 <meta property="og:description" content="Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -68,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -99,7 +102,6 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -121,13 +123,11 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>echoGetEffluent</span>(<span class='no'>p_id</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -144,11 +144,10 @@
       <td><p>Further arguments passed on as query parameters sent to EPA's ECHO API. For more options see: <a href='https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart'>https://echo.epa.gov/tools/web-services/effluent-charts#!/Effluent_Charts/get_eff_rest_services_get_effluent_chart</a></p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns a dataframe.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
@@ -156,20 +155,20 @@
 
 <span class='co'>## Retrieve single DMR for flow</span>
 
-<span class='fu'>echoGetEffluent</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'tx0119407'</span>, <span class='kw'>parameter_code</span> <span class='kw'>=</span> <span class='st'>'50050'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 80 x 61</span><span>
+<span class='fu'>echoGetEffluent</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'tx0119407'</span>, <span class='kw'>parameter_code</span> <span class='kw'>=</span> <span class='st'>'50050'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 78 x 61</span><span>
 #&gt;    activity_id npdes_id version_nmbr perm_feature_id perm_feature_nm~
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           
-#&gt; </span><span style='color: #555555;'> 1</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 2</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 3</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 4</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 5</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 6</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 7</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 8</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 9</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'>10</span><span> 3600178396  TX01194~ 0            3600049681      001             
-#&gt; </span><span style='color: #555555;'># ... with 70 more rows, and 56 more variables: perm_feature_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; </span><span style='color: #555555;'> 1</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 2</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 3</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 4</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 5</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 6</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 7</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 8</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'> 9</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'>10</span><span> 3600178396  TX01194~ 4            3600049681      001             
+#&gt; </span><span style='color: #555555;'># ... with 68 more rows, and 56 more variables: perm_feature_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
 #&gt; #   perm_feature_type_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_set_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
 #&gt; #   limit_set_schedule_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
 #&gt; #   limit_begin_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_end_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, nmbr_of_submission </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
@@ -198,9 +197,7 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
