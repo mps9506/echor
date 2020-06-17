@@ -109,7 +109,7 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
-  request <- httr::GET(getURL)
+  request <- httr::RETRY("GET", getURL)
 
   info <- httr::content(request, as = "raw")
 
@@ -146,7 +146,7 @@ getGeoJson <- function(service, qid, qcolumns) {
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
-  request <- httr::GET(getURL)
+  request <- httr::RETRY("GET", getURL)
 
   info <- httr::content(request, as = "text", encoding = "UTF-8")
 

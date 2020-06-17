@@ -65,7 +65,9 @@ echoWaterGetFacilityInfo <- function(output = "df",
     getURL <- requestURL(path = path, query = query)
 
     ## Make the request
-    request <- httr::GET(getURL, httr::accept_json())
+    request <- httr::RETRY("GET",
+                           url = getURL,
+                           httr::accept_json())
 
     ## Print status message
     if (isTRUE(verbose)) {
