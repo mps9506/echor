@@ -1,7 +1,7 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "632",
+        "QueryID": "563",
         "QueryRows": "1",
         "IndianCountryRows": "0",
         "SVRows": "0",
@@ -51,21 +51,20 @@
                 "CWPCounty": "Madison",
                 "CWPEPARegion": "04",
                 "FacDerivedHuc": "06030002",
-                "FacLat": "34.630123",
-                "FacLong": "-86.643041",
+                "FacLat": "34.625123",
+                "FacLong": "-86.640541",
                 "CWPTotalDesignFlowNmbr": null,
                 "CWPActualAverageFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "Subsector": null,
-                "CWPVersionNmbr": "0",
-                "SubmittedDate": null,
+                "ReceivingMs4Name": null,
+                "AssociatedPollutant": null,
+                "MsgpPermitType": null,
+                "CWPPermitStatusDesc": "Effective",
                 "CWPPermitTypeDesc": "General Permit Covered Facility",
                 "CWPIssueDate": "09/06/2016",
-                "CWPTerminationDate": null,
-                "CWPSNCStatus": null,
-                "CWPCsoOutfalls": null,
-                "CWPSNCEventDesc": null
+                "CWPEffectiveDate": "10/01/2016",
+                "CWPExpirationDate": "09/30/2021",
+                "CWPSNCStatusDate": "03/31/2020",
+                "StateAuthGen": "Y"
             }
         ]
     }

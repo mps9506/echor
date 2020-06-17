@@ -6,8 +6,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -86.643041,
-                    34.630123
+                    -86.640541,
+                    34.625123
                 ]
             },
             "properties": {
@@ -25,17 +25,16 @@
                 "FacDerivedHuc": "06030002",
                 "CWPTotalDesignFlowNmbr": null,
                 "CWPActualAverageFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "Subsector": null,
-                "CWPVersionNmbr": 0,
-                "SubmittedDate": null,
+                "ReceivingMs4Name": null,
+                "AssociatedPollutant": null,
+                "MsgpPermitType": null,
+                "CWPPermitStatusDesc": "Effective",
                 "CWPPermitTypeDesc": "General Permit Covered Facility",
                 "CWPIssueDate": "2016-09-06T00:00:00.00+00:00",
-                "CWPTerminationDate": null,
-                "CWPSNCStatus": null,
-                "CWPCsoOutfalls": null,
-                "CWPSNCEventDesc": null
+                "CWPEffectiveDate": "2016-10-01T00:00:00.00+00:00",
+                "CWPExpirationDate": "2021-09-30T00:00:00.00+00:00",
+                "CWPSNCStatusDate": "2020-03-31T00:00:00.00+00:00",
+                "StateAuthGen": "Y"
             }
         }
     ]

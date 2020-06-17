@@ -491,26 +491,66 @@
                 "Description": null
             },
             {
+                "ColumnName": "SERVICE_AREA_TYPE_CODE",
+                "DataType": "VARCHAR2",
+                "DataLength": "100",
+                "ColumnID": "62",
+                "ObjectName": "ServiceAreaTypeCode",
+                "Description": null
+            },
+            {
+                "ColumnName": "SERVICE_AREA_TYPE_DESC",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "63",
+                "ObjectName": "ServiceAreaTypeDesc",
+                "Description": null
+            },
+            {
+                "ColumnName": "VIOLATION_CATEGORIES",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "64",
+                "ObjectName": "ViolationCategories",
+                "Description": null
+            },
+            {
                 "ColumnName": "SANSURVEY5YR",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "62",
+                "ColumnID": "65",
                 "ObjectName": "Sansurvey5yr",
+                "Description": null
+            },
+            {
+                "ColumnName": "DATE_LAST_SANSURVEY",
+                "DataType": "DATE",
+                "DataLength": "7",
+                "ColumnID": "66",
+                "ObjectName": "DateLastSansurvey",
                 "Description": null
             },
             {
                 "ColumnName": "SIGNIFICANT_DEFICIENCY_COUNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "63",
+                "ColumnID": "67",
                 "ObjectName": "SignificantDeficiencyCount",
+                "Description": null
+            },
+            {
+                "ColumnName": "SIGNIFICANT_DEFICIENCY_COUNT_ILS",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "68",
+                "ObjectName": "SignificantDeficiencyCountIls",
                 "Description": null
             },
             {
                 "ColumnName": "SDW_DATE_LAST_VISIT",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "64",
+                "ColumnID": "69",
                 "ObjectName": "SDWDateLastVisit",
                 "Description": null
             },
@@ -518,7 +558,7 @@
                 "ColumnName": "SDW_DATE_LAST_VISIT_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "65",
+                "ColumnID": "70",
                 "ObjectName": "SDWDateLastVisitEPA",
                 "Description": null
             },
@@ -526,7 +566,7 @@
                 "ColumnName": "SDW_DATE_LAST_VISIT_STATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "66",
+                "ColumnID": "71",
                 "ObjectName": "SDWDateLastVisitState",
                 "Description": null
             },
@@ -534,7 +574,7 @@
                 "ColumnName": "SDW_DATE_LAST_VISIT_LOCAL",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "67",
+                "ColumnID": "72",
                 "ObjectName": "SDWDateLastVisitLocal",
                 "Description": null
             },
@@ -542,7 +582,7 @@
                 "ColumnName": "SITE_VISITS_5YR_ALL",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "68",
+                "ColumnID": "73",
                 "ObjectName": "SiteVisits5yrAll",
                 "Description": null
             },
@@ -550,7 +590,7 @@
                 "ColumnName": "SITE_VISITS_5YR_INSPECTIONS",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "69",
+                "ColumnID": "74",
                 "ObjectName": "SiteVisits5yrInspections",
                 "Description": null
             },
@@ -558,7 +598,7 @@
                 "ColumnName": "SITE_VISITS_5YR_OTHER",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "70",
+                "ColumnID": "75",
                 "ObjectName": "SiteVisits5yrOther",
                 "Description": null
             },
@@ -566,7 +606,7 @@
                 "ColumnName": "REGISTRY_ID",
                 "DataType": "VARCHAR2",
                 "DataLength": "50",
-                "ColumnID": "71",
+                "ColumnID": "76",
                 "ObjectName": "RegistryID",
                 "Description": null
             }
