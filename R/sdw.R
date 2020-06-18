@@ -99,6 +99,9 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
                          url = getURL,
                          httr::accept_json())
 
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
+
   ## Print status message, need to make this optional
   if (isTRUE(verbose)) {
     message("Request URL:", getURL)

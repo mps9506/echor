@@ -66,6 +66,9 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
                            url = getURL,
                            httr::accept_json())
 
+    ## Check for valid response for serve, else returns error
+    resp_check(request)
+
     ## Print status message, need to make this optional
     if (isTRUE(verbose)) {
       message("Request URL:", getURL)
@@ -142,7 +145,12 @@ echoAirGetMeta <- function(verbose = FALSE){
   getURL <- requestURL(path = path, query = NULL)
 
   ## Make the request
-  request <- httr::GET(getURL, httr::accept_json())
+  request <- httr::RETRY("GET",
+                         url = getURL,
+                         httr::accept_json())
+
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
 
   ## Print status message, need to make this optional
   if (isTRUE(verbose)) {
@@ -211,7 +219,12 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
     query <- paste(p_id, queryDots, sep = "&")
     getURL <- requestURL(path = path, query = query)
 
-    request <- httr::GET(getURL, httr::accept_json())
+    request <- httr::RETRY("GET",
+                           url = getURL,
+                           httr::accept_json())
+
+    ## Check for valid response for serve, else returns error
+    resp_check(request)
 
     if (isTRUE(verbose)) {
       message("Request URL:", getURL)

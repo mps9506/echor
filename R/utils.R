@@ -151,6 +151,9 @@ getGeoJson <- function(service, qid, qcolumns) {
   ## Make the request
   request <- httr::RETRY("GET", getURL)
 
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
+
   info <- httr::content(request, as = "text", encoding = "UTF-8")
 
   return(info)
