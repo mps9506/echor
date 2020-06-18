@@ -111,6 +111,9 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
   ## Make the request
   request <- httr::RETRY("GET", getURL)
 
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
+
   info <- httr::content(request, as = "raw")
 
   info <- readr::read_csv(info, col_names = TRUE,
@@ -204,4 +207,32 @@ columnsToParse <- function(program, colNums) {
                                warn_missing = FALSE)
   col_types <- paste(col_types, sep = "", collapse = "")
   return(col_types)
+}
+
+
+#' Check responses
+#'
+#' Checks for valid server response and passes silently or produces a hopefully useful error.
+#' @param response response a [httr::GET()] request result returned from the API
+#'
+#' @return nothing if check is passed, or an informative error if not passed.
+#' @keywords internal
+resp_check <- function(response) {
+
+  ## note, might be able to rely on
+  ## httr stop_for_status to do all this
+  ## but this function allows some more
+  ## informative messages to be created
+
+  if(response$status_code == 202) {
+    return(TRUE) #all good!
   }
+  else if(response$status_code == 413) {
+    stop("Payload too large, shorten request.", call. = FALSE)
+  }
+  else if(response$status_code == 429) {
+    stop("Too many requests. Please wait.", call. = FALSE)
+  }
+  else {stop_for_status(response)
+  }
+}
