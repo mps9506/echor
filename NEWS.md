@@ -1,6 +1,9 @@
 # echor 0.1.5 (unreleased)
 
+## Minor Changes
 
+* `httr::RETRY()` used throughout. (fixes #49)
+* Add CITATION
 
 # echor 0.1.4
 
