@@ -96,6 +96,7 @@ When returned as sf dataframes, the data is suitable for immediate spatial plott
 library(ggspatial)
 library(sf)
 library(ggrepel)
+library(purrr)
 ## This example requires the development version of ggplot with support
 ## for geom_sf()
 ## and uses theme_ipsum_rc() from library(hrbrthemes)
