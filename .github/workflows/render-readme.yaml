@@ -15,7 +15,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown", "dplyr", "ggplot2", "hrbrthemes", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr"))'
+        run: Rscript -e 'install.packages(c("rmarkdown", "dplyr", "ggplot2", "hrbrthemes", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr", "raster"))'
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
       - name: Commit results
