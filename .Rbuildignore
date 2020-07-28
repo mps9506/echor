@@ -16,3 +16,4 @@
 ^revdep$
 ^CRAN-RELEASE$
 ^rosm\.cache$
+^\.github$
