@@ -14,7 +14,7 @@ Description: An R interface to United States Environmental
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Imports:
   dplyr,
   geojsonsf,
@@ -29,12 +29,13 @@ Imports:
 Suggests:
     spelling,
     ggplot2,
-    ggmap,
     ggrepel,
+    ggspatial,
     here,
     httptest,
     kableExtra,
     knitr,
+    raster,
     rmarkdown,
     sf,
     testthat
