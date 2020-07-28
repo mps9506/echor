@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
   fig.retina = 2
 )
 
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 library(hrbrthemes)
 library(echor)
 library(extrafont)
