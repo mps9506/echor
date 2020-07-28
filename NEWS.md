@@ -1,3 +1,11 @@
+# echor 0.1.5
+
+## Minor Changes
+
+* `httr::RETRY()` used throughout. (fixes #49)
+* Add CITATION.
+* vignette and readme use ggspatial instead of ggmap. (fixes #52)
+
 # echor 0.1.4
 
 * `downloadDMRs()` passes arguments properly. This fixes #43.

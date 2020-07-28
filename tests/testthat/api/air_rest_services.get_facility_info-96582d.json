@@ -1,7 +1,7 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "630",
+        "QueryID": "562",
         "QueryRows": "1",
         "IndianCountryRows": "0",
         "SVRows": "0",
@@ -44,8 +44,8 @@
                 "RegistryID": "110000350174",
                 "FacLat": "34.283317",
                 "FacLong": "-77.985226",
-                "AIRLastStckDateState": "07/01/2017",
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             }
         ]
     }

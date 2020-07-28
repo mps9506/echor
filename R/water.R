@@ -65,7 +65,12 @@ echoWaterGetFacilityInfo <- function(output = "df",
     getURL <- requestURL(path = path, query = query)
 
     ## Make the request
-    request <- httr::GET(getURL, httr::accept_json())
+    request <- httr::RETRY("GET",
+                           url = getURL,
+                           httr::accept_json())
+
+    ## Check for valid response for serve, else returns error
+    resp_check(request)
 
     ## Print status message
     if (isTRUE(verbose)) {
@@ -142,7 +147,12 @@ echoWaterGetMeta <- function(verbose = FALSE){
   getURL <- requestURL(path = path, query = NULL)
 
   ## Make the request
-  request <- httr::GET(getURL, httr::accept_json())
+  request <- httr::RETRY("GET",
+                         url = getURL,
+                         httr::accept_json())
+
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
 
   ## Print status message, need to make this optional
   if (isTRUE(verbose)) {
@@ -213,7 +223,12 @@ downloadEffluentChart <- function(p_id, verbose, queryDots) {
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
-  request <- httr::GET(getURL, httr::accept("text/csv"))
+  request <- httr::RETRY("GET",
+                         url = getURL,
+                         httr::accept("text/csv"))
+
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
 
   ## Print status message
   if (isTRUE(verbose)) {
@@ -286,7 +301,12 @@ echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
     }
   }
 
-  request <- httr::GET(getURL, httr::accept_json())
+  request <- httr::RETRY("GET",
+                         url = getURL,
+                         httr::accept_json())
+
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
 
   if (isTRUE(verbose)) {
     message("Request URL:", getURL)

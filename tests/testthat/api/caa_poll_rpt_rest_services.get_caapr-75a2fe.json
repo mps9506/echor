@@ -1799,6 +1799,26 @@
             "Permits": [
                 {
                     "Statute": "CAA",
+                    "EPASystem": "CEDRI",
+                    "SourceID": "CEDRI10000161",
+                    "Universe": "",
+                    "NAICS": "221112",
+                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
+                    "SIC": null,
+                    "FacilityStatus": null
+                },
+                {
+                    "Statute": "CAA",
+                    "EPASystem": "AIR",
+                    "SourceID": "NC0000003706500036",
+                    "Universe": "Major Emissions",
+                    "NAICS": "221112",
+                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
+                    "SIC": "4911",
+                    "FacilityStatus": "Operating"
+                },
+                {
+                    "Statute": "CAA",
                     "EPASystem": "CAMDBS",
                     "SourceID": "2713",
                     "Universe": "",
@@ -1806,16 +1826,6 @@
                     "NAICSDesc": "Fossil Fuel Electric Power Generation",
                     "SIC": "4911",
                     "FacilityStatus": "INACTIVE"
-                },
-                {
-                    "Statute": "CAA",
-                    "EPASystem": "CEDRI",
-                    "SourceID": "CEDRI10000161",
-                    "Universe": "",
-                    "NAICS": null,
-                    "NAICSDesc": null,
-                    "SIC": null,
-                    "FacilityStatus": null
                 },
                 {
                     "Statute": "CAA",
@@ -1836,16 +1846,6 @@
                     "NAICSDesc": "Fossil Fuel Electric Power Generation",
                     "SIC": null,
                     "FacilityStatus": "OPERATING"
-                },
-                {
-                    "Statute": "CAA",
-                    "EPASystem": "AIR",
-                    "SourceID": "NC0000003706500036",
-                    "Universe": "Major Emissions",
-                    "NAICS": "221112",
-                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
-                    "SIC": "4911",
-                    "FacilityStatus": "Operating"
                 },
                 {
                     "Statute": "EP313",

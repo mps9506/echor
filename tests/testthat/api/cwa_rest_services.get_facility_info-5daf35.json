@@ -1,7 +1,7 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "626",
+        "QueryID": "559",
         "QueryRows": "1",
         "IndianCountryRows": "0",
         "SVRows": "0",
@@ -45,9 +45,8 @@
                 "CWPCity": "REDSTONE ARSENAL",
                 "CWPState": "AL",
                 "RegistryID": "110020837601",
-                "FacLat": "34.630123",
-                "FacLong": "-86.643041",
-                "CWPSNCEventDesc": null
+                "FacLat": "34.625123",
+                "FacLong": "-86.640541"
             }
         ]
     }

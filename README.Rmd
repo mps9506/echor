@@ -25,6 +25,7 @@ loadfonts()
 [![Travis build status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor)
 [![Coverage status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
+[![DOI](https://zenodo.org/badge/122131508.svg)](https://zenodo.org/badge/latestdoi/122131508)
 
 ## Overview
 
@@ -41,7 +42,7 @@ install.packages("echor")
 Or install the development version from github:
 
 ```{r InstallDev, eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-devtools::install_github("mps9506/echor")
+remotes::install_github("mps9506/echor")
 ```
 
 ## Usage
@@ -88,8 +89,8 @@ head(df)
 
 
 When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
-```{r example3, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
-library(ggmap)
+```{r example3, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, out.width="100%"}
+library(ggspatial)
 library(sf)
 library(ggrepel)
 ## This example requires the development version of ggplot with support
@@ -104,10 +105,6 @@ df <- echoWaterGetFacilityInfo(output = "sf",
                                ymax = '30.640008',
                                p_ptype = "NPD")
 
-collegestation <- get_map(location = c(-96.387509, 30.583572,
-                                       -96.281422, 30.640008), 
-                          zoom = 14, maptype = "toner")
-
 ##to make labels, need to map the coords and use geom_text :(
 ## can't help but think there is an easier way to do this
 
@@ -118,14 +115,15 @@ df <- df %>%
     coords_y = map_dbl(coords, 2)
   )
 
-ggmap(collegestation) + 
-  geom_sf(data = df, inherit.aes = FALSE, shape = 21, 
+ggplot(df) +
+  annotation_map_tile(zoomin = -1, progress = "none") +
+  geom_sf(inherit.aes = FALSE, shape = 21, 
           color = "darkred", fill = "darkred", 
           size = 2, alpha = 0.25) +
   geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
                    point.padding = .5, min.segment.length = 0.1,
                    size = 2, color = "dodgerblue") +
-  theme_ipsum_rc(plot_margin = margin(5, 5, 5, 5)) +
+  theme_ipsum(plot_margin = margin(5, 5, 5, 5)) +
   labs(x = "Longitude", y = "Latitude", 
        title = "NPDES permits near Texas A&M",
        caption = "Source: EPA ECHO database")
@@ -136,7 +134,7 @@ ggmap(collegestation) +
 
 Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes of permitted water discharger Discharge Monitoring Report (DMR) or permitted emitters Clean Air Act annual emissions reports. Please note that all variables are returned as *character* vectors.
 
-```{r}
+```{r message=TRUE, warning=FALSE}
 df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '00300')
 
 df <- df %>%
@@ -147,7 +145,7 @@ df <- df %>%
 
 ggplot(df) +
   geom_line(aes(monitoring_period_end_date, dmr_value_nmbr)) +
-  theme_ipsum_rc(grid = "Y") +
+  theme_ipsum(grid = "Y") +
   labs(x = "Monitoring period date",
        y = "Dissolved oxygen concentration (mg/l)",
        title = "Reported minimum dissolved oxygen concentration",

@@ -1,7 +1,7 @@
 Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
-Version: 0.1.4
+Version: 0.1.4.9999
 Authors@R: person("Michael", "Schramm", role = c("aut", "cre"), email = "michael.schramm@ag.tamu.edu")
 Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
 Description: An R interface to United States Environmental 
@@ -14,7 +14,7 @@ Description: An R interface to United States Environmental
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Imports:
   dplyr,
   geojsonsf,
@@ -29,12 +29,13 @@ Imports:
 Suggests:
     spelling,
     ggplot2,
-    ggmap,
     ggrepel,
+    ggspatial,
     here,
     httptest,
     kableExtra,
     knitr,
+    raster,
     rmarkdown,
     sf,
     testthat
