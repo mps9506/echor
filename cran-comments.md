@@ -1,9 +1,9 @@
 ## Test environments
 
-* local Windows 10, R 3.6.2
-* travis-ci: R 3.6.2, R-devel
-* appveyor: R 3.6.2
-* win-builder R 3.6.2, R-devel
+* local Windows 10, R 4.0.2
+* travis-ci: R 4.0.2, R-devel
+* appveyor: R 4.0.2
+* win-builder R 4.0.2, R-devel
 
 ## R CMD check results
 

@@ -1,45 +1,61 @@
-# Setup
+# Platform
 
-## Platform
-
-|setting  |value                        |
+|field    |value                        |
 |:--------|:----------------------------|
-|version  |R version 3.5.2 (2018-12-20) |
+|version  |R version 4.0.2 (2020-06-22) |
+|os       |Windows 10 x64               |
 |system   |x86_64, mingw32              |
-|ui       |RStudio (1.2.1335)           |
+|ui       |RStudio                      |
 |language |(EN)                         |
 |collate  |English_United States.1252   |
+|ctype    |English_United States.1252   |
 |tz       |America/Chicago              |
-|date     |2019-09-17                   |
+|date     |2020-07-28                   |
 
-## Packages
+# Dependencies
 
-|package    |*  |version    |date       |source                   |
-|:----------|:--|:----------|:----------|:------------------------|
-|dplyr      |   |0.8.3      |2019-07-04 |CRAN (R 3.5.3)           |
-|echor      |*  |0.1.2.9999 |2019-09-17 |local (mps9506/echor@NA) |
-|geojsonsf  |   |1.3.0      |2019-01-10 |CRAN (R 3.5.3)           |
-|ggmap      |   |3.0.0      |2019-02-05 |CRAN (R 3.5.3)           |
-|ggplot2    |   |3.2.1      |2019-08-10 |CRAN (R 3.5.3)           |
-|ggrepel    |   |0.8.1      |2019-05-07 |CRAN (R 3.5.3)           |
-|here       |   |0.1        |2017-05-28 |CRAN (R 3.5.3)           |
-|httr       |   |1.4.1      |2019-08-05 |CRAN (R 3.5.3)           |
-|kableExtra |   |1.1.0      |2019-03-16 |CRAN (R 3.5.3)           |
-|knitr      |   |1.24       |2019-08-08 |CRAN (R 3.5.3)           |
-|lubridate  |   |1.7.4      |2018-04-11 |CRAN (R 3.5.3)           |
-|plyr       |   |1.8.4      |2016-06-08 |CRAN (R 3.5.3)           |
-|purrr      |   |0.3.2      |2019-03-15 |CRAN (R 3.5.3)           |
-|readr      |   |1.3.1      |2018-12-21 |CRAN (R 3.5.3)           |
-|rlang      |   |0.4.0      |2019-06-25 |CRAN (R 3.5.3)           |
-|rmarkdown  |   |1.15       |2019-08-21 |CRAN (R 3.5.3)           |
-|sf         |   |0.7-7      |2019-07-24 |CRAN (R 3.5.3)           |
-|tibble     |   |2.1.3      |2019-06-06 |CRAN (R 3.5.3)           |
-|tidyr      |   |1.0.0      |2019-09-11 |CRAN (R 3.5.3)           |
+|package    |old      |new      |<U+0394>  |
+|:----------|:--------|:--------|:--|
+|echor      |0.1.4    |0.1.5    |*  |
+|askpass    |1.1      |1.1      |   |
+|assertthat |0.2.1    |0.2.1    |   |
+|BH         |1.72.0-3 |1.72.0-3 |   |
+|cli        |2.0.2    |2.0.2    |   |
+|clipr      |0.7.0    |0.7.0    |   |
+|crayon     |1.3.4    |1.3.4    |   |
+|curl       |4.3      |4.3      |   |
+|digest     |0.6.25   |0.6.25   |   |
+|dplyr      |1.0.0    |1.0.0    |   |
+|ellipsis   |0.3.1    |0.3.1    |   |
+|fansi      |0.4.1    |0.4.1    |   |
+|generics   |0.0.2    |0.0.2    |   |
+|geojsonsf  |2.0.0    |2.0.0    |   |
+|glue       |1.4.1    |1.4.1    |   |
+|hms        |0.5.3    |0.5.3    |   |
+|httr       |1.4.2    |1.4.2    |   |
+|jsonify    |1.2.1    |1.2.1    |   |
+|jsonlite   |1.7.0    |1.7.0    |   |
+|lifecycle  |0.2.0    |0.2.0    |   |
+|magrittr   |1.5      |1.5      |   |
+|mime       |0.9      |0.9      |   |
+|openssl    |1.4.2    |1.4.2    |   |
+|pillar     |1.4.6    |1.4.6    |   |
+|pkgconfig  |2.0.3    |2.0.3    |   |
+|plyr       |1.8.6    |1.8.6    |   |
+|purrr      |0.3.4    |0.3.4    |   |
+|R6         |2.4.1    |2.4.1    |   |
+|rapidjsonr |1.2.0    |1.2.0    |   |
+|Rcpp       |1.0.5    |1.0.5    |   |
+|readr      |1.3.1    |1.3.1    |   |
+|rlang      |0.4.7    |0.4.7    |   |
+|sfheaders  |0.2.2    |0.2.2    |   |
+|stringi    |1.4.6    |1.4.6    |   |
+|sys        |3.4      |3.4      |   |
+|tibble     |3.0.3    |3.0.3    |   |
+|tidyr      |1.1.0    |1.1.0    |   |
+|tidyselect |1.1.0    |1.1.0    |   |
+|utf8       |1.1.4    |1.1.4    |   |
+|vctrs      |0.3.2    |0.3.2    |   |
 
-# Check results
-
-0 packages
-
-
-
+# Revdeps
 
