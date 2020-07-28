@@ -62,7 +62,6 @@ remotes::install_github("mps9506/echor")
 We can look up plants by permit id, bounding box, and numerous other parameters. I plan on providing documentation of available parameters. However, arguments can be looked up here: [get_cwa_rest_services_get_facility_info](https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info)
 
 ```{r example1, echo=TRUE, message=FALSE, warning=FALSE}
-library(tidyverse)
 library(echor)
 
 ## echoWaterGetFacilityInfo() will return a dataframe or simple features (sf) dataframe.
