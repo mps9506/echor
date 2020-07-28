@@ -126,7 +126,7 @@ df <- echoAirGetFacilityInfo(output = "df",
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 knitr::kable(head(df), "html") %>%
   kable_styling() %>%
-  scroll_box(width = "500px", height = "200px")
+  scroll_box(height = "200px")
 ```
 
 
@@ -185,13 +185,13 @@ df <- echoGetCAAPR(p_id = '110000350174')
 ```{r echo=FALSE}
 knitr::kable(head(df), "html") %>%
   kable_styling() %>%
-  scroll_box(width = "500px", height = "200px")
+  scroll_box(width = "100%", height = "200px")
 ```
 
 
 There are only two valid arguments for `echoGetCAAPR`.
 ```{}
-p_id  string  EPA Facility Registry Service's REGISTRY_ID.
+p_id    string  EPA Facility Registry Service's REGISTRY_ID.
 
 p_units string  Units of measurement. Defaults is 'lbs'.
                 Enter "TPWE" for toxic weighted pounds equivalents.
@@ -203,13 +203,13 @@ Find facilities with NPDES permits to discharge wastewater:
 ```{r}
 df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395', 
                                xmax = '-96.25947',  ymax = '30.751984', 
-                               output = 'df')
+                               output = 'df', qcolumns = "1,2,3,4,5,6,7")
 ```
 
 ```{r echo=FALSE}
 knitr::kable(head(df), "html") %>%
   kable_styling() %>%
-  scroll_box(width = "500px", height = "200px")
+  scroll_box(width = "100%", height = "200px")
 ```
 
 Again, there are a ton of possible arguments to query ECHO with. All arguments are described here: 
@@ -274,20 +274,20 @@ df <- echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
 ```{r echo=FALSE}
 knitr::kable(head(df), "html") %>%
   kable_styling() %>%
-  scroll_box(width = "500px", height = "200px")
+  scroll_box(width = "100%", height = "200px")
 ```
 
 This function only retrieves from a single facility per call. The following arguments are available from ECHO:
 ```{}
-p_id  string  EPA Facility Registry Service's REGISTRY_ID.
+p_id            string  EPA Facility Registry Service's REGISTRY_ID.
 
-outfall string  Three-character code identifying the point of discharge.
+outfall         string  Three-character code identifying the point of discharge.
 
 parameter_code  string  Five-digit numeric code identifying the parameter.
 
-start_date  string  Start date of interest. Must be entered as "mm/dd/yyyy"
+start_date      string  Start date of interest. Must be entered as "mm/dd/yyyy"
 
-end_date  string  End date of interest. Must be entered as "mm/dd/yyyy"
+end_date        string  End date of interest. Must be entered as "mm/dd/yyyy"
 ```
 
 Parameters codes can be searched using `echoWaterGetParams`.
@@ -295,19 +295,11 @@ Parameters codes can be searched using `echoWaterGetParams`.
 echoWaterGetParams(term = "Oxygen, dissolved")
 ```
 
-Available arguments include:
-```{}
-term string partial or complete search phrase or word
-
-code  string  partial or complete code value
-```
-
-You can only enter either term or code arguments.
 
 
 Multiple DMRs can be downloaded using a helper function: `downloadDMRs`:
 ```{r}
-df <- tibble::tibble(permit = c('TX0119407', 'TX040237'))
+df <- tibble::tibble(permit = c('TX0119407', 'TX0062677'))
 df <- downloadDMRs(df, idColumn = permit)
 df <- df %>%
   tidyr::unnest(dmr)
@@ -318,46 +310,26 @@ tibble::glimpse(df)
 ### Spatial data
 `echor` can also return spatial data frames known as simple features (https://r-spatial.github.io/sf/), to facilitate creation of maps. Both `echoAirGetFacilityInfo` and `echoWaterGetFacilityInfo` include arguments to return simple feature dataframes.
 
-Using `sf`, `ggmap`, and the current development version of `ggplot2` (`devtools::install_github("tidyverse/ggplot2")`), we can quickly create a map of downloaded data.
+Using `sf`, `ggplot`, and `ggspatial` we can quickly create a map of downloaded data.
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-## Sample code only,
-## This example requires the development
-## version of ggplot2 with support for
-## geom_sf()
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, width="100%"}
 
 library(ggplot2)
-library(ggmap)
+library(ggspatial)
 library(dplyr)
-library(purrr)
 library(sf)
-library(ggrepel)
 
 ## Download data as a simple feature
 df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395',
                                         xmax = '-96.25947', ymax = '30.751984',
                                         output = 'sf')
-## Download a basemap with gg_map
-collegestation <- get_map(location = c(-96.387509, 30.583572,
-                                       -96.281422, 30.640008), 
-                          zoom = 14, maptype = "toner")
-
-## Use coordinates to create label locations
-df <- df %>%
-  mutate(
-    coords = map(geometry, st_coordinates),
-    coords_x = map_dbl(coords, 1),
-    coords_y = map_dbl(coords, 2)
-  )
 
 ## Make the map
-ggmap(collegestation) + 
-  geom_sf(data = df, inherit.aes = FALSE, shape = 21, 
+ggplot(df) +
+  annotation_map_tile(zoomin = 0, progress = "none") +
+  geom_sf(inherit.aes = FALSE, shape = 21, 
           color = "darkred", fill = "darkred", 
-          size = 2, alpha = 0.25) +
-  geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
-                   point.padding = .5, min.segment.length = 0.1,
-                   size = 2, color = "dodgerblue") +
+          size = 2) +
   labs(x = "Longitude", y = "Latitude", 
        title = "NPDES permits near Texas A&M",
        caption = "Source: EPA ECHO database")

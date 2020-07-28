@@ -1,16 +1,16 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "967",
+        "QueryID": "437",
         "QueryRows": "24",
         "IndianCountryRows": "0",
-        "SVRows": "1",
-        "CVRows": "1",
-        "V3Rows": "1",
-        "FEARows": "1",
+        "SVRows": "0",
+        "CVRows": "0",
+        "V3Rows": "0",
+        "FEARows": "0",
         "InfFEARows": "0",
         "INSPRows": "2",
-        "TotalPenalties": "$24,938",
+        "TotalPenalties": "$0",
         "BadSystemIDs": null,
         "IconBaseURL": "https://echo.epa.gov/app/map/icons/",
         "PopUpBaseURL": "air_rest_services.pop_up?p_id=",
@@ -54,8 +54,8 @@
                 "RegistryID": "110001873786",
                 "FacLat": "30.61869",
                 "FacLong": "-96.34588",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "2",
@@ -65,8 +65,8 @@
                 "RegistryID": "110001873731",
                 "FacLat": "30.60704",
                 "FacLong": "-96.30875",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "3",
@@ -76,8 +76,8 @@
                 "RegistryID": "110007194044",
                 "FacLat": "30.613371",
                 "FacLong": "-96.320977",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "4",
@@ -87,8 +87,8 @@
                 "RegistryID": "110007200830",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "AIRLastStckDateState": "03/12/2012",
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "5",
@@ -98,8 +98,8 @@
                 "RegistryID": "110001873713",
                 "FacLat": "30.61225",
                 "FacLong": "-96.317503",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "6",
@@ -109,8 +109,8 @@
                 "RegistryID": "110007194142",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "7",
@@ -120,8 +120,8 @@
                 "RegistryID": "110001873722",
                 "FacLat": "30.60616",
                 "FacLong": "-96.31034",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "8",
@@ -131,8 +131,8 @@
                 "RegistryID": "110001873759",
                 "FacLat": "30.62254",
                 "FacLong": "-96.31053",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "9",
@@ -142,8 +142,8 @@
                 "RegistryID": "110001873777",
                 "FacLat": "30.619764",
                 "FacLong": "-96.343989",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "10",
@@ -153,8 +153,8 @@
                 "RegistryID": "110007205041",
                 "FacLat": "30.60678",
                 "FacLong": "-96.30969",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "11",
@@ -164,8 +164,8 @@
                 "RegistryID": "110001873606",
                 "FacLat": "30.621491",
                 "FacLong": "-96.35352",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "12",
@@ -175,8 +175,8 @@
                 "RegistryID": "110007203739",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "13",
@@ -186,8 +186,8 @@
                 "RegistryID": "110007194099",
                 "FacLat": "30.613371",
                 "FacLong": "-96.320977",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "14",
@@ -197,8 +197,8 @@
                 "RegistryID": "110007194981",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "15",
@@ -208,8 +208,8 @@
                 "RegistryID": "110001873740",
                 "FacLat": "30.59645",
                 "FacLong": "-96.33268",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "16",
@@ -219,8 +219,8 @@
                 "RegistryID": "110001873795",
                 "FacLat": "30.624409",
                 "FacLong": "-96.342948",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "17",
@@ -230,8 +230,8 @@
                 "RegistryID": "110001873633",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "18",
@@ -241,8 +241,8 @@
                 "RegistryID": "110001873768",
                 "FacLat": "30.60572",
                 "FacLong": "-96.33784",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "19",
@@ -252,8 +252,8 @@
                 "RegistryID": "110001873679",
                 "FacLat": "30.63881",
                 "FacLong": "-96.34786",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": "CENTER OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "20",
@@ -263,8 +263,8 @@
                 "RegistryID": "110007194071",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "21",
@@ -274,8 +274,8 @@
                 "RegistryID": "110034947949",
                 "FacLat": "30.60368",
                 "FacLong": "-96.358106",
-                "AIRLastStckDateState": "02/08/2013",
-                "ReferencePoint": "ENTRANCE POINT OF A FACILITY OR STATION"
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "22",
@@ -285,8 +285,8 @@
                 "RegistryID": "110001866614",
                 "FacLat": "30.613371",
                 "FacLong": "-96.320977",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             },
             {
                 "ObjectId": "23",
@@ -296,8 +296,8 @@
                 "RegistryID": "110007203169",
                 "FacLat": "30.615655",
                 "FacLong": "-96.348601",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
                 "ObjectId": "24",
@@ -307,8 +307,8 @@
                 "RegistryID": "110007201919",
                 "FacLat": "30.637595",
                 "FacLong": "-96.362352",
-                "AIRLastStckDateState": null,
-                "ReferencePoint": null
+                "AIRLastStckDateEPA": null,
+                "CollectionMethod": "Zip Code Centroid"
             }
         ]
     }
