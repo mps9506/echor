@@ -89,8 +89,8 @@ head(df)
 
 
 When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:
-```{r example3, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
-library(ggmap)
+```{r example3, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, out.width="100%"}
+library(ggspatial)
 library(sf)
 library(ggrepel)
 ## This example requires the development version of ggplot with support
@@ -105,10 +105,6 @@ df <- echoWaterGetFacilityInfo(output = "sf",
                                ymax = '30.640008',
                                p_ptype = "NPD")
 
-collegestation <- get_map(location = c(-96.387509, 30.583572,
-                                       -96.281422, 30.640008), 
-                          zoom = 14, maptype = "toner")
-
 ##to make labels, need to map the coords and use geom_text :(
 ## can't help but think there is an easier way to do this
 
@@ -119,8 +115,9 @@ df <- df %>%
     coords_y = map_dbl(coords, 2)
   )
 
-ggmap(collegestation) + 
-  geom_sf(data = df, inherit.aes = FALSE, shape = 21, 
+ggplot(df) +
+  annotation_map_tile(zoomin = -1) +
+  geom_sf(inherit.aes = FALSE, shape = 21, 
           color = "darkred", fill = "darkred", 
           size = 2, alpha = 0.25) +
   geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),

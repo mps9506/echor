@@ -108,7 +108,7 @@ When returned as sf dataframes, the data is suitable for immediate
 spatial plotting or analysis:
 
 ``` r
-library(ggmap)
+library(ggspatial)
 library(sf)
 library(ggrepel)
 ## This example requires the development version of ggplot with support
@@ -123,10 +123,6 @@ df <- echoWaterGetFacilityInfo(output = "sf",
                                ymax = '30.640008',
                                p_ptype = "NPD")
 
-collegestation <- get_map(location = c(-96.387509, 30.583572,
-                                       -96.281422, 30.640008), 
-                          zoom = 14, maptype = "toner")
-
 ##to make labels, need to map the coords and use geom_text :(
 ## can't help but think there is an easier way to do this
 
@@ -137,8 +133,9 @@ df <- df %>%
     coords_y = map_dbl(coords, 2)
   )
 
-ggmap(collegestation) + 
-  geom_sf(data = df, inherit.aes = FALSE, shape = 21, 
+ggplot(df) +
+  annotation_map_tile(zoomin = -1) +
+  geom_sf(inherit.aes = FALSE, shape = 21, 
           color = "darkred", fill = "darkred", 
           size = 2, alpha = 0.25) +
   geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
@@ -150,7 +147,7 @@ ggmap(collegestation) +
        caption = "Source: EPA ECHO database")
 ```
 
-<img src="man/figures/README-example3-1.png" width="672" />
+<img src="man/figures/README-example3-1.png" width="100%" />
 
 ### Download discharge/emissions data
 
@@ -193,26 +190,27 @@ sessioninfo::platform_info()
 #>  collate  English_United States.1252  
 #>  ctype    English_United States.1252  
 #>  tz       America/Chicago             
-#>  date     2020-06-17
+#>  date     2020-07-28
 sessioninfo::package_info()
 #>  package     * version    date       lib source        
+#>  abind         1.4-5      2016-07-21 [1] CRAN (R 4.0.0)
 #>  assertthat    0.2.1      2019-03-21 [1] CRAN (R 4.0.0)
 #>  backports     1.1.6      2020-04-05 [1] CRAN (R 4.0.0)
-#>  bitops        1.0-6      2013-08-17 [1] CRAN (R 4.0.0)
 #>  broom         0.5.6      2020-04-20 [1] CRAN (R 4.0.0)
 #>  cellranger    1.1.0      2016-07-27 [1] CRAN (R 4.0.0)
 #>  class         7.3-16     2020-03-25 [2] CRAN (R 4.0.0)
 #>  classInt      0.4-3      2020-04-07 [1] CRAN (R 4.0.0)
 #>  cli           2.0.2      2020-02-28 [1] CRAN (R 4.0.0)
+#>  codetools     0.2-16     2018-12-24 [2] CRAN (R 4.0.0)
 #>  colorspace    1.4-1      2019-03-18 [1] CRAN (R 4.0.0)
 #>  crayon        1.3.4      2017-09-16 [1] CRAN (R 4.0.0)
 #>  curl          4.3        2019-12-02 [1] CRAN (R 4.0.0)
 #>  DBI           1.1.0      2019-12-15 [1] CRAN (R 4.0.0)
 #>  dbplyr        1.4.3      2020-04-19 [1] CRAN (R 4.0.0)
 #>  digest        0.6.25     2020-02-23 [1] CRAN (R 4.0.0)
-#>  dplyr       * 0.8.5      2020-03-07 [1] CRAN (R 4.0.0)
+#>  dplyr       * 1.0.0      2020-05-29 [1] CRAN (R 4.0.2)
 #>  e1071         1.7-3      2019-11-26 [1] CRAN (R 4.0.0)
-#>  echor       * 0.1.4.9999 2020-06-17 [1] local         
+#>  echor       * 0.1.4.9999 2020-06-18 [1] local         
 #>  ellipsis      0.3.0      2019-09-20 [1] CRAN (R 4.0.0)
 #>  evaluate      0.14       2019-05-28 [1] CRAN (R 4.0.0)
 #>  extrafont   * 0.17       2014-12-08 [1] CRAN (R 4.0.0)
@@ -224,9 +222,9 @@ sessioninfo::package_info()
 #>  gdtools       0.2.2      2020-04-03 [1] CRAN (R 4.0.0)
 #>  generics      0.0.2      2018-11-29 [1] CRAN (R 4.0.0)
 #>  geojsonsf     1.3.3      2020-03-18 [1] CRAN (R 4.0.0)
-#>  ggmap       * 3.0.0      2019-02-04 [1] CRAN (R 4.0.0)
 #>  ggplot2     * 3.3.0      2020-03-05 [1] CRAN (R 4.0.0)
 #>  ggrepel     * 0.8.2      2020-03-08 [1] CRAN (R 4.0.0)
+#>  ggspatial   * 1.1.4      2020-07-12 [1] CRAN (R 4.0.2)
 #>  glue          1.4.0      2020-04-03 [1] CRAN (R 4.0.0)
 #>  gtable        0.3.0      2019-03-25 [1] CRAN (R 4.0.0)
 #>  haven         2.2.0      2019-11-08 [1] CRAN (R 4.0.0)
@@ -234,7 +232,6 @@ sessioninfo::package_info()
 #>  hrbrthemes  * 0.8.0      2020-03-06 [1] CRAN (R 4.0.0)
 #>  htmltools     0.4.0      2019-10-04 [1] CRAN (R 4.0.0)
 #>  httr          1.4.1      2019-08-05 [1] CRAN (R 4.0.0)
-#>  jpeg          0.1-8.1    2019-10-24 [1] CRAN (R 4.0.0)
 #>  jsonlite      1.6.1      2020-02-02 [1] CRAN (R 4.0.0)
 #>  KernSmooth    2.23-16    2019-10-15 [2] CRAN (R 4.0.0)
 #>  knitr         1.28       2020-02-06 [1] CRAN (R 4.0.0)
@@ -250,16 +247,18 @@ sessioninfo::package_info()
 #>  pkgconfig     2.0.3      2019-09-22 [1] CRAN (R 4.0.0)
 #>  plyr          1.8.6      2020-03-03 [1] CRAN (R 4.0.0)
 #>  png           0.1-7      2013-12-03 [1] CRAN (R 4.0.0)
+#>  prettymapr    0.2.2      2017-09-20 [1] CRAN (R 4.0.2)
 #>  purrr       * 0.3.4      2020-04-17 [1] CRAN (R 4.0.0)
 #>  R6            2.4.1      2019-11-12 [1] CRAN (R 4.0.0)
+#>  raster        3.1-5      2020-04-19 [1] CRAN (R 4.0.0)
 #>  Rcpp          1.0.4.6    2020-04-09 [1] CRAN (R 4.0.0)
 #>  readr       * 1.3.1      2018-12-21 [1] CRAN (R 4.0.0)
 #>  readxl        1.3.1      2019-03-13 [1] CRAN (R 4.0.0)
 #>  reprex        0.3.0      2019-05-16 [1] CRAN (R 4.0.0)
-#>  RgoogleMaps   1.4.5.3    2020-02-12 [1] CRAN (R 4.0.0)
-#>  rjson         0.2.20     2018-06-08 [1] CRAN (R 4.0.0)
+#>  rgdal         1.4-8      2019-11-27 [1] CRAN (R 4.0.0)
 #>  rlang         0.4.6      2020-05-02 [1] CRAN (R 4.0.0)
 #>  rmarkdown     2.1        2020-01-20 [1] CRAN (R 4.0.0)
+#>  rosm          0.2.5      2019-07-22 [1] CRAN (R 4.0.2)
 #>  rstudioapi    0.11       2020-02-07 [1] CRAN (R 4.0.0)
 #>  Rttf2pt1      1.3.8      2020-01-10 [1] CRAN (R 4.0.0)
 #>  rvest         0.3.5      2019-11-08 [1] CRAN (R 4.0.0)
@@ -272,11 +271,11 @@ sessioninfo::package_info()
 #>  systemfonts   0.2.3      2020-06-09 [1] CRAN (R 4.0.0)
 #>  tibble      * 3.0.1      2020-04-20 [1] CRAN (R 4.0.0)
 #>  tidyr       * 1.0.2      2020-01-24 [1] CRAN (R 4.0.0)
-#>  tidyselect    1.0.0      2020-01-27 [1] CRAN (R 4.0.0)
+#>  tidyselect    1.1.0      2020-05-11 [1] CRAN (R 4.0.2)
 #>  tidyverse   * 1.3.0      2019-11-21 [1] CRAN (R 4.0.0)
 #>  units         0.6-6      2020-03-16 [1] CRAN (R 4.0.0)
 #>  utf8          1.1.4      2018-05-24 [1] CRAN (R 4.0.0)
-#>  vctrs         0.2.4      2020-03-10 [1] CRAN (R 4.0.0)
+#>  vctrs         0.3.1      2020-06-05 [1] CRAN (R 4.0.2)
 #>  withr         2.2.0      2020-04-20 [1] CRAN (R 4.0.0)
 #>  xfun          0.13       2020-04-13 [1] CRAN (R 4.0.0)
 #>  xml2          1.3.2      2020-04-23 [1] CRAN (R 4.0.0)
