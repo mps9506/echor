@@ -38,7 +38,8 @@ Suggests:
     raster,
     rmarkdown,
     sf,
-    testthat
+    testthat,
+    utf8
 BugReports: https://github.com/mps9506/echor/issues
 VignetteBuilder: knitr
 Language: en-US

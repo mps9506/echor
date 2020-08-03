@@ -15,10 +15,10 @@ There are currently no downstream dependencies for this package.
 
 ## Comments
 
-This is a release of version 0.1.5
+This is a release of version 0.1.5, it fixes warnings shown on https://cran.r-project.org/web/checks/check_results_echor.html
 
 Other comments:
 
-* Examples are wrapped in \donttest{} since they rely on an internet connection and responses from the server can take time.
+* Examples are wrapped in \dontrun{} since they rely on an internet connection and API will rate limit when automatically tested or run.
 
-* Most tests are \skip_on_cran() for the same reason. However, full tests are run on Travis and Appveyor.
+* Most tests are \skip_on_cran() for the same reason. However, full tests are run locally and on Travis and Appveyor.

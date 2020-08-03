@@ -16,9 +16,7 @@ cache:
 # Adapt as necessary starting from here
 
 environment:
-  NOT_CRAN: true
-  global:
-    WARNINGS_ARE_ERRORS: 1
+  _R_CHECK_FORCE_SUGGESTS_: false
   matrix:
     - R_ARCH: i386
       GCC_PATH: mingw_32
