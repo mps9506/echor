@@ -187,7 +187,7 @@ Session Info
     #>  collate  en_US.UTF-8                 
     #>  ctype    en_US.UTF-8                 
     #>  tz       UTC                         
-    #>  date     2020-07-28
+    #>  date     2020-08-03
     sessioninfo::package_info()
     #>  package     * version date       lib source        
     #>  abind         1.4-5   2016-07-21 [1] CRAN (R 4.0.2)
@@ -201,7 +201,7 @@ Session Info
     #>  curl          4.3     2019-12-02 [1] CRAN (R 4.0.1)
     #>  DBI           1.1.0   2019-12-15 [1] CRAN (R 4.0.2)
     #>  digest        0.6.25  2020-02-23 [1] CRAN (R 4.0.2)
-    #>  dplyr       * 1.0.0   2020-05-29 [1] CRAN (R 4.0.2)
+    #>  dplyr       * 1.0.1   2020-07-31 [1] CRAN (R 4.0.2)
     #>  e1071         1.7-3   2019-11-26 [1] CRAN (R 4.0.2)
     #>  echor       * 0.1.4   2020-01-29 [1] CRAN (R 4.0.2)
     #>  ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.2)
@@ -253,7 +253,7 @@ Session Info
     #>  stringr       1.4.0   2019-02-10 [1] CRAN (R 4.0.2)
     #>  systemfonts   0.2.3   2020-06-09 [1] CRAN (R 4.0.2)
     #>  tibble        3.0.3   2020-07-10 [1] CRAN (R 4.0.2)
-    #>  tidyr         1.1.0   2020-05-20 [1] CRAN (R 4.0.2)
+    #>  tidyr         1.1.1   2020-07-31 [1] CRAN (R 4.0.2)
     #>  tidyselect    1.1.0   2020-05-11 [1] CRAN (R 4.0.2)
     #>  units         0.6-7   2020-06-13 [1] CRAN (R 4.0.2)
     #>  utf8          1.1.4   2018-05-24 [1] CRAN (R 4.0.2)
