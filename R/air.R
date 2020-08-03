@@ -13,7 +13,7 @@
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
-#' @examples\donttest{
+#' @examples\dontrun{
 #' ## These examples require an internet connection to run
 #'
 #' ## Retrieve table of facilities by bounding box
@@ -132,7 +132,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 #' @return returns a dataframe
 #' @export
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #' ## These examples require an internet connection to run
 #'
 #' # returns a dataframe of
@@ -186,7 +186,7 @@ echoAirGetMeta <- function(verbose = FALSE){
 #' @return dataframe
 #' @export
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #' ## This example requires an internet connection to run
 #'
 #' echoGetCAAPR(p_id = '110000350174')

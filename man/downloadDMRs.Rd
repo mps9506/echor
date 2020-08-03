@@ -24,7 +24,7 @@ dataframe df, with a column containing the discharge monitoring reports download
 Returns DMRs in a nested list using \code{echoGetEffluent()}. Uses a dataframe with a column of p_id numbers. Please note that p_id's are case sensitive.
 }
 \examples{
-\donttest{
+\dontrun{
 ## This example requires an internet connection to run
 
 ## Retrieve multiple DMRs for flow

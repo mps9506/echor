@@ -17,7 +17,7 @@
 #' @importFrom tibble is_tibble
 #' @return dataframe df, with a column containing the discharge monitoring reports downloaded with echoGetEffluentSummary
 #' @export
-#' @examples \donttest{
+#' @examples \dontrun{
 #' ## This example requires an internet connection to run
 #'
 #' ## Retrieve multiple DMRs for flow

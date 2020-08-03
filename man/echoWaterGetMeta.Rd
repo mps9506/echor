@@ -16,7 +16,7 @@ returns a dataframe
 Returns variable name and descriptions for parameters returned by \code{\link{echoWaterGetFacilityInfo}}
 }
 \examples{
-\donttest{
+\dontrun{
 ## These examples require an internet connection to run
 
 # returns a dataframe of

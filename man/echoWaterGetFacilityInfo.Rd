@@ -21,7 +21,7 @@ Returns a dataframe or simplefeature dataframe of permitted facilities returned 
 Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-water}.
 }
 \examples{
-\donttest{
+\dontrun{
 ## These examples require an internet connection to run
 
 ## Retrieve table of facilities by bounding box

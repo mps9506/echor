@@ -20,7 +20,7 @@ Returns a dataframe.
 Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive.
 }
 \examples{
-\donttest{
+\dontrun{
 ## This example requires an internet connection to run
 
 ## Retrieve single DMR for flow
