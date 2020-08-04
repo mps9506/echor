@@ -187,7 +187,7 @@ Session Info
     #>  collate  en_US.UTF-8                 
     #>  ctype    en_US.UTF-8                 
     #>  tz       UTC                         
-    #>  date     2020-08-03
+    #>  date     2020-08-04
     sessioninfo::package_info()
     #>  package     * version date       lib source        
     #>  abind         1.4-5   2016-07-21 [1] CRAN (R 4.0.2)
