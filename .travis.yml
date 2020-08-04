@@ -14,8 +14,6 @@ dist: xenial
 
 r_packages:
   - devtools
-  - rgdal
-  - sf
 
 r_github_packages:
   - jimhester/lintr
