@@ -15,7 +15,7 @@ set_requester(function (request) {
 
 with_mock_api({
   test_that("core functions return tbl_df", {
-    skip_on_cran()
+    #skip_on_cran()
 
     expect_is(
       echoAirGetFacilityInfo(
@@ -91,7 +91,7 @@ with_mock_api({
 with_mock_api({
 
   test_that("core functions return sf", {
-    skip_on_cran()
+    #skip_on_cran()
 
     expect_is(
       echoAirGetFacilityInfo(
