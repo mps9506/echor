@@ -10,7 +10,7 @@ r:
   - release
   - devel
 
-dist: trusty
+dist: xenial
 
 r_packages:
   - devtools
