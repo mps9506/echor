@@ -16,7 +16,7 @@ returns a dataframe
 Downloads EPA ECHO Safe Drinking Water Facilities Metadata
 }
 \examples{
-\dontrun{
+\donttest{
 ## These examples require an internet connection to run
 
 # returns a dataframe of

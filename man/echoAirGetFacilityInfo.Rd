@@ -21,7 +21,7 @@ Returns a dataframe or simplefeature dataframe of permitted facilities returned 
 Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info}
 }
 \examples{
-\dontrun{
+\donttest{
 ## These examples require an internet connection to run
 
 ## Retrieve table of facilities by bounding box

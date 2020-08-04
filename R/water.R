@@ -14,7 +14,7 @@
 #' @importFrom geojsonsf geojson_sf
 #'
 #' @export
-#' @examples \dontrun{
+#' @examples \donttest{
 #' ## These examples require an internet connection to run
 #'
 #' ## Retrieve table of facilities by bounding box
@@ -134,7 +134,7 @@ echoWaterGetFacilityInfo <- function(output = "df",
 #' @importFrom purrr map_df
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' ## These examples require an internet connection to run
 #'
 #' # returns a dataframe of
@@ -185,7 +185,7 @@ echoWaterGetMeta <- function(verbose = FALSE){
 #' @return Returns a dataframe.
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' ## This example requires an internet connection to run
 #'
 #' ## Retrieve single DMR for flow
@@ -263,7 +263,7 @@ downloadEffluentChart <- function(p_id, verbose, queryDots) {
 #'
 #' @return Returns a dataframe.
 #' @export
-#' @examples \dontrun{
+#' @examples \donttest{
 #' ## These examples require an internet connection to run
 #'
 #' ## Retrieve parameter codes for dissolved oxygen

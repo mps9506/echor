@@ -11,7 +11,7 @@
 #' @return returns a dataframe
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' ## These examples require an internet connection to run
 #'
 #' # returns a dataframe of
@@ -60,7 +60,7 @@ echoSDWGetMeta <- function(verbose = FALSE){
 #' @return returns a dataframe
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' ## These examples require an internet connection to run
 #' echoSDWGetSystems(p_co = "Brazos", p_st = "tx")
 #' }
