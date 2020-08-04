@@ -16,7 +16,7 @@ returns a dataframe
 Returns variable name and descriptions for parameters returned by \code{\link{echoAirGetFacilityInfo}}
 }
 \examples{
-\dontrun{
+\donttest{
 ## These examples require an internet connection to run
 
 # returns a dataframe of

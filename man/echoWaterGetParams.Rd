@@ -20,7 +20,7 @@ Returns a dataframe.
 Returns a dataframe of parameter codes and descriptions.
 }
 \examples{
-\dontrun{
+\donttest{
 ## These examples require an internet connection to run
 
 ## Retrieve parameter codes for dissolved oxygen

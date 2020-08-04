@@ -1799,23 +1799,13 @@
             "Permits": [
                 {
                     "Statute": "CAA",
-                    "EPASystem": "CEDRI",
-                    "SourceID": "CEDRI10000161",
-                    "Universe": "",
+                    "EPASystem": "GHG",
+                    "SourceID": "1000828",
+                    "Universe": "Direct Emitter",
                     "NAICS": "221112",
                     "NAICSDesc": "Fossil Fuel Electric Power Generation",
                     "SIC": null,
-                    "FacilityStatus": null
-                },
-                {
-                    "Statute": "CAA",
-                    "EPASystem": "AIR",
-                    "SourceID": "NC0000003706500036",
-                    "Universe": "Major Emissions",
-                    "NAICS": "221112",
-                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
-                    "SIC": "4911",
-                    "FacilityStatus": "Operating"
+                    "FacilityStatus": "Subject"
                 },
                 {
                     "Statute": "CAA",
@@ -1829,13 +1819,13 @@
                 },
                 {
                     "Statute": "CAA",
-                    "EPASystem": "GHG",
-                    "SourceID": "1000828",
-                    "Universe": "Direct Emitter",
+                    "EPASystem": "CEDRI",
+                    "SourceID": "CEDRI10000161",
+                    "Universe": "",
                     "NAICS": "221112",
                     "NAICSDesc": "Fossil Fuel Electric Power Generation",
                     "SIC": null,
-                    "FacilityStatus": "Subject"
+                    "FacilityStatus": null
                 },
                 {
                     "Statute": "CAA",
@@ -1846,6 +1836,16 @@
                     "NAICSDesc": "Fossil Fuel Electric Power Generation",
                     "SIC": null,
                     "FacilityStatus": "OPERATING"
+                },
+                {
+                    "Statute": "CAA",
+                    "EPASystem": "AIR",
+                    "SourceID": "NC0000003706500036",
+                    "Universe": "Major Emissions",
+                    "NAICS": "221112",
+                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
+                    "SIC": "4911",
+                    "FacilityStatus": "Operating"
                 },
                 {
                     "Statute": "EP313",
@@ -2049,20 +2049,20 @@
                 "CenterLongitude": "-77.985226",
                 "MapData": [
                     {
-                        "LAT": "34.28396",
-                        "LON": "-77.98501",
-                        "ICON": "NONE-UNK-MN-N.png",
-                        "TYPE": "Facility",
-                        "NAME": "DUKE ENERGY PROGRESS, LLC - L.V. SUTTON ENERGY COMPLEX",
-                        "PUV": "110069348209"
-                    },
-                    {
                         "LAT": "34.283317",
                         "LON": "-77.985226",
                         "ICON": "MULT-NC-MJ-1.png",
                         "TYPE": "Facility",
                         "NAME": "CP&L - SUTTON PLANT",
                         "PUV": "110000350174"
+                    },
+                    {
+                        "LAT": "34.28396",
+                        "LON": "-77.98501",
+                        "ICON": "NONE-UNK-MN-N.png",
+                        "TYPE": "Facility",
+                        "NAME": "DUKE ENERGY PROGRESS, LLC - L.V. SUTTON ENERGY COMPLEX",
+                        "PUV": "110069348209"
                     }
                 ]
             },

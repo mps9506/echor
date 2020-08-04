@@ -19,7 +19,7 @@ Returns a dataframe of permitted public water systems returned by the query.
 Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems}.
 }
 \examples{
-\dontrun{
+\donttest{
 ## These examples require an internet connection to run
 echoSDWGetSystems(p_co = "Brazos", p_st = "tx")
 }

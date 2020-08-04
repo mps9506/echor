@@ -19,6 +19,5 @@ This is a release of version 0.1.5, it fixes warnings shown on https://cran.r-pr
 
 Other comments:
 
-* Examples are wrapped in \dontrun{} since they rely on an internet connection and API will rate limit when automatically tested or run.
+* Examples are wrapped in \donttest{} since they rely on an internet connection and API will rate limit when automatically tested or run.
 
-* Most tests are \skip_on_cran() for the same reason. However, full tests are run locally and on Travis and Appveyor.
