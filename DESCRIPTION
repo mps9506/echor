@@ -27,7 +27,6 @@ Imports:
   tidyr (>= 1.0.0),
   utils
 Suggests:
-    spelling,
     ggplot2,
     ggrepel,
     ggspatial,
