@@ -8,12 +8,17 @@ name: Render README
 
 jobs:
   render:
-    name: Render README
+    name: ubuntu readme
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), "depends.Rds", version = 2)
+        shell: Rscript {0}
       - name: Install system dependencies
         run: |
           Rscript -e "remotes::install_github('r-hub/sysreqs')"
@@ -27,6 +32,16 @@ jobs:
             libgdal-dev \
             libgeos-dev \
             libproj-dev
+
+      - name: Install dependencies
+        run: |
+          library(remotes)
+          deps <- readRDS("depends.Rds")
+          deps[["installed"]] <- vapply(deps[["package"]], remotes:::local_sha, character(1))
+          update(deps)
+          remotes::install_cran("rcmdcheck")
+        shell: Rscript {0}
+
       - name: Install packages
         run: Rscript -e 'install.packages(c("rmarkdown", "rgdal", "dplyr", "ggplot2", "hrbrthemes", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr", "raster", "sessioninfo"))'
       - name: Render README
