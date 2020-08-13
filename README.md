@@ -180,14 +180,14 @@ Session Info
     sessioninfo::platform_info()
     #>  setting  value                       
     #>  version  R version 4.0.2 (2020-06-22)
-    #>  os       macOS Catalina 10.15.6      
-    #>  system   x86_64, darwin17.0          
+    #>  os       Ubuntu 18.04.4 LTS          
+    #>  system   x86_64, linux-gnu           
     #>  ui       X11                         
     #>  language (EN)                        
-    #>  collate  en_US.UTF-8                 
-    #>  ctype    en_US.UTF-8                 
+    #>  collate  C.UTF-8                     
+    #>  ctype    C.UTF-8                     
     #>  tz       UTC                         
-    #>  date     2020-08-04
+    #>  date     2020-08-13
     sessioninfo::package_info()
     #>  package     * version date       lib source        
     #>  abind         1.4-5   2016-07-21 [1] CRAN (R 4.0.2)
@@ -198,14 +198,14 @@ Session Info
     #>  codetools     0.2-16  2018-12-24 [2] CRAN (R 4.0.2)
     #>  colorspace    1.4-1   2019-03-18 [1] CRAN (R 4.0.2)
     #>  crayon        1.3.4   2017-09-16 [1] CRAN (R 4.0.2)
-    #>  curl          4.3     2019-12-02 [1] CRAN (R 4.0.1)
+    #>  curl          4.3     2019-12-02 [1] CRAN (R 4.0.2)
     #>  DBI           1.1.0   2019-12-15 [1] CRAN (R 4.0.2)
     #>  digest        0.6.25  2020-02-23 [1] CRAN (R 4.0.2)
     #>  dplyr       * 1.0.1   2020-07-31 [1] CRAN (R 4.0.2)
     #>  e1071         1.7-3   2019-11-26 [1] CRAN (R 4.0.2)
-    #>  echor       * 0.1.4   2020-01-29 [1] CRAN (R 4.0.2)
+    #>  echor       * 0.1.5   2020-08-05 [1] CRAN (R 4.0.2)
     #>  ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.2)
-    #>  evaluate      0.14    2019-05-28 [1] CRAN (R 4.0.1)
+    #>  evaluate      0.14    2019-05-28 [1] CRAN (R 4.0.2)
     #>  extrafont   * 0.17    2014-12-08 [1] CRAN (R 4.0.2)
     #>  extrafontdb   1.0     2012-06-11 [1] CRAN (R 4.0.2)
     #>  fansi         0.4.1   2020-01-08 [1] CRAN (R 4.0.2)
@@ -240,7 +240,7 @@ Session Info
     #>  raster        3.3-13  2020-07-17 [1] CRAN (R 4.0.2)
     #>  Rcpp          1.0.5   2020-07-06 [1] CRAN (R 4.0.2)
     #>  readr         1.3.1   2018-12-21 [1] CRAN (R 4.0.2)
-    #>  rgdal         1.5-12  2020-06-26 [1] CRAN (R 4.0.2)
+    #>  rgdal         1.5-16  2020-08-07 [1] CRAN (R 4.0.2)
     #>  rlang         0.4.7   2020-07-09 [1] CRAN (R 4.0.2)
     #>  rmarkdown     2.3     2020-06-18 [1] CRAN (R 4.0.2)
     #>  rosm          0.2.5   2019-07-22 [1] CRAN (R 4.0.2)
@@ -262,5 +262,5 @@ Session Info
     #>  xfun          0.16    2020-07-24 [1] CRAN (R 4.0.2)
     #>  yaml          2.2.1   2020-02-01 [1] CRAN (R 4.0.2)
     #> 
-    #> [1] /Users/runner/work/_temp/Library
-    #> [2] /Library/Frameworks/R.framework/Versions/4.0/Resources/library
+    #> [1] /home/runner/work/_temp/Library
+    #> [2] /opt/R/4.0.2/lib/R/library
