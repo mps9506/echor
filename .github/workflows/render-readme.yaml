@@ -9,13 +9,26 @@ name: Render README
 jobs:
   render:
     name: Render README
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
-      - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown", "dplyr", "ggplot2", "hrbrthemes", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr", "raster", "sessioninfo"))'
+      - name: Install system dependencies
+        run: |
+          Rscript -e "remotes::install_github('r-hub/sysreqs')"
+          sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
+          sudo -s eval "$sysreqs"
+          # install spatial dependencies
+          sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+          sudo apt update
+          sudo apt install \
+            libudunits2-dev \
+            libgdal-dev \
+            libgeos-dev \
+            libproj-dev
+      - name: Install packages
+        run: Rscript -e 'install.packages(c("rmarkdown", "rgdal", "dplyr", "ggplot2", "hrbrthemes", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr", "raster", "sessioninfo"))'
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
       - name: Commit results
