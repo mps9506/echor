@@ -20,6 +20,8 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
+options(crayon.enabled = NULL)
+
 library(kableExtra)
 library(httptest)
 library(dplyr)

@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
   fig.retina = 2
 )
 
+options(crayon.enabled = NULL)
+
 library(dplyr)
 library(ggplot2)
 library(hrbrthemes)
