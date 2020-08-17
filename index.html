@@ -132,19 +132,19 @@
 <span id="cb3-10"><a href="#cb3-10"></a>                               <span class="dt">p_ptype =</span> <span class="st">"NPD"</span>)</span>
 <span id="cb3-11"><a href="#cb3-11"></a></span>
 <span id="cb3-12"><a href="#cb3-12"></a><span class="kw">head</span>(df)</span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; [90m# A tibble: 3 x 26[39m</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; # A tibble: 3 x 26</span></span>
 <span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt;   CWPName SourceID CWPStreet CWPCity CWPState CWPStateDistrict CWPZip</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt;   [3m[90m&lt;chr&gt;[39m[23m   [3m[90m&lt;chr&gt;[39m[23m    [3m[90m&lt;chr&gt;[39m[23m     [3m[90m&lt;chr&gt;[39m[23m   [3m[90m&lt;chr&gt;[39m[23m    [3m[90m&lt;chr&gt;[39m[23m            [3m[90m&lt;chr&gt;[39m[23m </span></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt; [90m1[39m CENTRA… TX00027… 222 IREL… COLLEG… TX       09               77843 </span></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; [90m2[39m HEAT T… TX01065… 0.25MI S… COLLEG… TX       09               77845 </span></span>
-<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt; [90m3[39m TURKEY… TX00624… 3000FT W… BRYAN   TX       09               77807 </span></span>
-<span id="cb3-19"><a href="#cb3-19"></a><span class="co">#&gt; [90m# … with 19 more variables: MasterExternalPermitNmbr [3m[90m&lt;chr&gt;[90m[23m, RegistryID [3m[90m&lt;chr&gt;[90m[23m,[39m</span></span>
-<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt; [90m#   CWPCounty [3m[90m&lt;chr&gt;[90m[23m, CWPEPARegion [3m[90m&lt;chr&gt;[90m[23m, FacDerivedHuc [3m[90m&lt;chr&gt;[90m[23m, FacLat [3m[90m&lt;dbl&gt;[90m[23m,[39m</span></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt; [90m#   FacLong [3m[90m&lt;dbl&gt;[90m[23m, CWPTotalDesignFlowNmbr [3m[90m&lt;dbl&gt;[90m[23m,[39m</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#&gt; [90m#   CWPActualAverageFlowNmbr [3m[90m&lt;dbl&gt;[90m[23m, ReceivingMs4Name [3m[90m&lt;chr&gt;[90m[23m,[39m</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt; [90m#   AssociatedPollutant [3m[90m&lt;chr&gt;[90m[23m, MsgpPermitType [3m[90m&lt;chr&gt;[90m[23m, CWPPermitStatusDesc [3m[90m&lt;chr&gt;[90m[23m,[39m</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt; [90m#   CWPPermitTypeDesc [3m[90m&lt;chr&gt;[90m[23m, CWPIssueDate [3m[90m&lt;date&gt;[90m[23m, CWPEffectiveDate [3m[90m&lt;date&gt;[90m[23m,[39m</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a><span class="co">#&gt; [90m#   CWPExpirationDate [3m[90m&lt;date&gt;[90m[23m, CWPSNCStatusDate [3m[90m&lt;date&gt;[90m[23m, StateAuthGen [3m[90m&lt;chr&gt;[90m[23m[39m</span></span></code></pre></div>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt; </span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt; 1 CENTRA… TX00027… 222 IREL… COLLEG… TX       09               77843 </span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; 2 HEAT T… TX01065… 0.25MI S… COLLEG… TX       09               77845 </span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt; 3 TURKEY… TX00624… 3000FT W… BRYAN   TX       09               77807 </span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co">#&gt; # … with 19 more variables: MasterExternalPermitNmbr &lt;chr&gt;, RegistryID &lt;chr&gt;,</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt; #   CWPCounty &lt;chr&gt;, CWPEPARegion &lt;chr&gt;, FacDerivedHuc &lt;chr&gt;, FacLat &lt;dbl&gt;,</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt; #   FacLong &lt;dbl&gt;, CWPTotalDesignFlowNmbr &lt;dbl&gt;,</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#&gt; #   CWPActualAverageFlowNmbr &lt;dbl&gt;, ReceivingMs4Name &lt;chr&gt;,</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt; #   AssociatedPollutant &lt;chr&gt;, MsgpPermitType &lt;chr&gt;, CWPPermitStatusDesc &lt;chr&gt;,</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt; #   CWPPermitTypeDesc &lt;chr&gt;, CWPIssueDate &lt;date&gt;, CWPEffectiveDate &lt;date&gt;,</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="co">#&gt; #   CWPExpirationDate &lt;date&gt;, CWPSNCStatusDate &lt;date&gt;, StateAuthGen &lt;chr&gt;</span></span></code></pre></div>
 <p>The ECHO database can provide over 270 different columns. echor returns a subset of these columns that should work for most users. However, you can specify what data you want returned. Use <code><a href="reference/echoWaterGetMeta.html">echoWaterGetMeta()</a></code> to return a dataframe with column numbers, names, and descriptions to identify the columns you want returned. Then include the column numbers as a comma separated string in the <code>qcolumns</code> argument. In the example below, the <code>qcolumns</code> argument indicates the dataframe will include plant name, 8-digit HUC, latitude, longitude, and total design flow.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>df &lt;-<span class="st"> </span><span class="kw">echoWaterGetFacilityInfo</span>(<span class="dt">output =</span> <span class="st">"df"</span>, </span>
 <span id="cb4-2"><a href="#cb4-2"></a>                               <span class="dt">xmin =</span> <span class="st">'-96.387509'</span>, </span>
@@ -154,12 +154,12 @@
 <span id="cb4-6"><a href="#cb4-6"></a>                               <span class="dt">qcolumns =</span> <span class="st">'1,14,23,24,25'</span>,</span>
 <span id="cb4-7"><a href="#cb4-7"></a>                               <span class="dt">p_ptype =</span> <span class="st">"NPD"</span>)</span>
 <span id="cb4-8"><a href="#cb4-8"></a><span class="kw">head</span>(df)</span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; [90m# A tibble: 3 x 6[39m</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; # A tibble: 3 x 6</span></span>
 <span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt;   CWPName            SourceID  FacDerivedHuc FacLat FacLong CWPTotalDesignFlowN…</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;   [3m[90m&lt;chr&gt;[39m[23m              [3m[90m&lt;chr&gt;[39m[23m     [3m[90m&lt;chr&gt;[39m[23m          [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt; [90m1[39m CENTRAL UTILITY P… TX0002747 12070103        30.6   -[31m96[39m[31m.[39m[31m3[39m                 0.93</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; [90m2[39m HEAT TRANSFER RES… TX0106526 12070101        30.6   -[31m96[39m[31m.[39m[31m4[39m                [31mNA[39m   </span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; [90m3[39m TURKEY CREEK WWTP  TX0062472 12070101        30.6   -[31m96[39m[31m.[39m[31m4[39m                 0.75</span></span></code></pre></div>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;   &lt;chr&gt;              &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;                &lt;dbl&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt; 1 CENTRAL UTILITY P… TX0002747 12070103        30.6   -96.3                 0.93</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; 2 HEAT TRANSFER RES… TX0106526 12070101        30.6   -96.4                NA   </span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; 3 TURKEY CREEK WWTP  TX0062472 12070101        30.6   -96.4                 0.75</span></span></code></pre></div>
 <p>When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">library</span>(ggspatial)</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="kw">library</span>(sf)</span>
@@ -237,7 +237,7 @@
 <span id="cb7-8"><a href="#cb7-8"></a><span class="co">#&gt;  collate  C.UTF-8                     </span></span>
 <span id="cb7-9"><a href="#cb7-9"></a><span class="co">#&gt;  ctype    C.UTF-8                     </span></span>
 <span id="cb7-10"><a href="#cb7-10"></a><span class="co">#&gt;  tz       UTC                         </span></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="co">#&gt;  date     2020-08-13</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co">#&gt;  date     2020-08-17</span></span>
 <span id="cb7-12"><a href="#cb7-12"></a>sessioninfo<span class="op">::</span><span class="kw">package_info</span>()</span>
 <span id="cb7-13"><a href="#cb7-13"></a><span class="co">#&gt;  package     * version date       lib source        </span></span>
 <span id="cb7-14"><a href="#cb7-14"></a><span class="co">#&gt;  abind         1.4-5   2016-07-21 [1] CRAN (R 4.0.2)</span></span>
