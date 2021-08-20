@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.640541,
+                    34.625123
+                ]
+            },
+            "properties": {
+                "CWPName": "US ARMY REDSTONE ARSENAL MS4 PH II",
+                "SourceID": "ALR040033",
+                "CWPStreet": "BUILDING 4488",
+                "CWPCity": "REDSTONE ARSENAL",
+                "CWPState": "AL",
+                "CWPStateDistrict": null,
+                "CWPZip": "35898",
+                "MasterExternalPermitNmbr": "ALR040000",
+                "RegistryID": "110020837601",
+                "CWPCounty": "Madison",
+                "CWPEPARegion": "04",
+                "FacDerivedHuc": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "CWPActualAverageFlowNmbr": null,
+                "ReceivingMs4Name": null,
+                "AssociatedPollutant": null,
+                "MsgpPermitType": null,
+                "CWPPermitStatusDesc": "Effective",
+                "CWPPermitTypeDesc": "General Permit Covered Facility",
+                "CWPIssueDate": "2016-09-06T00:00:00.00+00:00",
+                "CWPEffectiveDate": "2016-10-01T00:00:00.00+00:00",
+                "CWPExpirationDate": "2021-09-30T00:00:00.00+00:00",
+                "CWPSNCStatusDate": "2021-03-31T00:00:00.00+00:00",
+                "LastDMRValueRcvdDate": null,
+                "E90Exceeds1yr": null
+            }
+        }
+    ]
+}

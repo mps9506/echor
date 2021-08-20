@@ -1,7 +1,7 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "348",
+        "QueryID": "287",
         "QueryRows": "1",
         "IndianCountryRows": "0",
         "SVRows": "0",
@@ -13,8 +13,8 @@
         "TotalPenalties": "$0",
         "BadSystemIDs": null,
         "IconBaseURL": "https://echo.epa.gov/app/map/icons/",
-        "PopUpBaseURL": "api/air_rest_services.pop_up?p_id=",
-        "ServiceBaseURL": "api/air_rest_services.get_facility_info",
+        "PopUpBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/air_rest_services.pop_up?p_id=",
+        "ServiceBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/air_rest_services.get_facility_info",
         "QueryParameters": [
             {
                 "QP": "output",
@@ -45,7 +45,7 @@
                 "FacLat": "34.283317",
                 "FacLong": "-77.985226",
                 "AIRLastStckDateEPA": null,
-                "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
+                "CollectionMethod": "Zip Code Centroid"
             }
         ]
     }

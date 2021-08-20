@@ -1,7 +1,7 @@
 context("core functions return expected objects")
 
 
-api_root <- "https://ofmpub.epa.gov/echo/"
+api_root <- "https://echodata.epa.gov/echo/"
 set_redactor(function (response) {
   response %>%
     gsub_response(api_root, "api/", fixed = TRUE)
