@@ -179,7 +179,8 @@ echoAirGetMeta <- function(verbose = FALSE){
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Additional arguments
 #' @importFrom purrr map_df
-#' @importFrom tidyr gather_
+#' @importFrom rlang .data
+#' @importFrom tidyr gather_ pivot_longer
 #' @importFrom tibble tibble
 #' @import httr
 #' @import dplyr
@@ -243,16 +244,20 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
         "Year8", "Year9", "Year10",
         "Program"))
     ## Change emissions data from wide to narrow
-    pollutant <- tidyr::gather_(pollutant, "Year", "Discharge", c("Year1",
-                                                                  "Year2",
-                                                                  "Year3",
-                                                                  "Year4",
-                                                                  "Year5",
-                                                                  "Year6",
-                                                                  "Year7",
-                                                                  "Year8",
-                                                                  "Year9",
-                                                                  "Year10"))
+#     pollutant <- tidyr::gather_(pollutant, "Year", "Discharge", c("Year1",
+#                                                                   "Year2",
+#                                                                   "Year3",
+#                                                                   "Year4",
+#                                                                   "Year5",
+#                                                                   "Year6",
+#                                                                   "Year7",
+#                                                                   "Year8",
+#                                                                   "Year9",
+#                                                                   "Year10"))
+    pollutant <- tidyr::pivot_longer(pollutant,
+                                     cols = -c(.data$Pollutant, .data$UnitsOfMeasure, .data$Program),
+                                     names_to = "Year",
+                                     values_to = "Discharge")
 
 
     pollutant <- pollutant %>%
@@ -268,22 +273,78 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
         Year == "Year9" ~ info[["Results"]][["TRI_year_09"]],
         Year == "Year10" ~ info[["Results"]][["TRI_year_10"]]))
 
+
+    ## I should refactor this
+    Name <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["FacilityName"]])) {
+      NA_character_
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["FacilityName"]]
+    }
+    SourceID <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["SourceId"]])) {
+      NA_character_
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["SourceId"]]
+    }
+    Street <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Street"]])) {
+      NA_character_
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Street"]]
+    }
+    City <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["City"]])) {
+      NA_character_
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["City"]]
+    }
+    State <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["State"]])) {
+      NA_character_
+    } else{
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["State"]]
+    }
+    Zip <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Zip"]])) {
+      NA_character_
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Zip"]]
+    }
+    County <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["County"]])) {
+      NA_character_
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["County"]]
+    }
+    Region <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Region"]])) {
+      NA_character_
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Region"]]
+    }
+    Latitude <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Latitude"]])) {
+      NA
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Latitude"]]
+    }
+    Longitude <- if(is.null(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Longitude"]])) {
+      NA
+    } else {
+      info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Longitude"]]
+    }
+
     ## build output dataframe
-    buildOutput <- tibble(
-      Name = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["FacilityName"]],
-      SourceID = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["SourceId"]],
-      Street = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Street"]],
-      City = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["City"]],
-      State = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["State"]],
-      Zip = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Zip"]],
-      County = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["County"]],
-      Region = info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Region"]],
-      Latitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Latitude"]]),
-      Longitude = as.numeric(info[["Results"]][["CAAPollRpt"]][["RegistryIDs"]][[1]][["Longitude"]]),
-      Pollutant = as.factor(pollutant$Pollutant), UnitsOfMeasure = as.factor(pollutant$UnitsOfMeasure),
-      Program = as.factor(pollutant$Program), Year = as.integer(pollutant$Year),
-      Discharge = as.numeric(gsub(",", "", pollutant$Discharge))  #handle commas
-)
+    buildOutput <- tibble::tibble(
+      Name = Name,
+      SourceID = SourceID,
+      Street = Street,
+      City = City,
+      State = State,
+      Zip = Zip,
+      County = County,
+      Region = Region,
+      Latitude = as.numeric(Latitude),
+      Longitude = as.numeric(Longitude),
+      Pollutant = as.factor(pollutant$Pollutant),
+      UnitsOfMeasure = as.factor(pollutant$UnitsOfMeasure),
+      Program = as.factor(pollutant$Program),
+      Year = as.integer(pollutant$Year),
+      Discharge = as.numeric(gsub(",", "", pollutant$Discharge))
+    )
 
     return(buildOutput)
+
 }
