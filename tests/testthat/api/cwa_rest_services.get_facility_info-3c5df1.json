@@ -1,7 +1,7 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "349",
+        "QueryID": "289",
         "QueryRows": "1",
         "IndianCountryRows": "0",
         "SVRows": "0",
@@ -16,8 +16,8 @@
         "TotalPenalties": "$0",
         "BadSystemIDs": null,
         "IconBaseURL": "https://echo.epa.gov/app/map/icons/",
-        "PopUpBaseURL": "api/cwa_rest_services.pop_up?p_id=",
-        "ServiceBaseURL": "api/cwa_rest_services.get_facility_info",
+        "PopUpBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/cwa_rest_services.pop_up?p_id=",
+        "ServiceBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/cwa_rest_services.get_facility_info",
         "QueryParameters": [
             {
                 "QP": "output",
@@ -39,9 +39,9 @@
         "Facilities": [
             {
                 "ObjectId": "1",
-                "CWPName": "REDSTONE ARSENAL",
+                "CWPName": "US ARMY REDSTONE ARSENAL MS4 PH II",
                 "SourceID": "ALR040033",
-                "CWPStreet": "BUILDING 3240 AREA",
+                "CWPStreet": "BUILDING 4488",
                 "CWPCity": "REDSTONE ARSENAL",
                 "CWPState": "AL",
                 "CWPStateDistrict": null,
@@ -50,9 +50,9 @@
                 "RegistryID": "110020837601",
                 "CWPCounty": "Madison",
                 "CWPEPARegion": "04",
-                "FacDerivedHuc": "06030002",
-                "FacLat": "34.633639",
-                "FacLong": "-86.638639",
+                "FacDerivedHuc": null,
+                "FacLat": "34.625123",
+                "FacLong": "-86.640541",
                 "CWPTotalDesignFlowNmbr": null,
                 "CWPActualAverageFlowNmbr": null,
                 "ReceivingMs4Name": null,
@@ -63,8 +63,9 @@
                 "CWPIssueDate": "09/06/2016",
                 "CWPEffectiveDate": "10/01/2016",
                 "CWPExpirationDate": "09/30/2021",
-                "CWPSNCStatusDate": "03/31/2020",
-                "StateAuthGen": "Y"
+                "CWPSNCStatusDate": "03/31/2021",
+                "LastDMRValueRcvdDate": null,
+                "E90Exceeds1yr": null
             }
         ]
     }

@@ -237,7 +237,7 @@
             {
                 "ColumnName": "FAC_DERIVED_WBD_NAME",
                 "DataType": "VARCHAR2",
-                "DataLength": "80",
+                "DataLength": "100",
                 "ColumnID": "30",
                 "ObjectName": "FacDerivedWBDName",
                 "Description": "The 12 digit Watershed Boundary Dataset Name derived from the FRS Best Pick Coordinate"
@@ -1020,25 +1020,73 @@
             },
             {
                 "ColumnName": "NAA_CATEGORIES",
-                "DataType": "CHAR",
-                "DataLength": "240",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
                 "ColumnID": "128",
                 "ObjectName": "NaaCategories",
                 "Description": "The nonattainment area categories that the facility is in, derived spatially based on the facility's geographic coordinates in FRS."
             },
             {
                 "ColumnName": "NAA_POLLUTANTS",
-                "DataType": "CHAR",
-                "DataLength": "120",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
                 "ColumnID": "129",
                 "ObjectName": "NaaPollutants",
                 "Description": "All criteria pollutants that the facility is in nonattainment for."
             },
             {
+                "ColumnName": "NA_STANDARDS_NAA",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "130",
+                "ObjectName": "NaStandardsNaa",
+                "Description": null
+            },
+            {
+                "ColumnName": "MAINT_STANDARDS_NAA",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "131",
+                "ObjectName": "MaintStandardsNaa",
+                "Description": null
+            },
+            {
+                "ColumnName": "NA_POLLUTANTS_NAA",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "132",
+                "ObjectName": "NaPollutantsNaa",
+                "Description": null
+            },
+            {
+                "ColumnName": "MAINT_POLLUTANTS_NAA",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "133",
+                "ObjectName": "MaintPollutantsNaa",
+                "Description": null
+            },
+            {
+                "ColumnName": "NA_STATUS_NAA",
+                "DataType": "CHAR",
+                "DataLength": "1",
+                "ColumnID": "134",
+                "ObjectName": "NaStatusNaa",
+                "Description": null
+            },
+            {
+                "ColumnName": "MAINT_STATUS_NAA",
+                "DataType": "CHAR",
+                "DataLength": "1",
+                "ColumnID": "135",
+                "ObjectName": "MaintStatusNaa",
+                "Description": null
+            },
+            {
                 "ColumnName": "FAC_COUNTY_NAME",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "130",
+                "ColumnID": "136",
                 "ObjectName": "FacCountyName",
                 "Description": "The facility county name from EPA's Facility Registry System"
             },
@@ -1046,7 +1094,7 @@
                 "ColumnName": "FAC_STD_COUNTY_NAME",
                 "DataType": "VARCHAR2",
                 "DataLength": "300",
-                "ColumnID": "131",
+                "ColumnID": "137",
                 "ObjectName": "FacStdCountyName",
                 "Description": "The standardized  facility county name from EPA's Facility Registry System"
             },
@@ -1054,7 +1102,7 @@
                 "ColumnName": "AIR_NSPS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "132",
+                "ColumnID": "138",
                 "ObjectName": "AIRNsps",
                 "Description": "The New Source Performance Standards (NSPS) Subpart associated with the facility."
             },
@@ -1062,7 +1110,7 @@
                 "ColumnName": "AIR_NSPSM",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "133",
+                "ColumnID": "139",
                 "ObjectName": "AIRNspsm",
                 "Description": "The Non-Major New Source Performance Standards (NSPS) Subpart associated with the facility."
             },
@@ -1070,7 +1118,7 @@
                 "ColumnName": "AIR_FACILITY_TYPE_DESC",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "134",
+                "ColumnID": "140",
                 "ObjectName": "AIRFacilityTypeDesc",
                 "Description": null
             },
@@ -1078,15 +1126,31 @@
                 "ColumnName": "OTHER_PERMIT_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "135",
+                "ColumnID": "141",
                 "ObjectName": "OtherPermitIDs",
+                "Description": null
+            },
+            {
+                "ColumnName": "PERCENT_BELOW_LOWINCOME_3MILE",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "142",
+                "ObjectName": "PercentBelowLowincome3mile",
+                "Description": null
+            },
+            {
+                "ColumnName": "CENSUSBLKGRP2018",
+                "DataType": "VARCHAR2",
+                "DataLength": "12",
+                "ColumnID": "143",
+                "ObjectName": "Censusblkgrp2018",
                 "Description": null
             },
             {
                 "ColumnName": "SCORE",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "136",
+                "ColumnID": "144",
                 "ObjectName": "Score",
                 "Description": null
             }

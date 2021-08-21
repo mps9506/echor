@@ -1,9 +1,9 @@
 ## Test environments
 
-* local Windows 10, R 4.0.2
-* travis-ci: R 4.0.2, R-devel
-* appveyor: R 4.0.2
-* win-builder R 4.0.2, R-devel
+* GitHub Actions (macOS), release
+* GitHub Actions (windows), release
+* GitHub Actions (ubuntu-20.04), release, devel
+* R-hub (fedora-clang-devel) devel
 
 ## R CMD check results
 
@@ -15,7 +15,8 @@ There are currently no downstream dependencies for this package.
 
 ## Comments
 
-This is a release of version 0.1.5, it fixes warnings shown on https://cran.r-project.org/web/checks/check_results_echor.html
+This is a release of version 0.1.6, it primarily fixes notes and warnings shown on the CRAN check page.
+It also updates the API address used by the API.
 
 Other comments:
 

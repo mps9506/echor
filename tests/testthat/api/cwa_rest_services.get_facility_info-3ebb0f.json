@@ -1,7 +1,7 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "347",
+        "QueryID": "286",
         "QueryRows": "1",
         "IndianCountryRows": "0",
         "SVRows": "0",
@@ -16,8 +16,8 @@
         "TotalPenalties": "$0",
         "BadSystemIDs": null,
         "IconBaseURL": "https://echo.epa.gov/app/map/icons/",
-        "PopUpBaseURL": "api/cwa_rest_services.pop_up?p_id=",
-        "ServiceBaseURL": "api/cwa_rest_services.get_facility_info",
+        "PopUpBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/cwa_rest_services.pop_up?p_id=",
+        "ServiceBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/cwa_rest_services.get_facility_info",
         "QueryParameters": [
             {
                 "QP": "output",
@@ -39,12 +39,13 @@
         "Facilities": [
             {
                 "ObjectId": "1",
-                "CWPName": "REDSTONE ARSENAL",
+                "CWPName": "US ARMY REDSTONE ARSENAL MS4 PH II",
                 "SourceID": "ALR040033",
-                "CWPStreet": "BUILDING 3240 AREA",
+                "CWPStreet": "BUILDING 4488",
                 "RegistryID": "110020837601",
-                "FacLat": "34.633639",
-                "FacLong": "-86.638639"
+                "FacLat": "34.625123",
+                "FacLong": "-86.640541",
+                "E90Exceeds1yr": null
             }
         ]
     }

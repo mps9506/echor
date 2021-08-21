@@ -1,8 +1,8 @@
 Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
-Version: 0.1.5.9000
-Authors@R: person("Michael", "Schramm", role = c("aut", "cre"), email = "michael.schramm@ag.tamu.edu")
+Version: 0.1.6
+Authors@R: person("Michael", "Schramm", role = c("aut", "cre", "cph"), email = "michael.schramm@ag.tamu.edu")
 Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
 Description: An R interface to United States Environmental 
     Protection Agency (EPA) Environmental Compliance 
@@ -13,7 +13,6 @@ Description: An R interface to United States Environmental
     from <https://echo.epa.gov/>. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.1.1
 Imports:
   dplyr,

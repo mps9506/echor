@@ -1,20 +1,20 @@
 {
     "Results": {
         "Message": "Success",
-        "QueryID": "437",
-        "QueryRows": "24",
+        "QueryID": "94",
+        "QueryRows": "14",
         "IndianCountryRows": "0",
         "SVRows": "0",
         "CVRows": "0",
         "V3Rows": "0",
         "FEARows": "0",
         "InfFEARows": "0",
-        "INSPRows": "2",
+        "INSPRows": "1",
         "TotalPenalties": "$0",
         "BadSystemIDs": null,
         "IconBaseURL": "https://echo.epa.gov/app/map/icons/",
-        "PopUpBaseURL": "air_rest_services.pop_up?p_id=",
-        "ServiceBaseURL": "air_rest_services.get_facility_info",
+        "PopUpBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/air_rest_services.pop_up?p_id=",
+        "ServiceBaseURL": "https://ordsint.rtpnc.epa.gov/ords/echo/air_rest_services.get_facility_info",
         "QueryParameters": [
             {
                 "QP": "output",
@@ -70,28 +70,6 @@
             },
             {
                 "ObjectId": "3",
-                "AIRName": "BLUEBONNET PAVING",
-                "SourceID": "TX0000004877700147",
-                "AIRStreet": "HWY. 60, WEST OF",
-                "RegistryID": "110007194044",
-                "FacLat": "30.613371",
-                "FacLong": "-96.320977",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "4",
-                "AIRName": "BRYAN CERAMICS PLANT",
-                "SourceID": "TX0000004804100027",
-                "AIRStreet": "1500 INDEPENDENCE AVE",
-                "RegistryID": "110007200830",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "5",
                 "AIRName": "BRYAN CLEANERS & LAUNDRY",
                 "SourceID": "06000000480416E012",
                 "AIRStreet": "1803 HOLLEMAN DRIVE",
@@ -102,18 +80,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "6",
-                "AIRName": "CITY OF BRYAN",
-                "SourceID": "TX0000004804100026",
-                "AIRStreet": "1.5 MI W OF @FM 1687 & FM 2818",
-                "RegistryID": "110007194142",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "7",
+                "ObjectId": "4",
                 "AIRName": "COMET 1 HR CLEANERS",
                 "SourceID": "06000000480416E013",
                 "AIRStreet": "1712 SOUTHWEST PARKWAY #101",
@@ -124,7 +91,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "8",
+                "ObjectId": "5",
                 "AIRName": "EAGLE DRY CLEANING",
                 "SourceID": "06000000480416E017",
                 "AIRStreet": "900-8 HARVEY ROAD",
@@ -135,7 +102,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "9",
+                "ObjectId": "6",
                 "AIRName": "EARLY BIRD CLEANERS (CROWN)",
                 "SourceID": "06000000480416E019",
                 "AIRStreet": "615 EAST UNIVERSITY DRIVE",
@@ -146,7 +113,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "10",
+                "ObjectId": "7",
                 "AIRName": "FABRIC CARE CLEANERS",
                 "SourceID": "06000000480416E014",
                 "AIRStreet": "2418 SOUTHWEST PARKWAY",
@@ -157,7 +124,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "11",
+                "ObjectId": "8",
                 "AIRName": "FABRIC CARE DRY CLEANERS",
                 "SourceID": "06000000480416E001",
                 "AIRStreet": "4343 WELLBOURNE ROAD",
@@ -168,40 +135,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "12",
-                "AIRName": "FERGUSON BURLESON CO. GAS GATHERING",
-                "SourceID": "TX0000004804100040",
-                "AIRStreet": "OFF F.M. 2154",
-                "RegistryID": "110007203739",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "13",
-                "AIRName": "FERGUSON BURLESON COUNTY GAS GATHER",
-                "SourceID": "TX0000004804100022",
-                "AIRStreet": "AT THE INTERSECTION OF F.M. 28",
-                "RegistryID": "110007194099",
-                "FacLat": "30.613371",
-                "FacLong": "-96.320977",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "14",
-                "AIRName": "HIGHWAY MATERIALS INC",
-                "SourceID": "TX0000004877700260",
-                "AIRStreet": "FM 2818 AND SANDY POINT ROAD",
-                "RegistryID": "110007194981",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "15",
+                "ObjectId": "9",
                 "AIRName": "JOT 59 DRY CLEANERS",
                 "SourceID": "06000000480416E016",
                 "AIRStreet": "103 HOLLEMAN DRIVE",
@@ -212,7 +146,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "16",
+                "ObjectId": "10",
                 "AIRName": "KIRK'S DRY CLEANING #2",
                 "SourceID": "06000000480416E021",
                 "AIRStreet": "313 SOUTH COLLEGE",
@@ -223,18 +157,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "17",
-                "AIRName": "NORTHSIDE CLEANERS",
-                "SourceID": "06000000480416E004",
-                "AIRStreet": "13011 NORTH TEXAS AVENUE",
-                "RegistryID": "110001873633",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "18",
+                "ObjectId": "11",
                 "AIRName": "PARK CLEANERS",
                 "SourceID": "06000000480416E018",
                 "AIRStreet": "314 GEORGE BUSH DRIVE",
@@ -245,7 +168,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "19",
+                "ObjectId": "12",
                 "AIRName": "RIDGECREST $1.79 DRY CLEANING",
                 "SourceID": "06000000480416E008",
                 "AIRStreet": "3502 SOUTH TEXAS AVENUE",
@@ -256,18 +179,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "20",
-                "AIRName": "SCURLOCK PERMIAN CORPORATION",
-                "SourceID": "TX0000004804100015",
-                "AIRStreet": "CLARK LANE OFF LOOP 6",
-                "RegistryID": "110007194071",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "21",
+                "ObjectId": "13",
                 "AIRName": "TEXAS A&M UNIVERSITY COLLEGE STATION CAMPUS",
                 "SourceID": "TX0000004804100003",
                 "AIRStreet": "1111 RESEARCH PKWY",
@@ -278,18 +190,7 @@
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
             },
             {
-                "ObjectId": "22",
-                "AIRName": "VANGUARD PIPELINE CORPORATION",
-                "SourceID": "TX0000004804100021",
-                "AIRStreet": "ROUTE 2, BOX 524",
-                "RegistryID": "110001866614",
-                "FacLat": "30.613371",
-                "FacLong": "-96.320977",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
-            },
-            {
-                "ObjectId": "23",
+                "ObjectId": "14",
                 "AIRName": "WEST CAMPUS COGENERATION COMPANY",
                 "SourceID": "TX0000004804100039",
                 "AIRStreet": "WELLBORN ROAD & UNIVERSITY DR.",
@@ -298,17 +199,6 @@
                 "FacLong": "-96.348601",
                 "AIRLastStckDateEPA": null,
                 "CollectionMethod": "ADDRESS MATCHING-HOUSE NUMBER"
-            },
-            {
-                "ObjectId": "24",
-                "AIRName": "YOUNG BROTHERS INCORPORATED CONTRACT",
-                "SourceID": "TX0000004877700643",
-                "AIRStreet": "N OF HWY 21 2 MI W OF",
-                "RegistryID": "110007201919",
-                "FacLat": "30.637595",
-                "FacLong": "-96.362352",
-                "AIRLastStckDateEPA": null,
-                "CollectionMethod": "Zip Code Centroid"
             }
         ]
     }

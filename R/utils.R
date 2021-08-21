@@ -76,7 +76,7 @@ safe_extract <- function(l, wut) {
 requestURL <- function(path, query) {
 
     urlBuildList <- structure(list(scheme = "https",
-                                   hostname = "ofmpub.epa.gov",
+                                   hostname = "echodata.epa.gov",
         port = NULL, path = path, query = query), class = "url")
     return(httr::build_url(urlBuildList))
 }

@@ -9,13 +9,15 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
+options(crayon.enabled = NULL)
+
 library(kableExtra)
 library(httptest)
 library(dplyr)
 
 path <- here::here("vignettes/int")
 
-api_root <- "https://ofmpub.epa.gov/echo/"
+api_root <- "https://echodata.epa.gov/echo/"
 
 set_redactor(function (response) {
   response %>%
