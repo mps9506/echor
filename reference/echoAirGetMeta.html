@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -108,7 +108,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/mps9506/echor/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -134,7 +134,7 @@
     <p>Returns variable name and descriptions for parameters returned by <code><a href='echoAirGetFacilityInfo.html'>echoAirGetFacilityInfo</a></code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>echoAirGetMeta</span>(<span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>echoAirGetMeta</span><span class='op'>(</span>verbose <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -154,21 +154,22 @@
 <span class='co'>## These examples require an internet connection to run</span>
 
 <span class='co'># returns a dataframe of</span>
-<span class='fu'>echoAirGetMeta</span>()</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 136 x 6</span><span>
-#&gt;    ColumnName    DataType DataLength ColumnID ObjectName   Description          
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                
-#&gt; </span><span style='color: #555555;'> 1</span><span> AIR_NAME      VARCHAR2 200        1        AIRName      The name of the AIR …
-#&gt; </span><span style='color: #555555;'> 2</span><span> SOURCE_ID     VARCHAR2 30         2        SourceID     Unique Identifier as…
-#&gt; </span><span style='color: #555555;'> 3</span><span> AIR_STREET    VARCHAR2 200        3        AIRStreet    The street address o…
-#&gt; </span><span style='color: #555555;'> 4</span><span> AIR_CITY      VARCHAR2 100        4        AIRCity      The city where the A…
-#&gt; </span><span style='color: #555555;'> 5</span><span> AIR_STATE     CHAR     2          5        AIRState     The state where the …
-#&gt; </span><span style='color: #555555;'> 6</span><span> LOCAL_CONTRO… CHAR     3          6        LocalContro… Code for regions wit…
-#&gt; </span><span style='color: #555555;'> 7</span><span> AIR_ZIP       VARCHAR2 10         7        AIRZip       The five-digit zip c…
-#&gt; </span><span style='color: #555555;'> 8</span><span> REGISTRY_ID   VARCHAR2 50         8        RegistryID   An internal 12-digit…
-#&gt; </span><span style='color: #555555;'> 9</span><span> AIR_COUNTY    VARCHAR2 100        9        AIRCounty    The name of the coun…
-#&gt; </span><span style='color: #555555;'>10</span><span> AIR_EPA_REGI… CHAR     2          10       AIREPARegion The EPA region where…
-#&gt; </span><span style='color: #555555;'># … with 126 more rows</span><span></div><div class='input'># }
-</div></span></pre>
+<span class='fu'>echoAirGetMeta</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 144 × 6</span>
+#&gt;    ColumnName                DataType DataLength ColumnID ObjectName Description
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      
+#&gt; <span style='color: #BCBCBC;'> 1</span> AIR_NAME                  VARCHAR2 200        1        AIRName    The name o…
+#&gt; <span style='color: #BCBCBC;'> 2</span> SOURCE_ID                 VARCHAR2 30         2        SourceID   Unique Ide…
+#&gt; <span style='color: #BCBCBC;'> 3</span> AIR_STREET                VARCHAR2 200        3        AIRStreet  The street…
+#&gt; <span style='color: #BCBCBC;'> 4</span> AIR_CITY                  VARCHAR2 100        4        AIRCity    The city w…
+#&gt; <span style='color: #BCBCBC;'> 5</span> AIR_STATE                 CHAR     2          5        AIRState   The state …
+#&gt; <span style='color: #BCBCBC;'> 6</span> LOCAL_CONTROL_REGION_CODE CHAR     3          6        LocalCont… Code for r…
+#&gt; <span style='color: #BCBCBC;'> 7</span> AIR_ZIP                   VARCHAR2 10         7        AIRZip     The five-d…
+#&gt; <span style='color: #BCBCBC;'> 8</span> REGISTRY_ID               VARCHAR2 50         8        RegistryID An interna…
+#&gt; <span style='color: #BCBCBC;'> 9</span> AIR_COUNTY                VARCHAR2 100        9        AIRCounty  The name o…
+#&gt; <span style='color: #BCBCBC;'>10</span> AIR_EPA_REGION            CHAR     2          10       AIREPAReg… The EPA re…
+#&gt; <span style='color: #949494;'># … with 134 more rows</span></div><div class='input'><span class='co'># }</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -184,7 +185,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

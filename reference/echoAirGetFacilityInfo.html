@@ -75,7 +75,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-air
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-air
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-air
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/mps9506/echor/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -136,7 +136,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-air
 Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info'>https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>echoAirGetFacilityInfo</span>(<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"df"</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>echoAirGetFacilityInfo</span><span class='op'>(</span>output <span class='op'>=</span> <span class='st'>"df"</span>, verbose <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,32 +164,34 @@ Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-s
 <span class='co'>## These examples require an internet connection to run</span>
 
 <span class='co'>## Retrieve table of facilities by bounding box</span>
-<span class='fu'>echoAirGetFacilityInfo</span>(<span class='kw'>xmin</span> <span class='kw'>=</span> <span class='st'>'-96.407563'</span>,
-<span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
-<span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
-<span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'df'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 40 x 7</span><span>
+<span class='fu'>echoAirGetFacilityInfo</span><span class='op'>(</span>xmin <span class='op'>=</span> <span class='st'>'-96.407563'</span>,
+ymin <span class='op'>=</span> <span class='st'>'30.554395'</span>,
+xmax <span class='op'>=</span> <span class='st'>'-96.25947'</span>,
+ymax <span class='op'>=</span> <span class='st'>'30.751984'</span>,
+output <span class='op'>=</span> <span class='st'>'df'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 29 × 7</span>
 #&gt;    AIRName          SourceID    AIRStreet      AIRCity   AIRState FacLat FacLong
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> AGGIE CLEANERS   0600000048… 111 COLLEGE M… COLLEGE … TX         30.6   -</span><span style='color: #BB0000;'>96.3</span><span>
-#&gt; </span><span style='color: #555555;'> 2</span><span> ALENCO, DIV OF … TX00000048… 615 CARSON ST… BRYAN     TX         30.6   -</span><span style='color: #BB0000;'>96.4</span><span>
-#&gt; </span><span style='color: #555555;'> 3</span><span> ALL SEASONS 1 H… 0600000048… 2501 TEXAS AV… COLLEGE … TX         30.6   -</span><span style='color: #BB0000;'>96.3</span><span>
-#&gt; </span><span style='color: #555555;'> 4</span><span> BLUEBONNET PAVI… TX00000048… HWY. 60, WEST… COLLEGE … TX         30.6   -</span><span style='color: #BB0000;'>96.3</span><span>
-#&gt; </span><span style='color: #555555;'> 5</span><span> BRIARCREST DRY … 0600000048… 1887 BRIARCRE… BRYAN     TX         30.7   -</span><span style='color: #BB0000;'>96.3</span><span>
-#&gt; </span><span style='color: #555555;'> 6</span><span> BRYAN CERAMICS … TX00000048… 1500 INDEPEND… BRYAN     TX         30.6   -</span><span style='color: #BB0000;'>96.4</span><span>
-#&gt; </span><span style='color: #555555;'> 7</span><span> BRYAN CLEANERS … 0600000048… 1803 HOLLEMAN… COLLEGE … TX         30.6   -</span><span style='color: #BB0000;'>96.3</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span> BRYAN HICKS GAS… TX00000048… 3747 OLD RELI… BRYAN     TX         30.7   -</span><span style='color: #BB0000;'>96.3</span><span>
-#&gt; </span><span style='color: #555555;'> 9</span><span> CITGO PETROLEUM… TX00000048… 1714 FINFEATH… BRYAN     TX         30.7   -</span><span style='color: #BB0000;'>96.4</span><span>
-#&gt; </span><span style='color: #555555;'>10</span><span> CITY OF BRYAN    TX00000048… 1.5 MI W OF @… BRYAN     TX         30.6   -</span><span style='color: #BB0000;'>96.4</span><span>
-#&gt; </span><span style='color: #555555;'># … with 30 more rows</span><span></div><div class='input'>
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> AGGIE CLEANERS   0600000048… 111 COLLEGE M… COLLEGE … TX         30.6   -<span style='color: #BB0000;'>96.3</span>
+#&gt; <span style='color: #BCBCBC;'> 2</span> ALENCO, DIV OF … TX00000048… 615 CARSON ST… BRYAN     TX         30.6   -<span style='color: #BB0000;'>96.4</span>
+#&gt; <span style='color: #BCBCBC;'> 3</span> ALL SEASONS 1 H… 0600000048… 2501 TEXAS AV… COLLEGE … TX         30.6   -<span style='color: #BB0000;'>96.3</span>
+#&gt; <span style='color: #BCBCBC;'> 4</span> BRIARCREST DRY … 0600000048… 1887 BRIARCRE… BRYAN     TX         30.7   -<span style='color: #BB0000;'>96.3</span>
+#&gt; <span style='color: #BCBCBC;'> 5</span> BRYAN CLEANERS … 0600000048… 1803 HOLLEMAN… COLLEGE … TX         30.6   -<span style='color: #BB0000;'>96.3</span>
+#&gt; <span style='color: #BCBCBC;'> 6</span> BRYAN HICKS GAS… TX00000048… 3747 OLD RELI… BRYAN     TX         30.7   -<span style='color: #BB0000;'>96.3</span>
+#&gt; <span style='color: #BCBCBC;'> 7</span> CITGO PETROLEUM… TX00000048… 1714 FINFEATH… BRYAN     TX         30.7   -<span style='color: #BB0000;'>96.4</span>
+#&gt; <span style='color: #BCBCBC;'> 8</span> CITY OF BRYAN A… TX00000048… 601 ATKINS ST  BRYAN     TX         30.6   -<span style='color: #BB0000;'>96.4</span>
+#&gt; <span style='color: #BCBCBC;'> 9</span> COMET 1 HR CLEA… 0600000048… 1712 SOUTHWES… COLLEGE … TX         30.6   -<span style='color: #BB0000;'>96.3</span>
+#&gt; <span style='color: #BCBCBC;'>10</span> COMET 1 HR CLEA… 0600000048… 4031 EAST 29T… BRYAN     TX         30.6   -<span style='color: #BB0000;'>96.3</span>
+#&gt; <span style='color: #949494;'># … with 19 more rows</span></div><div class='input'>
 <span class='co'>## Retrieve a simple features dataframe by bounding box</span>
-<span class='no'>spatialdata</span> <span class='kw'>&lt;-</span> <span class='fu'>echoAirGetFacilityInfo</span>(<span class='kw'>xmin</span> <span class='kw'>=</span> <span class='st'>'-96.407563'</span>,
-<span class='kw'>ymin</span> <span class='kw'>=</span> <span class='st'>'30.554395'</span>,
-<span class='kw'>xmax</span> <span class='kw'>=</span> <span class='st'>'-96.25947'</span>,
-<span class='kw'>ymax</span> <span class='kw'>=</span> <span class='st'>'30.751984'</span>,
-<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>'sf'</span>)
+<span class='va'>spatialdata</span> <span class='op'>&lt;-</span> <span class='fu'>echoAirGetFacilityInfo</span><span class='op'>(</span>xmin <span class='op'>=</span> <span class='st'>'-96.407563'</span>,
+ymin <span class='op'>=</span> <span class='st'>'30.554395'</span>,
+xmax <span class='op'>=</span> <span class='st'>'-96.25947'</span>,
+ymax <span class='op'>=</span> <span class='st'>'30.751984'</span>,
+output <span class='op'>=</span> <span class='st'>'sf'</span><span class='op'>)</span>
 
-<span class='co'># }</span></div></span></pre>
+<span class='co'># }</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -205,7 +207,7 @@ Uses EPA's ECHO API: <a href='https://echo.epa.gov/tools/web-services/facility-s
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

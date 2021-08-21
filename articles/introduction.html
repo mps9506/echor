@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
       </span>
     </div>
 
@@ -40,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -66,7 +66,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/mps9506/echor/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -80,13 +80,14 @@
 
       
 
-      </header><script src="introduction_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="introduction_files/kePrint-0.0.1/kePrint.js"></script><div class="row">
+      </header><script src="introduction_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="introduction_files/kePrint-0.0.1/kePrint.js"></script><link href="introduction_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to echor</h1>
                         <h4 class="author">Michael Schramm</h4>
             
-            <h4 class="date">2020-08-17</h4>
+            <h4 class="date">2021-08-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/mps9506/echor/blob/master/vignettes/introduction.Rmd"><code>vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
@@ -153,34 +154,36 @@
 <a href="#air" class="anchor"></a>Air</h3>
 <p>Suppose we want to find facilities permitted under the Clean Air Act requirements.</p>
 <p>Step 1 - Identify the information we need returned from the query:</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">echor</span>)
-<span class="no">meta</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetMeta.html">echoAirGetMeta</a></span>()
-<span class="no">meta</span>
-<span class="co">#&gt; # A tibble: 136 x 6</span>
-<span class="co">#&gt;    ColumnName    DataType DataLength ColumnID ObjectName   Description          </span>
-<span class="co">#&gt;    &lt;chr&gt;         &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;                </span>
-<span class="co">#&gt;  1 AIR_NAME      VARCHAR2 200        1        AIRName      The name of the AIR …</span>
-<span class="co">#&gt;  2 SOURCE_ID     VARCHAR2 30         2        SourceID     Unique Identifier as…</span>
-<span class="co">#&gt;  3 AIR_STREET    VARCHAR2 200        3        AIRStreet    The street address o…</span>
-<span class="co">#&gt;  4 AIR_CITY      VARCHAR2 100        4        AIRCity      The city where the A…</span>
-<span class="co">#&gt;  5 AIR_STATE     CHAR     2          5        AIRState     The state where the …</span>
-<span class="co">#&gt;  6 LOCAL_CONTRO… CHAR     3          6        LocalContro… Code for regions wit…</span>
-<span class="co">#&gt;  7 AIR_ZIP       VARCHAR2 10         7        AIRZip       The five-digit zip c…</span>
-<span class="co">#&gt;  8 REGISTRY_ID   VARCHAR2 50         8        RegistryID   An internal 12-digit…</span>
-<span class="co">#&gt;  9 AIR_COUNTY    VARCHAR2 100        9        AIRCounty    The name of the coun…</span>
-<span class="co">#&gt; 10 AIR_EPA_REGI… CHAR     2          10       AIREPARegion The EPA region where…</span>
-<span class="co">#&gt; # … with 126 more rows</span></pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">echor</span><span class="op">)</span>
+<span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetMeta.html">echoAirGetMeta</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">meta</span>
+<span class="co">#&gt; # A tibble: 144 × 6</span>
+<span class="co">#&gt;    ColumnName                DataType DataLength ColumnID ObjectName Description</span>
+<span class="co">#&gt;    &lt;chr&gt;                     &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;      </span>
+<span class="co">#&gt;  1 AIR_NAME                  VARCHAR2 200        1        AIRName    The name o…</span>
+<span class="co">#&gt;  2 SOURCE_ID                 VARCHAR2 30         2        SourceID   Unique Ide…</span>
+<span class="co">#&gt;  3 AIR_STREET                VARCHAR2 200        3        AIRStreet  The street…</span>
+<span class="co">#&gt;  4 AIR_CITY                  VARCHAR2 100        4        AIRCity    The city w…</span>
+<span class="co">#&gt;  5 AIR_STATE                 CHAR     2          5        AIRState   The state …</span>
+<span class="co">#&gt;  6 LOCAL_CONTROL_REGION_CODE CHAR     3          6        LocalCont… Code for r…</span>
+<span class="co">#&gt;  7 AIR_ZIP                   VARCHAR2 10         7        AIRZip     The five-d…</span>
+<span class="co">#&gt;  8 REGISTRY_ID               VARCHAR2 50         8        RegistryID An interna…</span>
+<span class="co">#&gt;  9 AIR_COUNTY                VARCHAR2 100        9        AIRCounty  The name o…</span>
+<span class="co">#&gt; 10 AIR_EPA_REGION            CHAR     2          10       AIREPAReg… The EPA re…</span>
+<span class="co">#&gt; # … with 134 more rows</span></code></pre></div>
 <p>The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: <code>qcolumns = "1,2,3,22,23"</code></p>
 <p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I recommend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specify the returned information with the <code>qcolumns</code> argument. Each argument should be passed to ECHO as <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo(parameter = "value")</a></code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">echor</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">echor</span><span class="op">)</span>
 
 <span class="co">## Retrieve information about facilities within a geographic location</span>
-<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo</a></span>(<span class="kw">output</span> <span class="kw">=</span> <span class="st">"df"</span>,
-                             <span class="kw">xmin</span> <span class="kw">=</span> <span class="st">'-96.387509'</span>,
-                             <span class="kw">ymin</span> <span class="kw">=</span> <span class="st">'30.583572'</span>,
-                             <span class="kw">xmax</span> <span class="kw">=</span> <span class="st">'-96.281422'</span>,
-                             <span class="kw">ymax</span> <span class="kw">=</span> <span class="st">'30.640008'</span>,
-                             <span class="kw">qcolumns</span> <span class="kw">=</span> <span class="st">"1,2,3,22,23"</span>)</pre></body></html></div>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo</a></span><span class="op">(</span>output <span class="op">=</span> <span class="st">"df"</span>,
+                             xmin <span class="op">=</span> <span class="st">'-96.387509'</span>,
+                             ymin <span class="op">=</span> <span class="st">'30.583572'</span>,
+                             xmax <span class="op">=</span> <span class="st">'-96.281422'</span>,
+                             ymax <span class="op">=</span> <span class="st">'30.640008'</span>,
+                             qcolumns <span class="op">=</span> <span class="st">"1,2,3,22,23"</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; ">
 <table class="table table">
 <thead><tr>
@@ -237,40 +240,6 @@ ALL SEASONS 1 HR CLEANERS
 </tr>
 <tr>
 <td style="text-align:left;">
-BLUEBONNET PAVING
-</td>
-<td style="text-align:left;">
-TX0000004877700147
-</td>
-<td style="text-align:left;">
-HWY. 60, WEST OF
-</td>
-<td style="text-align:right;">
-30.61337
-</td>
-<td style="text-align:right;">
--96.32098
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BRYAN CERAMICS PLANT
-</td>
-<td style="text-align:left;">
-TX0000004804100027
-</td>
-<td style="text-align:left;">
-1500 INDEPENDENCE AVE
-</td>
-<td style="text-align:right;">
-30.63760
-</td>
-<td style="text-align:right;">
--96.36235
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 BRYAN CLEANERS &amp; LAUNDRY
 </td>
 <td style="text-align:left;">
@@ -288,19 +257,53 @@ BRYAN CLEANERS &amp; LAUNDRY
 </tr>
 <tr>
 <td style="text-align:left;">
-CITY OF BRYAN
+COMET 1 HR CLEANERS
 </td>
 <td style="text-align:left;">
-TX0000004804100026
+06000000480416E013
 </td>
 <td style="text-align:left;">
-1.5 MI W OF <span class="citation">@FM</span> 1687 &amp; FM 2818
+1712 SOUTHWEST PARKWAY #101
 </td>
 <td style="text-align:right;">
-30.63760
+30.60616
 </td>
 <td style="text-align:right;">
--96.36235
+-96.31034
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EAGLE DRY CLEANING
+</td>
+<td style="text-align:left;">
+06000000480416E017
+</td>
+<td style="text-align:left;">
+900-8 HARVEY ROAD
+</td>
+<td style="text-align:right;">
+30.62254
+</td>
+<td style="text-align:right;">
+-96.31053
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EARLY BIRD CLEANERS (CROWN)
+</td>
+<td style="text-align:left;">
+06000000480416E019
+</td>
+<td style="text-align:left;">
+615 EAST UNIVERSITY DRIVE
+</td>
+<td style="text-align:right;">
+30.61976
+</td>
+<td style="text-align:right;">
+-96.34399
 </td>
 </tr>
 </tbody>
@@ -350,7 +353,8 @@ xmax  string  Maximum longitude value in decimal degrees
 
 ymax  string  Maximum latitude value in decimal degrees</code></pre>
 <p>Step 3 - Download the emission inventory report for a permitted facility:</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/echoGetCAAPR.html">echoGetCAAPR</a></span>(<span class="kw">p_id</span> <span class="kw">=</span> <span class="st">'110000350174'</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoGetCAAPR.html">echoGetCAAPR</a></span><span class="op">(</span>p_id <span class="op">=</span> <span class="st">'110000350174'</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
 <table class="table table">
 <thead><tr>
@@ -427,60 +431,13 @@ NEW HANOVER
 04
 </td>
 <td style="text-align:right;">
-34.28332
-</td>
-<td style="text-align:right;">
--77.98523
-</td>
-<td style="text-align:left;">
-Nitrous oxide
-</td>
-<td style="text-align:left;">
-MTCO2e
-</td>
-<td style="text-align:left;">
-GHG
-</td>
-<td style="text-align:right;">
-2009
+NA
 </td>
 <td style="text-align:right;">
 NA
 </td>
-</tr>
-<tr>
 <td style="text-align:left;">
-CP&amp;L - SUTTON PLANT
-</td>
-<td style="text-align:left;">
-110000350174
-</td>
-<td style="text-align:left;">
-801 SUTTON STEAM PLANT ROAD
-</td>
-<td style="text-align:left;">
-WILMINGTON
-</td>
-<td style="text-align:left;">
-NC
-</td>
-<td style="text-align:left;">
-28401
-</td>
-<td style="text-align:left;">
-NEW HANOVER
-</td>
-<td style="text-align:left;">
-04
-</td>
-<td style="text-align:right;">
-34.28332
-</td>
-<td style="text-align:right;">
--77.98523
-</td>
-<td style="text-align:left;">
-Chromium(VI)
+1,3-Butadiene
 </td>
 <td style="text-align:left;">
 Pounds
@@ -489,7 +446,7 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2009
+2010
 </td>
 <td style="text-align:right;">
 NA
@@ -521,13 +478,13 @@ NEW HANOVER
 04
 </td>
 <td style="text-align:right;">
-34.28332
+NA
 </td>
 <td style="text-align:right;">
--77.98523
+NA
 </td>
 <td style="text-align:left;">
-Cumene
+1,3-Butadiene
 </td>
 <td style="text-align:left;">
 Pounds
@@ -536,10 +493,10 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2009
+2011
 </td>
 <td style="text-align:right;">
-NA
+15.14
 </td>
 </tr>
 <tr>
@@ -568,13 +525,13 @@ NEW HANOVER
 04
 </td>
 <td style="text-align:right;">
-34.28332
+NA
 </td>
 <td style="text-align:right;">
--77.98523
+NA
 </td>
 <td style="text-align:left;">
-Methyl tert-butyl ether
+1,3-Butadiene
 </td>
 <td style="text-align:left;">
 Pounds
@@ -583,7 +540,7 @@ Pounds
 NEI
 </td>
 <td style="text-align:right;">
-2009
+2012
 </td>
 <td style="text-align:right;">
 NA
@@ -615,25 +572,25 @@ NEW HANOVER
 04
 </td>
 <td style="text-align:right;">
-34.28332
+NA
 </td>
 <td style="text-align:right;">
--77.98523
+NA
 </td>
 <td style="text-align:left;">
-Mercury compounds
+1,3-Butadiene
 </td>
 <td style="text-align:left;">
 Pounds
 </td>
 <td style="text-align:left;">
-TRI
+NEI
 </td>
 <td style="text-align:right;">
-2009
+2013
 </td>
 <td style="text-align:right;">
-110
+NA
 </td>
 </tr>
 <tr>
@@ -662,25 +619,72 @@ NEW HANOVER
 04
 </td>
 <td style="text-align:right;">
-34.28332
+NA
 </td>
 <td style="text-align:right;">
--77.98523
+NA
 </td>
 <td style="text-align:left;">
-Nitrogen oxides
+1,3-Butadiene
 </td>
 <td style="text-align:left;">
 Pounds
 </td>
 <td style="text-align:left;">
-CAMD
+NEI
 </td>
 <td style="text-align:right;">
-2009
+2014
 </td>
 <td style="text-align:right;">
-8544200
+3.26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CP&amp;L - SUTTON PLANT
+</td>
+<td style="text-align:left;">
+110000350174
+</td>
+<td style="text-align:left;">
+801 SUTTON STEAM PLANT ROAD
+</td>
+<td style="text-align:left;">
+WILMINGTON
+</td>
+<td style="text-align:left;">
+NC
+</td>
+<td style="text-align:left;">
+28401
+</td>
+<td style="text-align:left;">
+NEW HANOVER
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+1,3-Butadiene
+</td>
+<td style="text-align:left;">
+Pounds
+</td>
+<td style="text-align:left;">
+NEI
+</td>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:right;">
+NA
 </td>
 </tr>
 </tbody>
@@ -696,9 +700,10 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 <h3 class="hasAnchor">
 <a href="#water-facility-and-discharge-searches" class="anchor"></a>Water facility and discharge searches</h3>
 <p>Find facilities with NPDES permits to discharge wastewater:</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span>(<span class="kw">xmin</span> <span class="kw">=</span> <span class="st">'-96.407563'</span>, <span class="kw">ymin</span> <span class="kw">=</span> <span class="st">'30.554395'</span>,
-                               <span class="kw">xmax</span> <span class="kw">=</span> <span class="st">'-96.25947'</span>,  <span class="kw">ymax</span> <span class="kw">=</span> <span class="st">'30.751984'</span>,
-                               <span class="kw">output</span> <span class="kw">=</span> <span class="st">'df'</span>, <span class="kw">qcolumns</span> <span class="kw">=</span> <span class="st">"1,2,3,4,5,6,7"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="st">'-96.407563'</span>, ymin <span class="op">=</span> <span class="st">'30.554395'</span>, 
+                               xmax <span class="op">=</span> <span class="st">'-96.25947'</span>,  ymax <span class="op">=</span> <span class="st">'30.751984'</span>, 
+                               output <span class="op">=</span> <span class="st">'df'</span>, qcolumns <span class="op">=</span> <span class="st">"1,2,3,4,5,6,7"</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
 <table class="table table">
 <thead><tr>
@@ -725,6 +730,50 @@ CWPZip
 </th>
 </tr></thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+3444 MAHOGANY DRIVE
+</td>
+<td style="text-align:left;">
+TXR1509EW
+</td>
+<td style="text-align:left;">
+SOUTHWEST OF THE INTERSECTION OF MAHOGANY DRIVE AN
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+77807
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5113 INVERNESS DR
+</td>
+<td style="text-align:left;">
+TXR1542EK
+</td>
+<td style="text-align:left;">
+5113 INVERNESS DR
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+77802
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 777 GRAHAM RD
@@ -771,6 +820,28 @@ TX
 </tr>
 <tr>
 <td style="text-align:left;">
+ACADEMY CONDOMINIUMS
+</td>
+<td style="text-align:left;">
+TXR1508FA
+</td>
+<td style="text-align:left;">
+1326 PRAIRIE DR
+</td>
+<td style="text-align:left;">
+BRYAN
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+77803
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 ACE TOWNHOME
 </td>
 <td style="text-align:left;">
@@ -789,74 +860,6 @@ TX
 </td>
 <td style="text-align:left;">
 77845-4168
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-AGGIE ACRES WWTP
-</td>
-<td style="text-align:left;">
-TX0132187
-</td>
-<td style="text-align:left;">
-800 FT SE OF N DOWLING RD APPROX 600 FT SW OF WALN
-</td>
-<td style="text-align:left;">
-COLLEGE STATION
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-09
-</td>
-<td style="text-align:left;">
-77845
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-AGRILIFE PHENOTYPING GREENHOUSE
-</td>
-<td style="text-align:left;">
-TXR1582BA
-</td>
-<td style="text-align:left;">
-950 AGRONOMY ROAD
-</td>
-<td style="text-align:left;">
-COLLEGE STATION
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-77845
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-AGRIVEST SWINE FEEDLOT
-</td>
-<td style="text-align:left;">
-TX0121240
-</td>
-<td style="text-align:left;">
-SWISHER COUNTY
-</td>
-<td style="text-align:left;">
-BRYAN
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-01
-</td>
-<td style="text-align:left;">
-00000
 </td>
 </tr>
 </tbody>
@@ -911,16 +914,8 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
               May contain comma-seperated values
               </code></pre>
 <p>Download discharge monitoring reports from ECHO from specified facilities:</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/echoGetEffluent.html">echoGetEffluent</a></span>(<span class="kw">p_id</span> <span class="kw">=</span> <span class="st">'tx0119407'</span>, <span class="kw">parameter_code</span> <span class="kw">=</span> <span class="st">'50050'</span>)
-<span class="co">#&gt; Warning: 158 parsing failures.</span>
-<span class="co">#&gt; row col   expected    actual         file</span>
-<span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   4  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   5  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   7  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt; ... ... .......... ......... ............</span>
-<span class="co">#&gt; See problems(...) for more details.</span></pre></body></html></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoGetEffluent.html">echoGetEffluent</a></span><span class="op">(</span>p_id <span class="op">=</span> <span class="st">'tx0119407'</span>, parameter_code <span class="op">=</span> <span class="st">'50050'</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
 <table class="table table">
 <thead><tr>
@@ -1111,370 +1106,503 @@ violation_severity
 <tbody>
 <tr>
 <td style="text-align:left;">
+3600178396
 </td>
 <td style="text-align:left;">
-NA
+TX0119407
 </td>
 <td style="text-align:left;">
-NA
+4
 </td>
 <td style="text-align:left;">
-NA
+3600049681
 </td>
 <td style="text-align:left;">
-NA
+001
 </td>
 <td style="text-align:left;">
-NA
+EXO
 </td>
 <td style="text-align:left;">
-NA
+External Outfall
 </td>
 <td style="text-align:left;">
-NA
+3600061722
 </td>
 <td style="text-align:left;">
-NA
+3600073706
 </td>
 <td style="text-align:left;">
-NA
+3600437316
 </td>
 <td style="text-align:left;">
-NA
+ENF
 </td>
 <td style="text-align:left;">
-NA
+08/01/2015
 </td>
 <td style="text-align:left;">
-NA
+03/01/2020
 </td>
 <td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
-NA
+50050
 </td>
 <td style="text-align:left;">
-NA
+Flow, in conduit or thru treatment plant
 </td>
 <td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
-NA
+Effluent Gross
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+3600678123
 </td>
 <td style="text-align:left;">
-NA
+Q1
 </td>
 <td style="text-align:left;">
-NA
+Quantity1
 </td>
 <td style="text-align:left;">
-NA
+.131
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+.131
 </td>
 <td style="text-align:left;">
-NA
+DB
 </td>
 <td style="text-align:left;">
-NA
+DAILY AV
 </td>
 <td style="text-align:left;">
-NA
+AVG
 </td>
 <td style="text-align:left;">
-NA
+Average
 </td>
 <td style="text-align:left;">
-NA
+&lt;=
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+3601380418
 </td>
 <td style="text-align:left;">
-NA
+04/30/2018
 </td>
 <td style="text-align:left;">
-NA
+3618540579
 </td>
 <td style="text-align:left;">
-NA
+Q1
 </td>
 <td style="text-align:left;">
-NA
+Quantity1
 </td>
 <td style="text-align:left;">
-NA
+3667289417
 </td>
 <td style="text-align:left;">
-NA
+.0523
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+.0523
 </td>
 <td style="text-align:left;">
-NA
+=
 </td>
 <td style="text-align:left;">
-NA
+05/17/2018
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+No Violation Identified
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+3600178396
 </td>
 <td style="text-align:left;">
-NA
+TX0119407
 </td>
 <td style="text-align:left;">
-NA
+4
 </td>
 <td style="text-align:left;">
-NA
+3600049681
 </td>
 <td style="text-align:left;">
-NA
+001
 </td>
 <td style="text-align:left;">
-NA
+EXO
 </td>
 <td style="text-align:left;">
-NA
+External Outfall
 </td>
 <td style="text-align:left;">
-NA
+3600061722
 </td>
 <td style="text-align:left;">
-NA
+3600073706
 </td>
 <td style="text-align:left;">
-NA
+3600437316
 </td>
 <td style="text-align:left;">
-NA
+ENF
 </td>
 <td style="text-align:left;">
-NA
+08/01/2015
 </td>
 <td style="text-align:left;">
-NA
+03/01/2020
 </td>
 <td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
-NA
+50050
 </td>
 <td style="text-align:left;">
-NA
+Flow, in conduit or thru treatment plant
 </td>
 <td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
-NA
+Effluent Gross
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+3600678122
 </td>
 <td style="text-align:left;">
-NA
+Q2
 </td>
 <td style="text-align:left;">
-NA
+Quantity2
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+DD
 </td>
 <td style="text-align:left;">
-NA
+DAILY MX
 </td>
 <td style="text-align:left;">
-NA
+MAX
 </td>
 <td style="text-align:left;">
-NA
+Maximum
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+3601380418
 </td>
 <td style="text-align:left;">
-NA
+04/30/2018
 </td>
 <td style="text-align:left;">
-NA
+3618540580
 </td>
 <td style="text-align:left;">
-NA
+Q2
 </td>
 <td style="text-align:left;">
-NA
+Quantity2
 </td>
 <td style="text-align:left;">
-NA
+3667289418
 </td>
 <td style="text-align:left;">
-NA
+.089
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+.089
 </td>
 <td style="text-align:left;">
-NA
+=
 </td>
 <td style="text-align:left;">
-NA
+05/17/2018
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+No Violation Identified
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3600178396
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+3600049681
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+EXO
+</td>
+<td style="text-align:left;">
+External Outfall
+</td>
+<td style="text-align:left;">
+3600061722
+</td>
+<td style="text-align:left;">
+3600073706
+</td>
+<td style="text-align:left;">
+3600437316
+</td>
+<td style="text-align:left;">
+ENF
+</td>
+<td style="text-align:left;">
+08/01/2015
+</td>
+<td style="text-align:left;">
+03/01/2020
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+50050
+</td>
+<td style="text-align:left;">
+Flow, in conduit or thru treatment plant
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Effluent Gross
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3600678122
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:left;">
+Quantity2
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+DD
+</td>
+<td style="text-align:left;">
+DAILY MX
+</td>
+<td style="text-align:left;">
+MAX
+</td>
+<td style="text-align:left;">
+Maximum
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3601380419
+</td>
+<td style="text-align:left;">
+05/31/2018
+</td>
+<td style="text-align:left;">
+3618540598
+</td>
+<td style="text-align:left;">
+Q2
+</td>
+<td style="text-align:left;">
+Quantity2
+</td>
+<td style="text-align:left;">
+3669642407
+</td>
+<td style="text-align:left;">
+.1059
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+.1059
+</td>
+<td style="text-align:left;">
+=
+</td>
+<td style="text-align:left;">
+06/19/2018
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+No Violation Identified
 </td>
 </tr>
 <tr>
@@ -1581,13 +1709,13 @@ Average
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-3600838854
+3601380419
 </td>
 <td style="text-align:left;">
-04/30/2017
+05/31/2018
 </td>
 <td style="text-align:left;">
-3610877999
+3618540597
 </td>
 <td style="text-align:left;">
 Q1
@@ -1596,10 +1724,10 @@ Q1
 Quantity1
 </td>
 <td style="text-align:left;">
-3639062095
+3669642404
 </td>
 <td style="text-align:left;">
-.0499
+.0503
 </td>
 <td style="text-align:left;">
 03
@@ -1608,13 +1736,13 @@ Quantity1
 MGD
 </td>
 <td style="text-align:left;">
-.0499
+.0503
 </td>
 <td style="text-align:left;">
 =
 </td>
 <td style="text-align:left;">
-05/15/2017
+06/19/2018
 </td>
 <td style="text-align:left;">
 </td>
@@ -1648,370 +1776,171 @@ No Violation Identified
 </tr>
 <tr>
 <td style="text-align:left;">
+3600178396
 </td>
 <td style="text-align:left;">
-NA
+TX0119407
 </td>
 <td style="text-align:left;">
-NA
+4
 </td>
 <td style="text-align:left;">
-NA
+3600049681
 </td>
 <td style="text-align:left;">
-NA
+001
 </td>
 <td style="text-align:left;">
-NA
+EXO
 </td>
 <td style="text-align:left;">
-NA
+External Outfall
 </td>
 <td style="text-align:left;">
-NA
+3600061722
 </td>
 <td style="text-align:left;">
-NA
+3600073706
 </td>
 <td style="text-align:left;">
-NA
+3600437316
 </td>
 <td style="text-align:left;">
-NA
+ENF
 </td>
 <td style="text-align:left;">
-NA
+08/01/2015
 </td>
 <td style="text-align:left;">
-NA
+03/01/2020
 </td>
 <td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
-NA
+50050
 </td>
 <td style="text-align:left;">
-NA
+Flow, in conduit or thru treatment plant
 </td>
 <td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
-NA
+Effluent Gross
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+3600678123
 </td>
 <td style="text-align:left;">
-NA
+Q1
 </td>
 <td style="text-align:left;">
-NA
+Quantity1
 </td>
 <td style="text-align:left;">
-NA
+.131
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+.131
 </td>
 <td style="text-align:left;">
-NA
+DB
 </td>
 <td style="text-align:left;">
-NA
+DAILY AV
 </td>
 <td style="text-align:left;">
-NA
+AVG
 </td>
 <td style="text-align:left;">
-NA
+Average
 </td>
 <td style="text-align:left;">
-NA
+&lt;=
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
+3601380420
 </td>
 <td style="text-align:left;">
-NA
+06/30/2018
 </td>
 <td style="text-align:left;">
-NA
+3618540615
 </td>
 <td style="text-align:left;">
-NA
+Q1
 </td>
 <td style="text-align:left;">
-NA
+Quantity1
 </td>
 <td style="text-align:left;">
-NA
+3670879559
 </td>
 <td style="text-align:left;">
-NA
+.0651
 </td>
 <td style="text-align:left;">
-NA
+03
 </td>
 <td style="text-align:left;">
-NA
+MGD
 </td>
 <td style="text-align:left;">
-NA
+.0651
 </td>
 <td style="text-align:left;">
-NA
+=
 </td>
 <td style="text-align:left;">
-NA
+07/16/2018
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
 </td>
 <td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
+No Violation Identified
 </td>
 </tr>
 <tr>
@@ -2115,13 +2044,13 @@ Maximum
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-3600838854
+3601380420
 </td>
 <td style="text-align:left;">
-04/30/2017
+06/30/2018
 </td>
 <td style="text-align:left;">
-3610878004
+3618540616
 </td>
 <td style="text-align:left;">
 Q2
@@ -2130,10 +2059,10 @@ Q2
 Quantity2
 </td>
 <td style="text-align:left;">
-3639062096
+3670879560
 </td>
 <td style="text-align:left;">
-70.881
+.3805
 </td>
 <td style="text-align:left;">
 03
@@ -2142,13 +2071,13 @@ Quantity2
 MGD
 </td>
 <td style="text-align:left;">
-70.881
+.3805
 </td>
 <td style="text-align:left;">
 =
 </td>
 <td style="text-align:left;">
-05/15/2017
+07/16/2018
 </td>
 <td style="text-align:left;">
 </td>
@@ -2194,151 +2123,114 @@ start_date      string  Start date of interest. Must be entered as "mm/dd/yyyy"
 
 end_date        string  End date of interest. Must be entered as "mm/dd/yyyy"</code></pre>
 <p>Parameters codes can be searched using <code>echoWaterGetParams</code>.</p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="../reference/echoWaterGetParams.html">echoWaterGetParams</a></span>(<span class="kw">term</span> <span class="kw">=</span> <span class="st">"Oxygen, dissolved"</span>)
-<span class="co">#&gt; # A tibble: 5 x 2</span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/echoWaterGetParams.html">echoWaterGetParams</a></span><span class="op">(</span>term <span class="op">=</span> <span class="st">"Oxygen, dissolved"</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 5 × 2</span>
 <span class="co">#&gt;   ValueCode ValueDescription                     </span>
 <span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                                </span>
 <span class="co">#&gt; 1 00300     Oxygen, dissolved [DO]               </span>
 <span class="co">#&gt; 2 51646     Oxygen, dissolved [DO] maximum       </span>
 <span class="co">#&gt; 3 51645     Oxygen, dissolved [DO] minimum       </span>
 <span class="co">#&gt; 4 00301     Oxygen, dissolved percent saturation </span>
-<span class="co">#&gt; 5 00399     Oxygen, dissolved, % of time violated</span></pre></body></html></div>
+<span class="co">#&gt; 5 00399     Oxygen, dissolved, % of time violated</span></code></pre></div>
 <p>Multiple DMRs can be downloaded using a helper function: <code>downloadDMRs</code>:</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(<span class="kw">permit</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'TX0119407'</span>, <span class="st">'TX0062677'</span>))
-<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/downloadDMRs.html">downloadDMRs</a></span>(<span class="no">df</span>, <span class="kw">idColumn</span> <span class="kw">=</span> <span class="no">permit</span>)
-<span class="co">#&gt; Warning: Problem with `mutate()` input `dmr`.</span>
-<span class="co">#&gt; ✖ 1764 parsing failures.</span>
-<span class="co">#&gt; row col   expected    actual         file</span>
-<span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   4  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   5  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   7  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt; ... ... .......... ......... ............</span>
-<span class="co">#&gt; See problems(...) for more details.</span>
-<span class="co">#&gt; ℹ Input `dmr` is `purrr::pmap(...)`.</span>
-<span class="co">#&gt; Warning: 1764 parsing failures.</span>
-<span class="co">#&gt; row col   expected    actual         file</span>
-<span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   4  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   5  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   7  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt; ... ... .......... ......... ............</span>
-<span class="co">#&gt; See problems(...) for more details.</span>
-<span class="co">#&gt; Warning: Problem with `mutate()` input `dmr`.</span>
-<span class="co">#&gt; ✖ 3506 parsing failures.</span>
-<span class="co">#&gt; row col   expected    actual         file</span>
-<span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   4  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   5  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   7  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt; ... ... .......... ......... ............</span>
-<span class="co">#&gt; See problems(...) for more details.</span>
-<span class="co">#&gt; ℹ Input `dmr` is `purrr::pmap(...)`.</span>
-<span class="co">#&gt; Warning: 3506 parsing failures.</span>
-<span class="co">#&gt; row col   expected    actual         file</span>
-<span class="co">#&gt;   1  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   2  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   4  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   5  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt;   7  -- 61 columns 1 columns &lt;raw vector&gt;</span>
-<span class="co">#&gt; ... ... .......... ......... ............</span>
-<span class="co">#&gt; See problems(...) for more details.</span>
-<span class="no">df</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span>
-  <span class="kw pkg">tidyr</span><span class="kw ns">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span>(<span class="no">dmr</span>)
-<span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span>(<span class="no">df</span>)
-<span class="co">#&gt; Rows: 7,903</span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>permit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'TX0119407'</span>, <span class="st">'TX0062677'</span><span class="op">)</span><span class="op">)</span>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/downloadDMRs.html">downloadDMRs</a></span><span class="op">(</span><span class="va">df</span>, idColumn <span class="op">=</span> <span class="va">permit</span><span class="op">)</span>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span>
+  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span><span class="op">(</span><span class="va">dmr</span><span class="op">)</span>
+<span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 2,705</span>
 <span class="co">#&gt; Columns: 62</span>
-<span class="co">#&gt; $ permit                      &lt;chr&gt; "TX0119407", "TX0119407", "TX0119407", "T…</span>
-<span class="co">#&gt; $ activity_id                 &lt;chr&gt; "", "", "3600178396", "", "", "3600178396…</span>
-<span class="co">#&gt; $ npdes_id                    &lt;chr&gt; NA, NA, "TX0119407", NA, NA, "TX0119407",…</span>
-<span class="co">#&gt; $ version_nmbr                &lt;chr&gt; NA, NA, "4", NA, NA, "4", NA, NA, "4", NA…</span>
-<span class="co">#&gt; $ perm_feature_id             &lt;chr&gt; NA, NA, "3600049681", NA, NA, "3600049681…</span>
-<span class="co">#&gt; $ perm_feature_nmbr           &lt;chr&gt; NA, NA, "001", NA, NA, "001", NA, NA, "00…</span>
-<span class="co">#&gt; $ perm_feature_type_code      &lt;chr&gt; NA, NA, "EXO", NA, NA, "EXO", NA, NA, "EX…</span>
-<span class="co">#&gt; $ perm_feature_type_desc      &lt;chr&gt; NA, NA, "External Outfall", NA, NA, "Exte…</span>
-<span class="co">#&gt; $ limit_set_id                &lt;chr&gt; NA, NA, "3600061722", NA, NA, "3600061722…</span>
-<span class="co">#&gt; $ limit_set_schedule_id       &lt;chr&gt; NA, NA, "3600073706", NA, NA, "3600073706…</span>
-<span class="co">#&gt; $ limit_id                    &lt;chr&gt; NA, NA, "3600437315", NA, NA, "3600437315…</span>
-<span class="co">#&gt; $ limit_type_code             &lt;chr&gt; NA, NA, "ENF", NA, NA, "ENF", NA, NA, "EN…</span>
-<span class="co">#&gt; $ limit_begin_date            &lt;chr&gt; NA, NA, "08/01/2015", NA, NA, "08/01/2015…</span>
-<span class="co">#&gt; $ limit_end_date              &lt;chr&gt; NA, NA, "03/01/2020", NA, NA, "03/01/2020…</span>
-<span class="co">#&gt; $ nmbr_of_submission          &lt;chr&gt; NA, NA, "1", NA, NA, "1", NA, NA, "1", NA…</span>
-<span class="co">#&gt; $ parameter_code              &lt;chr&gt; NA, NA, "00300", NA, NA, "00300", NA, NA,…</span>
-<span class="co">#&gt; $ parameter_desc              &lt;chr&gt; NA, NA, "Oxygen, dissolved [DO]", NA, NA,…</span>
-<span class="co">#&gt; $ monitoring_location_code    &lt;chr&gt; NA, NA, "1", NA, NA, "1", NA, NA, "1", NA…</span>
-<span class="co">#&gt; $ monitoring_location_desc    &lt;chr&gt; NA, NA, "Effluent Gross", NA, NA, "Efflue…</span>
-<span class="co">#&gt; $ stay_type_code              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ stay_type_desc              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ limit_value_id              &lt;chr&gt; NA, NA, "3600678121", NA, NA, "3600678121…</span>
-<span class="co">#&gt; $ limit_value_type_code       &lt;chr&gt; NA, NA, "C1", NA, NA, "C1", NA, NA, "C1",…</span>
-<span class="co">#&gt; $ limit_value_type_desc       &lt;chr&gt; NA, NA, "Concentration1", NA, NA, "Concen…</span>
-<span class="co">#&gt; $ limit_value_nmbr            &lt;chr&gt; NA, NA, "4", NA, NA, "4", NA, NA, "4", NA…</span>
-<span class="co">#&gt; $ limit_unit_code             &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA, "19",…</span>
-<span class="co">#&gt; $ limit_unit_desc             &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA, NA, "…</span>
-<span class="co">#&gt; $ standard_unit_code          &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA, "19",…</span>
-<span class="co">#&gt; $ standard_unit_desc          &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA, NA, "…</span>
-<span class="co">#&gt; $ limit_value_standard_units  &lt;chr&gt; NA, NA, "4", NA, NA, "4", NA, NA, "4", NA…</span>
-<span class="co">#&gt; $ statistical_base_code       &lt;chr&gt; NA, NA, "MO", NA, NA, "MO", NA, NA, "MO",…</span>
-<span class="co">#&gt; $ statistical_base_short_desc &lt;chr&gt; NA, NA, "MO MIN", NA, NA, "MO MIN", NA, N…</span>
-<span class="co">#&gt; $ statistical_base_type_code  &lt;chr&gt; NA, NA, "MIN", NA, NA, "MIN", NA, NA, "MI…</span>
-<span class="co">#&gt; $ statistical_base_type_desc  &lt;chr&gt; NA, NA, "Minimum", NA, NA, "Minimum", NA,…</span>
-<span class="co">#&gt; $ limit_value_qualifier_code  &lt;chr&gt; NA, NA, "&gt;=", NA, NA, "&gt;=", NA, NA, "&gt;=",…</span>
-<span class="co">#&gt; $ stay_value_nmbr             &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ dmr_event_id                &lt;chr&gt; NA, NA, "3600838854", NA, NA, "3600838863…</span>
-<span class="co">#&gt; $ monitoring_period_end_date  &lt;chr&gt; NA, NA, "04/30/2017", NA, NA, "05/31/2017…</span>
-<span class="co">#&gt; $ dmr_form_value_id           &lt;chr&gt; NA, NA, "3610877931", NA, NA, "3610878047…</span>
-<span class="co">#&gt; $ value_type_code             &lt;chr&gt; NA, NA, "C1", NA, NA, "C1", NA, NA, "C1",…</span>
-<span class="co">#&gt; $ value_type_desc             &lt;chr&gt; NA, NA, "Concentration1", NA, NA, "Concen…</span>
-<span class="co">#&gt; $ dmr_value_id                &lt;chr&gt; NA, NA, "3639062074", NA, NA, "3641504048…</span>
-<span class="co">#&gt; $ dmr_value_nmbr              &lt;chr&gt; NA, NA, "4.19", NA, NA, "4.19", NA, NA, "…</span>
-<span class="co">#&gt; $ dmr_unit_code               &lt;chr&gt; NA, NA, "19", NA, NA, "19", NA, NA, "19",…</span>
-<span class="co">#&gt; $ dmr_unit_desc               &lt;chr&gt; NA, NA, "mg/L", NA, NA, "mg/L", NA, NA, "…</span>
-<span class="co">#&gt; $ dmr_value_standard_units    &lt;chr&gt; NA, NA, "4.19", NA, NA, "4.19", NA, NA, "…</span>
-<span class="co">#&gt; $ dmr_value_qualifier_code    &lt;chr&gt; NA, NA, "=", NA, NA, "=", NA, NA, "=", NA…</span>
-<span class="co">#&gt; $ value_received_date         &lt;chr&gt; NA, NA, "05/15/2017", NA, NA, "06/19/2017…</span>
-<span class="co">#&gt; $ days_late                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ nodi_code                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ nodi_desc                   &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ exceedence_pct              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ npdes_violation_id          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ violation_code              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ violation_desc              &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ rnc_detection_code          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ rnc_detection_desc          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ rnc_detection_date          &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ rnc_resolution_code         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ rnc_resolution_desc         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ rnc_resolution_date         &lt;chr&gt; NA, NA, "", NA, NA, "", NA, NA, "", NA, N…</span>
-<span class="co">#&gt; $ violation_severity          &lt;chr&gt; NA, NA, "No Violation Identified", NA, NA…</span></pre></body></html></div>
+<span class="co">#&gt; $ permit                      &lt;chr&gt; "TX0119407", "TX0119407", "TX0119407", "TX…</span>
+<span class="co">#&gt; $ activity_id                 &lt;chr&gt; "3600178396", "3600178396", "3600178396", …</span>
+<span class="co">#&gt; $ npdes_id                    &lt;chr&gt; "TX0119407", "TX0119407", "TX0119407", "TX…</span>
+<span class="co">#&gt; $ version_nmbr                &lt;chr&gt; "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
+<span class="co">#&gt; $ perm_feature_id             &lt;chr&gt; "3600049681", "3600049681", "3600049681", …</span>
+<span class="co">#&gt; $ perm_feature_nmbr           &lt;chr&gt; "001", "001", "001", "001", "001", "001", …</span>
+<span class="co">#&gt; $ perm_feature_type_code      &lt;chr&gt; "EXO", "EXO", "EXO", "EXO", "EXO", "EXO", …</span>
+<span class="co">#&gt; $ perm_feature_type_desc      &lt;chr&gt; "External Outfall", "External Outfall", "E…</span>
+<span class="co">#&gt; $ limit_set_id                &lt;chr&gt; "3600061722", "3600061722", "3600061722", …</span>
+<span class="co">#&gt; $ limit_set_schedule_id       &lt;chr&gt; "3600073706", "3600073706", "3600073706", …</span>
+<span class="co">#&gt; $ limit_id                    &lt;chr&gt; "3600437315", "3600437315", "3600437315", …</span>
+<span class="co">#&gt; $ limit_type_code             &lt;chr&gt; "ENF", "ENF", "ENF", "ENF", "ENF", "ENF", …</span>
+<span class="co">#&gt; $ limit_begin_date            &lt;chr&gt; "08/01/2015", "08/01/2015", "08/01/2015", …</span>
+<span class="co">#&gt; $ limit_end_date              &lt;chr&gt; "03/01/2020", "03/01/2020", "03/01/2020", …</span>
+<span class="co">#&gt; $ nmbr_of_submission          &lt;chr&gt; "1", "1", "1", "1", "1", "1", "1", "1", "1…</span>
+<span class="co">#&gt; $ parameter_code              &lt;chr&gt; "00300", "00300", "00300", "00300", "00300…</span>
+<span class="co">#&gt; $ parameter_desc              &lt;chr&gt; "Oxygen, dissolved [DO]", "Oxygen, dissolv…</span>
+<span class="co">#&gt; $ monitoring_location_code    &lt;chr&gt; "1", "1", "1", "1", "1", "1", "1", "1", "1…</span>
+<span class="co">#&gt; $ monitoring_location_desc    &lt;chr&gt; "Effluent Gross", "Effluent Gross", "Efflu…</span>
+<span class="co">#&gt; $ stay_type_code              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ stay_type_desc              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ limit_value_id              &lt;chr&gt; "3600678121", "3600678121", "3600678121", …</span>
+<span class="co">#&gt; $ limit_value_type_code       &lt;chr&gt; "C1", "C1", "C1", "C1", "C1", "C1", "C1", …</span>
+<span class="co">#&gt; $ limit_value_type_desc       &lt;chr&gt; "Concentration1", "Concentration1", "Conce…</span>
+<span class="co">#&gt; $ limit_value_nmbr            &lt;chr&gt; "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
+<span class="co">#&gt; $ limit_unit_code             &lt;chr&gt; "19", "19", "19", "19", "19", "19", "19", …</span>
+<span class="co">#&gt; $ limit_unit_desc             &lt;chr&gt; "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
+<span class="co">#&gt; $ standard_unit_code          &lt;chr&gt; "19", "19", "19", "19", "19", "19", "19", …</span>
+<span class="co">#&gt; $ standard_unit_desc          &lt;chr&gt; "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
+<span class="co">#&gt; $ limit_value_standard_units  &lt;chr&gt; "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
+<span class="co">#&gt; $ statistical_base_code       &lt;chr&gt; "MO", "MO", "MO", "MO", "MO", "MO", "MO", …</span>
+<span class="co">#&gt; $ statistical_base_short_desc &lt;chr&gt; "MO MIN", "MO MIN", "MO MIN", "MO MIN", "M…</span>
+<span class="co">#&gt; $ statistical_base_type_code  &lt;chr&gt; "MIN", "MIN", "MIN", "MIN", "MIN", "MIN", …</span>
+<span class="co">#&gt; $ statistical_base_type_desc  &lt;chr&gt; "Minimum", "Minimum", "Minimum", "Minimum"…</span>
+<span class="co">#&gt; $ limit_value_qualifier_code  &lt;chr&gt; "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", …</span>
+<span class="co">#&gt; $ stay_value_nmbr             &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ dmr_event_id                &lt;chr&gt; "3601380418", "3601380419", "3601380420", …</span>
+<span class="co">#&gt; $ monitoring_period_end_date  &lt;chr&gt; "04/30/2018", "05/31/2018", "06/30/2018", …</span>
+<span class="co">#&gt; $ dmr_form_value_id           &lt;chr&gt; "3618540570", "3618540588", "3618540606", …</span>
+<span class="co">#&gt; $ value_type_code             &lt;chr&gt; "C1", "C1", "C1", "C1", "C1", "C1", "C1", …</span>
+<span class="co">#&gt; $ value_type_desc             &lt;chr&gt; "Concentration1", "Concentration1", "Conce…</span>
+<span class="co">#&gt; $ dmr_value_id                &lt;chr&gt; "3667289411", "3669642431", "3670879558", …</span>
+<span class="co">#&gt; $ dmr_value_nmbr              &lt;chr&gt; "4.97", "4.8", "5.14", "5.51", "5.38", "5.…</span>
+<span class="co">#&gt; $ dmr_unit_code               &lt;chr&gt; "19", "19", "19", "19", "19", "19", "19", …</span>
+<span class="co">#&gt; $ dmr_unit_desc               &lt;chr&gt; "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
+<span class="co">#&gt; $ dmr_value_standard_units    &lt;chr&gt; "4.97", "4.8", "5.14", "5.51", "5.38", "5.…</span>
+<span class="co">#&gt; $ dmr_value_qualifier_code    &lt;chr&gt; "=", "=", "=", "=", "=", "=", "=", "=", "=…</span>
+<span class="co">#&gt; $ value_received_date         &lt;chr&gt; "05/17/2018", "06/19/2018", "07/16/2018", …</span>
+<span class="co">#&gt; $ days_late                   &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ nodi_code                   &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ nodi_desc                   &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ exceedence_pct              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ npdes_violation_id          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ violation_code              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ violation_desc              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_detection_code          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_detection_desc          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_detection_date          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_resolution_code         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_resolution_desc         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_resolution_date         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ violation_severity          &lt;chr&gt; "No Violation Identified", "No Violation I…</span></code></pre></div>
 </div>
 <div id="spatial-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#spatial-data" class="anchor"></a>Spatial data</h3>
 <p><code>echor</code> can also return spatial data frames known as simple features (<a href="https://r-spatial.github.io/sf/" class="uri">https://r-spatial.github.io/sf/</a>), to facilitate creation of maps. Both <code>echoAirGetFacilityInfo</code> and <code>echoWaterGetFacilityInfo</code> include arguments to return simple feature dataframes.</p>
 <p>Using <code>sf</code>, <code>ggplot</code>, and <code>ggspatial</code> we can quickly create a map of downloaded data.</p>
-<div class="sourceCode" id="cb12"><html><body><pre class="r">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggspatial</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">sf</span>)
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://paleolimbot.github.io/ggspatial/">ggspatial</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/">sf</a></span><span class="op">)</span>
 
 <span class="co">## Download data as a simple feature</span>
-<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span>(<span class="kw">xmin</span> <span class="kw">=</span> <span class="st">'-96.407563'</span>, <span class="kw">ymin</span> <span class="kw">=</span> <span class="st">'30.554395'</span>,
-                                        <span class="kw">xmax</span> <span class="kw">=</span> <span class="st">'-96.25947'</span>, <span class="kw">ymax</span> <span class="kw">=</span> <span class="st">'30.751984'</span>,
-                                        <span class="kw">output</span> <span class="kw">=</span> <span class="st">'sf'</span>)
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="st">'-96.407563'</span>, ymin <span class="op">=</span> <span class="st">'30.554395'</span>,
+                                        xmax <span class="op">=</span> <span class="st">'-96.25947'</span>, ymax <span class="op">=</span> <span class="st">'30.751984'</span>,
+                                        output <span class="op">=</span> <span class="st">'sf'</span><span class="op">)</span>
 
 <span class="co">## Make the map</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">df</span>) +
-  <span class="fu"><a href="https://rdrr.io/pkg/ggspatial/man/annotation_map_tile.html">annotation_map_tile</a></span>(<span class="kw">zoomin</span> <span class="kw">=</span> <span class="fl">0</span>, <span class="kw">progress</span> <span class="kw">=</span> <span class="st">"none"</span>) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="kw">inherit.aes</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">shape</span> <span class="kw">=</span> <span class="fl">21</span>,
-          <span class="kw">color</span> <span class="kw">=</span> <span class="st">"darkred"</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="st">"darkred"</span>,
-          <span class="kw">size</span> <span class="kw">=</span> <span class="fl">2</span>) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Longitude"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Latitude"</span>,
-       <span class="kw">title</span> <span class="kw">=</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,
-       <span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Source: EPA ECHO database"</span>)</pre></body></html></div>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://paleolimbot.github.io/ggspatial/reference/annotation_map_tile.html">annotation_map_tile</a></span><span class="op">(</span>zoomin <span class="op">=</span> <span class="fl">0</span>, progress <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, shape <span class="op">=</span> <span class="fl">21</span>, 
+          color <span class="op">=</span> <span class="st">"darkred"</span>, fill <span class="op">=</span> <span class="st">"darkred"</span>, 
+          size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Longitude"</span>, y <span class="op">=</span> <span class="st">"Latitude"</span>, 
+       title <span class="op">=</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,
+       caption <span class="op">=</span> <span class="st">"Source: EPA ECHO database"</span><span class="op">)</span></code></pre></div>
 <p><img src="introduction_files/figure-html/unnamed-chunk-12-1.png" width="75%"></p>
 </div>
 </div>
@@ -2359,7 +2251,7 @@ end_date        string  End date of interest. Must be entered as "mm/dd/yyyy"</c
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

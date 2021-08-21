@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -108,7 +108,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/mps9506/echor/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -134,7 +134,7 @@
     <p>Uses EPA ECHO API to download the Discharge Monitoring Record (DMR) of a single plant, identified with p_id. Please note that the p_id is case sensitive.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>echoGetEffluent</span>(<span class='no'>p_id</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>echoGetEffluent</span><span class='op'>(</span><span class='va'>p_id</span>, verbose <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,43 +163,28 @@
 
 <span class='co'>## Retrieve single DMR for flow</span>
 
-<span class='fu'>echoGetEffluent</span>(<span class='kw'>p_id</span> <span class='kw'>=</span> <span class='st'>'tx0119407'</span>, <span class='kw'>parameter_code</span> <span class='kw'>=</span> <span class='st'>'50050'</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 80 x 61</span><span>
-#&gt;    activity_id npdes_id version_nmbr perm_feature_id perm_feature_nm…
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           
-#&gt; </span><span style='color: #555555;'> 1</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 2</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 3</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 4</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 5</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 6</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 7</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 8</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'> 9</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'>10</span><span> 3600178396  TX01194… 4            3600049681      001             
-#&gt; </span><span style='color: #555555;'># … with 70 more rows, and 56 more variables: perm_feature_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   perm_feature_type_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_set_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   limit_set_schedule_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   limit_begin_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_end_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, nmbr_of_submission </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   parameter_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, parameter_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, monitoring_location_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   monitoring_location_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, stay_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, stay_type_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   limit_value_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_value_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   limit_value_type_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_value_nmbr </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_unit_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   limit_unit_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, standard_unit_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, standard_unit_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   limit_value_standard_units </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, statistical_base_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   statistical_base_short_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, statistical_base_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   statistical_base_type_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, limit_value_qualifier_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   stay_value_nmbr </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, dmr_event_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   monitoring_period_end_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, dmr_form_value_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   value_type_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, value_type_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, dmr_value_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   dmr_value_nmbr </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, dmr_unit_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, dmr_unit_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   dmr_value_standard_units </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, dmr_value_qualifier_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   value_received_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, days_late </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, nodi_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   nodi_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, exceedence_pct </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, npdes_violation_id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   violation_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, violation_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, rnc_detection_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   rnc_detection_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, rnc_detection_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   rnc_resolution_code </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, rnc_resolution_desc </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   rnc_resolution_date </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, violation_severity </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div><div class='input'># }
-</div></span></pre>
+<span class='fu'>echoGetEffluent</span><span class='op'>(</span>p_id <span class='op'>=</span> <span class='st'>'tx0119407'</span>, parameter_code <span class='op'>=</span> <span class='st'>'50050'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 80 × 61</span>
+#&gt;    activity_id npdes_id  version_nmbr perm_feature_id perm_feature_nmbr
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            
+#&gt; <span style='color: #BCBCBC;'> 1</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 2</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 3</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 4</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 5</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 6</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 7</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 8</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'> 9</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #BCBCBC;'>10</span> 3600178396  TX0119407 4            3600049681      001              
+#&gt; <span style='color: #949494;'># … with 70 more rows, and 56 more variables: perm_feature_type_code &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   perm_feature_type_desc &lt;chr&gt;, limit_set_id &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   limit_set_schedule_id &lt;chr&gt;, limit_id &lt;chr&gt;, limit_type_code &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   limit_begin_date &lt;chr&gt;, limit_end_date &lt;chr&gt;, nmbr_of_submission &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   parameter_code &lt;chr&gt;, parameter_desc &lt;chr&gt;, monitoring_location_code &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   monitoring_location_desc &lt;chr&gt;, stay_type_code &lt;chr&gt;, stay_type_desc &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   limit_value_id &lt;chr&gt;, limit_value_type_code &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -215,7 +200,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
