@@ -16,7 +16,7 @@ options(crayon.enabled = NULL)
 
 library(dplyr)
 library(ggplot2)
-library(hrbrthemes)
+library(mpsTemplates)
 library(echor)
 library(extrafont)
 loadfonts()
@@ -129,7 +129,7 @@ ggplot(df) +
   geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
                    point.padding = .5, min.segment.length = 0.1,
                    size = 2, color = "dodgerblue") +
-  theme_ipsum(plot_margin = margin(5, 5, 5, 5)) +
+  theme_mps_noto() +
   labs(x = "Longitude", y = "Latitude", 
        title = "NPDES permits near Texas A&M",
        caption = "Source: EPA ECHO database")
@@ -151,7 +151,7 @@ df <- df %>%
 
 ggplot(df) +
   geom_line(aes(monitoring_period_end_date, dmr_value_nmbr)) +
-  theme_ipsum(grid = "Y") +
+  theme_mps_noto() +
   labs(x = "Monitoring period date",
        y = "Dissolved oxygen concentration (mg/l)",
        title = "Reported minimum dissolved oxygen concentration",
