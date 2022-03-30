@@ -1,3 +1,7 @@
+# echor (development version)
+
+* update pkgdown use and template for consistency with my other packages.
+
 # echor 0.1.6
 
 ## Bug Fixes
