@@ -1,0 +1,9 @@
+template:
+  package: mpsTemplates
+  bootstrap: 5
+
+navbar:
+  type: light
+  bg: light
+  structure:
+    right: [search, github]
