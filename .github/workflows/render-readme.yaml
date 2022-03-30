@@ -26,7 +26,9 @@ jobs:
             libproj-dev
 
       - name: Install packages
-        run: Rscript -e 'install.packages(c("rmarkdown", "rgdal", "dplyr", "ggplot2", "hrbrthemes", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr", "raster", "sessioninfo"))'
+        run: Rscript -e 'install.packages(c("rmarkdown", "rgdal", "dplyr", "ggplot2", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr", "raster", "sessioninfo", "remotes"))'
+      - name: Install remote packages
+        run: Rscript -e 'remotes::install_github("mps9506/mpsTemplates")'
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
       - name: Commit results
