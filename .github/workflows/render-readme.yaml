@@ -40,19 +40,7 @@ jobs:
             libgeos-dev \
             libproj-dev
 
-      # - name: Install packages
-      #   run: Rscript -e 'install.packages(c("rmarkdown", "rgdal", "dplyr", "ggplot2", "echor", "extrafont", "ggspatial", "sf", "ggrepel", "purrr", "raster", "sessioninfo", "remotes"))'
-      # - name: Install remote packages
-      #   run: Rscript -e 'remotes::install_github("mps9506/mps-templates")'
-
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: any::pkgdown, local::.
-          #needs: website
-
-      - name: install template
-        run: pak::pkg_install("mps9506/mps-templates")
-        shell: Rscript {0}
+      - uses: r-lib/actions/setup-renv@v2
 
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
