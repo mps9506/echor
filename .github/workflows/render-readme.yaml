@@ -38,7 +38,9 @@ jobs:
             libudunits2-dev \
             libgdal-dev \
             libgeos-dev \
-            libproj-dev
+            libproj-dev \
+            libharfbuzz-dev \
+            libfribidi-dev
 
       - uses: r-lib/actions/setup-renv@v2
 
