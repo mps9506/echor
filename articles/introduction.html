@@ -4,14 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="echor">
 <title>Introduction to echor • echor</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="../deps/_Cormorant%20Garamond-0.4.1/font.css" rel="stylesheet">
+<link href="../deps/_JetBrains%20Mono-0.4.1/font.css" rel="stylesheet">
+<link href="../deps/_Noto%20Sans%20Display-0.4.1/font.css" rel="stylesheet">
+<!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
 <meta property="og:title" content="Introduction to echor">
 <meta property="og:description" content="echor">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -19,87 +22,74 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">echor</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
-      </span>
-    </div>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+    
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    
+    <a class="navbar-brand me-2" href="../index.html">echor</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.6.9000</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item">
+  <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../reference/index.html">Reference</a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/introduction.html">Introduction to echor</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="../news/index.html">Changelog</a>
-</li>
-      </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/mps9506/echor/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-</div>
-<!--/.nav-collapse -->
+<li class="active nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/introduction.html">Introduction to echor</a>
   </div>
-<!--/.container -->
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
+      </ul>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/mps9506/echor/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
-<!--/.navbar -->
 
-      
+    
+  </div>
+</nav><div class="container template-article">
 
-      </header><script src="introduction_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="introduction_files/kePrint-0.0.1/kePrint.js"></script><link href="introduction_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+<script src="introduction_files/kePrint-0.0.1/kePrint.js"></script><link href="introduction_files/lightable-0.0.1/lightable.css" rel="stylesheet">
 <div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Introduction to echor</h1>
-                        <h4 class="author">Michael Schramm</h4>
+  <main id="main"><div class="page-header">
+      <img src="" class="logo" alt=""><h1>Introduction to echor</h1>
+                        <h4 data-toc-skip class="author">Michael Schramm</h4>
             
-            <h4 class="date">2021-08-21</h4>
+            <h4 data-toc-skip class="date">2022-03-31</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/mps9506/echor/blob/master/vignettes/introduction.Rmd"><code>vignettes/introduction.Rmd</code></a></small>
-      <div class="hidden name"><code>introduction.Rmd</code></div>
-
+      <small class="dont-index">Source: <a href="https://github.com/mps9506/echor/blob/HEAD/vignettes/introduction.Rmd" class="external-link"><code>vignettes/introduction.Rmd</code></a></small>
+      <div class="d-none name"><code>introduction.Rmd</code></div>
     </div>
 
     
     
-<div id="echor-introduction" class="section level2">
-<h2 class="hasAnchor">
-<a href="#echor-introduction" class="anchor"></a>echor introduction</h2>
-<p><code>echor</code> is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). <code>echor</code> uses the <a href="https://echo.epa.gov/">ECHO API</a> to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilities as volume or concentration of pollutants during reporting time periods (typically annually for air emissions and monthly or quarterly for water discharges).</p>
+<div class="section level2">
+<h2 id="echor-introduction">echor introduction<a class="anchor" aria-label="anchor" href="#echor-introduction"></a>
+</h2>
+<p><code>echor</code> is an R package to search and download data from the US Environmental Protection Agency (EPA) Environmental Compliance and History Online (ECHO). <code>echor</code> uses the <a href="https://echo.epa.gov/" class="external-link">ECHO API</a> to download data directly to the R as dataframes or simple features. ECHO provides information about facilities permitted to emitted air pollutants or discharge into water bodies. ECHO also provides data reported by permitted facilities as volume or concentration of pollutants during reporting time periods (typically annually for air emissions and monthly or quarterly for water discharges).</p>
 <p>ECHO provides data for:</p>
 <ul>
 <li>Stationary sources permitted under the Clean Air Act, including data from the National Emissions Inventory, Greenhouse Gas Reporting Program, Toxics Release Inventory, and Clean Air Markets Division Acid Rain Program and Clean Air Interstate Rule.</li>
@@ -108,16 +98,16 @@
 <li>Facilities permitted under the Clean Water Act and the National Pollutant Discharge Elimination Systems (NPDES) program, including data from EPA’s ICIS-NPDES system and possibly water body information from EPA’s ATTAINS data system.</li>
 </ul>
 <p><code>echor</code> currently provides functions to retrieve information about permitted air dischargers, water dischargers, and public drinking water supply systems. It also provides functions to download discharge reports for permitted air and water dischargers. <code>echor</code> does not currently provide functionality to retrieve RCRA data.</p>
-<p>See <a href="https://echo.epa.gov/tools/web-services" class="uri">https://echo.epa.gov/tools/web-services</a> for information about ECHO web services and API functions.</p>
+<p>See <a href="https://echo.epa.gov/tools/web-services" class="external-link uri">https://echo.epa.gov/tools/web-services</a> for information about ECHO web services and API functions.</p>
 </div>
-<div id="getting-started" class="section level2">
-<h2 class="hasAnchor">
-<a href="#getting-started" class="anchor"></a>Getting started</h2>
+<div class="section level2">
+<h2 id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
+</h2>
 <p>This vignette documents a few key functions to get started.</p>
 <p>There are three types of functions:</p>
-<div id="metadata" class="section level3">
-<h3 class="hasAnchor">
-<a href="#metadata" class="anchor"></a>Metadata</h3>
+<div class="section level3">
+<h3 id="metadata">Metadata<a class="anchor" aria-label="anchor" href="#metadata"></a>
+</h3>
 <p>Retrieve metadata from ECHO to narrow the specify data returned or lookup parameter codes.</p>
 <ul>
 <li><p><code><a href="../reference/echoAirGetMeta.html">echoAirGetMeta()</a></code> - Returns variable name and descriptions for parameters returned in air facility queries.</p></li>
@@ -126,9 +116,9 @@
 <li><p><code><a href="../reference/echoWaterGetParams.html">echoWaterGetParams()</a></code> - Search parameter codes for constituent pollutants regulated under NPDES permits.</p></li>
 </ul>
 </div>
-<div id="query-facilities" class="section level3">
-<h3 class="hasAnchor">
-<a href="#query-facilities" class="anchor"></a>Query Facilities</h3>
+<div class="section level3">
+<h3 id="query-facilities">Query Facilities<a class="anchor" aria-label="anchor" href="#query-facilities"></a>
+</h3>
 <p>Search and return facility information based on lookup parameters.</p>
 <ul>
 <li><p><code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo()</a></code> - Returns a dataframe of permitted air discharge facilities and associated information based on lookup parameters specified by the user.</p></li>
@@ -136,9 +126,9 @@
 <li><p><code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code> - Returns a dataframe of permitted water discharge facilities and associated information based on lookup parameters specified by the user.</p></li>
 </ul>
 </div>
-<div id="reports" class="section level3">
-<h3 class="hasAnchor">
-<a href="#reports" class="anchor"></a>Reports</h3>
+<div class="section level3">
+<h3 id="reports">Reports<a class="anchor" aria-label="anchor" href="#reports"></a>
+</h3>
 <p>Search and return discharge and emissions reports for specified facilities.</p>
 <ul>
 <li><p><code><a href="../reference/echoGetCAAPR.html">echoGetCAAPR()</a></code> - Returns a dataframe with reported annual air emissions from permitted facilities.</p></li>
@@ -146,36 +136,36 @@
 </ul>
 </div>
 </div>
-<div id="sample-workflows" class="section level2">
-<h2 class="hasAnchor">
-<a href="#sample-workflows" class="anchor"></a>Sample workflows</h2>
-<div id="air" class="section level3">
-<h3 class="hasAnchor">
-<a href="#air" class="anchor"></a>Air</h3>
+<div class="section level2">
+<h2 id="sample-workflows">Sample workflows<a class="anchor" aria-label="anchor" href="#sample-workflows"></a>
+</h2>
+<div class="section level3">
+<h3 id="air">Air<a class="anchor" aria-label="anchor" href="#air"></a>
+</h3>
 <p>Suppose we want to find facilities permitted under the Clean Air Act requirements.</p>
 <p>Step 1 - Identify the information we need returned from the query:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">echor</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">echor</span><span class="op">)</span>
 <span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetMeta.html">echoAirGetMeta</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">meta</span>
-<span class="co">#&gt; # A tibble: 144 × 6</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 144 × 6</span></span>
 <span class="co">#&gt;    ColumnName                DataType DataLength ColumnID ObjectName Description</span>
-<span class="co">#&gt;    &lt;chr&gt;                     &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;      </span>
-<span class="co">#&gt;  1 AIR_NAME                  VARCHAR2 200        1        AIRName    The name o…</span>
-<span class="co">#&gt;  2 SOURCE_ID                 VARCHAR2 30         2        SourceID   Unique Ide…</span>
-<span class="co">#&gt;  3 AIR_STREET                VARCHAR2 200        3        AIRStreet  The street…</span>
-<span class="co">#&gt;  4 AIR_CITY                  VARCHAR2 100        4        AIRCity    The city w…</span>
-<span class="co">#&gt;  5 AIR_STATE                 CHAR     2          5        AIRState   The state …</span>
-<span class="co">#&gt;  6 LOCAL_CONTROL_REGION_CODE CHAR     3          6        LocalCont… Code for r…</span>
-<span class="co">#&gt;  7 AIR_ZIP                   VARCHAR2 10         7        AIRZip     The five-d…</span>
-<span class="co">#&gt;  8 REGISTRY_ID               VARCHAR2 50         8        RegistryID An interna…</span>
-<span class="co">#&gt;  9 AIR_COUNTY                VARCHAR2 100        9        AIRCounty  The name o…</span>
-<span class="co">#&gt; 10 AIR_EPA_REGION            CHAR     2          10       AIREPAReg… The EPA re…</span>
-<span class="co">#&gt; # … with 134 more rows</span></code></pre></div>
+<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AIR_NAME                  VARCHAR2 200        1        AIRName    The name o…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> SOURCE_ID                 VARCHAR2 30         2        SourceID   Unique Ide…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> AIR_STREET                VARCHAR2 200        3        AIRStreet  The street…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> AIR_CITY                  VARCHAR2 100        4        AIRCity    The city w…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> AIR_STATE                 CHAR     2          5        AIRState   The state …</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> LOCAL_CONTROL_REGION_CODE CHAR     3          6        LocalCont… Code for r…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> AIR_ZIP                   VARCHAR2 10         7        AIRZip     The five-d…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> REGISTRY_ID               VARCHAR2 50         8        RegistryID An interna…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AIR_COUNTY                VARCHAR2 100        9        AIRCounty  The name o…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AIR_EPA_REGION            CHAR     2          10       AIREPAReg… The EPA re…</span>
+<span class="co">#&gt; <span style="color: #949494;"># … with 134 more rows</span></span></code></pre></div>
 <p>The dataframe includes ColumnID, which can be included as an argument that specifies what information you want returned: <code>qcolumns = "1,2,3,22,23"</code></p>
-<p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I recommend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specify the returned information with the <code>qcolumns</code> argument. Each argument should be passed to ECHO as <code><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo(parameter = "value")</a></code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
+<p>Step 2 - Create the query. The ECHO API provides numerous arguments to search by that are not documented in this package. I recommend exploring the documentation here: <a href="https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info" class="external-link uri">https://echo.epa.gov/tools/web-services/facility-search-air#!/Facilities/get_air_rest_services_get_facility_info</a>. In this example, we will search by a geographic bounding box and specify the returned information with the <code>qcolumns</code> argument. Each argument should be passed to ECHO as <code>echoAirGetFacilityInfo(parameter = "value")</code>. <code>echor</code> will URL encode strings automatically. Please note that any date argument needs to be entered as “mm/dd/yyyy”.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">echor</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">echor</span><span class="op">)</span>
 
 <span class="co">## Retrieve information about facilities within a geographic location</span>
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetFacilityInfo.html">echoAirGetFacilityInfo</a></span><span class="op">(</span>output <span class="op">=</span> <span class="st">"df"</span>,
@@ -185,7 +175,7 @@
                              ymax <span class="op">=</span> <span class="st">'30.640008'</span>,
                              qcolumns <span class="op">=</span> <span class="st">"1,2,3,22,23"</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; ">
-<table class="table table">
+<table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 AIRName
@@ -356,7 +346,7 @@ ymax  string  Maximum latitude value in decimal degrees</code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoGetCAAPR.html">echoGetCAAPR</a></span><span class="op">(</span>p_id <span class="op">=</span> <span class="st">'110000350174'</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
-<table class="table table">
+<table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Name
@@ -696,16 +686,16 @@ NA
 p_units string  Units of measurement. Defaults is 'lbs'.
                 Enter "TPWE" for toxic weighted pounds equivalents.</code></pre>
 </div>
-<div id="water-facility-and-discharge-searches" class="section level3">
-<h3 class="hasAnchor">
-<a href="#water-facility-and-discharge-searches" class="anchor"></a>Water facility and discharge searches</h3>
+<div class="section level3">
+<h3 id="water-facility-and-discharge-searches">Water facility and discharge searches<a class="anchor" aria-label="anchor" href="#water-facility-and-discharge-searches"></a>
+</h3>
 <p>Find facilities with NPDES permits to discharge wastewater:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="st">'-96.407563'</span>, ymin <span class="op">=</span> <span class="st">'30.554395'</span>, 
                                xmax <span class="op">=</span> <span class="st">'-96.25947'</span>,  ymax <span class="op">=</span> <span class="st">'30.751984'</span>, 
                                output <span class="op">=</span> <span class="st">'df'</span>, qcolumns <span class="op">=</span> <span class="st">"1,2,3,4,5,6,7"</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
-<table class="table table">
+<table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 CWPName
@@ -865,7 +855,7 @@ TX
 </tbody>
 </table>
 </div>
-<p>Again, there are a ton of possible arguments to query ECHO with. All arguments are described here: <a href="https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info" class="uri">https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info</a></p>
+<p>Again, there are a ton of possible arguments to query ECHO with. All arguments are described here: <a href="https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info" class="external-link uri">https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info</a></p>
 <p>Commonly used arguments are provided below:</p>
 <pre><code>p_fn  string  Facility Name Filter.
               One or more case-insesitive facility names.
@@ -917,7 +907,7 @@ p_huc string  2-,4,6-,or 8-digit watershed code.
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoGetEffluent.html">echoGetEffluent</a></span><span class="op">(</span>p_id <span class="op">=</span> <span class="st">'tx0119407'</span>, parameter_code <span class="op">=</span> <span class="st">'50050'</span><span class="op">)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
-<table class="table table">
+<table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 activity_id
@@ -2125,97 +2115,97 @@ end_date        string  End date of interest. Must be entered as "mm/dd/yyyy"</c
 <p>Parameters codes can be searched using <code>echoWaterGetParams</code>.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/echoWaterGetParams.html">echoWaterGetParams</a></span><span class="op">(</span>term <span class="op">=</span> <span class="st">"Oxygen, dissolved"</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 5 × 2</span>
+<span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 2</span></span>
 <span class="co">#&gt;   ValueCode ValueDescription                     </span>
-<span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                                </span>
-<span class="co">#&gt; 1 00300     Oxygen, dissolved [DO]               </span>
-<span class="co">#&gt; 2 51646     Oxygen, dissolved [DO] maximum       </span>
-<span class="co">#&gt; 3 51645     Oxygen, dissolved [DO] minimum       </span>
-<span class="co">#&gt; 4 00301     Oxygen, dissolved percent saturation </span>
-<span class="co">#&gt; 5 00399     Oxygen, dissolved, % of time violated</span></code></pre></div>
+<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 00300     Oxygen, dissolved [DO]               </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 51646     Oxygen, dissolved [DO] maximum       </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 51645     Oxygen, dissolved [DO] minimum       </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 00301     Oxygen, dissolved percent saturation </span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 00399     Oxygen, dissolved, % of time violated</span></code></pre></div>
 <p>Multiple DMRs can be downloaded using a helper function: <code>downloadDMRs</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>permit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'TX0119407'</span>, <span class="st">'TX0062677'</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>permit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'TX0119407'</span>, <span class="st">'TX0062677'</span><span class="op">)</span><span class="op">)</span>
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/downloadDMRs.html">downloadDMRs</a></span><span class="op">(</span><span class="va">df</span>, idColumn <span class="op">=</span> <span class="va">permit</span><span class="op">)</span>
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span>
-  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span><span class="op">(</span><span class="va">dmr</span><span class="op">)</span>
-<span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>
+  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">dmr</span><span class="op">)</span>
+<span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>
 <span class="co">#&gt; Rows: 2,705</span>
 <span class="co">#&gt; Columns: 62</span>
-<span class="co">#&gt; $ permit                      &lt;chr&gt; "TX0119407", "TX0119407", "TX0119407", "TX…</span>
-<span class="co">#&gt; $ activity_id                 &lt;chr&gt; "3600178396", "3600178396", "3600178396", …</span>
-<span class="co">#&gt; $ npdes_id                    &lt;chr&gt; "TX0119407", "TX0119407", "TX0119407", "TX…</span>
-<span class="co">#&gt; $ version_nmbr                &lt;chr&gt; "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
-<span class="co">#&gt; $ perm_feature_id             &lt;chr&gt; "3600049681", "3600049681", "3600049681", …</span>
-<span class="co">#&gt; $ perm_feature_nmbr           &lt;chr&gt; "001", "001", "001", "001", "001", "001", …</span>
-<span class="co">#&gt; $ perm_feature_type_code      &lt;chr&gt; "EXO", "EXO", "EXO", "EXO", "EXO", "EXO", …</span>
-<span class="co">#&gt; $ perm_feature_type_desc      &lt;chr&gt; "External Outfall", "External Outfall", "E…</span>
-<span class="co">#&gt; $ limit_set_id                &lt;chr&gt; "3600061722", "3600061722", "3600061722", …</span>
-<span class="co">#&gt; $ limit_set_schedule_id       &lt;chr&gt; "3600073706", "3600073706", "3600073706", …</span>
-<span class="co">#&gt; $ limit_id                    &lt;chr&gt; "3600437315", "3600437315", "3600437315", …</span>
-<span class="co">#&gt; $ limit_type_code             &lt;chr&gt; "ENF", "ENF", "ENF", "ENF", "ENF", "ENF", …</span>
-<span class="co">#&gt; $ limit_begin_date            &lt;chr&gt; "08/01/2015", "08/01/2015", "08/01/2015", …</span>
-<span class="co">#&gt; $ limit_end_date              &lt;chr&gt; "03/01/2020", "03/01/2020", "03/01/2020", …</span>
-<span class="co">#&gt; $ nmbr_of_submission          &lt;chr&gt; "1", "1", "1", "1", "1", "1", "1", "1", "1…</span>
-<span class="co">#&gt; $ parameter_code              &lt;chr&gt; "00300", "00300", "00300", "00300", "00300…</span>
-<span class="co">#&gt; $ parameter_desc              &lt;chr&gt; "Oxygen, dissolved [DO]", "Oxygen, dissolv…</span>
-<span class="co">#&gt; $ monitoring_location_code    &lt;chr&gt; "1", "1", "1", "1", "1", "1", "1", "1", "1…</span>
-<span class="co">#&gt; $ monitoring_location_desc    &lt;chr&gt; "Effluent Gross", "Effluent Gross", "Efflu…</span>
-<span class="co">#&gt; $ stay_type_code              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ stay_type_desc              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ limit_value_id              &lt;chr&gt; "3600678121", "3600678121", "3600678121", …</span>
-<span class="co">#&gt; $ limit_value_type_code       &lt;chr&gt; "C1", "C1", "C1", "C1", "C1", "C1", "C1", …</span>
-<span class="co">#&gt; $ limit_value_type_desc       &lt;chr&gt; "Concentration1", "Concentration1", "Conce…</span>
-<span class="co">#&gt; $ limit_value_nmbr            &lt;chr&gt; "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
-<span class="co">#&gt; $ limit_unit_code             &lt;chr&gt; "19", "19", "19", "19", "19", "19", "19", …</span>
-<span class="co">#&gt; $ limit_unit_desc             &lt;chr&gt; "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
-<span class="co">#&gt; $ standard_unit_code          &lt;chr&gt; "19", "19", "19", "19", "19", "19", "19", …</span>
-<span class="co">#&gt; $ standard_unit_desc          &lt;chr&gt; "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
-<span class="co">#&gt; $ limit_value_standard_units  &lt;chr&gt; "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
-<span class="co">#&gt; $ statistical_base_code       &lt;chr&gt; "MO", "MO", "MO", "MO", "MO", "MO", "MO", …</span>
-<span class="co">#&gt; $ statistical_base_short_desc &lt;chr&gt; "MO MIN", "MO MIN", "MO MIN", "MO MIN", "M…</span>
-<span class="co">#&gt; $ statistical_base_type_code  &lt;chr&gt; "MIN", "MIN", "MIN", "MIN", "MIN", "MIN", …</span>
-<span class="co">#&gt; $ statistical_base_type_desc  &lt;chr&gt; "Minimum", "Minimum", "Minimum", "Minimum"…</span>
-<span class="co">#&gt; $ limit_value_qualifier_code  &lt;chr&gt; "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", …</span>
-<span class="co">#&gt; $ stay_value_nmbr             &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ dmr_event_id                &lt;chr&gt; "3601380418", "3601380419", "3601380420", …</span>
-<span class="co">#&gt; $ monitoring_period_end_date  &lt;chr&gt; "04/30/2018", "05/31/2018", "06/30/2018", …</span>
-<span class="co">#&gt; $ dmr_form_value_id           &lt;chr&gt; "3618540570", "3618540588", "3618540606", …</span>
-<span class="co">#&gt; $ value_type_code             &lt;chr&gt; "C1", "C1", "C1", "C1", "C1", "C1", "C1", …</span>
-<span class="co">#&gt; $ value_type_desc             &lt;chr&gt; "Concentration1", "Concentration1", "Conce…</span>
-<span class="co">#&gt; $ dmr_value_id                &lt;chr&gt; "3667289411", "3669642431", "3670879558", …</span>
-<span class="co">#&gt; $ dmr_value_nmbr              &lt;chr&gt; "4.97", "4.8", "5.14", "5.51", "5.38", "5.…</span>
-<span class="co">#&gt; $ dmr_unit_code               &lt;chr&gt; "19", "19", "19", "19", "19", "19", "19", …</span>
-<span class="co">#&gt; $ dmr_unit_desc               &lt;chr&gt; "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
-<span class="co">#&gt; $ dmr_value_standard_units    &lt;chr&gt; "4.97", "4.8", "5.14", "5.51", "5.38", "5.…</span>
-<span class="co">#&gt; $ dmr_value_qualifier_code    &lt;chr&gt; "=", "=", "=", "=", "=", "=", "=", "=", "=…</span>
-<span class="co">#&gt; $ value_received_date         &lt;chr&gt; "05/17/2018", "06/19/2018", "07/16/2018", …</span>
-<span class="co">#&gt; $ days_late                   &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ nodi_code                   &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ nodi_desc                   &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ exceedence_pct              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ npdes_violation_id          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ violation_code              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ violation_desc              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ rnc_detection_code          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ rnc_detection_desc          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ rnc_detection_date          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ rnc_resolution_code         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ rnc_resolution_desc         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ rnc_resolution_date         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", ""…</span>
-<span class="co">#&gt; $ violation_severity          &lt;chr&gt; "No Violation Identified", "No Violation I…</span></code></pre></div>
+<span class="co">#&gt; $ permit                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TX0119407", "TX0119407", "TX0119407", "TX…</span>
+<span class="co">#&gt; $ activity_id                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3600178396", "3600178396", "3600178396", …</span>
+<span class="co">#&gt; $ npdes_id                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TX0119407", "TX0119407", "TX0119407", "TX…</span>
+<span class="co">#&gt; $ version_nmbr                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
+<span class="co">#&gt; $ perm_feature_id             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3600049681", "3600049681", "3600049681", …</span>
+<span class="co">#&gt; $ perm_feature_nmbr           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "001", "001", "001", "001", "001", "001", …</span>
+<span class="co">#&gt; $ perm_feature_type_code      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "EXO", "EXO", "EXO", "EXO", "EXO", "EXO", …</span>
+<span class="co">#&gt; $ perm_feature_type_desc      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "External Outfall", "External Outfall", "E…</span>
+<span class="co">#&gt; $ limit_set_id                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3600061722", "3600061722", "3600061722", …</span>
+<span class="co">#&gt; $ limit_set_schedule_id       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3600073706", "3600073706", "3600073706", …</span>
+<span class="co">#&gt; $ limit_id                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3600437315", "3600437315", "3600437315", …</span>
+<span class="co">#&gt; $ limit_type_code             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "ENF", "ENF", "ENF", "ENF", "ENF", "ENF", …</span>
+<span class="co">#&gt; $ limit_begin_date            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "08/01/2015", "08/01/2015", "08/01/2015", …</span>
+<span class="co">#&gt; $ limit_end_date              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "03/01/2020", "03/01/2020", "03/01/2020", …</span>
+<span class="co">#&gt; $ nmbr_of_submission          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1", "1", "1", "1", "1", "1", "1", "1", "1…</span>
+<span class="co">#&gt; $ parameter_code              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "00300", "00300", "00300", "00300", "00300…</span>
+<span class="co">#&gt; $ parameter_desc              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Oxygen, dissolved [DO]", "Oxygen, dissolv…</span>
+<span class="co">#&gt; $ monitoring_location_code    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1", "1", "1", "1", "1", "1", "1", "1", "1…</span>
+<span class="co">#&gt; $ monitoring_location_desc    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Effluent Gross", "Effluent Gross", "Efflu…</span>
+<span class="co">#&gt; $ stay_type_code              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ stay_type_desc              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ limit_value_id              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3600678121", "3600678121", "3600678121", …</span>
+<span class="co">#&gt; $ limit_value_type_code       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "C1", "C1", "C1", "C1", "C1", "C1", "C1", …</span>
+<span class="co">#&gt; $ limit_value_type_desc       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Concentration1", "Concentration1", "Conce…</span>
+<span class="co">#&gt; $ limit_value_nmbr            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
+<span class="co">#&gt; $ limit_unit_code             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "19", "19", "19", "19", "19", "19", "19", …</span>
+<span class="co">#&gt; $ limit_unit_desc             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
+<span class="co">#&gt; $ standard_unit_code          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "19", "19", "19", "19", "19", "19", "19", …</span>
+<span class="co">#&gt; $ standard_unit_desc          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
+<span class="co">#&gt; $ limit_value_standard_units  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4", "4", "4", "4", "4", "4", "4", "4", "4…</span>
+<span class="co">#&gt; $ statistical_base_code       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "MO", "MO", "MO", "MO", "MO", "MO", "MO", …</span>
+<span class="co">#&gt; $ statistical_base_short_desc <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "MO MIN", "MO MIN", "MO MIN", "MO MIN", "M…</span>
+<span class="co">#&gt; $ statistical_base_type_code  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "MIN", "MIN", "MIN", "MIN", "MIN", "MIN", …</span>
+<span class="co">#&gt; $ statistical_base_type_desc  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Minimum", "Minimum", "Minimum", "Minimum"…</span>
+<span class="co">#&gt; $ limit_value_qualifier_code  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", "&gt;=", …</span>
+<span class="co">#&gt; $ stay_value_nmbr             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ dmr_event_id                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3601380418", "3601380419", "3601380420", …</span>
+<span class="co">#&gt; $ monitoring_period_end_date  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "04/30/2018", "05/31/2018", "06/30/2018", …</span>
+<span class="co">#&gt; $ dmr_form_value_id           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3618540570", "3618540588", "3618540606", …</span>
+<span class="co">#&gt; $ value_type_code             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "C1", "C1", "C1", "C1", "C1", "C1", "C1", …</span>
+<span class="co">#&gt; $ value_type_desc             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Concentration1", "Concentration1", "Conce…</span>
+<span class="co">#&gt; $ dmr_value_id                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3667289411", "3669642431", "3670879558", …</span>
+<span class="co">#&gt; $ dmr_value_nmbr              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4.97", "4.8", "5.14", "5.51", "5.38", "5.…</span>
+<span class="co">#&gt; $ dmr_unit_code               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "19", "19", "19", "19", "19", "19", "19", …</span>
+<span class="co">#&gt; $ dmr_unit_desc               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "mg/L", "mg/L", "mg/L", "mg/L", "mg/L", "m…</span>
+<span class="co">#&gt; $ dmr_value_standard_units    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4.97", "4.8", "5.14", "5.51", "5.38", "5.…</span>
+<span class="co">#&gt; $ dmr_value_qualifier_code    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "=", "=", "=", "=", "=", "=", "=", "=", "=…</span>
+<span class="co">#&gt; $ value_received_date         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "05/17/2018", "06/19/2018", "07/16/2018", …</span>
+<span class="co">#&gt; $ days_late                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ nodi_code                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ nodi_desc                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ exceedence_pct              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ npdes_violation_id          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ violation_code              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ violation_desc              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_detection_code          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_detection_desc          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_detection_date          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_resolution_code         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_resolution_desc         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ rnc_resolution_date         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span>
+<span class="co">#&gt; $ violation_severity          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "No Violation Identified", "No Violation I…</span></code></pre></div>
 </div>
-<div id="spatial-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#spatial-data" class="anchor"></a>Spatial data</h3>
-<p><code>echor</code> can also return spatial data frames known as simple features (<a href="https://r-spatial.github.io/sf/" class="uri">https://r-spatial.github.io/sf/</a>), to facilitate creation of maps. Both <code>echoAirGetFacilityInfo</code> and <code>echoWaterGetFacilityInfo</code> include arguments to return simple feature dataframes.</p>
+<div class="section level3">
+<h3 id="spatial-data">Spatial data<a class="anchor" aria-label="anchor" href="#spatial-data"></a>
+</h3>
+<p><code>echor</code> can also return spatial data frames known as simple features (<a href="https://r-spatial.github.io/sf/" class="external-link uri">https://r-spatial.github.io/sf/</a>), to facilitate creation of maps. Both <code>echoAirGetFacilityInfo</code> and <code>echoWaterGetFacilityInfo</code> include arguments to return simple feature dataframes.</p>
 <p>Using <code>sf</code>, <code>ggplot</code>, and <code>ggspatial</code> we can quickly create a map of downloaded data.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://paleolimbot.github.io/ggspatial/">ggspatial</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/">sf</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://paleolimbot.github.io/ggspatial/" class="external-link">ggspatial</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span>
 
 <span class="co">## Download data as a simple feature</span>
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="st">'-96.407563'</span>, ymin <span class="op">=</span> <span class="st">'30.554395'</span>,
@@ -2223,42 +2213,39 @@ end_date        string  End date of interest. Must be entered as "mm/dd/yyyy"</c
                                         output <span class="op">=</span> <span class="st">'sf'</span><span class="op">)</span>
 
 <span class="co">## Make the map</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://paleolimbot.github.io/ggspatial/reference/annotation_map_tile.html">annotation_map_tile</a></span><span class="op">(</span>zoomin <span class="op">=</span> <span class="fl">0</span>, progress <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, shape <span class="op">=</span> <span class="fl">21</span>, 
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://paleolimbot.github.io/ggspatial/reference/annotation_map_tile.html" class="external-link">annotation_map_tile</a></span><span class="op">(</span>zoomin <span class="op">=</span> <span class="fl">0</span>, progress <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, shape <span class="op">=</span> <span class="fl">21</span>, 
           color <span class="op">=</span> <span class="st">"darkred"</span>, fill <span class="op">=</span> <span class="st">"darkred"</span>, 
           size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Longitude"</span>, y <span class="op">=</span> <span class="st">"Latitude"</span>, 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Longitude"</span>, y <span class="op">=</span> <span class="st">"Latitude"</span>, 
        title <span class="op">=</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,
        caption <span class="op">=</span> <span class="st">"Source: EPA ECHO database"</span><span class="op">)</span></code></pre></div>
 <p><img src="introduction_files/figure-html/unnamed-chunk-12-1.png" width="75%"></p>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
-
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
-  <p>Developed by Michael Schramm.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p></p>
+<p>Developed by <a href="https://github.com/mps9506" class="external-link">Michael Schramm</a>.</p>
 </div>
 
-<div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+<div class="pkgdown-footer-right">
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
 
+  
 
   </body>
 </html>
