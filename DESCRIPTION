@@ -41,4 +41,4 @@ Suggests:
 BugReports: https://github.com/mps9506/echor/issues
 VignetteBuilder: knitr
 Language: en-US
-Config/Needs/website: mps9506/mpsTemplates
+Config/Needs/website: mps9506/mps-templates
