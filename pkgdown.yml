@@ -3,7 +3,7 @@ pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   introduction: introduction.html
-last_built: 2022-03-31T22:31Z
+last_built: 2022-04-04T21:42Z
 urls:
   reference: https://mps9506.github.io/echor/reference
   article: https://mps9506.github.io/echor/articles
