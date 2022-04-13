@@ -1,7 +1,17 @@
 url: https://mps9506.github.io/echor/
+
+home:
+  title: An R package to access EPA ECHO data
+  description: An R interface to United States Environmental Protection Agency (EPA) Environmental Compliance History Online ('ECHO') Application Program Interface (API). 'ECHO' provides information about EPA permitted facilities, discharges, and other reporting info associated with permitted entities.
+
 template:
   package: mpsTemplates
   bootstrap: 5
+  opengraph:
+    twitter:
+      creator: "@mpschramm"
+      site: "@txwri"
+      card: summary
 
 navbar:
   type: light

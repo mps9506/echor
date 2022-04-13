@@ -2,7 +2,12 @@ Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
 Version: 0.1.6.9000
-Authors@R: person("Michael", "Schramm", role = c("aut", "cre", "cph"), email = "michael.schramm@ag.tamu.edu")
+Authors@R: 
+    person(given = "Michael",
+           family = "Schramm",
+           role = c("aut", "cre", "cph"),
+           email = "mpschramm@gmail.com",
+           comment = c(ORCID = "0000-0003-1876-6592"))
 Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
 Description: An R interface to United States Environmental 
     Protection Agency (EPA) Environmental Compliance 
@@ -39,6 +44,8 @@ Suggests:
     testthat,
     utf8
 BugReports: https://github.com/mps9506/echor/issues
+URL: https://github.com/mps9506/echor,
+  https://mps9506.github.io/echor/
 VignetteBuilder: knitr
 Language: en-US
 Config/Needs/website: mps9506/mps-templates
