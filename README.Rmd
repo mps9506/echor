@@ -6,6 +6,7 @@ output: github_document
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 knitr::opts_chunk$set(
+  dev = "ragg",
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
@@ -27,8 +28,6 @@ library(echor)
 [![CRAN status](https://www.r-pkg.org/badges/version/echor)](https://cran.r-project.org/package=echor)
 
 [![R build status](https://github.com/mps9506/echor/workflows/R-CMD-check/badge.svg)](https://github.com/mps9506/echor/actions)
-[![Travis build status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor)
 [![Coverage status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
 [![DOI](https://zenodo.org/badge/122131508.svg)](https://zenodo.org/badge/latestdoi/122131508)
 
@@ -100,10 +99,6 @@ library(ggspatial)
 library(sf)
 library(ggrepel)
 library(purrr)
-## This example requires the development version of ggplot with support
-## for geom_sf()
-## and uses theme_ipsum_rc() from library(hrbrthemes)
-
 
 df <- echoWaterGetFacilityInfo(output = "sf", 
                                xmin = '-96.387509', 
