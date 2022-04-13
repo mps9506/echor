@@ -39,6 +39,8 @@ Suggests:
     testthat,
     utf8
 BugReports: https://github.com/mps9506/echor/issues
+URL: https://github.com/mps9506/echor,
+  https://mps9506.github.io/echor/
 VignetteBuilder: knitr
 Language: en-US
 Config/Needs/website: mps9506/mps-templates
