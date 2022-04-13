@@ -9,13 +9,10 @@ status](https://www.r-pkg.org/badges/version/echor)](https://cran.r-project.org/
 
 [![R build
 status](https://github.com/mps9506/echor/workflows/R-CMD-check/badge.svg)](https://github.com/mps9506/echor/actions)
-[![Travis build
-status](https://travis-ci.org/mps9506/echor.svg?branch=master)](https://travis-ci.org/mps9506/echor)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&svg=true)](https://ci.appveyor.com/project/mps9506/echor)
 [![Coverage
 status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
 [![DOI](https://zenodo.org/badge/122131508.svg)](https://zenodo.org/badge/latestdoi/122131508)
+
 <!-- badges: end -->
 
 ## Overview
@@ -108,10 +105,6 @@ spatial plotting or analysis:
     library(sf)
     library(ggrepel)
     library(purrr)
-    ## This example requires the development version of ggplot with support
-    ## for geom_sf()
-    ## and uses theme_ipsum_rc() from library(hrbrthemes)
-
 
     df <- echoWaterGetFacilityInfo(output = "sf", 
                                    xmin = '-96.387509', 
@@ -183,7 +176,7 @@ that all variables are returned as *character* vectors.
     #>  collate  C.UTF-8
     #>  ctype    C.UTF-8
     #>  tz       UTC
-    #>  date     2022-04-04
+    #>  date     2022-04-13
     #>  pandoc   2.14.2 @ /usr/bin/ (via rmarkdown)
     sessioninfo::package_info()
     #>  ! package      * version    date (UTC) lib source
@@ -201,7 +194,7 @@ that all variables are returned as *character* vectors.
     #>  P digest         0.6.29     2021-12-01 [?] CRAN (R 4.1.3)
     #>  P dplyr        * 1.0.8      2022-02-08 [?] CRAN (R 4.1.3)
     #>  P e1071          1.7-9      2021-09-16 [?] CRAN (R 4.1.3)
-    #>    echor        * 0.1.6.9000 2022-04-04 [1] local
+    #>    echor        * 0.1.6.9000 2022-04-13 [1] local
     #>  P ellipsis       0.3.2      2021-04-29 [?] CRAN (R 4.1.3)
     #>  P evaluate       0.15       2022-02-18 [?] CRAN (R 4.1.3)
     #>    fansi          1.0.3      2022-03-24 [1] CRAN (R 4.1.3)
@@ -226,7 +219,7 @@ that all variables are returned as *character* vectors.
     #>    lattice        0.20-45    2021-09-22 [2] CRAN (R 4.1.3)
     #>  P lifecycle      1.0.1      2021-09-24 [?] CRAN (R 4.1.3)
     #>    magrittr       2.0.3      2022-03-30 [1] CRAN (R 4.1.3)
-    #>  P mpsTemplates * 0.1.0      2022-04-04 [?] Github (mps9506/mps-templates@ee2d639)
+    #>  P mpsTemplates * 0.1.0      2022-04-13 [?] Github (mps9506/mps-templates@ee2d639)
     #>  P munsell        0.5.0      2018-06-12 [?] CRAN (R 4.1.3)
     #>  P pillar         1.7.0      2022-02-01 [?] CRAN (R 4.1.3)
     #>  P pkgconfig      2.0.3      2019-09-22 [?] CRAN (R 4.1.3)
@@ -236,11 +229,12 @@ that all variables are returned as *character* vectors.
     #>  P proxy          0.4-26     2021-06-07 [?] CRAN (R 4.1.3)
     #>  P purrr        * 0.3.4      2020-04-17 [?] CRAN (R 4.1.3)
     #>  P R6             2.5.1      2021-08-19 [?] CRAN (R 4.1.3)
+    #>  P ragg         * 1.2.1      2021-12-06 [?] CRAN (R 4.1.3)
     #>    raster         3.5-15     2022-01-22 [1] CRAN (R 4.1.3)
     #>  P Rcpp           1.0.8.3    2022-03-17 [?] CRAN (R 4.1.3)
     #>  P readr          2.1.2      2022-01-30 [?] CRAN (R 4.1.3)
     #>  P renv           0.15.1     2022-01-13 [?] CRAN (R 4.1.3)
-    #>    rgdal          1.5-29     2022-03-16 [1] CRAN (R 4.1.3)
+    #>    rgdal          1.5-30     2022-04-08 [1] CRAN (R 4.1.3)
     #>  P rlang          1.0.2      2022-03-04 [?] CRAN (R 4.1.3)
     #>  P rmarkdown      2.13       2022-03-10 [?] CRAN (R 4.1.3)
     #>  P rosm           0.2.5      2019-07-22 [?] CRAN (R 4.1.3)
@@ -253,13 +247,14 @@ that all variables are returned as *character* vectors.
     #>  P stringr        1.4.0      2019-02-10 [?] CRAN (R 4.1.3)
     #>    systemfonts    1.0.4      2022-02-11 [1] CRAN (R 4.1.3)
     #>    terra          1.5-21     2022-02-17 [1] CRAN (R 4.1.3)
+    #>  P textshaping    0.3.6      2021-10-13 [?] CRAN (R 4.1.3)
     #>  P tibble         3.1.6      2021-11-07 [?] CRAN (R 4.1.3)
     #>  P tidyr          1.2.0      2022-02-01 [?] CRAN (R 4.1.3)
     #>  P tidyselect     1.1.2      2022-02-21 [?] CRAN (R 4.1.3)
     #>    tzdb           0.3.0      2022-03-28 [1] CRAN (R 4.1.3)
     #>    units          0.8-0      2022-02-05 [1] CRAN (R 4.1.3)
     #>  P utf8           1.2.2      2021-07-24 [?] CRAN (R 4.1.3)
-    #>    vctrs          0.4.0      2022-03-30 [1] CRAN (R 4.1.3)
+    #>    vctrs          0.4.1      2022-04-13 [1] CRAN (R 4.1.3)
     #>  P vroom          1.5.7      2021-11-30 [?] CRAN (R 4.1.3)
     #>  P withr          2.5.0      2022-03-03 [?] CRAN (R 4.1.3)
     #>  P wk             0.6.0      2022-01-03 [?] CRAN (R 4.1.3)
