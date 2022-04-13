@@ -6,7 +6,7 @@ output: github_document
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 knitr::opts_chunk$set(
-  dev = "ragg",
+  dev = "ragg_png",
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
