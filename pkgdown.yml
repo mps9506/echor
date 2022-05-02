@@ -1,9 +1,9 @@
 pandoc: 2.14.2
-pkgdown: 2.0.2
+pkgdown: 2.0.3
 pkgdown_sha: ~
 articles:
   introduction: introduction.html
-last_built: 2022-04-13T22:12Z
+last_built: 2022-05-02T22:56Z
 urls:
   reference: https://mps9506.github.io/echor/reference
   article: https://mps9506.github.io/echor/articles

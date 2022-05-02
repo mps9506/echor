@@ -9,7 +9,7 @@
 <title>An R package to access EPA ECHO data • echor</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="deps/_Cormorant%20Garamond-0.4.1/font.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="deps/_Inter-0.4.1/font.css" rel="stylesheet">
 <link href="deps/_JetBrains%20Mono-0.4.1/font.css" rel="stylesheet">
 <link href="deps/_Noto%20Sans%20Display-0.4.1/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -77,8 +77,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p><a href="https://github.com/mps9506/echor/actions" class="external-link"><img src="https://github.com/mps9506/echor/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://travis-ci.org/mps9506/echor" class="external-link"><img src="https://travis-ci.org/mps9506/echor.svg?branch=master" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/mps9506/echor" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/github/mps9506/echor?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/github/mps9506/echor?branch=master" class="external-link"><img src="https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg" alt="Coverage status"></a> <a href="https://zenodo.org/badge/latestdoi/122131508" class="external-link"><img src="https://zenodo.org/badge/122131508.svg" alt="DOI"></a> <!-- badges: end --></p>
-<div class="section level2">
+<!-- badges: end --><div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <p>echor downloads wastewater discharge and air emission data for EPA permitted facilities using the <a href="https://echo.epa.gov/" class="external-link">EPA ECHO API</a>.</p>
@@ -151,40 +150,36 @@
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## This example requires the development version of ggplot with support</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="do">## for geom_sf()</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">## and uses theme_ipsum_rc() from library(hrbrthemes)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">echoWaterGetFacilityInfo</span>(<span class="at">output =</span> <span class="st">"sf"</span>, </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                               <span class="at">xmin =</span> <span class="st">'-96.387509'</span>, </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                               <span class="at">ymin =</span> <span class="st">'30.583572'</span>, </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                               <span class="at">xmax =</span> <span class="st">'-96.281422'</span>, </span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                               <span class="at">ymax =</span> <span class="st">'30.640008'</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                               <span class="at">p_ptype =</span> <span class="st">"NPD"</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="do">##to make labels, need to map the coords and use geom_text :(</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="do">## can't help but think there is an easier way to do this</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">coords =</span> <span class="fu">map</span>(geometry, st_coordinates),</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">coords_x =</span> <span class="fu">map_dbl</span>(coords, <span class="dv">1</span>),</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">coords_y =</span> <span class="fu">map_dbl</span>(coords, <span class="dv">2</span>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df) <span class="sc">+</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_map_tile</span>(<span class="at">zoomin =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">progress =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">shape =</span> <span class="dv">21</span>, </span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">fill =</span> <span class="st">"darkred"</span>, </span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> coords_x, <span class="at">y =</span> coords_y, <span class="at">label =</span> SourceID),</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>                   <span class="at">point.padding =</span> .<span class="dv">5</span>, <span class="at">min.segment.length =</span> <span class="fl">0.1</span>,</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>                   <span class="at">size =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"dodgerblue"</span>) <span class="sc">+</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mps_noto</span>() <span class="sc">+</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>, </span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: EPA ECHO database"</span>)</span></code></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">echoWaterGetFacilityInfo</span>(<span class="at">output =</span> <span class="st">"sf"</span>, </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">xmin =</span> <span class="st">'-96.387509'</span>, </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">ymin =</span> <span class="st">'30.583572'</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                               <span class="at">xmax =</span> <span class="st">'-96.281422'</span>, </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                               <span class="at">ymax =</span> <span class="st">'30.640008'</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                               <span class="at">p_ptype =</span> <span class="st">"NPD"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="do">##to make labels, need to map the coords and use geom_text :(</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="do">## can't help but think there is an easier way to do this</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">coords =</span> <span class="fu">map</span>(geometry, st_coordinates),</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">coords_x =</span> <span class="fu">map_dbl</span>(coords, <span class="dv">1</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">coords_y =</span> <span class="fu">map_dbl</span>(coords, <span class="dv">2</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df) <span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_map_tile</span>(<span class="at">zoomin =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">progress =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">shape =</span> <span class="dv">21</span>, </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">fill =</span> <span class="st">"darkred"</span>, </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> coords_x, <span class="at">y =</span> coords_y, <span class="at">label =</span> SourceID),</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>                   <span class="at">point.padding =</span> .<span class="dv">5</span>, <span class="at">min.segment.length =</span> <span class="fl">0.1</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>                   <span class="at">size =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"dodgerblue"</span>) <span class="sc">+</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_mps_noto</span>() <span class="sc">+</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>, </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: EPA ECHO database"</span>)</span></code></pre></div>
 <p><img src="reference/figures/README-example3-1.png" width="100%"></p>
 </div>
 <div class="section level3">
@@ -223,7 +218,7 @@
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  tz       UTC</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  date     2022-04-04</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  date     2022-04-13</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  pandoc   2.14.2 @ /usr/bin/ (via rmarkdown)</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">package_info</span>()</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  ! package      * version    date (UTC) lib source</span></span>
@@ -241,7 +236,7 @@
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P digest         0.6.29     2021-12-01 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P dplyr        * 1.0.8      2022-02-08 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P e1071          1.7-9      2021-09-16 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    echor        * 0.1.6.9000 2022-04-04 [1] local</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    echor        * 0.1.6.9000 2022-04-13 [1] local</span></span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P ellipsis       0.3.2      2021-04-29 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P evaluate       0.15       2022-02-18 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    fansi          1.0.3      2022-03-24 [1] CRAN (R 4.1.3)</span></span>
@@ -266,7 +261,7 @@
 <span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    lattice        0.20-45    2021-09-22 [2] CRAN (R 4.1.3)</span></span>
 <span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P lifecycle      1.0.1      2021-09-24 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    magrittr       2.0.3      2022-03-30 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P mpsTemplates * 0.1.0      2022-04-04 [?] Github (mps9506/mps-templates@ee2d639)</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P mpsTemplates * 0.1.0      2022-04-13 [?] Github (mps9506/mps-templates@ee2d639)</span></span>
 <span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P munsell        0.5.0      2018-06-12 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P pillar         1.7.0      2022-02-01 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P pkgconfig      2.0.3      2019-09-22 [?] CRAN (R 4.1.3)</span></span>
@@ -276,41 +271,43 @@
 <span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P proxy          0.4-26     2021-06-07 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P purrr        * 0.3.4      2020-04-17 [?] CRAN (R 4.1.3)</span></span>
 <span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P R6             2.5.1      2021-08-19 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    raster         3.5-15     2022-01-22 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P Rcpp           1.0.8.3    2022-03-17 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P readr          2.1.2      2022-01-30 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P renv           0.15.1     2022-01-13 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    rgdal          1.5-29     2022-03-16 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P rlang          1.0.2      2022-03-04 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P rmarkdown      2.13       2022-03-10 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P rosm           0.2.5      2019-07-22 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P s2             1.0.7      2021-09-28 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P scales         1.1.1      2020-05-11 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P sessioninfo    1.2.2      2021-12-06 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    sf           * 1.0-7      2022-03-07 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P sp             1.4-6      2021-11-14 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P stringi        1.7.6      2021-11-29 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P stringr        1.4.0      2019-02-10 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    systemfonts    1.0.4      2022-02-11 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    terra          1.5-21     2022-02-17 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P tibble         3.1.6      2021-11-07 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P tidyr          1.2.0      2022-02-01 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P tidyselect     1.1.2      2022-02-21 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    tzdb           0.3.0      2022-03-28 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    units          0.8-0      2022-02-05 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P utf8           1.2.2      2021-07-24 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    vctrs          0.4.0      2022-03-30 [1] CRAN (R 4.1.3)</span></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P vroom          1.5.7      2021-11-30 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P withr          2.5.0      2022-03-03 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P wk             0.6.0      2022-01-03 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P xfun           0.30       2022-03-02 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P xml2           1.3.3      2021-11-30 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P yaml           2.3.5      2022-02-21 [?] CRAN (R 4.1.3)</span></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] /home/runner/.cache/R/renv/library/echor-4ec080d0/R-4.1/x86_64-pc-linux-gnu</span></span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [2] /opt/R/4.1.3/lib/R/library</span></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P ── Loaded and on-disk path mismatch.</span></span></code></pre></div>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P ragg         * 1.2.1      2021-12-06 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    raster         3.5-15     2022-01-22 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P Rcpp           1.0.8.3    2022-03-17 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P readr          2.1.2      2022-01-30 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P renv           0.15.1     2022-01-13 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    rgdal          1.5-30     2022-04-08 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P rlang          1.0.2      2022-03-04 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P rmarkdown      2.13       2022-03-10 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P rosm           0.2.5      2019-07-22 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P s2             1.0.7      2021-09-28 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P scales         1.1.1      2020-05-11 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P sessioninfo    1.2.2      2021-12-06 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    sf           * 1.0-7      2022-03-07 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P sp             1.4-6      2021-11-14 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P stringi        1.7.6      2021-11-29 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P stringr        1.4.0      2019-02-10 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    systemfonts    1.0.4      2022-02-11 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    terra          1.5-21     2022-02-17 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P textshaping    0.3.6      2021-10-13 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P tibble         3.1.6      2021-11-07 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P tidyr          1.2.0      2022-02-01 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P tidyselect     1.1.2      2022-02-21 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    tzdb           0.3.0      2022-03-28 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    units          0.8-0      2022-02-05 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P utf8           1.2.2      2021-07-24 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    vctrs          0.4.1      2022-04-13 [1] CRAN (R 4.1.3)</span></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P vroom          1.5.7      2021-11-30 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P withr          2.5.0      2022-03-03 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P wk             0.6.0      2022-01-03 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P xfun           0.30       2022-03-02 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P xml2           1.3.3      2021-11-30 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P yaml           2.3.5      2022-02-21 [?] CRAN (R 4.1.3)</span></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] /home/runner/.cache/R/renv/library/echor-4ec080d0/R-4.1/x86_64-pc-linux-gnu</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [2] /opt/R/4.1.3/lib/R/library</span></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  P ── Loaded and on-disk path mismatch.</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -350,6 +347,9 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=echor" class="external-link"><img src="https://www.r-pkg.org/badges/version/echor" alt="CRAN status"></a></li>
+<li><a href="https://github.com/mps9506/echor/actions" class="external-link"><img src="https://github.com/mps9506/echor/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://codecov.io/github/mps9506/echor?branch=master" class="external-link"><img src="https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
+<li><a href="https://zenodo.org/badge/latestdoi/122131508" class="external-link"><img src="https://zenodo.org/badge/122131508.svg" alt="DOI"></a></li>
 </ul>
 </div>
 
@@ -364,7 +364,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
