@@ -1,6 +1,7 @@
 # echor (development version)
 
 * update pkgdown use and template for consistency with my other packages.
+* update author and maintainer email
 
 # echor 0.1.6
 
