@@ -12,9 +12,3 @@ template:
       creator: "@mpschramm"
       site: "@txwri"
       card: summary
-
-navbar:
-  type: light
-  bg: light
-  structure:
-    right: [search, github]
