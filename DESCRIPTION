@@ -48,4 +48,4 @@ Config/Needs/website:
   kableExtra,
   raster,
   knitr,
-  rmaarkdown
+  rmarkdown
