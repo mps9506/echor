@@ -15,8 +15,7 @@ There are currently no downstream dependencies for this package.
 
 ## Comments
 
-This is a release of version 0.1.6, it primarily fixes notes and warnings shown on the CRAN check page.
-It also updates the API address used by the API.
+New email address for the maintainer, the old address is still active for confirmation.
 
 Other comments:
 
