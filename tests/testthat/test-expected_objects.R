@@ -11,13 +11,13 @@ set_requester(function (request) {
     gsub_request(api_root, "api/", fixed = TRUE)
 })
 
-#with_mock_api <- capture_requests
+with_mock_api <- capture_requests
 
 with_mock_api({
   test_that("core functions return tbl_df", {
     #skip_on_cran()
 
-    expect_is(
+    expect_s3_class(
       echoAirGetFacilityInfo(
         p_pid = "NC0000003706500036",
         output = "df",
@@ -26,24 +26,24 @@ with_mock_api({
       "tbl_df"
     )
 
-    expect_is(echoSDWGetMeta(verbose = FALSE),
+    expect_s3_class(echoSDWGetMeta(verbose = FALSE),
               "tbl_df")
 
-    expect_is(echoGetCAAPR(p_id = '110000350174'),
+    expect_s3_class(echoGetCAAPR(p_id = '110000350174'),
               "tbl_df")
 
-    expect_is(echoGetEffluent(p_id = "tx0124362",
+    expect_s3_class(echoGetEffluent(p_id = "tx0124362",
                               parameter_code = "50050"),
               "tbl_df")
 
-    expect_is(echoGetReports(
+    expect_s3_class(echoGetReports(
       program = "caa",
       p_id = '110000350174',
       verbose = FALSE
     ),
     "tbl_df")
 
-    expect_is(
+    expect_s3_class(
       echoGetReports(
         program = "cwa",
         p_id = "tx0124362",
@@ -53,14 +53,14 @@ with_mock_api({
       "tbl_df"
     )
 
-    expect_is(echoSDWGetSystems(
+    expect_s3_class(echoSDWGetSystems(
       p_co = "Brazos",
       p_st = "tx",
       verbose = FALSE
     ),
     "tbl_df")
 
-    expect_is(
+    expect_s3_class(
       echoWaterGetFacilityInfo(
         p_pid = "ALR040033",
         output = "df",
@@ -69,12 +69,12 @@ with_mock_api({
       "tbl_df"
     )
 
-    expect_is(echoWaterGetParams(term = "Oxygen, dissolved"),
+    expect_s3_class(echoWaterGetParams(term = "Oxygen, dissolved"),
               "tbl_df")
 
-    expect_is(echoWaterGetParams(code = "00300"), "tbl_df")
+    expect_s3_class(echoWaterGetParams(code = "00300"), "tbl_df")
 
-    expect_is(
+    expect_s3_class(
       echoGetFacilities(
         program = "cwa",
         p_pid = "ALR040033",
