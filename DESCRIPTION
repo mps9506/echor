@@ -31,15 +31,7 @@ Imports:
   tidyr (>= 1.0.0),
   utils
 Suggests:
-    ggplot2,
-    ggrepel,
-    ggspatial,
-    here,
     httptest,
-    kableExtra,
-    knitr,
-    raster,
-    rmarkdown,
     sf,
     testthat,
     utf8
@@ -47,4 +39,13 @@ BugReports: https://github.com/mps9506/echor/issues
 URL: https://github.com/mps9506/echor,
   https://mps9506.github.io/echor/
 Language: en-US
-Config/Needs/website: mps9506/mpsTemplates
+Config/Needs/website: 
+  mps9506/mpsTemplates,
+  ggplot2<
+  ggrepel,
+  ggspatial,
+  here,
+  kableExtra,
+  raster,
+  knitr,
+  rmaarkdown
