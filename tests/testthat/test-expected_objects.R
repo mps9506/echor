@@ -11,7 +11,7 @@ set_requester(function (request) {
     gsub_request(api_root, "api/", fixed = TRUE)
 })
 
-with_mock_api <- capture_requests
+#with_mock_api <- capture_requests
 
 with_mock_api({
   test_that("core functions return tbl_df", {
