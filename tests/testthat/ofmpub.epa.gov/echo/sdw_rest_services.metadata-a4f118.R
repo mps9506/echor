@@ -1,0 +1,15 @@
+structure(list(url = "https://ofmpub.epa.gov/echo/sdw_rest_services.metadata?output=JSON", 
+    status_code = 404L, headers = structure(list(date = "Wed, 21 Dec 2022 14:48:44 GMT", 
+        server = "Apache", `content-length` = "196", `content-type` = "text/html; charset=iso-8859-1"), class = c("insensitive", 
+    "list")), all_headers = list(list(status = 404L, version = "HTTP/1.1", 
+        headers = structure(list(date = "Wed, 21 Dec 2022 14:48:44 GMT", 
+            server = "Apache", `content-length` = "196", `content-type` = "text/html; charset=iso-8859-1"), class = c("insensitive", 
+        "list")))), cookies = structure(list(domain = logical(0), 
+        flag = logical(0), path = logical(0), secure = logical(0), 
+        expiration = structure(numeric(0), class = c("POSIXct", 
+        "POSIXt")), name = logical(0), value = logical(0)), row.names = integer(0), class = "data.frame"), 
+    content = charToRaw("<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n</body></html>\n"), 
+    date = structure(1671634124, class = c("POSIXct", "POSIXt"
+    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 4.7e-05, 
+    connect = 4.8e-05, pretransfer = 0.000148, starttransfer = 0.024081, 
+    total = 0.024102)), class = "response")
