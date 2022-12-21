@@ -78,7 +78,7 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
   ## check if qcolumns argument is provided by user
   ## if user does not provide qcolumns, provide a sensible default
   if (!("qcolumns" %in% names(valuesList))) {
-    qcolumns <- c(1:66)
+    qcolumns <- c(1:76)
     qcolumns <- paste(as.character(qcolumns), collapse = ",")
     valuesList[["qcolumns"]] <- qcolumns
   }
