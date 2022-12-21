@@ -118,7 +118,7 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
 
   info <- readr::read_csv(info, col_names = TRUE,
                   col_types = col_types,
-                  na = " ",
+                  #na = " ", ## new readr seems to parse this correctly
                   locale = readr::locale(date_format = "%m/%d/%Y"))
 
   return(info)
