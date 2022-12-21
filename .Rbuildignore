@@ -19,4 +19,4 @@
 ^CRAN-RELEASE$
 ^rosm\.cache$
 ^\.github$
-^vignettes/$
+^vignettes$
