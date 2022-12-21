@@ -8,7 +8,7 @@ Authors@R:
            role = c("aut", "cre", "cph"),
            email = "mpschramm@gmail.com",
            comment = c(ORCID = "0000-0003-1876-6592"))
-Maintainer: Michael Schramm <michael.schramm@ag.tamu.edu>
+Maintainer: Michael Schramm <mpschramm@gmail.com>
 Description: An R interface to United States Environmental 
     Protection Agency (EPA) Environmental Compliance 
     History Online ('ECHO') Application Program Interface
@@ -18,7 +18,7 @@ Description: An R interface to United States Environmental
     from <https://echo.epa.gov/>. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.2
 Imports:
   dplyr,
   geojsonsf,
