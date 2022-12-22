@@ -2,6 +2,10 @@
 
 * update pkgdown use and template for consistency with my other packages.
 * update author and maintainer email
+* update url endpoint for metadata services
+* remove rlang::.data selectors for compatibility with new versions of purrr and tidyselect
+* fix messages introduced by new versions of readr/vroom when columns are NA
+* vignette is no longer built by CRAN to reduce package dependencies, see the pkgdown website for documentation
 
 # echor 0.1.6
 

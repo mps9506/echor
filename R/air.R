@@ -179,7 +179,6 @@ echoAirGetMeta <- function(verbose = FALSE){
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Additional arguments
 #' @importFrom purrr map_df
-#' @importFrom rlang .data
 #' @importFrom tidyr gather_ pivot_longer
 #' @importFrom tibble tibble
 #' @import httr
@@ -255,7 +254,7 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
 #                                                                   "Year9",
 #                                                                   "Year10"))
     pollutant <- tidyr::pivot_longer(pollutant,
-                                     cols = -c(.data$Pollutant, .data$UnitsOfMeasure, .data$Program),
+                                     cols = -c("Pollutant", "UnitsOfMeasure", "Program"),
                                      names_to = "Year",
                                      values_to = "Discharge")
 
