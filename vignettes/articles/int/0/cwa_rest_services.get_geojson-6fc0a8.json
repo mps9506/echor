@@ -6,6 +6,43 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.349641,
+                    30.608505
+                ]
+            },
+            "properties": {
+                "CWPName": "066-3344 BORLAUG CENTER RENOVATION ADDITION",
+                "SourceID": "TXR1579LK",
+                "CWPStreet": "600 JOHN KIMBROUGH BLVD",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77843-0001",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071363697",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1579LK",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020171"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.3341,
                     30.6689
                 ]
@@ -567,7 +604,7 @@
             },
             "properties": {
                 "CWPName": "AGGIE CREAMERY",
-                "SourceID": "TXR1546JP",
+                "SourceID": "TXR1547JP",
                 "CWPStreet": "SW OF THROCKMORTON ST & LEWIS ST",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -604,7 +641,7 @@
             },
             "properties": {
                 "CWPName": "AGGIE CREAMERY",
-                "SourceID": "TXR1547JP",
+                "SourceID": "TXR1546JP",
                 "CWPStreet": "SW OF THROCKMORTON ST & LEWIS ST",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -1233,7 +1270,7 @@
             },
             "properties": {
                 "CWPName": "AUSTIN'S COLONY PHS. 20",
-                "SourceID": "TXR10F8G3",
+                "SourceID": "TXR10F8GB",
                 "CWPStreet": "NW OF THORNBERRY DRIVE & BULLINGER CREEK DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -1270,7 +1307,7 @@
             },
             "properties": {
                 "CWPName": "AUSTIN'S COLONY PHS. 20",
-                "SourceID": "TXR10F8GB",
+                "SourceID": "TXR10F8G3",
                 "CWPStreet": "NW OF THORNBERRY DRIVE & BULLINGER CREEK DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -1344,7 +1381,7 @@
             },
             "properties": {
                 "CWPName": "AUSTINS COLONY",
-                "SourceID": "TXR1596JO",
+                "SourceID": "TXR1528FK",
                 "CWPStreet": "THE INTERSECTION OF HWY. 6 AND F.M. 158",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -1381,7 +1418,7 @@
             },
             "properties": {
                 "CWPName": "AUSTINS COLONY",
-                "SourceID": "TXR1528FK",
+                "SourceID": "TXR1596JO",
                 "CWPStreet": "THE INTERSECTION OF HWY. 6 AND F.M. 158",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -1529,7 +1566,7 @@
             },
             "properties": {
                 "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR15615N",
+                "SourceID": "TXR15333O",
                 "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -1549,80 +1586,6 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001071"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.33327,
-                    30.67201
-                ]
-            },
-            "properties": {
-                "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR15484T",
-                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77808",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365585",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001071"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.327244,
-                    30.690106
-                ]
-            },
-            "properties": {
-                "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR1515EF",
-                "CWPStreet": "3008 BLACKFOOT CT",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070892071",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1515EF",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -1677,81 +1640,7 @@
             },
             "properties": {
                 "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR1535CL",
-                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77808",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365585",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001071"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.33327,
-                    30.67201
-                ]
-            },
-            "properties": {
-                "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR15227M",
-                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77808",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365585",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001071"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.33327,
-                    30.67201
-                ]
-            },
-            "properties": {
-                "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR1509CS",
+                "SourceID": "TXR15615N",
                 "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -1825,6 +1714,43 @@
             },
             "properties": {
                 "CWPName": "AUSTINS COLONY SUBDIVISION",
+                "SourceID": "TXR15812A",
+                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77808",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365585",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.33327,
+                    30.67201
+                ]
+            },
+            "properties": {
+                "CWPName": "AUSTINS COLONY SUBDIVISION",
                 "SourceID": "TXR1585AY",
                 "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
                 "CWPCity": "BRYAN",
@@ -1862,7 +1788,81 @@
             },
             "properties": {
                 "CWPName": "AUSTINS COLONY SUBDIVISION",
+                "SourceID": "TXR1535CL",
+                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77808",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365585",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.33327,
+                    30.67201
+                ]
+            },
+            "properties": {
+                "CWPName": "AUSTINS COLONY SUBDIVISION",
                 "SourceID": "TXR15904G",
+                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77808",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365585",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.33327,
+                    30.67201
+                ]
+            },
+            "properties": {
+                "CWPName": "AUSTINS COLONY SUBDIVISION",
+                "SourceID": "TXR15227M",
                 "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -1936,81 +1936,7 @@
             },
             "properties": {
                 "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR15333O",
-                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77808",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365585",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001071"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.33327,
-                    30.67201
-                ]
-            },
-            "properties": {
-                "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR15376U",
-                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77808",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365585",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001071"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.33327,
-                    30.67201
-                ]
-            },
-            "properties": {
-                "CWPName": "AUSTINS COLONY SUBDIVISION",
-                "SourceID": "TXR15812A",
+                "SourceID": "TXR1509CS",
                 "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -2048,6 +1974,117 @@
             "properties": {
                 "CWPName": "AUSTINS COLONY SUBDIVISION",
                 "SourceID": "TXR1563ET",
+                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77808",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365585",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.327244,
+                    30.690106
+                ]
+            },
+            "properties": {
+                "CWPName": "AUSTINS COLONY SUBDIVISION",
+                "SourceID": "TXR1515EF",
+                "CWPStreet": "3008 BLACKFOOT CT",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070892071",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1515EF",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.33327,
+                    30.67201
+                ]
+            },
+            "properties": {
+                "CWPName": "AUSTINS COLONY SUBDIVISION",
+                "SourceID": "TXR15484T",
+                "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77808",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365585",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1509CS TXR1517ED TXR15227M TXR15333O TXR1535CL TXR15376U TXR15484T TXR15615N TXR1563ET TXR1564DR TXR15812A TXR1585AY TXR15904G",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.33327,
+                    30.67201
+                ]
+            },
+            "properties": {
+                "CWPName": "AUSTINS COLONY SUBDIVISION",
+                "SourceID": "TXR15376U",
                 "CWPStreet": "INTERSECTION OF BOONVILLE RD AND AUSTINS COLONY PK",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -2121,7 +2158,7 @@
             },
             "properties": {
                 "CWPName": "AUSTIN’S COLONY PHS. 22A",
-                "SourceID": "TXR10FA3O",
+                "SourceID": "TXR10FA3F",
                 "CWPStreet": "NW OF THORNBERRY DR. & ARCHER CIRCLE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -2158,7 +2195,7 @@
             },
             "properties": {
                 "CWPName": "AUSTIN’S COLONY PHS. 22A",
-                "SourceID": "TXR10FA3F",
+                "SourceID": "TXR10FA3O",
                 "CWPStreet": "NW OF THORNBERRY DR. & ARCHER CIRCLE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -2178,6 +2215,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10FA3F TXR10FA3O",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.33883,
+                    30.678087
+                ]
+            },
+            "properties": {
+                "CWPName": "BANK OF BCS",
+                "SourceID": "TXR1566LL",
+                "CWPStreet": "FROM HOUSTON, TEXAS TAKE 290 WEST TO HWY 6 TOWARD",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071365172",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1566LL",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -2367,6 +2441,43 @@
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
                 "CensusBlockGroup2020": "480410010014"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.38841,
+                    30.643854
+                ]
+            },
+            "properties": {
+                "CWPName": "BISD MAINTENANCE AND TRANSPORTATION",
+                "SourceID": "TXR1566LU",
+                "CWPStreet": "SOUTHWEST OF LEONARD ROAD & NORTH HARVEY MITCHELL",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77807",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "TXR1566LU",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": null,
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1566LU",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": null
             }
         },
         {
@@ -2966,43 +3077,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.38078,
-                    30.60482
-                ]
-            },
-            "properties": {
-                "CWPName": "BROADSTONE TRADITIONS",
-                "SourceID": "TXR15515C",
-                "CWPStreet": "8000 ATLAS PEAR DR",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77807-1400",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070371026",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070101",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR15515C",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410002072"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -96.3838,
                     30.6052
                 ]
@@ -3029,6 +3103,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F50D TXR10F50H",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410002072"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.38078,
+                    30.60482
+                ]
+            },
+            "properties": {
+                "CWPName": "BROADSTONE TRADITIONS",
+                "SourceID": "TXR15515C",
+                "CWPStreet": "8000 ATLAS PEAR DR",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77807-1400",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070371026",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR15515C",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -3275,10 +3386,10 @@
                 "CWPStateDistrict": null,
                 "CWPZip": "77807-1016",
                 "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "TXR1590LH",
+                "RegistryID": "110071363013",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
+                "FacDerivedHuc": "12070101",
                 "CWPNAICSCodes": null,
                 "CWPTotalDesignFlowNmbr": null,
                 "DschToMs4": null,
@@ -3291,7 +3402,7 @@
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
+                "CensusBlockGroup2020": "480410002061"
             }
         },
         {
@@ -3484,6 +3595,43 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.401079,
+                    30.718509
+                ]
+            },
+            "properties": {
+                "CWPName": "BRYAN TEXAS UTILITIES ADMINISTRATION BUILDING",
+                "SourceID": "TXR1544LL",
+                "CWPStreet": "2611 N EARL RUDDER FWY",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77803",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071365528",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1544LL",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410003012"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.390269,
                     30.595815
                 ]
@@ -3638,12 +3786,12 @@
             },
             "properties": {
                 "CWPName": "BURTON CREEK WWTP",
-                "SourceID": "TXR05Q529",
+                "SourceID": "TXR05EY18",
                 "CWPStreet": "300 PARK RD",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
-                "CWPZip": "77805",
+                "CWPZip": "77802",
                 "MasterExternalPermitNmbr": "TXR050000",
                 "RegistryID": "110070374008",
                 "CWPCounty": null,
@@ -3712,12 +3860,12 @@
             },
             "properties": {
                 "CWPName": "BURTON CREEK WWTP",
-                "SourceID": "TXR05EY18",
+                "SourceID": "TXR05Q529",
                 "CWPStreet": "300 PARK RD",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
-                "CWPZip": "77802",
+                "CWPZip": "77805",
                 "MasterExternalPermitNmbr": "TXR050000",
                 "RegistryID": "110070374008",
                 "CWPCounty": null,
@@ -4150,6 +4298,43 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.298574,
+                    30.633016
+                ]
+            },
+            "properties": {
+                "CWPName": "CARTER CREEK CONDOS PHASE 2",
+                "SourceID": "TXR1516LM",
+                "CWPStreet": "1451 ASSCOIATES AVENUE",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071363999",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1516LM",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020011"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.28182,
                     30.61602
                 ]
@@ -4267,6 +4452,43 @@
             },
             "properties": {
                 "CWPName": "CARTERS CREEK WASTEWATER TREATMENT PLANT",
+                "SourceID": "TXR05FH76",
+                "CWPStreet": "2200 N FOREST PKWY",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR050000",
+                "RegistryID": "110070368526",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": "N",
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TX0047163 TXR05CU94 TXR05FH76",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": "2022-06-14T00:00:00.00+00:00",
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020011"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.28182,
+                    30.61602
+                ]
+            },
+            "properties": {
+                "CWPName": "CARTERS CREEK WASTEWATER TREATMENT PLANT",
                 "SourceID": "TXR05CU94",
                 "CWPStreet": "2200 N FOREST PKWY",
                 "CWPCity": "COLLEGE STATION",
@@ -4298,36 +4520,36 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.28182,
-                    30.61602
+                    -96.2910986604742,
+                    30.5556499999484
                 ]
             },
             "properties": {
-                "CWPName": "CARTERS CREEK WASTEWATER TREATMENT PLANT",
-                "SourceID": "TXR05FH76",
-                "CWPStreet": "2200 N FOREST PKWY",
+                "CWPName": "CASTA WWTF",
+                "SourceID": "TX0143740",
+                "CWPStreet": "2640 FT SE OF THE INTERSECTION OF RAYMOND STOTZER ",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
-                "CWPStateDistrict": null,
+                "CWPStateDistrict": "09",
                 "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR050000",
-                "RegistryID": "110070368526",
-                "CWPCounty": null,
+                "MasterExternalPermitNmbr": null,
+                "RegistryID": "110071365058",
+                "CWPCounty": "Brazos",
                 "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
+                "FacDerivedHuc": null,
                 "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": "N",
+                "CWPTotalDesignFlowNmbr": 0.12,
+                "DschToMs4": null,
                 "ExposedActivity": null,
                 "NPDESDataGroupsDescs": null,
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TX0047163 TXR05CU94 TXR05FH76",
+                "NPDESIDs": "TX0143740",
                 "SDWAIDs": null,
-                "CWPDateLastInspSt": "2022-06-14T00:00:00.00+00:00",
+                "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020011"
+                "CensusBlockGroup2020": null
             }
         },
         {
@@ -4452,7 +4674,7 @@
             },
             "properties": {
                 "CWPName": "CHICK-FIL-A - COLLEGE STATION FM 2818 & WELLBORN TX 4215",
-                "SourceID": "TXR15876W",
+                "SourceID": "TXR15499V",
                 "CWPStreet": "HARVEY MITCHELL PARKWAY SOUTH AND WELLBORN ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -4489,7 +4711,7 @@
             },
             "properties": {
                 "CWPName": "CHICK-FIL-A - COLLEGE STATION FM 2818 & WELLBORN TX 4215",
-                "SourceID": "TXR15499V",
+                "SourceID": "TXR15876W",
                 "CWPStreet": "HARVEY MITCHELL PARKWAY SOUTH AND WELLBORN ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -4526,7 +4748,7 @@
             },
             "properties": {
                 "CWPName": "CHIMNEY HILL COMMERCIAL DEVELOPMENT",
-                "SourceID": "TXR10F7UR",
+                "SourceID": "TXR10F7UM",
                 "CWPStreet": "NW OF UNIVERSITY DRIVE E. & TARROW ST.",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -4563,7 +4785,7 @@
             },
             "properties": {
                 "CWPName": "CHIMNEY HILL COMMERCIAL DEVELOPMENT",
-                "SourceID": "TXR10F7UM",
+                "SourceID": "TXR10F7UR",
                 "CWPStreet": "NW OF UNIVERSITY DRIVE E. & TARROW ST.",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -5001,6 +5223,80 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.3209769968903,
+                    30.6133712371937
+                ]
+            },
+            "properties": {
+                "CWPName": "COCS CENTRAL PARK",
+                "SourceID": "TXR1581LO",
+                "CWPStreet": "1000 KRENEK TAP RD",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77840",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071369883",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": null,
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1581LO",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.2910986604742,
+                    30.5556499999484
+                ]
+            },
+            "properties": {
+                "CWPName": "COCS STEEPLECHASE PARK",
+                "SourceID": "TXR1582LO",
+                "CWPStreet": "301 W RIDGE DRIVE",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071371348",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": null,
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1582LO",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.299634,
                     30.609167
                 ]
@@ -5334,8 +5630,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.261952,
-                    30.56307
+                    -96.263539,
+                    30.566114
                 ]
             },
             "properties": {
@@ -5599,7 +5895,7 @@
             },
             "properties": {
                 "CWPName": "CRUZ SALVAGE YARD",
-                "SourceID": "TXR05FJ79",
+                "SourceID": "TXR05AL43",
                 "CWPStreet": "2506 W 28TH ST",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -5636,7 +5932,7 @@
             },
             "properties": {
                 "CWPName": "CRUZ SALVAGE YARD",
-                "SourceID": "TXR05AL43",
+                "SourceID": "TXR05FJ79",
                 "CWPStreet": "2506 W 28TH ST",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -6154,43 +6450,6 @@
             },
             "properties": {
                 "CWPName": "EASTERWOOD AIRPORT",
-                "SourceID": "TXR1583HS",
-                "CWPStreet": "1 MCKENZIE TERMINAL BLVD",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845-8501",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110037567825",
-                "CWPCounty": "Brazos",
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070101",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR05ET23 TXR1533AZ TXR1583HS",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480419800001"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.36603,
-                    30.59486
-                ]
-            },
-            "properties": {
-                "CWPName": "EASTERWOOD AIRPORT",
                 "SourceID": "TXR05Y578",
                 "CWPStreet": "1 MCKENZIE TERMINAL BLVD",
                 "CWPCity": "COLLEGE STATION",
@@ -6211,6 +6470,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR05Y578",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480419800001"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.36603,
+                    30.59486
+                ]
+            },
+            "properties": {
+                "CWPName": "EASTERWOOD AIRPORT",
+                "SourceID": "TXR1583HS",
+                "CWPStreet": "1 MCKENZIE TERMINAL BLVD",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845-8501",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110037567825",
+                "CWPCounty": "Brazos",
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR05ET23 TXR1533AZ TXR1583HS",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -6376,7 +6672,7 @@
             },
             "properties": {
                 "CWPName": "EMERALD RIDGE ESTATES PHS. 3A & 3B",
-                "SourceID": "TXR10F9LH",
+                "SourceID": "TXR10F9LD",
                 "CWPStreet": "SE OF APPOMATTOX DR. & EMERALD PKWY",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -6413,7 +6709,7 @@
             },
             "properties": {
                 "CWPName": "EMERALD RIDGE ESTATES PHS. 3A & 3B",
-                "SourceID": "TXR10F9LD",
+                "SourceID": "TXR10F9LH",
                 "CWPStreet": "SE OF APPOMATTOX DR. & EMERALD PKWY",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -6746,6 +7042,43 @@
             },
             "properties": {
                 "CWPName": "FOREST MILLER",
+                "SourceID": "TXR15648F",
+                "CWPStreet": "9017 GREEN BRANCH LOOP",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77808-4918",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070368004",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR15144Z TXR15424O TXR15648F",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001052"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.265739,
+                    30.695587
+                ]
+            },
+            "properties": {
+                "CWPName": "FOREST MILLER",
                 "SourceID": "TXR15144Z",
                 "CWPStreet": "9017 GREEN BRANCH LOOP",
                 "CWPCity": "BRYAN",
@@ -6784,43 +7117,6 @@
             "properties": {
                 "CWPName": "FOREST MILLER",
                 "SourceID": "TXR15424O",
-                "CWPStreet": "9017 GREEN BRANCH LOOP",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77808-4918",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070368004",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR15144Z TXR15424O TXR15648F",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001052"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.265739,
-                    30.695587
-                ]
-            },
-            "properties": {
-                "CWPName": "FOREST MILLER",
-                "SourceID": "TXR15648F",
                 "CWPStreet": "9017 GREEN BRANCH LOOP",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -7036,43 +7332,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.379954,
-                    30.595342
-                ]
-            },
-            "properties": {
-                "CWPName": "FUJIFILM NEXUS WAREHOUSE",
-                "SourceID": "TXR1502GR",
-                "CWPStreet": "3945 BIOMEDICAL WAY",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110071097565",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070101",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1502GR",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410002072"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -96.37933,
                     30.596728
                 ]
@@ -7099,6 +7358,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR1576DC",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410002072"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.379954,
+                    30.595342
+                ]
+            },
+            "properties": {
+                "CWPName": "FUJIFILM NEXUS WAREHOUSE",
+                "SourceID": "TXR1502GR",
+                "CWPStreet": "3945 BIOMEDICAL WAY",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071097565",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1502GR",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -7708,7 +8004,7 @@
             },
             "properties": {
                 "CWPName": "GREENBRIER PHS 2B",
-                "SourceID": "TXR1512JJ",
+                "SourceID": "TXR1540JI",
                 "CWPStreet": "NORTHEAST OF FOXCROFT PATH & FAIRHOPE WAY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -7745,7 +8041,7 @@
             },
             "properties": {
                 "CWPName": "GREENBRIER PHS 2B",
-                "SourceID": "TXR1540JI",
+                "SourceID": "TXR1512JJ",
                 "CWPStreet": "NORTHEAST OF FOXCROFT PATH & FAIRHOPE WAY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -7856,7 +8152,7 @@
             },
             "properties": {
                 "CWPName": "GREENBRIER PHS. 6B",
-                "SourceID": "TXR10F5O9",
+                "SourceID": "TXR10F5OC",
                 "CWPStreet": "NORTH OF THORNBERRY DRIVE AND FAIRFAX GREEN",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -7893,7 +8189,7 @@
             },
             "properties": {
                 "CWPName": "GREENBRIER PHS. 6B",
-                "SourceID": "TXR10F5OC",
+                "SourceID": "TXR10F5O9",
                 "CWPStreet": "NORTH OF THORNBERRY DRIVE AND FAIRFAX GREEN",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -8257,43 +8553,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.365332,
-                    30.698284
-                ]
-            },
-            "properties": {
-                "CWPName": "HERITAGE MEADOWS",
-                "SourceID": "TXR1566FR",
-                "CWPStreet": "BEGIN AT THE INTERSECTION OF NUCHES LN AND COLSON",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77803",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070743010",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1537BY TXR1566FR",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410003022"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -96.365,
                     30.6985
                 ]
@@ -8338,6 +8597,43 @@
             "properties": {
                 "CWPName": "HERITAGE MEADOWS",
                 "SourceID": "TXR1537BY",
+                "CWPStreet": "BEGIN AT THE INTERSECTION OF NUCHES LN AND COLSON",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77803",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070743010",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1537BY TXR1566FR",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410003022"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.365332,
+                    30.698284
+                ]
+            },
+            "properties": {
+                "CWPName": "HERITAGE MEADOWS",
+                "SourceID": "TXR1566FR",
                 "CWPStreet": "BEGIN AT THE INTERSECTION OF NUCHES LN AND COLSON",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -8818,17 +9114,17 @@
             },
             "properties": {
                 "CWPName": "HUDSON OAKS SENIOR LIVING",
-                "SourceID": "TXR1541LG",
+                "SourceID": "TXR1567LJ",
                 "CWPStreet": "SE OF CROSS PARK DR & SAGEBRIAR DR",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
                 "CWPZip": "77802",
                 "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "TXR1541LG",
+                "RegistryID": "110071364166",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
+                "FacDerivedHuc": "12070103",
                 "CWPNAICSCodes": null,
                 "CWPTotalDesignFlowNmbr": null,
                 "DschToMs4": null,
@@ -8837,11 +9133,11 @@
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TXR1541LG",
+                "NPDESIDs": "TXR1541LG TXR1567LJ",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
+                "CensusBlockGroup2020": "480410020221"
             }
         },
         {
@@ -8855,17 +9151,17 @@
             },
             "properties": {
                 "CWPName": "HUDSON OAKS SENIOR LIVING",
-                "SourceID": "TXR1567LJ",
+                "SourceID": "TXR1541LG",
                 "CWPStreet": "SE OF CROSS PARK DR & SAGEBRIAR DR",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
                 "CWPZip": "77802",
                 "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "TXR1567LJ",
+                "RegistryID": "110071364166",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
+                "FacDerivedHuc": "12070103",
                 "CWPNAICSCodes": null,
                 "CWPTotalDesignFlowNmbr": null,
                 "DschToMs4": null,
@@ -8874,11 +9170,11 @@
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TXR1567LJ",
+                "NPDESIDs": "TXR1541LG TXR1567LJ",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
+                "CensusBlockGroup2020": "480410020221"
             }
         },
         {
@@ -8966,12 +9262,12 @@
             },
             "properties": {
                 "CWPName": "IBIO CDMO",
-                "SourceID": "TXRNEBJ79",
+                "SourceID": "TXR05FL35",
                 "CWPStreet": "8800 HSC PKWY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
-                "CWPZip": "77807",
+                "CWPZip": "77807-1107",
                 "MasterExternalPermitNmbr": "TXR050000",
                 "RegistryID": "110070825427",
                 "CWPCounty": null,
@@ -9003,12 +9299,12 @@
             },
             "properties": {
                 "CWPName": "IBIO CDMO",
-                "SourceID": "TXR05FL35",
+                "SourceID": "TXRNEBJ79",
                 "CWPStreet": "8800 HSC PKWY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
-                "CWPZip": "77807-1107",
+                "CWPZip": "77807",
                 "MasterExternalPermitNmbr": "TXR050000",
                 "RegistryID": "110070825427",
                 "CWPCounty": null,
@@ -10113,7 +10409,7 @@
             },
             "properties": {
                 "CWPName": "MACHINE WORKS",
-                "SourceID": "TXR05BI60",
+                "SourceID": "TXR05FL51",
                 "CWPStreet": "1590B N HARVEY MITCHELL PKWY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -10150,7 +10446,7 @@
             },
             "properties": {
                 "CWPName": "MACHINE WORKS",
-                "SourceID": "TXR05FL51",
+                "SourceID": "TXR05BI60",
                 "CWPStreet": "1590B N HARVEY MITCHELL PKWY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -10483,7 +10779,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN CITY CENTER",
-                "SourceID": "TXR1519LF",
+                "SourceID": "TXR1557LF",
                 "CWPStreet": "SOUTH OF MCQUEENY DRIVE & TOWN LAKE DRIVE",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -10520,7 +10816,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN CITY CENTER",
-                "SourceID": "TXR1557LF",
+                "SourceID": "TXR1519LF",
                 "CWPStreet": "SOUTH OF MCQUEENY DRIVE & TOWN LAKE DRIVE",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -10742,7 +11038,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN PARK - OFFSITE",
-                "SourceID": "TXR10F9Q0",
+                "SourceID": "TXR10F9Q7",
                 "CWPStreet": "EAST OF W. CARSON ST. & NORTHERN ST.",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -10779,7 +11075,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN PARK - OFFSITE",
-                "SourceID": "TXR10F9Q7",
+                "SourceID": "TXR10F9Q0",
                 "CWPStreet": "EAST OF W. CARSON ST. & NORTHERN ST.",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -11075,7 +11371,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN RESERVE PHS. 106",
-                "SourceID": "TXR10F9DQ",
+                "SourceID": "TXR10F9DN",
                 "CWPStreet": "SE OF ROCK PRAIRIE ROAD & BIRD POND ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -11112,7 +11408,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN RESERVE PHS. 106",
-                "SourceID": "TXR10F9DN",
+                "SourceID": "TXR10F9DQ",
                 "CWPStreet": "SE OF ROCK PRAIRIE ROAD & BIRD POND ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -11223,7 +11519,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN RESERVE PHS. 201",
-                "SourceID": "TXR10F80I",
+                "SourceID": "TXR10F80F",
                 "CWPStreet": "SE OF ROCK PRAIRIE ROAD & BIRD POND ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -11260,7 +11556,7 @@
             },
             "properties": {
                 "CWPName": "MIDTOWN RESERVE PHS. 201",
-                "SourceID": "TXR10F80F",
+                "SourceID": "TXR10F80I",
                 "CWPStreet": "SE OF ROCK PRAIRIE ROAD & BIRD POND ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -11482,7 +11778,7 @@
             },
             "properties": {
                 "CWPName": "MIRAMONT SEC. 7",
-                "SourceID": "TXR10F8FS",
+                "SourceID": "TXR10F8FO",
                 "CWPStreet": "NE OF BOONVILLE ROAD & TESORI DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -11519,7 +11815,7 @@
             },
             "properties": {
                 "CWPName": "MIRAMONT SEC. 7",
-                "SourceID": "TXR10F8FO",
+                "SourceID": "TXR10F8FS",
                 "CWPStreet": "NE OF BOONVILLE ROAD & TESORI DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -11550,43 +11846,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.30797,
-                    30.67804
-                ]
-            },
-            "properties": {
-                "CWPName": "MIRAMONT SUBDIVISION",
-                "SourceID": "TXR1511BM",
-                "CWPStreet": "5121 MIRAMONT CIR",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77802",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070693628",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1511BM",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001051"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -96.314345,
                     30.66757
                 ]
@@ -11594,117 +11853,6 @@
             "properties": {
                 "CWPName": "MIRAMONT SUBDIVISION",
                 "SourceID": "TXR15476X",
-                "CWPStreet": "LOCATED AT THE INTERSECTION OF MIRAMONT BOULEVARD",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77802",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070552112",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1536DM TXR1544EW TXR15476X TXR1570GB TXR1583FC",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001051"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.305731,
-                    30.668549
-                ]
-            },
-            "properties": {
-                "CWPName": "MIRAMONT SUBDIVISION",
-                "SourceID": "TXR1523HA",
-                "CWPStreet": "4717 CONCORDIA DR",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77802",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110071149387",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1523HA",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001051"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.314345,
-                    30.66757
-                ]
-            },
-            "properties": {
-                "CWPName": "MIRAMONT SUBDIVISION",
-                "SourceID": "TXR1544EW",
-                "CWPStreet": "LOCATED AT THE INTERSECTION OF MIRAMONT BOULEVARD",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77802",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070552112",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1536DM TXR1544EW TXR15476X TXR1570GB TXR1583FC",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001051"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.314345,
-                    30.66757
-                ]
-            },
-            "properties": {
-                "CWPName": "MIRAMONT SUBDIVISION",
-                "SourceID": "TXR1536DM",
                 "CWPStreet": "LOCATED AT THE INTERSECTION OF MIRAMONT BOULEVARD",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -11772,20 +11920,20 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.306388,
-                    30.677733
+                    -96.305731,
+                    30.668549
                 ]
             },
             "properties": {
                 "CWPName": "MIRAMONT SUBDIVISION",
-                "SourceID": "TXR1518EH",
-                "CWPStreet": "5202 BOURRONE CT",
+                "SourceID": "TXR1523HA",
+                "CWPStreet": "4717 CONCORDIA DR",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
                 "CWPZip": "77802",
                 "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070893529",
+                "RegistryID": "110071149387",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
                 "FacDerivedHuc": "12070103",
@@ -11797,7 +11945,7 @@
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TXR1518EH",
+                "NPDESIDs": "TXR1523HA",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -11815,7 +11963,7 @@
             },
             "properties": {
                 "CWPName": "MIRAMONT SUBDIVISION",
-                "SourceID": "TXR1583FC",
+                "SourceID": "TXR1536DM",
                 "CWPStreet": "LOCATED AT THE INTERSECTION OF MIRAMONT BOULEVARD",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -11883,6 +12031,43 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.306388,
+                    30.677733
+                ]
+            },
+            "properties": {
+                "CWPName": "MIRAMONT SUBDIVISION",
+                "SourceID": "TXR1518EH",
+                "CWPStreet": "5202 BOURRONE CT",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070893529",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1518EH",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001051"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.308456,
                     30.676844
                 ]
@@ -11909,6 +12094,117 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR1515IZ",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001051"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.314345,
+                    30.66757
+                ]
+            },
+            "properties": {
+                "CWPName": "MIRAMONT SUBDIVISION",
+                "SourceID": "TXR1583FC",
+                "CWPStreet": "LOCATED AT THE INTERSECTION OF MIRAMONT BOULEVARD",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070552112",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1536DM TXR1544EW TXR15476X TXR1570GB TXR1583FC",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001051"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.314345,
+                    30.66757
+                ]
+            },
+            "properties": {
+                "CWPName": "MIRAMONT SUBDIVISION",
+                "SourceID": "TXR1544EW",
+                "CWPStreet": "LOCATED AT THE INTERSECTION OF MIRAMONT BOULEVARD",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070552112",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1536DM TXR1544EW TXR15476X TXR1570GB TXR1583FC",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001051"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.30797,
+                    30.67804
+                ]
+            },
+            "properties": {
+                "CWPName": "MIRAMONT SUBDIVISION",
+                "SourceID": "TXR1511BM",
+                "CWPStreet": "5121 MIRAMONT CIR",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070693628",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1511BM",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -12000,7 +12296,7 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH 202",
-                "SourceID": "TXR10F88V",
+                "SourceID": "TXR10F88Z",
                 "CWPStreet": "NW OF ABBATE ROAD & HOLLEMAN DR. SOUTH",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -12037,7 +12333,7 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH 202",
-                "SourceID": "TXR10F88Z",
+                "SourceID": "TXR10F88V",
                 "CWPStreet": "NW OF ABBATE ROAD & HOLLEMAN DR. SOUTH",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -12057,43 +12353,6 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F88V TXR10F88Z",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020212"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.3335,
-                    30.564
-                ]
-            },
-            "properties": {
-                "CWPName": "MISSION RANCH 302",
-                "SourceID": "TXR10F890",
-                "CWPStreet": "EAST OF DURRANT ST. & GREAT OAKS DRIVE",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110070741760",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070101",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F890",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -12131,6 +12390,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F88U",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020212"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.3335,
+                    30.564
+                ]
+            },
+            "properties": {
+                "CWPName": "MISSION RANCH 302",
+                "SourceID": "TXR10F890",
+                "CWPStreet": "EAST OF DURRANT ST. & GREAT OAKS DRIVE",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110070741760",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F890",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -12333,7 +12629,7 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH PHS 203",
-                "SourceID": "TXR1528KH",
+                "SourceID": "TXR1549JX",
                 "CWPStreet": "NW OF ANDERSON ARBOR CT & KERR VALLEY LN",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -12370,7 +12666,7 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH PHS 203",
-                "SourceID": "TXR1549JX",
+                "SourceID": "TXR1528KH",
                 "CWPStreet": "NW OF ANDERSON ARBOR CT & KERR VALLEY LN",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -12401,45 +12697,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.332102,
-                    30.566167
-                ]
-            },
-            "properties": {
-                "CWPName": "MISSION RANCH PHS 303",
-                "SourceID": "TXR1566LJ",
-                "CWPStreet": "NW OF ABBATE RD & HOLLEMAN DR S",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "TXR1566LJ",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1566LJ",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.332102,
-                    30.566167
+                    -96.3342,
+                    30.5703
                 ]
             },
             "properties": {
@@ -12451,10 +12710,10 @@
                 "CWPStateDistrict": null,
                 "CWPZip": "77845",
                 "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "TXR1546LJ",
+                "RegistryID": "110071094873",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
+                "FacDerivedHuc": "12070101",
                 "CWPNAICSCodes": null,
                 "CWPTotalDesignFlowNmbr": null,
                 "DschToMs4": null,
@@ -12463,11 +12722,122 @@
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TXR1546LJ",
+                "NPDESIDs": "TXR10F9RV TXR10F9SB TXR1546LJ TXR1566LJ",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
+                "CensusBlockGroup2020": "480410020212"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.3342,
+                    30.5703
+                ]
+            },
+            "properties": {
+                "CWPName": "MISSION RANCH PHS 303",
+                "SourceID": "TXR1566LJ",
+                "CWPStreet": "NW OF ABBATE RD & HOLLEMAN DR S",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071094873",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F9RV TXR10F9SB TXR1546LJ TXR1566LJ",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020212"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.32923,
+                    30.561454
+                ]
+            },
+            "properties": {
+                "CWPName": "MISSION RANCH PHS 403",
+                "SourceID": "TXR1571LK",
+                "CWPStreet": "SOUTH OF SHERRILL COURT & SIENNA SPRINGS DRIVE",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071362329",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1547LL TXR1571LK",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020212"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.32923,
+                    30.561454
+                ]
+            },
+            "properties": {
+                "CWPName": "MISSION RANCH PHS 403",
+                "SourceID": "TXR1547LL",
+                "CWPStreet": "SOUTH OF SHERRILL COURT & SIENNA SPRINGS DRIVE",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071362329",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1547LL TXR1571LK",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020212"
             }
         },
         {
@@ -12555,7 +12925,7 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH PHS. 102",
-                "SourceID": "TXR10F7Z5",
+                "SourceID": "TXR10F7ZF",
                 "CWPStreet": "NW OF ROCK PRAIRIE ROAD & HOLLMAN DRIVE",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -12592,7 +12962,7 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH PHS. 102",
-                "SourceID": "TXR10F7ZF",
+                "SourceID": "TXR10F7Z5",
                 "CWPStreet": "NW OF ROCK PRAIRIE ROAD & HOLLMAN DRIVE",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -12851,43 +13221,6 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH PHS. 501",
-                "SourceID": "TXR10F9RV",
-                "CWPStreet": "NW OF ABBATE RD & HOLLEMAN DR S",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110071094873",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070101",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F9RV TXR10F9SB",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020212"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.3342,
-                    30.5703
-                ]
-            },
-            "properties": {
-                "CWPName": "MISSION RANCH PHS. 501",
                 "SourceID": "TXR10F9SB",
                 "CWPStreet": "NW OF ABBATE RD & HOLLEMAN DR S",
                 "CWPCity": "COLLEGE STATION",
@@ -12907,7 +13240,7 @@
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TXR10F9RV TXR10F9SB",
+                "NPDESIDs": "TXR10F9RV TXR10F9SB TXR1546LJ TXR1566LJ",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -12919,20 +13252,20 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.325943,
-                    30.563377
+                    -96.3342,
+                    30.5703
                 ]
             },
             "properties": {
-                "CWPName": "MISSION RANCH SUBDIVISION PHS 104",
-                "SourceID": "TXR1592JN",
-                "CWPStreet": "SOUTHEAST OF SIENNA SPRINGS DR & FEATHER RUN",
+                "CWPName": "MISSION RANCH PHS. 501",
+                "SourceID": "TXR10F9RV",
+                "CWPStreet": "NW OF ABBATE RD & HOLLEMAN DR S",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
                 "CWPStateDistrict": null,
                 "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110071296141",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110071094873",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
                 "FacDerivedHuc": "12070101",
@@ -12940,11 +13273,11 @@
                 "CWPTotalDesignFlowNmbr": null,
                 "DschToMs4": null,
                 "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TXR1524JO TXR1592JN",
+                "NPDESIDs": "TXR10F9RV TXR10F9SB TXR1546LJ TXR1566LJ",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -12993,13 +13326,50 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.325943,
+                    30.563377
+                ]
+            },
+            "properties": {
+                "CWPName": "MISSION RANCH SUBDIVISION PHS 104",
+                "SourceID": "TXR1592JN",
+                "CWPStreet": "SOUTHEAST OF SIENNA SPRINGS DR & FEATHER RUN",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071296141",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1524JO TXR1592JN",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020212"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.335508,
                     30.569833
                 ]
             },
             "properties": {
                 "CWPName": "MISSION RANCH SUBDIVISION PHS 502 & 503",
-                "SourceID": "TXR1558IX",
+                "SourceID": "TXR1559IX",
                 "CWPStreet": "NORTHWEST OF BEXAR BLUFF PASS & FEATHER RUN",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -13036,7 +13406,7 @@
             },
             "properties": {
                 "CWPName": "MISSION RANCH SUBDIVISION PHS 502 & 503",
-                "SourceID": "TXR1559IX",
+                "SourceID": "TXR1558IX",
                 "CWPStreet": "NORTHWEST OF BEXAR BLUFF PASS & FEATHER RUN",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -13332,7 +13702,7 @@
             },
             "properties": {
                 "CWPName": "NORTH AMERICA PACKAGING",
-                "SourceID": "TXR05W509",
+                "SourceID": "TXR05FP17",
                 "CWPStreet": "1591 N HARVEY MITCHELL PKWY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -13369,7 +13739,7 @@
             },
             "properties": {
                 "CWPName": "NORTH AMERICA PACKAGING",
-                "SourceID": "TXR05FP17",
+                "SourceID": "TXR05W509",
                 "CWPStreet": "1591 N HARVEY MITCHELL PKWY",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -13554,6 +13924,43 @@
             },
             "properties": {
                 "CWPName": "NORTHCREST COTTAGES",
+                "SourceID": "TXR1571FZ",
+                "CWPStreet": "1902 BASIL CT",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77801",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071067111",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1568FX TXR1571FZ",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410006052"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.37707,
+                    30.64995
+                ]
+            },
+            "properties": {
+                "CWPName": "NORTHCREST COTTAGES",
                 "SourceID": "TXR1568FX",
                 "CWPStreet": "1902 BASIL CT",
                 "CWPCity": "BRYAN",
@@ -13611,43 +14018,6 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR1534CB TXR1540AH",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410006052"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.37707,
-                    30.64995
-                ]
-            },
-            "properties": {
-                "CWPName": "NORTHCREST COTTAGES",
-                "SourceID": "TXR1571FZ",
-                "CWPStreet": "1902 BASIL CT",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77801",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110071067111",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1568FX TXR1571FZ",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -13813,7 +14183,7 @@
             },
             "properties": {
                 "CWPName": "OAKMONT - ALL PHASES",
-                "SourceID": "TXR1519CM",
+                "SourceID": "TXR15582S",
                 "CWPStreet": "APPROXIMATELY 1/2 MILE WEST OF UNIVERSITY DRIVE ON",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -13850,7 +14220,7 @@
             },
             "properties": {
                 "CWPName": "OAKMONT - ALL PHASES",
-                "SourceID": "TXR15582S",
+                "SourceID": "TXR1519CM",
                 "CWPStreet": "APPROXIMATELY 1/2 MILE WEST OF UNIVERSITY DRIVE ON",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -13894,10 +14264,10 @@
                 "CWPStateDistrict": null,
                 "CWPZip": "77802",
                 "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "TXR1593LH",
+                "RegistryID": "110071365606",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
+                "FacDerivedHuc": "12070103",
                 "CWPNAICSCodes": null,
                 "CWPTotalDesignFlowNmbr": null,
                 "DschToMs4": null,
@@ -13910,7 +14280,7 @@
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
+                "CensusBlockGroup2020": "480410001051"
             }
         },
         {
@@ -13931,10 +14301,10 @@
                 "CWPStateDistrict": null,
                 "CWPZip": "77802",
                 "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "TXR1596LH",
+                "RegistryID": "110071364329",
                 "CWPCounty": null,
                 "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
+                "FacDerivedHuc": "12070103",
                 "CWPNAICSCodes": null,
                 "CWPTotalDesignFlowNmbr": null,
                 "DschToMs4": null,
@@ -13947,7 +14317,44 @@
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
+                "CensusBlockGroup2020": "480410001051"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.294098,
+                    30.66405
+                ]
+            },
+            "properties": {
+                "CWPName": "OAKMONT 5",
+                "SourceID": "TXR1569LM",
+                "CWPStreet": "THE INTERSECTION OF BEACON HEIGHTS DR AND APPALACH",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071365414",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1569LM",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001051"
             }
         },
         {
@@ -14109,43 +14516,6 @@
             },
             "properties": {
                 "CWPName": "OAKMONT PHS. 1A",
-                "SourceID": "TXR10F5MZ",
-                "CWPStreet": "EAST OF COPPERFIELD DRIVE AND BOONVILLE ROAD",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77802",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110070219461",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F5MY TXR10F5MZ",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001051"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.2989,
-                    30.662
-                ]
-            },
-            "properties": {
-                "CWPName": "OAKMONT PHS. 1A",
                 "SourceID": "TXR10F5N3",
                 "CWPStreet": "E. OF COPPERFIELD DRIVE AND BOONVILLE ROAD",
                 "CWPCity": "BYRAN",
@@ -14166,6 +14536,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F5N3",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001051"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.2989,
+                    30.662
+                ]
+            },
+            "properties": {
+                "CWPName": "OAKMONT PHS. 1A",
+                "SourceID": "TXR10F5MZ",
+                "CWPStreet": "EAST OF COPPERFIELD DRIVE AND BOONVILLE ROAD",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110070219461",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F5MY TXR10F5MZ",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -14257,7 +14664,7 @@
             },
             "properties": {
                 "CWPName": "OAKMONT PHS. 2A",
-                "SourceID": "TXR10F8C4",
+                "SourceID": "TXR10F8CH",
                 "CWPStreet": "NW OF PRECIPICE DR. & MAROON CREEK DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -14294,7 +14701,7 @@
             },
             "properties": {
                 "CWPName": "OAKMONT PHS. 2A",
-                "SourceID": "TXR10F8CH",
+                "SourceID": "TXR10F8C4",
                 "CWPStreet": "NW OF PRECIPICE DR. & MAROON CREEK DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -14516,6 +14923,43 @@
             },
             "properties": {
                 "CWPName": "OAKMONT SUBDIVISION PHASE 1B",
+                "SourceID": "TXR1584AY",
+                "CWPStreet": "SUBDIVISION ENTRANCE IS LOCATED APPROXIMATELY 1/2",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070528905",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR15292Y TXR1541AM TXR15549Z TXR15673W TXR15674W TXR15747V TXR1584AY TXR15909Y",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001051"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.28988,
+                    30.662992
+                ]
+            },
+            "properties": {
+                "CWPName": "OAKMONT SUBDIVISION PHASE 1B",
                 "SourceID": "TXR15292Y",
                 "CWPStreet": "SUBDIVISION ENTRANCE IS LOCATED APPROXIMATELY 1/2",
                 "CWPCity": "BRYAN",
@@ -14553,7 +14997,7 @@
             },
             "properties": {
                 "CWPName": "OAKMONT SUBDIVISION PHASE 1B",
-                "SourceID": "TXR1584AY",
+                "SourceID": "TXR1541AM",
                 "CWPStreet": "SUBDIVISION ENTRANCE IS LOCATED APPROXIMATELY 1/2",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -14628,43 +15072,6 @@
             "properties": {
                 "CWPName": "OAKMONT SUBDIVISION PHASE 1B",
                 "SourceID": "TXR15747V",
-                "CWPStreet": "SUBDIVISION ENTRANCE IS LOCATED APPROXIMATELY 1/2",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77802",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070528905",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR15292Y TXR1541AM TXR15549Z TXR15673W TXR15674W TXR15747V TXR1584AY TXR15909Y",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001051"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.28988,
-                    30.662992
-                ]
-            },
-            "properties": {
-                "CWPName": "OAKMONT SUBDIVISION PHASE 1B",
-                "SourceID": "TXR1541AM",
                 "CWPStreet": "SUBDIVISION ENTRANCE IS LOCATED APPROXIMATELY 1/2",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -15287,43 +15694,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.3287273461895,
-                    30.6585178649084
-                ]
-            },
-            "properties": {
-                "CWPName": "RACEWAY 6934",
-                "SourceID": "TXG830578",
-                "CWPStreet": "2105 E WILLIAM JOEL BRYAN PKWY",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": "09",
-                "CWPZip": "77802",
-                "MasterExternalPermitNmbr": "TXG830000",
-                "RegistryID": "110069579361",
-                "CWPCounty": "Brazos",
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXG830578",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -96.33566,
                     30.67736
                 ]
@@ -15354,6 +15724,43 @@
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
                 "CensusBlockGroup2020": "480410001071"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.3287273461895,
+                    30.6585178649084
+                ]
+            },
+            "properties": {
+                "CWPName": "RACEWAY 6934",
+                "SourceID": "TXG830578",
+                "CWPStreet": "2105 E WILLIAM JOEL BRYAN PKWY",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": "09",
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXG830000",
+                "RegistryID": "110069579361",
+                "CWPCounty": "Brazos",
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": null,
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXG830578",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": null
             }
         },
         {
@@ -15552,43 +15959,6 @@
             },
             "properties": {
                 "CWPName": "RED LION",
-                "SourceID": "TXR10F6NE",
-                "CWPStreet": "NORTH OF SOUTH TEXAS AVE. AND MORGANS LANE",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110070501554",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F6NE",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410017021"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.2983,
-                    30.5987
-                ]
-            },
-            "properties": {
-                "CWPName": "RED LION",
                 "SourceID": "TXR10F6MJ",
                 "CWPStreet": "NORTH OF SO. TEXAS AVE. AND MORGANS LANE",
                 "CWPCity": "COLLEGE STATION",
@@ -15609,6 +15979,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F6MJ",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410017021"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.2983,
+                    30.5987
+                ]
+            },
+            "properties": {
+                "CWPName": "RED LION",
+                "SourceID": "TXR10F6NE",
+                "CWPStreet": "NORTH OF SOUTH TEXAS AVE. AND MORGANS LANE",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110070501554",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F6NE",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -16403,43 +16810,6 @@
             },
             "properties": {
                 "CWPName": "SODALIS ASSISTED LIVING",
-                "SourceID": "TXR10F6WU",
-                "CWPStreet": "SW OF CRESCENT POINTE PKWY AND COPPERFIELD PKWY",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110070520054",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F6WU",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020161"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.2909,
-                    30.6434
-                ]
-            },
-            "properties": {
-                "CWPName": "SODALIS ASSISTED LIVING",
                 "SourceID": "TXR10F6XC",
                 "CWPStreet": "SW OF CRESCENT POINTE PKWY & COPPERFIELD PKWY",
                 "CWPCity": "COLLEGE STATION",
@@ -16460,6 +16830,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F6XC",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020161"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.2909,
+                    30.6434
+                ]
+            },
+            "properties": {
+                "CWPName": "SODALIS ASSISTED LIVING",
+                "SourceID": "TXR10F6WU",
+                "CWPStreet": "SW OF CRESCENT POINTE PKWY AND COPPERFIELD PKWY",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110070520054",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F6WU",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -16921,7 +17328,7 @@
             },
             "properties": {
                 "CWPName": "STONEBRIER PHS. 2",
-                "SourceID": "TXR10FA5E",
+                "SourceID": "TXR10FA4C",
                 "CWPStreet": "NE OF FM-1179 & RIVERSTONE DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -16958,7 +17365,7 @@
             },
             "properties": {
                 "CWPName": "STONEBRIER PHS. 2",
-                "SourceID": "TXR10FA4C",
+                "SourceID": "TXR10FA5E",
                 "CWPStreet": "NE OF FM-1179 & RIVERSTONE DRIVE",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -17365,7 +17772,7 @@
             },
             "properties": {
                 "CWPName": "TARROW TOWNHOMES",
-                "SourceID": "TXR10F5P0",
+                "SourceID": "TXR10F5PH",
                 "CWPStreet": "SW OF AUTUMN CIRCLE AND E. 29TH ST.",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -17402,7 +17809,7 @@
             },
             "properties": {
                 "CWPName": "TARROW TOWNHOMES",
-                "SourceID": "TXR10F5PH",
+                "SourceID": "TXR10F5P0",
                 "CWPStreet": "SW OF AUTUMN CIRCLE AND E. 29TH ST.",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -17513,43 +17920,6 @@
             },
             "properties": {
                 "CWPName": "TEXAS A & M SOFTBALL AND TRACK AND FIELD STADIUM",
-                "SourceID": "TXR10F534",
-                "CWPStreet": "E. OF TOM CHANDLER RD AND PENBERTHY ROAD",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77840",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110070133141",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070101",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F534",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020171"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.345,
-                    30.6037
-                ]
-            },
-            "properties": {
-                "CWPName": "TEXAS A & M SOFTBALL AND TRACK AND FIELD STADIUM",
                 "SourceID": "TXR10F53D",
                 "CWPStreet": "EAST OF TOM CHANDLER ROAD AND PENBERTHY RD.",
                 "CWPCity": "COLLEGE STATION",
@@ -17570,6 +17940,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F53D",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020171"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.345,
+                    30.6037
+                ]
+            },
+            "properties": {
+                "CWPName": "TEXAS A & M SOFTBALL AND TRACK AND FIELD STADIUM",
+                "SourceID": "TXR10F534",
+                "CWPStreet": "E. OF TOM CHANDLER RD AND PENBERTHY ROAD",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77840",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110070133141",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F534",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -17661,7 +18068,7 @@
             },
             "properties": {
                 "CWPName": "TEXAS A&M GREENHOUSES",
-                "SourceID": "TXR10F878",
+                "SourceID": "TXR10F87M",
                 "CWPStreet": "NORTH OF F & B ROAD & AGRONOMY ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -17698,7 +18105,7 @@
             },
             "properties": {
                 "CWPName": "TEXAS A&M GREENHOUSES",
-                "SourceID": "TXR10F87M",
+                "SourceID": "TXR10F878",
                 "CWPStreet": "NORTH OF F & B ROAD & AGRONOMY ROAD",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -18062,43 +18469,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.3209769968903,
-                    30.6133712371937
-                ]
-            },
-            "properties": {
-                "CWPName": "TEXAS A&M UNIVERSITY MS4",
-                "SourceID": "TXR040562",
-                "CWPStreet": "CAMPUS OF TEXAS A&M UNIVERSITY LOCATED WITHIN THE",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": "09",
-                "CWPZip": "77840",
-                "MasterExternalPermitNmbr": "TXR040000",
-                "RegistryID": "110067235307",
-                "CWPCounty": "Brazos",
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR040562",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": "2020-11-17T00:00:00.00+00:00",
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -96.340555,
                     30.615555
                 ]
@@ -18129,6 +18499,43 @@
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
                 "CensusBlockGroup2020": "480410021003"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.3209769968903,
+                    30.6133712371937
+                ]
+            },
+            "properties": {
+                "CWPName": "TEXAS A&M UNIVERSITY MS4",
+                "SourceID": "TXR040562",
+                "CWPStreet": "CAMPUS OF TEXAS A&M UNIVERSITY LOCATED WITHIN THE",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": "09",
+                "CWPZip": "77840",
+                "MasterExternalPermitNmbr": "TXR040000",
+                "RegistryID": "110067235307",
+                "CWPCounty": "Brazos",
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": null,
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR040562",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": "2020-11-17T00:00:00.00+00:00",
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": null
             }
         },
         {
@@ -18290,43 +18697,6 @@
             },
             "properties": {
                 "CWPName": "TEXAS TRUCK RIGGINS",
-                "SourceID": "TXR10F6MI",
-                "CWPStreet": "NE OF HWY 158 AND MOHAWK ST.",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77808",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110070389613",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F6MI",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410001072"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.323,
-                    30.6717
-                ]
-            },
-            "properties": {
-                "CWPName": "TEXAS TRUCK RIGGINS",
                 "SourceID": "TXR10F6ND",
                 "CWPStreet": "NE OF HWY 158 AND MOHAWK DT.",
                 "CWPCity": "BRYAN",
@@ -18347,6 +18717,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F6ND",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410001072"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.323,
+                    30.6717
+                ]
+            },
+            "properties": {
+                "CWPName": "TEXAS TRUCK RIGGINS",
+                "SourceID": "TXR10F6MI",
+                "CWPStreet": "NE OF HWY 158 AND MOHAWK ST.",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77808",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110070389613",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F6MI",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -18802,6 +19209,43 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.3287273461895,
+                    30.6585178649084
+                ]
+            },
+            "properties": {
+                "CWPName": "TIMOTHY & LINDA GAITHER",
+                "SourceID": "TXR1517LS",
+                "CWPStreet": "4705 CONCORDIA DR",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77802",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071369493",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": null,
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1517LS",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.29067,
                     30.64683
                 ]
@@ -19067,43 +19511,6 @@
             },
             "properties": {
                 "CWPName": "TRADITIONS PHS 38",
-                "SourceID": "TXR1563KT",
-                "CWPStreet": "NW OF ATLAS PEAR DR. & HEALTH SCIENCE CENTER PKWY",
-                "CWPCity": "BRYAN",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77807",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110071347820",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070101",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR1563KT",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410002072"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.382326,
-                    30.606608
-                ]
-            },
-            "properties": {
-                "CWPName": "TRADITIONS PHS 38",
                 "SourceID": "TXR1513KU",
                 "CWPStreet": "NW OF ATLAS PEAR DRIVE & HEALTH SCIENCE CENTER PKW",
                 "CWPCity": "BRYAN",
@@ -19124,6 +19531,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR1513KU",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410002072"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.382326,
+                    30.606608
+                ]
+            },
+            "properties": {
+                "CWPName": "TRADITIONS PHS 38",
+                "SourceID": "TXR1563KT",
+                "CWPStreet": "NW OF ATLAS PEAR DR. & HEALTH SCIENCE CENTER PKWY",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77807",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071347820",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1563KT",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -19215,7 +19659,7 @@
             },
             "properties": {
                 "CWPName": "TRADITIONS PHS. 35",
-                "SourceID": "TXR10F9Z9",
+                "SourceID": "TXR10F9YY",
                 "CWPStreet": "SW OF CLUB DR. & SOUTH TRADITIONS DR.",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -19252,7 +19696,7 @@
             },
             "properties": {
                 "CWPName": "TRADITIONS PHS. 35",
-                "SourceID": "TXR10F9YY",
+                "SourceID": "TXR10F9Z9",
                 "CWPStreet": "SW OF CLUB DR. & SOUTH TRADITIONS DR.",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -19382,7 +19826,44 @@
                 "MsgpFacilityInspctnSmmry": null,
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "TXR1509LE",
+                "NPDESIDs": "TXR1509LE TXR1598LK",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410002072"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.401955,
+                    30.611917
+                ]
+            },
+            "properties": {
+                "CWPName": "TRADITIONS SUBDIVISION PHASE 20D & 20E & 20F",
+                "SourceID": "TXR1598LK",
+                "CWPStreet": "INTERSECTION OF CENTURY OAK DRIVE & FM 1179 - VILL",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77807",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071359590",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1509LE TXR1598LK",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -19764,6 +20245,43 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.396,
+                    30.65
+                ]
+            },
+            "properties": {
+                "CWPName": "TXDOT BRY CSJ 2851-01-050",
+                "SourceID": "TXR1566LM",
+                "CWPStreet": "FM 2818 FROM BECK ST TO 0.1 MILES S OF LEONARD RD",
+                "CWPCity": "BRYAN",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77803",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110071365800",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070101",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR1566LM",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410006054"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -96.36,
                     30.7
                 ]
@@ -19881,7 +20399,7 @@
             },
             "properties": {
                 "CWPName": "TXDOT CSJ 0917-29-129",
-                "SourceID": "TXR15321G",
+                "SourceID": "TXR15382G",
                 "CWPStreet": "SH 308 FROM FM 1179 TO INLOW STREET",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -19918,7 +20436,7 @@
             },
             "properties": {
                 "CWPName": "TXDOT CSJ 0917-29-129",
-                "SourceID": "TXR15382G",
+                "SourceID": "TXR15321G",
                 "CWPStreet": "SH 308 FROM FM 1179 TO INLOW STREET",
                 "CWPCity": "BRYAN",
                 "CWPState": "TX",
@@ -20066,43 +20584,6 @@
             },
             "properties": {
                 "CWPName": "UNKNOWN",
-                "SourceID": "TX0090867",
-                "CWPStreet": "UNKNOWN",
-                "CWPCity": null,
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "00000",
-                "MasterExternalPermitNmbr": null,
-                "RegistryID": "110039182087",
-                "CWPCounty": "Brazos",
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": null,
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TX0090867",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": null
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.3023887,
-                    30.6567254
-                ]
-            },
-            "properties": {
-                "CWPName": "UNKNOWN",
                 "SourceID": "TX0097951",
                 "CWPStreet": "UNKNOWN",
                 "CWPCity": null,
@@ -20123,6 +20604,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TX0097951",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": null
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.3023887,
+                    30.6567254
+                ]
+            },
+            "properties": {
+                "CWPName": "UNKNOWN",
+                "SourceID": "TX0090867",
+                "CWPStreet": "UNKNOWN",
+                "CWPCity": null,
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "00000",
+                "MasterExternalPermitNmbr": null,
+                "RegistryID": "110039182087",
+                "CWPCounty": "Brazos",
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": null,
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TX0090867",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -20547,43 +21065,6 @@
             },
             "properties": {
                 "CWPName": "WALKONS BISTREAUX MAIN EXT.",
-                "SourceID": "TXR10F7X3",
-                "CWPStreet": "WEST OF ARRINGTON RD. & TEXAS 6 FRONTAGE RD.",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR10F000",
-                "RegistryID": "110070686452",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR10F7X3",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020251"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.2665,
-                    30.5647
-                ]
-            },
-            "properties": {
-                "CWPName": "WALKONS BISTREAUX MAIN EXT.",
                 "SourceID": "TXR10F7XB",
                 "CWPStreet": "WEST OF ARRINGTON RD & TEXAS 6 FRONTAGE ROAD",
                 "CWPCity": "COLLEGE STATION",
@@ -20604,6 +21085,43 @@
                 "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
                 "NPDESIDs": "TXR10F7XB",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020251"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.2665,
+                    30.5647
+                ]
+            },
+            "properties": {
+                "CWPName": "WALKONS BISTREAUX MAIN EXT.",
+                "SourceID": "TXR10F7X3",
+                "CWPStreet": "WEST OF ARRINGTON RD. & TEXAS 6 FRONTAGE RD.",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR10F000",
+                "RegistryID": "110070686452",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs) | Notices of Termination (NOTs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR10F7X3",
                 "SDWAIDs": null,
                 "CWPDateLastInspSt": null,
                 "BiosolidsFlag": null,
@@ -20658,118 +21176,7 @@
             },
             "properties": {
                 "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
-                "SourceID": "TXR15293Y",
-                "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365517",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR15269Q TXR15293Y TXR15510Y TXR15548Z TXR15713X TXR15908Y",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020162"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.266388,
-                    30.585
-                ]
-            },
-            "properties": {
-                "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
-                "SourceID": "TXR15548Z",
-                "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365517",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR15269Q TXR15293Y TXR15510Y TXR15548Z TXR15713X TXR15908Y",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020162"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.266388,
-                    30.585
-                ]
-            },
-            "properties": {
-                "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
                 "SourceID": "TXR15269Q",
-                "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
-                "CWPCity": "COLLEGE STATION",
-                "CWPState": "TX",
-                "CWPStateDistrict": null,
-                "CWPZip": "77845",
-                "MasterExternalPermitNmbr": "TXR150000",
-                "RegistryID": "110070365517",
-                "CWPCounty": null,
-                "CWPEPARegion": "06",
-                "FacDerivedHuc": "12070103",
-                "CWPNAICSCodes": null,
-                "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": null,
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": null,
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
-                "AIRIDs": null,
-                "NPDESIDs": "TXR15269Q TXR15293Y TXR15510Y TXR15548Z TXR15713X TXR15908Y",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": null,
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "480410020162"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.266388,
-                    30.585
-                ]
-            },
-            "properties": {
-                "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
-                "SourceID": "TXR15908Y",
                 "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
@@ -20843,7 +21250,118 @@
             },
             "properties": {
                 "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
+                "SourceID": "TXR15908Y",
+                "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365517",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR15269Q TXR15293Y TXR15510Y TXR15548Z TXR15713X TXR15908Y",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020162"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.266388,
+                    30.585
+                ]
+            },
+            "properties": {
+                "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
+                "SourceID": "TXR15548Z",
+                "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365517",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR15269Q TXR15293Y TXR15510Y TXR15548Z TXR15713X TXR15908Y",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020162"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.266388,
+                    30.585
+                ]
+            },
+            "properties": {
+                "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
                 "SourceID": "TXR15713X",
+                "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
+                "CWPCity": "COLLEGE STATION",
+                "CWPState": "TX",
+                "CWPStateDistrict": null,
+                "CWPZip": "77845",
+                "MasterExternalPermitNmbr": "TXR150000",
+                "RegistryID": "110070365517",
+                "CWPCounty": null,
+                "CWPEPARegion": "06",
+                "FacDerivedHuc": "12070103",
+                "CWPNAICSCodes": null,
+                "CWPTotalDesignFlowNmbr": null,
+                "DschToMs4": null,
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": null,
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "TXR15269Q TXR15293Y TXR15510Y TXR15548Z TXR15713X TXR15908Y",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": null,
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "480410020162"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.266388,
+                    30.585
+                ]
+            },
+            "properties": {
+                "CWPName": "WATERFORD HEIGHTS SUBDIVISION",
+                "SourceID": "TXR15293Y",
                 "CWPStreet": "THE PROJECT IS LOCATED AT THE CORNER OF ROCK PRAIR",
                 "CWPCity": "COLLEGE STATION",
                 "CWPState": "TX",
