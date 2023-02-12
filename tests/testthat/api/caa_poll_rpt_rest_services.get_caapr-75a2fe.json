@@ -205,25 +205,6 @@
                     "System": "CAMD",
                     "ProgramSysId": "2713",
                     "PollutantType": null,
-                    "Pollutant": "Carbon dioxide",
-                    "UnitsOfMeasure": "Pounds",
-                    "Year1": "3,038,945,902.00",
-                    "Year2": "3,822,942,332.00",
-                    "Year3": "3,369,215,934.00",
-                    "Year4": "3,680,526,894.00",
-                    "Year5": "3,938,836,118.00",
-                    "Year6": "3,961,427,544.00",
-                    "Year7": "3,252,160,062.00",
-                    "Year8": "3,941,411,924.00",
-                    "Year9": "3,451,292,426.00",
-                    "Year10": "3,515,481,730.00"
-                },
-                {
-                    "RegistryId": "110000350174",
-                    "Program": "CAMD",
-                    "System": "CAMD",
-                    "ProgramSysId": "2713",
-                    "PollutantType": null,
                     "Pollutant": "Nitrogen oxides",
                     "UnitsOfMeasure": "Pounds",
                     "Year1": "6,639,164.00",
@@ -733,6 +714,25 @@
                 },
                 {
                     "RegistryId": "110000350174",
+                    "Program": "CAMD",
+                    "System": "CAMD",
+                    "ProgramSysId": "2713",
+                    "PollutantType": null,
+                    "Pollutant": "Carbon dioxide",
+                    "UnitsOfMeasure": "Pounds",
+                    "Year1": "3,038,945,940.00",
+                    "Year2": "3,822,942,320.00",
+                    "Year3": "3,369,215,880.00",
+                    "Year4": "3,680,527,000.00",
+                    "Year5": "3,938,836,200.00",
+                    "Year6": "3,961,427,580.00",
+                    "Year7": "3,252,160,134.00",
+                    "Year8": "3,941,411,990.00",
+                    "Year9": "3,451,292,486.00",
+                    "Year10": "3,515,481,744.00"
+                },
+                {
+                    "RegistryId": "110000350174",
                     "Program": "GHG",
                     "System": "GHG",
                     "ProgramSysId": "1000828",
@@ -1001,6 +1001,16 @@
             "Permits": [
                 {
                     "Statute": "CAA",
+                    "EPASystem": "EIS",
+                    "SourceID": "8547211",
+                    "Universe": "",
+                    "NAICS": "221112",
+                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
+                    "SIC": null,
+                    "FacilityStatus": null
+                },
+                {
+                    "Statute": "CAA",
                     "EPASystem": "AIR",
                     "SourceID": "NC0000003706500036",
                     "Universe": "Major Emissions",
@@ -1011,23 +1021,13 @@
                 },
                 {
                     "Statute": "CAA",
-                    "EPASystem": "CAMDBS",
-                    "SourceID": "2713",
-                    "Universe": "",
-                    "NAICS": "221112",
-                    "NAICSDesc": "Fossil Fuel Electric Power Generation",
-                    "SIC": "4911",
-                    "FacilityStatus": "INACTIVE"
-                },
-                {
-                    "Statute": "CAA",
-                    "EPASystem": "EIS",
-                    "SourceID": "8547211",
-                    "Universe": "",
+                    "EPASystem": "GHG",
+                    "SourceID": "1000828",
+                    "Universe": "Direct Emitter",
                     "NAICS": "221112",
                     "NAICSDesc": "Fossil Fuel Electric Power Generation",
                     "SIC": null,
-                    "FacilityStatus": null
+                    "FacilityStatus": "Reporting Year 2021:  Reporting and meeting Verification requirements."
                 },
                 {
                     "Statute": "CAA",
@@ -1041,13 +1041,13 @@
                 },
                 {
                     "Statute": "CAA",
-                    "EPASystem": "GHG",
-                    "SourceID": "1000828",
-                    "Universe": "Direct Emitter",
+                    "EPASystem": "CAMDBS",
+                    "SourceID": "2713",
+                    "Universe": "",
                     "NAICS": "221112",
                     "NAICSDesc": "Fossil Fuel Electric Power Generation",
-                    "SIC": null,
-                    "FacilityStatus": "Reporting Year 2021:  Reporting and meeting Verification requirements."
+                    "SIC": "4911",
+                    "FacilityStatus": "INACTIVE"
                 },
                 {
                     "Statute": "EP313",
@@ -1066,16 +1066,16 @@
                         "Program": "CAMD",
                         "Pollutant": "CAMD - CO2",
                         "UnitsOfMeasure": "Pounds",
-                        "Year1": "3,038,945,902.00",
-                        "Year2": "3,822,942,332.00",
-                        "Year3": "3,369,215,934.00",
-                        "Year4": "3,680,526,894.00",
-                        "Year5": "3,938,836,118.00",
-                        "Year6": "3,961,427,544.00",
-                        "Year7": "3,252,160,062.00",
-                        "Year8": "3,941,411,924.00",
-                        "Year9": "3,451,292,426.00",
-                        "Year10": "3,515,481,730.00"
+                        "Year1": "3,038,945,940.00",
+                        "Year2": "3,822,942,320.00",
+                        "Year3": "3,369,215,880.00",
+                        "Year4": "3,680,527,000.00",
+                        "Year5": "3,938,836,200.00",
+                        "Year6": "3,961,427,580.00",
+                        "Year7": "3,252,160,134.00",
+                        "Year8": "3,941,411,990.00",
+                        "Year9": "3,451,292,486.00",
+                        "Year10": "3,515,481,744.00"
                     },
                     {
                         "Program": "CAMD",
