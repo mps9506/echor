@@ -9,9 +9,9 @@
 <title>Introduction to echor • echor</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Inter-0.4.4/font.css" rel="stylesheet">
-<link href="../deps/JetBrains_Mono-0.4.4/font.css" rel="stylesheet">
-<link href="../deps/Noto_Sans_Display-0.4.4/font.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Inter-0.4.5/font.css" rel="stylesheet">
+<link href="../deps/JetBrains_Mono-0.4.5/font.css" rel="stylesheet">
+<link href="../deps/Noto_Sans_Display-0.4.5/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to echor">
@@ -47,6 +47,7 @@
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/spatial_data.html">Spatial echor Data</a>
     <a class="dropdown-item" href="../articles/introduction.html">Introduction to echor</a>
   </div>
 </li>
@@ -81,7 +82,7 @@
                         <h4 data-toc-skip class="author">Michael
 Schramm</h4>
             
-            <h4 data-toc-skip class="date">2022-12-22</h4>
+            <h4 data-toc-skip class="date">2023-02-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/mps9506/echor/blob/HEAD/vignettes/introduction.Rmd" class="external-link"><code>vignettes/introduction.Rmd</code></a></small>
       <div class="d-none name"><code>introduction.Rmd</code></div>
@@ -193,7 +194,7 @@ query:</p>
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mps9506/echor" class="external-link">echor</a></span><span class="op">)</span></span>
 <span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetMeta.html">echoAirGetMeta</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">meta</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 251 × 6</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 256 × 6</span></span></span>
 <span><span class="co">#&gt;    ColumnName                DataType DataLength ColumnID ObjectName     Descr…¹</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AIR_NAME                  VARCHAR2 200        1        AIRName        The na…</span></span>
@@ -206,7 +207,7 @@ query:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> REGISTRY_ID               VARCHAR2 50         8        RegistryID     An int…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AIR_COUNTY                VARCHAR2 100        9        AIRCounty      The na…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AIR_EPA_REGION            CHAR     2          10       AIREPARegion   The EP…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 241 more rows, and abbreviated variable name ¹​Description</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 246 more rows, and abbreviated variable name ¹​Description</span></span></span></code></pre></div>
 <p>The dataframe includes ColumnID, which can be included as an argument
 that specifies what information you want returned:
 <code>qcolumns = "1,2,3,22,23"</code></p>
@@ -778,6 +779,29 @@ CWPZip
 <tbody>
 <tr>
 <td style="text-align:left;">
+066-3344 BORLAUG CENTER RENOVATION ADDITION
+</td>
+<td style="text-align:left;">
+TXR1579LK
+</td>
+<td style="text-align:left;">
+600 JOHN KIMBROUGH BLVD
+</td>
+<td style="text-align:left;">
+COLLEGE STATION
+</td>
+<td style="text-align:left;">
+TX
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+77843-0001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 2900 SPECTOR DRIVE
 </td>
 <td style="text-align:left;">
@@ -889,29 +913,6 @@ NA
 </td>
 <td style="text-align:left;">
 77845
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-8.5 ACRE DEVELOPMENT SH-6
-</td>
-<td style="text-align:left;">
-TXR1535BW
-</td>
-<td style="text-align:left;">
-NORTHWEST INTERSECTION OF MARTIN LUTHER KING JR ST
-</td>
-<td style="text-align:left;">
-BRYAN
-</td>
-<td style="text-align:left;">
-TX
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-77803
 </td>
 </tr>
 </tbody>
@@ -1218,6 +1219,175 @@ Effluent Gross
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
+3600678123
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:left;">
+Quantity1
+</td>
+<td style="text-align:left;">
+.131
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+.131
+</td>
+<td style="text-align:left;">
+DB
+</td>
+<td style="text-align:left;">
+DAILY AV
+</td>
+<td style="text-align:left;">
+AVG
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:left;">
+&lt;=
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3601380436
+</td>
+<td style="text-align:left;">
+10/31/2019
+</td>
+<td style="text-align:left;">
+3618540903
+</td>
+<td style="text-align:left;">
+Q1
+</td>
+<td style="text-align:left;">
+Quantity1
+</td>
+<td style="text-align:left;">
+3700039682
+</td>
+<td style="text-align:left;">
+.054
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+MGD
+</td>
+<td style="text-align:left;">
+.054
+</td>
+<td style="text-align:left;">
+=
+</td>
+<td style="text-align:left;">
+11/13/2019
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+No Violation Identified
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3600178396
+</td>
+<td style="text-align:left;">
+TX0119407
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+3600049681
+</td>
+<td style="text-align:left;">
+001
+</td>
+<td style="text-align:left;">
+EXO
+</td>
+<td style="text-align:left;">
+External Outfall
+</td>
+<td style="text-align:left;">
+3600061722
+</td>
+<td style="text-align:left;">
+3600073706
+</td>
+<td style="text-align:left;">
+3600437316
+</td>
+<td style="text-align:left;">
+ENF
+</td>
+<td style="text-align:left;">
+08/01/2015
+</td>
+<td style="text-align:left;">
+03/01/2020
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+50050
+</td>
+<td style="text-align:left;">
+Flow, in conduit or thru treatment plant
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Effluent Gross
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
 3600678122
 </td>
 <td style="text-align:left;">
@@ -1384,16 +1554,15 @@ Effluent Gross
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-3600678123
+3600678122
 </td>
 <td style="text-align:left;">
-Q1
+Q2
 </td>
 <td style="text-align:left;">
-Quantity1
+Quantity2
 </td>
 <td style="text-align:left;">
-.131
 </td>
 <td style="text-align:left;">
 03
@@ -1408,45 +1577,43 @@ MGD
 MGD
 </td>
 <td style="text-align:left;">
-.131
 </td>
 <td style="text-align:left;">
-DB
+DD
 </td>
 <td style="text-align:left;">
-DAILY AV
+DAILY MX
 </td>
 <td style="text-align:left;">
-AVG
+MAX
 </td>
 <td style="text-align:left;">
-Average
-</td>
-<td style="text-align:left;">
-&lt;=
+Maximum
 </td>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-3601380436
 </td>
 <td style="text-align:left;">
-10/31/2019
+3601380437
 </td>
 <td style="text-align:left;">
-3618540903
+11/30/2019
 </td>
 <td style="text-align:left;">
-Q1
+3618540922
 </td>
 <td style="text-align:left;">
-Quantity1
+Q2
 </td>
 <td style="text-align:left;">
-3700039682
+Quantity2
 </td>
 <td style="text-align:left;">
-.054
+3701996434
+</td>
+<td style="text-align:left;">
+.0729
 </td>
 <td style="text-align:left;">
 03
@@ -1455,13 +1622,13 @@ Quantity1
 MGD
 </td>
 <td style="text-align:left;">
-.054
+.0729
 </td>
 <td style="text-align:left;">
 =
 </td>
 <td style="text-align:left;">
-11/13/2019
+12/10/2019
 </td>
 <td style="text-align:left;">
 </td>
@@ -1722,21 +1889,16 @@ Effluent Gross
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-3600678122
+3600678123
 </td>
 <td style="text-align:left;">
-Q2
+Q1
 </td>
 <td style="text-align:left;">
-Quantity2
+Quantity1
 </td>
 <td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
+.131
 </td>
 <td style="text-align:left;">
 03
@@ -1745,43 +1907,51 @@ MGD
 MGD
 </td>
 <td style="text-align:left;">
+03
 </td>
 <td style="text-align:left;">
-DD
+MGD
 </td>
 <td style="text-align:left;">
-DAILY MX
+.131
 </td>
 <td style="text-align:left;">
-MAX
+DB
 </td>
 <td style="text-align:left;">
-Maximum
+DAILY AV
+</td>
+<td style="text-align:left;">
+AVG
+</td>
+<td style="text-align:left;">
+Average
+</td>
+<td style="text-align:left;">
+&lt;=
 </td>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
+3601380438
 </td>
 <td style="text-align:left;">
-3601380437
+12/31/2019
 </td>
 <td style="text-align:left;">
-11/30/2019
+3618540939
 </td>
 <td style="text-align:left;">
-3618540922
+Q1
 </td>
 <td style="text-align:left;">
-Q2
+Quantity1
 </td>
 <td style="text-align:left;">
-Quantity2
+3703687128
 </td>
 <td style="text-align:left;">
-3701996434
-</td>
-<td style="text-align:left;">
-.0729
+.0518
 </td>
 <td style="text-align:left;">
 03
@@ -1790,13 +1960,13 @@ Quantity2
 MGD
 </td>
 <td style="text-align:left;">
-.0729
+.0518
 </td>
 <td style="text-align:left;">
 =
 </td>
 <td style="text-align:left;">
-12/10/2019
+01/14/2020
 </td>
 <td style="text-align:left;">
 </td>
@@ -1994,175 +2164,6 @@ MGD
 No Violation Identified
 </td>
 </tr>
-<tr>
-<td style="text-align:left;">
-3600178396
-</td>
-<td style="text-align:left;">
-TX0119407
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-3600049681
-</td>
-<td style="text-align:left;">
-001
-</td>
-<td style="text-align:left;">
-EXO
-</td>
-<td style="text-align:left;">
-External Outfall
-</td>
-<td style="text-align:left;">
-3600061722
-</td>
-<td style="text-align:left;">
-3600073706
-</td>
-<td style="text-align:left;">
-3600437316
-</td>
-<td style="text-align:left;">
-ENF
-</td>
-<td style="text-align:left;">
-08/01/2015
-</td>
-<td style="text-align:left;">
-03/01/2020
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-50050
-</td>
-<td style="text-align:left;">
-Flow, in conduit or thru treatment plant
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-Effluent Gross
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-3600678123
-</td>
-<td style="text-align:left;">
-Q1
-</td>
-<td style="text-align:left;">
-Quantity1
-</td>
-<td style="text-align:left;">
-.131
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-.131
-</td>
-<td style="text-align:left;">
-DB
-</td>
-<td style="text-align:left;">
-DAILY AV
-</td>
-<td style="text-align:left;">
-AVG
-</td>
-<td style="text-align:left;">
-Average
-</td>
-<td style="text-align:left;">
-&lt;=
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-3601380438
-</td>
-<td style="text-align:left;">
-12/31/2019
-</td>
-<td style="text-align:left;">
-3618540939
-</td>
-<td style="text-align:left;">
-Q1
-</td>
-<td style="text-align:left;">
-Quantity1
-</td>
-<td style="text-align:left;">
-3703687128
-</td>
-<td style="text-align:left;">
-.0518
-</td>
-<td style="text-align:left;">
-03
-</td>
-<td style="text-align:left;">
-MGD
-</td>
-<td style="text-align:left;">
-.0518
-</td>
-<td style="text-align:left;">
-=
-</td>
-<td style="text-align:left;">
-01/14/2020
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-No Violation Identified
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -2194,10 +2195,13 @@ end_date        string  End date of interest. Must be entered as "mm/dd/yyyy"</c
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>permit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'TX0119407'</span>, <span class="st">'TX0062677'</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/downloadDMRs.html">downloadDMRs</a></span><span class="op">(</span><span class="va">df</span>, idColumn <span class="op">=</span> <span class="va">permit</span><span class="op">)</span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">dmr</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: `progress_estimated()` was deprecated in dplyr 1.0.0.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">echor</span> package.</span></span>
+<span><span class="co">#&gt;   Please report the issue at <span style="color: #0000BB; font-style: italic;">&lt;https://github.com/mps9506/echor/issues&gt;</span>.</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">unnest</a></span><span class="op">(</span><span class="va">dmr</span><span class="op">)</span></span>
 <span><span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 2,468</span></span>
+<span><span class="co">#&gt; Rows: 2,602</span></span>
 <span><span class="co">#&gt; Columns: 62</span></span>
 <span><span class="co">#&gt; $ permit                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TX0119407", "TX0119407", "TX0119407", "TX…</span></span>
 <span><span class="co">#&gt; $ activity_id                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3600178396", "3600178396", "3600178396", …</span></span>
@@ -2261,40 +2265,6 @@ end_date        string  End date of interest. Must be entered as "mm/dd/yyyy"</c
 <span><span class="co">#&gt; $ rnc_resolution_desc         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span></span>
 <span><span class="co">#&gt; $ rnc_resolution_date         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "", "", "", "", "", "", "", "", "", "", ""…</span></span>
 <span><span class="co">#&gt; $ violation_severity          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "No Violation Identified", "No Violation I…</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="spatial-data">Spatial data<a class="anchor" aria-label="anchor" href="#spatial-data"></a>
-</h3>
-<p><code>echor</code> can also return spatial data frames known as
-simple features (<a href="https://r-spatial.github.io/sf/" class="external-link uri">https://r-spatial.github.io/sf/</a>), to facilitate creation
-of maps. Both <code>echoAirGetFacilityInfo</code> and
-<code>echoWaterGetFacilityInfo</code> include arguments to return simple
-feature dataframes.</p>
-<p>Using <code>sf</code>, <code>ggplot</code>, and
-<code>ggspatial</code> we can quickly create a map of downloaded
-data.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://paleolimbot.github.io/ggspatial/" class="external-link">ggspatial</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">## Download data as a simple feature</span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="st">'-96.407563'</span>, ymin <span class="op">=</span> <span class="st">'30.554395'</span>,</span>
-<span>                                        xmax <span class="op">=</span> <span class="st">'-96.25947'</span>, ymax <span class="op">=</span> <span class="st">'30.751984'</span>,</span>
-<span>                                        output <span class="op">=</span> <span class="st">'sf'</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">## Make the map</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://paleolimbot.github.io/ggspatial/reference/annotation_map_tile.html" class="external-link">annotation_map_tile</a></span><span class="op">(</span>zoomin <span class="op">=</span> <span class="fl">0</span>, progress <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, shape <span class="op">=</span> <span class="fl">21</span>, </span>
-<span>          color <span class="op">=</span> <span class="st">"darkred"</span>, fill <span class="op">=</span> <span class="st">"darkred"</span>, </span>
-<span>          size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Longitude"</span>, y <span class="op">=</span> <span class="st">"Latitude"</span>, </span>
-<span>       title <span class="op">=</span> <span class="st">"NPDES permits near Texas A&amp;M"</span>,</span>
-<span>       caption <span class="op">=</span> <span class="st">"Source: EPA ECHO database"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="introduction_files/figure-html/unnamed-chunk-12-1.png" width="75%"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
