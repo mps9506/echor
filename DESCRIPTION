@@ -18,7 +18,7 @@ Description: An R interface to United States Environmental
     from <https://echo.epa.gov/>. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 Imports:
   dplyr,
   geojsonsf,
@@ -32,7 +32,6 @@ Imports:
   utils
 Suggests:
     httptest,
-    sf,
     testthat,
     utf8
 BugReports: https://github.com/mps9506/echor/issues
@@ -46,6 +45,7 @@ Config/Needs/website:
   ggspatial,
   here,
   kableExtra,
-  raster,
   knitr,
-  rmarkdown
+  raster,
+  rmarkdown,
+  sf

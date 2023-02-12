@@ -1,0 +1,74 @@
+---
+title: "Spatial echor Data"
+author: "Michael Schramm"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  fig.asp = 1 / 1.6,
+  out.width = "75%",
+  fig.width = 5,
+  fig.retina = NULL,
+  dpi = 96,
+  collapse = TRUE,
+  comment = "#>"
+)
+
+options(crayon.enabled = NULL)
+
+library(kableExtra)
+library(httptest)
+library(dplyr)
+
+path <- here::here("vignettes/articles/int")
+
+api_root <- "https://echodata.epa.gov/echo/"
+
+set_redactor(function (response) {
+  response %>%
+    gsub_response(api_root, "", fixed = TRUE)
+})
+
+set_requester(function (request) {
+  request %>%
+    gsub_request(api_root, "", fixed = TRUE)
+})
+
+httptest::start_vignette(path = path)
+```
+
+
+`echor` can also return spatial data frames known as simple features (https://r-spatial.github.io/sf/), to facilitate creation of maps. Both `echoAirGetFacilityInfo` and `echoWaterGetFacilityInfo` include arguments to return simple feature dataframes.
+
+Using `sf`, `ggplot`, and `ggspatial` we can quickly create a map of downloaded data.
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, width="100%"}
+
+library(echor)
+library(ggplot2)
+library(ggspatial)
+library(dplyr)
+library(sf)
+
+## Download data as a simple feature
+df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395',
+                                        xmax = '-96.25947', ymax = '30.751984',
+                                        output = 'sf')
+
+## Make the map
+ggplot(df) +
+  annotation_map_tile(zoomin = 0, progress = "none") +
+  geom_sf(inherit.aes = FALSE, shape = 21, 
+          color = "darkred", fill = "darkred", 
+          size = 2) +
+  labs(x = "Longitude", y = "Latitude", 
+       title = "NPDES permits near Texas A&M",
+       caption = "Source: EPA ECHO database")
+```
+
+```{r include = FALSE}
+httptest::end_vignette()
+```
+
