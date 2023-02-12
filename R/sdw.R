@@ -19,6 +19,11 @@
 #' }
 echoSDWGetMeta <- function(verbose = FALSE){
 
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
+  }
+
   ## build the request URL statement
   path <- "echo/sdw_rest_services.metadata?output=JSON"
   getURL <- requestURL(path = path, query = NULL)

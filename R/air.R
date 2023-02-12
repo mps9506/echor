@@ -214,6 +214,11 @@ echoGetCAAPR <- function(p_id, verbose = FALSE, ...) {
     queryDots <- paste(paste(names(valuesList), valuesList, sep = "="),
                        collapse = "&")
 
+    ## check connectivity
+    if (!isTRUE(check_connectivity())) {
+      return(invisible(NULL))
+    }
+
     ## build the request URL statement
     path <- "echo/caa_poll_rpt_rest_services.get_caapr"
     query <- paste(p_id, queryDots, sep = "&")

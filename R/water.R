@@ -59,6 +59,11 @@ echoWaterGetFacilityInfo <- function(output = "df",
     ## generate query the will be pasted into GET URL
     queryDots <- queryList(valuesList)
 
+    ## check connectivity
+    if (!isTRUE(check_connectivity())) {
+      return(invisible(NULL))
+    }
+
     ## build the request URL statement
     path <- "echo/cwa_rest_services.get_facility_info"
     query <- paste("output=JSON", queryDots, sep = "&")
@@ -142,6 +147,11 @@ echoWaterGetFacilityInfo <- function(output = "df",
 #' }
 echoWaterGetMeta <- function(verbose = FALSE){
 
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
+  }
+
   ## build the request URL statement
   path <- "echo/cwa_rest_services.metadata?output=JSON"
   getURL <- requestURL(path = path, query = NULL)
@@ -206,6 +216,11 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 
   ## generate the intial query
   queryDots <- queryList(valuesList)
+
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
+  }
 
   ## build the request URL statement and download csv as df
   buildOutput <- downloadEffluentChart(p_id = p_id, verbose = verbose, queryDots = queryDots)
@@ -299,6 +314,11 @@ echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
       query <- paste("output=JSON", term, sep = "&")
       getURL <- requestURL(path = path, query = query)
     }
+  }
+
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
   }
 
   request <- httr::RETRY("GET",
