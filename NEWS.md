@@ -1,11 +1,19 @@
-# echor (development version)
+# echor (0.1.7)
 
+## Minor Changes
+* update email address for author and maintainer.
+* reduced dependencies by moving spatial examples to pkgdown articles.
+
+## Bug Fixes
+* update url endpoint for metadata services.
+
+## Internal changes
 * update pkgdown use and template for consistency with my other packages.
-* update author and maintainer email
-* update url endpoint for metadata services
-* remove rlang::.data selectors for compatibility with new versions of purrr and tidyselect
-* fix messages introduced by new versions of readr/vroom when columns are NA
+* remove rlang::.data selectors for compatibility with new versions of purrr and tidyselect.
+* fixed messages introduced by new versions of readr/vroom when columns are NA.
 * vignette is no longer built by CRAN to reduce package dependencies, see the pkgdown website for documentation
+* remove the depreciated dplyr based progress bar function and use progress package.
+* functions provide message and return nothing if nslookup fails.
 
 # echor 0.1.6
 
