@@ -4,13 +4,13 @@
         "Version": "SDWA v2020-02-05 1500",
         "QueryRows": "40",
         "IndianCountryRows": "0",
-        "SVRows": "0",
+        "SVRows": "1",
         "CVRows": "2",
         "V3Rows": "10",
         "FEARows": "1",
         "InfFEARows": "12",
         "INSPRows": "14",
         "BadSystemIDs": null,
-        "QueryID": "436"
+        "QueryID": "337"
     }
 }

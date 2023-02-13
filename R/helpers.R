@@ -12,6 +12,7 @@
 #' @param ... additional arguments passed to echoGetEffluent
 #'
 #' @import dplyr
+#' @import progress
 #' @import rlang
 #' @importFrom tibble as_tibble
 #' @importFrom tibble is_tibble
@@ -37,6 +38,11 @@ downloadDMRs <- function(df,
     stop("argument df must be a data.frame or tibble")
   }
 
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
+  }
+
   if (tibble::is_tibble(df) == FALSE) {
     ## convert data.frame to tibble
     df <- tibble::as_tibble(df)
@@ -49,14 +55,14 @@ downloadDMRs <- function(df,
   dots_user <- dots_values(...)
 
   if (isTRUE(pBar)) {
-    # create the progress bar with a dplyr function.
-    pb <- progress_estimated(nrow(df))
+    # create the progress bar
+    pb <- progress_bar$new(total = nrow(df))
 
     df <- df %>%
       mutate(dmr = purrr::pmap(data,
                                ~ {
-                                 # update the progress bar (tick()) and print progress (print())
-                                 pb$tick()$print()
+                                 # update the progress bar (tick())
+                                 pb$tick()
 
                                  # sleep for 1 sec between calls to keep from ticking off ECHO
                                  Sys.sleep(5)

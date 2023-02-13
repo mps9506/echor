@@ -46,10 +46,10 @@ echor is on CRAN:
 install.packages("echor")
 ```
 
-Or install the development version from github:
+Or install the development version:
 
 ```{r InstallDev, eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-remotes::install_github("mps9506/echor")
+install.packages('echor', repos = 'https://mps9506.r-universe.dev')
 ```
 
 ## Usage

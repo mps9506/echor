@@ -91,6 +91,7 @@ requestURL <- function(path, query) {
 #' @return Returns a dataframe
 #' @import httr
 #' @importFrom readr read_csv locale
+#' @importFrom rlang is_error
 #' @keywords internal
 #' @noRd
 getDownload <- function(service, qid, qcolumns, col_types = NULL) {
@@ -110,6 +111,7 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
 
   ## Make the request
   request <- httr::RETRY("GET", getURL)
+
 
   ## Check for valid response for serve, else returns error
   resp_check(request)
@@ -236,6 +238,32 @@ resp_check <- function(response) {
   else if(response$status_code == 429) {
     stop("Too many requests. Please wait.", call. = FALSE)
   }
+  else if(response$status_code == 503) {
+    stop("The service is unavailable, try again later.", call. = FALSE)
+  }
   else {stop_for_status(response)
   }
+}
+
+
+
+#' Check connectivity
+#'
+#' @param host a string with a hostname
+#'
+#' @return logical value
+#' @keywords internal
+#' @noRd
+#' @importFrom curl nslookup
+has_internet_2 <- function(host) {
+  !is.null(nslookup(host, error = FALSE))
+}
+
+
+check_connectivity <- function() {
+  ## check connectivity
+  if (!has_internet_2("echodata.epa.gov")) {
+    message("No connection to echodata.epa.gov available")
+    return(invisible(NULL))
+  } else {TRUE}
 }

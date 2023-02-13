@@ -1,7 +1,7 @@
 Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
-Version: 0.1.6.9000
+Version: 0.1.7
 Authors@R: 
     person(given = "Michael",
            family = "Schramm",
@@ -20,10 +20,12 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 Imports:
+  curl,
   dplyr,
   geojsonsf,
   httr,
   plyr,
+  progress,
   purrr,
   readr,
   rlang,

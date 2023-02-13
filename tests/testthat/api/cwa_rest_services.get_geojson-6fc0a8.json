@@ -6,8 +6,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -86.640541,
-                    34.625123
+                    -86.643041,
+                    34.630123
                 ]
             },
             "properties": {
@@ -22,20 +22,20 @@
                 "RegistryID": "110020837601",
                 "CWPCounty": "Madison",
                 "CWPEPARegion": "04",
-                "FacDerivedHuc": null,
+                "FacDerivedHuc": "06030002",
+                "CWPNAICSCodes": "924110",
                 "CWPTotalDesignFlowNmbr": null,
-                "CWPActualAverageFlowNmbr": null,
-                "ReceivingMs4Name": null,
-                "AssociatedPollutant": null,
-                "MsgpPermitType": null,
-                "CWPPermitStatusDesc": "Effective",
-                "CWPPermitTypeDesc": "General Permit Covered Facility",
-                "CWPIssueDate": "2016-09-06T00:00:00.00+00:00",
-                "CWPEffectiveDate": "2016-10-01T00:00:00.00+00:00",
-                "CWPExpirationDate": "2021-09-30T00:00:00.00+00:00",
-                "CWPSNCStatusDate": "2021-03-31T00:00:00.00+00:00",
-                "LastDMRValueRcvdDate": null,
-                "E90Exceeds1yr": null
+                "DschToMs4": "N",
+                "ExposedActivity": null,
+                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs)",
+                "MsgpFacilityInspctnSmmry": null,
+                "MsgpCorrectiveActionSmmry": null,
+                "AIRIDs": null,
+                "NPDESIDs": "AL0000019 ALR040033",
+                "SDWAIDs": null,
+                "CWPDateLastInspSt": "2022-02-23T00:00:00.00+00:00",
+                "BiosolidsFlag": null,
+                "CensusBlockGroup2020": "010890111001"
             }
         }
     ]

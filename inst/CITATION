@@ -1,14 +1,17 @@
 citHeader("To cite echor in publications use:")
 
-citEntry(
-  entry    = "manual",
-  title    = "{echor}: Access EPA 'ECHO' Data",
-  author   = person("Michael", "Schramm"),
-  year     = "2020",
+
+
+bibentry(
+  bibtype = "manual",
+  title = "{echor}: Access EPA 'ECHO' Data",
+  author = person("Michael", "Schramm"),
+  year = "2022",
   url = "https://CRAN.R-project.org/package=echor",
-  doi = "10.5281/zenodo.3635017",
+  do1 = "10.5281/zenodo.3635017",
+  note = "R package version 0.1.7",
   textVersion = paste(
-  "Schramm, Michael (2020). ",
+  "Schramm, Michael (2023). ",
   "echor: Access EPA 'ECHO' Data. ",
   "doi:10.5281/zenodo.3635017"
   )
