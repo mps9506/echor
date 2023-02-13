@@ -20,3 +20,4 @@
 ^rosm\.cache$
 ^\.github$
 ^vignettes$
+^CRAN-SUBMISSION$
