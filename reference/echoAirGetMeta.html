@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">echor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.6.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,9 +81,20 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># returns a dataframe of</span></span></span>
 <span class="r-in"><span><span class="fu">echoAirGetMeta</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Request failed [503]. Retrying in 1 seconds...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Request failed [503]. Retrying in 1 seconds...</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in resp_check(request):</span> Service Unavailable (HTTP 503).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 256 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ColumnName                DataType DataLength ColumnID ObjectName     Descr…¹</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> AIR_NAME                  VARCHAR2 200        1        AIRName        The na…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> SOURCE_ID                 VARCHAR2 30         2        SourceID       Unique…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> AIR_STREET                VARCHAR2 200        3        AIRStreet      The st…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> AIR_CITY                  VARCHAR2 100        4        AIRCity        The ci…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> AIR_STATE                 CHAR     2          5        AIRState       The st…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> LOCAL_CONTROL_REGION_CODE CHAR     3          6        LocalControlR… Code f…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> AIR_ZIP                   VARCHAR2 10         7        AIRZip         The fi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> REGISTRY_ID               VARCHAR2 50         8        RegistryID     An int…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> AIR_COUNTY                VARCHAR2 100        9        AIRCounty      The na…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> AIR_EPA_REGION            CHAR     2          10       AIREPARegion   The EP…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 246 more rows, and abbreviated variable name ¹​Description</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

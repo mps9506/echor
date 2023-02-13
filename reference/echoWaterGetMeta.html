@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">echor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.6.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,9 +81,20 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># returns a dataframe of</span></span></span>
 <span class="r-in"><span><span class="fu">echoWaterGetMeta</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Request failed [503]. Retrying in 1.4 seconds...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Request failed [503]. Retrying in 1.5 seconds...</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in resp_check(request):</span> Service Unavailable (HTTP 503).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 358 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ColumnName                  DataType DataLength ColumnID ObjectName   Descr…¹</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> CWP_NAME                    VARCHAR2 200        1        CWPName      Facili…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> SOURCE_ID                   VARCHAR2 30         2        SourceID     Unique…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> CWP_STREET                  VARCHAR2 200        3        CWPStreet    Facili…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> CWP_CITY                    VARCHAR2 100        4        CWPCity      City i…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> CWP_STATE                   CHAR     2          5        CWPState     Facili…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> CWP_STATE_DISTRICT          VARCHAR2 5          6        CWPStateDis… The St…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> CWP_ZIP                     VARCHAR2 10         7        CWPZip       Facili…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> MASTER_EXTERNAL_PERMIT_NMBR VARCHAR2 9          8        MasterExter… This i…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> REGISTRY_ID                 VARCHAR2 50         9        RegistryID   An int…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> CWP_COUNTY                  VARCHAR2 100        10       CWPCounty    County…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 348 more rows, and abbreviated variable name ¹​Description</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
