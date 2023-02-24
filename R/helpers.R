@@ -52,7 +52,7 @@ downloadDMRs <- function(df,
   data <- select(df, !!idColumn)
 
   # capture args to pass to echoGetEffluent
-  dots_user <- dots_values(...)
+  dots_user <- list2(...)
 
   if (isTRUE(pBar)) {
     # create the progress bar
