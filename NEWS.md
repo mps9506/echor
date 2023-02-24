@@ -1,5 +1,8 @@
 # echor (development version)
 
+## Internal changes
+* remove use of `rlang::dots_values()` to avoid upcoming soft depreciation.
+
 # echor (0.1.7)
 
 ## Minor Changes
