@@ -171,14 +171,14 @@ that all variables are returned as *character* vectors.
     sessioninfo::platform_info()
     #>  setting  value
     #>  version  R version 4.2.2 (2022-10-31)
-    #>  os       Ubuntu 22.04.1 LTS
+    #>  os       Ubuntu 22.04.2 LTS
     #>  system   x86_64, linux-gnu
     #>  ui       X11
     #>  language (EN)
     #>  collate  C.UTF-8
     #>  ctype    C.UTF-8
     #>  tz       UTC
-    #>  date     2023-02-13
+    #>  date     2023-02-25
     #>  pandoc   2.19.2 @ /usr/bin/ (via rmarkdown)
     sessioninfo::package_info()
     #>  ! package      * version    date (UTC) lib source
@@ -196,12 +196,12 @@ that all variables are returned as *character* vectors.
     #>    digest         0.6.31     2022-12-11 [1] CRAN (R 4.2.2)
     #>    dplyr        * 1.1.0      2023-01-29 [1] CRAN (R 4.2.2)
     #>    e1071          1.7-13     2023-02-01 [1] CRAN (R 4.2.2)
-    #>    echor        * 0.1.7.9000 2023-02-13 [1] local
+    #>    echor        * 0.1.7.9000 2023-02-25 [1] local
     #>    ellipsis       0.3.2      2021-04-29 [1] CRAN (R 4.2.2)
     #>    evaluate       0.20       2023-01-17 [1] CRAN (R 4.2.2)
     #>    fansi          1.0.4      2023-01-22 [1] CRAN (R 4.2.2)
     #>    farver         2.1.1      2022-07-06 [1] CRAN (R 4.2.2)
-    #>    fastmap        1.1.0      2021-01-25 [1] CRAN (R 4.2.2)
+    #>    fastmap        1.1.1      2023-02-24 [1] CRAN (R 4.2.2)
     #>    fs             1.6.1      2023-02-06 [1] CRAN (R 4.2.2)
     #>    generics       0.1.3      2022-07-05 [1] CRAN (R 4.2.2)
     #>    geojsonsf      2.0.3      2022-05-30 [1] CRAN (R 4.2.2)
@@ -213,7 +213,7 @@ that all variables are returned as *character* vectors.
     #>    highr          0.10       2022-12-22 [1] CRAN (R 4.2.2)
     #>    hms            1.1.2      2022-08-19 [1] CRAN (R 4.2.2)
     #>    htmltools      0.5.4      2022-12-07 [1] CRAN (R 4.2.2)
-    #>    httr           1.4.4      2022-08-17 [1] CRAN (R 4.2.2)
+    #>    httr           1.4.5      2023-02-24 [1] CRAN (R 4.2.2)
     #>    jsonlite       1.8.4      2022-12-06 [1] CRAN (R 4.2.2)
     #>  P KernSmooth     2.23-20    2021-05-03 [?] CRAN (R 4.2.2)
     #>    knitr          1.42       2023-01-25 [1] CRAN (R 4.2.2)
@@ -221,7 +221,7 @@ that all variables are returned as *character* vectors.
     #>  P lattice        0.20-45    2021-09-22 [?] CRAN (R 4.2.2)
     #>    lifecycle      1.0.3      2022-10-07 [1] CRAN (R 4.2.2)
     #>    magrittr       2.0.3      2022-03-30 [1] CRAN (R 4.2.2)
-    #>  P mpsTemplates * 0.1.0      2023-02-12 [?] Github (mps9506/mpsTemplates@7512223)
+    #>  P mpsTemplates * 0.1.0      2023-02-24 [?] Github (mps9506/mpsTemplates@7512223)
     #>    munsell        0.5.0      2018-06-12 [1] CRAN (R 4.2.2)
     #>    pillar         1.8.1      2022-08-19 [1] CRAN (R 4.2.2)
     #>    pkgconfig      2.0.3      2019-09-22 [1] CRAN (R 4.2.2)
