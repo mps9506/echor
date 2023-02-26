@@ -3,7 +3,7 @@
 ## Internal changes
 * remove use of `rlang::dots_values()` to avoid upcoming soft depreciation.
 
-# echor (0.1.7)
+# echor 0.1.7
 
 ## Minor Changes
 * update email address for author and maintainer.
