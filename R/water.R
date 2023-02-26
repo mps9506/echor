@@ -11,7 +11,9 @@
 #' @param \dots Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @return returns a dataframe or simple features dataframe
 #' @import httr
+#' @import progress
 #' @importFrom geojsonsf geojson_sf
+#' @importFrom dplyr bind_rows
 #'
 #' @export
 #' @examples \donttest{
@@ -85,7 +87,12 @@ echoWaterGetFacilityInfo <- function(output = "df",
 
     info <- httr::content(request)
 
+    ## return the query id
     qid <- info[["Results"]][["QueryID"]]
+
+    ## return the number of records
+    n_records <- info[["Results"]][["QueryRows"]]
+    n_records <- as.numeric(n_records)
 
     ## build the output
 
@@ -100,14 +107,39 @@ echoWaterGetFacilityInfo <- function(output = "df",
 
     ## if df return output from air_rest_services.get_download
     if (output == "df") {
+      ## if <= 100000 records use getDownload
+      if (n_records <= 100000) {
 
-               buildOutput <- getDownload("cwa",
+        buildOutput <- getDownload("cwa",
                                    qid,
                                    qcolumns,
                                    col_types = colTypes)
-        return(buildOutput)
+      } else {
+
+        # number of pages returned is n_records/5000
+        pages <- ceiling(n_records/5000)
+        # create the progress bar
+        pb <- progress_bar$new(total = pages)
+
+        buildOutput <- getQID("cwa",
+                              qid,
+                              qcolumns,
+                              page = 1)
+        pb$tick()
+
+        for (i in 2:pages) {
+          buildOutput <- bind_rows(buildOutput,
+                                   getQID("cwa",
+                                          qid,
+                                          qcolumns,
+                                          page = i))
+          Sys.sleep(0.5)
+          pb$tick()
+          }
 
         }
+        return(buildOutput)
+      }
 
     ## if df return output from air_rest_services.get_geojson
     if (output == "sf") {
