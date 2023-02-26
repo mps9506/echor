@@ -115,7 +115,12 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
 
   info <- httr::content(request)
 
+  ## return the query id
   qid <- info[["Results"]][["QueryID"]]
+
+  ## return the number of records
+  n_records <- info[["Results"]][["QueryRows"]]
+  n_records <- as.numeric(n_records)
 
   ## get qcolumns argument specific to this query
   qcolumns <- queryList(valuesList["qcolumns"])
@@ -135,10 +140,36 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
 
   colTypes <- columnsToParse(program = "sdw", colNums)
 
-  ## call new function get_qid
-  buildOutput <- getDownload(service = "sdw",
-                             qid = qid,
-                             qcolumns = qcolumns,
-                             col_types = colTypes)
+  ## if <= 100000 records use getDownload
+  if (n_records <= 100000) {
+
+    buildOutput <- getDownload("sdw",
+                               qid,
+                               qcolumns,
+                               col_types = colTypes)
+  } else {
+
+    # number of pages returned is n_records/5000
+    pages <- ceiling(n_records/5000)
+    # create the progress bar
+    pb <- progress_bar$new(total = pages)
+
+    buildOutput <- getQID("cwa",
+                          qid,
+                          qcolumns,
+                          page = 1)
+    pb$tick()
+
+    for (i in 2:pages) {
+      buildOutput <- bind_rows(buildOutput,
+                               getQID("sdw",
+                                      qid,
+                                      qcolumns,
+                                      page = i))
+      Sys.sleep(0.5)
+      pb$tick()
+    }
+
+  }
   return(buildOutput)
 }
