@@ -126,6 +126,51 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
   return(info)
 }
 
+#' Return paginated data from get_qid endpoint
+#'
+#'
+#' @return a dataframe
+#'
+#' @keywords internal
+#' @importFrom rlang .data
+#' @importFrom tidyr unnest_wider
+#' @noRd
+getQID <-function(service, qid, qcolumns, page) {
+  ## build the request URL statement
+  if (service == "sdw") {
+    path <- "echo/sdw_rest_services.get_qid"
+  } else if (service == "cwa") {
+    path <- "echo/cwa_rest_services.get_qid"
+  } else if (service == "caa") {
+    path <- "echo/air_rest_services.get_qid"
+  } else {
+    stop("internal error in getQID, incorrect service argument supplied")
+  }
+  qid <- paste0("qid=", qid)
+  page <- paste0("pageno=", page)
+  query <- paste(qid, page, qcolumns, sep = "&")
+  getURL <- requestURL(path = path, query = query)
+
+  ## Make the request
+  request <- httr::RETRY("GET",
+                         url = getURL,
+                         httr::accept_json())
+
+
+  ## Check for valid response for serve, else returns error
+  resp_check(request)
+
+  info <- httr::content(request)
+
+  ## rectangle info
+  info <- as_tibble(info$Results)
+  ## select data we want to return
+  info <- select(info, .data$Facilities)
+  ## rectangle the nested response
+  info <- unnest_wider(info, .data$Facilities)
+  return(info)
+}
+
 #' Returns geojson from get.geojson endpoints
 #'
 #' @param service character string. One of "cwa", or "caa"
