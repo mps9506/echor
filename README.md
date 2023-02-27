@@ -178,7 +178,7 @@ that all variables are returned as *character* vectors.
     #>  collate  C.UTF-8
     #>  ctype    C.UTF-8
     #>  tz       UTC
-    #>  date     2023-02-26
+    #>  date     2023-02-27
     #>  pandoc   2.19.2 @ /usr/bin/ (via rmarkdown)
     sessioninfo::package_info()
     #>  ! package      * version    date (UTC) lib source
@@ -196,7 +196,7 @@ that all variables are returned as *character* vectors.
     #>    digest         0.6.31     2022-12-11 [1] CRAN (R 4.2.2)
     #>    dplyr        * 1.1.0      2023-01-29 [1] CRAN (R 4.2.2)
     #>    e1071          1.7-13     2023-02-01 [1] CRAN (R 4.2.2)
-    #>    echor        * 0.1.7.9000 2023-02-26 [1] local
+    #>    echor        * 0.1.7.9000 2023-02-27 [1] local
     #>    ellipsis       0.3.2      2021-04-29 [1] CRAN (R 4.2.2)
     #>    evaluate       0.20       2023-01-17 [1] CRAN (R 4.2.2)
     #>    fansi          1.0.4      2023-01-22 [1] CRAN (R 4.2.2)
