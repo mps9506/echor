@@ -133,6 +133,21 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     ## if df return output from air_rest_services.get_geojson
     if (output == "sf") {
 
+      ## if returns clusters, there are to many records to
+      ## return records via geojson and the request needs to
+      ## be more specific. I'm not sure how many records are too
+      ## many. If the length of facilities == 0, it means
+      ## the query either return no records, or the request returned
+      ## clusters and we can stop the function and return a message.
+      if(length(info[["Results"]][["Facilities"]]) == 0) {
+        if(n_records > 0) {
+          stop("Too many records to return spatial a object, please subset your request and try again.")
+        }
+        if(n_records == 0) {
+          stop("No records returned in your request")
+        }
+      }
+
       buildOutput <- getGeoJson("caa",
                                 qid,
                                 qcolumns)
