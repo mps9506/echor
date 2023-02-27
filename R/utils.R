@@ -132,7 +132,6 @@ getDownload <- function(service, qid, qcolumns, col_types = NULL) {
 #' @return a dataframe
 #'
 #' @keywords internal
-#' @importFrom rlang .data
 #' @importFrom tidyr unnest_wider
 #' @noRd
 getQID <-function(service, qid, qcolumns, page) {
@@ -165,9 +164,9 @@ getQID <-function(service, qid, qcolumns, page) {
   ## rectangle info
   info <- as_tibble(info$Results)
   ## select data we want to return
-  info <- select(info, .data$Facilities)
+  info <- select(info, "Facilities")
   ## rectangle the nested response
-  info <- unnest_wider(info, .data$Facilities)
+  info <- unnest_wider(info, "Facilities")
   return(info)
 }
 

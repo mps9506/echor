@@ -1,7 +1,11 @@
 # echor (development version)
 
+## Bug Fixes
+* various _getFacilityInfo() functions now properly return records when more then 100,000 records are returned. (fixes #79)
+* _getFacilityInfo() functions stop and a message is returned if too many records are requested in sf format.
+
 ## Internal changes
-* remove use of `rlang::dots_values()` to avoid upcoming soft depreciation.
+* remove use of `rlang::dots_values()` to avoid upcoming soft depreciation. (fixes #77)
 
 # echor 0.1.7
 
