@@ -178,7 +178,7 @@ that all variables are returned as *character* vectors.
     #>  collate  C.UTF-8
     #>  ctype    C.UTF-8
     #>  tz       UTC
-    #>  date     2023-02-27
+    #>  date     2023-03-12
     #>  pandoc   2.19.2 @ /usr/bin/ (via rmarkdown)
     sessioninfo::package_info()
     #>  ! package      * version    date (UTC) lib source
@@ -186,7 +186,7 @@ that all variables are returned as *character* vectors.
     #>    bit            4.0.5      2022-11-15 [1] CRAN (R 4.2.2)
     #>    bit64          4.0.5      2020-08-30 [1] CRAN (R 4.2.2)
     #>  P class          7.3-21     2023-01-23 [?] RSPM (R 4.2.0)
-    #>    classInt       0.4-8      2022-09-29 [1] CRAN (R 4.2.2)
+    #>    classInt       0.4-9      2023-02-28 [1] CRAN (R 4.2.2)
     #>    cli            3.6.0      2023-01-09 [1] CRAN (R 4.2.2)
     #>  P codetools      0.2-18     2020-11-04 [?] CRAN (R 4.2.2)
     #>    colorspace     2.1-0      2023-01-23 [1] CRAN (R 4.2.2)
@@ -196,7 +196,7 @@ that all variables are returned as *character* vectors.
     #>    digest         0.6.31     2022-12-11 [1] CRAN (R 4.2.2)
     #>    dplyr        * 1.1.0      2023-01-29 [1] CRAN (R 4.2.2)
     #>    e1071          1.7-13     2023-02-01 [1] CRAN (R 4.2.2)
-    #>    echor        * 0.1.7.9000 2023-02-27 [1] local
+    #>    echor        * 0.1.7.9000 2023-03-12 [1] local
     #>    ellipsis       0.3.2      2021-04-29 [1] CRAN (R 4.2.2)
     #>    evaluate       0.20       2023-01-17 [1] CRAN (R 4.2.2)
     #>    fansi          1.0.4      2023-01-22 [1] CRAN (R 4.2.2)
@@ -221,7 +221,7 @@ that all variables are returned as *character* vectors.
     #>  P lattice        0.20-45    2021-09-22 [?] CRAN (R 4.2.2)
     #>    lifecycle      1.0.3      2022-10-07 [1] CRAN (R 4.2.2)
     #>    magrittr       2.0.3      2022-03-30 [1] CRAN (R 4.2.2)
-    #>  P mpsTemplates * 0.1.0      2023-02-24 [?] Github (mps9506/mpsTemplates@7512223)
+    #>    mpsTemplates * 0.2.0      2023-03-12 [1] Github (mps9506/mpsTemplates@38f84e5)
     #>    munsell        0.5.0      2018-06-12 [1] CRAN (R 4.2.2)
     #>    pillar         1.8.1      2022-08-19 [1] CRAN (R 4.2.2)
     #>    pkgconfig      2.0.3      2019-09-22 [1] CRAN (R 4.2.2)
@@ -234,11 +234,11 @@ that all variables are returned as *character* vectors.
     #>    purrr        * 1.0.1      2023-01-10 [1] CRAN (R 4.2.2)
     #>    R6             2.5.1      2021-08-19 [1] CRAN (R 4.2.2)
     #>  P ragg         * 1.2.5      2023-01-12 [?] RSPM (R 4.2.0)
-    #>    raster         3.6-14     2023-01-16 [1] CRAN (R 4.2.2)
+    #>    raster         3.6-20     2023-03-06 [1] CRAN (R 4.2.2)
     #>    Rcpp           1.0.10     2023-01-22 [1] CRAN (R 4.2.2)
     #>    readr          2.1.4      2023-02-10 [1] CRAN (R 4.2.2)
     #>  P renv           0.16.0     2022-09-29 [?] RSPM (R 4.2.0)
-    #>    rgdal          1.6-4      2023-01-12 [1] CRAN (R 4.2.2)
+    #>    rgdal          1.6-5      2023-03-02 [1] CRAN (R 4.2.2)
     #>    rlang          1.0.6      2022-09-24 [1] CRAN (R 4.2.2)
     #>    rmarkdown      2.20       2023-01-19 [1] CRAN (R 4.2.2)
     #>    rosm           0.2.6      2022-06-09 [1] CRAN (R 4.2.2)
@@ -247,9 +247,9 @@ that all variables are returned as *character* vectors.
     #>    sf           * 1.0-9      2022-11-08 [1] CRAN (R 4.2.2)
     #>    sp             1.6-0      2023-01-19 [1] CRAN (R 4.2.2)
     #>    systemfonts    1.0.4      2022-02-11 [1] CRAN (R 4.2.2)
-    #>    terra          1.7-3      2023-01-24 [1] CRAN (R 4.2.2)
+    #>    terra          1.7-18     2023-03-06 [1] CRAN (R 4.2.2)
     #>  P textshaping    0.3.6      2021-10-13 [?] RSPM (R 4.2.0)
-    #>    tibble         3.1.8      2022-07-22 [1] CRAN (R 4.2.2)
+    #>    tibble         3.2.0      2023-03-08 [1] CRAN (R 4.2.2)
     #>    tidyr          1.3.0      2023-01-24 [1] CRAN (R 4.2.2)
     #>    tidyselect     1.2.0      2022-10-10 [1] CRAN (R 4.2.2)
     #>    tzdb           0.3.0      2022-03-28 [1] CRAN (R 4.2.2)
