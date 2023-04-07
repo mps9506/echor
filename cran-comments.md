@@ -17,10 +17,8 @@ There are currently no downstream dependencies for this package.
 
 ## Comments
 
-* This release changes the email address for the maintainer, the old address is
-still and active for confirmation. 
-* This is a minor release including minor bug fixes and reduces package 
-dependencies on long-building packages.
+* This release provides minor bug fixes for end users and removes 
+  `rlang::dots_values()` due to upcoming soft depreciation.
 
 Other comments:
 

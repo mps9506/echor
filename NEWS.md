@@ -1,4 +1,4 @@
-# echor (development version)
+# echor 0.1.8
 
 ## Bug Fixes
 * various _getFacilityInfo() functions now properly return records when more then 100,000 records are returned. (fixes #79)
