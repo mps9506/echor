@@ -12,7 +12,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-dri
     
     <a class="navbar-brand me-2" href="../index.html">echor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,25 +87,25 @@ Uses EPA's ECHO API: <a href="https://echo.epa.gov/tools/web-services/facility-s
 <span class="r-in"><span><span class="co">## These examples require an internet connection to run</span></span></span>
 <span class="r-in"><span><span class="fu">echoSDWGetSystems</span><span class="op">(</span>p_co <span class="op">=</span> <span class="st">"Brazos"</span>, p_st <span class="op">=</span> <span class="st">"tx"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 40 × 76</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    PWSName PWSId Citie…¹ State…² ZipCo…³ Count…⁴ EPARe…⁵ Regis…⁶ India…⁷ PWSTy…⁸</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ABBATE… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110049… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> AL LEO… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110049… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> B J'S … TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110049… N       TNCWS  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> BENCHL… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110012… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> BOBBIT… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110049… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> BRUSHY… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110012… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> CAFE S… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110049… N       TNCWS  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> CAROUS… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110012… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> CITY O… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110001… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> CITY O… TX02… <span style="color: #BB0000;">NA</span>      TX      <span style="color: #BB0000;">NA</span>      Brazos  06      110012… N       CWS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 30 more rows, 66 more variables: PWSTypeDesc &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   PrimarySourceCode &lt;chr&gt;, PrimarySourceDesc &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   PopulationServedCount &lt;dbl&gt;, PWSActivityCode &lt;chr&gt;, PWSActivityDesc &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   OwnerTypeCode &lt;chr&gt;, OwnerDesc &lt;chr&gt;, QtrsWithVio &lt;dbl&gt;, QtrsWithSNC &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   SeriousViolator &lt;chr&gt;, HealthFlag &lt;chr&gt;, MrFlag &lt;chr&gt;, PnFlag &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   OtherFlag &lt;chr&gt;, NewVioFlg &lt;chr&gt;, RulesVio3yr &lt;dbl&gt;, RulesVio &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Viopaccr &lt;dbl&gt;, Vioremain &lt;dbl&gt;, Viofeanot &lt;dbl&gt;, Viortcfea &lt;dbl&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    PWSName  PWSId CitiesServed StateCode ZipCodesServed CountiesServed EPARegion</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ABBATE … TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> AL LEON… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> B J'S C… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> BENCHLE… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> BOBBITT… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> BRUSHY … TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> CAFE SU… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> CAROUSE… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> CITY OF… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> CITY OF… TX02… <span style="color: #BB0000;">NA</span>           TX        <span style="color: #BB0000;">NA</span>             Brazos         06       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 30 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 69 more variables: RegistryID &lt;chr&gt;, IndianCountry &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   PWSTypeCode &lt;chr&gt;, PWSTypeDesc &lt;chr&gt;, PrimarySourceCode &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   PrimarySourceDesc &lt;chr&gt;, PopulationServedCount &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   PWSActivityCode &lt;chr&gt;, PWSActivityDesc &lt;chr&gt;, OwnerTypeCode &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   OwnerDesc &lt;chr&gt;, QtrsWithVio &lt;dbl&gt;, QtrsWithSNC &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   SeriousViolator &lt;chr&gt;, HealthFlag &lt;chr&gt;, MrFlag &lt;chr&gt;, PnFlag &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

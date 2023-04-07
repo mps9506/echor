@@ -12,7 +12,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-wat
     
     <a class="navbar-brand me-2" href="../index.html">echor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,26 +96,26 @@ Uses EPA's ECHO API: <a href="https://echo.epa.gov/tools/web-services/facility-s
 <span class="r-in"><span>xmax <span class="op">=</span> <span class="st">'-96.25947'</span>,</span></span>
 <span class="r-in"><span>ymax <span class="op">=</span> <span class="st">'30.751984'</span>,</span></span>
 <span class="r-in"><span>output <span class="op">=</span> <span class="st">'df'</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 592 × 26</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    CWPName        Sourc…¹ CWPSt…² CWPCity CWPSt…³ CWPSt…⁴ CWPZip Maste…⁵ Regis…⁶</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 066-3344 BORL… TXR157… 600 JO… COLLEG… TX      <span style="color: #BB0000;">NA</span>      77843… TXR150… 110071…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2900 SPECTOR … TXR157… 2900 S… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77802  TXR150… 110071…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2901 SPECTOR … TXR153… 2901 S… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77802  TXR150… 110071…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 3444 MAHOGANY… TXR150… SOUTHW… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77807  TXR150… 110070…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 5113 INVERNES… TXR154… 5113 I… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77802  TXR150… 110070…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 777 GRAHAM RD  TXR157… 777 GR… COLLEG… TX      <span style="color: #BB0000;">NA</span>      77845  TXR150… 110070…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 8.5 ACRE DEVE… TXR153… NORTHW… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77803  TXR150… 110070…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ACADEMY CONDO… TXR150… 1326 P… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77803  TXR150… 110070…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ACADEMY CONDOS TXR151… 1326 P… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77803  TXR150… 110070…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ACADEMY PRESE… TXR150… SEC OF… BRYAN   TX      <span style="color: #BB0000;">NA</span>      77803  TXR150… 110071…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 582 more rows, 17 more variables: CWPCounty &lt;chr&gt;, CWPEPARegion &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   FacDerivedHuc &lt;chr&gt;, CWPNAICSCodes &lt;chr&gt;, FacLat &lt;dbl&gt;, FacLong &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 603 × 26</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    CWPName           SourceID CWPStreet CWPCity CWPState CWPStateDistrict CWPZip</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 066-3344 BORLAUG… TXR1579… 600 JOHN… COLLEG… TX       <span style="color: #BB0000;">NA</span>               77843…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2900 SPECTOR DRI… TXR1571… 2900 SPE… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77802 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2901 SPECTOR DRI… TXR1531… 2901 SPE… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77802 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 3444 MAHOGANY DR… TXR1509… SOUTHWES… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77807 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 5113 INVERNESS DR TXR1542… 5113 INV… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77802 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 777 GRAHAM RD     TXR1578… 777 GRAH… COLLEG… TX       <span style="color: #BB0000;">NA</span>               77845 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 8.5 ACRE DEVELOP… TXR1535… NORTHWES… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77803 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ACADEMY CONDOMIN… TXR1508… 1326 PRA… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77803 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ACADEMY CONDOS    TXR1512… 1326 PRA… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77803 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ACADEMY PRESERVE… TXR1504… SEC OF O… BRYAN   TX       <span style="color: #BB0000;">NA</span>               77803 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 593 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 19 more variables: MasterExternalPermitNmbr &lt;chr&gt;, RegistryID &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   CWPCounty &lt;chr&gt;, CWPEPARegion &lt;chr&gt;, FacDerivedHuc &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   CWPNAICSCodes &lt;chr&gt;, FacLat &lt;dbl&gt;, FacLong &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   CWPTotalDesignFlowNmbr &lt;dbl&gt;, DschToMs4 &lt;chr&gt;, ExposedActivity &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   NPDESDataGroupsDescs &lt;chr&gt;, MsgpFacilityInspctnSmmry &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   MsgpCorrectiveActionSmmry &lt;chr&gt;, AIRIDs &lt;chr&gt;, NPDESIDs &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   SDWAIDs &lt;chr&gt;, CWPDateLastInspSt &lt;date&gt;, BiosolidsFlag &lt;chr&gt;, and</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   abbreviated variable names ¹​SourceID, ²​CWPStreet, ³​CWPState, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   MsgpCorrectiveActionSmmry &lt;chr&gt;, AIRIDs &lt;chr&gt;, NPDESIDs &lt;chr&gt;, …</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Retrieve a simple features dataframe by bounding box</span></span></span>
 <span class="r-in"><span><span class="va">spatialdata</span> <span class="op">&lt;-</span> <span class="fu">echoWaterGetFacilityInfo</span><span class="op">(</span>xmin <span class="op">=</span> <span class="st">'-96.407563'</span>,</span></span>

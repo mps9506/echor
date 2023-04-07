@@ -32,7 +32,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">echor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +82,7 @@
                         <h4 data-toc-skip class="author">Michael
 Schramm</h4>
             
-            <h4 data-toc-skip class="date">2023-03-12</h4>
+            <h4 data-toc-skip class="date">2023-04-07</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/mps9506/echor/blob/HEAD/vignettes/introduction.Rmd" class="external-link"><code>vignettes/introduction.Rmd</code></a></small>
       <div class="d-none name"><code>introduction.Rmd</code></div>
@@ -195,19 +195,19 @@ query:</p>
 <span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/echoAirGetMeta.html">echoAirGetMeta</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">meta</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 256 × 6</span></span></span>
-<span><span class="co">#&gt;    ColumnName                DataType DataLength ColumnID ObjectName     Descr…¹</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AIR_NAME                  VARCHAR2 200        1        AIRName        The na…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> SOURCE_ID                 VARCHAR2 30         2        SourceID       Unique…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> AIR_STREET                VARCHAR2 200        3        AIRStreet      The st…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> AIR_CITY                  VARCHAR2 100        4        AIRCity        The ci…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> AIR_STATE                 CHAR     2          5        AIRState       The st…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> LOCAL_CONTROL_REGION_CODE CHAR     3          6        LocalControlR… Code f…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> AIR_ZIP                   VARCHAR2 10         7        AIRZip         The fi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> REGISTRY_ID               VARCHAR2 50         8        RegistryID     An int…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AIR_COUNTY                VARCHAR2 100        9        AIRCounty      The na…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AIR_EPA_REGION            CHAR     2          10       AIREPARegion   The EP…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 246 more rows, and abbreviated variable name ¹​Description</span></span></span></code></pre></div>
+<span><span class="co">#&gt;    ColumnName                DataType DataLength ColumnID ObjectName Description</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AIR_NAME                  VARCHAR2 200        1        AIRName    The name o…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> SOURCE_ID                 VARCHAR2 30         2        SourceID   Unique Ide…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> AIR_STREET                VARCHAR2 200        3        AIRStreet  The street…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> AIR_CITY                  VARCHAR2 100        4        AIRCity    The city w…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> AIR_STATE                 CHAR     2          5        AIRState   The state …</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> LOCAL_CONTROL_REGION_CODE CHAR     3          6        LocalCont… Code for r…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> AIR_ZIP                   VARCHAR2 10         7        AIRZip     The five-d…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> REGISTRY_ID               VARCHAR2 50         8        RegistryID An interna…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AIR_COUNTY                VARCHAR2 100        9        AIRCounty  The name o…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AIR_EPA_REGION            CHAR     2          10       AIREPAReg… The EPA re…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 246 more rows</span></span></span></code></pre></div>
 <p>The dataframe includes ColumnID, which can be included as an argument
 that specifies what information you want returned:
 <code>qcolumns = "1,2,3,22,23"</code></p>

@@ -12,7 +12,7 @@ Uses EPA's ECHO API: https://echo.epa.gov/tools/web-services/facility-search-air
     
     <a class="navbar-brand me-2" href="../index.html">echor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,20 +97,19 @@ Uses EPA's ECHO API: <a href="https://echo.epa.gov/tools/web-services/facility-s
 <span class="r-in"><span>ymax <span class="op">=</span> <span class="st">'30.751984'</span>,</span></span>
 <span class="r-in"><span>output <span class="op">=</span> <span class="st">'df'</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 40 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    AIRName                        Sourc…¹ AIRSt…² AIRCity AIRSt…³ FacLat FacLong</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> AGGIE CLEANERS                 060000… 111 CO… COLLEG… TX        30.6   -<span style="color: #BB0000;">96.3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> ALENCO, DIV OF RELIANT BLDG P… TX0000… 615 CA… BRYAN   TX        30.6   -<span style="color: #BB0000;">96.4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ALL SEASONS 1 HR CLEANERS      060000… 2501 T… COLLEG… TX        30.6   -<span style="color: #BB0000;">96.3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> BLUEBONNET PAVING              TX0000… HWY. 6… COLLEG… TX        30.6   -<span style="color: #BB0000;">96.3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> BRIARCREST DRY CLEANERS        060000… 1887 B… BRYAN   TX        30.7   -<span style="color: #BB0000;">96.3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> BRYAN CERAMICS PLANT           TX0000… 1500 I… BRYAN   TX        30.7   -<span style="color: #BB0000;">96.4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> BRYAN CLEANERS &amp; LAUNDRY       060000… 1803 H… COLLEG… TX        30.6   -<span style="color: #BB0000;">96.3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> BRYAN HICKS GAS PLANT          TX0000… 3747 O… BRYAN   TX        30.7   -<span style="color: #BB0000;">96.3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> CITGO PETROLEUM CORPORATION    TX0000… 1714 F… BRYAN   TX        30.7   -<span style="color: #BB0000;">96.4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> CITY OF BRYAN                  TX0000… 1.5 MI… BRYAN   TX        30.6   -<span style="color: #BB0000;">96.4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 30 more rows, and abbreviated variable names ¹​SourceID, ²​AIRStreet,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ³​AIRState</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    AIRName                    SourceID AIRStreet AIRCity AIRState FacLat FacLong</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> AGGIE CLEANERS             0600000… 111 COLL… COLLEG… TX         30.6   -<span style="color: #BB0000;">96.3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> ALENCO, DIV OF RELIANT BL… TX00000… 615 CARS… BRYAN   TX         30.6   -<span style="color: #BB0000;">96.4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ALL SEASONS 1 HR CLEANERS  0600000… 2501 TEX… COLLEG… TX         30.6   -<span style="color: #BB0000;">96.3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> BLUEBONNET PAVING          TX00000… HWY. 60,… COLLEG… TX         30.6   -<span style="color: #BB0000;">96.3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> BRIARCREST DRY CLEANERS    0600000… 1887 BRI… BRYAN   TX         30.7   -<span style="color: #BB0000;">96.3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> BRYAN CERAMICS PLANT       TX00000… 1500 IND… BRYAN   TX         30.7   -<span style="color: #BB0000;">96.4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> BRYAN CLEANERS &amp; LAUNDRY   0600000… 1803 HOL… COLLEG… TX         30.6   -<span style="color: #BB0000;">96.3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> BRYAN HICKS GAS PLANT      TX00000… 3747 OLD… BRYAN   TX         30.7   -<span style="color: #BB0000;">96.3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> CITGO PETROLEUM CORPORATI… TX00000… 1714 FIN… BRYAN   TX         30.7   -<span style="color: #BB0000;">96.4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> CITY OF BRYAN              TX00000… 1.5 MI W… BRYAN   TX         30.6   -<span style="color: #BB0000;">96.4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 30 more rows</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Retrieve a simple features dataframe by bounding box</span></span></span>
 <span class="r-in"><span><span class="va">spatialdata</span> <span class="op">&lt;-</span> <span class="fu">echoAirGetFacilityInfo</span><span class="op">(</span>xmin <span class="op">=</span> <span class="st">'-96.407563'</span>,</span></span>
