@@ -159,10 +159,12 @@ echoWaterGetFacilityInfo <- function(output = "df",
     ## clusters and we can stop the function and return a message.
     if(length(info[["Results"]][["Facilities"]]) == 0) {
       if(n_records > 0) {
-        stop("Too many records to return spatial a object, please subset your request and try again.")
+        message("Too many records to return spatial a object, please subset your request and try again.")
+        return(invisible(NULL))
       }
       if(n_records == 0) {
-        stop("No records returned in your request")
+        message("No records returned in your request")
+        return(invisible(NULL))
       }
     }
     buildOutput <- getGeoJson("cwa",
