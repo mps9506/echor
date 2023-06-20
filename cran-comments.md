@@ -2,7 +2,7 @@
 
 * GitHub Actions (macOS), release
 * GitHub Actions (windows), release
-* GitHub Actions (ubuntu-20.04), release, devel
+* GitHub Actions (ubuntu-22.04.2), release, devel
 * R-hub (windows), devel
 * R-hub (fedora-clang-devel) devel
 * win-builder (windows), devel
@@ -17,11 +17,12 @@ There are currently no downstream dependencies for this package.
 
 ## Comments
 
-* This release provides minor bug fixes for end users and removes 
-  `rlang::dots_values()` due to upcoming soft depreciation.
+* This release fixes current check errors in examples. All functions now 
+correctly return a message with no warning or error when internet resources are 
+not available or have changed.
 
 Other comments:
 
 * Examples are wrapped in \donttest{} since they rely on an internet connection 
-  and API will rate limit when automatically tested or run.
+and API will rate limit when automatically tested or run.
 

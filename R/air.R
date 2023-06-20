@@ -168,7 +168,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
       return(invisible(NULL))
     }
     ## Convert to sf dataframe
-    buildOutput <- sf::st_read(buildOutput)
+    buildOutput <- sf::st_read(buildOutput, quiet = TRUE)
 
     return(buildOutput)
 

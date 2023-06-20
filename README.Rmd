@@ -30,7 +30,7 @@ library(ragg)
 [![echor status badge](https://mps9506.r-universe.dev/badges/echor)](https://mps9506.r-universe.dev)
 
 [![R build status](https://github.com/mps9506/echor/workflows/R-CMD-check/badge.svg)](https://github.com/mps9506/echor/actions)
-[![Coverage status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://codecov.io/github/mps9506/echor?branch=master)
+[![Coverage status](https://codecov.io/gh/mps9506/echor/branch/master/graph/badge.svg)](https://app.codecov.io/github/mps9506/echor?branch=master)
 [![DOI](https://zenodo.org/badge/122131508.svg)](https://zenodo.org/badge/latestdoi/122131508)
 
 <!-- badges: end -->
