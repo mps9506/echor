@@ -70,6 +70,12 @@ echoSDWGetMeta <- function(verbose = FALSE){
 #' echoSDWGetSystems(p_co = "Brazos", p_st = "tx")
 #' }
 echoSDWGetSystems <- function(verbose = FALSE, ...) {
+
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
+  }
+
   if (length(list(...)) == 0) {
     stop("No valid arguments supplied")
   }
