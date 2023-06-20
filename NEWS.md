@@ -1,4 +1,4 @@
-# echor (development version)
+# echor 0.1.9
 * when server responses != 200 or 202, functions return an invisible NULL with a message instead of an error and message. (fixes #87)
 * removed geojsonsf dependency.
 * _getFacilityInfo() functions return an invisible NULL with message instead of stopping with error if too many records are requested in sf format.
