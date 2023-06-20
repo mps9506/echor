@@ -160,7 +160,8 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
     buildOutput <- getGeoJson("caa",
                               qid,
-                              qcolumns)
+                              qcolumns,
+                              verbose = verbose)
     if(is.null(buildOutput)) {
       return(invisible(NULL))
     }
