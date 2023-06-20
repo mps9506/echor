@@ -175,13 +175,14 @@ getQID <-function(service, qid, qcolumns, page) {
 #' @param service character string. One of "cwa", or "caa"
 #' @param qid character string. Query identifier.
 #' @param qcolumns character string, specifies columns returned in query.
+#' @param verbose logical. prints the url or not.
 #'
 #' @return Returns a dataframe
 #' @import httr
 #' @importFrom readr read_csv locale
 #' @keywords internal
 #' @noRd
-getGeoJson <- function(service, qid, qcolumns) {
+getGeoJson <- function(service, qid, qcolumns, verbose = FALSE) {
   ## build the request URL statement
   if (service == "cwa") {
     path <- "echo/cwa_rest_services.get_geojson"
@@ -197,8 +198,20 @@ getGeoJson <- function(service, qid, qcolumns) {
   ## Make the request
   request <- httr::RETRY("GET", getURL)
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Print status message
+  if (isTRUE(verbose)) {
+    message("The formatted spatial URL is: ", getURL)
+    message(httr::http_status(request))
+  }
+
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
+
+
 
   info <- httr::content(request, as = "text", encoding = "UTF-8")
 
@@ -261,31 +274,45 @@ columnsToParse <- function(program, colNums) {
 
 #' Check responses
 #'
-#' Checks for valid server response and passes silently or produces a hopefully useful error.
+#' Checks for valid server response and passes silently or produces a
+#' useful message.
 #' @param response response a [httr::GET()] request result returned from the API
 #'
-#' @return nothing if check is passed, or an informative error if not passed.
+#' @return nothing if check is passed, or an informative message if not passed.
 #' @keywords internal
 resp_check <- function(response) {
 
-  ## note, might be able to rely on
-  ## httr stop_for_status to do all this
+  ## note that this was changed from stopping and providing an
+  ## error to passing an invisible response to comply with CRAN.
+  ## I'd prefer for this to stop with an error message here, but I
+  ## don't make the rules.
+
+  ## httr message_for_status to do all this
   ## but this function allows some more
   ## informative messages to be created
 
-  if(response$status_code == 202) {
+  if(response$status_code == 202 | response$status_code == 200) {
     return(TRUE) #all good!
   }
   else if(response$status_code == 413) {
-    stop("Payload too large, shorten request.", call. = FALSE)
+    message("Payload too large, shorten request.")
+    return(FALSE)
   }
   else if(response$status_code == 429) {
-    stop("Too many requests. Please wait.", call. = FALSE)
+    message("Too many requests. Please wait.")
+    return(FALSE)
+  }
+  else if(response$status_code == 500) {
+    message("There was a server error, try again later.")
+    return(FALSE)
   }
   else if(response$status_code == 503) {
-    stop("The service is unavailable, try again later.", call. = FALSE)
+    message("The service is unavailable, try again later.")
+    return(FALSE)
   }
-  else {stop_for_status(response)
+  else {
+    message_for_status(response)
+    return(FALSE)
   }
 }
 

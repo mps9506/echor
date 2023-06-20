@@ -12,7 +12,7 @@
 #' @return returns a dataframe or simple features dataframe
 #' @import httr
 #' @import progress
-#' @importFrom geojsonsf geojson_sf
+#' @importFrom sf st_read
 #' @importFrom dplyr bind_rows
 #'
 #' @export
@@ -24,6 +24,7 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
+#' p_pcomp = 'POW',
 #' output = 'df')
 #'
 #' ## Retrieve a simple features dataframe by bounding box
@@ -31,145 +32,157 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
+#' p_pcomp = 'POW',
 #' output = 'sf')
 #'
 #' }
 #'
 echoWaterGetFacilityInfo <- function(output = "df",
                                      verbose = FALSE, ...) {
-    if (length(list(...)) == 0) {
-        stop("No valid arguments supplied")
+
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
+  }
+
+  if (length(list(...)) == 0) {
+    stop("No valid arguments supplied")
+  }
+  ## returns a list of arguments supplied by user
+  valuesList <- readEchoGetDots(...)
+
+  ## check if user includes an output argument in dots if included, strip it
+  ## out
+  valuesList <- exclude(valuesList, "output")
+
+  ## check if qcolumns argument is provided by user
+  ## if user does not provide qcolumns, provide a sensible default
+  if (!("qcolumns" %in% names(valuesList))) {
+    qcolumns <- c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206)
+    qcolumns <- paste(as.character(qcolumns), collapse = ",")
+    valuesList[["qcolumns"]] <- qcolumns
+  }
+
+  # check if 1 and 2 are in, if not, insert and order
+  valuesList <- insertQColumns(valuesList)
+
+  ## generate query the will be pasted into GET URL
+  queryDots <- queryList(valuesList)
+
+  ## build the request URL statement
+  path <- "echo/cwa_rest_services.get_facility_info"
+  query <- paste("output=JSON", queryDots, sep = "&")
+  getURL <- requestURL(path = path, query = query)
+
+  ## Make the request
+  request <- httr::RETRY("GET",
+                         url = getURL,
+                         httr::accept_json())
+
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
+
+  ## Print status message
+  if (isTRUE(verbose)) {
+    message("The formatted URL is: ", getURL)
+    message(httr::http_status(request))
+  }
+
+  info <- httr::content(request)
+
+  ## return the query id
+  qid <- info[["Results"]][["QueryID"]]
+
+  ## return the number of records
+  n_records <- info[["Results"]][["QueryRows"]]
+  n_records <- as.numeric(n_records)
+
+  ## build the output
+
+  ## get qcolumns argument specific to this query
+  qcolumns <- queryList(valuesList["qcolumns"])
+
+  ## Find out column types
+  colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
+  colNums <- as.numeric(colNums)
+
+  colTypes <- columnsToParse(program = "cwa", colNums)
+
+  ## if df return output from air_rest_services.get_download
+  if (output == "df") {
+    ## if <= 100000 records use getDownload
+    if (n_records <= 100000) {
+
+      buildOutput <- getDownload("cwa",
+                                 qid,
+                                 qcolumns,
+                                 col_types = colTypes)
+    } else {
+
+      # number of pages returned is n_records/5000
+      pages <- ceiling(n_records/5000)
+      # create the progress bar
+      pb <- progress_bar$new(total = pages)
+
+      buildOutput <- getQID("cwa",
+                            qid,
+                            qcolumns,
+                            page = 1)
+      pb$tick()
+
+      for (i in 2:pages) {
+        buildOutput <- bind_rows(buildOutput,
+                                 getQID("cwa",
+                                        qid,
+                                        qcolumns,
+                                        page = i))
+        Sys.sleep(0.5)
+        pb$tick()
+      }
+
     }
-    ## returns a list of arguments supplied by user
-    valuesList <- readEchoGetDots(...)
+    return(buildOutput)
+  }
 
-    ## check if user includes an output argument in dots if included, strip it
-    ## out
-    valuesList <- exclude(valuesList, "output")
+  ## if df return output from air_rest_services.get_geojson
+  if (output == "sf") {
 
-    ## check if qcolumns argument is provided by user
-    ## if user does not provide qcolumns, provide a sensible default
-    if (!("qcolumns" %in% names(valuesList))) {
-      qcolumns <- c(1:11,14,23,24,25,26,30,36,58,60,63,64,65,67,86,206)
-      qcolumns <- paste(as.character(qcolumns), collapse = ",")
-      valuesList[["qcolumns"]] <- qcolumns
+    ## if returns clusters, there are to many records to
+    ## return records via geojson and the request needs to
+    ## be more specific. I'm not sure how many records are too
+    ## many. If the length of facilities == 0, it means
+    ## the query either return no records, or the request returned
+    ## clusters and we can stop the function and return a message.
+    if(length(info[["Results"]][["Facilities"]]) == 0) {
+      if(n_records > 0) {
+        message("Too many records to return spatial a object, please subset your request and try again.")
+        return(invisible(NULL))
+      }
+      if(n_records == 0) {
+        message("No records returned in your request")
+        return(invisible(NULL))
+      }
     }
-
-    # check if 1 and 2 are in, if not, insert and order
-    valuesList <- insertQColumns(valuesList)
-
-    ## generate query the will be pasted into GET URL
-    queryDots <- queryList(valuesList)
-
-    ## check connectivity
-    if (!isTRUE(check_connectivity())) {
-      return(invisible(NULL))
-    }
-
-    ## build the request URL statement
-    path <- "echo/cwa_rest_services.get_facility_info"
-    query <- paste("output=JSON", queryDots, sep = "&")
-    getURL <- requestURL(path = path, query = query)
-
-    ## Make the request
-    request <- httr::RETRY("GET",
-                           url = getURL,
-                           httr::accept_json())
-
-    ## Check for valid response for serve, else returns error
-    resp_check(request)
-
-    ## Print status message
-    if (isTRUE(verbose)) {
-      message("The formatted URL is: ", getURL)
-      message(httr::http_status(request))
-    }
-
-    info <- httr::content(request)
-
-    ## return the query id
-    qid <- info[["Results"]][["QueryID"]]
-
-    ## return the number of records
-    n_records <- info[["Results"]][["QueryRows"]]
-    n_records <- as.numeric(n_records)
-
-    ## build the output
-
-    ## get qcolumns argument specific to this query
-    qcolumns <- queryList(valuesList["qcolumns"])
-
-    ## Find out column types
-    colNums <- unlist(strsplit(valuesList[["qcolumns"]], split = ","))
-    colNums <- as.numeric(colNums)
-
-    colTypes <- columnsToParse(program = "cwa", colNums)
-
-    ## if df return output from air_rest_services.get_download
-    if (output == "df") {
-      ## if <= 100000 records use getDownload
-      if (n_records <= 100000) {
-
-        buildOutput <- getDownload("cwa",
-                                   qid,
-                                   qcolumns,
-                                   col_types = colTypes)
-      } else {
-
-        # number of pages returned is n_records/5000
-        pages <- ceiling(n_records/5000)
-        # create the progress bar
-        pb <- progress_bar$new(total = pages)
-
-        buildOutput <- getQID("cwa",
+    buildOutput <- getGeoJson("cwa",
                               qid,
                               qcolumns,
-                              page = 1)
-        pb$tick()
-
-        for (i in 2:pages) {
-          buildOutput <- bind_rows(buildOutput,
-                                   getQID("cwa",
-                                          qid,
-                                          qcolumns,
-                                          page = i))
-          Sys.sleep(0.5)
-          pb$tick()
-          }
-
-        }
-        return(buildOutput)
-      }
-
-    ## if df return output from air_rest_services.get_geojson
-    if (output == "sf") {
-
-      ## if returns clusters, there are to many records to
-      ## return records via geojson and the request needs to
-      ## be more specific. I'm not sure how many records are too
-      ## many. If the length of facilities == 0, it means
-      ## the query either return no records, or the request returned
-      ## clusters and we can stop the function and return a message.
-      if(length(info[["Results"]][["Facilities"]]) == 0) {
-        if(n_records > 0) {
-          stop("Too many records to return spatial a object, please subset your request and try again.")
-        }
-        if(n_records == 0) {
-          stop("No records returned in your request")
-        }
-      }
-      buildOutput <- getGeoJson("cwa",
-                                qid,
-                                qcolumns)
-      ## Convert to sf dataframe
-      buildOutput <- geojsonsf::geojson_sf(buildOutput)
-
-      return(buildOutput)
-
-    } else {
-        stop("output argument = ", output,
-             ", when it should be either 'df' or 'sf'")
+                              verbose = verbose)
+    if(is.null(buildOutput)) {
+      return(invisible(NULL))
     }
+    ## Convert to sf dataframe
+    buildOutput <- sf::st_read(buildOutput)
+
+    return(buildOutput)
+
+  } else {
+    stop("output argument = ", output,
+         ", when it should be either 'df' or 'sf'")
+  }
 
 }
 
@@ -207,8 +220,12 @@ echoWaterGetMeta <- function(verbose = FALSE){
                          url = getURL,
                          httr::accept_json())
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
 
   ## Print status message, need to make this optional
   if (isTRUE(verbose)) {
@@ -250,6 +267,11 @@ echoWaterGetMeta <- function(verbose = FALSE){
 #' }
 echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 
+  ## check connectivity
+  if (!isTRUE(check_connectivity())) {
+    return(invisible(NULL))
+  }
+
   ## should check if character and return error if not
   p_id <- paste0("p_id=", p_id)
 
@@ -262,11 +284,6 @@ echoGetEffluent <- function(p_id, verbose = FALSE, ...) {
 
   ## generate the intial query
   queryDots <- queryList(valuesList)
-
-  ## check connectivity
-  if (!isTRUE(check_connectivity())) {
-    return(invisible(NULL))
-  }
 
   ## build the request URL statement and download csv as df
   buildOutput <- downloadEffluentChart(p_id = p_id, verbose = verbose, queryDots = queryDots)
@@ -288,8 +305,12 @@ downloadEffluentChart <- function(p_id, verbose, queryDots) {
                          url = getURL,
                          httr::accept("text/csv"))
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
 
   ## Print status message
   if (isTRUE(verbose)) {
@@ -371,8 +392,12 @@ echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
                          url = getURL,
                          httr::accept_json())
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
 
   if (isTRUE(verbose)) {
     message("Request URL:", getURL)

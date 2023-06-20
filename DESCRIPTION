@@ -1,7 +1,7 @@
 Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
-Version: 0.1.8
+Version: 0.1.8.9000
 Authors@R: 
     person(given = "Michael",
            family = "Schramm",
@@ -22,13 +22,13 @@ RoxygenNote: 7.2.3
 Imports:
   curl,
   dplyr,
-  geojsonsf,
   httr,
   plyr,
   progress,
   purrr,
   readr,
   rlang,
+  sf,
   tibble,
   tidyr (>= 1.0.0),
   utils
