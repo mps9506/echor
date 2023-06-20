@@ -12,7 +12,7 @@
 #' @return returns a dataframe or simple features dataframe
 #' @import httr
 #' @import progress
-#' @importFrom geojsonsf geojson_sf
+#' @importFrom sf st_read
 #' @importFrom dplyr bind_rows
 #'
 #' @export
@@ -24,6 +24,7 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
+#' p_pcomp = 'POW',
 #' output = 'df')
 #'
 #' ## Retrieve a simple features dataframe by bounding box
@@ -31,6 +32,7 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
+#' p_pcomp = 'POW',
 #' output = 'sf')
 #'
 #' }
@@ -165,12 +167,13 @@ echoWaterGetFacilityInfo <- function(output = "df",
     }
     buildOutput <- getGeoJson("cwa",
                               qid,
-                              qcolumns)
+                              qcolumns,
+                              verbose = verbose)
     if(is.null(buildOutput)) {
       return(invisible(NULL))
     }
     ## Convert to sf dataframe
-    buildOutput <- geojsonsf::geojson_sf(buildOutput)
+    buildOutput <- sf::st_read(buildOutput)
 
     return(buildOutput)
 

@@ -22,13 +22,13 @@ RoxygenNote: 7.2.3
 Imports:
   curl,
   dplyr,
-  geojsonsf,
   httr,
   plyr,
   progress,
   purrr,
   readr,
   rlang,
+  sf,
   tibble,
   tidyr (>= 1.0.0),
   utils

@@ -175,13 +175,14 @@ getQID <-function(service, qid, qcolumns, page) {
 #' @param service character string. One of "cwa", or "caa"
 #' @param qid character string. Query identifier.
 #' @param qcolumns character string, specifies columns returned in query.
+#' @param verbose logical. prints the url or not.
 #'
 #' @return Returns a dataframe
 #' @import httr
 #' @importFrom readr read_csv locale
 #' @keywords internal
 #' @noRd
-getGeoJson <- function(service, qid, qcolumns) {
+getGeoJson <- function(service, qid, qcolumns, verbose = FALSE) {
   ## build the request URL statement
   if (service == "cwa") {
     path <- "echo/cwa_rest_services.get_geojson"
@@ -197,12 +198,20 @@ getGeoJson <- function(service, qid, qcolumns) {
   ## Make the request
   request <- httr::RETRY("GET", getURL)
 
+  ## Print status message
+  if (isTRUE(verbose)) {
+    message("The formatted spatial URL is: ", getURL)
+    message(httr::http_status(request))
+  }
+
   ## Check for valid response for serve, else prints a message and
   ## returns an invisible NULL
   if (!isTRUE(resp_check(request)))
   {
     return(invisible(NULL))
   }
+
+
 
   info <- httr::content(request, as = "text", encoding = "UTF-8")
 

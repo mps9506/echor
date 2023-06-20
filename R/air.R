@@ -9,7 +9,7 @@
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_air_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @import httr
-#' @importFrom geojsonsf geojson_sf
+#' @importFrom sf st_read
 #' @return dataframe or sf dataframe suitable for plotting
 #' @export
 #'
@@ -165,7 +165,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
       return(invisible(NULL))
     }
     ## Convert to sf dataframe
-    buildOutput <- geojsonsf::geojson_sf(buildOutput)
+    buildOutput <- sf::st_read(buildOutput)
 
     return(buildOutput)
 
