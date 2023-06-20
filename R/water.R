@@ -176,7 +176,6 @@ echoWaterGetFacilityInfo <- function(output = "df",
     }
     ## Convert to sf dataframe
     buildOutput <- sf::st_read(buildOutput, quiet = TRUE)
-
     return(buildOutput)
 
   } else {
