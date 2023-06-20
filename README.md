@@ -73,7 +73,7 @@ However, arguments can be looked up here:
     #> #   CWPTotalDesignFlowNmbr <dbl>, DschToMs4 <chr>, ExposedActivity <chr>,
     #> #   NPDESDataGroupsDescs <chr>, MsgpFacilityInspctnSmmry <chr>,
     #> #   MsgpCorrectiveActionSmmry <chr>, AIRIDs <chr>, NPDESIDs <chr>,
-    #> #   SDWAIDs <chr>, CWPDateLastInspSt <date>, BiosolidsFlag <chr>
+    #> #   SDWAIDs <chr>, AlrExceeds1yr <dbl>, CertifiedDate <date>
 
 The ECHO database can provide over 270 different columns. echor returns
 a subset of these columns that should work for most users. However, you
@@ -101,7 +101,8 @@ plant name, 8-digit HUC, latitude, longitude, and total design flow.
     #> 4 TURKEY CREEK WWTP      TX0062472 12070101      <NA>            30.6   -96.4
 
 When returned as sf dataframes, the data is suitable for immediate
-spatial plotting or analysis:
+spatial plotting or analysis **note: the spatial data endpoints do not
+currently appear to be functioning**
 
     library(ggspatial)
     library(sf)
@@ -138,8 +139,6 @@ spatial plotting or analysis:
            title = "NPDES permits near Texas A&M",
            caption = "Source: EPA ECHO database")
 
-<img src="man/figures/README-example3-1.png" width="100%" />
-
 ### Download discharge/emissions data
 
 Use `echoGetEffluent()` or `echoGetCAAPR()` to download tidy dataframes
@@ -170,7 +169,7 @@ that all variables are returned as *character* vectors.
 
     sessioninfo::platform_info()
     #>  setting  value
-    #>  version  R version 4.2.3 (2023-03-15)
+    #>  version  R version 4.3.1 (2023-06-16)
     #>  os       Ubuntu 22.04.2 LTS
     #>  system   x86_64, linux-gnu
     #>  ui       X11
@@ -178,89 +177,77 @@ that all variables are returned as *character* vectors.
     #>  collate  C.UTF-8
     #>  ctype    C.UTF-8
     #>  tz       UTC
-    #>  date     2023-04-07
+    #>  date     2023-06-20
     #>  pandoc   2.19.2 @ /usr/bin/ (via rmarkdown)
     sessioninfo::package_info()
-    #>  ! package      * version date (UTC) lib source
-    #>    abind          1.4-5   2016-07-21 [1] CRAN (R 4.2.3)
-    #>    bit            4.0.5   2022-11-15 [1] CRAN (R 4.2.3)
-    #>    bit64          4.0.5   2020-08-30 [1] CRAN (R 4.2.3)
-    #>  P class          7.3-21  2023-01-23 [?] CRAN (R 4.2.3)
-    #>    classInt       0.4-9   2023-02-28 [1] CRAN (R 4.2.3)
-    #>    cli            3.6.1   2023-03-23 [1] CRAN (R 4.2.3)
-    #>  P codetools      0.2-19  2023-02-01 [?] CRAN (R 4.2.3)
-    #>    colorspace     2.1-0   2023-01-23 [1] CRAN (R 4.2.3)
-    #>    crayon         1.5.2   2022-09-29 [1] CRAN (R 4.2.3)
-    #>    curl           5.0.0   2023-01-12 [1] CRAN (R 4.2.3)
-    #>    DBI            1.1.3   2022-06-18 [1] CRAN (R 4.2.3)
-    #>    digest         0.6.31  2022-12-11 [1] CRAN (R 4.2.3)
-    #>    dplyr        * 1.1.1   2023-03-22 [1] CRAN (R 4.2.3)
-    #>    e1071          1.7-13  2023-02-01 [1] CRAN (R 4.2.3)
-    #>    echor        * 0.1.8   2023-04-07 [1] local
-    #>    evaluate       0.20    2023-01-17 [1] CRAN (R 4.2.3)
-    #>    fansi          1.0.4   2023-01-22 [1] CRAN (R 4.2.3)
-    #>    farver         2.1.1   2022-07-06 [1] CRAN (R 4.2.3)
-    #>    fastmap        1.1.1   2023-02-24 [1] CRAN (R 4.2.3)
-    #>    fs             1.6.1   2023-02-06 [1] CRAN (R 4.2.3)
-    #>    generics       0.1.3   2022-07-05 [1] CRAN (R 4.2.3)
-    #>    geojsonsf      2.0.3   2022-05-30 [1] CRAN (R 4.2.3)
-    #>    ggplot2      * 3.4.2   2023-04-03 [1] CRAN (R 4.2.3)
-    #>    ggrepel      * 0.9.3   2023-02-03 [1] CRAN (R 4.2.3)
-    #>    ggspatial    * 1.1.7   2022-11-24 [1] CRAN (R 4.2.3)
-    #>    glue           1.6.2   2022-02-24 [1] CRAN (R 4.2.3)
-    #>    gtable         0.3.3   2023-03-21 [1] CRAN (R 4.2.3)
-    #>    highr          0.10    2022-12-22 [1] CRAN (R 4.2.3)
-    #>    hms            1.1.3   2023-03-21 [1] CRAN (R 4.2.3)
-    #>    htmltools      0.5.5   2023-03-23 [1] CRAN (R 4.2.3)
-    #>    httr           1.4.5   2023-02-24 [1] CRAN (R 4.2.3)
-    #>    jsonlite       1.8.4   2022-12-06 [1] CRAN (R 4.2.3)
-    #>  P KernSmooth     2.23-20 2021-05-03 [?] CRAN (R 4.2.3)
-    #>    knitr          1.42    2023-01-25 [1] CRAN (R 4.2.3)
-    #>    labeling       0.4.2   2020-10-20 [1] CRAN (R 4.2.3)
-    #>  P lattice        0.20-45 2021-09-22 [?] CRAN (R 4.2.3)
-    #>    lifecycle      1.0.3   2022-10-07 [1] CRAN (R 4.2.3)
-    #>    magrittr       2.0.3   2022-03-30 [1] CRAN (R 4.2.3)
-    #>    mpsTemplates * 0.2.0   2023-04-07 [1] Github (mps9506/mpsTemplates@d7a070e)
-    #>    munsell        0.5.0   2018-06-12 [1] CRAN (R 4.2.3)
-    #>    pillar         1.9.0   2023-03-22 [1] CRAN (R 4.2.3)
-    #>    pkgconfig      2.0.3   2019-09-22 [1] CRAN (R 4.2.3)
-    #>    plyr           1.8.8   2022-11-11 [1] CRAN (R 4.2.3)
-    #>    png            0.1-8   2022-11-29 [1] CRAN (R 4.2.3)
-    #>    prettymapr     0.2.4   2022-06-09 [1] CRAN (R 4.2.3)
-    #>    prettyunits    1.1.1   2020-01-24 [1] CRAN (R 4.2.3)
-    #>    progress       1.2.2   2019-05-16 [1] CRAN (R 4.2.3)
-    #>    proxy          0.4-27  2022-06-09 [1] CRAN (R 4.2.3)
-    #>    purrr        * 1.0.1   2023-01-10 [1] CRAN (R 4.2.3)
-    #>    R6             2.5.1   2021-08-19 [1] CRAN (R 4.2.3)
-    #>  P ragg         * 1.2.5   2023-01-12 [?] RSPM (R 4.2.0)
-    #>    raster         3.6-20  2023-03-06 [1] CRAN (R 4.2.3)
-    #>    Rcpp           1.0.10  2023-01-22 [1] CRAN (R 4.2.3)
-    #>    readr          2.1.4   2023-02-10 [1] CRAN (R 4.2.3)
-    #>  P renv           0.16.0  2022-09-29 [?] RSPM (R 4.2.0)
-    #>    rgdal          1.6-5   2023-03-02 [1] CRAN (R 4.2.3)
-    #>    rlang          1.1.0   2023-03-14 [1] CRAN (R 4.2.3)
-    #>    rmarkdown      2.21    2023-03-26 [1] CRAN (R 4.2.3)
-    #>    rosm           0.2.6   2022-06-09 [1] CRAN (R 4.2.3)
-    #>    scales         1.2.1   2022-08-20 [1] CRAN (R 4.2.3)
-    #>    sessioninfo    1.2.2   2021-12-06 [1] any (@1.2.2)
-    #>    sf           * 1.0-12  2023-03-19 [1] CRAN (R 4.2.3)
-    #>    sp             1.6-0   2023-01-19 [1] CRAN (R 4.2.3)
-    #>    systemfonts    1.0.4   2022-02-11 [1] CRAN (R 4.2.3)
-    #>    terra          1.7-18  2023-03-06 [1] CRAN (R 4.2.3)
-    #>  P textshaping    0.3.6   2021-10-13 [?] RSPM (R 4.2.0)
-    #>    tibble         3.2.1   2023-03-20 [1] CRAN (R 4.2.3)
-    #>    tidyr          1.3.0   2023-01-24 [1] CRAN (R 4.2.3)
-    #>    tidyselect     1.2.0   2022-10-10 [1] CRAN (R 4.2.3)
-    #>    tzdb           0.3.0   2022-03-28 [1] CRAN (R 4.2.3)
-    #>    units          0.8-1   2022-12-10 [1] CRAN (R 4.2.3)
-    #>    utf8           1.2.3   2023-01-31 [1] CRAN (R 4.2.3)
-    #>    vctrs          0.6.1   2023-03-22 [1] CRAN (R 4.2.3)
-    #>    vroom          1.6.1   2023-01-22 [1] CRAN (R 4.2.3)
-    #>    withr          2.5.0   2022-03-03 [1] CRAN (R 4.2.3)
-    #>    xfun           0.38    2023-03-24 [1] CRAN (R 4.2.3)
-    #>    yaml           2.3.7   2023-01-23 [1] CRAN (R 4.2.3)
+    #>  ! package      * version    date (UTC) lib source
+    #>    bit            4.0.5      2022-11-15 [1] CRAN (R 4.3.1)
+    #>    bit64          4.0.5      2020-08-30 [1] CRAN (R 4.3.1)
+    #>  P class          7.3-22     2023-05-03 [?] CRAN (R 4.3.1)
+    #>    classInt       0.4-9      2023-02-28 [1] CRAN (R 4.3.1)
+    #>    cli            3.6.1      2023-03-23 [1] CRAN (R 4.3.1)
+    #>    colorspace     2.1-0      2023-01-23 [1] CRAN (R 4.3.1)
+    #>    crayon         1.5.2      2022-09-29 [1] CRAN (R 4.3.1)
+    #>    curl           5.0.1      2023-06-07 [1] CRAN (R 4.3.1)
+    #>    DBI            1.1.3      2022-06-18 [1] CRAN (R 4.3.1)
+    #>    digest         0.6.31     2022-12-11 [1] CRAN (R 4.3.1)
+    #>    dplyr        * 1.1.2      2023-04-20 [1] CRAN (R 4.3.1)
+    #>    e1071          1.7-13     2023-02-01 [1] CRAN (R 4.3.1)
+    #>    echor        * 0.1.8.9000 2023-06-20 [1] local
+    #>    evaluate       0.21       2023-05-05 [1] CRAN (R 4.3.1)
+    #>    fansi          1.0.4      2023-01-22 [1] CRAN (R 4.3.1)
+    #>    farver         2.1.1      2022-07-06 [1] CRAN (R 4.3.1)
+    #>    fastmap        1.1.1      2023-02-24 [1] CRAN (R 4.3.1)
+    #>    fs             1.6.2      2023-04-25 [1] CRAN (R 4.3.1)
+    #>    generics       0.1.3      2022-07-05 [1] CRAN (R 4.3.1)
+    #>    ggplot2      * 3.4.2      2023-04-03 [1] CRAN (R 4.3.1)
+    #>    glue           1.6.2      2022-02-24 [1] CRAN (R 4.3.1)
+    #>    gtable         0.3.3      2023-03-21 [1] CRAN (R 4.3.1)
+    #>    highr          0.10       2022-12-22 [1] CRAN (R 4.3.1)
+    #>    hms            1.1.3      2023-03-21 [1] CRAN (R 4.3.1)
+    #>    htmltools      0.5.5      2023-03-23 [1] CRAN (R 4.3.1)
+    #>    httr           1.4.6      2023-05-08 [1] CRAN (R 4.3.1)
+    #>    jsonlite       1.8.5      2023-06-05 [1] CRAN (R 4.3.1)
+    #>  P KernSmooth     2.23-21    2023-05-03 [?] CRAN (R 4.3.1)
+    #>    knitr          1.43       2023-05-25 [1] CRAN (R 4.3.1)
+    #>    labeling       0.4.2      2020-10-20 [1] CRAN (R 4.3.1)
+    #>    lifecycle      1.0.3      2022-10-07 [1] CRAN (R 4.3.1)
+    #>    magrittr       2.0.3      2022-03-30 [1] CRAN (R 4.3.1)
+    #>  P mpsTemplates * 0.2.0      2023-06-20 [?] Github (mps9506/mpsTemplates@d7a070e)
+    #>    munsell        0.5.0      2018-06-12 [1] CRAN (R 4.3.1)
+    #>    pillar         1.9.0      2023-03-22 [1] CRAN (R 4.3.1)
+    #>    pkgconfig      2.0.3      2019-09-22 [1] CRAN (R 4.3.1)
+    #>    plyr           1.8.8      2022-11-11 [1] CRAN (R 4.3.1)
+    #>    prettyunits    1.1.1      2020-01-24 [1] CRAN (R 4.3.1)
+    #>    progress       1.2.2      2019-05-16 [1] CRAN (R 4.3.1)
+    #>    proxy          0.4-27     2022-06-09 [1] CRAN (R 4.3.1)
+    #>    purrr          1.0.1      2023-01-10 [1] CRAN (R 4.3.1)
+    #>    R6             2.5.1      2021-08-19 [1] CRAN (R 4.3.1)
+    #>  P ragg         * 1.2.5      2023-01-12 [?] RSPM (R 4.3.0)
+    #>    Rcpp           1.0.10     2023-01-22 [1] CRAN (R 4.3.1)
+    #>    readr          2.1.4      2023-02-10 [1] CRAN (R 4.3.1)
+    #>  P renv           0.17.3     2023-04-06 [?] RSPM (R 4.3.0)
+    #>    rlang          1.1.1      2023-04-28 [1] CRAN (R 4.3.1)
+    #>    rmarkdown      2.22       2023-06-01 [1] CRAN (R 4.3.1)
+    #>    rstudioapi     0.14       2022-08-22 [1] CRAN (R 4.3.1)
+    #>    scales         1.2.1      2022-08-20 [1] CRAN (R 4.3.1)
+    #>    sessioninfo    1.2.2      2021-12-06 [1] any (@1.2.2)
+    #>    sf             1.0-13     2023-05-24 [1] CRAN (R 4.3.1)
+    #>    systemfonts    1.0.4      2022-02-11 [1] CRAN (R 4.3.1)
+    #>  P textshaping    0.3.6      2021-10-13 [?] RSPM (R 4.3.0)
+    #>    tibble         3.2.1      2023-03-20 [1] CRAN (R 4.3.1)
+    #>    tidyr          1.3.0      2023-01-24 [1] CRAN (R 4.3.1)
+    #>    tidyselect     1.2.0      2022-10-10 [1] CRAN (R 4.3.1)
+    #>    tzdb           0.4.0      2023-05-12 [1] CRAN (R 4.3.1)
+    #>    units          0.8-2      2023-04-27 [1] CRAN (R 4.3.1)
+    #>    utf8           1.2.3      2023-01-31 [1] CRAN (R 4.3.1)
+    #>    vctrs          0.6.3      2023-06-14 [1] CRAN (R 4.3.1)
+    #>    vroom          1.6.3      2023-04-28 [1] CRAN (R 4.3.1)
+    #>    withr          2.5.0      2022-03-03 [1] CRAN (R 4.3.1)
+    #>    xfun           0.39       2023-04-20 [1] CRAN (R 4.3.1)
+    #>    yaml           2.3.7      2023-01-23 [1] CRAN (R 4.3.1)
     #> 
-    #>  [1] /home/runner/.cache/R/renv/library/echor-4ec080d0/R-4.2/x86_64-pc-linux-gnu
-    #>  [2] /home/runner/work/echor/echor/renv/sandbox/R-4.2/x86_64-pc-linux-gnu/e11edd0e
+    #>  [1] /home/runner/.cache/R/renv/library/echor-4ec080d0/R-4.3/x86_64-pc-linux-gnu
+    #>  [2] /home/runner/.cache/R/renv/sandbox/R-4.3/x86_64-pc-linux-gnu/5cd49154
     #> 
     #>  P ── Loaded and on-disk path mismatch.
