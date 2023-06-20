@@ -76,8 +76,12 @@ echoWaterGetFacilityInfo <- function(output = "df",
                            url = getURL,
                            httr::accept_json())
 
-    ## Check for valid response for serve, else returns error
-    resp_check(request)
+    ## Check for valid response for serve, else prints a message and
+    ## returns an invisible NULL
+    if (!isTRUE(resp_check(request)))
+    {
+      return(invisible(NULL))
+    }
 
     ## Print status message
     if (isTRUE(verbose)) {
@@ -207,8 +211,12 @@ echoWaterGetMeta <- function(verbose = FALSE){
                          url = getURL,
                          httr::accept_json())
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
 
   ## Print status message, need to make this optional
   if (isTRUE(verbose)) {
@@ -288,8 +296,12 @@ downloadEffluentChart <- function(p_id, verbose, queryDots) {
                          url = getURL,
                          httr::accept("text/csv"))
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
 
   ## Print status message
   if (isTRUE(verbose)) {
@@ -371,8 +383,12 @@ echoWaterGetParams <- function(term = NULL, code = NULL, verbose = FALSE){
                          url = getURL,
                          httr::accept_json())
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
 
   if (isTRUE(verbose)) {
     message("Request URL:", getURL)

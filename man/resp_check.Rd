@@ -10,9 +10,10 @@ resp_check(response)
 \item{response}{response a [httr::GET()] request result returned from the API}
 }
 \value{
-nothing if check is passed, or an informative error if not passed.
+nothing if check is passed, or an informative message if not passed.
 }
 \description{
-Checks for valid server response and passes silently or produces a hopefully useful error.
+Checks for valid server response and passes silently or produces a
+useful message.
 }
 \keyword{internal}

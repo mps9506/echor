@@ -104,8 +104,12 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
                          url = getURL,
                          httr::accept_json())
 
-  ## Check for valid response for serve, else returns error
-  resp_check(request)
+  ## Check for valid response for serve, else prints a message and
+  ## returns an invisible NULL
+  if (!isTRUE(resp_check(request)))
+  {
+    return(invisible(NULL))
+  }
 
   ## Print status message, need to make this optional
   if (isTRUE(verbose)) {
