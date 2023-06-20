@@ -1,6 +1,7 @@
 context("core functions return expected errors")
 
 test_that("core functions returns expected errors", {
+  skip_if_offline(host = "echodata.epa.gov")
   expect_error(echoAirGetFacilityInfo(), "No valid arguments supplied")
   expect_error(echoGetReports(program = "sdw"),
                "the argument 'program' must be specified as one of 'caa' or 'cwa'")
