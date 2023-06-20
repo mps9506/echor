@@ -1,7 +1,7 @@
 Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
-Version: 0.1.8
+Version: 0.1.8.9000
 Authors@R: 
     person(given = "Michael",
            family = "Schramm",
