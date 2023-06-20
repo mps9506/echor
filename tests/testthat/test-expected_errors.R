@@ -1,6 +1,9 @@
 context("core functions return expected errors")
 
 test_that("core functions returns expected errors", {
+  ## this has to skip if offline because the functions
+  ## return NULL when offline, but these functions return NULLs
+  ## before other arguments are evaluated.
   skip_if_offline(host = "echodata.epa.gov")
   expect_error(echoAirGetFacilityInfo(), "No valid arguments supplied")
   expect_error(echoGetReports(program = "sdw"),

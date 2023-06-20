@@ -14,6 +14,10 @@ set_requester(function (request) {
 #with_mock_api <- capture_requests
 
 with_mock_api({
+  ## this has to skip if offline because the functions
+  ## return NULL when offline, but these functions may or may
+  ## not be compared against mocked responses
+
   test_that("core functions return tbl_df", {
     skip_if_offline(host = "echodata.epa.gov")
 
@@ -89,6 +93,10 @@ with_mock_api({
 })
 
 with_mock_api({
+
+  ## this has to skip if offline because the functions
+  ## return NULL when offline, but these functions may or may
+  ## not be compared against mocked responses
 
   test_that("core functions return sf", {
     skip_if_offline(host = "echodata.epa.gov")
