@@ -161,6 +161,9 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
     buildOutput <- getGeoJson("caa",
                               qid,
                               qcolumns)
+    if(is.null(buildOutput)) {
+      return(invisible(NULL))
+    }
     ## Convert to sf dataframe
     buildOutput <- geojsonsf::geojson_sf(buildOutput)
 

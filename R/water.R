@@ -166,6 +166,9 @@ echoWaterGetFacilityInfo <- function(output = "df",
     buildOutput <- getGeoJson("cwa",
                               qid,
                               qcolumns)
+    if(is.null(buildOutput)) {
+      return(invisible(NULL))
+    }
     ## Convert to sf dataframe
     buildOutput <- geojsonsf::geojson_sf(buildOutput)
 
