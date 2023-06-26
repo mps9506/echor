@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "8",
+        "Facilities": [
+            {
+                "CWPName": "EUCHEE LAKE - LOT 42",
+                "SourceID": "GAR375245",
+                "RegistryID": "110070032450",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.45342",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

@@ -138,3 +138,18 @@ with_mock_api({
   })
 
 })
+
+
+## check that multi-page data works
+#with_mock_api <- capture_requests
+
+with_mock_api({
+  test_that("get_QID works", {
+    skip_if_offline(host = "echodata.epa.gov")
+    expect_is(echoWaterGetFacilityInfo(output = 'df',
+                                       qcolumns = "1",
+                                       p_st = "GA"),
+              "tbl_df")
+  })
+})
+

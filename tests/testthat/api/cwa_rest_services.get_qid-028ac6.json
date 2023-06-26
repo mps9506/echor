@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "5",
+        "Facilities": [
+            {
+                "CWPName": "CEDAR MILL, LOT 115",
+                "SourceID": "GAR360925",
+                "RegistryID": "110070016054",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.01528",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

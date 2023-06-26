@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "19",
+        "Facilities": [
+            {
+                "CWPName": "SARDIS FALLS ESTATES - PHASE 1 LOT 11-A",
+                "SourceID": "GAR378467",
+                "RegistryID": "110070065000",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.081952",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

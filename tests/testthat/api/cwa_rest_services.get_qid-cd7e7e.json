@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "11",
+        "Facilities": [
+            {
+                "CWPName": "HIGHLANDS AT CLEAR CREEK LOT 262",
+                "SourceID": "GAR390E11",
+                "RegistryID": "110071255777",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.552736",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

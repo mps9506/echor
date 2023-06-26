@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "12",
+        "Facilities": [
+            {
+                "CWPName": "JUBILEE PHASE 1 LOT 91",
+                "SourceID": "GAR3845A8",
+                "RegistryID": "110070210628",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.34885",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

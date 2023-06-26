@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "25",
+        "Facilities": [
+            {
+                "CWPName": "WHITE CREEK PHASE 2A",
+                "SourceID": "GAR3856C3",
+                "RegistryID": "110070250972",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.89913",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

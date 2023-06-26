@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "1",
+        "Facilities": [
+            {
+                "CWPName": " CREEKVIEW VISTA  - HAMILTON ROAD PHASE I",
+                "SourceID": "GAR189CA6",
+                "RegistryID": "110071322797",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.00659",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

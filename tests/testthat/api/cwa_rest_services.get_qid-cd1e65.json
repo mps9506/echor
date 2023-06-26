@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "15",
+        "Facilities": [
+            {
+                "CWPName": "MILTON LOT  -20",
+                "SourceID": "GAR371841",
+                "RegistryID": "110070012273",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.15645",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

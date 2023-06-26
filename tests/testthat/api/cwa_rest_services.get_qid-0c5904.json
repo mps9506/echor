@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "17",
+        "Facilities": [
+            {
+                "CWPName": "PICKENS PLACE SUBDIVISION (F.K.A. POPLAR PLACE)",
+                "SourceID": "GAR38B1EE",
+                "RegistryID": "110070816054",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.93511",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

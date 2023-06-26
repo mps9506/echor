@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "20",
+        "Facilities": [
+            {
+                "CWPName": "SOUTHAMPTON SECTION 2 - LOT 08D",
+                "SourceID": "GAR381542",
+                "RegistryID": "110070103598",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.2927693",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

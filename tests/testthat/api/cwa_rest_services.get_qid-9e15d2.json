@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "2",
+        "Facilities": [
+            {
+                "CWPName": "ALLEN STREET PROPERTIES SUBDIVISION - LOT 24",
+                "SourceID": "GAR38BF4E",
+                "RegistryID": "110070617583",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.41927",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

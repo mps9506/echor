@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "6",
+        "Facilities": [
+            {
+                "CWPName": "COOPER PLACE LOT 40",
+                "SourceID": "GAR390468",
+                "RegistryID": "110071223477",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.20732",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

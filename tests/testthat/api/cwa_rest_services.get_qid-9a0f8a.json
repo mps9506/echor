@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "23",
+        "Facilities": [
+            {
+                "CWPName": "TIMBERBROOK PHASE 2, LOT 181",
+                "SourceID": "GAR38D7EA",
+                "RegistryID": "110070505910",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.40744",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

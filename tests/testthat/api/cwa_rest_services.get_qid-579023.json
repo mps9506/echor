@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "7",
+        "Facilities": [
+            {
+                "CWPName": "DEVON PARK - LOT 2",
+                "SourceID": "GAR38F9EF",
+                "RegistryID": "110071156104",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.955566",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}
