@@ -144,7 +144,7 @@ with_mock_api({
 #with_mock_api <- capture_requests
 
 with_mock_api({
-  test_that("get_QID works", {
+  test_that("get_QID works for water", {
     skip_if_offline(host = "echodata.epa.gov")
     expect_is(echoWaterGetFacilityInfo(output = 'df',
                                        qcolumns = "1",
@@ -152,4 +152,15 @@ with_mock_api({
               "tbl_df")
   })
 })
+
+# with_mock_api <- capture_requests
+# with_mock_api({
+#   test_that("get_QID works for sdw", {
+#     skip_if_offline(host = "echodata.epa.gov")
+#     expect_is(echoWaterGetFacilityInfo(output = 'df',
+#                                        qcolumns = "1",
+#                                        p_st = "GA"),
+#               "tbl_df")
+#   })
+# })
 
