@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "14",
+        "Facilities": [
+            {
+                "CWPName": "LOWNDES COUNTY MS4",
+                "SourceID": "GAG610066",
+                "RegistryID": "110070052967",
+                "CWPNAICSCodes": null,
+                "FacLat": "30.8342",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

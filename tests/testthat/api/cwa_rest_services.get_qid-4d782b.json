@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "9",
+        "Facilities": [
+            {
+                "CWPName": "GILLIONVILLE TRACE PART LAND LOT 82, SECOND LAND DISTRICT, DOUGHERTY COUNTY, GEO",
+                "SourceID": "GAR347048",
+                "RegistryID": "110070010529",
+                "CWPNAICSCodes": null,
+                "FacLat": "31.585556",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

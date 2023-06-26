@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "16",
+        "Facilities": [
+            {
+                "CWPName": "ODUM GREEN - LOTS 1-11",
+                "SourceID": "GAR385408",
+                "RegistryID": "110070237672",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.61046",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

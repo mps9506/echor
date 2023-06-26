@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "4",
+        "Facilities": [
+            {
+                "CWPName": "BRIGHTWOOD ON THE LAKE LOT 123",
+                "SourceID": "GAR38637D",
+                "RegistryID": "110070377108",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.46338",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

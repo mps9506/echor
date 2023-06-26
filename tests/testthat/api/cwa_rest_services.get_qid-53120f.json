@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "3",
+        "Facilities": [
+            {
+                "CWPName": "BARTRAM TRAIL - SECTION 9",
+                "SourceID": "GAR351458",
+                "RegistryID": "110070015516",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.52623",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

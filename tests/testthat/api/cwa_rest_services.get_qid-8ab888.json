@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "24",
+        "Facilities": [
+            {
+                "CWPName": "VILLAGE GREEN LOT 4",
+                "SourceID": "GAR392232",
+                "RegistryID": "110071323078",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.368702",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

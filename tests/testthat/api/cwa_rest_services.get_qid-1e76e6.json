@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "21",
+        "Facilities": [
+            {
+                "CWPName": "STRATFORD HILLS - PHASE 1 - LOT 8",
+                "SourceID": "GAR38FF18",
+                "RegistryID": "110071155001",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.375953",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

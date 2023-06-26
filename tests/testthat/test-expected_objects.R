@@ -116,3 +116,51 @@ with_mock_api({
   })
 
 })
+
+
+## checks echoAirGetMeta echoWaterGetMeta
+## function returns dataframe and messages as expected
+
+
+with_mock_api({
+  test_that("echoAirGetMeta returns df", {
+    skip_if_offline(host = "echodata.epa.gov")
+
+    expect_is(echoAirGetMeta(),
+              "tbl_df")
+
+    expect_message(echoAirGetMeta(verbose = TRUE))
+
+    expect_is(echoWaterGetMeta(),
+              "tbl_df")
+
+    expect_message(echoWaterGetMeta(verbose = TRUE))
+  })
+
+})
+
+
+## check that multi-page data works
+#with_mock_api <- capture_requests
+
+with_mock_api({
+  test_that("get_QID works for water", {
+    skip_if_offline(host = "echodata.epa.gov")
+    expect_is(echoWaterGetFacilityInfo(output = 'df',
+                                       qcolumns = "1",
+                                       p_st = "GA"),
+              "tbl_df")
+  })
+})
+
+# with_mock_api <- capture_requests
+# with_mock_api({
+#   test_that("get_QID works for sdw", {
+#     skip_if_offline(host = "echodata.epa.gov")
+#     expect_is(echoWaterGetFacilityInfo(output = 'df',
+#                                        qcolumns = "1",
+#                                        p_st = "GA"),
+#               "tbl_df")
+#   })
+# })
+

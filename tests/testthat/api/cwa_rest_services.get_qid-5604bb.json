@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "13",
+        "Facilities": [
+            {
+                "CWPName": "LEGACY PARK PHASE II SECTION 3 AND 4",
+                "SourceID": "GAR38671D",
+                "RegistryID": "110070381005",
+                "CWPNAICSCodes": null,
+                "FacLat": "32.48311",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

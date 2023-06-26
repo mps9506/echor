@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "22",
+        "Facilities": [
+            {
+                "CWPName": "THE LINKS LOT  -59",
+                "SourceID": "GAR371521",
+                "RegistryID": "110070013983",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.658381",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

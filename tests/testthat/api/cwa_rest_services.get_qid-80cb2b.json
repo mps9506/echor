@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "10",
+        "Facilities": [
+            {
+                "CWPName": "HARBINS LANDING LOT 193",
+                "SourceID": "GAR376126",
+                "RegistryID": "110070046738",
+                "CWPNAICSCodes": null,
+                "FacLat": "33.96411",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

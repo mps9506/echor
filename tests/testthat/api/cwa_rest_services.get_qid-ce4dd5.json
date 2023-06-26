@@ -1,0 +1,18 @@
+{
+    "Results": {
+        "Message": "Working",
+        "QueryRows": "124442",
+        "QueryID": "380",
+        "PageNo": "18",
+        "Facilities": [
+            {
+                "CWPName": "RESERVE AT PETITT CREEK LOT 106",
+                "SourceID": "GAR364020",
+                "RegistryID": "110070006055",
+                "CWPNAICSCodes": null,
+                "FacLat": "34.16736",
+                "CWPQtrsWithSNC": "0"
+            }
+        ]
+    }
+}

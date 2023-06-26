@@ -164,7 +164,7 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
     # create the progress bar
     pb <- progress_bar$new(total = pages)
 
-    buildOutput <- getQID("cwa",
+    buildOutput <- getQID("sdw",
                           qid,
                           qcolumns,
                           page = 1)
