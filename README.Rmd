@@ -101,7 +101,7 @@ When returned as sf dataframes, the data is suitable for immediate spatial plott
 library(ggspatial)
 library(sf)
 library(ggrepel)
-
+library(prettymapr)
 
 df <- echoWaterGetFacilityInfo(output = "sf", 
                                p_c1lon = '-96.387509', 
