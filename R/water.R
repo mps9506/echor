@@ -24,7 +24,7 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
-#' p_pcomp = 'POW',
+#' p_pcomp = 'POT',
 #' output = 'df')
 #'
 #' ## Retrieve a simple features dataframe by bounding box
@@ -32,7 +32,7 @@
 #' ymin = '30.554395',
 #' xmax = '-96.25947',
 #' ymax = '30.751984',
-#' p_pcomp = 'POW',
+#' p_pcomp = 'POT',
 #' output = 'sf')
 #'
 #' }
@@ -70,7 +70,8 @@ echoWaterGetFacilityInfo <- function(output = "df",
   queryDots <- queryList(valuesList)
 
   ## build the request URL statement
-  path <- "echo/cwa_rest_services.get_facility_info"
+  #path <- "echo/cwa_rest_services.get_facility_info"
+  path <- "echo/cwa_rest_services.get_facilities"
   query <- paste("output=JSON", queryDots, sep = "&")
   getURL <- requestURL(path = path, query = query)
 
