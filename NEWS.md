@@ -1,3 +1,6 @@
+# echor 0.1.9.9999
+* in development
+
 # echor 0.1.9
 * when server responses != 200 or 202, functions return an invisible NULL with a message instead of an error and message. (fixes #87)
 * removed geojsonsf dependency.
