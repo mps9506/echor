@@ -95,8 +95,9 @@ head(df)
 
 
 
-When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis **note: the spatial data endpoints do not currently appear to be functioning**
-```{r example3, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, out.width="100%"}
+When returned as sf dataframes, the data is suitable for immediate spatial plotting or analysis.
+
+```{r example3, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, out.width="100%"}
 library(ggspatial)
 library(sf)
 library(ggrepel)
