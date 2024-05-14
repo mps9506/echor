@@ -71,10 +71,10 @@ library(echor)
 ## echoWaterGetFacilityInfo() will return a dataframe or simple features (sf) dataframe.
 
 df <- echoWaterGetFacilityInfo(output = "df", 
-                               xmin = '-96.387509', 
-                               ymin = '30.583572', 
-                               xmax = '-96.281422', 
-                               ymax = '30.640008',
+                               p_c1lon = '-96.387509', 
+                               p_c1lat = '30.583572', 
+                               p_c2lon = '-96.281422', 
+                               p_c2lat = '30.640008',
                                p_ptype = "NPD")
 
 head(df)
@@ -84,10 +84,10 @@ The ECHO database can provide over 270 different columns. echor returns a subset
 
 ```{r example2, echo=TRUE, message=FALSE, warning=FALSE}
 df <- echoWaterGetFacilityInfo(output = "df", 
-                               xmin = '-96.387509', 
-                               ymin = '30.583572', 
-                               xmax = '-96.281422', 
-                               ymax = '30.640008',
+                               p_c1lon = '-96.387509', 
+                               p_c1lat = '30.583572', 
+                               p_c2lon = '-96.281422', 
+                               p_c2lat = '30.640008',
                                qcolumns = '1,14,23,24,25',
                                p_ptype = "NPD")
 head(df)
@@ -104,10 +104,10 @@ library(ggrepel)
 library(purrr)
 
 df <- echoWaterGetFacilityInfo(output = "sf", 
-                               xmin = '-96.387509', 
-                               ymin = '30.583572', 
-                               xmax = '-96.281422', 
-                               ymax = '30.640008',
+                               p_c1lon = '-96.387509', 
+                               p_c1lat = '30.583572', 
+                               p_c2lon = '-96.281422', 
+                               p_c2lat = '30.640008',
                                p_ptype = "NPD")
 
 ##to make labels, need to map the coords and use geom_text :(
