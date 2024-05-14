@@ -101,7 +101,7 @@ When returned as sf dataframes, the data is suitable for immediate spatial plott
 library(ggspatial)
 library(sf)
 library(ggrepel)
-library(purrr)
+
 
 df <- echoWaterGetFacilityInfo(output = "sf", 
                                p_c1lon = '-96.387509', 
@@ -110,22 +110,15 @@ df <- echoWaterGetFacilityInfo(output = "sf",
                                p_c2lat = '30.640008',
                                p_ptype = "NPD")
 
-##to make labels, need to map the coords and use geom_text :(
-## can't help but think there is an easier way to do this
-
-df <- df %>%
-  mutate(
-    coords = map(geometry, st_coordinates),
-    coords_x = map_dbl(coords, 1),
-    coords_y = map_dbl(coords, 2)
-  )
 
 ggplot(df) +
   annotation_map_tile(zoomin = -1, progress = "none") +
   geom_sf(inherit.aes = FALSE, shape = 21, 
           color = "darkred", fill = "darkred", 
           size = 2, alpha = 0.25) +
-  geom_label_repel(data = df, aes(x = coords_x, y = coords_y, label = SourceID),
+  geom_label_repel(data = df, aes(label = SourceID,
+                                  geometry = geometry),
+                   stat = "sf_coordinates",
                    point.padding = .5, min.segment.length = 0.1,
                    size = 2, color = "dodgerblue") +
   theme_mps_noto() +
