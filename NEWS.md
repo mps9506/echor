@@ -1,5 +1,6 @@
-# echor 0.1.9.9999
-* in development
+# echor 0.1.9.9999 (in development)
+* Update examples in `echoWaterGetFacilityInfo()`. The allowable values for `p_pcomp` were changed by EPA resulting in zero values returned. (fixes #94)
+* There is no longer an (unknown) upper limit on the values returned when requesting an `sf` dataframe. Previously, ECHO returned "clusters" instead of records when a large number of records were requested. ECHO no provides a different endpoint to request clusters. This package does not currently provide a function to access the clusters endpoint.
 
 # echor 0.1.9
 * when server responses != 200 or 202, functions return an invisible NULL with a message instead of an error and message. (fixes #87)
