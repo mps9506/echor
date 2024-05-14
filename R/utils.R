@@ -306,6 +306,10 @@ resp_check <- function(response) {
     message("There was a server error, try again later.")
     return(FALSE)
   }
+  else if(response$status_code == 502) {
+    message("There was a server error (502 Bad Gateway), try again later.")
+    return(FALSE)
+  }
   else if(response$status_code == 503) {
     message("The service is unavailable, try again later.")
     return(FALSE)
