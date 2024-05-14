@@ -539,10 +539,18 @@
                 "Description": null
             },
             {
+                "ColumnName": "DATE_LAST_SURVEY_ACT",
+                "DataType": "DATE",
+                "DataLength": "7",
+                "ColumnID": "68",
+                "ObjectName": "DateLastSurveyAct",
+                "Description": null
+            },
+            {
                 "ColumnName": "SIGNIFICANT_DEFICIENCY_COUNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "68",
+                "ColumnID": "69",
                 "ObjectName": "SignificantDeficiencyCount",
                 "Description": null
             },
@@ -550,15 +558,23 @@
                 "ColumnName": "SIGNIFICANT_DEFICIENCY_COUNT_ILS",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "69",
+                "ColumnID": "70",
                 "ObjectName": "SignificantDeficiencyCountIls",
+                "Description": null
+            },
+            {
+                "ColumnName": "SIG_DEF_COUNT_ILS_ACT",
+                "DataType": "NUMBER",
+                "DataLength": "22",
+                "ColumnID": "71",
+                "ObjectName": "SigDefCountIlsAct",
                 "Description": null
             },
             {
                 "ColumnName": "SDW_DATE_LAST_VISIT",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "70",
+                "ColumnID": "72",
                 "ObjectName": "SDWDateLastVisit",
                 "Description": null
             },
@@ -566,7 +582,7 @@
                 "ColumnName": "SDW_DATE_LAST_VISIT_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "71",
+                "ColumnID": "73",
                 "ObjectName": "SDWDateLastVisitEPA",
                 "Description": null
             },
@@ -574,7 +590,7 @@
                 "ColumnName": "SDW_DATE_LAST_VISIT_STATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "72",
+                "ColumnID": "74",
                 "ObjectName": "SDWDateLastVisitState",
                 "Description": null
             },
@@ -582,7 +598,7 @@
                 "ColumnName": "SDW_DATE_LAST_VISIT_LOCAL",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "73",
+                "ColumnID": "75",
                 "ObjectName": "SDWDateLastVisitLocal",
                 "Description": null
             },
@@ -590,7 +606,7 @@
                 "ColumnName": "SITE_VISITS_5YR_ALL",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "74",
+                "ColumnID": "76",
                 "ObjectName": "SiteVisits5yrAll",
                 "Description": null
             },
@@ -598,7 +614,7 @@
                 "ColumnName": "SITE_VISITS_5YR_INSPECTIONS",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "75",
+                "ColumnID": "77",
                 "ObjectName": "SiteVisits5yrInspections",
                 "Description": null
             },
@@ -606,7 +622,7 @@
                 "ColumnName": "SITE_VISITS_5YR_OTHER",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "76",
+                "ColumnID": "78",
                 "ObjectName": "SiteVisits5yrOther",
                 "Description": null
             }

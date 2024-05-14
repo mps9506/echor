@@ -11,7 +11,8 @@ set_requester(function (request) {
     gsub_request(api_root, "api/", fixed = TRUE)
 })
 
-#with_mock_api <- capture_requests
+## Uncomment to capture new mocked responses
+## with_mock_api <- capture_requests
 
 with_mock_api({
   ## this has to skip if offline because the functions
