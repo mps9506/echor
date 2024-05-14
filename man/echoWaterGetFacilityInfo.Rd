@@ -29,7 +29,7 @@ echoWaterGetFacilityInfo(xmin = '-96.407563',
 ymin = '30.554395',
 xmax = '-96.25947',
 ymax = '30.751984',
-p_pcomp = 'POW',
+p_pcomp = 'POT',
 output = 'df')
 
 ## Retrieve a simple features dataframe by bounding box
@@ -37,7 +37,7 @@ spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
 ymin = '30.554395',
 xmax = '-96.25947',
 ymax = '30.751984',
-p_pcomp = 'POW',
+p_pcomp = 'POT',
 output = 'sf')
 
 }
