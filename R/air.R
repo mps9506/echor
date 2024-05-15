@@ -17,17 +17,17 @@
 #' ## These examples require an internet connection to run
 #'
 #' ## Retrieve table of facilities by bounding box
-#' echoAirGetFacilityInfo(xmin = '-96.407563',
-#' ymin = '30.554395',
-#' xmax = '-96.25947',
-#' ymax = '30.751984',
+#' echoAirGetFacilityInfo(p_c1lon = '-96.407563',
+#' p_c1lat = '30.554395',
+#' p_c2lon = '-96.25947',
+#' p_c2lat = '30.751984',
 #' output = 'df')
 #'
 #' ## Retrieve a simple features dataframe by bounding box
-#' spatialdata <- echoAirGetFacilityInfo(xmin = '-96.407563',
-#' ymin = '30.554395',
-#' xmax = '-96.25947',
-#' ymax = '30.751984',
+#' spatialdata <- echoAirGetFacilityInfo(p_c1lon = '-96.407563',
+#' p_c1lat = '30.554395',
+#' p_c2lon = '-96.25947',
+#' p_c2lat = '30.751984',
 #' output = 'sf')
 #'
 #' }
@@ -63,7 +63,7 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
   queryDots <- queryList(valuesList)
 
   ## build the request URL statement
-  path <- "echo/air_rest_services.get_facility_info"
+  path <- "echo/air_rest_services.get_facilities"
   query <- paste("output=JSON", queryDots, sep = "&")
   getURL <- requestURL(path = path, query = query)
 
