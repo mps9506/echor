@@ -117,3 +117,25 @@ with_mock_api({
   })
 
 })
+
+
+## checks echoAirGetMeta echoWaterGetMeta
+## function returns dataframe and messages as expected
+
+
+with_mock_api({
+  test_that("echoAirGetMeta returns df", {
+    skip_if_offline(host = "echodata.epa.gov")
+
+    expect_is(echoAirGetMeta(),
+              "tbl_df")
+
+    expect_message(echoAirGetMeta(verbose = TRUE))
+
+    expect_is(echoWaterGetMeta(),
+              "tbl_df")
+
+    expect_message(echoWaterGetMeta(verbose = TRUE))
+  })
+
+})
