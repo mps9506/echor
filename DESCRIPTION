@@ -52,3 +52,5 @@ Config/Needs/website:
   raster,
   rmarkdown,
   sf
+Config/Needs/coverage: 
+  xml2
