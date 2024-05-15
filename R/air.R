@@ -64,7 +64,11 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
   ## build the request URL statement
   path <- "echo/air_rest_services.get_facilities"
-  query <- paste("output=JSON", queryDots, sep = "&")
+  ## responseset is the maximum number of records return on one page of paginated
+  ## results
+  responseSet <- 1000
+  baseParams <- paste("output=JSON", paste0("responseset=",responseSet), sep="&")
+  query <- paste(baseParams, queryDots, sep = "&")
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
@@ -87,6 +91,12 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
 
   info <- httr::content(request)
 
+  ## if query returns an error message, print message and return invisible null
+  if(length(info$Results$Error$ErrorMessage)>0){
+    message(info$Results$Error$ErrorMessage)
+    return(invisible(NULL))
+  }
+
   ## return the query id
   qid <- info[["Results"]][["QueryID"]]
 
@@ -108,35 +118,11 @@ echoAirGetFacilityInfo <- function(output = "df", verbose = FALSE, ...) {
   ## if df return output from air_rest_services.get_download
   if (output == "df") {
 
-    if (n_records <= 100000) {
+    buildOutput <- getDownload("caa",
+                               qid,
+                               qcolumns,
+                               col_types = colTypes)
 
-      buildOutput <- getDownload("caa",
-                                 qid,
-                                 qcolumns,
-                                 col_types = colTypes)
-    } else {
-
-      # number of pages returned is n_records/5000
-      pages <- ceiling(n_records/5000)
-      # create the progress bar
-      pb <- progress_bar$new(total = pages)
-
-      buildOutput <- getQID("caa",
-                            qid,
-                            qcolumns,
-                            page = 1)
-      pb$tick()
-
-      for (i in 2:pages) {
-        buildOutput <- bind_rows(buildOutput,
-                                 getQID("caa",
-                                        qid,
-                                        qcolumns,
-                                        page = i))
-        Sys.sleep(0.5)
-        pb$tick()
-      }
-    }
     return(buildOutput)
   }
 

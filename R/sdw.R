@@ -59,7 +59,6 @@ echoSDWGetMeta <- function(verbose = FALSE){
 #' Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems}.
 #' @param verbose Logical, indicating whether to provide processing and retrieval messages. Defaults to FALSE
 #' @param ... Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-drinking-water#!/Safe_Drinking_Water/get_sdw_rest_services_get_systems} for a complete list of parameter options. Examples provided below.
-#' @importFrom purrr map
 #' @import httr
 #' @import dplyr
 #' @return returns a dataframe
@@ -102,7 +101,11 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
 
   ## build the request URL statement
   path <- "echo/sdw_rest_services.get_systems"
-  query <- paste("output=JSON", queryDots, sep = "&")
+  ## responseset is the maximum number of records return on one page of paginated
+  ## results
+  responseSet <- 1000
+  baseParams <- paste("output=JSON", paste0("responseset=",responseSet), sep="&")
+  query <- paste(baseParams, queryDots, sep = "&")
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
@@ -124,6 +127,13 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
   }
 
   info <- httr::content(request)
+
+  ## if query returns an error message, print message and return invisible null
+  if(length(info$Results$Error$ErrorMessage)>0){
+    message(info$Results$Error$ErrorMessage)
+    return(invisible(NULL))
+  }
+
 
   ## return the query id
   qid <- info[["Results"]][["QueryID"]]
@@ -150,36 +160,10 @@ echoSDWGetSystems <- function(verbose = FALSE, ...) {
 
   colTypes <- columnsToParse(program = "sdw", colNums)
 
-  ## if <= 100000 records use getDownload
-  if (n_records <= 100000) {
 
-    buildOutput <- getDownload("sdw",
-                               qid,
-                               qcolumns,
-                               col_types = colTypes)
-  } else {
-
-    # number of pages returned is n_records/5000
-    pages <- ceiling(n_records/5000)
-    # create the progress bar
-    pb <- progress_bar$new(total = pages)
-
-    buildOutput <- getQID("sdw",
-                          qid,
-                          qcolumns,
-                          page = 1)
-    pb$tick()
-
-    for (i in 2:pages) {
-      buildOutput <- bind_rows(buildOutput,
-                               getQID("sdw",
-                                      qid,
-                                      qcolumns,
-                                      page = i))
-      Sys.sleep(0.5)
-      pb$tick()
-    }
-
-  }
+  buildOutput <- getDownload("sdw",
+                             qid,
+                             qcolumns,
+                             col_types = colTypes)
   return(buildOutput)
 }
