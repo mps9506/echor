@@ -1,6 +1,6 @@
 context("core functions return expected objects")
 
-
+## shorten the file path for the mosked responses
 api_root <- "https://echodata.epa.gov/echo/"
 set_redactor(function (response) {
   response %>%
@@ -11,6 +11,7 @@ set_requester(function (request) {
     gsub_request(api_root, "api/", fixed = TRUE)
 })
 
+## Uncomment to capture new mocked responses
 #with_mock_api <- capture_requests
 
 with_mock_api({
@@ -115,4 +116,38 @@ with_mock_api({
 
   })
 
+})
+
+
+## checks echoAirGetMeta echoWaterGetMeta
+## function returns dataframe and messages as expected
+
+
+with_mock_api({
+  test_that("echoAirGetMeta returns df", {
+    skip_if_offline(host = "echodata.epa.gov")
+
+    expect_is(echoAirGetMeta(),
+              "tbl_df")
+
+    expect_message(echoAirGetMeta(verbose = TRUE))
+
+    expect_is(echoWaterGetMeta(),
+              "tbl_df")
+
+    expect_message(echoWaterGetMeta(verbose = TRUE))
+  })
+
+})
+
+## check that queries returning over 100,000 return invisible objects with message
+
+
+with_mock_api({
+  test_that("get_QID works for water", {
+    skip_if_offline(host = "echodata.epa.gov")
+    expect_invisible(echoWaterGetFacilityInfo(output = 'df',
+                                       qcolumns = "1",
+                                       p_st = "GA"))
+  })
 })

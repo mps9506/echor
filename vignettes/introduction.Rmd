@@ -28,6 +28,10 @@ library(dplyr)
 
 path <- here::here("vignettes/int")
 
+## The mocked url/file paths are too long for CRAN
+## this shortens the file paths for use in the
+## vignette
+
 api_root <- "https://echodata.epa.gov/echo/"
 
 set_redactor(function (response) {
@@ -41,6 +45,8 @@ set_requester(function (request) {
 })
 
 httptest::start_vignette(path = path)
+
+## note, delete the vignettes/int directory to regenerate mocked files
 ```
 
 ## echor introduction
@@ -118,10 +124,10 @@ library(echor)
 
 ## Retrieve information about facilities within a geographic location
 df <- echoAirGetFacilityInfo(output = "df",
-                             xmin = '-96.387509',
-                             ymin = '30.583572',
-                             xmax = '-96.281422',
-                             ymax = '30.640008',
+                             p_c1lon = '-96.387509',
+                             p_c1lat = '30.583572',
+                             p_c2lon = '-96.281422',
+                             p_c2lat = '30.640008',
                              qcolumns = "1,2,3,22,23")
 ```
 
@@ -169,13 +175,13 @@ p_zip string  Facility 5-Digit Zip Code
               ex:
               p_zip = "77843, 77845"
               
-xmin  string  Minimum longitude value in decimal degrees
+p_c1lon  string  Minimum longitude value in decimal degrees
 
-ymin  string  Minimum latitude value in decimal degrees
+p_c1lat  string  Minimum latitude value in decimal degrees
 
-xmax  string  Maximum longitude value in decimal degrees
+p_c2lon  string  Maximum longitude value in decimal degrees
 
-ymax  string  Maximum latitude value in decimal degrees
+p_c2lat  string  Maximum latitude value in decimal degrees
 ```
 
 Step 3 - Download the emission inventory report for a permitted facility:
@@ -203,8 +209,8 @@ p_units string  Units of measurement. Defaults is 'lbs'.
 
 Find facilities with NPDES permits to discharge wastewater:
 ```{r}
-df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395', 
-                               xmax = '-96.25947',  ymax = '30.751984', 
+df <- echoWaterGetFacilityInfo(p_c1lon = '-96.407563', p_c1lat = '30.554395', 
+                               p_c2lon = '-96.25947',  p_c2lat = '30.751984', 
                                output = 'df', qcolumns = "1,2,3,4,5,6,7")
 ```
 
@@ -254,13 +260,13 @@ p_zip string  Facility 5-Digit Zip Code
               ex:
               p_zip = "77843, 77845"
               
-xmin  string  Minimum longitude value in decimal degrees
+p_c1lon  string  Minimum longitude value in decimal degrees
 
-ymin  string  Minimum latitude value in decimal degrees
+p_c1lat  string  Minimum latitude value in decimal degrees
 
-xmax  string  Maximum longitude value in decimal degrees
+p_c2lon  string  Maximum longitude value in decimal degrees
 
-ymax  string  Maximum latitude value in decimal degrees
+p_c1lat  string  Maximum latitude value in decimal degrees
 
 p_huc string  2-,4,6-,or 8-digit watershed code.
               May contain comma-seperated values

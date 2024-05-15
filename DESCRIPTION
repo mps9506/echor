@@ -1,7 +1,7 @@
 Package: echor
 Type: Package
 Title: Access EPA 'ECHO' Data
-Version: 0.1.9
+Version: 0.1.9.9999
 Authors@R: 
     person(given = "Michael",
            family = "Schramm",
@@ -18,7 +18,7 @@ Description: An R interface to United States Environmental
     from <https://echo.epa.gov/>. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Imports:
   curl,
   dplyr,
@@ -48,6 +48,9 @@ Config/Needs/website:
   here,
   kableExtra,
   knitr,
+  prettymapr,
   raster,
   rmarkdown,
   sf
+Config/Needs/coverage: 
+  xml2

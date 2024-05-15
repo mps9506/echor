@@ -25,19 +25,19 @@ Uses EPA's ECHO API: \url{https://echo.epa.gov/tools/web-services/facility-searc
 ## These examples require an internet connection to run
 
 ## Retrieve table of facilities by bounding box
-echoWaterGetFacilityInfo(xmin = '-96.407563',
-ymin = '30.554395',
-xmax = '-96.25947',
-ymax = '30.751984',
-p_pcomp = 'POW',
+echoWaterGetFacilityInfo(p_c1lon = '-96.407563',
+p_c1lat = '30.554395',
+p_c2lon = '-96.25947',
+p_c2lat = '30.751984',
+p_pcomp = 'POT',
 output = 'df')
 
 ## Retrieve a simple features dataframe by bounding box
-spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
-ymin = '30.554395',
-xmax = '-96.25947',
-ymax = '30.751984',
-p_pcomp = 'POW',
+spatialdata <- echoWaterGetFacilityInfo(p_c2lon = '-96.407563',
+p_c1lat = '30.554395',
+p_c2lon = '-96.25947',
+p_c2lat = '30.751984',
+p_pcomp = 'POT',
 output = 'sf')
 
 }

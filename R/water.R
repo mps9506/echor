@@ -11,7 +11,6 @@
 #' @param \dots Further arguments passed as query parameters in request sent to EPA ECHO's API. For more options see: \url{https://echo.epa.gov/tools/web-services/facility-search-water#!/Facility_Information/get_cwa_rest_services_get_facility_info} for a complete list of parameter options. Examples provided below.
 #' @return returns a dataframe or simple features dataframe
 #' @import httr
-#' @import progress
 #' @importFrom sf st_read
 #' @importFrom dplyr bind_rows
 #'
@@ -20,19 +19,19 @@
 #' ## These examples require an internet connection to run
 #'
 #' ## Retrieve table of facilities by bounding box
-#' echoWaterGetFacilityInfo(xmin = '-96.407563',
-#' ymin = '30.554395',
-#' xmax = '-96.25947',
-#' ymax = '30.751984',
-#' p_pcomp = 'POW',
+#' echoWaterGetFacilityInfo(p_c1lon = '-96.407563',
+#' p_c1lat = '30.554395',
+#' p_c2lon = '-96.25947',
+#' p_c2lat = '30.751984',
+#' p_pcomp = 'POT',
 #' output = 'df')
 #'
 #' ## Retrieve a simple features dataframe by bounding box
-#' spatialdata <- echoWaterGetFacilityInfo(xmin = '-96.407563',
-#' ymin = '30.554395',
-#' xmax = '-96.25947',
-#' ymax = '30.751984',
-#' p_pcomp = 'POW',
+#' spatialdata <- echoWaterGetFacilityInfo(p_c2lon = '-96.407563',
+#' p_c1lat = '30.554395',
+#' p_c2lon = '-96.25947',
+#' p_c2lat = '30.751984',
+#' p_pcomp = 'POT',
 #' output = 'sf')
 #'
 #' }
@@ -70,8 +69,12 @@ echoWaterGetFacilityInfo <- function(output = "df",
   queryDots <- queryList(valuesList)
 
   ## build the request URL statement
-  path <- "echo/cwa_rest_services.get_facility_info"
-  query <- paste("output=JSON", queryDots, sep = "&")
+  path <- "echo/cwa_rest_services.get_facilities"
+  ## responseset is the maximum number of records return on one page of paginated
+  ## results
+  responseSet <- 1000
+  baseParams <- paste("output=JSON", paste0("responseset=",responseSet), sep="&")
+  query <- paste(baseParams, queryDots, sep = "&")
   getURL <- requestURL(path = path, query = query)
 
   ## Make the request
@@ -94,12 +97,16 @@ echoWaterGetFacilityInfo <- function(output = "df",
 
   info <- httr::content(request)
 
+  ## if query returns an error message, print message and return invisible null
+  if(length(info$Results$Error$ErrorMessage)>0){
+    message(info$Results$Error$ErrorMessage)
+    return(invisible(NULL))
+  }
+
+
   ## return the query id
   qid <- info[["Results"]][["QueryID"]]
 
-  ## return the number of records
-  n_records <- info[["Results"]][["QueryRows"]]
-  n_records <- as.numeric(n_records)
 
   ## build the output
 
@@ -112,44 +119,21 @@ echoWaterGetFacilityInfo <- function(output = "df",
 
   colTypes <- columnsToParse(program = "cwa", colNums)
 
-  ## if df return output from air_rest_services.get_download
+  ## if df return output from .get_download
   if (output == "df") {
-    ## if <= 100000 records use getDownload
-    if (n_records <= 100000) {
 
-      buildOutput <- getDownload("cwa",
-                                 qid,
-                                 qcolumns,
-                                 col_types = colTypes)
-    } else {
-
-      # number of pages returned is n_records/5000
-      pages <- ceiling(n_records/5000)
-      # create the progress bar
-      pb <- progress_bar$new(total = pages)
-
-      buildOutput <- getQID("cwa",
-                            qid,
-                            qcolumns,
-                            page = 1)
-      pb$tick()
-
-      for (i in 2:pages) {
-        buildOutput <- bind_rows(buildOutput,
-                                 getQID("cwa",
-                                        qid,
-                                        qcolumns,
-                                        page = i))
-        Sys.sleep(0.5)
-        pb$tick()
-      }
-
-    }
+    buildOutput <- getDownload("cwa",
+                               qid,
+                               qcolumns,
+                               col_types = colTypes)
     return(buildOutput)
   }
 
-  ## if df return output from air_rest_services.get_geojson
+  ## if df return output from .get_geojson
   if (output == "sf") {
+
+    ## echo now returns clusters in a seperate API call (get_info_clusters)
+    ## so I think the code below is no longer required.
 
     ## if returns clusters, there are to many records to
     ## return records via geojson and the request needs to
@@ -157,16 +141,16 @@ echoWaterGetFacilityInfo <- function(output = "df",
     ## many. If the length of facilities == 0, it means
     ## the query either return no records, or the request returned
     ## clusters and we can stop the function and return a message.
-    if(length(info[["Results"]][["Facilities"]]) == 0) {
-      if(n_records > 0) {
-        message("Too many records to return spatial a object, please subset your request and try again.")
-        return(invisible(NULL))
-      }
-      if(n_records == 0) {
-        message("No records returned in your request")
-        return(invisible(NULL))
-      }
-    }
+    # if(length(info[["Results"]][["Facilities"]]) == 0) {
+    #   if(n_records > 0) {
+    #     message("Too many records to return spatial a object, please subset your request and try again.")
+    #     return(invisible(NULL))
+    #   }
+    #   if(n_records == 0) {
+    #     message("No records returned in your request")
+    #     return(invisible(NULL))
+    #   }
+    # }
     buildOutput <- getGeoJson("cwa",
                               qid,
                               qcolumns,

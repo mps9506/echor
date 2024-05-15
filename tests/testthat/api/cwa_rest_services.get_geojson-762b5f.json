@@ -6,8 +6,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -86.643041,
-                    34.630123
+                    -86.679708,
+                    34.676233
                 ]
             },
             "properties": {
@@ -20,22 +20,22 @@
                 "CWPZip": "35898",
                 "MasterExternalPermitNmbr": "ALR040000",
                 "RegistryID": "110020837601",
-                "CWPCounty": "Madison",
-                "CWPEPARegion": "04",
-                "FacDerivedHuc": "06030002",
+                "EPASystem": "ICP",
+                "Statute": "CWA",
+                "FacStdCountyName": null,
                 "CWPNAICSCodes": "924110",
                 "CWPTotalDesignFlowNmbr": null,
-                "DschToMs4": "N",
-                "ExposedActivity": null,
-                "NPDESDataGroupsDescs": "General Permit Reports [Notices of Intent to discharge] (NOIs)",
-                "MsgpFacilityInspctnSmmry": null,
-                "MsgpCorrectiveActionSmmry": null,
                 "AIRIDs": null,
-                "NPDESIDs": "AL0000019 ALR040033",
-                "SDWAIDs": null,
-                "CWPDateLastInspSt": "2022-02-23T00:00:00.00+00:00",
-                "BiosolidsFlag": null,
-                "CensusBlockGroup2020": "010890111001"
+                "CensusBlockGroup": "010890111001",
+                "MileavgOver90CountSt": 0,
+                "MileOver90CountSt": 0,
+                "SupOver80CountUsSearch": "G",
+                "SupMileavgOver80CountUs": 4,
+                "SupMileOver80CountUs": 4,
+                "SupMileOver80CountUsSearch": "G",
+                "MileOver80CountSt": 4,
+                "MilePctileProximityTsdfUs": 54,
+                "MilePctileCancerSt": 46
             }
         }
     ]
