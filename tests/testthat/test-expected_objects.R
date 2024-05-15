@@ -1,6 +1,6 @@
 context("core functions return expected objects")
 
-
+## shorten the file path for the mosked responses
 api_root <- "https://echodata.epa.gov/echo/"
 set_redactor(function (response) {
   response %>%
@@ -12,7 +12,7 @@ set_requester(function (request) {
 })
 
 ## Uncomment to capture new mocked responses
-## with_mock_api <- capture_requests
+with_mock_api <- capture_requests
 
 with_mock_api({
   ## this has to skip if offline because the functions
