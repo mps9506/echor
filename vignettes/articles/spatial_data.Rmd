@@ -53,9 +53,9 @@ library(dplyr)
 library(sf)
 
 ## Download data as a simple feature
-df <- echoWaterGetFacilityInfo(xmin = '-96.407563', ymin = '30.554395',
-                                        xmax = '-96.25947', ymax = '30.751984',
-                                        output = 'sf')
+df <- echoWaterGetFacilityInfo(p_c1lon = '-96.407563', p_c1lat = '30.554395',
+                               p_c2lon = '-96.25947', p_c2lat = '30.751984',
+                               output = 'sf')
 
 ## Make the map
 ggplot(df) +

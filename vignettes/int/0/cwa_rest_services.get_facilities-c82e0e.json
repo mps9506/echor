@@ -1,0 +1,21 @@
+{
+    "Results": {
+        "Message": "Success",
+        "Version": "CWA v2017-10-13 1325",
+        "QueryRows": "704",
+        "IndianCountryRows": "0",
+        "EJHighRows": "227",
+        "SVRows": "0",
+        "CVRows": "4",
+        "V3Rows": "6",
+        "FEARows": "4",
+        "InfFEARows": "1",
+        "INSPRows": "16",
+        "BioCVRows": "0",
+        "BioV3Rows": "0",
+        "VioLast4QRows": "6",
+        "TotalPenalties": "$99,064",
+        "BadSystemIDs": null,
+        "QueryID": "646"
+    }
+}
