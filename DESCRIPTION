@@ -48,6 +48,7 @@ Config/Needs/website:
   here,
   kableExtra,
   knitr,
+  prettymapr,
   raster,
   rmarkdown,
   sf
