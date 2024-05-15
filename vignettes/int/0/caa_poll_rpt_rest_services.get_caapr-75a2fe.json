@@ -1433,20 +1433,20 @@
                 "CenterLongitude": "-77.985226",
                 "MapData": [
                     {
-                        "LAT": "34.28396",
-                        "LON": "-77.98501",
-                        "ICON": "NONE-UNK-MN-N.png",
-                        "TYPE": "Facility",
-                        "NAME": "DUKE ENERGY PROGRESS, LLC - L.V. SUTTON ENERGY COMPLEX",
-                        "PUV": "110069348209"
-                    },
-                    {
                         "LAT": "34.283317",
                         "LON": "-77.985226",
                         "ICON": "MULT-IC-MJ-1.png",
                         "TYPE": "Facility",
                         "NAME": "DUKE ENERGY PROGRESS, LLC - L.V. SUTTON ELECTRIC PLANT",
                         "PUV": "110000350174"
+                    },
+                    {
+                        "LAT": "34.28396",
+                        "LON": "-77.98501",
+                        "ICON": "NONE-UNK-MN-N.png",
+                        "TYPE": "Facility",
+                        "NAME": "DUKE ENERGY PROGRESS, LLC - L.V. SUTTON ENERGY COMPLEX",
+                        "PUV": "110069348209"
                     }
                 ]
             },
