@@ -1,0 +1,180 @@
+{
+    "count": 25,
+    "data": [
+        {
+            "quarter_start_date": "2020-07-01",
+            "quarter_end_date": "2020-09-30",
+            "fy_quarter": "FY20Q4",
+            "gov_release": "N",
+            "public_release": "N"
+        },
+        {
+            "quarter_start_date": "2020-10-01",
+            "quarter_end_date": "2020-12-31",
+            "fy_quarter": "FY21Q1",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2021-01-01",
+            "quarter_end_date": "2021-03-31",
+            "fy_quarter": "FY21Q2",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2021-04-01",
+            "quarter_end_date": "2021-06-30",
+            "fy_quarter": "FY21Q3",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2021-07-01",
+            "quarter_end_date": "2021-09-30",
+            "fy_quarter": "FY21Q4",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2021-10-01",
+            "quarter_end_date": "2021-12-31",
+            "fy_quarter": "FY22Q1",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2022-01-01",
+            "quarter_end_date": "2022-03-31",
+            "fy_quarter": "FY22Q2",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2022-04-01",
+            "quarter_end_date": "2022-06-30",
+            "fy_quarter": "FY22Q3",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2022-07-01",
+            "quarter_end_date": "2022-09-30",
+            "fy_quarter": "FY22Q4",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2022-10-01",
+            "quarter_end_date": "2022-12-31",
+            "fy_quarter": "FY23Q1",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2023-01-01",
+            "quarter_end_date": "2023-03-31",
+            "fy_quarter": "FY23Q2",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2023-04-01",
+            "quarter_end_date": "2023-06-30",
+            "fy_quarter": "FY23Q3",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2023-07-01",
+            "quarter_end_date": "2023-09-30",
+            "fy_quarter": "FY23Q4",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2023-10-01",
+            "quarter_end_date": "2023-12-31",
+            "fy_quarter": "FY24Q1",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2024-01-01",
+            "quarter_end_date": "2024-03-31",
+            "fy_quarter": "FY24Q2",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2024-04-01",
+            "quarter_end_date": "2024-06-30",
+            "fy_quarter": "FY24Q3",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2024-07-01",
+            "quarter_end_date": "2024-09-30",
+            "fy_quarter": "FY24Q4",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2024-10-01",
+            "quarter_end_date": "2024-12-31",
+            "fy_quarter": "FY25Q1",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2025-01-01",
+            "quarter_end_date": "2025-03-31",
+            "fy_quarter": "FY25Q2",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2025-04-01",
+            "quarter_end_date": "2025-06-30",
+            "fy_quarter": "FY25Q3",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2025-07-01",
+            "quarter_end_date": "2025-09-30",
+            "fy_quarter": "FY25Q4",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2025-10-01",
+            "quarter_end_date": "2025-12-31",
+            "fy_quarter": "FY26Q1",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2026-01-01",
+            "quarter_end_date": "2026-03-31",
+            "fy_quarter": "FY26Q2",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2026-04-01",
+            "quarter_end_date": "2026-06-30",
+            "fy_quarter": "FY26Q3",
+            "gov_release": "Y",
+            "public_release": "Y"
+        },
+        {
+            "quarter_start_date": "2026-07-01",
+            "quarter_end_date": "2026-09-30",
+            "fy_quarter": "FY26Q4",
+            "gov_release": "Y",
+            "public_release": "N"
+        }
+    ]
+}
