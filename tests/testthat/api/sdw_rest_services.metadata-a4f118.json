@@ -625,6 +625,14 @@
                 "ColumnID": "78",
                 "ObjectName": "SiteVisits5yrOther",
                 "Description": null
+            },
+            {
+                "ColumnName": "WEB_DOCS",
+                "DataType": "VARCHAR2",
+                "DataLength": "5",
+                "ColumnID": "79",
+                "ObjectName": "WebDocs",
+                "Description": null
             }
         ]
     }

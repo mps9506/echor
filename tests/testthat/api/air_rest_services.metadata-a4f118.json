@@ -16,7 +16,7 @@
                 "DataLength": "30",
                 "ColumnID": "2",
                 "ObjectName": "SourceID",
-                "Description": "Unique Identifier assigned by EPA."
+                "Description": null
             },
             {
                 "ColumnName": "AIR_STREET",
@@ -64,7 +64,7 @@
                 "DataLength": "50",
                 "ColumnID": "8",
                 "ObjectName": "RegistryID",
-                "Description": "An internal 12-digit Facility Registry Service (FRS) tracking number used to tie all facility data together in EPA regulatory program databases."
+                "Description": null
             },
             {
                 "ColumnName": "AIR_COUNTY",
@@ -132,7 +132,7 @@
             },
             {
                 "ColumnName": "FAC_INDIAN_SPATIAL_FLG",
-                "DataType": "VARCHAR2",
+                "DataType": "CHAR",
                 "DataLength": "1",
                 "ColumnID": "17",
                 "ObjectName": "FacIndianSpatialFlg",
@@ -147,10 +147,18 @@
                 "Description": null
             },
             {
+                "ColumnName": "FAC_DERIVED_RESERVATION_TRIBES",
+                "DataType": "VARCHAR2",
+                "DataLength": "4000",
+                "ColumnID": "19",
+                "ObjectName": "FacDerivedReservationTribes",
+                "Description": null
+            },
+            {
                 "ColumnName": "FAC_US_MEX_BORDER_FLG",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "19",
+                "ColumnID": "20",
                 "ObjectName": "FacUsMexBorderFlg",
                 "Description": null
             },
@@ -158,15 +166,15 @@
                 "ColumnName": "FAC_SIC_CODES",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "20",
+                "ColumnID": "21",
                 "ObjectName": "FacSICCodes",
-                "Description": "Indicates the facility&#8217;s or permit's primary Standard Industrial Classification (SIC) Code. The SIC code describes the primary activity of the facility."
+                "Description": null
             },
             {
                 "ColumnName": "AIR_NAICS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "21",
+                "ColumnID": "22",
                 "ObjectName": "AIRNAICS",
                 "Description": null
             },
@@ -174,23 +182,23 @@
                 "ColumnName": "FAC_LAT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "22",
+                "ColumnID": "23",
                 "ObjectName": "FacLat",
-                "Description": "The latitude of the facility in decimal degrees expressed using the NAD83 horizontal datum. The coordinate comes from the FRS EPA Locational Reference Tables (LRT) file which represents the most accurate value for the facility based on the available spatial metadata."
+                "Description": null
             },
             {
                 "ColumnName": "FAC_LONG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "23",
+                "ColumnID": "24",
                 "ObjectName": "FacLong",
-                "Description": "The longitude of the facility in decimal degrees expressed using the NAD83 horizontal datum. The coordinate comes from the FRS EPA Locational Reference Tables (LRT) file which represents the most accurate value for the facility based on the available spatial metadata."
+                "Description": null
             },
             {
                 "ColumnName": "AIR_PROGRAMS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "24",
+                "ColumnID": "25",
                 "ObjectName": "AIRPrograms",
                 "Description": null
             },
@@ -198,7 +206,7 @@
                 "ColumnName": "AIR_MACTS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "25",
+                "ColumnID": "26",
                 "ObjectName": "AIRMacts",
                 "Description": null
             },
@@ -206,7 +214,7 @@
                 "ColumnName": "AIR_STATUS",
                 "DataType": "VARCHAR2",
                 "DataLength": "500",
-                "ColumnID": "26",
+                "ColumnID": "27",
                 "ObjectName": "AIRStatus",
                 "Description": null
             },
@@ -214,7 +222,7 @@
                 "ColumnName": "AIR_UNIVERSE",
                 "DataType": "VARCHAR2",
                 "DataLength": "150",
-                "ColumnID": "27",
+                "ColumnID": "28",
                 "ObjectName": "AIRUniverse",
                 "Description": null
             },
@@ -222,7 +230,7 @@
                 "ColumnName": "AIR_CLASSIFICATION",
                 "DataType": "VARCHAR2",
                 "DataLength": "150",
-                "ColumnID": "28",
+                "ColumnID": "29",
                 "ObjectName": "AIRClassification",
                 "Description": null
             },
@@ -230,7 +238,7 @@
                 "ColumnName": "AIR_CMS_CATEGORY_CODE",
                 "DataType": "VARCHAR2",
                 "DataLength": "3",
-                "ColumnID": "29",
+                "ColumnID": "30",
                 "ObjectName": "AIRCmsCategoryCode",
                 "Description": null
             },
@@ -238,7 +246,7 @@
                 "ColumnName": "AIR_CMS_CATEGORY_DESC",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "30",
+                "ColumnID": "31",
                 "ObjectName": "AIRCmsCategoryDesc",
                 "Description": null
             },
@@ -246,7 +254,7 @@
                 "ColumnName": "FAC_DERIVED_WBD",
                 "DataType": "VARCHAR2",
                 "DataLength": "14",
-                "ColumnID": "31",
+                "ColumnID": "32",
                 "ObjectName": "FacDerivedWBD",
                 "Description": null
             },
@@ -254,7 +262,7 @@
                 "ColumnName": "FAC_DERIVED_WBD_NAME",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "32",
+                "ColumnID": "33",
                 "ObjectName": "FacDerivedWBDName",
                 "Description": null
             },
@@ -262,7 +270,7 @@
                 "ColumnName": "CHESAPEAKE_BAY_FLAG",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "33",
+                "ColumnID": "34",
                 "ObjectName": "ChesapeakeBayFlag",
                 "Description": null
             },
@@ -270,7 +278,7 @@
                 "ColumnName": "AIR_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "34",
+                "ColumnID": "35",
                 "ObjectName": "AIRIDs",
                 "Description": null
             },
@@ -278,7 +286,7 @@
                 "ColumnName": "CWA_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "35",
+                "ColumnID": "36",
                 "ObjectName": "CWAIDs",
                 "Description": null
             },
@@ -286,7 +294,7 @@
                 "ColumnName": "RCRA_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "36",
+                "ColumnID": "37",
                 "ObjectName": "RCRAIDs",
                 "Description": null
             },
@@ -294,7 +302,7 @@
                 "ColumnName": "RMP_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "37",
+                "ColumnID": "38",
                 "ObjectName": "RmpIDs",
                 "Description": null
             },
@@ -302,7 +310,7 @@
                 "ColumnName": "SDWA_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "38",
+                "ColumnID": "39",
                 "ObjectName": "SDWAIDs",
                 "Description": null
             },
@@ -310,7 +318,7 @@
                 "ColumnName": "TRI_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "39",
+                "ColumnID": "40",
                 "ObjectName": "TRIIDs",
                 "Description": null
             },
@@ -318,7 +326,7 @@
                 "ColumnName": "GHG_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "40",
+                "ColumnID": "41",
                 "ObjectName": "GHGIDs",
                 "Description": null
             },
@@ -326,7 +334,7 @@
                 "ColumnName": "EIS_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "41",
+                "ColumnID": "42",
                 "ObjectName": "EisIDs",
                 "Description": null
             },
@@ -334,23 +342,23 @@
                 "ColumnName": "CAMD_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "42",
+                "ColumnID": "43",
                 "ObjectName": "CamdIDs",
                 "Description": null
             },
             {
                 "ColumnName": "AIR_COMPL_STATUS",
                 "DataType": "VARCHAR2",
-                "DataLength": "100",
-                "ColumnID": "43",
+                "DataLength": "80",
+                "ColumnID": "44",
                 "ObjectName": "AIRComplStatus",
                 "Description": null
             },
             {
                 "ColumnName": "AIR_HPV_STATUS",
                 "DataType": "VARCHAR2",
-                "DataLength": "100",
-                "ColumnID": "44",
+                "DataLength": "80",
+                "ColumnID": "45",
                 "ObjectName": "AIRHpvStatus",
                 "Description": null
             },
@@ -358,7 +366,7 @@
                 "ColumnName": "AIR_MNTHS_WITH_HPV",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "45",
+                "ColumnID": "46",
                 "ObjectName": "AIRMnthsWithHpv",
                 "Description": null
             },
@@ -366,7 +374,7 @@
                 "ColumnName": "AIR_QTRS_WITH_HPV",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "46",
+                "ColumnID": "47",
                 "ObjectName": "AIRQtrsWithHpv",
                 "Description": null
             },
@@ -374,7 +382,7 @@
                 "ColumnName": "AIR_QTRS_WITH_VIOL",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "47",
+                "ColumnID": "48",
                 "ObjectName": "AIRQtrsWithViol",
                 "Description": null
             },
@@ -382,7 +390,7 @@
                 "ColumnName": "AIR_POLL_RECENT_VIOL",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "48",
+                "ColumnID": "49",
                 "ObjectName": "AIRPollRecentViol",
                 "Description": null
             },
@@ -390,7 +398,7 @@
                 "ColumnName": "AIR_RECENT_VIOL_CNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "49",
+                "ColumnID": "50",
                 "ObjectName": "AIRRecentViolCnt",
                 "Description": null
             },
@@ -398,7 +406,7 @@
                 "ColumnName": "AIR_LAST_VIOL_DATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "50",
+                "ColumnID": "51",
                 "ObjectName": "AIRLastViolDate",
                 "Description": null
             },
@@ -406,7 +414,7 @@
                 "ColumnName": "AIR_EVAL_CNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "51",
+                "ColumnID": "52",
                 "ObjectName": "AIREvalCnt",
                 "Description": null
             },
@@ -414,7 +422,7 @@
                 "ColumnName": "AIR_DAYS_LAST_EVAL",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "52",
+                "ColumnID": "53",
                 "ObjectName": "AIRDaysLastEval",
                 "Description": null
             },
@@ -422,7 +430,7 @@
                 "ColumnName": "AIR_LAST_EVAL_DATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "53",
+                "ColumnID": "54",
                 "ObjectName": "AIRLastEvalDate",
                 "Description": null
             },
@@ -430,7 +438,7 @@
                 "ColumnName": "AIR_LAST_EVAL_DATE_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "54",
+                "ColumnID": "55",
                 "ObjectName": "AIRLastEvalDateEPA",
                 "Description": null
             },
@@ -438,7 +446,7 @@
                 "ColumnName": "AIR_LAST_EVAL_DATE_STATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "55",
+                "ColumnID": "56",
                 "ObjectName": "AIRLastEvalDateState",
                 "Description": null
             },
@@ -446,7 +454,7 @@
                 "ColumnName": "AIR_FCE_CNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "56",
+                "ColumnID": "57",
                 "ObjectName": "AIRFceCnt",
                 "Description": null
             },
@@ -454,7 +462,7 @@
                 "ColumnName": "AIR_DAYS_LAST_FCE",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "57",
+                "ColumnID": "58",
                 "ObjectName": "AIRDaysLastFce",
                 "Description": null
             },
@@ -462,7 +470,7 @@
                 "ColumnName": "AIR_LAST_FCE_DATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "58",
+                "ColumnID": "59",
                 "ObjectName": "AIRLastFceDate",
                 "Description": null
             },
@@ -470,7 +478,7 @@
                 "ColumnName": "AIR_LAST_FCE_DATE_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "59",
+                "ColumnID": "60",
                 "ObjectName": "AIRLastFceDateEPA",
                 "Description": null
             },
@@ -478,7 +486,7 @@
                 "ColumnName": "AIR_LAST_FCE_DATE_STATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "60",
+                "ColumnID": "61",
                 "ObjectName": "AIRLastFceDateState",
                 "Description": null
             },
@@ -486,7 +494,7 @@
                 "ColumnName": "LAST_DATE_PCE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "61",
+                "ColumnID": "62",
                 "ObjectName": "LastDatePce",
                 "Description": null
             },
@@ -494,7 +502,7 @@
                 "ColumnName": "LAST_DATE_PCE_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "62",
+                "ColumnID": "63",
                 "ObjectName": "LastDatePceEPA",
                 "Description": null
             },
@@ -502,7 +510,7 @@
                 "ColumnName": "LAST_DATE_PCE_STA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "63",
+                "ColumnID": "64",
                 "ObjectName": "LastDatePceSta",
                 "Description": null
             },
@@ -510,7 +518,7 @@
                 "ColumnName": "AIR_LAST_STCK_TEST_DATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "64",
+                "ColumnID": "65",
                 "ObjectName": "AIRLastStckTestDate",
                 "Description": null
             },
@@ -518,7 +526,7 @@
                 "ColumnName": "AIR_LAST_STCK_TEST_RESULTS",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "65",
+                "ColumnID": "66",
                 "ObjectName": "AIRLastStckTestResults",
                 "Description": null
             },
@@ -526,7 +534,7 @@
                 "ColumnName": "AIR_STACK_TEST_5_YR_ALL",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "66",
+                "ColumnID": "67",
                 "ObjectName": "AIRStackTest5YrAll",
                 "Description": null
             },
@@ -534,7 +542,7 @@
                 "ColumnName": "AIR_STACK_TEST_5_YR_FAIL",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "67",
+                "ColumnID": "68",
                 "ObjectName": "AIRStackTest5YrFail",
                 "Description": null
             },
@@ -542,7 +550,7 @@
                 "ColumnName": "FAC_NAA_FLAG",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "68",
+                "ColumnID": "69",
                 "ObjectName": "FacNaaFlag",
                 "Description": null
             },
@@ -550,7 +558,7 @@
                 "ColumnName": "FAC_TRI_REPORTER",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "69",
+                "ColumnID": "70",
                 "ObjectName": "FacTRIReporter",
                 "Description": null
             },
@@ -558,7 +566,7 @@
                 "ColumnName": "FAC_TRI_AIR_RELEASES",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "70",
+                "ColumnID": "71",
                 "ObjectName": "FacTRIAIRReleases",
                 "Description": null
             },
@@ -566,7 +574,7 @@
                 "ColumnName": "FAC_TRI_CARC_AIR_RELEASES",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "71",
+                "ColumnID": "72",
                 "ObjectName": "FacTRICarcAIRReleases",
                 "Description": null
             },
@@ -574,7 +582,7 @@
                 "ColumnName": "FAC_TRI_HAPS_RELEASES",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "72",
+                "ColumnID": "73",
                 "ObjectName": "FacTRIHapsReleases",
                 "Description": null
             },
@@ -582,7 +590,7 @@
                 "ColumnName": "FAC_EIS_AIR_RELEASES",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "73",
+                "ColumnID": "74",
                 "ObjectName": "FacEisAIRReleases",
                 "Description": null
             },
@@ -590,7 +598,7 @@
                 "ColumnName": "FAC_GHG_CO2_RELEASES",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "74",
+                "ColumnID": "75",
                 "ObjectName": "FacGHGCO2Releases",
                 "Description": null
             },
@@ -598,7 +606,7 @@
                 "ColumnName": "AIR_IEA_CNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "75",
+                "ColumnID": "76",
                 "ObjectName": "AIRIeaCnt",
                 "Description": null
             },
@@ -606,7 +614,7 @@
                 "ColumnName": "AIR_FEA_CNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "76",
+                "ColumnID": "77",
                 "ObjectName": "AIRFeaCnt",
                 "Description": null
             },
@@ -614,7 +622,7 @@
                 "ColumnName": "AIR_LAST_IEA_DATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "77",
+                "ColumnID": "78",
                 "ObjectName": "AIRLastIeaDate",
                 "Description": null
             },
@@ -622,7 +630,7 @@
                 "ColumnName": "AIR_LAST_IEA_DATE_STATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "78",
+                "ColumnID": "79",
                 "ObjectName": "AIRLastIeaDateState",
                 "Description": null
             },
@@ -630,7 +638,7 @@
                 "ColumnName": "AIR_LAST_IEA_DATE_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "79",
+                "ColumnID": "80",
                 "ObjectName": "AIRLastIeaDateEPA",
                 "Description": null
             },
@@ -638,7 +646,7 @@
                 "ColumnName": "AIR_LAST_FEA_DATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "80",
+                "ColumnID": "81",
                 "ObjectName": "AIRLastFeaDate",
                 "Description": null
             },
@@ -646,7 +654,7 @@
                 "ColumnName": "AIR_LAST_FEA_DATE_STATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "81",
+                "ColumnID": "82",
                 "ObjectName": "AIRLastFeaDateState",
                 "Description": null
             },
@@ -654,7 +662,7 @@
                 "ColumnName": "AIR_LAST_FEA_DATE_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "82",
+                "ColumnID": "83",
                 "ObjectName": "AIRLastFeaDateEPA",
                 "Description": null
             },
@@ -662,7 +670,7 @@
                 "ColumnName": "AIR_PENALTIES",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "83",
+                "ColumnID": "84",
                 "ObjectName": "AIRPenalties",
                 "Description": null
             },
@@ -670,7 +678,7 @@
                 "ColumnName": "AIR_LAST_PENALTY_DATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "84",
+                "ColumnID": "85",
                 "ObjectName": "AIRLastPenaltyDate",
                 "Description": null
             },
@@ -678,7 +686,7 @@
                 "ColumnName": "FAC_POPULATION_DENSITY",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "85",
+                "ColumnID": "86",
                 "ObjectName": "FacPopulationDensity",
                 "Description": null
             },
@@ -686,7 +694,7 @@
                 "ColumnName": "FAC_PERCENT_MINORITY",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "86",
+                "ColumnID": "87",
                 "ObjectName": "FacPercentMinority",
                 "Description": null
             },
@@ -694,7 +702,7 @@
                 "ColumnName": "EPA_SYSTEM",
                 "DataType": "VARCHAR2",
                 "DataLength": "10",
-                "ColumnID": "87",
+                "ColumnID": "88",
                 "ObjectName": "EPASystem",
                 "Description": null
             },
@@ -702,7 +710,7 @@
                 "ColumnName": "STATUTE",
                 "DataType": "VARCHAR2",
                 "DataLength": "50",
-                "ColumnID": "88",
+                "ColumnID": "89",
                 "ObjectName": "Statute",
                 "Description": null
             },
@@ -710,7 +718,7 @@
                 "ColumnName": "LOCAL_CONTROL_REGION_NAME",
                 "DataType": "VARCHAR2",
                 "DataLength": "70",
-                "ColumnID": "89",
+                "ColumnID": "90",
                 "ObjectName": "LocalControlRegionName",
                 "Description": null
             },
@@ -718,7 +726,7 @@
                 "ColumnName": "AIR_FIPS_CODE",
                 "DataType": "NVARCHAR2",
                 "DataLength": "64",
-                "ColumnID": "90",
+                "ColumnID": "91",
                 "ObjectName": "AIRFIPSCode",
                 "Description": null
             },
@@ -726,7 +734,7 @@
                 "ColumnName": "AIR_TRIBAL_EPAIDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "50",
-                "ColumnID": "91",
+                "ColumnID": "92",
                 "ObjectName": "AIRTRIbalEPAids",
                 "Description": null
             },
@@ -734,7 +742,7 @@
                 "ColumnName": "AIR_TRIBAL_NAMES",
                 "DataType": "VARCHAR2",
                 "DataLength": "200",
-                "ColumnID": "92",
+                "ColumnID": "93",
                 "ObjectName": "AIRTRIbalNames",
                 "Description": null
             },
@@ -742,7 +750,7 @@
                 "ColumnName": "AIR_CASE_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "93",
+                "ColumnID": "94",
                 "ObjectName": "AIRCaseIDs",
                 "Description": null
             },
@@ -750,7 +758,7 @@
                 "ColumnName": "AIR_LAST_STCK_DATE_EPA",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "94",
+                "ColumnID": "95",
                 "ObjectName": "AIRLastStckDateEPA",
                 "Description": null
             },
@@ -758,7 +766,7 @@
                 "ColumnName": "AIR_LAST_STCK_DATE_STATE",
                 "DataType": "DATE",
                 "DataLength": "7",
-                "ColumnID": "95",
+                "ColumnID": "96",
                 "ObjectName": "AIRLastStckDateState",
                 "Description": null
             },
@@ -766,7 +774,7 @@
                 "ColumnName": "FAC_MAP_FLG",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "96",
+                "ColumnID": "97",
                 "ObjectName": "FacMapFlg",
                 "Description": null
             },
@@ -774,7 +782,7 @@
                 "ColumnName": "FAC_MAP_ICON",
                 "DataType": "VARCHAR2",
                 "DataLength": "20",
-                "ColumnID": "97",
+                "ColumnID": "98",
                 "ObjectName": "FacMapIcon",
                 "Description": null
             },
@@ -782,7 +790,7 @@
                 "ColumnName": "FAC_GHG_REPORTER",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "98",
+                "ColumnID": "99",
                 "ObjectName": "FacGHGReporter",
                 "Description": null
             },
@@ -790,7 +798,7 @@
                 "ColumnName": "FAC_EIS_REPORTER",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "99",
+                "ColumnID": "100",
                 "ObjectName": "FacEisReporter",
                 "Description": null
             },
@@ -798,7 +806,7 @@
                 "ColumnName": "FAC_CAMD_REPORTER",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "100",
+                "ColumnID": "101",
                 "ObjectName": "FacCamdReporter",
                 "Description": null
             },
@@ -806,7 +814,7 @@
                 "ColumnName": "AIR_FACILITY_TYPE_CODE",
                 "DataType": "VARCHAR2",
                 "DataLength": "3",
-                "ColumnID": "101",
+                "ColumnID": "102",
                 "ObjectName": "AIRFacilityTypeCode",
                 "Description": null
             },
@@ -814,7 +822,7 @@
                 "ColumnName": "AIR_MAJOR_FLAG",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "102",
+                "ColumnID": "103",
                 "ObjectName": "AIRMajorFlag",
                 "Description": null
             },
@@ -822,7 +830,7 @@
                 "ColumnName": "AIR_3YR_COMPL_QTRS_HISTORY",
                 "DataType": "VARCHAR2",
                 "DataLength": "12",
-                "ColumnID": "103",
+                "ColumnID": "104",
                 "ObjectName": "AIR3yrComplQtrsHistory",
                 "Description": null
             },
@@ -830,7 +838,7 @@
                 "ColumnName": "HAS_POLL_RPT",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "104",
+                "ColumnID": "105",
                 "ObjectName": "HasPollRpt",
                 "Description": null
             },
@@ -838,7 +846,7 @@
                 "ColumnName": "TRIBAL_FLAG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "105",
+                "ColumnID": "106",
                 "ObjectName": "TRIbalFlag",
                 "Description": null
             },
@@ -846,7 +854,7 @@
                 "ColumnName": "CURR_SV_FLAG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "106",
+                "ColumnID": "107",
                 "ObjectName": "CurrSvFlag",
                 "Description": null
             },
@@ -854,7 +862,7 @@
                 "ColumnName": "VIOL_FLAG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "107",
+                "ColumnID": "108",
                 "ObjectName": "ViolFlag",
                 "Description": null
             },
@@ -862,7 +870,7 @@
                 "ColumnName": "CURR_VIO_FLAG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "108",
+                "ColumnID": "109",
                 "ObjectName": "CurrVioFlag",
                 "Description": null
             },
@@ -870,7 +878,7 @@
                 "ColumnName": "INSP_5YR_FLAG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "109",
+                "ColumnID": "110",
                 "ObjectName": "Insp5yrFlag",
                 "Description": null
             },
@@ -878,7 +886,7 @@
                 "ColumnName": "EA_5YR_FLAG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "110",
+                "ColumnID": "111",
                 "ObjectName": "Ea5yrFlag",
                 "Description": null
             },
@@ -886,7 +894,7 @@
                 "ColumnName": "INFEA_5YR_FLAG",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "111",
+                "ColumnID": "112",
                 "ObjectName": "Infea5yrFlag",
                 "Description": null
             },
@@ -894,7 +902,7 @@
                 "ColumnName": "LOWER_48",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "112",
+                "ColumnID": "113",
                 "ObjectName": "Lower48",
                 "Description": null
             },
@@ -902,7 +910,7 @@
                 "ColumnName": "ACTIVE_LOWER_48",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "113",
+                "ColumnID": "114",
                 "ObjectName": "ActiveLower48",
                 "Description": null
             },
@@ -910,7 +918,7 @@
                 "ColumnName": "COLLECTION_METHOD",
                 "DataType": "VARCHAR2",
                 "DataLength": "750",
-                "ColumnID": "114",
+                "ColumnID": "115",
                 "ObjectName": "CollectionMethod",
                 "Description": null
             },
@@ -918,7 +926,7 @@
                 "ColumnName": "REFERENCE_POINT",
                 "DataType": "VARCHAR2",
                 "DataLength": "750",
-                "ColumnID": "115",
+                "ColumnID": "116",
                 "ObjectName": "ReferencePoint",
                 "Description": null
             },
@@ -926,7 +934,7 @@
                 "ColumnName": "CALCULATED_ACCURACY_METERS",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "116",
+                "ColumnID": "117",
                 "ObjectName": "CalculatedAccuracyMeters",
                 "Description": null
             },
@@ -934,15 +942,15 @@
                 "ColumnName": "MAP",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "117",
+                "ColumnID": "118",
                 "ObjectName": "Map",
                 "Description": null
             },
             {
                 "ColumnName": "WEB_DOCS",
                 "DataType": "VARCHAR2",
-                "DataLength": "20",
-                "ColumnID": "118",
+                "DataLength": "5",
+                "ColumnID": "119",
                 "ObjectName": "WebDocs",
                 "Description": null
             },
@@ -950,7 +958,7 @@
                 "ColumnName": "NAA_CATEGORIES",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "119",
+                "ColumnID": "120",
                 "ObjectName": "NaaCategories",
                 "Description": null
             },
@@ -958,7 +966,7 @@
                 "ColumnName": "NAA_POLLUTANTS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "120",
+                "ColumnID": "121",
                 "ObjectName": "NaaPollutants",
                 "Description": null
             },
@@ -966,7 +974,7 @@
                 "ColumnName": "NA_STANDARDS_NAA",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "121",
+                "ColumnID": "122",
                 "ObjectName": "NaStandardsNaa",
                 "Description": null
             },
@@ -974,7 +982,7 @@
                 "ColumnName": "MAINT_STANDARDS_NAA",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "122",
+                "ColumnID": "123",
                 "ObjectName": "MaintStandardsNaa",
                 "Description": null
             },
@@ -982,7 +990,7 @@
                 "ColumnName": "NA_POLLUTANTS_NAA",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "123",
+                "ColumnID": "124",
                 "ObjectName": "NaPollutantsNaa",
                 "Description": null
             },
@@ -990,7 +998,7 @@
                 "ColumnName": "MAINT_POLLUTANTS_NAA",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "124",
+                "ColumnID": "125",
                 "ObjectName": "MaintPollutantsNaa",
                 "Description": null
             },
@@ -998,7 +1006,7 @@
                 "ColumnName": "NA_STATUS_NAA",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "125",
+                "ColumnID": "126",
                 "ObjectName": "NaStatusNaa",
                 "Description": null
             },
@@ -1006,7 +1014,7 @@
                 "ColumnName": "MAINT_STATUS_NAA",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "126",
+                "ColumnID": "127",
                 "ObjectName": "MaintStatusNaa",
                 "Description": null
             },
@@ -1014,7 +1022,7 @@
                 "ColumnName": "FAC_COUNTY_NAME",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "127",
+                "ColumnID": "128",
                 "ObjectName": "FacCountyName",
                 "Description": null
             },
@@ -1022,7 +1030,7 @@
                 "ColumnName": "FAC_STD_COUNTY_NAME",
                 "DataType": "VARCHAR2",
                 "DataLength": "300",
-                "ColumnID": "128",
+                "ColumnID": "129",
                 "ObjectName": "FacStdCountyName",
                 "Description": null
             },
@@ -1030,7 +1038,7 @@
                 "ColumnName": "AIR_NSPS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "129",
+                "ColumnID": "130",
                 "ObjectName": "AIRNsps",
                 "Description": null
             },
@@ -1038,7 +1046,7 @@
                 "ColumnName": "AIR_NSPSM",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "130",
+                "ColumnID": "131",
                 "ObjectName": "AIRNspsm",
                 "Description": null
             },
@@ -1046,7 +1054,7 @@
                 "ColumnName": "AIR_FACILITY_TYPE_DESC",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "131",
+                "ColumnID": "132",
                 "ObjectName": "AIRFacilityTypeDesc",
                 "Description": null
             },
@@ -1054,7 +1062,7 @@
                 "ColumnName": "OTHER_PERMIT_IDS",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "132",
+                "ColumnID": "133",
                 "ObjectName": "OtherPermitIDs",
                 "Description": null
             },
@@ -1062,7 +1070,7 @@
                 "ColumnName": "PERCENT_BELOW_LOWINCOME_3MILE",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "133",
+                "ColumnID": "134",
                 "ObjectName": "PercentBelowLowincome3mile",
                 "Description": null
             },
@@ -1070,7 +1078,7 @@
                 "ColumnName": "PERCENT_PEOPLE_OF_COLOR",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "134",
+                "ColumnID": "135",
                 "ObjectName": "PercentPeopleOfColor",
                 "Description": null
             },
@@ -1078,7 +1086,7 @@
                 "ColumnName": "ACS_POPULATION_DENSITY",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "135",
+                "ColumnID": "136",
                 "ObjectName": "AcsPopulationDensity",
                 "Description": null
             },
@@ -1086,7 +1094,7 @@
                 "ColumnName": "FAC_US_CANADA_BORDER_FLG",
                 "DataType": "CHAR",
                 "DataLength": "1",
-                "ColumnID": "136",
+                "ColumnID": "137",
                 "ObjectName": "FacUsCanadaBorderFlg",
                 "Description": null
             },
@@ -1094,7 +1102,7 @@
                 "ColumnName": "AIR_DAYS_LAST_PARTIAL_EVAL",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "137",
+                "ColumnID": "138",
                 "ObjectName": "AIRDaysLastPartialEval",
                 "Description": null
             },
@@ -1102,7 +1110,7 @@
                 "ColumnName": "AIR_PARTIAL_EVAL_CNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "138",
+                "ColumnID": "139",
                 "ObjectName": "AIRPartialEvalCnt",
                 "Description": null
             },
@@ -1110,1751 +1118,15 @@
                 "ColumnName": "AIR_INV_CNT",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "139",
-                "ObjectName": "AIRInvCnt",
-                "Description": null
-            },
-            {
-                "ColumnName": "CENSUS_BLOCK_GROUP_2021",
-                "DataType": "VARCHAR2",
-                "DataLength": "4000",
                 "ColumnID": "140",
-                "ObjectName": "CensusBlockGroup2021",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_EJSCREEN_AUTO_FLAG",
-                "DataType": "VARCHAR2",
-                "DataLength": "3",
-                "ColumnID": "141",
-                "ObjectName": "SupEjscreenAutoFlag",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_EJSCREEN_AUTO_FLAG_REASONS",
-                "DataType": "VARCHAR2",
-                "DataLength": "4",
-                "ColumnID": "142",
-                "ObjectName": "SupEjscreenAutoFlagReasons",
-                "Description": null
-            },
-            {
-                "ColumnName": "EJSCREEN_INDIAN_FLAG_SEARCH",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "143",
-                "ObjectName": "EjscreenIndianFlagSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "EJSCREEN_INDIAN_FLAG",
-                "DataType": "VARCHAR2",
-                "DataLength": "3",
-                "ColumnID": "144",
-                "ObjectName": "EjscreenIndianFlag",
-                "Description": null
-            },
-            {
-                "ColumnName": "US_TERRITORY_FLAG",
-                "DataType": "VARCHAR2",
-                "DataLength": "3",
-                "ColumnID": "145",
-                "ObjectName": "UsTerritoryFlag",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_EJSCREEN_FLAG",
-                "DataType": "CHAR",
-                "DataLength": "1",
-                "ColumnID": "146",
-                "ObjectName": "SupEjscreenFlag",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_EJSCREEN_FLAG_US",
-                "DataType": "CHAR",
-                "DataLength": "1",
-                "ColumnID": "147",
-                "ObjectName": "SupEjscreenFlagUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_EJSCREEN_FLAG_ST",
-                "DataType": "CHAR",
-                "DataLength": "1",
-                "ColumnID": "148",
-                "ObjectName": "SupEjscreenFlagSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER90_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "149",
-                "ObjectName": "SupOver90CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_OVER90_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "150",
-                "ObjectName": "SupMileavgOver90CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER90_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "151",
-                "ObjectName": "SupMileOver90CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER90_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "152",
-                "ObjectName": "SupOver90CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_OVER90_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "153",
-                "ObjectName": "SupMileavgOver90CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER90_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "154",
-                "ObjectName": "SupMileOver90CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "EJSCREEN_FLAG",
-                "DataType": "CHAR",
-                "DataLength": "1",
-                "ColumnID": "155",
-                "ObjectName": "EjscreenFlag",
-                "Description": null
-            },
-            {
-                "ColumnName": "EJSCREEN_FLAG_US",
-                "DataType": "CHAR",
-                "DataLength": "1",
-                "ColumnID": "156",
-                "ObjectName": "EjscreenFlagUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "EJSCREEN_FLAG_ST",
-                "DataType": "CHAR",
-                "DataLength": "1",
-                "ColumnID": "157",
-                "ObjectName": "EjscreenFlagSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER90_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "158",
-                "ObjectName": "Over90CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER90_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "159",
-                "ObjectName": "Over90CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_OVER90_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "160",
-                "ObjectName": "MileavgOver90CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_OVER90_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "161",
-                "ObjectName": "MileavgOver90CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER90_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "162",
-                "ObjectName": "MileOver90CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER90_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "163",
-                "ObjectName": "MileOver90CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER80_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "164",
-                "ObjectName": "SupOver80CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER80_COUNT_US_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "165",
-                "ObjectName": "SupOver80CountUsDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER80_COUNT_US_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "166",
-                "ObjectName": "SupOver80CountUsSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_OVER80_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "167",
-                "ObjectName": "SupMileavgOver80CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER80_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "168",
-                "ObjectName": "SupMileOver80CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER80_COUNT_US_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "169",
-                "ObjectName": "SupMileOver80CountUsDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER80_COUNT_US_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "170",
-                "ObjectName": "SupMileOver80CountUsSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER80_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "171",
-                "ObjectName": "SupOver80CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER80_COUNT_ST_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "172",
-                "ObjectName": "SupOver80CountStDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_OVER80_COUNT_ST_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "173",
-                "ObjectName": "SupOver80CountStSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_OVER80_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "174",
-                "ObjectName": "SupMileavgOver80CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER80_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "175",
-                "ObjectName": "SupMileOver80CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER80_COUNT_ST_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "176",
-                "ObjectName": "SupMileOver80CountStDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_OVER80_COUNT_ST_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "177",
-                "ObjectName": "SupMileOver80CountStSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER80_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "178",
-                "ObjectName": "Over80CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER80_COUNT_US_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "179",
-                "ObjectName": "Over80CountUsDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER80_COUNT_US_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "180",
-                "ObjectName": "Over80CountUsSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_OVER80_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "181",
-                "ObjectName": "MileavgOver80CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER80_COUNT_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "182",
-                "ObjectName": "MileOver80CountUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER80_COUNT_US_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "183",
-                "ObjectName": "MileOver80CountUsDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER80_COUNT_US_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "184",
-                "ObjectName": "MileOver80CountUsSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER80_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "185",
-                "ObjectName": "Over80CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER80_COUNT_ST_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "186",
-                "ObjectName": "Over80CountStDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "OVER80_COUNT_ST_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "187",
-                "ObjectName": "Over80CountStSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_OVER80_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "188",
-                "ObjectName": "MileavgOver80CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER80_COUNT_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "189",
-                "ObjectName": "MileOver80CountSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER80_COUNT_ST_DISP",
-                "DataType": "VARCHAR2",
-                "DataLength": "40",
-                "ColumnID": "190",
-                "ObjectName": "MileOver80CountStDisp",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_OVER80_COUNT_ST_SEARCH",
-                "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "191",
-                "ObjectName": "MileOver80CountStSearch",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "192",
-                "ObjectName": "SupPctilePmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_O3_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "193",
-                "ObjectName": "SupPctileO3Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_DPM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "194",
-                "ObjectName": "SupPctileDpmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_CANCER_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "195",
-                "ObjectName": "SupPctileCancerUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_RESP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "196",
-                "ObjectName": "SupPctileRespUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_RSEI_AIR_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "197",
-                "ObjectName": "SupPctileRseiAIRUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_TRAFFIC_SCORE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "198",
-                "ObjectName": "SupPctileTrafficScoreUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PCTPRE1960_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "199",
-                "ObjectName": "SupPctilePctpre1960Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_RMP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "200",
-                "ObjectName": "SupPctileProximityRmpUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_TSDF_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "201",
-                "ObjectName": "SupPctileProximityTsdfUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_NPL_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "202",
-                "ObjectName": "SupPctileProximityNplUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_UST_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "203",
-                "ObjectName": "SupPctileUstUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_NPDES_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "204",
-                "ObjectName": "SupPctileProximityNPDESUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PM_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "205",
-                "ObjectName": "SupMileavgPctilePmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_O3_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "206",
-                "ObjectName": "SupMileavgPctileO3Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_DPM_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "207",
-                "ObjectName": "SupMileavgPctileDpmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_CANCER_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "208",
-                "ObjectName": "SupMileavgPctileCancerUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_RESP_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "209",
-                "ObjectName": "SupMileavgPctileRespUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_RSEI_AIR_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "210",
-                "ObjectName": "SupMileavgPctileRseiAIRUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_TRAFFIC_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "211",
-                "ObjectName": "SupMileavgPctileTrafficUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_LEADPNT_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "212",
-                "ObjectName": "SupMileavgPctileLeadpntUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_RMP_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "213",
-                "ObjectName": "SupMileavgPctileProxRmpUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_TSDF_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "214",
-                "ObjectName": "SupMileavgPctileProxTsdfUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_NPL_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "215",
-                "ObjectName": "SupMileavgPctileProxNplUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_UST_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "216",
-                "ObjectName": "SupMileavgPctileUstUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_NPDES_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "217",
-                "ObjectName": "SupMileavgPctileProxNPDESUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "218",
-                "ObjectName": "SupMilePctilePmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_O3_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "219",
-                "ObjectName": "SupMilePctileO3Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_DPM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "220",
-                "ObjectName": "SupMilePctileDpmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_CANCER_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "221",
-                "ObjectName": "SupMilePctileCancerUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_RESP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "222",
-                "ObjectName": "SupMilePctileRespUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_RSEI_AIR_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "223",
-                "ObjectName": "SupMilePctileRseiAIRUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_TRAFFIC_SCORE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "224",
-                "ObjectName": "SupMilePctileTrafficScoreUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PCTPRE1960_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "225",
-                "ObjectName": "SupMilePctilePctpre1960Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_RMP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "226",
-                "ObjectName": "SupMilePctileProxRmpUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_TSDF_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "227",
-                "ObjectName": "SupMilePctileProxTsdfUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_NPL_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "228",
-                "ObjectName": "SupMilePctileProxNplUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_UST_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "229",
-                "ObjectName": "SupMilePctileUstUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_NPDES_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "230",
-                "ObjectName": "SupMilePctileProxNPDESUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "231",
-                "ObjectName": "SupPctilePmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_O3_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "232",
-                "ObjectName": "SupPctileO3St",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_DPM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "233",
-                "ObjectName": "SupPctileDpmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_CANCER_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "234",
-                "ObjectName": "SupPctileCancerSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_RESP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "235",
-                "ObjectName": "SupPctileRespSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_RSEI_AIR_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "236",
-                "ObjectName": "SupPctileRseiAIRSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_TRAFFIC_SCORE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "237",
-                "ObjectName": "SupPctileTrafficScoreSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PCTPRE1960_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "238",
-                "ObjectName": "SupPctilePctpre1960St",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_RMP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "239",
-                "ObjectName": "SupPctileProximityRmpSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_TSDF_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "240",
-                "ObjectName": "SupPctileProximityTsdfSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_NPL_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "241",
-                "ObjectName": "SupPctileProximityNplSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_UST_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "242",
-                "ObjectName": "SupPctileUstSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_PCTILE_PROXIMITY_NPDES_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "243",
-                "ObjectName": "SupPctileProximityNPDESSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PM_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "244",
-                "ObjectName": "SupMileavgPctilePmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_O3_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "245",
-                "ObjectName": "SupMileavgPctileO3St",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_DPM_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "246",
-                "ObjectName": "SupMileavgPctileDpmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_CANCER_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "247",
-                "ObjectName": "SupMileavgPctileCancerSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_RESP_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "248",
-                "ObjectName": "SupMileavgPctileRespSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_RSEI_AIR_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "249",
-                "ObjectName": "SupMileavgPctileRseiAIRSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_TRAFFIC_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "250",
-                "ObjectName": "SupMileavgPctileTrafficSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_LEADPNT_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "251",
-                "ObjectName": "SupMileavgPctileLeadpntSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_RMP_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "252",
-                "ObjectName": "SupMileavgPctileProxRmpSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_TSDF_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "253",
-                "ObjectName": "SupMileavgPctileProxTsdfSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_NPL_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "254",
-                "ObjectName": "SupMileavgPctileProxNplSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_UST_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "255",
-                "ObjectName": "SupMileavgPctileUstSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_PCTILE_PROX_NPDES_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "256",
-                "ObjectName": "SupMileavgPctileProxNPDESSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "257",
-                "ObjectName": "SupMilePctilePmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_O3_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "258",
-                "ObjectName": "SupMilePctileO3St",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_DPM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "259",
-                "ObjectName": "SupMilePctileDpmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_CANCER_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "260",
-                "ObjectName": "SupMilePctileCancerSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_RESP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "261",
-                "ObjectName": "SupMilePctileRespSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_RSEI_AIR_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "262",
-                "ObjectName": "SupMilePctileRseiAIRSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_TRAFFIC_SCORE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "263",
-                "ObjectName": "SupMilePctileTrafficScoreSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PCTPRE1960_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "264",
-                "ObjectName": "SupMilePctilePctpre1960St",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_RMP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "265",
-                "ObjectName": "SupMilePctileProxRmpSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_TSDF_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "266",
-                "ObjectName": "SupMilePctileProxTsdfSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_NPL_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "267",
-                "ObjectName": "SupMilePctileProxNplSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_UST_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "268",
-                "ObjectName": "SupMilePctileUstSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILE_PCTILE_PROX_NPDES_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "269",
-                "ObjectName": "SupMilePctileProxNPDESSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MAX_PCTILE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "270",
-                "ObjectName": "SupMaxPctileUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MAX_PCTILE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "271",
-                "ObjectName": "SupMaxPctileSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_MAX_PCTILE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "272",
-                "ObjectName": "SupMileavgMaxPctileUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "SUP_MILEAVG_MAX_PCTILE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "273",
-                "ObjectName": "SupMileavgMaxPctileSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "274",
-                "ObjectName": "PctilePmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_O3_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "275",
-                "ObjectName": "PctileO3Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_DPM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "276",
-                "ObjectName": "PctileDpmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_CANCER_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "277",
-                "ObjectName": "PctileCancerUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_RESP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "278",
-                "ObjectName": "PctileRespUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_RSEI_AIR_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "279",
-                "ObjectName": "PctileRseiAIRUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_TRAFFIC_SCORE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "280",
-                "ObjectName": "PctileTrafficScoreUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PCTPRE1960_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "281",
-                "ObjectName": "PctilePctpre1960Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_RMP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "282",
-                "ObjectName": "PctileProximityRmpUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_TSDF_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "283",
-                "ObjectName": "PctileProximityTsdfUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_NPL_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "284",
-                "ObjectName": "PctileProximityNplUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_UST_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "285",
-                "ObjectName": "PctileUstUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_NPDES_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "286",
-                "ObjectName": "PctileProximityNPDESUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PM_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "287",
-                "ObjectName": "MileavgPctilePmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_O3_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "288",
-                "ObjectName": "MileavgPctileO3Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_DPM_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "289",
-                "ObjectName": "MileavgPctileDpmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_CANCER_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "290",
-                "ObjectName": "MileavgPctileCancerUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_RESP_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "291",
-                "ObjectName": "MileavgPctileRespUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_RSEI_AIR_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "292",
-                "ObjectName": "MileavgPctileRseiAIRUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_TRAFFIC_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "293",
-                "ObjectName": "MileavgPctileTrafficUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PCTPRE1960_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "294",
-                "ObjectName": "MileavgPctilePctpre1960Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_RMP_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "295",
-                "ObjectName": "MileavgPctileProxRmpUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_TSDF_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "296",
-                "ObjectName": "MileavgPctileProxTsdfUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_NPL_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "297",
-                "ObjectName": "MileavgPctileProxNplUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_UST_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "298",
-                "ObjectName": "MileavgPctileUstUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_NPDES_US",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "299",
-                "ObjectName": "MileavgPctileProxNPDESUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "300",
-                "ObjectName": "MilePctilePmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_O3_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "301",
-                "ObjectName": "MilePctileO3Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_DPM_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "302",
-                "ObjectName": "MilePctileDpmUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_CANCER_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "303",
-                "ObjectName": "MilePctileCancerUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_RESP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "304",
-                "ObjectName": "MilePctileRespUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_RSEI_AIR_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "305",
-                "ObjectName": "MilePctileRseiAIRUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_TRAFFIC_SCORE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "306",
-                "ObjectName": "MilePctileTrafficScoreUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PCTPRE1960_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "307",
-                "ObjectName": "MilePctilePctpre1960Us",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_RMP_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "308",
-                "ObjectName": "MilePctileProximityRmpUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_TSDF_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "309",
-                "ObjectName": "MilePctileProximityTsdfUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_NPL_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "310",
-                "ObjectName": "MilePctileProximityNplUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_UST_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "311",
-                "ObjectName": "MilePctileUstUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_NPDES_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "312",
-                "ObjectName": "MilePctileProximityNPDESUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "313",
-                "ObjectName": "PctilePmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_O3_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "314",
-                "ObjectName": "PctileO3St",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_DPM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "315",
-                "ObjectName": "PctileDpmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_CANCER_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "316",
-                "ObjectName": "PctileCancerSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_RESP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "317",
-                "ObjectName": "PctileRespSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_RSEI_AIR_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "318",
-                "ObjectName": "PctileRseiAIRSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_TRAFFIC_SCORE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "319",
-                "ObjectName": "PctileTrafficScoreSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PCTPRE1960_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "320",
-                "ObjectName": "PctilePctpre1960St",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_RMP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "321",
-                "ObjectName": "PctileProximityRmpSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_TSDF_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "322",
-                "ObjectName": "PctileProximityTsdfSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_NPL_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "323",
-                "ObjectName": "PctileProximityNplSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_UST_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "324",
-                "ObjectName": "PctileUstSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "PCTILE_PROXIMITY_NPDES_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "325",
-                "ObjectName": "PctileProximityNPDESSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PM_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "326",
-                "ObjectName": "MileavgPctilePmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_O3_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "327",
-                "ObjectName": "MileavgPctileO3St",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_DPM_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "328",
-                "ObjectName": "MileavgPctileDpmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_CANCER_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "329",
-                "ObjectName": "MileavgPctileCancerSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_RESP_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "330",
-                "ObjectName": "MileavgPctileRespSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_RSEI_AIR_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "331",
-                "ObjectName": "MileavgPctileRseiAIRSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_LEADPNT_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "332",
-                "ObjectName": "MileavgPctileLeadpntSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_TRAFFIC_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "333",
-                "ObjectName": "MileavgPctileTrafficSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_RMP_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "334",
-                "ObjectName": "MileavgPctileProxRmpSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_TSDF_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "335",
-                "ObjectName": "MileavgPctileProxTsdfSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_NPL_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "336",
-                "ObjectName": "MileavgPctileProxNplSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_UST_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "337",
-                "ObjectName": "MileavgPctileUstSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_PCTILE_PROX_NPDES_ST",
-                "DataType": "VARCHAR2",
-                "DataLength": "10",
-                "ColumnID": "338",
-                "ObjectName": "MileavgPctileProxNPDESSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "339",
-                "ObjectName": "MilePctilePmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_O3_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "340",
-                "ObjectName": "MilePctileO3St",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_DPM_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "341",
-                "ObjectName": "MilePctileDpmSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_CANCER_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "342",
-                "ObjectName": "MilePctileCancerSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_RESP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "343",
-                "ObjectName": "MilePctileRespSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_RSEI_AIR_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "344",
-                "ObjectName": "MilePctileRseiAIRSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_TRAFFIC_SCORE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "345",
-                "ObjectName": "MilePctileTrafficScoreSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PCTPRE1960_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "346",
-                "ObjectName": "MilePctilePctpre1960St",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_RMP_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "347",
-                "ObjectName": "MilePctileProximityRmpSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_TSDF_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "348",
-                "ObjectName": "MilePctileProximityTsdfSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_NPL_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "349",
-                "ObjectName": "MilePctileProximityNplSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_UST_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "350",
-                "ObjectName": "MilePctileUstSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILE_PCTILE_PROXIMITY_NPDES_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "351",
-                "ObjectName": "MilePctileProximityNPDESSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MAX_PCTILE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "352",
-                "ObjectName": "MaxPctileUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MAX_PCTILE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "353",
-                "ObjectName": "MaxPctileSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_MAX_PCTILE_US",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "354",
-                "ObjectName": "MileavgMaxPctileUs",
-                "Description": null
-            },
-            {
-                "ColumnName": "MILEAVG_MAX_PCTILE_ST",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "355",
-                "ObjectName": "MileavgMaxPctileSt",
-                "Description": null
-            },
-            {
-                "ColumnName": "EJSCREEN_HIGH_FLAG",
-                "DataType": "NUMBER",
-                "DataLength": "22",
-                "ColumnID": "356",
-                "ObjectName": "EjscreenHighFlag",
+                "ObjectName": "AIRInvCnt",
                 "Description": null
             },
             {
                 "ColumnName": "NEAREST_AMA_SITE_CODE",
                 "DataType": "VARCHAR2",
                 "DataLength": "100",
-                "ColumnID": "357",
+                "ColumnID": "141",
                 "ObjectName": "NearestAmaSiteCode",
                 "Description": null
             },
@@ -2862,7 +1134,7 @@
                 "ColumnName": "FACILITY_MONITOR_DISTANCE_KM",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "358",
+                "ColumnID": "142",
                 "ObjectName": "FacilityMonitorDistanceKm",
                 "Description": null
             },
@@ -2870,7 +1142,7 @@
                 "ColumnName": "AMS_REPORT_LINK",
                 "DataType": "VARCHAR2",
                 "DataLength": "250",
-                "ColumnID": "359",
+                "ColumnID": "143",
                 "ObjectName": "AmsReportLink",
                 "Description": null
             },
@@ -2878,7 +1150,7 @@
                 "ColumnName": "BFLM_FACILITY_NAME",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "360",
+                "ColumnID": "144",
                 "ObjectName": "BflmFacilityName",
                 "Description": null
             },
@@ -2886,23 +1158,23 @@
                 "ColumnName": "CURRENT_CEDRI_ID",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "361",
+                "ColumnID": "145",
                 "ObjectName": "CurrentCedriID",
                 "Description": null
             },
             {
                 "ColumnName": "ANNUAL_AVG_CURRENT_EXCEED",
                 "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "362",
+                "DataLength": "5",
+                "ColumnID": "146",
                 "ObjectName": "AnnualAvgCurrentExceed",
                 "Description": null
             },
             {
                 "ColumnName": "PERIOD_AVG_CURRENT_EXCEED",
                 "DataType": "VARCHAR2",
-                "DataLength": "1",
-                "ColumnID": "363",
+                "DataLength": "5",
+                "ColumnID": "147",
                 "ObjectName": "PeriodAvgCurrentExceed",
                 "Description": null
             },
@@ -2910,7 +1182,7 @@
                 "ColumnName": "MAX_PERIOD_PERIOD_AVG_V2",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "364",
+                "ColumnID": "148",
                 "ObjectName": "MaxPeriodPeriodAvgV2",
                 "Description": null
             },
@@ -2918,7 +1190,7 @@
                 "ColumnName": "MAX_PERIOD_ANNUAL_AVG_V2",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "365",
+                "ColumnID": "149",
                 "ObjectName": "MaxPeriodAnnualAvgV2",
                 "Description": null
             },
@@ -2926,7 +1198,7 @@
                 "ColumnName": "ANNUAL_AVG_TOTAL_EXCEEDANCES",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "366",
+                "ColumnID": "150",
                 "ObjectName": "AnnualAvgTotalExceedances",
                 "Description": null
             },
@@ -2934,7 +1206,7 @@
                 "ColumnName": "PERIOD_AVG_TOTAL_EXCEEDANCES",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "367",
+                "ColumnID": "151",
                 "ObjectName": "PeriodAvgTotalExceedances",
                 "Description": null
             },
@@ -2942,7 +1214,7 @@
                 "ColumnName": "MAX_ANNUAL_AVG",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "368",
+                "ColumnID": "152",
                 "ObjectName": "MaxAnnualAvg",
                 "Description": null
             },
@@ -2950,7 +1222,7 @@
                 "ColumnName": "MAX_PERIOD_AVG",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "369",
+                "ColumnID": "153",
                 "ObjectName": "MaxPeriodAvg",
                 "Description": null
             },
@@ -2958,7 +1230,7 @@
                 "ColumnName": "MAX_BENZENE_PERIOD_AVG",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "370",
+                "ColumnID": "154",
                 "ObjectName": "MaxBenzenePeriodAvg",
                 "Description": null
             },
@@ -2966,7 +1238,7 @@
                 "ColumnName": "MAX_ANNUAL_AVG_START_DATE",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "371",
+                "ColumnID": "155",
                 "ObjectName": "MaxAnnualAvgStartDate",
                 "Description": null
             },
@@ -2974,7 +1246,7 @@
                 "ColumnName": "MAX_PERIOD_AVG_START_DATE",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "372",
+                "ColumnID": "156",
                 "ObjectName": "MaxPeriodAvgStartDate",
                 "Description": null
             },
@@ -2982,7 +1254,7 @@
                 "ColumnName": "MAX_BENZENE_START_DATE",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "373",
+                "ColumnID": "157",
                 "ObjectName": "MaxBenzeneStartDate",
                 "Description": null
             },
@@ -2990,7 +1262,7 @@
                 "ColumnName": "CURRENT_PERIOD_END",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "374",
+                "ColumnID": "158",
                 "ObjectName": "CurrentPeriodEnd",
                 "Description": null
             },
@@ -2998,15 +1270,39 @@
                 "ColumnName": "CURRENT_PERIOD_START",
                 "DataType": "VARCHAR2",
                 "DataLength": "4000",
-                "ColumnID": "375",
+                "ColumnID": "159",
                 "ObjectName": "CurrentPeriodStart",
+                "Description": null
+            },
+            {
+                "ColumnName": "NECI_GEO_AREA_FLAG",
+                "DataType": "CHAR",
+                "DataLength": "1",
+                "ColumnID": "160",
+                "ObjectName": "NeciGeoAreaFlag",
+                "Description": null
+            },
+            {
+                "ColumnName": "NECI_GEO_AREA",
+                "DataType": "VARCHAR2",
+                "DataLength": "255",
+                "ColumnID": "161",
+                "ObjectName": "NeciGeoArea",
+                "Description": null
+            },
+            {
+                "ColumnName": "FAC_TRI_REPORTER_DESCRIPTION",
+                "DataType": "VARCHAR2",
+                "DataLength": "12",
+                "ColumnID": "162",
+                "ObjectName": "FacTRIReporterDescription",
                 "Description": null
             },
             {
                 "ColumnName": "SCORE",
                 "DataType": "NUMBER",
                 "DataLength": "22",
-                "ColumnID": "376",
+                "ColumnID": "163",
                 "ObjectName": "Score",
                 "Description": null
             }

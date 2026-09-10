@@ -5,12 +5,12 @@
         "QueryRows": "40",
         "IndianCountryRows": "0",
         "SVRows": "0",
-        "CVRows": "2",
-        "V3Rows": "9",
+        "CVRows": "3",
+        "V3Rows": "11",
         "FEARows": "1",
-        "InfFEARows": "10",
+        "InfFEARows": "12",
         "INSPRows": "14",
         "BadSystemIDs": null,
-        "QueryID": "980"
+        "QueryID": "441"
     }
 }

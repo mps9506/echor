@@ -94,6 +94,39 @@ with_mock_api({
 })
 
 with_mock_api({
+  ## this has to skip if offline because the functions
+  ## return NULL when offline, but these functions may or may
+  ## not be compared against mocked responses
+
+  test_that("NNCR functions return tbl_df", {
+    skip_if_offline(host = "echodata.epa.gov")
+
+    expect_s3_class(echoNNCRGetQuarters(), "tbl_df")
+
+    expect_s3_class(
+      echoNNCRGetViolations(fy_quarter = "FY24Q4", npdes_id = "AZ0026697"),
+      "tbl_df"
+    )
+
+    expect_s3_class(
+      echoNNCRGetSearch(fy_quarter = "FY24Q4", npdes_id = "AZ0026697"),
+      "tbl_df"
+    )
+
+    expect_s3_class(
+      echoNNCRGetReport(permits__npdes_id = "TX0119407"),
+      "tbl_df"
+    )
+
+    expect_s3_class(
+      echoGetReports(program = "nncr", p_id = "TX0119407", verbose = FALSE),
+      "tbl_df"
+    )
+  })
+
+})
+
+with_mock_api({
 
   ## this has to skip if offline because the functions
   ## return NULL when offline, but these functions may or may

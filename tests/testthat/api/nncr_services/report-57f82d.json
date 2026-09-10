@@ -1,0 +1,101 @@
+{
+    "count": 1,
+    "data": [
+        {
+            "frs_id": "110009771693",
+            "frs_name": "SKIDMORE WSC WWTP",
+            "frs_address": "1125 BLACK RANCH RD 4500 FT E AND 4200 FT N OF INTX OF FMR 797",
+            "frs_city": "SKIDMORE",
+            "frs_state": "TX",
+            "frs_zip": "78389",
+            "epa_region": "06",
+            "huc_code": "121004070205",
+            "watershed": "Corrigan Hole-Aransas River",
+            "permits": [
+                {
+                    "npdes_id": "TX0119407",
+                    "facility_name": "SKIDMORE WSC WWTP",
+                    "facility_address": "1125 BLACK RANCH RD",
+                    "facility_city": "SKIDMORE",
+                    "facility_county": "Bee",
+                    "facility_state": "TX",
+                    "facility_zip": "78389",
+                    "permit_type": "NPDES Individual Permit",
+                    "permit_components": "",
+                    "permit_status": "Effective",
+                    "designation": "N",
+                    "facility_type_indicator": "NON-POTW",
+                    "permitting_agency": "State",
+                    "discharging_into_impaired_water": "",
+                    "causes_of_impairment": "",
+                    "discharging_pollutants_potentially_contributing_to_impairment": "",
+                    "huc12s": [
+                        {
+                            "npdes_id": "TX0119407",
+                            "version_nmbr": 0,
+                            "perm_feature_id": 3601028448,
+                            "perm_feature_nmbr": "001",
+                            "perm_feature_type_code": "EXO",
+                            "perm_feature_type_desc": "External Outfall",
+                            "perm_feature_coord_id": 3601075132,
+                            "latitude_measure": "28.270021",
+                            "longitude_measure": "-97.678000",
+                            "huc12": "121004070205",
+                            "huc12_name": "Corrigan Hole-Aransas River"
+                        }
+                    ],
+                    "permittees": [
+                        {
+                            "permittee_name": "SKIDMORE WATER SUPPLY CORPORATION",
+                            "permittee_address": "PO BOX 290",
+                            "permittee_city": "SKIDMORE",
+                            "permittee_county": "BEE",
+                            "permittee_state": "TX",
+                            "permittee_zip": "78389"
+                        }
+                    ],
+                    "dmr_flow_loads": [
+                        {
+                            "npdes_id": "TX0119407",
+                            "dmr_year": 2022,
+                            "average_flow": 0.05815833333333333,
+                            "load_over_limit": 0.0,
+                            "load_over_limit_twpe": 0.0
+                        },
+                        {
+                            "npdes_id": "TX0119407",
+                            "dmr_year": 2026,
+                            "average_flow": 0.06824285714285715,
+                            "load_over_limit": 0.0,
+                            "load_over_limit_twpe": 0.0
+                        },
+                        {
+                            "npdes_id": "TX0119407",
+                            "dmr_year": 2025,
+                            "average_flow": 0.06066666666666667,
+                            "load_over_limit": 0.0,
+                            "load_over_limit_twpe": 0.0
+                        },
+                        {
+                            "npdes_id": "TX0119407",
+                            "dmr_year": 2023,
+                            "average_flow": 0.056883333333333334,
+                            "load_over_limit": 0.0,
+                            "load_over_limit_twpe": 0.0
+                        },
+                        {
+                            "npdes_id": "TX0119407",
+                            "dmr_year": 2024,
+                            "average_flow": 0.059575,
+                            "load_over_limit": 0.0,
+                            "load_over_limit_twpe": 0.0
+                        }
+                    ]
+                }
+            ],
+            "attains": [
+
+            ]
+        }
+    ]
+}
