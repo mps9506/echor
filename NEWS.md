@@ -1,4 +1,7 @@
-# echor 0.1.9.9999 (in development)
+# echor 0.1.10
+
+## New Functions
+* `echoNNCRGetReport()`, `echoNNCRGetViolations()`, `echoNNCRGetSearch()` for searching NPDES Noncompliance Reports.
 
 ## Bug Fixes
 * Update examples in `echoWaterGetFacilityInfo()`. The allowable values for `p_pcomp` were changed by EPA resulting in zero values returned. (fixes #94)
