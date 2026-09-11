@@ -24,16 +24,24 @@ importFrom(curl,nslookup)
 importFrom(dplyr,bind_rows)
 importFrom(httr,build_url)
 importFrom(plyr,mapvalues)
-importFrom(purrr,map)
-importFrom(purrr,map_df)
-importFrom(purrr,map_lgl)
-importFrom(readr,locale)
-importFrom(readr,read_csv)
+importFrom(purrr,
+  map,
+  map_df,
+  map_lgl
+)
+importFrom(readr,
+  locale,
+  read_csv
+)
 importFrom(rlang,is_error)
 importFrom(sf,st_read)
-importFrom(tibble,as_tibble)
-importFrom(tibble,is_tibble)
-importFrom(tibble,tibble)
-importFrom(tidyr,gather_)
-importFrom(tidyr,pivot_longer)
+importFrom(tibble,
+  as_tibble,
+  is_tibble,
+  tibble
+)
+importFrom(tidyr,
+  gather_,
+  pivot_longer
+)
 importFrom(utils,URLencode)
