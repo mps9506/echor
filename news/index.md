@@ -1,6 +1,13 @@
 # Changelog
 
-## echor 0.1.9.9999 (in development)
+## echor 0.1.10
+
+### New Functions
+
+- [`echoNNCRGetReport()`](https://mps9506.github.io/echor/reference/echoNNCRGetReport.md),
+  [`echoNNCRGetViolations()`](https://mps9506.github.io/echor/reference/echoNNCRGetViolations.md),
+  [`echoNNCRGetSearch()`](https://mps9506.github.io/echor/reference/echoNNCRGetSearch.md)
+  for searching NPDES Noncompliance Reports.
 
 ### Bug Fixes
 

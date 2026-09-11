@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">echor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.9.9999</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.10</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,17 +38,22 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.1.9.9999" id="echor-0199999-in-development">echor 0.1.9.9999 (in development)<a class="anchor" aria-label="anchor" href="#echor-0199999-in-development"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.1.10" id="echor-0110">echor 0.1.10<a class="anchor" aria-label="anchor" href="#echor-0110"></a></h2>
 <div class="section level3">
-<h3 id="bug-fixes-0-1-9-9999">Bug Fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-1-9-9999"></a></h3>
+<h3 id="new-functions-0-1-10">New Functions<a class="anchor" aria-label="anchor" href="#new-functions-0-1-10"></a></h3>
+<ul><li>
+<code><a href="../reference/echoNNCRGetReport.html">echoNNCRGetReport()</a></code>, <code><a href="../reference/echoNNCRGetViolations.html">echoNNCRGetViolations()</a></code>, <code><a href="../reference/echoNNCRGetSearch.html">echoNNCRGetSearch()</a></code> for searching NPDES Noncompliance Reports.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-0-1-10">Bug Fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-1-10"></a></h3>
 <ul><li>Update examples in <code><a href="../reference/echoWaterGetFacilityInfo.html">echoWaterGetFacilityInfo()</a></code>. The allowable values for <code>p_pcomp</code> were changed by EPA resulting in zero values returned. (fixes <a href="https://github.com/mps9506/echor/issues/94" class="external-link">#94</a>)</li>
 </ul></div>
 <div class="section level3">
-<h3 id="minor-changes-0-1-9-9999">Minor Changes<a class="anchor" aria-label="anchor" href="#minor-changes-0-1-9-9999"></a></h3>
+<h3 id="minor-changes-0-1-10">Minor Changes<a class="anchor" aria-label="anchor" href="#minor-changes-0-1-10"></a></h3>
 <ul><li>There is no longer an (unknown) upper limit on the values returned when requesting an <code>sf</code> dataframe. Previously, ECHO returned “clusters” instead of records when a large number of records were requested. ECHO no provides a different endpoint to request clusters. This package does not currently provide a function to access the clusters endpoint.</li>
 </ul></div>
 <div class="section level3">
-<h3 id="regression-0-1-9-9999">Regression<a class="anchor" aria-label="anchor" href="#regression-0-1-9-9999"></a></h3>
+<h3 id="regression-0-1-10">Regression<a class="anchor" aria-label="anchor" href="#regression-0-1-10"></a></h3>
 <ul><li>various _getFacilityInfo() functions no longer return valid query results when query sets would return &gt;100,000 records. This is a change in the ECHO server. You will now receive a message to modify the query to return fewer results. (fixes <a href="https://github.com/mps9506/echor/issues/93" class="external-link">#93</a>)</li>
 </ul></div>
 </div>
