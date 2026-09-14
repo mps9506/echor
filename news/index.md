@@ -1,5 +1,7 @@
 # Changelog
 
+## echor (development version)
+
 ## echor 0.1.10
 
 CRAN release: 2026-09-11
