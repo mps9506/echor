@@ -41,7 +41,7 @@ Returns a dataframe.
 ## Retrieve single DMR for flow
 
 echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
-#> # A tibble: 82 × 64
+#> # A tibble: 76 × 64
 #>    activity_id npdes_id  version_nmbr perm_feature_id perm_feature_nmbr
 #>    <chr>       <chr>     <chr>        <chr>           <chr>            
 #>  1 3602064155  TX0119407 5            3600435311      001              
@@ -54,7 +54,7 @@ echoGetEffluent(p_id = 'tx0119407', parameter_code = '50050')
 #>  8 3602064155  TX0119407 5            3600435311      001              
 #>  9 3602064155  TX0119407 5            3600435311      001              
 #> 10 3602064155  TX0119407 5            3600435311      001              
-#> # ℹ 72 more rows
+#> # ℹ 66 more rows
 #> # ℹ 59 more variables: perm_feature_type_code <chr>,
 #> #   perm_feature_type_desc <chr>, limit_set_id <chr>,
 #> #   limit_set_schedule_id <chr>, limit_id <chr>, limit_season_id <chr>,

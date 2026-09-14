@@ -2,6 +2,8 @@
 
 ## echor 0.1.10
 
+CRAN release: 2026-09-11
+
 ### New Functions
 
 - [`echoNNCRGetReport()`](https://mps9506.github.io/echor/reference/echoNNCRGetReport.md),

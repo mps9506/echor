@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/mps9506/echor/blob/master/inst/CITATION)
+[`inst/CITATION`](https://github.com/mps9506/echor/blob/v0.1.10/inst/CITATION)
 
 Schramm, Michael (2023). echor: Access EPA 'ECHO' Data.
 doi:10.5281/zenodo.3635017
